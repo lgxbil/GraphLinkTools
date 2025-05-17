@@ -1,0 +1,458 @@
+{
+    "shorten": {
+        "api": {
+            "name": "Search_Attraction_Location",
+            "endpoint": "/api/v1/attraction/searchLocation",
+            "func_description": "Find attractions by their location, address, state, country, etc. This API will return specific information like: `slug`, `productId`, `id`, etc.  ",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "query": {
+                        "type": "String",
+                        "description": "Names of locations, cities, districts, places, countries, counties etc.",
+                        "example_value": "new",
+                        "required": true
+                    },
+                    "languagecode": {
+                        "type": "String",
+                        "description": "To obtain the response data in a specific language, enter the languagecode. languagecode can be retrieved from api/v1/meta/getLanguages(Get Languages\n) endpoint in Meta collection.",
+                        "example_value": "en-us",
+                        "required": false
+                    }
+                },
+                "required": [
+                    "query"
+                ]
+            }
+        },
+        "static_response": {
+            "function_name": "Search_Attraction_Location",
+            "arguments": {
+                "query": "Summer Palace, Beijing"
+            },
+            "observation": {
+                "status": true,
+                "message": "Success",
+                "data": {
+                    "products": [
+                        {
+                            "id": "eyJwaW5uZWRQcm9kdWN0IjoiUFJxWmxIRDdPNkRvIiwidWZpIjotMTg5ODU0MX0=",
+                            "__typename": "AttractionsSearchProductSuggestion",
+                            "title": "Beijing Summer Palace Ticket Booking",
+                            "productId": "PRqZlHD7O6Do",
+                            "productSlug": "prqzlhd7o6do-beijing-city-package-group-day-tour",
+                            "taxonomySlug": "tours",
+                            "cityUfi": -1898541,
+                            "cityName": "Beijing",
+                            "countryCode": "cn"
+                        }
+                    ]
+                }
+            }
+        },
+        "required": {
+            "query": "I'm visiting New York City next month and would like to explore some popular attractions. Can you help me find what's available?",
+            "params": {
+                "query": "New York City"
+            },
+            "response": {
+                "products": [
+                    {
+                        "id": "eyJwaW5uZWRQcm9kdWN0IjoiUFJkR0pzNTZ1NWF4IiwidWZpIjoyMDA4ODAzNX0=",
+                        "__typename": "AttractionsSearchProductSuggestion",
+                        "title": "New York City Restaurant Week",
+                        "productId": "PRdGJs56u5ax",
+                        "productSlug": "prdgjs56u5ax-new-york-city-restaurant-week",
+                        "taxonomySlug": "transfers-services",
+                        "cityUfi": 20088035,
+                        "cityName": "Middle Island",
+                        "countryCode": "us"
+                    },
+                    {
+                        "id": "eyJwaW5uZWRQcm9kdWN0IjoiUFJ4RjZucXF1M2Z0IiwidWZpIjoyMDA4ODMyNX0=",
+                        "__typename": "AttractionsSearchProductSuggestion",
+                        "title": "Vacation Photographer in New York City",
+                        "productId": "PRxF6nqqu3ft",
+                        "productSlug": "prxf6nqqu3ft-vacation-photographer-in-new-york-city",
+                        "taxonomySlug": "tours",
+                        "cityUfi": 20088325,
+                        "cityName": "New York",
+                        "countryCode": "us"
+                    },
+                    {
+                        "id": "eyJwaW5uZWRQcm9kdWN0IjoiUFJ6N3dkTVRWZzZGIiwidWZpIjoyMDA4ODMyNX0=",
+                        "__typename": "AttractionsSearchProductSuggestion",
+                        "title": "New York City Tour Pass",
+                        "productId": "PRz7wdMTVg6F",
+                        "productSlug": "prz7wdmtvg6f-new-york-city-tour-pass",
+                        "taxonomySlug": "tours",
+                        "cityUfi": 20088325,
+                        "cityName": "New York",
+                        "countryCode": "us"
+                    }
+                ],
+                "destinations": [
+                    {
+                        "id": "eyJ1ZmkiOjIwMDg4MzI1fQ==",
+                        "__typename": "AttractionsSearchDestinationSuggestion",
+                        "ufi": 20088325,
+                        "country": "United States",
+                        "cityName": "New York",
+                        "productCount": 2002,
+                        "cc1": "us"
+                    },
+                    {
+                        "id": "eyJ1ZmkiOjIwMDgxNTA5fQ==",
+                        "__typename": "AttractionsSearchDestinationSuggestion",
+                        "ufi": 20081509,
+                        "country": "United States",
+                        "cityName": "Jersey City",
+                        "productCount": 2002,
+                        "cc1": "us"
+                    },
+                    {
+                        "id": "eyJ1ZmkiOjIwMDg2NjEwfQ==",
+                        "__typename": "AttractionsSearchDestinationSuggestion",
+                        "ufi": 20086610,
+                        "country": "United States",
+                        "cityName": "Garden City",
+                        "productCount": 2000,
+                        "cc1": "us"
+                    }
+                ]
+            }
+        },
+        "optional": {
+            "query": "I'm planning a trip to New York City next month and would like to explore popular attractions. Can you help me find attractions in Manhattan, including museums, parks, and landmarks? I'd prefer the information to be in English.",
+            "params": {
+                "query": "Manhattan",
+                "languagecode": "en-us"
+            },
+            "response": {
+                "products": [
+                    {
+                        "id": "eyJwaW5uZWRQcm9kdWN0IjoiUFJudUhTWEdyR1BCIiwidWZpIjoyMDA4ODMyNX0=",
+                        "__typename": "AttractionsSearchProductSuggestion",
+                        "title": "Manhattan Skyline Cruise",
+                        "productId": "PRnuHSXGrGPB",
+                        "productSlug": "prnuhsxgrgpb-manhattan-skyline-cruise",
+                        "taxonomySlug": "tours",
+                        "cityUfi": 20088325,
+                        "cityName": "New York",
+                        "countryCode": "us"
+                    },
+                    {
+                        "id": "eyJwaW5uZWRQcm9kdWN0IjoiUFJmZUhxQkN3UElUIiwidWZpIjoyMDA4ODMyNX0=",
+                        "__typename": "AttractionsSearchProductSuggestion",
+                        "title": "Manhattan Architecture Yacht Cruise",
+                        "productId": "PRfeHqBCwPIT",
+                        "productSlug": "prfehqbcwpit-manhattan-architecture-yacht-cruise",
+                        "taxonomySlug": "tours",
+                        "cityUfi": 20088325,
+                        "cityName": "New York",
+                        "countryCode": "us"
+                    },
+                    {
+                        "id": "eyJwaW5uZWRQcm9kdWN0IjoiUFJEYWZXNGlPTVhyIiwidWZpIjoyMDA4ODMyNX0=",
+                        "__typename": "AttractionsSearchProductSuggestion",
+                        "title": "Manhattan Evening Jazz Cruise",
+                        "productId": "PRDafW4iOMXr",
+                        "productSlug": "prdafw4iomxr-evening-jazz-cruise",
+                        "taxonomySlug": "attractions",
+                        "cityUfi": 20088325,
+                        "cityName": "New York",
+                        "countryCode": "us"
+                    }
+                ],
+                "destinations": [
+                    {
+                        "id": "eyJ1ZmkiOjIwMDE0MjcxfQ==",
+                        "__typename": "AttractionsSearchDestinationSuggestion",
+                        "ufi": 20014271,
+                        "country": "United States",
+                        "cityName": "Manhattan Beach",
+                        "productCount": 905,
+                        "cc1": "us"
+                    }
+                ]
+            }
+        }
+    },
+    "row": {
+        "required": {
+            "products": [
+                {
+                    "id": "eyJwaW5uZWRQcm9kdWN0IjoiUFJkR0pzNTZ1NWF4IiwidWZpIjoyMDA4ODAzNX0=",
+                    "__typename": "AttractionsSearchProductSuggestion",
+                    "title": "New York City Restaurant Week",
+                    "productId": "PRdGJs56u5ax",
+                    "productSlug": "prdgjs56u5ax-new-york-city-restaurant-week",
+                    "taxonomySlug": "transfers-services",
+                    "cityUfi": 20088035,
+                    "cityName": "Middle Island",
+                    "countryCode": "us"
+                },
+                {
+                    "id": "eyJwaW5uZWRQcm9kdWN0IjoiUFJ4RjZucXF1M2Z0IiwidWZpIjoyMDA4ODMyNX0=",
+                    "__typename": "AttractionsSearchProductSuggestion",
+                    "title": "Vacation Photographer in New York City",
+                    "productId": "PRxF6nqqu3ft",
+                    "productSlug": "prxf6nqqu3ft-vacation-photographer-in-new-york-city",
+                    "taxonomySlug": "tours",
+                    "cityUfi": 20088325,
+                    "cityName": "New York",
+                    "countryCode": "us"
+                },
+                {
+                    "id": "eyJwaW5uZWRQcm9kdWN0IjoiUFJ6N3dkTVRWZzZGIiwidWZpIjoyMDA4ODMyNX0=",
+                    "__typename": "AttractionsSearchProductSuggestion",
+                    "title": "New York City Tour Pass",
+                    "productId": "PRz7wdMTVg6F",
+                    "productSlug": "prz7wdmtvg6f-new-york-city-tour-pass",
+                    "taxonomySlug": "tours",
+                    "cityUfi": 20088325,
+                    "cityName": "New York",
+                    "countryCode": "us"
+                },
+                {
+                    "id": "eyJwaW5uZWRQcm9kdWN0IjoiUFI4dDNqQ2trVHNLIiwidWZpIjoyMDA4ODMyNX0=",
+                    "__typename": "AttractionsSearchProductSuggestion",
+                    "title": "New York City's Best Pizza tour",
+                    "productId": "PR8t3jCkkTsK",
+                    "productSlug": "pr8t3jckktsk-new-york-citys-best-pizza-tour",
+                    "taxonomySlug": "tours",
+                    "cityUfi": 20088325,
+                    "cityName": "New York",
+                    "countryCode": "us"
+                },
+                {
+                    "id": "eyJwaW5uZWRQcm9kdWN0IjoiUFJUaTVxWEd4WlpYIiwidWZpIjoyMDA4ODMyNX0=",
+                    "__typename": "AttractionsSearchProductSuggestion",
+                    "title": "New York City Skyline Dinner Cruise",
+                    "productId": "PRTi5qXGxZZX",
+                    "productSlug": "prti5qxgxzzx-new-york-city-skyline-dinner-cruise",
+                    "taxonomySlug": "tours",
+                    "cityUfi": 20088325,
+                    "cityName": "New York",
+                    "countryCode": "us"
+                },
+                {
+                    "id": "eyJwaW5uZWRQcm9kdWN0IjoiUFJWSFFKQ2tYbGlCIiwidWZpIjoyMDA4ODMyNX0=",
+                    "__typename": "AttractionsSearchProductSuggestion",
+                    "title": "New York City E Bike Rentals",
+                    "productId": "PRVHQJCkXliB",
+                    "productSlug": "prvhqjckxlib-central-park-e-bike-rental-nyc",
+                    "taxonomySlug": "transfers-services",
+                    "cityUfi": 20088325,
+                    "cityName": "New York",
+                    "countryCode": "us"
+                },
+                {
+                    "id": "eyJwaW5uZWRQcm9kdWN0IjoiUFJaSHllMTI0SUhNIiwidWZpIjoyMDA4NTIwN30=",
+                    "__typename": "AttractionsSearchProductSuggestion",
+                    "title": "Guided New York City Food Tour",
+                    "productId": "PRZHye124IHM",
+                    "productSlug": "przhye124ihm-guided-new-york-city-food-tour",
+                    "taxonomySlug": "tours",
+                    "cityUfi": 20085207,
+                    "cityName": "Brooklyn",
+                    "countryCode": "us"
+                },
+                {
+                    "id": "eyJwaW5uZWRQcm9kdWN0IjoiUFJiSVJIQnU1TkNFIiwidWZpIjoyMDA4ODMyNX0=",
+                    "__typename": "AttractionsSearchProductSuggestion",
+                    "title": "Iconic New York City Photography Tour",
+                    "productId": "PRbIRHBu5NCE",
+                    "productSlug": "prbirhbu5nce-six-hour-photography-tour",
+                    "taxonomySlug": "tours",
+                    "cityUfi": 20088325,
+                    "cityName": "New York",
+                    "countryCode": "us"
+                },
+                {
+                    "id": "eyJwaW5uZWRQcm9kdWN0IjoiUFJlTmJSQUxmWnNzIiwidWZpIjoyMDA4ODMyNX0=",
+                    "__typename": "AttractionsSearchProductSuggestion",
+                    "title": "New York City bus and boat tour",
+                    "productId": "PReNbRALfZss",
+                    "productSlug": "prenbralfzss-new-york-city-bus-and-boat-tour",
+                    "taxonomySlug": "tours",
+                    "cityUfi": 20088325,
+                    "cityName": "New York",
+                    "countryCode": "us"
+                },
+                {
+                    "id": "eyJwaW5uZWRQcm9kdWN0IjoiUFJvNlhHQ1ZvakZmIiwidWZpIjoyMDA4ODMyNX0=",
+                    "__typename": "AttractionsSearchProductSuggestion",
+                    "title": "Guided Bike Tour of New York City",
+                    "productId": "PRo6XGCVojFf",
+                    "productSlug": "pro6xgcvojff-guided-bike-tour-of-new-york-city",
+                    "taxonomySlug": "tours",
+                    "cityUfi": 20088325,
+                    "cityName": "New York",
+                    "countryCode": "us"
+                }
+            ],
+            "destinations": [
+                {
+                    "id": "eyJ1ZmkiOjIwMDg4MzI1fQ==",
+                    "__typename": "AttractionsSearchDestinationSuggestion",
+                    "ufi": 20088325,
+                    "country": "United States",
+                    "cityName": "New York",
+                    "productCount": 2002,
+                    "cc1": "us"
+                },
+                {
+                    "id": "eyJ1ZmkiOjIwMDgxNTA5fQ==",
+                    "__typename": "AttractionsSearchDestinationSuggestion",
+                    "ufi": 20081509,
+                    "country": "United States",
+                    "cityName": "Jersey City",
+                    "productCount": 2002,
+                    "cc1": "us"
+                },
+                {
+                    "id": "eyJ1ZmkiOjIwMDg2NjEwfQ==",
+                    "__typename": "AttractionsSearchDestinationSuggestion",
+                    "ufi": 20086610,
+                    "country": "United States",
+                    "cityName": "Garden City",
+                    "productCount": 2000,
+                    "cc1": "us"
+                },
+                {
+                    "id": "eyJ1ZmkiOjIwMDgyNzA5fQ==",
+                    "__typename": "AttractionsSearchDestinationSuggestion",
+                    "ufi": 20082709,
+                    "country": "United States",
+                    "cityName": "Union City",
+                    "productCount": 2002,
+                    "cc1": "us"
+                },
+                {
+                    "id": "eyJ1ZmkiOjIwMDg3NzQ5fQ==",
+                    "__typename": "AttractionsSearchDestinationSuggestion",
+                    "ufi": 20087749,
+                    "country": "United States",
+                    "cityName": "Long Island City",
+                    "productCount": 2002,
+                    "cc1": "us"
+                }
+            ]
+        },
+        "optional": {
+            "products": [
+                {
+                    "id": "eyJwaW5uZWRQcm9kdWN0IjoiUFJudUhTWEdyR1BCIiwidWZpIjoyMDA4ODMyNX0=",
+                    "__typename": "AttractionsSearchProductSuggestion",
+                    "title": "Manhattan Skyline Cruise",
+                    "productId": "PRnuHSXGrGPB",
+                    "productSlug": "prnuhsxgrgpb-manhattan-skyline-cruise",
+                    "taxonomySlug": "tours",
+                    "cityUfi": 20088325,
+                    "cityName": "New York",
+                    "countryCode": "us"
+                },
+                {
+                    "id": "eyJwaW5uZWRQcm9kdWN0IjoiUFJmZUhxQkN3UElUIiwidWZpIjoyMDA4ODMyNX0=",
+                    "__typename": "AttractionsSearchProductSuggestion",
+                    "title": "Manhattan Architecture Yacht Cruise",
+                    "productId": "PRfeHqBCwPIT",
+                    "productSlug": "prfehqbcwpit-manhattan-architecture-yacht-cruise",
+                    "taxonomySlug": "tours",
+                    "cityUfi": 20088325,
+                    "cityName": "New York",
+                    "countryCode": "us"
+                },
+                {
+                    "id": "eyJwaW5uZWRQcm9kdWN0IjoiUFJEYWZXNGlPTVhyIiwidWZpIjoyMDA4ODMyNX0=",
+                    "__typename": "AttractionsSearchProductSuggestion",
+                    "title": "Manhattan Evening Jazz Cruise",
+                    "productId": "PRDafW4iOMXr",
+                    "productSlug": "prdafw4iomxr-evening-jazz-cruise",
+                    "taxonomySlug": "attractions",
+                    "cityUfi": 20088325,
+                    "cityName": "New York",
+                    "countryCode": "us"
+                },
+                {
+                    "id": "eyJwaW5uZWRQcm9kdWN0IjoiUFI0eFIwb2htNll3IiwidWZpIjoyMDA4ODMyNX0=",
+                    "__typename": "AttractionsSearchProductSuggestion",
+                    "title": "Manhattan Architecture Photography Tour",
+                    "productId": "PR4xR0ohm6Yw",
+                    "productSlug": "pr4xr0ohm6yw-architecture-photography-tour-in-manhattan",
+                    "taxonomySlug": "tours",
+                    "cityUfi": 20088325,
+                    "cityName": "New York",
+                    "countryCode": "us"
+                },
+                {
+                    "id": "eyJwaW5uZWRQcm9kdWN0IjoiUFJGY1FlQmRpd2hmIiwidWZpIjoyMDA4ODMyNX0=",
+                    "__typename": "AttractionsSearchProductSuggestion",
+                    "title": "Manhattan Mashup Scavenger Hunt",
+                    "productId": "PRFcQeBdiwhf",
+                    "productSlug": "prfcqebdiwhf-manhattan-mashup-scavenger-hunt",
+                    "taxonomySlug": "activities",
+                    "cityUfi": 20088325,
+                    "cityName": "New York",
+                    "countryCode": "us"
+                },
+                {
+                    "id": "eyJwaW5uZWRQcm9kdWN0IjoiUFJmRGl3YnFtQnV5IiwidWZpIjoyMDA4ODMyNX0=",
+                    "__typename": "AttractionsSearchProductSuggestion",
+                    "title": "Upper and Lower Manhattan Private",
+                    "productId": "PRfDiwbqmBuy",
+                    "productSlug": "prfdiwbqmbuy-upper-and-lower-manhattan-private",
+                    "taxonomySlug": "tours",
+                    "cityUfi": 20088325,
+                    "cityName": "New York",
+                    "countryCode": "us"
+                },
+                {
+                    "id": "eyJwaW5uZWRQcm9kdWN0IjoiUFJ1T25uVkJkaG5QIiwidWZpIjoyMDA4ODMyNX0=",
+                    "__typename": "AttractionsSearchProductSuggestion",
+                    "title": "Custom Private Tour of Manhattan",
+                    "productId": "PRuOnnVBdhnP",
+                    "productSlug": "pruonnvbdhnp-custom-private-tour-of-manhattan",
+                    "taxonomySlug": "tours",
+                    "cityUfi": 20088325,
+                    "cityName": "New York",
+                    "countryCode": "us"
+                },
+                {
+                    "id": "eyJwaW5uZWRQcm9kdWN0IjoiUFJVaUExMVFFZFlaIiwidWZpIjoyMDA4ODMyNX0=",
+                    "__typename": "AttractionsSearchProductSuggestion",
+                    "title": "Alto Y Bajo Manhattan",
+                    "productId": "PRUiA11QEdYZ",
+                    "productSlug": "pruia11qedyz-alto-y-bajo-manhattan",
+                    "taxonomySlug": "tours",
+                    "cityUfi": 20088325,
+                    "cityName": "New York",
+                    "countryCode": "us"
+                },
+                {
+                    "id": "eyJwaW5uZWRQcm9kdWN0IjoiUFJjMGlwREhuMjdkIiwidWZpIjoyMDA4ODMyNX0=",
+                    "__typename": "AttractionsSearchProductSuggestion",
+                    "title": "French Tour of South Manhattan",
+                    "productId": "PRc0ipDHn27d",
+                    "productSlug": "prc0ipdhn27d-guided-tour-in-french-of-south-manhattan-offroad",
+                    "taxonomySlug": "tours",
+                    "cityUfi": 20088325,
+                    "cityName": "New York",
+                    "countryCode": "us"
+                }
+            ],
+            "destinations": [
+                {
+                    "id": "eyJ1ZmkiOjIwMDE0MjcxfQ==",
+                    "__typename": "AttractionsSearchDestinationSuggestion",
+                    "ufi": 20014271,
+                    "country": "United States",
+                    "cityName": "Manhattan Beach",
+                    "productCount": 905,
+                    "cc1": "us"
+                }
+            ]
+        }
+    }
+}

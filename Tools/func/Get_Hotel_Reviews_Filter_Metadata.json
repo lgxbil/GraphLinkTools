@@ -1,0 +1,1615 @@
+{
+    "shorten": {
+        "api": {
+            "name": "Get_Hotel_Reviews_Filter_Metadata",
+            "endpoint": "/api/v1/hotels/getHotelReviewsFilterMetadata",
+            "func_description": "",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "hotel_id": {
+                        "type": "String",
+                        "description": "hotel_id can be retrieved from api/v1/hotels/searchHotels(Search Hotels) or api/v1/hotels/searchHotelsByCoordinates(Search Hotels By Coordinates\n) endpoint in Hotels collection.",
+                        "example_value": "1377073",
+                        "required": true
+                    },
+                    "languagecode": {
+                        "type": "String",
+                        "description": "To obtain the response data in a specific language, enter the languagecode. languagecode can be retrieved from api/v1/meta/getLanguages(Get Languages\n) endpoint in Meta collection.",
+                        "example_value": "en-us",
+                        "required": false
+                    }
+                },
+                "required": [
+                    "hotel_id"
+                ]
+            }
+        },
+        "static_response": null,
+        "required": {
+            "query": "I'm considering staying at a hotel with ID 1377073. Can you provide me with the available filters for reviews, such as ratings or traveler types?",
+            "params": {
+                "hotel_id": "1377073"
+            },
+            "response": {
+                "filters": [
+                    {
+                        "categories": [
+                            {
+                                "display_value_with_count": "Couple (5813)",
+                                "count": 5813,
+                                "display_value": "Couple",
+                                "id": "couple"
+                            },
+                            {
+                                "count": 4822,
+                                "display_value_with_count": "Family (4822)",
+                                "id": "family_with_children",
+                                "display_value": "Family"
+                            },
+                            {
+                                "count": 1938,
+                                "display_value_with_count": "Group of friends (1938)",
+                                "id": "review_category_group_of_friends",
+                                "display_value": "Group of friends"
+                            }
+                        ],
+                        "type": "radio_button",
+                        "title": "Filter by:",
+                        "default_display_value_with_count": "All reviews (14205)",
+                        "default_display_value": "All reviews",
+                        "id": "filter_customer_type"
+                    },
+                    {
+                        "id": "filter_language",
+                        "default_display_value_with_count": "All languages (14189)",
+                        "default_display_value": "All languages",
+                        "title": "Show reviews in:",
+                        "type": "checkbox",
+                        "categories": [
+                            {
+                                "display_value": "American English",
+                                "id": "xu",
+                                "count": 385,
+                                "display_value_with_count": "American English (385)"
+                            },
+                            {
+                                "display_value": "Deutsch",
+                                "id": "de",
+                                "count": 7974,
+                                "display_value_with_count": "Deutsch (7974)"
+                            },
+                            {
+                                "count": 20,
+                                "display_value_with_count": "Eesti (20)",
+                                "display_value": "Eesti",
+                                "id": "et"
+                            }
+                        ]
+                    },
+                    {
+                        "title": "Filter by:",
+                        "id": "filter_time_of_year",
+                        "type": "checkbox",
+                        "categories": [
+                            {
+                                "count": 0,
+                                "display_value_with_count": "Mar-May",
+                                "display_value": "Mar-May",
+                                "id": "03_06"
+                            },
+                            {
+                                "display_value": "Jun-Aug",
+                                "id": "06_09",
+                                "display_value_with_count": "Jun-Aug",
+                                "count": 0
+                            },
+                            {
+                                "count": 0,
+                                "display_value_with_count": "Sep-Nov",
+                                "display_value": "Sep-Nov",
+                                "id": "09_12"
+                            }
+                        ],
+                        "default_display_value_with_count": "Time of year",
+                        "default_display_value": "Time of year"
+                    }
+                ],
+                "hotel_id": "1377073",
+                "sort": {
+                    "categories": [
+                        {
+                            "id": "sort_most_relevant",
+                            "display_value": "Most relevant"
+                        },
+                        {
+                            "id": "sort_recent_desc",
+                            "display_value": "Newest first"
+                        },
+                        {
+                            "display_value": "Oldest first",
+                            "id": "sort_recent_asc"
+                        }
+                    ],
+                    "id": "user_sort",
+                    "title": "Sort by:"
+                },
+                "total_reviews": 14205
+            }
+        },
+        "optional": {
+            "query": "I'm planning to stay at a hotel with ID 1377073 and would like to see the available filters for reviews, such as ratings or traveler types. Could you also provide this information in English?",
+            "params": {
+                "hotel_id": "1377073",
+                "languagecode": "en-us"
+            },
+            "response": {
+                "sort": {
+                    "id": "user_sort",
+                    "categories": [
+                        {
+                            "id": "sort_most_relevant",
+                            "display_value": "Most relevant"
+                        },
+                        {
+                            "id": "sort_recent_desc",
+                            "display_value": "Newest first"
+                        },
+                        {
+                            "id": "sort_recent_asc",
+                            "display_value": "Oldest first"
+                        }
+                    ],
+                    "title": "Sort by:"
+                },
+                "filters": [
+                    {
+                        "categories": [
+                            {
+                                "display_value_with_count": "Couple (5813)",
+                                "display_value": "Couple",
+                                "id": "couple",
+                                "count": 5813
+                            },
+                            {
+                                "display_value_with_count": "Family (4822)",
+                                "display_value": "Family",
+                                "id": "family_with_children",
+                                "count": 4822
+                            },
+                            {
+                                "display_value_with_count": "Group of friends (1938)",
+                                "display_value": "Group of friends",
+                                "count": 1938,
+                                "id": "review_category_group_of_friends"
+                            }
+                        ],
+                        "title": "Filter by:",
+                        "id": "filter_customer_type",
+                        "default_display_value": "All Reviews",
+                        "default_display_value_with_count": "All Reviews (14205)",
+                        "type": "radio_button"
+                    },
+                    {
+                        "categories": [
+                            {
+                                "display_value_with_count": "American English (385)",
+                                "display_value": "American English",
+                                "count": 385,
+                                "id": "xu"
+                            },
+                            {
+                                "display_value": "Deutsch",
+                                "display_value_with_count": "Deutsch (7974)",
+                                "count": 7974,
+                                "id": "de"
+                            },
+                            {
+                                "display_value": "Eesti",
+                                "display_value_with_count": "Eesti (20)",
+                                "count": 20,
+                                "id": "et"
+                            }
+                        ],
+                        "title": "Show reviews in:",
+                        "id": "filter_language",
+                        "default_display_value": "All languages",
+                        "default_display_value_with_count": "All languages (14189)",
+                        "type": "checkbox"
+                    },
+                    {
+                        "default_display_value_with_count": "Time of year",
+                        "type": "checkbox",
+                        "id": "filter_time_of_year",
+                        "default_display_value": "Time of year",
+                        "categories": [
+                            {
+                                "count": 0,
+                                "id": "03_06",
+                                "display_value_with_count": "Mar–May",
+                                "display_value": "Mar–May"
+                            },
+                            {
+                                "display_value": "Jun–Aug",
+                                "display_value_with_count": "Jun–Aug",
+                                "id": "06_09",
+                                "count": 0
+                            },
+                            {
+                                "id": "09_12",
+                                "count": 0,
+                                "display_value": "Sep–Nov",
+                                "display_value_with_count": "Sep–Nov"
+                            }
+                        ],
+                        "title": "Filter by:"
+                    }
+                ],
+                "total_reviews": 14205,
+                "hotel_id": "1377073"
+            }
+        }
+    },
+    "row": {
+        "required": {
+            "filters": [
+                {
+                    "categories": [
+                        {
+                            "display_value_with_count": "Couple (5813)",
+                            "count": 5813,
+                            "display_value": "Couple",
+                            "id": "couple"
+                        },
+                        {
+                            "count": 4822,
+                            "display_value_with_count": "Family (4822)",
+                            "id": "family_with_children",
+                            "display_value": "Family"
+                        },
+                        {
+                            "count": 1938,
+                            "display_value_with_count": "Group of friends (1938)",
+                            "id": "review_category_group_of_friends",
+                            "display_value": "Group of friends"
+                        },
+                        {
+                            "display_value": "Solo traveller",
+                            "id": "solo_traveller",
+                            "count": 1632,
+                            "display_value_with_count": "Solo traveller (1632)"
+                        }
+                    ],
+                    "type": "radio_button",
+                    "title": "Filter by:",
+                    "default_display_value_with_count": "All reviews (14205)",
+                    "default_display_value": "All reviews",
+                    "id": "filter_customer_type"
+                },
+                {
+                    "id": "filter_language",
+                    "default_display_value_with_count": "All languages (14189)",
+                    "default_display_value": "All languages",
+                    "title": "Show reviews in:",
+                    "type": "checkbox",
+                    "categories": [
+                        {
+                            "display_value": "American English",
+                            "id": "xu",
+                            "count": 385,
+                            "display_value_with_count": "American English (385)"
+                        },
+                        {
+                            "display_value": "Deutsch",
+                            "id": "de",
+                            "count": 7974,
+                            "display_value_with_count": "Deutsch (7974)"
+                        },
+                        {
+                            "count": 20,
+                            "display_value_with_count": "Eesti (20)",
+                            "display_value": "Eesti",
+                            "id": "et"
+                        },
+                        {
+                            "display_value_with_count": "English (1293)",
+                            "count": 1293,
+                            "display_value": "English",
+                            "id": "en"
+                        },
+                        {
+                            "display_value_with_count": "Español (259)",
+                            "count": 259,
+                            "display_value": "Español",
+                            "id": "es"
+                        },
+                        {
+                            "display_value_with_count": "Español en Argentina (11)",
+                            "count": 11,
+                            "display_value": "Español en Argentina",
+                            "id": "xa"
+                        },
+                        {
+                            "count": 36,
+                            "display_value_with_count": "Hrvatski (36)",
+                            "display_value": "Hrvatski",
+                            "id": "hr"
+                        },
+                        {
+                            "display_value": "Italiano",
+                            "id": "it",
+                            "display_value_with_count": "Italiano (215)",
+                            "count": 215
+                        },
+                        {
+                            "count": 49,
+                            "display_value_with_count": "Latviešu (49)",
+                            "display_value": "Latviešu",
+                            "id": "lv"
+                        },
+                        {
+                            "id": "lt",
+                            "display_value": "Lietuvių",
+                            "display_value_with_count": "Lietuvių (52)",
+                            "count": 52
+                        },
+                        {
+                            "display_value": "Magyar",
+                            "id": "hu",
+                            "count": 45,
+                            "display_value_with_count": "Magyar (45)"
+                        },
+                        {
+                            "display_value": "Nederlands",
+                            "id": "nl",
+                            "display_value_with_count": "Nederlands (998)",
+                            "count": 998
+                        },
+                        {
+                            "display_value_with_count": "Norsk (67)",
+                            "count": 67,
+                            "id": "no",
+                            "display_value": "Norsk"
+                        },
+                        {
+                            "display_value_with_count": "Português (30)",
+                            "count": 30,
+                            "id": "pt",
+                            "display_value": "Português"
+                        },
+                        {
+                            "id": "xb",
+                            "display_value": "Português do Brasil",
+                            "display_value_with_count": "Português do Brasil (52)",
+                            "count": 52
+                        },
+                        {
+                            "count": 29,
+                            "display_value_with_count": "Slovenčina (29)",
+                            "id": "sk",
+                            "display_value": "Slovenčina"
+                        },
+                        {
+                            "id": "fi",
+                            "display_value": "Suomi",
+                            "count": 97,
+                            "display_value_with_count": "Suomi (97)"
+                        },
+                        {
+                            "count": 201,
+                            "display_value_with_count": "Svenska (201)",
+                            "id": "sv",
+                            "display_value": "Svenska"
+                        },
+                        {
+                            "count": 4,
+                            "display_value_with_count": "Tiếng Việt (4)",
+                            "display_value": "Tiếng Việt",
+                            "id": "vi"
+                        },
+                        {
+                            "count": 83,
+                            "display_value_with_count": "Türkçe (83)",
+                            "id": "tr",
+                            "display_value": "Türkçe"
+                        },
+                        {
+                            "count": 12,
+                            "display_value_with_count": "català (12)",
+                            "display_value": "català",
+                            "id": "ca"
+                        },
+                        {
+                            "display_value_with_count": "dansk (512)",
+                            "count": 512,
+                            "display_value": "dansk",
+                            "id": "da"
+                        },
+                        {
+                            "display_value_with_count": "français (207)",
+                            "count": 207,
+                            "id": "fr",
+                            "display_value": "français"
+                        },
+                        {
+                            "display_value_with_count": "polski (666)",
+                            "count": 666,
+                            "id": "pl",
+                            "display_value": "polski"
+                        },
+                        {
+                            "count": 43,
+                            "display_value_with_count": "română (43)",
+                            "id": "ro",
+                            "display_value": "română"
+                        },
+                        {
+                            "display_value": "slovenščina",
+                            "id": "sl",
+                            "count": 17,
+                            "display_value_with_count": "slovenščina (17)"
+                        },
+                        {
+                            "display_value_with_count": "srpski (8)",
+                            "count": 8,
+                            "display_value": "srpski",
+                            "id": "sr"
+                        },
+                        {
+                            "id": "is",
+                            "display_value": "íslenska",
+                            "count": 10,
+                            "display_value_with_count": "íslenska (10)"
+                        },
+                        {
+                            "display_value": "čeština",
+                            "id": "cs",
+                            "display_value_with_count": "čeština (203)",
+                            "count": 203
+                        },
+                        {
+                            "id": "el",
+                            "display_value": "Ελληνικά",
+                            "count": 34,
+                            "display_value_with_count": "Ελληνικά (34)"
+                        },
+                        {
+                            "display_value": "Български",
+                            "id": "bg",
+                            "count": 15,
+                            "display_value_with_count": "Български (15)"
+                        },
+                        {
+                            "count": 225,
+                            "display_value_with_count": "Русский (225)",
+                            "id": "ru",
+                            "display_value": "Русский"
+                        },
+                        {
+                            "id": "uk",
+                            "display_value": "Українська",
+                            "display_value_with_count": "Українська (80)",
+                            "count": 80
+                        },
+                        {
+                            "count": 154,
+                            "display_value_with_count": "עברית (154)",
+                            "id": "he",
+                            "display_value": "עברית"
+                        },
+                        {
+                            "id": "ar",
+                            "display_value": "العربية",
+                            "count": 33,
+                            "display_value_with_count": "العربية (33)"
+                        },
+                        {
+                            "display_value_with_count": "ไทย (1)",
+                            "count": 1,
+                            "display_value": "ไทย",
+                            "id": "th"
+                        },
+                        {
+                            "count": 34,
+                            "display_value_with_count": "中文 (34)",
+                            "id": "zh",
+                            "display_value": "中文"
+                        },
+                        {
+                            "id": "ja",
+                            "display_value": "日本語",
+                            "count": 10,
+                            "display_value_with_count": "日本語 (10)"
+                        },
+                        {
+                            "display_value_with_count": "繁體中文 (6)",
+                            "count": 6,
+                            "id": "xt",
+                            "display_value": "繁體中文"
+                        },
+                        {
+                            "id": "ko",
+                            "display_value": "한국어",
+                            "count": 19,
+                            "display_value_with_count": "한국어 (19)"
+                        }
+                    ]
+                },
+                {
+                    "title": "Filter by:",
+                    "id": "filter_time_of_year",
+                    "type": "checkbox",
+                    "categories": [
+                        {
+                            "count": 0,
+                            "display_value_with_count": "Mar-May",
+                            "display_value": "Mar-May",
+                            "id": "03_06"
+                        },
+                        {
+                            "display_value": "Jun-Aug",
+                            "id": "06_09",
+                            "display_value_with_count": "Jun-Aug",
+                            "count": 0
+                        },
+                        {
+                            "count": 0,
+                            "display_value_with_count": "Sep-Nov",
+                            "display_value": "Sep-Nov",
+                            "id": "09_12"
+                        },
+                        {
+                            "id": "12_03",
+                            "display_value": "Dec-Feb",
+                            "display_value_with_count": "Dec-Feb",
+                            "count": 0
+                        }
+                    ],
+                    "default_display_value_with_count": "Time of year",
+                    "default_display_value": "Time of year"
+                },
+                {
+                    "type": "tags",
+                    "default_display_value_with_count": "",
+                    "default_display_value": "",
+                    "categories": [
+                        {
+                            "display_value": "Breakfast",
+                            "id": 245,
+                            "display_value_with_count": "Breakfast",
+                            "count": 2701
+                        },
+                        {
+                            "display_value": "Room",
+                            "id": 270,
+                            "display_value_with_count": "Room",
+                            "count": 2615
+                        },
+                        {
+                            "display_value": "Location",
+                            "id": 249,
+                            "display_value_with_count": "Location",
+                            "count": 2574
+                        },
+                        {
+                            "display_value": "Parking",
+                            "id": 246,
+                            "display_value_with_count": "Parking",
+                            "count": 1198
+                        },
+                        {
+                            "display_value_with_count": "Clean",
+                            "count": 1010,
+                            "display_value": "Clean",
+                            "id": 276
+                        },
+                        {
+                            "count": 970,
+                            "display_value_with_count": "Bathroom",
+                            "display_value": "Bathroom",
+                            "id": 255
+                        },
+                        {
+                            "display_value_with_count": "Bed",
+                            "count": 892,
+                            "id": 254,
+                            "display_value": "Bed"
+                        },
+                        {
+                            "display_value": "View",
+                            "id": 257,
+                            "display_value_with_count": "View",
+                            "count": 740
+                        },
+                        {
+                            "display_value": "Shower",
+                            "id": 263,
+                            "count": 536,
+                            "display_value_with_count": "Shower"
+                        },
+                        {
+                            "display_value_with_count": "Window",
+                            "count": 534,
+                            "display_value": "Window",
+                            "id": 289
+                        },
+                        {
+                            "count": 349,
+                            "display_value_with_count": "Toilet",
+                            "id": 280,
+                            "display_value": "Toilet"
+                        },
+                        {
+                            "count": 274,
+                            "display_value_with_count": "Bar",
+                            "display_value": "Bar",
+                            "id": 271
+                        },
+                        {
+                            "display_value_with_count": "Quiet",
+                            "count": 236,
+                            "display_value": "Quiet",
+                            "id": 258
+                        },
+                        {
+                            "display_value_with_count": "Suite",
+                            "count": 216,
+                            "id": 278,
+                            "display_value": "Suite"
+                        },
+                        {
+                            "display_value_with_count": "Coffee",
+                            "count": 201,
+                            "display_value": "Coffee",
+                            "id": 296
+                        },
+                        {
+                            "display_value_with_count": "Restaurant",
+                            "count": 170,
+                            "display_value": "Restaurant",
+                            "id": 273
+                        },
+                        {
+                            "display_value_with_count": "Car",
+                            "count": 152,
+                            "id": 288,
+                            "display_value": "Car"
+                        },
+                        {
+                            "id": 298,
+                            "display_value": "Checkin",
+                            "count": 152,
+                            "display_value_with_count": "Checkin"
+                        },
+                        {
+                            "display_value": "Lift",
+                            "id": 260,
+                            "display_value_with_count": "Lift",
+                            "count": 151
+                        },
+                        {
+                            "count": 129,
+                            "display_value_with_count": "Loud",
+                            "display_value": "Loud",
+                            "id": 275
+                        },
+                        {
+                            "id": 267,
+                            "display_value": "Bus",
+                            "display_value_with_count": "Bus",
+                            "count": 123
+                        },
+                        {
+                            "count": 96,
+                            "display_value_with_count": "Noise",
+                            "display_value": "Noise",
+                            "id": 252
+                        },
+                        {
+                            "count": 95,
+                            "display_value_with_count": "Hot",
+                            "display_value": "Hot",
+                            "id": 290
+                        },
+                        {
+                            "display_value_with_count": "Dinner",
+                            "count": 93,
+                            "id": 262,
+                            "display_value": "Dinner"
+                        },
+                        {
+                            "count": 91,
+                            "display_value_with_count": "Cold",
+                            "id": 285,
+                            "display_value": "Cold"
+                        },
+                        {
+                            "count": 70,
+                            "display_value_with_count": "Heat",
+                            "id": 291,
+                            "display_value": "Heat"
+                        },
+                        {
+                            "display_value": "Kids",
+                            "id": 274,
+                            "count": 58,
+                            "display_value_with_count": "Kids"
+                        },
+                        {
+                            "display_value": "Towel",
+                            "id": 281,
+                            "display_value_with_count": "Towel",
+                            "count": 58
+                        },
+                        {
+                            "count": 56,
+                            "display_value_with_count": "English",
+                            "display_value": "English",
+                            "id": 264
+                        },
+                        {
+                            "id": 247,
+                            "display_value": "Wifi",
+                            "display_value_with_count": "Wifi",
+                            "count": 50
+                        },
+                        {
+                            "count": 50,
+                            "display_value_with_count": "Family",
+                            "id": 279,
+                            "display_value": "Family"
+                        },
+                        {
+                            "id": 259,
+                            "display_value": "Luggage",
+                            "count": 49,
+                            "display_value_with_count": "Luggage"
+                        },
+                        {
+                            "id": 292,
+                            "display_value": "Fitness",
+                            "display_value_with_count": "Fitness",
+                            "count": 47
+                        },
+                        {
+                            "id": 295,
+                            "display_value": "Bike",
+                            "display_value_with_count": "Bike",
+                            "count": 45
+                        },
+                        {
+                            "count": 31,
+                            "display_value_with_count": "Private",
+                            "display_value": "Private",
+                            "id": 284
+                        },
+                        {
+                            "display_value": "Spa",
+                            "id": 256,
+                            "display_value_with_count": "Spa",
+                            "count": 24
+                        },
+                        {
+                            "display_value": "Baby",
+                            "id": 294,
+                            "display_value_with_count": "Baby",
+                            "count": 24
+                        },
+                        {
+                            "display_value": "Stairs",
+                            "id": 286,
+                            "display_value_with_count": "Stairs",
+                            "count": 21
+                        },
+                        {
+                            "id": 287,
+                            "display_value": "Taxi",
+                            "display_value_with_count": "Taxi",
+                            "count": 21
+                        },
+                        {
+                            "count": 20,
+                            "display_value_with_count": "Airport",
+                            "display_value": "Airport",
+                            "id": 253
+                        },
+                        {
+                            "id": 283,
+                            "display_value": "Smoking",
+                            "count": 17,
+                            "display_value_with_count": "Smoking"
+                        },
+                        {
+                            "display_value": "Locker",
+                            "id": 277,
+                            "display_value_with_count": "Locker",
+                            "count": 15
+                        },
+                        {
+                            "display_value_with_count": "Pool",
+                            "count": 13,
+                            "id": 248,
+                            "display_value": "Pool"
+                        },
+                        {
+                            "id": 269,
+                            "display_value": "Safe",
+                            "count": 13,
+                            "display_value_with_count": "Safe"
+                        },
+                        {
+                            "count": 12,
+                            "display_value_with_count": "Storage",
+                            "display_value": "Storage",
+                            "id": 297
+                        },
+                        {
+                            "display_value": "Kitchen",
+                            "id": 261,
+                            "count": 10,
+                            "display_value_with_count": "Kitchen"
+                        },
+                        {
+                            "display_value": "Tour",
+                            "id": 293,
+                            "count": 9,
+                            "display_value_with_count": "Tour"
+                        },
+                        {
+                            "count": 8,
+                            "display_value_with_count": "Balcony",
+                            "id": 272,
+                            "display_value": "Balcony"
+                        },
+                        {
+                            "display_value_with_count": "Onsen",
+                            "count": 4,
+                            "display_value": "Onsen",
+                            "id": 282
+                        },
+                        {
+                            "display_value_with_count": "Beach",
+                            "count": 2,
+                            "display_value": "Beach",
+                            "id": 251
+                        },
+                        {
+                            "count": 2,
+                            "display_value_with_count": "Laundry",
+                            "id": 265,
+                            "display_value": "Laundry"
+                        },
+                        {
+                            "display_value": "Shuttle",
+                            "id": 250,
+                            "display_value_with_count": "Shuttle",
+                            "count": 1
+                        },
+                        {
+                            "id": 266,
+                            "display_value": "Ski",
+                            "count": 1,
+                            "display_value_with_count": "Ski"
+                        },
+                        {
+                            "count": 1,
+                            "display_value_with_count": "Dog",
+                            "id": 268,
+                            "display_value": "Dog"
+                        }
+                    ],
+                    "title": "Select a topic to search reviews:",
+                    "id": "filter_topic"
+                }
+            ],
+            "hotel_id": "1377073",
+            "sort": {
+                "categories": [
+                    {
+                        "id": "sort_most_relevant",
+                        "display_value": "Most relevant"
+                    },
+                    {
+                        "id": "sort_recent_desc",
+                        "display_value": "Newest first"
+                    },
+                    {
+                        "display_value": "Oldest first",
+                        "id": "sort_recent_asc"
+                    },
+                    {
+                        "id": "sort_score_desc",
+                        "display_value": "Highest scores"
+                    },
+                    {
+                        "display_value": "Lowest scores",
+                        "id": "sort_score_asc"
+                    }
+                ],
+                "id": "user_sort",
+                "title": "Sort by:"
+            },
+            "total_reviews": 14205
+        },
+        "optional": {
+            "sort": {
+                "id": "user_sort",
+                "categories": [
+                    {
+                        "id": "sort_most_relevant",
+                        "display_value": "Most relevant"
+                    },
+                    {
+                        "id": "sort_recent_desc",
+                        "display_value": "Newest first"
+                    },
+                    {
+                        "id": "sort_recent_asc",
+                        "display_value": "Oldest first"
+                    },
+                    {
+                        "display_value": "Highest scores",
+                        "id": "sort_score_desc"
+                    },
+                    {
+                        "id": "sort_score_asc",
+                        "display_value": "Lowest scores"
+                    }
+                ],
+                "title": "Sort by:"
+            },
+            "filters": [
+                {
+                    "categories": [
+                        {
+                            "display_value_with_count": "Couple (5813)",
+                            "display_value": "Couple",
+                            "id": "couple",
+                            "count": 5813
+                        },
+                        {
+                            "display_value_with_count": "Family (4822)",
+                            "display_value": "Family",
+                            "id": "family_with_children",
+                            "count": 4822
+                        },
+                        {
+                            "display_value_with_count": "Group of friends (1938)",
+                            "display_value": "Group of friends",
+                            "count": 1938,
+                            "id": "review_category_group_of_friends"
+                        },
+                        {
+                            "id": "solo_traveller",
+                            "count": 1632,
+                            "display_value": "Solo traveler",
+                            "display_value_with_count": "Solo traveler (1632)"
+                        }
+                    ],
+                    "title": "Filter by:",
+                    "id": "filter_customer_type",
+                    "default_display_value": "All Reviews",
+                    "default_display_value_with_count": "All Reviews (14205)",
+                    "type": "radio_button"
+                },
+                {
+                    "categories": [
+                        {
+                            "display_value_with_count": "American English (385)",
+                            "display_value": "American English",
+                            "count": 385,
+                            "id": "xu"
+                        },
+                        {
+                            "display_value": "Deutsch",
+                            "display_value_with_count": "Deutsch (7974)",
+                            "count": 7974,
+                            "id": "de"
+                        },
+                        {
+                            "display_value": "Eesti",
+                            "display_value_with_count": "Eesti (20)",
+                            "count": 20,
+                            "id": "et"
+                        },
+                        {
+                            "id": "en",
+                            "count": 1293,
+                            "display_value": "English",
+                            "display_value_with_count": "English (1293)"
+                        },
+                        {
+                            "count": 259,
+                            "id": "es",
+                            "display_value_with_count": "Español (259)",
+                            "display_value": "Español"
+                        },
+                        {
+                            "display_value": "Español en Argentina",
+                            "display_value_with_count": "Español en Argentina (11)",
+                            "count": 11,
+                            "id": "xa"
+                        },
+                        {
+                            "id": "hr",
+                            "count": 36,
+                            "display_value": "Hrvatski",
+                            "display_value_with_count": "Hrvatski (36)"
+                        },
+                        {
+                            "id": "it",
+                            "count": 215,
+                            "display_value": "Italiano",
+                            "display_value_with_count": "Italiano (215)"
+                        },
+                        {
+                            "count": 49,
+                            "id": "lv",
+                            "display_value_with_count": "Latviešu (49)",
+                            "display_value": "Latviešu"
+                        },
+                        {
+                            "count": 52,
+                            "id": "lt",
+                            "display_value_with_count": "Lietuvių (52)",
+                            "display_value": "Lietuvių"
+                        },
+                        {
+                            "id": "hu",
+                            "count": 45,
+                            "display_value_with_count": "Magyar (45)",
+                            "display_value": "Magyar"
+                        },
+                        {
+                            "display_value": "Nederlands",
+                            "display_value_with_count": "Nederlands (998)",
+                            "count": 998,
+                            "id": "nl"
+                        },
+                        {
+                            "display_value": "Norsk",
+                            "display_value_with_count": "Norsk (67)",
+                            "id": "no",
+                            "count": 67
+                        },
+                        {
+                            "count": 30,
+                            "id": "pt",
+                            "display_value_with_count": "Português (30)",
+                            "display_value": "Português"
+                        },
+                        {
+                            "count": 52,
+                            "id": "xb",
+                            "display_value_with_count": "Português do Brasil (52)",
+                            "display_value": "Português do Brasil"
+                        },
+                        {
+                            "id": "sk",
+                            "count": 29,
+                            "display_value": "Slovenčina",
+                            "display_value_with_count": "Slovenčina (29)"
+                        },
+                        {
+                            "id": "fi",
+                            "count": 97,
+                            "display_value_with_count": "Suomi (97)",
+                            "display_value": "Suomi"
+                        },
+                        {
+                            "count": 201,
+                            "id": "sv",
+                            "display_value_with_count": "Svenska (201)",
+                            "display_value": "Svenska"
+                        },
+                        {
+                            "display_value": "Tiếng Việt",
+                            "display_value_with_count": "Tiếng Việt (4)",
+                            "count": 4,
+                            "id": "vi"
+                        },
+                        {
+                            "display_value": "Türkçe",
+                            "display_value_with_count": "Türkçe (83)",
+                            "count": 83,
+                            "id": "tr"
+                        },
+                        {
+                            "id": "ca",
+                            "count": 12,
+                            "display_value": "català",
+                            "display_value_with_count": "català (12)"
+                        },
+                        {
+                            "count": 512,
+                            "id": "da",
+                            "display_value": "dansk",
+                            "display_value_with_count": "dansk (512)"
+                        },
+                        {
+                            "count": 207,
+                            "id": "fr",
+                            "display_value": "français",
+                            "display_value_with_count": "français (207)"
+                        },
+                        {
+                            "display_value_with_count": "polski (666)",
+                            "display_value": "polski",
+                            "count": 666,
+                            "id": "pl"
+                        },
+                        {
+                            "id": "ro",
+                            "count": 43,
+                            "display_value": "română",
+                            "display_value_with_count": "română (43)"
+                        },
+                        {
+                            "display_value_with_count": "slovenščina (17)",
+                            "display_value": "slovenščina",
+                            "count": 17,
+                            "id": "sl"
+                        },
+                        {
+                            "display_value_with_count": "srpski (8)",
+                            "display_value": "srpski",
+                            "id": "sr",
+                            "count": 8
+                        },
+                        {
+                            "display_value_with_count": "íslenska (10)",
+                            "display_value": "íslenska",
+                            "count": 10,
+                            "id": "is"
+                        },
+                        {
+                            "id": "cs",
+                            "count": 203,
+                            "display_value_with_count": "čeština (203)",
+                            "display_value": "čeština"
+                        },
+                        {
+                            "display_value_with_count": "Ελληνικά (34)",
+                            "display_value": "Ελληνικά",
+                            "id": "el",
+                            "count": 34
+                        },
+                        {
+                            "display_value": "Български",
+                            "display_value_with_count": "Български (15)",
+                            "count": 15,
+                            "id": "bg"
+                        },
+                        {
+                            "count": 225,
+                            "id": "ru",
+                            "display_value": "Русский",
+                            "display_value_with_count": "Русский (225)"
+                        },
+                        {
+                            "id": "uk",
+                            "count": 80,
+                            "display_value": "Українська",
+                            "display_value_with_count": "Українська (80)"
+                        },
+                        {
+                            "display_value": "עברית",
+                            "display_value_with_count": "עברית (154)",
+                            "id": "he",
+                            "count": 154
+                        },
+                        {
+                            "display_value": "العربية",
+                            "display_value_with_count": "العربية (33)",
+                            "id": "ar",
+                            "count": 33
+                        },
+                        {
+                            "id": "th",
+                            "count": 1,
+                            "display_value": "ไทย",
+                            "display_value_with_count": "ไทย (1)"
+                        },
+                        {
+                            "id": "zh",
+                            "count": 34,
+                            "display_value": "中文",
+                            "display_value_with_count": "中文 (34)"
+                        },
+                        {
+                            "display_value": "日本語",
+                            "display_value_with_count": "日本語 (10)",
+                            "id": "ja",
+                            "count": 10
+                        },
+                        {
+                            "display_value_with_count": "繁體中文 (6)",
+                            "display_value": "繁體中文",
+                            "id": "xt",
+                            "count": 6
+                        },
+                        {
+                            "display_value": "한국어",
+                            "display_value_with_count": "한국어 (19)",
+                            "count": 19,
+                            "id": "ko"
+                        }
+                    ],
+                    "title": "Show reviews in:",
+                    "id": "filter_language",
+                    "default_display_value": "All languages",
+                    "default_display_value_with_count": "All languages (14189)",
+                    "type": "checkbox"
+                },
+                {
+                    "default_display_value_with_count": "Time of year",
+                    "type": "checkbox",
+                    "id": "filter_time_of_year",
+                    "default_display_value": "Time of year",
+                    "categories": [
+                        {
+                            "count": 0,
+                            "id": "03_06",
+                            "display_value_with_count": "Mar–May",
+                            "display_value": "Mar–May"
+                        },
+                        {
+                            "display_value": "Jun–Aug",
+                            "display_value_with_count": "Jun–Aug",
+                            "id": "06_09",
+                            "count": 0
+                        },
+                        {
+                            "id": "09_12",
+                            "count": 0,
+                            "display_value": "Sep–Nov",
+                            "display_value_with_count": "Sep–Nov"
+                        },
+                        {
+                            "display_value": "Dec–Feb",
+                            "display_value_with_count": "Dec–Feb",
+                            "id": "12_03",
+                            "count": 0
+                        }
+                    ],
+                    "title": "Filter by:"
+                },
+                {
+                    "type": "tags",
+                    "default_display_value_with_count": "",
+                    "title": "Select a topic to search reviews:",
+                    "categories": [
+                        {
+                            "count": 2701,
+                            "id": 245,
+                            "display_value_with_count": "Breakfast",
+                            "display_value": "Breakfast"
+                        },
+                        {
+                            "display_value": "Room",
+                            "display_value_with_count": "Room",
+                            "count": 2615,
+                            "id": 270
+                        },
+                        {
+                            "display_value_with_count": "Location",
+                            "display_value": "Location",
+                            "count": 2574,
+                            "id": 249
+                        },
+                        {
+                            "display_value": "Parking",
+                            "display_value_with_count": "Parking",
+                            "count": 1198,
+                            "id": 246
+                        },
+                        {
+                            "display_value_with_count": "Clean",
+                            "display_value": "Clean",
+                            "count": 1010,
+                            "id": 276
+                        },
+                        {
+                            "id": 255,
+                            "count": 970,
+                            "display_value_with_count": "Bathroom",
+                            "display_value": "Bathroom"
+                        },
+                        {
+                            "count": 892,
+                            "id": 254,
+                            "display_value_with_count": "Bed",
+                            "display_value": "Bed"
+                        },
+                        {
+                            "count": 740,
+                            "id": 257,
+                            "display_value_with_count": "View",
+                            "display_value": "View"
+                        },
+                        {
+                            "display_value": "Shower",
+                            "display_value_with_count": "Shower",
+                            "count": 536,
+                            "id": 263
+                        },
+                        {
+                            "display_value_with_count": "Window",
+                            "display_value": "Window",
+                            "count": 534,
+                            "id": 289
+                        },
+                        {
+                            "id": 280,
+                            "count": 349,
+                            "display_value_with_count": "Toilet",
+                            "display_value": "Toilet"
+                        },
+                        {
+                            "count": 274,
+                            "id": 271,
+                            "display_value_with_count": "Bar",
+                            "display_value": "Bar"
+                        },
+                        {
+                            "id": 258,
+                            "count": 236,
+                            "display_value": "Quiet",
+                            "display_value_with_count": "Quiet"
+                        },
+                        {
+                            "display_value_with_count": "Suite",
+                            "display_value": "Suite",
+                            "count": 216,
+                            "id": 278
+                        },
+                        {
+                            "display_value_with_count": "Coffee",
+                            "display_value": "Coffee",
+                            "count": 201,
+                            "id": 296
+                        },
+                        {
+                            "id": 273,
+                            "count": 170,
+                            "display_value_with_count": "Restaurant",
+                            "display_value": "Restaurant"
+                        },
+                        {
+                            "display_value": "Car",
+                            "display_value_with_count": "Car",
+                            "count": 152,
+                            "id": 288
+                        },
+                        {
+                            "display_value": "Check-in",
+                            "display_value_with_count": "Checkin",
+                            "id": 298,
+                            "count": 152
+                        },
+                        {
+                            "id": 260,
+                            "count": 151,
+                            "display_value": "Lift",
+                            "display_value_with_count": "Lift"
+                        },
+                        {
+                            "count": 129,
+                            "id": 275,
+                            "display_value_with_count": "Loud",
+                            "display_value": "Loud"
+                        },
+                        {
+                            "count": 123,
+                            "id": 267,
+                            "display_value": "Bus",
+                            "display_value_with_count": "Bus"
+                        },
+                        {
+                            "id": 252,
+                            "count": 96,
+                            "display_value": "Noise",
+                            "display_value_with_count": "Noise"
+                        },
+                        {
+                            "id": 290,
+                            "count": 95,
+                            "display_value": "Hot",
+                            "display_value_with_count": "Hot"
+                        },
+                        {
+                            "id": 262,
+                            "count": 93,
+                            "display_value_with_count": "Dinner",
+                            "display_value": "Dinner"
+                        },
+                        {
+                            "count": 91,
+                            "id": 285,
+                            "display_value_with_count": "Cold",
+                            "display_value": "Cold"
+                        },
+                        {
+                            "count": 70,
+                            "id": 291,
+                            "display_value": "Heat",
+                            "display_value_with_count": "Heat"
+                        },
+                        {
+                            "count": 58,
+                            "id": 274,
+                            "display_value_with_count": "Kids",
+                            "display_value": "Kids"
+                        },
+                        {
+                            "display_value_with_count": "Towel",
+                            "display_value": "Towel",
+                            "id": 281,
+                            "count": 58
+                        },
+                        {
+                            "display_value_with_count": "English",
+                            "display_value": "English",
+                            "count": 56,
+                            "id": 264
+                        },
+                        {
+                            "count": 50,
+                            "id": 247,
+                            "display_value": "WiFi",
+                            "display_value_with_count": "Wifi"
+                        },
+                        {
+                            "count": 50,
+                            "id": 279,
+                            "display_value": "Family",
+                            "display_value_with_count": "Family"
+                        },
+                        {
+                            "display_value": "Luggage",
+                            "display_value_with_count": "Luggage",
+                            "id": 259,
+                            "count": 49
+                        },
+                        {
+                            "count": 47,
+                            "id": 292,
+                            "display_value_with_count": "Fitness",
+                            "display_value": "Fitness"
+                        },
+                        {
+                            "count": 45,
+                            "id": 295,
+                            "display_value": "Bike",
+                            "display_value_with_count": "Bike"
+                        },
+                        {
+                            "display_value_with_count": "Private",
+                            "display_value": "Private",
+                            "id": 284,
+                            "count": 31
+                        },
+                        {
+                            "count": 24,
+                            "id": 256,
+                            "display_value_with_count": "Spa",
+                            "display_value": "Spa"
+                        },
+                        {
+                            "count": 24,
+                            "id": 294,
+                            "display_value": "Baby",
+                            "display_value_with_count": "Baby"
+                        },
+                        {
+                            "id": 286,
+                            "count": 21,
+                            "display_value": "Stairs",
+                            "display_value_with_count": "Stairs"
+                        },
+                        {
+                            "id": 287,
+                            "count": 21,
+                            "display_value": "Taxi",
+                            "display_value_with_count": "Taxi"
+                        },
+                        {
+                            "count": 20,
+                            "id": 253,
+                            "display_value": "Airport",
+                            "display_value_with_count": "Airport"
+                        },
+                        {
+                            "display_value_with_count": "Smoking",
+                            "display_value": "Smoking",
+                            "id": 283,
+                            "count": 17
+                        },
+                        {
+                            "display_value_with_count": "Locker",
+                            "display_value": "Locker",
+                            "count": 15,
+                            "id": 277
+                        },
+                        {
+                            "display_value": "Swimming pool",
+                            "display_value_with_count": "Pool",
+                            "id": 248,
+                            "count": 13
+                        },
+                        {
+                            "display_value": "Safe",
+                            "display_value_with_count": "Safe",
+                            "id": 269,
+                            "count": 13
+                        },
+                        {
+                            "id": 297,
+                            "count": 12,
+                            "display_value_with_count": "Storage",
+                            "display_value": "Storage"
+                        },
+                        {
+                            "display_value": "Kitchen",
+                            "display_value_with_count": "Kitchen",
+                            "count": 10,
+                            "id": 261
+                        },
+                        {
+                            "display_value": "Tour",
+                            "display_value_with_count": "Tour",
+                            "count": 9,
+                            "id": 293
+                        },
+                        {
+                            "id": 272,
+                            "count": 8,
+                            "display_value_with_count": "Balcony",
+                            "display_value": "Balcony"
+                        },
+                        {
+                            "count": 4,
+                            "id": 282,
+                            "display_value_with_count": "Onsen",
+                            "display_value": "Onsen"
+                        },
+                        {
+                            "id": 251,
+                            "count": 2,
+                            "display_value_with_count": "Beach",
+                            "display_value": "Beach"
+                        },
+                        {
+                            "count": 2,
+                            "id": 265,
+                            "display_value_with_count": "Laundry",
+                            "display_value": "Laundry"
+                        },
+                        {
+                            "display_value": "Shuttle",
+                            "display_value_with_count": "Shuttle",
+                            "count": 1,
+                            "id": 250
+                        },
+                        {
+                            "count": 1,
+                            "id": 266,
+                            "display_value_with_count": "Ski",
+                            "display_value": "Ski"
+                        },
+                        {
+                            "display_value": "Dog",
+                            "display_value_with_count": "Dog",
+                            "count": 1,
+                            "id": 268
+                        }
+                    ],
+                    "default_display_value": "",
+                    "id": "filter_topic"
+                }
+            ],
+            "total_reviews": 14205,
+            "hotel_id": "1377073"
+        }
+    }
+}

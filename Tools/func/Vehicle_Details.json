@@ -1,0 +1,401 @@
+{
+    "shorten": {
+        "api": {
+            "name": "Vehicle_Details",
+            "endpoint": "/api/v1/cars/vehicleDetails",
+            "func_description": "Search the detail information of a car using `vehicle id`. ",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "vehicle_id": {
+                        "type": "String",
+                        "description": "Vehicle ID. vehicle_id can be retrieved from api/v1/cars/searchCarRentals(Search Car Rentals) endpoint in Car Rental collection as vehicle_id inside search_results object.",
+                        "example_value": "373025711",
+                        "required": true
+                    },
+                    "search_key": {
+                        "type": "String",
+                        "description": "search_key can be retrieved from api/v1/cars/searchCarRentals(Search Car Rentals) endpoint in Car Rental collection as search_key.",
+                        "example_value": "eyJkcml2ZXJzQWdlIjozMCwiZHJvcE9mZkRhdGVUaW1lIjoiMjAyMy0xMS0xN1QxMDowMDowMCIsImRyb3BPZmZMb2NhdGlvbiI6IjQwLjYzOTcwMTg0MzI2MTcsLTczLjc3OTE5NzY5Mjg3MTEiLCJkcm9wT2ZmTG9jYXRpb25UeXBlIjoiTEFUTE9ORyIsInBpY2tVcERhdGVUaW1lIjoiMjAyMy0xMS0xNVQxMDowMDowMCIsInBpY2tVcExvY2F0aW9uIjoiNDAuNjM5NzAxODQzMjYxNywtNzMuNzc5MTk3NjkyODcxMSIsInBpY2tVcExvY2F0aW9uVHlwZSI6IkxBVExPTkciLCJyZW50YWxEdXJhdGlvbkluRGF5cyI6Miwic2VydmljZUZlYXR1cmVzIjpbIk5PX09QQVFVRVMiLCJTVVBSRVNTX0ZJWEVEX1BSSUNFX1ZFSElDTEVTIl19",
+                        "required": true
+                    },
+                    "units": {
+                        "type": "Enum",
+                        "description": "The measurement of distance in metric or imperial.",
+                        "example_value": "",
+                        "required": false
+                    },
+                    "currency_code": {
+                        "type": "String",
+                        "description": "The currency code. currency_code can be retrieved from api/v1/meta/getCurrency(Get Currency) endpoint in Hotels collection.",
+                        "example_value": "USD",
+                        "required": false
+                    },
+                    "languagecode": {
+                        "type": "String",
+                        "description": "To obtain the response data in a specific language, enter the languagecode. languagecode can be retrieved from api/v1/meta/getLanguages(Get Languages\n) endpoint in Meta collection.",
+                        "example_value": "en-us",
+                        "required": false
+                    }
+                },
+                "required": [
+                    "vehicle_id",
+                    "search_key"
+                ]
+            }
+        },
+        "static_response": {
+            "function_name": "Vehicle_Details",
+            "arguments": {
+                "vehicle_id": "754067281",
+                "search_key": "eyJkcml2ZXJzQWdlIjozMCwiZHJvcE9mZkRhdGVUaW1lIjoiMjAyNC0xMS0yOFQxNTowMDowMCIsImRyb3BPZmZMb2NhdGlvbiI6Ii0zNy42Njk2MDE0NDA0Mjk3LDE0NC44NDg5OTkwMjM0MzgiLCJkcm9wT2ZmTG9jYXRpb25UeXBlIjoiTEFUTE9ORyIsInBpY2tVcERhdGVUaW1lIjoiMjAyNC0xMS0yNlQxMDowMDowMCIsInBpY2tVcExvY2F0aW9uIjoiLTMzLjkzNDI5OTQ2ODk5NDEsMTUxLjE3MzAwNDE1MDM5MSIsInBpY2tVcExvY2F0aW9uVHlwZSI6IkxBVExPTkciLCJyZW50YWxEdXJhdGlvbkluRGF5cyI6Mywic2VydmljZUZlYXR1cmVzIjpbIk5PX09QQVFVRVMiLCJTVVBSRVNTX0ZJWEVEX1BSSUNFX1ZFSElDTEVTIiwiSU5DTFVERV9QUk9EVUNUX1JFTEFUSU9OU0hJUFMiLCJJTkNMVURFX0VYVFJBU19DT05UQUlOSU5HX0ZFRVMiXX0="
+            },
+            "observation": {
+                "status": true,
+                "message": "Success",
+                "data": {
+                    "whatsIncluded": {
+                        "title": "What's included",
+                        "items": [
+                            {
+                                "icon": "TICK",
+                                "text": "<b>Free cancellation</b> up to 48 hours before pick-up"
+                            },
+                            {
+                                "icon": "TICK",
+                                "text": "Collision Damage Waiver (CDW)"
+                            },
+                            {
+                                "text": "Theft Cover",
+                                "icon": "TICK"
+                            }
+                        ]
+                    },
+                    "depots": {
+                        "pickup": {
+                            "address": "342 King Street, Mascot, Sydney, Australia, NSW 2020",
+                            "country_code": "AU",
+                            "longitude": "151.18515432",
+                            "latitude": "-33.92869096",
+                            "country": "Australia",
+                            "iataCode": "SYD",
+                            "name": "Sydney Kingsford Smith Airport",
+                            "city": "Sydney",
+                            "id": "4702420",
+                            "location_type": "SHUTTLE_BUS",
+                            "location_id": "4702420"
+                        },
+                        "dropoff": {
+                            "country_code": "AU",
+                            "address": "189D South Centre Road, Tullamarine, Melbourne, Australia",
+                            "latitude": "-37.70549318",
+                            "longitude": "144.8576074",
+                            "name": "Melbourne Airport",
+                            "iataCode": "MEL",
+                            "location_type": "SHUTTLE_BUS",
+                            "id": "4745286",
+                            "location_id": "4745286"
+                        }
+                    },
+                    "meta": {
+                        "response_code": 200
+                    },
+                    "metadata": {
+                        "navigation": {
+                            "showExtrasStep": true
+                        }
+                    },
+                    "packages": [
+                        {
+                            "content": {
+                                "price": {
+                                    "label": "Total protection price",
+                                    "priceAnnotation": {
+                                        "text": "Free cancellation"
+                                    },
+                                    "displayPrice": "US$84.59"
+                                },
+                                "cta": {
+                                    "attach": "Read more",
+                                    "remove": "Remove Full Protection"
+                                },
+                                "description": "You could lose your whole deposit if the car is damaged or stolen, but as long as you have Full Protection, Booking.com will refund you!",
+                                "title": "Add insurance...",
+                                "included": "Full Protection included",
+                                "subtitle": "for peace of mind"
+                            },
+                            "id": "RC_FULL_PROTECTION"
+                        }
+                    ],
+                    "supplier": {
+                        "locationType": "Shuttle Bus",
+                        "rating": 7.7
+                    },
+                    "extras": [
+                        {
+                            "id": "14395231126010",
+                            "price": {
+                                "prePayable": false,
+                                "perRental": {
+                                    "display": {
+                                        "currency": "USD",
+                                        "value": 12.81
+                                    },
+                                    "base": {
+                                        "value": 19.5,
+                                        "currency": "AUD"
+                                    }
+                                }
+                            },
+                            "detail": "If you want other people to drive as well",
+                            "maxQuantityAvailable": 3,
+                            "name": "Additional driver",
+                            "type": "ADDITIONAL_DRIVER"
+                        },
+                        {
+                            "type": "BABY_SEAT",
+                            "name": "Baby seat",
+                            "maxQuantityAvailable": 2,
+                            "detail": "For babies: up to 9 kg / 20 lbs (about 1 year old)",
+                            "price": {
+                                "perRental": {
+                                    "display": {
+                                        "currency": "USD",
+                                        "value": 19.71
+                                    },
+                                    "base": {
+                                        "value": 30,
+                                        "currency": "AUD"
+                                    }
+                                },
+                                "prePayable": false
+                            },
+                            "id": "14395231156010"
+                        },
+                        {
+                            "type": "CHILD_BOOSTER_SEAT",
+                            "maxQuantityAvailable": 2,
+                            "name": "Booster seat",
+                            "id": "14395231186010",
+                            "price": {
+                                "prePayable": false,
+                                "perRental": {
+                                    "display": {
+                                        "currency": "USD",
+                                        "value": 19.71
+                                    },
+                                    "base": {
+                                        "value": 30,
+                                        "currency": "AUD"
+                                    }
+                                }
+                            },
+                            "detail": "For bigger children: 18-45 kg / 40-100 lbs (about 4-11 years old)"
+                        }
+                    ],
+                    "content": {
+                        "reviews": {
+                            "supplier": {
+                                "rating": {
+                                    "title": "Good",
+                                    "localisedRating": {
+                                        "rawValue": 7.7,
+                                        "displayValue": "7.7"
+                                    },
+                                    "subtitle": "180 reviews",
+                                    "average": "7.7"
+                                },
+                                "name": "Goldcar"
+                            },
+                            "title": "Reviews"
+                        },
+                        "carCard": {
+                            "badges": [
+                                {
+                                    "type": "CONSTRUCTIVE",
+                                    "variation": "DEFAULT",
+                                    "text": "Free cancellation"
+                                }
+                            ],
+                            "accessibility": {
+                                "supplier_rating": "At this location, our customers have rated Goldcar as 7.7 out of 10, Good.",
+                                "transmission": "Automatic gearbox",
+                                "pick_up_location": "Pick-up information: Shuttle Bus",
+                                "fuel_policy": "Fuel policy is: Like for like"
+                            },
+                            "supplier": {
+                                "name": "Goldcar",
+                                "rating": {
+                                    "localisedRating": {
+                                        "displayValue": "7.7",
+                                        "rawValue": 7.7
+                                    },
+                                    "subtitle": "180 reviews",
+                                    "average": "7.7",
+                                    "title": "Good"
+                                }
+                            }
+                        }
+                    },
+                    "importantInfo": {
+                        "cta": {
+                            "title": "Rental terms",
+                            "text": "More details"
+                        },
+                        "title": "Important information",
+                        "items": [
+                            {
+                                "icon": "CREDIT_CARD",
+                                "text": "<b>Payment card at pick-up:</b> Credit card<br/>The main driver <b>must</b> have a credit card in their own name when picking the car up."
+                            }
+                        ],
+                        "subtitle": "Security deposit, damage excess, what you'll need at pick-up, and more"
+                    },
+                    "links": {
+                        "fullRentalTerms": {
+                            "label": "Rental terms"
+                        }
+                    },
+                    "vehicle": {
+                        "id": "754067281",
+                        "specification": {
+                            "numberOfSeats": "5",
+                            "smallSuitcases": 0,
+                            "fuelPolicy": "Like for like",
+                            "bigSuitcases": 3,
+                            "mileage": "Unlimited",
+                            "numberOfDoors": "4",
+                            "transmission": "Automatic",
+                            "airConditioning": true
+                        },
+                        "rentalDurationInDays": 3,
+                        "carClass": "Intermediate",
+                        "freeCancellation": true,
+                        "label": "Intermediate car with:",
+                        "fees": {
+                            "payableFees": [
+                                {
+                                    "includedInPrice": true,
+                                    "name": "One way fee",
+                                    "unlimited": false,
+                                    "displayPrice": {
+                                        "taxIncluded": false,
+                                        "minimumAmount": 118.23,
+                                        "amount": 118.23,
+                                        "currency": "USD",
+                                        "maximumAmount": 118.23
+                                    },
+                                    "alwaysPayable": true,
+                                    "distanceUnit": "M",
+                                    "price": {
+                                        "maximumAmount": 180,
+                                        "amount": 180,
+                                        "currency": "AUD",
+                                        "minimumAmount": 180,
+                                        "taxIncluded": false
+                                    }
+                                }
+                            ],
+                            "otherFees": [
+                                {
+                                    "price": {
+                                        "maximumAmount": 5500,
+                                        "taxIncluded": true,
+                                        "currency": "AUD",
+                                        "amount": 5500,
+                                        "minimumAmount": 5500
+                                    },
+                                    "distanceUnit": "M",
+                                    "displayPrice": {
+                                        "maximumAmount": 3612.68,
+                                        "amount": 3612.68,
+                                        "currency": "USD",
+                                        "minimumAmount": 3612.68,
+                                        "taxIncluded": true
+                                    },
+                                    "alwaysPayable": true,
+                                    "includedInPrice": false,
+                                    "name": "DAMAGE_EXCESS",
+                                    "unlimited": false
+                                },
+                                {
+                                    "alwaysPayable": true,
+                                    "displayPrice": {
+                                        "minimumAmount": 985.28,
+                                        "amount": 985.28,
+                                        "currency": "USD",
+                                        "taxIncluded": true,
+                                        "maximumAmount": 985.28
+                                    },
+                                    "distanceUnit": "M",
+                                    "price": {
+                                        "currency": "AUD",
+                                        "amount": 1500,
+                                        "minimumAmount": 1500,
+                                        "taxIncluded": true,
+                                        "maximumAmount": 1500
+                                    },
+                                    "unlimited": false,
+                                    "name": "DEPOSIT",
+                                    "includedInPrice": false
+                                },
+                                {
+                                    "includedInPrice": false,
+                                    "name": "MILEAGE",
+                                    "unlimited": true,
+                                    "distanceUnit": "KM",
+                                    "price": {
+                                        "taxIncluded": true,
+                                        "amount": 0
+                                    },
+                                    "displayPrice": {
+                                        "amount": 0,
+                                        "taxIncluded": true
+                                    },
+                                    "alwaysPayable": false
+                                }
+                            ]
+                        },
+                        "price": {
+                            "driveAway": {
+                                "currency": "USD",
+                                "value": 219.6
+                            },
+                            "driveAwayPriceIsApprox": true,
+                            "payWhen": "PAY_NOW",
+                            "base": {
+                                "value": 8554.54,
+                                "currency": "INR"
+                            },
+                            "display": {
+                                "currency": "USD",
+                                "value": 101.37
+                            }
+                        },
+                        "makeAndModel": "MG ZS"
+                    }
+                }
+            }
+        },
+        "required": {
+            "query": "I found a car rental with vehicle ID 373025711 and would like to see more details about it, including pricing and features. Can you help me with that?",
+            "params": null,
+            "response": null
+        },
+        "optional": {
+            "query": "I found a car rental with vehicle ID 373025711 and would like to see more details about it, including pricing and features. The search key is 'eyJkcml2ZXJzQWdlIjozMCwiZHJvcE9mZkRhdGVUaW1lIjoiMjAyMy0xMS0xN1QxMDowMDowMCIsImRyb3BPZmZMb2NhdGlvbiI6IjQwLjYzOTcwMTg0MzI2MTcsLTczLjc3OTE5NzY5Mjg3MTEi'. Could you provide the details in English, with distances in metric units and prices in USD?",
+            "params": {
+                "vehicle_id": "373025711",
+                "search_key": "eyJkcml2ZXJzQWdlIjozMCwiZHJvcE9mZkRhdGVUaW1lIjoiMjAyMy0xMS0xN1QxMDowMDowMCIsImRyb3BPZmZMb2NhdGlvbiI6IjQwLjYzOTcwMTg0MzI2MTcsLTczLjc3OTE5NzY5Mjg3MTEi",
+                "units": "metric",
+                "currency_code": "USD",
+                "languagecode": "en-us"
+            },
+            "response": null
+        }
+    },
+    "row": {
+        "required": null,
+        "optional": null
+    }
+}

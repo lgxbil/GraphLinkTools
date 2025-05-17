@@ -1,0 +1,911 @@
+{
+    "shorten": {
+        "api": {
+            "name": "Get_Hotel_Details",
+            "endpoint": "/api/v1/hotels/getHotelDetails",
+            "func_description": "Retrieve detail information for a specific hotel. ",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "hotel_id": {
+                        "type": "String",
+                        "description": "hotel_id can be retrieved from api/v1/hotels/searchHotels(Search Hotels) or api/v1/hotels/searchHotelsByCoordinates(Search Hotels By Coordinates\n) endpoint in Hotels collection.",
+                        "example_value": "191605",
+                        "required": true
+                    },
+                    "arrival_date": {
+                        "type": "Date (yyyy-mm-dd)",
+                        "description": "The date on which you will arrive or check-in",
+                        "example_value": "",
+                        "required": true
+                    },
+                    "departure_date": {
+                        "type": "Date (yyyy-mm-dd)",
+                        "description": "The date of departure or check-out.",
+                        "example_value": "",
+                        "required": true
+                    },
+                    "adults": {
+                        "type": "Number",
+                        "description": "The number of guests who are 18 years of age or older. The default value is set to 1.",
+                        "example_value": "1",
+                        "required": false
+                    },
+                    "children_age": {
+                        "type": "String",
+                        "description": "The number of children, including infants, who are under 18.\nExample:\nChild 1 Age = 8 months\nChild 2 Age = 1 year\nChild 3 Age = 17 years\nHere is what the request parameter would look like:\nchildren_age: 0,1,17",
+                        "example_value": "1,17",
+                        "required": false
+                    },
+                    "room_qty": {
+                        "type": "Number",
+                        "description": "The number of rooms that are required. The default value is set to 1.",
+                        "example_value": "1",
+                        "required": false
+                    },
+                    "units": {
+                        "type": "Enum",
+                        "description": "The measurement of distance in metric or imperial.",
+                        "example_value": "",
+                        "required": false
+                    },
+                    "temperature_unit": {
+                        "type": "Enum",
+                        "description": "The temperature unit in Fahrenheit or Celsius.\nc = Celsius\nf = Fahrenheit",
+                        "example_value": "",
+                        "required": false
+                    },
+                    "languagecode": {
+                        "type": "String",
+                        "description": "To obtain the response data in a specific language, enter the languagecode. languagecode can be retrieved from api/v1/meta/getLanguages(Get Languages\n) endpoint in Meta collection.",
+                        "example_value": "en-us",
+                        "required": false
+                    },
+                    "currency_code": {
+                        "type": "String",
+                        "description": "The currency code. currency_code can be retrieved from api/v1/meta/getCurrency(Get Currency) endpoint in Hotels collection.",
+                        "example_value": "EUR",
+                        "required": false
+                    }
+                },
+                "required": [
+                    "hotel_id",
+                    "arrival_date",
+                    "departure_date"
+                ]
+            }
+        },
+        "static_response": {
+            "function_name": "Get_Hotel_Details",
+            "arguments": {
+                "hotel_id": "28801"
+            },
+            "observation": {
+                "status": true,
+                "message": "Success",
+                "data": {
+                    "ufi": 20033173,
+                    "hotel_id": 28801,
+                    "hotel_name": "The Palmer House Hilton",
+                    "review_nr": 968,
+                    "arrival_date": "2024-12-01",
+                    "departure_date": "2024-12-10",
+                    "price_transparency_mode": "none",
+                    "accommodation_type_name": "Hotels",
+                    "latitude": 41.880635176044,
+                    "longitude": -87.6269665360451,
+                    "address": "17 East Monroe Street",
+                    "city": "Chicago (Illinois)",
+                    "city_trans": "Chicago",
+                    "city_in_trans": "in Chicago",
+                    "city_name_en": "Chicago",
+                    "district": "Chicago Loop",
+                    "countrycode": "us",
+                    "distance_to_cc": 0.274413266467583,
+                    "default_language": "en-gb",
+                    "country_trans": "United States",
+                    "currency_code": "USD",
+                    "zip": "IL 60603",
+                    "timezone": "America/Chicago",
+                    "rare_find_state": "NOT_RARE",
+                    "soldout": 0,
+                    "available_rooms": 9,
+                    "max_rooms_in_reservation": 9,
+                    "average_room_size_for_ufi_m2": "29.91",
+                    "is_family_friendly": 0,
+                    "is_closed": 0,
+                    "is_crimea": 0,
+                    "is_hotel_ctrip": 0,
+                    "is_price_transparent": 0,
+                    "is_genius_deal": 0,
+                    "is_cash_accepted_check_enabled": 1,
+                    "qualifies_for_no_cc_reservation": 0,
+                    "hotel_include_breakfast": 1,
+                    "opted_out_from_gallery_changes": 1,
+                    "cc1": "us",
+                    "family_facilities": [
+                        "Indoor pool (all year)",
+                        "Indoor pool",
+                        "Family rooms"
+                    ],
+                    "product_price_breakdown": {
+                        "all_inclusive_amount": {
+                            "amount_unrounded": "US$2,771.79",
+                            "value": 2771.79052,
+                            "currency": "USD",
+                            "amount_rounded": "US$2,772"
+                        },
+                        "excluded_amount": {
+                            "currency": "USD",
+                            "amount_rounded": "US$636",
+                            "value": 635.81052,
+                            "amount_unrounded": "US$635.81"
+                        },
+                        "charges_details": {
+                            "mode": "extra_charges",
+                            "amount": {
+                                "currency": "USD",
+                                "value": 636
+                            }
+                        },
+                        "included_taxes_and_charges_amount": {
+                            "amount_unrounded": "US$0",
+                            "currency": "USD",
+                            "amount_rounded": "US$0",
+                            "value": 0
+                        },
+                        "gross_amount_hotel_currency": {
+                            "amount_unrounded": "US$2,135.98",
+                            "value": 2135.98,
+                            "amount_rounded": "US$2,136",
+                            "currency": "USD"
+                        },
+                        "gross_amount": {
+                            "amount_unrounded": "US$2,135.98",
+                            "currency": "USD",
+                            "amount_rounded": "US$2,136",
+                            "value": 2135.98
+                        },
+                        "nr_stays": 9,
+                        "price_display_config": [
+                            {
+                                "key": "use_nightly_prices",
+                                "value": 0
+                            }
+                        ],
+                        "all_inclusive_amount_hotel_currency": {
+                            "currency": "USD",
+                            "amount_rounded": "US$2,772",
+                            "value": 2771.79052,
+                            "amount_unrounded": "US$2,771.79"
+                        },
+                        "items": [
+                            {
+                                "item_amount": {
+                                    "value": 280.95662,
+                                    "amount_rounded": "US$281",
+                                    "currency": "USD",
+                                    "amount_unrounded": "US$280.96"
+                                },
+                                "kind": "charge",
+                                "inclusion_type": "excluded",
+                                "base": {
+                                    "percentage": 11.9,
+                                    "kind": "percentage"
+                                },
+                                "name": "Tax",
+                                "details": "11.90 % Tax"
+                            },
+                            {
+                                "item_amount": {
+                                    "value": 106.2441,
+                                    "amount_rounded": "US$106",
+                                    "currency": "USD",
+                                    "amount_unrounded": "US$106.24"
+                                },
+                                "base": {
+                                    "kind": "percentage",
+                                    "percentage": 4.5
+                                },
+                                "inclusion_type": "excluded",
+                                "kind": "charge",
+                                "name": "City tax",
+                                "details": "4.50 % City tax"
+                            },
+                            {
+                                "name": "Service charge",
+                                "base": {
+                                    "base_amount": 25,
+                                    "kind": "per_night"
+                                },
+                                "inclusion_type": "excluded",
+                                "kind": "charge",
+                                "item_amount": {
+                                    "amount_unrounded": "US$225",
+                                    "value": 225,
+                                    "currency": "USD",
+                                    "amount_rounded": "US$225"
+                                }
+                            }
+                        ],
+                        "net_amount": {
+                            "amount_unrounded": "US$2,135.98",
+                            "value": 2135.98,
+                            "currency": "USD",
+                            "amount_rounded": "US$2,136"
+                        },
+                        "has_long_stays_monthly_rate_price": 0,
+                        "gross_amount_per_night": {
+                            "value": 237.331111111111,
+                            "currency": "USD",
+                            "amount_rounded": "US$237",
+                            "amount_unrounded": "US$237.33"
+                        },
+                        "client_translations": {
+                            "tooltip_total_text": "Total"
+                        },
+                        "has_long_stays_weekly_rate_price": 0
+                    },
+                    "composite_price_breakdown": {
+                        "gross_amount": {
+                            "value": 2135.98,
+                            "amount_rounded": "US$2,136",
+                            "currency": "USD",
+                            "amount_unrounded": "US$2,135.98"
+                        },
+                        "all_inclusive_amount": {
+                            "value": 2771.79052,
+                            "currency": "USD",
+                            "amount_rounded": "US$2,772",
+                            "amount_unrounded": "US$2,771.79"
+                        },
+                        "excluded_amount": {
+                            "amount_unrounded": "US$635.81",
+                            "amount_rounded": "US$636",
+                            "currency": "USD",
+                            "value": 635.81052
+                        },
+                        "charges_details": {
+                            "amount": {
+                                "value": 636,
+                                "currency": "USD"
+                            },
+                            "mode": "extra_charges"
+                        },
+                        "included_taxes_and_charges_amount": {
+                            "value": 0,
+                            "currency": "USD",
+                            "amount_rounded": "US$0",
+                            "amount_unrounded": "US$0"
+                        },
+                        "gross_amount_hotel_currency": {
+                            "value": 2135.98,
+                            "amount_rounded": "US$2,136",
+                            "currency": "USD",
+                            "amount_unrounded": "US$2,135.98"
+                        },
+                        "price_display_config": [
+                            {
+                                "key": "use_nightly_prices",
+                                "value": 0
+                            }
+                        ],
+                        "all_inclusive_amount_hotel_currency": {
+                            "value": 2771.79052,
+                            "amount_rounded": "US$2,772",
+                            "currency": "USD",
+                            "amount_unrounded": "US$2,771.79"
+                        },
+                        "net_amount": {
+                            "amount_unrounded": "US$2,135.98",
+                            "value": 2135.98,
+                            "currency": "USD",
+                            "amount_rounded": "US$2,136"
+                        },
+                        "items": [
+                            {
+                                "details": "11.90 % Tax",
+                                "name": "Tax",
+                                "inclusion_type": "excluded",
+                                "kind": "charge",
+                                "base": {
+                                    "percentage": 11.9,
+                                    "kind": "percentage"
+                                },
+                                "item_amount": {
+                                    "amount_unrounded": "US$280.96",
+                                    "currency": "USD",
+                                    "amount_rounded": "US$281",
+                                    "value": 280.95662
+                                }
+                            },
+                            {
+                                "name": "City tax",
+                                "details": "4.50 % City tax",
+                                "item_amount": {
+                                    "value": 106.2441,
+                                    "amount_rounded": "US$106",
+                                    "currency": "USD",
+                                    "amount_unrounded": "US$106.24"
+                                },
+                                "inclusion_type": "excluded",
+                                "kind": "charge",
+                                "base": {
+                                    "percentage": 4.5,
+                                    "kind": "percentage"
+                                }
+                            },
+                            {
+                                "base": {
+                                    "kind": "per_night",
+                                    "base_amount": 25
+                                },
+                                "kind": "charge",
+                                "inclusion_type": "excluded",
+                                "item_amount": {
+                                    "currency": "USD",
+                                    "amount_rounded": "US$225",
+                                    "value": 225,
+                                    "amount_unrounded": "US$225"
+                                },
+                                "name": "Service charge"
+                            }
+                        ],
+                        "gross_amount_per_night": {
+                            "value": 237.331111111111,
+                            "amount_rounded": "US$237",
+                            "currency": "USD",
+                            "amount_unrounded": "US$237.33"
+                        },
+                        "client_translations": {
+                            "tooltip_total_text": "Total"
+                        },
+                        "has_long_stays_weekly_rate_price": 0,
+                        "has_long_stays_monthly_rate_price": 0
+                    },
+                    "property_highlight_strip": [
+                        {
+                            "icon_list": [
+                                {
+                                    "icon": "iconset/parking_sign",
+                                    "size": 1
+                                }
+                            ],
+                            "name": "Parking"
+                        },
+                        {
+                            "name": "Pets allowed",
+                            "icon_list": [
+                                {
+                                    "icon": "iconset/pawprint",
+                                    "size": 1
+                                }
+                            ]
+                        },
+                        {
+                            "icon_list": [
+                                {
+                                    "icon": "iconset/pool",
+                                    "size": 1
+                                }
+                            ],
+                            "name": "Indoor pool"
+                        }
+                    ],
+                    "facilities_block": {
+                        "facilities": [
+                            {
+                                "name": "1 swimming pool",
+                                "icon": "pool"
+                            },
+                            {
+                                "name": "Non-smoking rooms",
+                                "icon": "nosmoking"
+                            },
+                            {
+                                "name": "Fitness centre",
+                                "icon": "fitness"
+                            }
+                        ],
+                        "name": "Most popular facilities",
+                        "type": "popular"
+                    },
+                    "top_ufi_benefits": [
+                        {
+                            "translated_name": "Parking",
+                            "icon": "parking_sign"
+                        },
+                        {
+                            "translated_name": "WiFi",
+                            "icon": "wifi"
+                        },
+                        {
+                            "icon": "pool",
+                            "translated_name": "Indoor pool"
+                        }
+                    ],
+                    "languages_spoken": {
+                        "languagecode": [
+                            "zh-cn",
+                            "en-gb"
+                        ]
+                    },
+                    "spoken_languages": [
+                        "zh-cn",
+                        "en-gb"
+                    ],
+                    "breakfast_review_score": {
+                        "rating": 6.1,
+                        "review_number": 21,
+                        "review_score": 6.1,
+                        "review_score_word": "Pleasant",
+                        "review_count": 21
+                    },
+                    "wifi_review_score": {
+                        "rating": 6.7
+                    },
+                    "min_room_distribution": {
+                        "adults": 1
+                    },
+                    "aggregated_data": {
+                        "common_kitchen_fac": [
+                            {
+                                "name": "Refrigerator",
+                                "id": 22
+                            }
+                        ],
+                        "has_refundable": 1,
+                        "has_seating": 1,
+                        "has_nonrefundable": 0,
+                        "has_kitchen": 0
+                    },
+                    "free_facilities_cancel_breakfast": [
+                        {
+                            "facility_id": 105
+                        }
+                    ],
+                    "room_recommendation": [
+                        {
+                            "extra_beds_for_adults_price_in_hotel_currency": 0,
+                            "adults": 1,
+                            "number_of_extra_beds_and_babycots_total": 0,
+                            "extra_beds_for_adults_price": 0,
+                            "children": 0,
+                            "number_of_extra_beds_for_children": 0,
+                            "extra_beds_for_children_price_in_hotel_currency": 0,
+                            "total_extra_bed_price": 0,
+                            "number_of_extra_beds_for_adults": 0,
+                            "block_id": "2880123_246058004_2_2_0",
+                            "number_of_extra_babycots": 0,
+                            "extra_babycots_price": 0,
+                            "total_extra_bed_price_in_hotel_currency": 0,
+                            "extra_babycots_price_in_hotel_currency": 0,
+                            "babies": 0,
+                            "extra_beds_for_children_price": 0
+                        }
+                    ],
+                    "districts": [
+                        1043,
+                        2614,
+                        4409
+                    ],
+                    "rooms": {
+                        "2880123": {
+                            "private_bathroom_highlight": {
+                                "has_highlight": 0
+                            },
+                            "facilities": [
+                                {
+                                    "id": 74,
+                                    "name": "Laptop safe",
+                                    "alt_facilitytype_id": 1,
+                                    "facilitytype_id": 6,
+                                    "alt_facilitytype_name": "General"
+                                },
+                                {
+                                    "facilitytype_id": 5,
+                                    "id": 19,
+                                    "name": "Bathrobe",
+                                    "alt_facilitytype_id": 5,
+                                    "alt_facilitytype_name": "Bathroom"
+                                },
+                                {
+                                    "alt_facilitytype_name": "Media & Technology",
+                                    "facilitytype_id": 6,
+                                    "alt_facilitytype_id": 6,
+                                    "id": 8,
+                                    "name": "TV"
+                                }
+                            ],
+                            "bed_configurations": [
+                                {
+                                    "bed_types": [
+                                        {
+                                            "count": 1,
+                                            "name_with_count": "1 double bed",
+                                            "description": "131-150 cm wide",
+                                            "description_imperial": "52-59 inches wide",
+                                            "bed_type": 2
+                                        }
+                                    ]
+                                }
+                            ],
+                            "photos_may_sorted": 1,
+                            "description": "This room a private bathroom with a hairdryer and upscale bath amenities.",
+                            "highlights": [
+                                {
+                                    "translated_name": "Balcony",
+                                    "icon": "checkmark",
+                                    "id": 17
+                                },
+                                {
+                                    "icon": "snowflake",
+                                    "id": 11,
+                                    "translated_name": "Air conditioning"
+                                },
+                                {
+                                    "translated_name": "Flat-screen TV",
+                                    "icon": "screen",
+                                    "id": 75
+                                }
+                            ],
+                            "private_bathroom_count": 0,
+                            "children_and_beds_text": {
+                                "children_at_the_property": [
+                                    {
+                                        "text": "Children of any age are welcome.",
+                                        "highlight": 0
+                                    },
+                                    {
+                                        "text": "Children 18 years and above will be charged as adults at this property.",
+                                        "highlight": 0
+                                    },
+                                    {
+                                        "text": "To see correct prices and occupancy information, please add the number of children in your group and their ages to your search.",
+                                        "highlight": 1
+                                    }
+                                ],
+                                "allow_children": 1,
+                                "age_intervals": [
+                                    {
+                                        "crib": {
+                                            "price_type_n": 0,
+                                            "price_mode": "per_night",
+                                            "price": 0,
+                                            "price_type": "free",
+                                            "id": 39715246,
+                                            "price_mode_n": 0
+                                        },
+                                        "max_age": 2,
+                                        "min_age": 0,
+                                        "types_by_price": [
+                                            [
+                                                "crib"
+                                            ]
+                                        ],
+                                        "group_by_price": {
+                                            "free,per_night,0": [
+                                                "crib"
+                                            ]
+                                        }
+                                    }
+                                ],
+                                "cribs_and_extra_beds": [
+                                    {
+                                        "highlight": 0,
+                                        "text": "Supplements are not calculated automatically in the total costs and will have to be paid for separately during your stay."
+                                    },
+                                    {
+                                        "text": "The maximum number of cots, extra beds and children allowed in existing beds may vary depending on the option you book.",
+                                        "highlight": 0
+                                    },
+                                    {
+                                        "text": "All cots and extra beds are subject to availability.",
+                                        "highlight": 0
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    "block": [
+                        {
+                            "block_text": {
+                                "policies": [
+                                    {
+                                        "content": "You may cancel free of charge until 2 days before arrival. If you cancel in the 2 days before arrival, the cancellation fee will be the cost of the first night. If you don't show up, the no-show fee will be the same as the cancellation fee.",
+                                        "class": "POLICY_CANCELLATION"
+                                    },
+                                    {
+                                        "content": "No prepayment is needed.",
+                                        "class": "POLICY_PREPAY"
+                                    },
+                                    {
+                                        "content": "Enjoy a convenient breakfast at the property for US$34 per person per night.",
+                                        "class": "POLICY_HOTEL_MEALPLAN",
+                                        "mealplan_vector": "2"
+                                    }
+                                ]
+                            },
+                            "package_id": 0,
+                            "refundable": 1,
+                            "room_surface_in_feet2": 215.278208,
+                            "babycots_available": 0,
+                            "number_of_bedrooms": 0,
+                            "room_name": "Double Room",
+                            "name": "Double Room - Free cancellation",
+                            "room_surface_in_m2": 20,
+                            "is_domestic_rate": 0,
+                            "smoking": 0,
+                            "deposit_required": 0,
+                            "is_last_minute_deal": 0,
+                            "is_vp2_enrolled": 1,
+                            "refundable_until": "2024-11-28 23:59:59 -0600",
+                            "is_secret_deal": 0,
+                            "paymentterms": {
+                                "cancellation": {
+                                    "info": {
+                                        "timezone_offset": "-21600",
+                                        "date_raw": "2024-11-29 00:00:00",
+                                        "time_before_midnight": "23:59",
+                                        "date": "29 November 2024",
+                                        "refundable_date_midnight": "2024-11-28T23:59:59-06:00",
+                                        "date_before_raw": "2024-11-28",
+                                        "date_before": "28 November 2024",
+                                        "is_midnight": 1,
+                                        "time": "00:00",
+                                        "refundable_date": "2024-11-29T00:00:00-06:00",
+                                        "timezone": "CST",
+                                        "refundable": 1
+                                    },
+                                    "non_refundable_anymore": 0,
+                                    "type_translation": "Free cancellation",
+                                    "bucket": "SMP_FLEX",
+                                    "type": "free_cancellation",
+                                    "description": "You may cancel free of charge until 2 days before arrival. If you cancel in the 2 days before arrival, the cancellation fee will be the cost of the first night. If you don't show up, the no-show fee will be the same as the cancellation fee.",
+                                    "timeline": {
+                                        "stages": [
+                                            {
+                                                "fee_rounded": 0,
+                                                "date_until": "2024-11-28 23:59:59 -0600",
+                                                "limit_from": "22 October 2024 09:10",
+                                                "stage_fee_pretty": "US$ 0",
+                                                "current_stage": 1,
+                                                "limit_from_raw": "2024-10-22 09:10:10",
+                                                "is_effective": 1,
+                                                "b_number": 0,
+                                                "u_fee_remaining_pretty": "US$ 2135",
+                                                "limit_until_raw": "2024-11-28 23:59:59",
+                                                "stage_fee": 0,
+                                                "limit_until_date": "28 November 2024",
+                                                "stage_translation": "Free to cancel",
+                                                "limit_from_time": "09:10",
+                                                "u_stage_fee": "0.00",
+                                                "u_fee_pretty": "US$ 0",
+                                                "limit_from_date": "22 October 2024",
+                                                "text_refundable": "You'll get a full refund if you cancel before 23:59 on 28 November 2024.",
+                                                "u_fee_remaining": "2135.98",
+                                                "fee": 0,
+                                                "limit_until_time": "23:59",
+                                                "limit_timezone": "Chicago",
+                                                "fee_remaining_pretty": "US$ 2135",
+                                                "limit_until": "28 November 2024 23:59",
+                                                "fee_remaining": 2135.98,
+                                                "effective_number": 0,
+                                                "b_state": "FREE",
+                                                "is_free": 1,
+                                                "u_fee": "0.00",
+                                                "fee_pretty": "US$ 0",
+                                                "text": "Free cancellation until 23:59 on 28 Nov",
+                                                "u_stage_fee_pretty": "US$ 0"
+                                            },
+                                            {
+                                                "u_fee_remaining_pretty": "US$ 1898",
+                                                "limit_until_raw": "2024-11-29 00:00:00",
+                                                "limit_until_date": "29 November 2024",
+                                                "stage_fee": 237.331111111111,
+                                                "fee_rounded": 237,
+                                                "limit_from": "29 November 2024 00:00",
+                                                "stage_fee_pretty": "US$ 237",
+                                                "amount": 237.33,
+                                                "current_stage": 0,
+                                                "amount_pretty": "US$ 237",
+                                                "limit_from_raw": "2024-11-29 00:00:00",
+                                                "is_effective": 1,
+                                                "b_number": 1,
+                                                "limit_until": "29 November 2024 00:00",
+                                                "fee_remaining": 1898.64888888889,
+                                                "date_from": "2024-11-29 00:00:00 -0600",
+                                                "effective_number": 1,
+                                                "b_state": "PAID",
+                                                "u_fee": "237.33",
+                                                "is_free": 0,
+                                                "fee_pretty": "US$ 237",
+                                                "u_stage_fee_pretty": "US$ 237",
+                                                "text": "From 00:00 on 29 Nov",
+                                                "limit_from_time": "00:00",
+                                                "stage_translation": "Partial refund if you cancel",
+                                                "u_fee_pretty": "US$ 237",
+                                                "u_stage_fee": "237.33",
+                                                "text_refundable": "If you cancel from 29 November 2024, you'll get a US$ 1898 refund.",
+                                                "limit_from_date": "29 November 2024",
+                                                "u_fee_remaining": "1898.65",
+                                                "fee": 237.331111111111,
+                                                "limit_until_time": "00:00",
+                                                "limit_timezone": "Chicago",
+                                                "fee_remaining_pretty": "US$ 1898"
+                                            }
+                                        ],
+                                        "u_currency_code": "USD",
+                                        "nr_stages": 2,
+                                        "policygroup_instance_id": "34/152/-",
+                                        "currency_code": "USD"
+                                    },
+                                    "guaranteed_non_refundable": 0
+                                },
+                                "prepayment": {
+                                    "type_extended": "non_refundable_prepayment",
+                                    "type_translation": "No payment needed today",
+                                    "info": {
+                                        "prepayment_at_booktime": 0,
+                                        "refundable": "anytime"
+                                    },
+                                    "extended_type_translation": "No payment needed today",
+                                    "type": "no_prepayment",
+                                    "timeline": {
+                                        "policygroup_instance_id": "34/152/-",
+                                        "currency_code": "USD",
+                                        "u_currency_code": "USD",
+                                        "nr_stages": 2,
+                                        "stages": [
+                                            {
+                                                "fee_rounded": 0,
+                                                "limit_from": "22 October 2024 09:10",
+                                                "stage_fee_pretty": "US$ 0",
+                                                "current_stage": 1,
+                                                "amount": "0.00",
+                                                "is_effective": 1,
+                                                "amount_pretty": "US$ 0",
+                                                "limit_from_raw": "2024-10-22 09:10:10",
+                                                "b_number": 0,
+                                                "u_fee_remaining_pretty": "US$ 2135",
+                                                "limit_until_raw": "2024-12-01 23:59:59",
+                                                "stage_fee": 0,
+                                                "limit_until_date": "1 December 2024",
+                                                "limit_from_time": "09:10",
+                                                "u_stage_fee": "0.00",
+                                                "u_fee_pretty": "US$ 0",
+                                                "limit_from_date": "22 October 2024",
+                                                "u_fee_remaining": "2135.98",
+                                                "fee": 0,
+                                                "limit_until_time": "23:59",
+                                                "fee_remaining_pretty": "US$ 2135",
+                                                "limit_timezone": "Chicago",
+                                                "limit_until": "1 December 2024 23:59",
+                                                "fee_remaining": 2135.98,
+                                                "effective_number": 0,
+                                                "b_state": "FREE",
+                                                "is_free": 1,
+                                                "u_fee": "0.00",
+                                                "fee_pretty": "US$ 0",
+                                                "u_stage_fee_pretty": "US$ 0",
+                                                "text": "Before you stay you'll pay"
+                                            },
+                                            {
+                                                "amount_pretty": "US$ 2135",
+                                                "text": "At the property you'll pay",
+                                                "after_checkin": 1,
+                                                "amount": "2135.98",
+                                                "is_free": 0
+                                            }
+                                        ]
+                                    },
+                                    "description": "You'll pay during your stay.",
+                                    "simple_translation": "No prepayment"
+                                }
+                            },
+                            "block_id": "2880123_246058004_2_2_0",
+                            "half_board": 0,
+                            "nr_adults": 2,
+                            "mealplan": "Enjoy a convenient breakfast at the property for US$34 per person per night.",
+                            "room_count": 18,
+                            "room_id": 2880123,
+                            "extrabed_available": 0,
+                            "nr_children": 0,
+                            "is_flash_deal": 0,
+                            "max_occupancy": "2",
+                            "genius_discount_percentage": 0,
+                            "roomtype_id": 9,
+                            "number_of_bathrooms": 0,
+                            "full_board": 0,
+                            "breakfast_included": 0,
+                            "max_children_free": 1,
+                            "all_inclusive": 0,
+                            "deals": {
+                                "deal_attributes": {
+                                    "has_secret_channel_option": 0
+                                }
+                            },
+                            "must_reserve_free_parking": 0,
+                            "can_reserve_free_parking": 0,
+                            "name_without_policy": "Double Room",
+                            "pod_ios_migrate_policies_to_smp_fullon": 0,
+                            "max_children_free_age": 12,
+                            "is_smart_deal": 0,
+                            "is_block_fit": 1
+                        }
+                    ],
+                    "rawData": {
+                        "blockIds": [
+                            "2880105_246058004_2_2_0"
+                        ],
+                        "ufi": 20033173,
+                        "checkout": {
+                            "untilTime": "11:00",
+                            "fromTime": "00:00"
+                        },
+                        "qualityClass": 0,
+                        "propertyClass": 4,
+                        "priceBreakdown": {
+                            "grossPrice": {
+                                "currency": "USD",
+                                "amountRounded": "US$592",
+                                "value": 591.696
+                            },
+                            "chargesInfo": "Includes taxes and charges"
+                        },
+                        "longitude": -87.6269665360451,
+                        "wishlistName": "Chicago",
+                        "reviewScoreWord": "Good",
+                        "optOutFromGalleryChanges": 1,
+                        "countryCode": "us",
+                        "accuratePropertyClass": 4,
+                        "position": 0,
+                        "currency": "USD",
+                        "name": "The Palmer House Hilton",
+                        "isPreferred": true,
+                        "rankingPosition": 0,
+                        "isFirstPage": true,
+                        "mainPhotoId": 487493046,
+                        "reviewCount": 967,
+                        "isHighlightedHotel": true,
+                        "checkoutDate": "2024-10-24",
+                        "latitude": 41.880635176044,
+                        "checkinDate": "2024-10-23",
+                        "id": 28801,
+                        "checkin": {
+                            "fromTime": "15:00",
+                            "untilTime": "23:00"
+                        },
+                        "reviewScore": 7.5
+                    }
+                }
+            }
+        },
+        "required": {
+            "query": "I'm planning a trip and would like to check the details for hotel ID 123456. I'll be checking in on 2025-05-20 and checking out on 2025-05-25. Can you provide me with the hotel's information, including room availability and pricing?",
+            "params": {
+                "hotel_id": "123456",
+                "arrival_date": "2025-05-20",
+                "departure_date": "2025-05-25"
+            },
+            "response": null
+        },
+        "optional": {
+            "query": "I'm planning a trip with my family and would like to check the details for hotel ID 123456. We'll be checking in on May 20, 2025, and checking out on May 25, 2025. There will be two adults and one child aged 5 years old, and we need one room. Could you provide the hotel's information, including room availability and pricing, with the temperature displayed in Fahrenheit and the content in Spanish?",
+            "params": {
+                "hotel_id": "123456",
+                "arrival_date": "2025-05-20",
+                "departure_date": "2025-05-25",
+                "adults": 2,
+                "children_age": "5",
+                "room_qty": 1,
+                "temperature_unit": "Fahrenheit"
+            },
+            "response": null
+        }
+    },
+    "row": {
+        "required": null,
+        "optional": null
+    }
+}

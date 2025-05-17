@@ -1,0 +1,124 @@
+{
+    "shorten": {
+        "api": {
+            "name": "Get_Description_And_Info",
+            "endpoint": "/api/v1/hotels/getDescriptionAndInfo",
+            "func_description": "Retrieve the detailed description and information for a specific hotel. ",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "hotel_id": {
+                        "type": "String",
+                        "description": "hotel_id can be retrieved from api/v1/hotels/searchHotels(Search Hotels) or api/v1/hotels/searchHotelsByCoordinates(Search Hotels By Coordinates\n) endpoint in Hotels collection.",
+                        "example_value": "5955189",
+                        "required": true
+                    },
+                    "languagecode": {
+                        "type": "String",
+                        "description": "To obtain the response data in a specific language, enter the languagecode. languagecode can be retrieved from api/v1/meta/getLanguages(Get Languages\n) endpoint in Meta collection.",
+                        "example_value": "en-us",
+                        "required": false
+                    }
+                },
+                "required": [
+                    "hotel_id"
+                ]
+            }
+        },
+        "static_response": {
+            "function_name": "Get_Description_And_Info",
+            "arguments": {
+                "hotel_id": "3525555"
+            },
+            "observation": {
+                "status": true,
+                "message": "Success",
+                "data": [
+                    {
+                        "languagecode": "zh",
+                        "description": "A damage deposit of CAD 100 is required on arrival. This will be collected by credit card. You should be reimbursed within 7 days of check-out. Your deposit will be refunded in full via credit card, subject to an inspection of the property.",
+                        "descriptiontype_id": 7,
+                        "hotel_id": "3525555"
+                    },
+                    {
+                        "hotel_id": "3525555",
+                        "descriptiontype_id": 6,
+                        "description": "地处温哥华中心位置.\nEXchange Hotel Vancouver酒店距离温哥华海滨中心商场（Waterfront Centre Mall Vancouver）和海港中心（Harbour Centre）的温哥华观景台（Vancouver Lookout）有不到200米，提供带空调的客房以及免费Wi-Fi。\n\nHydra Estiatorio Mediterranean & Bar地中海酒吧是一家希腊海鲜餐厅，拥有40英尺长的迷人鸡尾酒吧。Hydra餐厅将希腊历史悠久的食材与传统烹饪风格相结合，专注于优质的地中海菜肴。这个玻璃封闭空间的时尚氛围非常适合客人在白天和晚上放松身心，并提供宽敞的座位选择。餐厅可举办任何规模的活动。\n\n酒店的客房配有平板电视。\n\n前台的工作人员可随时为客人提供服务。\n\nEXchange Hotel Vancouver酒店距离温哥华会议中心（Vancouver Convention Centre）有300米，距离Olympic Cauldron有4分钟的步行路程，距离温哥华国际机场（Vancouver International Airport）11公里。",
+                        "languagecode": "zh"
+                    }
+                ]
+            }
+        },
+        "required": {
+            "query": "I'm interested in learning more about the hotel with ID 5955189. Can you provide me with its detailed description and general information?",
+            "params": {
+                "hotel_id": "5955189"
+            },
+            "response": [
+                {
+                    "descriptiontype_id": 6,
+                    "hotel_id": "5955189",
+                    "languagecode": "en",
+                    "description": "Situated within 3.7 km of Powai Lake and 4.3 km of Indian Institute of Technology, Bombay, FabHotel Elvis Inn - Nr Mumbai International Airport features rooms with air conditioning and a private bathroom in Mumbai. This 3-star hotel offers room service, a 24-hour front desk and free WiFi. The property is non-smoking and is located 4.4 km from Phoenix Market City Mall.\n\nAll rooms at the hotel are fitted with a seating area, a flat-screen TV with cable channels and a private bathroom with free toiletries and a shower. Guest rooms have a wardrobe.\n\nGuests at FabHotel Elvis Inn - Nr Mumbai International Airport can enjoy a continental breakfast.\n\nBombay Exhibition Centre is 8.1 km from the accommodation, while ISKCON is 8.6 km from the property. Chhatrapati Shivaji International Mumbai Airport is 3 km away."
+                },
+                {
+                    "hotel_id": "5955189",
+                    "languagecode": "en",
+                    "description": "Couples are welcome here. Guests on Local ID are welcome here. Foreign guests not allowed in this property.\nPlease note due to local licensing guidelines, the property is able to accept Indian nationals only. The property apologises for any inconvenience caused.",
+                    "descriptiontype_id": 7
+                }
+            ]
+        },
+        "optional": {
+            "query": "I'm planning to stay at the hotel with ID 5955189 and would like to know more about its amenities, policies, and general information. Could you provide the details in English?",
+            "params": {
+                "hotel_id": "5955189",
+                "languagecode": "en-us"
+            },
+            "response": [
+                {
+                    "descriptiontype_id": 7,
+                    "languagecode": "xu",
+                    "description": "Couples are welcome here. Guests on Local ID are welcome here. Foreign guests not allowed in this property.\nPlease note due to local licensing guidelines, the property is able to accept Indian nationals only. The property apologizes for any inconvenience caused.",
+                    "hotel_id": "5955189"
+                },
+                {
+                    "hotel_id": "5955189",
+                    "descriptiontype_id": 6,
+                    "languagecode": "xu",
+                    "description": "Ideally set in the Powai district of Mumbai, FabHotel Elvis Inn - Nr Mumbai International Airport is located 2.3 miles from Powai Lake, 2.7 miles from Indian Institute of Technology, Bombay and 2.8 miles from Phoenix Market City Mall. This 3-star hotel offers room service, a 24-hour front desk and free WiFi. The hotel has family rooms.\n\nAt the hotel, the rooms include a closet. Complete with a private bathroom equipped with a shower and free toiletries, all rooms at FabHotel Elvis Inn - Nr Mumbai International Airport have a flat-screen TV and air conditioning, and selected rooms also feature a seating area.\n\nGuests at the accommodation can enjoy a continental breakfast.\n\nBombay Exhibition Centre is 5 miles from FabHotel Elvis Inn - Nr Mumbai International Airport, while ISKCON is 5.3 miles from the property. Chhatrapati Shivaji International Mumbai Airport is 1.9 miles away."
+                }
+            ]
+        }
+    },
+    "row": {
+        "required": [
+            {
+                "descriptiontype_id": 6,
+                "hotel_id": "5955189",
+                "languagecode": "en",
+                "description": "Situated within 3.7 km of Powai Lake and 4.3 km of Indian Institute of Technology, Bombay, FabHotel Elvis Inn - Nr Mumbai International Airport features rooms with air conditioning and a private bathroom in Mumbai. This 3-star hotel offers room service, a 24-hour front desk and free WiFi. The property is non-smoking and is located 4.4 km from Phoenix Market City Mall.\n\nAll rooms at the hotel are fitted with a seating area, a flat-screen TV with cable channels and a private bathroom with free toiletries and a shower. Guest rooms have a wardrobe.\n\nGuests at FabHotel Elvis Inn - Nr Mumbai International Airport can enjoy a continental breakfast.\n\nBombay Exhibition Centre is 8.1 km from the accommodation, while ISKCON is 8.6 km from the property. Chhatrapati Shivaji International Mumbai Airport is 3 km away."
+            },
+            {
+                "hotel_id": "5955189",
+                "languagecode": "en",
+                "description": "Couples are welcome here. Guests on Local ID are welcome here. Foreign guests not allowed in this property.\nPlease note due to local licensing guidelines, the property is able to accept Indian nationals only. The property apologises for any inconvenience caused.",
+                "descriptiontype_id": 7
+            }
+        ],
+        "optional": [
+            {
+                "descriptiontype_id": 7,
+                "languagecode": "xu",
+                "description": "Couples are welcome here. Guests on Local ID are welcome here. Foreign guests not allowed in this property.\nPlease note due to local licensing guidelines, the property is able to accept Indian nationals only. The property apologizes for any inconvenience caused.",
+                "hotel_id": "5955189"
+            },
+            {
+                "hotel_id": "5955189",
+                "descriptiontype_id": 6,
+                "languagecode": "xu",
+                "description": "Ideally set in the Powai district of Mumbai, FabHotel Elvis Inn - Nr Mumbai International Airport is located 2.3 miles from Powai Lake, 2.7 miles from Indian Institute of Technology, Bombay and 2.8 miles from Phoenix Market City Mall. This 3-star hotel offers room service, a 24-hour front desk and free WiFi. The hotel has family rooms.\n\nAt the hotel, the rooms include a closet. Complete with a private bathroom equipped with a shower and free toiletries, all rooms at FabHotel Elvis Inn - Nr Mumbai International Airport have a flat-screen TV and air conditioning, and selected rooms also feature a seating area.\n\nGuests at the accommodation can enjoy a continental breakfast.\n\nBombay Exhibition Centre is 5 miles from FabHotel Elvis Inn - Nr Mumbai International Airport, while ISKCON is 5.3 miles from the property. Chhatrapati Shivaji International Mumbai Airport is 1.9 miles away."
+            }
+        ]
+    }
+}

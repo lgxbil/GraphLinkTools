@@ -1,0 +1,117 @@
+{
+    "shorten": {
+        "api": {
+            "name": "Get_Hotel_Reviews(Tips)_Sort_Option",
+            "endpoint": "/api/v1/hotels/getHotelReviewsSortOption",
+            "func_description": "Obtain all the available sort parameters for hotel reviews. The sort parameters can be used as `sort_option_id` parameter in  '/api/v1/hotels/getHotelReviews' EndPoint. ",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "hotel_id": {
+                        "type": "String",
+                        "description": "hotel_id can be retrieved from api/v1/hotels/searchHotels(Search Hotels) or api/v1/hotels/searchHotelsByCoordinates(Search Hotels By Coordinates\n) endpoint in Hotels collection.",
+                        "example_value": "5955189",
+                        "required": true
+                    },
+                    "languagecode": {
+                        "type": "String",
+                        "description": "To obtain the response data in a specific language, enter the languagecode. languagecode can be retrieved from api/v1/meta/getLanguages(Get Languages\n) endpoint in Meta collection.",
+                        "example_value": "en-us",
+                        "required": false
+                    }
+                },
+                "required": [
+                    "hotel_id"
+                ]
+            }
+        },
+        "static_response": {
+            "function_name": "Get_Hotel_Reviews(Tips)_Sort_Option",
+            "arguments": {
+                "hotel_id": "4945540"
+            },
+            "observation": {
+                "status": true,
+                "message": "Success",
+                "timestamp": 1730123624401,
+                "data": [
+                    {
+                        "title": "Most relevant",
+                        "sort_option_default": 1,
+                        "sort_option_id": "sort_most_relevant"
+                    },
+                    {
+                        "sort_option_default": 0,
+                        "sort_option_id": "sort_recent_desc",
+                        "title": "Date (newer to older)"
+                    },
+                    {
+                        "sort_option_default": 0,
+                        "sort_option_id": "proximity_to_hotel_average",
+                        "title": "Close to property score"
+                    }
+                ]
+            }
+        },
+        "required": {
+            "query": "I'm looking at hotel ID 5955189 and want to see the available sorting options for its reviews. Can you help me with that?",
+            "params": {
+                "hotel_id": "5955189"
+            },
+            "response": null
+        },
+        "optional": {
+            "query": "I'm interested in seeing the different ways I can sort the reviews for hotel ID 5955189. Could you provide me with the available sorting options, preferably in English?",
+            "params": {
+                "hotel_id": "5955189"
+            },
+            "response": [
+                {
+                    "sort_option_default": 1,
+                    "title": "Most relevant",
+                    "sort_option_id": "sort_most_relevant"
+                },
+                {
+                    "title": "Date (newer to older)",
+                    "sort_option_id": "sort_recent_desc",
+                    "sort_option_default": 0
+                },
+                {
+                    "sort_option_default": 0,
+                    "title": "Close to property score",
+                    "sort_option_id": "proximity_to_hotel_average"
+                }
+            ]
+        }
+    },
+    "row": {
+        "required": null,
+        "optional": [
+            {
+                "sort_option_default": 1,
+                "title": "Most relevant",
+                "sort_option_id": "sort_most_relevant"
+            },
+            {
+                "title": "Date (newer to older)",
+                "sort_option_id": "sort_recent_desc",
+                "sort_option_default": 0
+            },
+            {
+                "sort_option_default": 0,
+                "title": "Close to property score",
+                "sort_option_id": "proximity_to_hotel_average"
+            },
+            {
+                "sort_option_id": "sort_score_desc",
+                "title": "Review score (high to low)",
+                "sort_option_default": 0
+            },
+            {
+                "sort_option_id": "user_country",
+                "title": "From your country",
+                "sort_option_default": 0
+            }
+        ]
+    }
+}

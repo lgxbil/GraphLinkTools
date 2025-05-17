@@ -1,0 +1,76 @@
+{
+    "shorten": {
+        "api": {
+            "name": "Get_Availability_Calendar",
+            "endpoint": "/api/v1/attraction/getAvailabilityCalendar",
+            "func_description": "Search the availability calendar for a specific attraction. ",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "String",
+                        "description": "id can be retrieved from api/v1/attraction/searchLocation(Search Attraction Location) endpoint in Attraction collection as id inside products or destinations.",
+                        "example_value": "PRugRDm0UamX",
+                        "required": true
+                    },
+                    "languagecode": {
+                        "type": "String",
+                        "description": "To obtain the response data in a specific language, enter the languagecode. languagecode can be retrieved from api/v1/meta/getLanguages(Get Languages\n) endpoint in Meta collection.",
+                        "example_value": "fr",
+                        "required": false
+                    }
+                },
+                "required": [
+                    "id"
+                ]
+            }
+        },
+        "static_response": {
+            "function_name": "Get_Availability_Calendar",
+            "arguments": {
+                "id": "PREP9k1guVus"
+            },
+            "observation": {
+                "status": true,
+                "message": "Success",
+                "timestamp": 1729249162406,
+                "data": [
+                    {
+                        "__typename": "AttractionsCalendarItem",
+                        "available": false,
+                        "date": "2024-10-18"
+                    },
+                    {
+                        "__typename": "AttractionsCalendarItem",
+                        "available": true,
+                        "date": "2024-10-19"
+                    },
+                    {
+                        "__typename": "AttractionsCalendarItem",
+                        "available": true,
+                        "date": "2024-10-20"
+                    }
+                ]
+            }
+        },
+        "required": {
+            "query": "I'm planning to visit the Eiffel Tower and would like to check its availability calendar. Can you help me with that?",
+            "params": {
+                "id": "PRugRDm0UamX"
+            },
+            "response": null
+        },
+        "optional": {
+            "query": "I'm planning to visit the Eiffel Tower (ID: PRugRDm0UamX) next month and would like to check its availability calendar. Could you provide the details in French?",
+            "params": {
+                "id": "PRugRDm0UamX",
+                "languagecode": "fr"
+            },
+            "response": null
+        }
+    },
+    "row": {
+        "required": null,
+        "optional": null
+    }
+}

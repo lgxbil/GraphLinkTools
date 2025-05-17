@@ -1,0 +1,162 @@
+{
+    "shorten": {
+        "api": {
+            "name": "Booking_Summary",
+            "endpoint": "/api/v1/cars/bookingSummary",
+            "func_description": "Retrieve a summary of the booking details for a specific vehicle. ",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "vehicle_id": {
+                        "type": "String",
+                        "description": "Vehicle ID. vehicle_id can be retrieved from api/v1/cars/searchCarRentals(Search Car Rentals) endpoint in Car Rental collection as vehicle_id inside search_results object.",
+                        "example_value": "373025711",
+                        "required": true
+                    },
+                    "search_key": {
+                        "type": "String",
+                        "description": "search_key can be retrieved from api/v1/cars/searchCarRentals(Search Car Rentals) endpoint in Car Rental collection as search_key.",
+                        "example_value": "eyJkcml2ZXJzQWdlIjozMCwiZHJvcE9mZkRhdGVUaW1lIjoiMjAyMy0xMS0xN1QxMDowMDowMCIsImRyb3BPZmZMb2NhdGlvbiI6IjQwLjYzOTcwMTg0MzI2MTcsLTczLjc3OTE5NzY5Mjg3MTEiLCJkcm9wT2ZmTG9jYXRpb25UeXBlIjoiTEFUTE9ORyIsInBpY2tVcERhdGVUaW1lIjoiMjAyMy0xMS0xNVQxMDowMDowMCIsInBpY2tVcExvY2F0aW9uIjoiNDAuNjM5NzAxODQzMjYxNywtNzMuNzc5MTk3NjkyODcxMSIsInBpY2tVcExvY2F0aW9uVHlwZSI6IkxBVExPTkciLCJyZW50YWxEdXJhdGlvbkluRGF5cyI6Miwic2VydmljZUZlYXR1cmVzIjpbIk5PX09QQVFVRVMiLCJTVVBSRVNTX0ZJWEVEX1BSSUNFX1ZFSElDTEVTIl19",
+                        "required": true
+                    },
+                    "languagecode": {
+                        "type": "String",
+                        "description": "To obtain the response data in a specific language, enter the languagecode. languagecode can be retrieved from api/v1/meta/getLanguages(Get Languages\n) endpoint in Meta collection.",
+                        "example_value": "",
+                        "required": false
+                    },
+                    "currency_code": {
+                        "type": "String",
+                        "description": "The currency code. currency_code can be retrieved from api/v1/meta/getCurrency(Get Currency) endpoint in Hotels collection.",
+                        "example_value": "EUR",
+                        "required": false
+                    }
+                },
+                "required": [
+                    "vehicle_id",
+                    "search_key"
+                ]
+            }
+        },
+        "static_response": {
+            "function_name": "Booking_Summary",
+            "arguments": {
+                "vehicle_id": "709302416",
+                "search_key": "eyJkcml2ZXJzQWdlIjozMCwiZHJvcE9mZkRhdGVUaW1lIjoiMjAyNC0xMi0yMFQwOTowMDowMCIsImRyb3BPZmZMb2NhdGlvbiI6IjQxLjE0OTUzOTk0NzUwOTgsLTguNjEwNTI4OTQ1OTIyODUiLCJkcm9wT2ZmTG9jYXRpb25UeXBlIjoiTEFUTE9ORyIsInBpY2tVcERhdGVUaW1lIjoiMjAyNC0xMi0xOFQwOTowMDowMCIsInBpY2tVcExvY2F0aW9uIjoiMzguNzEzODMyODU1MjI0NiwtOS4xMzkzMTQ2NTE0ODkyNiIsInBpY2tVcExvY2F0aW9uVHlwZSI6IkxBVExPTkciLCJyZW50YWxEdXJhdGlvbkluRGF5cyI6Miwic2VydmljZUZlYXR1cmVzIjpbIk5PX09QQVFVRVMiLCJTVVBSRVNTX0ZJWEVEX1BSSUNFX1ZFSElDTEVTIiwiSU5DTFVERV9QUk9EVUNUX1JFTEFUSU9OU0hJUFMiLCJJTkNMVURFX0VYVFJBU19DT05UQUlOSU5HX0ZFRVMiXX0="
+            },
+            "observation": {
+                "status": true,
+                "message": "Success",
+                "data": {
+                    "product": {
+                        "duration": "2 days",
+                        "pickUp": {
+                            "dateTime": "Wed, 18 Dec · 09:00",
+                            "name": "Lisbon - Marques Pombal"
+                        },
+                        "supplier": {
+                            "name": "Budget"
+                        },
+                        "vehicle": {
+                            "title": "Citroen C3",
+                            "subtitle": "or similar"
+                        },
+                        "dropOff": {
+                            "name": "Porto Downtown",
+                            "dateTime": "Fri, 20 Dec · 09:00"
+                        }
+                    },
+                    "title": "Booking summary",
+                    "footer": {
+                        "title": "US$177.75",
+                        "subtitle": "Total rental price",
+                        "cta": {
+                            "title": "Next step"
+                        }
+                    },
+                    "priceBreakdown": {
+                        "sections": [
+                            {
+                                "items": [
+                                    {
+                                        "title": "Car rental price",
+                                        "price": "US$173.28"
+                                    }
+                                ],
+                                "subtotal": {
+                                    "secondaryPrice": "(₹ 14,573.85)",
+                                    "title": "Payable today",
+                                    "primaryPrice": {
+                                        "price": "US$173.28",
+                                        "prefix": "approx.",
+                                        "title": "Subtotal"
+                                    }
+                                }
+                            },
+                            {
+                                "subtotal": {
+                                    "title": "Payable at pickup",
+                                    "secondaryPrice": "(€ 4.14)",
+                                    "primaryPrice": {
+                                        "price": "US$4.47",
+                                        "title": "Subtotal",
+                                        "prefix": "approx."
+                                    }
+                                },
+                                "items": [
+                                    {
+                                        "title": "Road usage fee",
+                                        "price": "US$4.47"
+                                    }
+                                ]
+                            }
+                        ],
+                        "total": {
+                            "title": "Total rental price",
+                            "subtitle": "(including any taxes, fees & extras)",
+                            "primaryPrice": {
+                                "prefix": "approx.",
+                                "price": "US$177.75"
+                            }
+                        }
+                    },
+                    "priceInformation": {
+                        "items": [
+                            {
+                                "icon": "EXCHANGE",
+                                "text": "The price in ₹ (INR) has been converted to show you the approximate price in US$ (USD)."
+                            },
+                            {
+                                "icon": "HAND",
+                                "text": "You'll pay for your car today in ₹ (INR). If you pay for anything when you pick up the car, you'll pay in € (EUR)."
+                            }
+                        ],
+                        "title": "About the price"
+                    }
+                }
+            }
+        },
+        "required": {
+            "query": "I'm interested in getting a summary of the booking details for a car rental with vehicle ID 373025711. I have the search key from a previous search. Can you provide the details?",
+            "params": {
+                "vehicle_id": "373025711",
+                "search_key": "eyJkcml2ZXJzQWdlIjozMCwiZHJvcE9mZkRhdGVUaW1lIjoiMjAyMy0xMS0xN1QxMDowMDowMCIsImRyb3BPZmZMb2NhdGlvbiI6IjQwLjYzOTcwMTg0MzI2MTcsLTczLjc3OTE5NzY5Mjg3MTEiLCJkcm9wT2ZmTG9jYXRpb25UeXBlIjoiTEFUTE9ORyIsInBpY2tVcERhdGVUaW1lIjoiMjAyMy0xMS0xNVQxMDowMDowMCIsInBpY2tVcExvY2F0aW9uIjoiNDAuNjM5NzAxODQzMjYxNywtNzMuNzc5MTk3NjkyODcxMSIsInBpY2tVcExvY2F0aW9uVHlwZSI6IkxBVExPTkciLCJyZW50YWxEdXJhdGlvbkluRGF5cyI6Miwic2VydmljZUZlYXR1cmVzIjpbIk5PX09QQVFVRVMiLCJTVVBSRVNTX0ZJWEVEX1BSSUNFX1ZFSElDTEVTIl19"
+            },
+            "response": null
+        },
+        "optional": {
+            "query": "I'd like to get a summary of the booking details for a car rental with vehicle ID 373025711. I have the search key 'eyJkcml2ZXJzQWdlIjozMCwiZHJvcE9mZkRhdGVUaW1lIjoiMjAyMy0xMS0xN1QxMDowMDowMCIsImRyb3BPZmZMb2NhdGlvbiI6IjQwLjYzOTcwMTg0MzI2MTcsLTczLjc3OTE5NzY5Mjg3MTEi'. Could you provide the details in English and display the prices in euros?",
+            "params": {
+                "vehicle_id": "373025711",
+                "search_key": "eyJkcml2ZXJzQWdlIjozMCwiZHJvcE9mZkRhdGVUaW1lIjoiMjAyMy0xMS0xN1QxMDowMDowMCIsImRyb3BPZmZMb2NhdGlvbiI6IjQwLjYzOTcwMTg0MzI2MTcsLTczLjc3OTE5NzY5Mjg3MTEi",
+                "languagecode": "en",
+                "currency_code": "EUR"
+            },
+            "response": null
+        }
+    },
+    "row": {
+        "required": null,
+        "optional": null
+    }
+}

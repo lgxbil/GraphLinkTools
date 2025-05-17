@@ -1,0 +1,2058 @@
+{
+    "functions": [
+        {
+            "name": "Get_Languages",
+            "endpoint": " ",
+            "func_description": "",
+            "parameters": {
+                "type": "object",
+                "properties": {},
+                "required": []
+            }
+        },
+        {
+            "name": "Get_Currency",
+            "endpoint": " ",
+            "func_description": "",
+            "parameters": {
+                "type": "object",
+                "properties": {},
+                "required": []
+            }
+        },
+        {
+            "name": "Get_Exchange_Rates",
+            "endpoint": " ",
+            "func_description": "",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "base_currency": {
+                        "type": "String",
+                        "description": "Base currency.",
+                        "example_value": "USD",
+                        "required": true
+                    }
+                },
+                "required": [
+                    "base_currency"
+                ]
+            }
+        },
+        {
+            "name": "Location_to_Lat_Long",
+            "endpoint": "/api/v1/meta/locationToLatLong",
+            "func_description": "Get location/address latitude and longitude. ",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "query": {
+                        "type": "String",
+                        "description": "Names of locations, apartment, address, cities, districts, places, countries, counties etc.",
+                        "example_value": "man",
+                        "required": true
+                    }
+                },
+                "required": [
+                    "query"
+                ]
+            }
+        },
+        {
+            "name": "Get_Location",
+            "endpoint": " ",
+            "func_description": "",
+            "parameters": {
+                "type": "object",
+                "properties": {},
+                "required": []
+            }
+        },
+        {
+            "name": "Test_API",
+            "endpoint": " ",
+            "func_description": "",
+            "parameters": {
+                "type": "object",
+                "properties": {},
+                "required": []
+            }
+        },
+        {
+            "name": "Search_Hotel_Destination",
+            "endpoint": "/api/v1/hotels/searchDestination",
+            "func_description": "Find Hotels by their location, address, state, country, etc. This api's response contains the latitude and longitude for the search query. ",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "query": {
+                        "type": "String",
+                        "description": "Names of locations, cities, districts, places, countries, counties etc.",
+                        "example_value": "man",
+                        "required": true
+                    }
+                },
+                "required": [
+                    "query"
+                ]
+            }
+        },
+        {
+            "name": "Get_Filter",
+            "endpoint": "/api/v1/hotels/getFilter",
+            "func_description": "Get the `categories_filter` parameter value for `Search_Hotels` function. ",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "dest_id": {
+                        "type": "String",
+                        "description": "dest_id can be retrieved from api/v1/hotels/searchDestination(Search Hotel Destination) endpoint in Hotels collection.",
+                        "example_value": "-2092174",
+                        "required": true
+                    },
+                    "search_type": {
+                        "type": "String",
+                        "description": "search_type can be retrieved from api/v1/hotels/searchDestination(Search Hotel Destination) endpoint in hotel collection.",
+                        "example_value": "CITY",
+                        "required": true
+                    },
+                    "arrival_date": {
+                        "type": "Date (yyyy-mm-dd)",
+                        "description": "The date on which you will arrive or check-in",
+                        "example_value": "",
+                        "required": true
+                    },
+                    "departure_date": {
+                        "type": "Date (yyyy-mm-dd)",
+                        "description": "The date of departure or check-out.",
+                        "example_value": "",
+                        "required": true
+                    },
+                    "adults": {
+                        "type": "Number",
+                        "description": "The number of guests who are 18 years of age or older. The default value is set to 1.",
+                        "example_value": "1",
+                        "required": false
+                    },
+                    "children_age": {
+                        "type": "String",
+                        "description": "The number of children, including infants, who are under 18.\nExample:\nChild 1 Age = 8 months\nChild 2 Age = 1 year\nChild 3 Age = 17 years\nHere is what the request parameter would look like:\nchildren_age: 0,1,17",
+                        "example_value": "1,17",
+                        "required": false
+                    },
+                    "room_qty": {
+                        "type": "Number",
+                        "description": "The number of rooms that are required. The default value is set to 1.",
+                        "example_value": "1",
+                        "required": false
+                    },
+                    "categories_filter": {
+                        "type": "String",
+                        "description": "categories_filter can be retrieved from api/v1/hotels/getFilter(Get Filter) endpoint in Hotels collection.\nNote: For the initial request, leave it blank.",
+                        "example_value": "",
+                        "required": false
+                    },
+                    "languagecode": {
+                        "type": "String",
+                        "description": "To obtain the response data in a specific language, enter the languagecode. languagecode can be retrieved from api/v1/meta/getLanguages(Get Languages\n) endpoint in Meta collection.",
+                        "example_value": "",
+                        "required": false
+                    }
+                },
+                "required": [
+                    "dest_id",
+                    "search_type",
+                    "arrival_date",
+                    "departure_date"
+                ]
+            }
+        },
+        {
+            "name": "Get_Sort_By",
+            "endpoint": "/api/v1/hotels/getSortBy",
+            "func_description": "Get sorted hotel listings based on filters and destination. ",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "dest_id": {
+                        "type": "String",
+                        "description": "dest_id can be retrieved from api/v1/hotels/searchDestination(Search Hotel Destination) endpoint in Hotels collection.",
+                        "example_value": "-2092174",
+                        "required": true
+                    },
+                    "search_type": {
+                        "type": "String",
+                        "description": "search_type can be retrieved from api/v1/hotels/searchDestination(Search Hotel Destination) endpoint in Hotels collection.",
+                        "example_value": "CITY",
+                        "required": true
+                    },
+                    "arrival_date": {
+                        "type": "Date (yyyy-mm-dd)",
+                        "description": "The date on which you will arrive or check-in",
+                        "example_value": "",
+                        "required": true
+                    },
+                    "departure_date": {
+                        "type": "Date (yyyy-mm-dd)",
+                        "description": "The date of departure or check-out.",
+                        "example_value": "",
+                        "required": true
+                    },
+                    "adults": {
+                        "type": "Number",
+                        "description": "The number of guests who are 18 years of age or older. The default value is set to 1.",
+                        "example_value": "1",
+                        "required": false
+                    },
+                    "children_age": {
+                        "type": "String",
+                        "description": "The number of children, including infants, who are under 18.\nExample:\nChild 1 Age = 8 months\nChild 2 Age = 1 year\nChild 3 Age = 17 years\nHere is what the request parameter would look like:\nchildren_age: 0,1,17",
+                        "example_value": "1,17",
+                        "required": false
+                    },
+                    "room_qty": {
+                        "type": "Number",
+                        "description": "The number of rooms that are required. The default value is set to 1.",
+                        "example_value": "1",
+                        "required": false
+                    },
+                    "categories_filter": {
+                        "type": "String",
+                        "description": "categories_filter can be retrieved from api/v1/hotels/getFilter(Get Filter) endpoint in Hotels collection.",
+                        "example_value": "",
+                        "required": false
+                    },
+                    "languagecode": {
+                        "type": "String",
+                        "description": "To obtain the response data in a specific language, enter the languagecode. languagecode can be retrieved from api/v1/meta/getLanguages(Get Languages\n) endpoint in Meta collection.",
+                        "example_value": "",
+                        "required": false
+                    }
+                },
+                "required": [
+                    "dest_id",
+                    "search_type",
+                    "arrival_date",
+                    "departure_date"
+                ]
+            }
+        },
+        {
+            "name": "Search_Hotels",
+            "endpoint": "/api/v1/hotels/searchHotels",
+            "func_description": "Search Hotels. ",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "dest_id": {
+                        "type": "Number",
+                        "description": "dest_id can be retrieved from api/v1/hotels/searchDestination(Search Hotel Destination) endpoint in Hotels collection.",
+                        "example_value": "-2092174",
+                        "required": true
+                    },
+                    "search_type": {
+                        "type": "String",
+                        "description": "search_type can be retrieved from api/v1/hotels/searchDestination(Search Hotel Destination) endpoint in Hotels collection.",
+                        "example_value": "CITY",
+                        "required": true
+                    },
+                    "arrival_date": {
+                        "type": "Date (yyyy-mm-dd)",
+                        "description": "The date on which you will arrive or check-in",
+                        "example_value": "",
+                        "required": true
+                    },
+                    "departure_date": {
+                        "type": "Date (yyyy-mm-dd)",
+                        "description": "The date of departure or check-out.",
+                        "example_value": "",
+                        "required": true
+                    },
+                    "adults": {
+                        "type": "Number",
+                        "description": "The number of guests who are 18 years of age or older. The default value is set to 1.",
+                        "example_value": "1",
+                        "required": false
+                    },
+                    "children_age": {
+                        "type": "String",
+                        "description": "The number of children, including infants, who are under 18.\nExample:\nChild 1 Age = 8 months\nChild 2 Age = 1 year\nChild 3 Age = 17 years\nHere is what the request parameter would look like:\nchildren_age: 0,1,17",
+                        "example_value": "0,17",
+                        "required": false
+                    },
+                    "room_qty": {
+                        "type": "Number",
+                        "description": "The number of rooms that are required. The default value is set to 1.",
+                        "example_value": "1",
+                        "required": false
+                    },
+                    "page_number": {
+                        "type": "Number",
+                        "description": "The page number.",
+                        "example_value": "1",
+                        "required": false
+                    },
+                    "price_min": {
+                        "type": "Number",
+                        "description": "Minimum Price filter for search.",
+                        "example_value": "",
+                        "required": false
+                    },
+                    "price_max": {
+                        "type": "Number",
+                        "description": "Maximum Price filter for search.",
+                        "example_value": "",
+                        "required": false
+                    },
+                    "sort_by": {
+                        "type": "String",
+                        "description": "sort_by can be retrieved from api/v1/hotels/getSortBy(Get Sort By) endpoint in Hotels collection.",
+                        "example_value": "",
+                        "required": false
+                    },
+                    "categories_filter": {
+                        "type": "String",
+                        "description": "categories_filter can be retrieved from api/v1/hotels/getFilter(Get Filter) endpoint in Hotels collection.",
+                        "example_value": "",
+                        "required": false
+                    },
+                    "units": {
+                        "type": "Enum",
+                        "description": "The measurement of distance in metric or imperial.",
+                        "example_value": "",
+                        "required": false
+                    },
+                    "temperature_unit": {
+                        "type": "Enum",
+                        "description": "The temperature unit in Fahrenheit or Celsius.\nc = Celsius\nf = Fahrenheit",
+                        "example_value": "",
+                        "required": false
+                    },
+                    "languagecode": {
+                        "type": "String",
+                        "description": "To obtain the response data in a specific language, enter the languagecode. languagecode can be retrieved from api/v1/meta/getLanguages(Get Languages\n) endpoint in Meta collection.",
+                        "example_value": "en-us",
+                        "required": false
+                    },
+                    "currency_code": {
+                        "type": "String",
+                        "description": "The currency code. currency_code can be retrieved from api/v1/meta/getCurrency(Get Currency) endpoint in Hotels collection.",
+                        "example_value": "AED",
+                        "required": false
+                    },
+                    "location": {
+                        "type": "String",
+                        "description": "location can be retrieved from api/v1/meta/getLocations(Get Location) endpoint in Meta collection.",
+                        "example_value": "US",
+                        "required": false
+                    }
+                },
+                "required": [
+                    "dest_id",
+                    "search_type",
+                    "arrival_date",
+                    "departure_date"
+                ]
+            }
+        },
+        {
+            "name": "Search_Hotels_By_Coordinates",
+            "endpoint": "/api/v1/hotels/searchHotelsByCoordinates",
+            "func_description": "Search for hotels around a given geographical coordinates. ",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "latitude": {
+                        "type": "String",
+                        "description": "Latitude of the searched location. latitude can be retrieved from api/v1/meta/locationToLatLong(Location to Lat Long) endpoint in Meta collection.",
+                        "example_value": "19.24232736426361",
+                        "required": true
+                    },
+                    "longitude": {
+                        "type": "String",
+                        "description": "Longitude of the searched location. longitude can be retrieved from api/v1/meta/locationToLatLong(Location to Lat Long) endpoint in Meta collection.",
+                        "example_value": "72.85841985686734",
+                        "required": true
+                    },
+                    "arrival_date": {
+                        "type": "Date (yyyy-mm-dd)",
+                        "description": "The date on which you will arrive or check-in",
+                        "example_value": "",
+                        "required": true
+                    },
+                    "departure_date": {
+                        "type": "Date (yyyy-mm-dd)",
+                        "description": "The date of departure or check-out.",
+                        "example_value": "",
+                        "required": true
+                    },
+                    "radius": {
+                        "type": "Number",
+                        "description": "The hotels that are within the radius. The radius is measured in kilometers.\nDefault is set to 100.\nRange is between 10 to 500.",
+                        "example_value": "",
+                        "required": false
+                    },
+                    "adults": {
+                        "type": "Number",
+                        "description": "The number of guests who are 18 years of age or older. The default value is set to 1.",
+                        "example_value": "1",
+                        "required": false
+                    },
+                    "children_age": {
+                        "type": "String",
+                        "description": "The number of children, including infants, who are under 18.\nExample:\nChild 1 Age = 8 months\nChild 2 Age = 1 year\nChild 3 Age = 17 years\nHere is what the request parameter would look like:\nchildren_age: 0,1,17",
+                        "example_value": "0,17",
+                        "required": false
+                    },
+                    "room_qty": {
+                        "type": "Number",
+                        "description": "The number of rooms that are required. The default value is set to 1.",
+                        "example_value": "1",
+                        "required": false
+                    },
+                    "price_min": {
+                        "type": "Number",
+                        "description": "Minimum Price filter for search.",
+                        "example_value": "",
+                        "required": false
+                    },
+                    "price_max": {
+                        "type": "Number",
+                        "description": "Maximum Price filter for search.",
+                        "example_value": "",
+                        "required": false
+                    },
+                    "units": {
+                        "type": "Enum",
+                        "description": "The measurement of distance in metric or imperial.",
+                        "example_value": "",
+                        "required": false
+                    },
+                    "page_number": {
+                        "type": "String",
+                        "description": "",
+                        "example_value": "1",
+                        "required": false
+                    },
+                    "temperature_unit": {
+                        "type": "Enum",
+                        "description": "The temperature unit in Fahrenheit or Celsius.\nc = Celsius\nf = Fahrenheit",
+                        "example_value": "",
+                        "required": false
+                    },
+                    "languagecode": {
+                        "type": "String",
+                        "description": "To obtain the response data in a specific language, enter the languagecode. languagecode can be retrieved from api/v1/meta/getLanguages(Get Languages\n) endpoint in Meta collection.",
+                        "example_value": "en-us",
+                        "required": false
+                    },
+                    "currency_code": {
+                        "type": "String",
+                        "description": "The currency code. currency_code can be retrieved from api/v1/meta/getCurrency(Get Currency) endpoint in Hotels collection.",
+                        "example_value": "EUR",
+                        "required": false
+                    },
+                    "location": {
+                        "type": "String",
+                        "description": "location can be retrieved from api/v1/meta/getLocations(Get Location) endpoint in Meta collection.",
+                        "example_value": "US",
+                        "required": false
+                    }
+                },
+                "required": [
+                    "latitude",
+                    "longitude",
+                    "arrival_date",
+                    "departure_date"
+                ]
+            }
+        },
+        {
+            "name": "Get_Hotel_Details",
+            "endpoint": "/api/v1/hotels/getHotelDetails",
+            "func_description": "Retrieve detail information for a specific hotel. ",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "hotel_id": {
+                        "type": "String",
+                        "description": "hotel_id can be retrieved from api/v1/hotels/searchHotels(Search Hotels) or api/v1/hotels/searchHotelsByCoordinates(Search Hotels By Coordinates\n) endpoint in Hotels collection.",
+                        "example_value": "191605",
+                        "required": true
+                    },
+                    "arrival_date": {
+                        "type": "Date (yyyy-mm-dd)",
+                        "description": "The date on which you will arrive or check-in",
+                        "example_value": "",
+                        "required": true
+                    },
+                    "departure_date": {
+                        "type": "Date (yyyy-mm-dd)",
+                        "description": "The date of departure or check-out.",
+                        "example_value": "",
+                        "required": true
+                    },
+                    "adults": {
+                        "type": "Number",
+                        "description": "The number of guests who are 18 years of age or older. The default value is set to 1.",
+                        "example_value": "1",
+                        "required": false
+                    },
+                    "children_age": {
+                        "type": "String",
+                        "description": "The number of children, including infants, who are under 18.\nExample:\nChild 1 Age = 8 months\nChild 2 Age = 1 year\nChild 3 Age = 17 years\nHere is what the request parameter would look like:\nchildren_age: 0,1,17",
+                        "example_value": "1,17",
+                        "required": false
+                    },
+                    "room_qty": {
+                        "type": "Number",
+                        "description": "The number of rooms that are required. The default value is set to 1.",
+                        "example_value": "1",
+                        "required": false
+                    },
+                    "units": {
+                        "type": "Enum",
+                        "description": "The measurement of distance in metric or imperial.",
+                        "example_value": "",
+                        "required": false
+                    },
+                    "temperature_unit": {
+                        "type": "Enum",
+                        "description": "The temperature unit in Fahrenheit or Celsius.\nc = Celsius\nf = Fahrenheit",
+                        "example_value": "",
+                        "required": false
+                    },
+                    "languagecode": {
+                        "type": "String",
+                        "description": "To obtain the response data in a specific language, enter the languagecode. languagecode can be retrieved from api/v1/meta/getLanguages(Get Languages\n) endpoint in Meta collection.",
+                        "example_value": "en-us",
+                        "required": false
+                    },
+                    "currency_code": {
+                        "type": "String",
+                        "description": "The currency code. currency_code can be retrieved from api/v1/meta/getCurrency(Get Currency) endpoint in Hotels collection.",
+                        "example_value": "EUR",
+                        "required": false
+                    }
+                },
+                "required": [
+                    "hotel_id",
+                    "arrival_date",
+                    "departure_date"
+                ]
+            }
+        },
+        {
+            "name": "Get_Room_Availability",
+            "endpoint": "/api/v1/hotels/getAvailability",
+            "func_description": "Search the room price and availability for future dates. ",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "hotel_id": {
+                        "type": "String",
+                        "description": "hotel_id can be retrieved from api/v1/hotels/searchHotels(Search Hotels) or api/v1/hotels/searchHotelsByCoordinates(Search Hotels By Coordinates\n) endpoint in Hotels collection.",
+                        "example_value": "5218600",
+                        "required": true
+                    },
+                    "min_date": {
+                        "type": "Date (yyyy-mm-dd)",
+                        "description": "The starting date range.",
+                        "example_value": "",
+                        "required": true
+                    },
+                    "max_date": {
+                        "type": "Date (yyyy-mm-dd)",
+                        "description": "The ending date range",
+                        "example_value": "",
+                        "required": true
+                    },
+                    "room_qty": {
+                        "type": "Number",
+                        "description": "The number of rooms that are required. The default value is set to 1.",
+                        "example_value": "",
+                        "required": false
+                    },
+                    "adults": {
+                        "type": "Number",
+                        "description": "The number of guests who are 18 years of age or older. The default value is set to 1.",
+                        "example_value": "",
+                        "required": false
+                    },
+                    "currency_code": {
+                        "type": "String",
+                        "description": "The currency code. currency_code can be retrieved from api/v1/meta/getCurrency(Get Currency) endpoint in Hotels collection.",
+                        "example_value": "USD",
+                        "required": false
+                    },
+                    "location": {
+                        "type": "String",
+                        "description": "location can be retrieved from api/v1/meta/getLocations(Get Location) endpoint in Meta collection.",
+                        "example_value": "US",
+                        "required": false
+                    }
+                },
+                "required": [
+                    "hotel_id",
+                    "min_date",
+                    "max_date"
+                ]
+            }
+        },
+        {
+            "name": "Get_Description_And_Info",
+            "endpoint": "/api/v1/hotels/getDescriptionAndInfo",
+            "func_description": "Retrieve the detailed description and information for a specific hotel. ",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "hotel_id": {
+                        "type": "String",
+                        "description": "hotel_id can be retrieved from api/v1/hotels/searchHotels(Search Hotels) or api/v1/hotels/searchHotelsByCoordinates(Search Hotels By Coordinates\n) endpoint in Hotels collection.",
+                        "example_value": "5955189",
+                        "required": true
+                    },
+                    "languagecode": {
+                        "type": "String",
+                        "description": "To obtain the response data in a specific language, enter the languagecode. languagecode can be retrieved from api/v1/meta/getLanguages(Get Languages\n) endpoint in Meta collection.",
+                        "example_value": "en-us",
+                        "required": false
+                    }
+                },
+                "required": [
+                    "hotel_id"
+                ]
+            }
+        },
+        {
+            "name": "Get_Room_List",
+            "endpoint": " ",
+            "func_description": "",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "hotel_id": {
+                        "type": "String",
+                        "description": "hotel_id can be retrieved from api/v1/hotels/searchHotels(Search Hotels) or api/v1/hotels/searchHotelsByCoordinates(Search Hotels By Coordinates\n) endpoint in Hotels collection.",
+                        "example_value": "74717",
+                        "required": true
+                    },
+                    "arrival_date": {
+                        "type": "Date (yyyy-mm-dd)",
+                        "description": "The date on which you will arrive or check-in",
+                        "example_value": "",
+                        "required": true
+                    },
+                    "departure_date": {
+                        "type": "Date (yyyy-mm-dd)",
+                        "description": "The date of departure or check-out.",
+                        "example_value": "",
+                        "required": true
+                    },
+                    "adults": {
+                        "type": "Number",
+                        "description": "The number of guests who are 18 years of age or older. The default value is set to 1.",
+                        "example_value": "1",
+                        "required": false
+                    },
+                    "children_age": {
+                        "type": "String",
+                        "description": "The number of children, including infants, who are under 18.\nExample:\nChild 1 Age = 8 months\nChild 2 Age = 1 year\nChild 3 Age = 17 years\nHere is what the request parameter would look like:\nchildren_age: 0,1,17",
+                        "example_value": "1,0",
+                        "required": false
+                    },
+                    "room_qty": {
+                        "type": "Number",
+                        "description": "The number of rooms that are required. The default value is set to 1.",
+                        "example_value": "1",
+                        "required": false
+                    },
+                    "units": {
+                        "type": "Enum",
+                        "description": "The measurement of distance in metric or imperial.",
+                        "example_value": "",
+                        "required": false
+                    },
+                    "temperature_unit": {
+                        "type": "Enum",
+                        "description": "The temperature unit in Fahrenheit or Celsius.\nc = Celsius\nf = Fahrenheit",
+                        "example_value": "",
+                        "required": false
+                    },
+                    "languagecode": {
+                        "type": "String",
+                        "description": "To obtain the response data in a specific language, enter the languagecode. languagecode can be retrieved from api/v1/meta/getLanguages(Get Languages\n) endpoint in Meta collection.",
+                        "example_value": "en-us",
+                        "required": false
+                    },
+                    "currency_code": {
+                        "type": "String",
+                        "description": "The currency code. currency_code can be retrieved from api/v1/meta/getCurrency(Get Currency) endpoint in Hotels collection.",
+                        "example_value": "EUR",
+                        "required": false
+                    },
+                    "location": {
+                        "type": "String",
+                        "description": "location can be retrieved from api/v1/meta/getLocations(Get Location) endpoint in Meta collection.",
+                        "example_value": "US",
+                        "required": false
+                    }
+                },
+                "required": [
+                    "hotel_id",
+                    "arrival_date",
+                    "departure_date"
+                ]
+            }
+        },
+        {
+            "name": "Payment_features_of_the_Hotel",
+            "endpoint": "/api/v1/hotels/getPaymentFeatures",
+            "func_description": "Retrieve information about the payment features and options available at a specific hotel. ",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "hotel_id": {
+                        "type": "String",
+                        "description": "hotel_id can be retrieved from api/v1/hotels/searchHotels(Search Hotels) or api/v1/hotels/searchHotelsByCoordinates(Search Hotels By Coordinates\n) endpoint in Hotels collection.",
+                        "example_value": "5955189",
+                        "required": true
+                    },
+                    "languagecode": {
+                        "type": "String",
+                        "description": "To obtain the response data in a specific language, enter the languagecode. languagecode can be retrieved from api/v1/meta/getLanguages(Get Languages\n) endpoint in Meta collection.",
+                        "example_value": "en-us",
+                        "required": false
+                    }
+                },
+                "required": [
+                    "hotel_id"
+                ]
+            }
+        },
+        {
+            "name": "Get_Hotel_Policies",
+            "endpoint": "/api/v1/hotels/getHotelPolicies",
+            "func_description": "Retrieve policies for a specific hotel. ",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "hotel_id": {
+                        "type": "String",
+                        "description": "hotel_id can be retrieved from api/v1/hotels/searchHotels(Search Hotels) or api/v1/hotels/searchHotelsByCoordinates(Search Hotels By Coordinates\n) endpoint in Hotels collection.",
+                        "example_value": "5955189",
+                        "required": true
+                    },
+                    "languagecode": {
+                        "type": "String",
+                        "description": "To obtain the response data in a specific language, enter the languagecode. languagecode can be retrieved from api/v1/meta/getLanguages(Get Languages\n) endpoint in Meta collection.",
+                        "example_value": "en-us",
+                        "required": false
+                    }
+                },
+                "required": [
+                    "hotel_id"
+                ]
+            }
+        },
+        {
+            "name": "Property_Children_Policies",
+            "endpoint": "/api/v1/hotels/propertyChildrenPolicies",
+            "func_description": "Retrieve the policies related to children for a specific hotel. ",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "hotel_id": {
+                        "type": "String",
+                        "description": "hotel_id can be retrieved from api/v1/hotels/searchHotels(Search Hotels) or api/v1/hotels/searchHotelsByCoordinates(Search Hotels By Coordinates\n) endpoint in Hotels collection.",
+                        "example_value": "1377073",
+                        "required": true
+                    },
+                    "languagecode": {
+                        "type": "String",
+                        "description": "To obtain the response data in a specific language, enter the languagecode. languagecode can be retrieved from api/v1/meta/getLanguages(Get Languages\n) endpoint in Meta collection.",
+                        "example_value": "en-us",
+                        "required": false
+                    }
+                },
+                "required": [
+                    "hotel_id"
+                ]
+            }
+        },
+        {
+            "name": "Get_Hotel_Reviews_Filter_Metadata",
+            "endpoint": " ",
+            "func_description": "",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "hotel_id": {
+                        "type": "String",
+                        "description": "hotel_id can be retrieved from api/v1/hotels/searchHotels(Search Hotels) or api/v1/hotels/searchHotelsByCoordinates(Search Hotels By Coordinates\n) endpoint in Hotels collection.",
+                        "example_value": "1377073",
+                        "required": true
+                    },
+                    "languagecode": {
+                        "type": "String",
+                        "description": "To obtain the response data in a specific language, enter the languagecode. languagecode can be retrieved from api/v1/meta/getLanguages(Get Languages\n) endpoint in Meta collection.",
+                        "example_value": "en-us",
+                        "required": false
+                    }
+                },
+                "required": [
+                    "hotel_id"
+                ]
+            }
+        },
+        {
+            "name": "Get_Hotel_Review_Scores",
+            "endpoint": "/api/v1/hotels/getHotelReviewScores",
+            "func_description": "Retrieve the review scores for a specific hotel. ",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "hotel_id": {
+                        "type": "String",
+                        "description": "hotel_id can be retrieved from api/v1/hotels/searchHotels(Search Hotels) or api/v1/hotels/searchHotelsByCoordinates(Search Hotels By Coordinates\n) endpoint in Hotels collection.",
+                        "example_value": "5955189",
+                        "required": true
+                    },
+                    "languagecode": {
+                        "type": "String",
+                        "description": "To obtain the response data in a specific language, enter the languagecode. languagecode can be retrieved from api/v1/meta/getLanguages(Get Languages\n) endpoint in Meta collection.",
+                        "example_value": "en-us",
+                        "required": false
+                    }
+                },
+                "required": [
+                    "hotel_id"
+                ]
+            }
+        },
+        {
+            "name": "Get_Hotel_Reviews(Tips)_Sort_Option",
+            "endpoint": "/api/v1/hotels/getHotelReviewsSortOption",
+            "func_description": "Obtain all the available sort parameters for hotel reviews. The sort parameters can be used as `sort_option_id` parameter in  '/api/v1/hotels/getHotelReviews' EndPoint. ",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "hotel_id": {
+                        "type": "String",
+                        "description": "hotel_id can be retrieved from api/v1/hotels/searchHotels(Search Hotels) or api/v1/hotels/searchHotelsByCoordinates(Search Hotels By Coordinates\n) endpoint in Hotels collection.",
+                        "example_value": "5955189",
+                        "required": true
+                    },
+                    "languagecode": {
+                        "type": "String",
+                        "description": "To obtain the response data in a specific language, enter the languagecode. languagecode can be retrieved from api/v1/meta/getLanguages(Get Languages\n) endpoint in Meta collection.",
+                        "example_value": "en-us",
+                        "required": false
+                    }
+                },
+                "required": [
+                    "hotel_id"
+                ]
+            }
+        },
+        {
+            "name": "Get_Hotel_Reviews(Tips)",
+            "endpoint": "/api/v1/hotels/getHotelReviews",
+            "func_description": "Retrieve reviews and tips for a specified hotel. ",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "hotel_id": {
+                        "type": "String",
+                        "description": "hotel_id can be retrieved from api/v1/hotels/searchHotels(Search Hotels) or api/v1/hotels/searchHotelsByCoordinates(Search Hotels By Coordinates\n) endpoint in Hotels collection.",
+                        "example_value": "5955189",
+                        "required": true
+                    },
+                    "sort_option_id": {
+                        "type": "String",
+                        "description": "sort_option_id can be retrieved from api/v1/hotels/getHotelReviewsSortOption(Get Hotel Reviews(Tips) Sort Option) endpoint in Hotels collection.",
+                        "example_value": "sort_most_relevant",
+                        "required": false
+                    },
+                    "page_number": {
+                        "type": "Number",
+                        "description": "The page number.",
+                        "example_value": "1",
+                        "required": false
+                    },
+                    "languagecode": {
+                        "type": "String",
+                        "description": "To obtain the response data in a specific language, enter the languagecode. languagecode can be retrieved from api/v1/meta/getLanguages(Get Languages\n) endpoint in Meta collection.",
+                        "example_value": "en-us",
+                        "required": false
+                    }
+                },
+                "required": [
+                    "hotel_id"
+                ]
+            }
+        },
+        {
+            "name": "Get_Question_And_Answer",
+            "endpoint": "/api/v1/hotels/getQuestionAndAnswer",
+            "func_description": "Retrieve the question and answer information for a specified hotel. ",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "hotel_id": {
+                        "type": "String",
+                        "description": "hotel_id can be retrieved from api/v1/hotels/searchHotels(Search Hotels) or api/v1/hotels/searchHotelsByCoordinates(Search Hotels By Coordinates\n) endpoint in Hotels collection.",
+                        "example_value": "74717",
+                        "required": true
+                    },
+                    "languagecode": {
+                        "type": "String",
+                        "description": "To obtain the response data in a specific language, enter the languagecode. languagecode can be retrieved from api/v1/meta/getLanguages(Get Languages\n) endpoint in Meta collection.",
+                        "example_value": "en-us",
+                        "required": false
+                    }
+                },
+                "required": [
+                    "hotel_id"
+                ]
+            }
+        },
+        {
+            "name": "Get_Nearby_Cities",
+            "endpoint": "/api/v1/hotels/getNearbyCities",
+            "func_description": "Search for cities around a given geographical coordinates. ",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "latitude": {
+                        "type": "String",
+                        "description": "Latitude of the searched location. latitude can be retrieved from api/v1/meta/locationToLatLong(Location to Lat Long) endpoint in Meta collection.",
+                        "example_value": "65.9667",
+                        "required": true
+                    },
+                    "longitude": {
+                        "type": "String",
+                        "description": "Longitude of the searched location. longitude can be retrieved from api/v1/meta/locationToLatLong(Location to Lat Long) endpoint in Meta collection.",
+                        "example_value": "-18.5333",
+                        "required": true
+                    },
+                    "languagecode": {
+                        "type": "String",
+                        "description": "To obtain the response data in a specific language, enter the languagecode. languagecode can be retrieved from api/v1/meta/getLanguages(Get Languages\n) endpoint in Meta collection.",
+                        "example_value": "en-us",
+                        "required": false
+                    }
+                },
+                "required": [
+                    "latitude",
+                    "longitude"
+                ]
+            }
+        },
+        {
+            "name": "Get_Popular_Attraction_Near_By",
+            "endpoint": "/api/v1/hotels/getPopularAttractionNearBy",
+            "func_description": "Search for popular attractions around a given hotel. ",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "hotel_id": {
+                        "type": "String",
+                        "description": "hotel_id can be retrieved from api/v1/hotels/searchHotels(Search Hotels) or api/v1/hotels/searchHotelsByCoordinates(Search Hotels By Coordinates\n) endpoint in Hotels collection.",
+                        "example_value": "5955189",
+                        "required": true
+                    },
+                    "languagecode": {
+                        "type": "String",
+                        "description": "To obtain the response data in a specific language, enter the languagecode. languagecode can be retrieved from api/v1/meta/getLanguages(Get Languages\n) endpoint in Meta collection.",
+                        "example_value": "en-us",
+                        "required": false
+                    }
+                },
+                "required": [
+                    "hotel_id"
+                ]
+            }
+        },
+        {
+            "name": "Get_Room_List_With_Availability",
+            "endpoint": "/api/v1/hotels/getRoomListWithAvailability",
+            "func_description": "Use `hotel_id` to check the availability of hotel rooms on specific date. ",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "hotel_id": {
+                        "type": "String",
+                        "description": "hotel_id can be retrieved from api/v1/hotels/searchHotels(Search Hotels) or api/v1/hotels/searchHotelsByCoordinates(Search Hotels By Coordinates\n) endpoint in Hotels collection.",
+                        "example_value": "74717",
+                        "required": true
+                    },
+                    "arrival_date": {
+                        "type": "Date (yyyy-mm-dd)",
+                        "description": "The date on which you will arrive or check-in",
+                        "example_value": "",
+                        "required": true
+                    },
+                    "departure_date": {
+                        "type": "Date (yyyy-mm-dd)",
+                        "description": "The date of departure or check-out.",
+                        "example_value": "",
+                        "required": true
+                    },
+                    "adults": {
+                        "type": "Number",
+                        "description": "The number of guests who are 18 years of age or older. The default value is set to 1.",
+                        "example_value": "1",
+                        "required": false
+                    },
+                    "children_age": {
+                        "type": "String",
+                        "description": "The number of children, including infants, who are under 18.\nExample:\nChild 1 Age = 8 months\nChild 2 Age = 1 year\nChild 3 Age = 17 years\nHere is what the request parameter would look like:\nchildren_age: 0,1,17",
+                        "example_value": "1,0",
+                        "required": false
+                    },
+                    "room_qty": {
+                        "type": "Number",
+                        "description": "The number of rooms that are required. The default value is set to 1.",
+                        "example_value": "1",
+                        "required": false
+                    },
+                    "units": {
+                        "type": "Enum",
+                        "description": "The measurement of distance in metric or imperial.",
+                        "example_value": "",
+                        "required": false
+                    },
+                    "temperature_unit": {
+                        "type": "Enum",
+                        "description": "The temperature unit in Fahrenheit or Celsius.\nc = Celsius\nf = Fahrenheit",
+                        "example_value": "",
+                        "required": false
+                    },
+                    "languagecode": {
+                        "type": "String",
+                        "description": "To obtain the response data in a specific language, enter the languagecode. languagecode can be retrieved from api/v1/meta/getLanguages(Get Languages\n) endpoint in Meta collection.",
+                        "example_value": "en-us",
+                        "required": false
+                    },
+                    "currency_code": {
+                        "type": "String",
+                        "description": "The currency code. currency_code can be retrieved from api/v1/meta/getCurrency(Get Currency) endpoint in Hotels collection.",
+                        "example_value": "EUR",
+                        "required": false
+                    },
+                    "location": {
+                        "type": "String",
+                        "description": "location can be retrieved from api/v1/meta/getLocations(Get Location) endpoint in Meta collection.",
+                        "example_value": "US",
+                        "required": false
+                    }
+                },
+                "required": [
+                    "hotel_id",
+                    "arrival_date",
+                    "departure_date"
+                ]
+            }
+        },
+        {
+            "name": "Get_Hotel_Photos",
+            "endpoint": " ",
+            "func_description": "",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "hotel_id": {
+                        "type": "String",
+                        "description": "hotel_id can be retrieved from api/v1/hotels/searchHotels(Search Hotels) or api/v1/hotels/searchHotelsByCoordinates(Search Hotels By Coordinates\n) endpoint in Hotels collection.",
+                        "example_value": "5955189",
+                        "required": true
+                    }
+                },
+                "required": [
+                    "hotel_id"
+                ]
+            }
+        },
+        {
+            "name": "Get_Hotel_Facilities",
+            "endpoint": " ",
+            "func_description": "",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "hotel_id": {
+                        "type": "String",
+                        "description": "hotel_id can be retrieved from api/v1/hotels/searchHotels(Search Hotels) or api/v1/hotels/searchHotelsByCoordinates(Search Hotels By Coordinates\n) endpoint in Hotels collection.",
+                        "example_value": "5955189",
+                        "required": true
+                    },
+                    "arrival_date": {
+                        "type": "Date (yyyy-mm-dd)",
+                        "description": "The date on which you will arrive or check-in",
+                        "example_value": "",
+                        "required": false
+                    },
+                    "departure_date": {
+                        "type": "Date (yyyy-mm-dd)",
+                        "description": "The date of departure or check-out.",
+                        "example_value": "",
+                        "required": false
+                    },
+                    "languagecode": {
+                        "type": "String",
+                        "description": "To obtain the response data in a specific language, enter the languagecode. languagecode can be retrieved from api/v1/meta/getLanguages(Get Languages\n) endpoint in Meta collection.",
+                        "example_value": "en-us",
+                        "required": false
+                    }
+                },
+                "required": [
+                    "hotel_id"
+                ]
+            }
+        },
+        {
+            "name": "Search_Flight_Location",
+            "endpoint": "/api/v1/flights/searchDestination",
+            "func_description": "Find airports by their location, address, state, country, etc. ",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "query": {
+                        "type": "String",
+                        "description": "Names of airport, locations, cities, districts, places, countries, counties etc.",
+                        "example_value": "new",
+                        "required": true
+                    },
+                    "languagecode": {
+                        "type": "String",
+                        "description": "To obtain the response data in a specific language, enter the languagecode. languagecode can be retrieved from api/v1/meta/getLanguages(Get Languages\n) endpoint in Meta collection.",
+                        "example_value": "",
+                        "required": false
+                    }
+                },
+                "required": [
+                    "query"
+                ]
+            }
+        },
+        {
+            "name": "Search_Flights",
+            "endpoint": "/api/v1/flights/searchFlights",
+            "func_description": "Search Flights. ",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "fromId": {
+                        "type": "String",
+                        "description": "From/Departure location Id. fromId can be retrieved from api/v1/flights/searchDestination(Search Flight Location) endpoint in Flights collection as id.",
+                        "example_value": "BOM.AIRPORT",
+                        "required": true
+                    },
+                    "toId": {
+                        "type": "String",
+                        "description": "To/Arrival location Id. toId can be retrieved from api/v1/flights/searchDestination(Search Flight Location) endpoint in Flights collection as id.",
+                        "example_value": "DEL.AIRPORT",
+                        "required": true
+                    },
+                    "departDate": {
+                        "type": "Date (yyyy-mm-dd)",
+                        "description": "Departure or travel date.\nFormat: YYYY-MM-DD",
+                        "example_value": "",
+                        "required": true
+                    },
+                    "returnDate": {
+                        "type": "Date (yyyy-mm-dd)",
+                        "description": "Return date.\nFormat: YYYY-MM-DD",
+                        "example_value": "",
+                        "required": false
+                    },
+                    "stops": {
+                        "type": "Enum",
+                        "description": "Filters flights based on the number of stops. Accepted values are:\nnone for no preference (returns flights with any number of stops)\n0 for non-stop flights\n1 for one-stop flights\n2 for two-stop flights\nIf provided, the value must be either none, 0, 1, or 2.",
+                        "example_value": "",
+                        "required": false
+                    },
+                    "pageNo": {
+                        "type": "Number",
+                        "description": "The page number.",
+                        "example_value": "1",
+                        "required": false
+                    },
+                    "adults": {
+                        "type": "Number",
+                        "description": "The number of guests who are 18 years of age or older. The default value is set to 1.",
+                        "example_value": "1",
+                        "required": false
+                    },
+                    "children": {
+                        "type": "String",
+                        "description": "The number of children, including infants, who are under 18.\nExample:\nChild 1 Age = 8 months\nChild 2 Age = 1 year\nChild 3 Age = 17 years\nHere is what the request parameter would look like:\nchildren_age: 0,1,17",
+                        "example_value": "0,17",
+                        "required": false
+                    },
+                    "sort": {
+                        "type": "Enum",
+                        "description": "This parameter orders result by BEST, CHEAPEST or FASTEST flights.",
+                        "example_value": "",
+                        "required": false
+                    },
+                    "cabinClass": {
+                        "type": "Enum",
+                        "description": "Search for flights that match the cabin class specified. Cabin call can be either ECONOMY, PREMIUM_ECONOMY, BUSINESS or FIRST.",
+                        "example_value": "",
+                        "required": false
+                    },
+                    "currency_code": {
+                        "type": "String",
+                        "description": "The currency code. currency_code can be retrieved from api/v1/meta/getCurrency(Get Currency) endpoint in Hotels collection.",
+                        "example_value": "AED",
+                        "required": false
+                    }
+                },
+                "required": [
+                    "fromId",
+                    "toId",
+                    "departDate"
+                ]
+            }
+        },
+        {
+            "name": "Search_Flights_Multi_Stops",
+            "endpoint": "/api/v1/flights/searchFlightsMultiStops",
+            "func_description": "Search multi-stop Flights. ",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "legs": {
+                        "type": "String",
+                        "description": "The legs must contain the fromId, toId and date in object format and must be passed in an array.\nEXAMPLE:\n[\n{\n'fromId': 'BOM.AIRPORT',\n'toId': 'AMD.AIRPORT',\n'date': '2024-05-25'\n},\n…\n]\nNote: If there are multiple stops, there should be more leg objects in the array.",
+                        "example_value": "[{'fromId':'BOM.AIRPORT','toId':'AMD.AIRPORT','date':'2024-05-25'},{'fromId':'AMD.AIRPORT','toId':'BOM.AIRPORT','date':'2024-05-28'}]",
+                        "required": true
+                    },
+                    "pageNo": {
+                        "type": "Number",
+                        "description": "The page number.",
+                        "example_value": "1",
+                        "required": false
+                    },
+                    "adults": {
+                        "type": "Number",
+                        "description": "The number of guests who are 18 years of age or older. The default value is set to 1.",
+                        "example_value": "1",
+                        "required": false
+                    },
+                    "children": {
+                        "type": "String",
+                        "description": "The number of children, including infants, who are under 18.\nExample:\nChild 1 Age = 8 months\nChild 2 Age = 1 year\nChild 3 Age = 17 years\nHere is what the request parameter would look like:\nchildren_age: 0,1,17",
+                        "example_value": "0,17",
+                        "required": false
+                    },
+                    "sort": {
+                        "type": "Enum",
+                        "description": "This parameter orders result by BEST, CHEAPEST or FASTEST flights.",
+                        "example_value": "",
+                        "required": false
+                    },
+                    "cabinClass": {
+                        "type": "Enum",
+                        "description": "Search for flights that match the cabin class specified. Cabin call can be either ECONOMY, PREMIUM_ECONOMY, BUSINESS or FIRST.",
+                        "example_value": "",
+                        "required": false
+                    },
+                    "currency_code": {
+                        "type": "String",
+                        "description": "The currency code. currency_code can be retrieved from api/v1/meta/getCurrency(Get Currency) endpoint in Hotels collection.",
+                        "example_value": "AED",
+                        "required": false
+                    }
+                },
+                "required": [
+                    "legs"
+                ]
+            }
+        },
+        {
+            "name": "Get_Flight_Details",
+            "endpoint": "/api/v1/flights/getFlightDetails",
+            "func_description": "Search the detail information of flights, include: baggage allowances, airline meals, ticket price breakdown (taxes, discounts, baseFare) and insurance prices, etc. ",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "token": {
+                        "type": "String",
+                        "description": "token can be retrieved from api/v1/flights/searchFlights(Search Flights) or api/v1/flights/searchFlightsMultiStops(Search Flights Multi Stops) endpoints in Flights collection as token.",
+                        "example_value": "",
+                        "required": true
+                    },
+                    "currency_code": {
+                        "type": "String",
+                        "description": "The currency code. currency_code can be retrieved from api/v1/meta/getCurrency(Get Currency) endpoint in Hotels collection.",
+                        "example_value": "AED",
+                        "required": false
+                    }
+                },
+                "required": [
+                    "token"
+                ]
+            }
+        },
+        {
+            "name": "Get_Min_Price",
+            "endpoint": "/api/v1/flights/getMinPrice",
+            "func_description": "Get the minimum price for flights. This API will return the lowest priced flights within 5 days before and after the query date. ",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "fromId": {
+                        "type": "String",
+                        "description": "From/Departure location Id. fromId can be retrieved from api/v1/flights/searchDestination(Search Flight Location) endpoint in Flights collection as id.",
+                        "example_value": "BOM.AIRPORT",
+                        "required": true
+                    },
+                    "toId": {
+                        "type": "String",
+                        "description": "To/Arrival location Id. toId can be retrieved from api/v1/flights/searchDestination(Search Flight Location) endpoint in Flights collection as id.",
+                        "example_value": "DEL.AIRPORT",
+                        "required": true
+                    },
+                    "departDate": {
+                        "type": "Date (yyyy-mm-dd)",
+                        "description": "Departure or travel date.\nFormat: YYYY-MM-DD",
+                        "example_value": "",
+                        "required": true
+                    },
+                    "returnDate": {
+                        "type": "Date (yyyy-mm-dd)",
+                        "description": "Return date.\nFormat: YYYY-MM-DD",
+                        "example_value": "",
+                        "required": false
+                    },
+                    "cabinClass": {
+                        "type": "Enum",
+                        "description": "Search for flights that match the cabin class specified. Cabin call can be either ECONOMY, PREMIUM_ECONOMY, BUSINESS or FIRST.",
+                        "example_value": "",
+                        "required": false
+                    },
+                    "currency_code": {
+                        "type": "String",
+                        "description": "The currency code. currency_code can be retrieved from api/v1/meta/getCurrency(Get Currency) endpoint in Hotels collection.",
+                        "example_value": "AED",
+                        "required": false
+                    }
+                },
+                "required": [
+                    "fromId",
+                    "toId",
+                    "departDate"
+                ]
+            }
+        },
+        {
+            "name": "Get_Min_Price_Multi_Stops",
+            "endpoint": "/api/v1/flights/getMinPriceMultiStops",
+            "func_description": "Get the minimum price for multi-stop flights. This API will return the lowest priced flights within 5 days before and after the query date. ",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "legs": {
+                        "type": "String",
+                        "description": "The legs must contain the fromId, toId and date in object format and must be passed in an array.\nEXAMPLE:\n[\n{\n'fromId': 'BOM.AIRPORT',\n'toId': 'AMD.AIRPORT',\n'date': '2024-05-25'\n},\n…\n]\nNote: If there are multiple stops, there should be more leg objects in the array.",
+                        "example_value": "[{'fromId':'BOM.AIRPORT','toId':'AMD.AIRPORT','date':'2024-05-25'},{'fromId':'AMD.AIRPORT','toId':'BOM.AIRPORT','date':'2024-05-26'}]",
+                        "required": true
+                    },
+                    "cabinClass": {
+                        "type": "String",
+                        "description": "Search for flights that match the cabin class specified. Cabin call can be either ECONOMY, PREMIUM_ECONOMY, BUSINESS or FIRST.",
+                        "example_value": "ECONOMY,PREMIUM_ECONOMY,BUSINESS,FIRST",
+                        "required": false
+                    },
+                    "currency_code": {
+                        "type": "String",
+                        "description": "The currency code. currency_code can be retrieved from api/v1/meta/getCurrency(Get Currency) endpoint in Hotels collection.",
+                        "example_value": "AED",
+                        "required": false
+                    }
+                },
+                "required": [
+                    "legs"
+                ]
+            }
+        },
+        {
+            "name": "Get_Seat_Map",
+            "endpoint": "/api/v1/flights/getSeatMap",
+            "func_description": "Get the seat map for a specific flight. ",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "offerToken": {
+                        "type": "String",
+                        "description": "offerToken can be retrieved from api/v1/flights/searchFlights(Search Flights) or api/v1/flights/searchFlightsMultiStops(Search Flights Multi Stops) endpoints in Flights collection as offerToken.",
+                        "example_value": "",
+                        "required": true
+                    },
+                    "currency_code": {
+                        "type": "String",
+                        "description": "The currency code. currency_code can be retrieved from api/v1/meta/getCurrency(Get Currency) endpoint in Hotels collection.",
+                        "example_value": "AED",
+                        "required": false
+                    }
+                },
+                "required": [
+                    "offerToken"
+                ]
+            }
+        },
+        {
+            "name": "Search_Car_Location",
+            "endpoint": "/api/v1/cars/searchDestination",
+            "func_description": "Find car rental location by searching for their name, address, city, state, country, etc.. ",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "query": {
+                        "type": "String",
+                        "description": "Names of locations, cities, districts, places, countries, counties etc.",
+                        "example_value": "new",
+                        "required": true
+                    },
+                    "languagecode": {
+                        "type": "String",
+                        "description": "To obtain the response data in a specific language, enter the languagecode. languagecode can be retrieved from api/v1/meta/getLanguages(Get Languages\n) endpoint in Meta collection.",
+                        "example_value": "",
+                        "required": false
+                    }
+                },
+                "required": [
+                    "query"
+                ]
+            }
+        },
+        {
+            "name": "Search_Car_Rentals",
+            "endpoint": "/api/v1/cars/searchCarRentals",
+            "func_description": "Search car rentals. ",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "pick_up_latitude": {
+                        "type": "Number",
+                        "description": "The pick up location's latitude. pick_up_latitude can be retrieved from api/v1/cars/searchDestination(Search Car Location) endpoint in Car Rental collection as latitude inside coordinates object.",
+                        "example_value": "40.6397018432617",
+                        "required": true
+                    },
+                    "pick_up_longitude": {
+                        "type": "Number",
+                        "description": "The pick up location's longitude. pick_up_longitude can be retrieved from api/v1/cars/searchDestination(Search Car Location) endpoint in Car Rental collection as longitude inside coordinates object.",
+                        "example_value": "-73.7791976928711",
+                        "required": true
+                    },
+                    "drop_off_latitude": {
+                        "type": "Number",
+                        "description": "The drop off location's latitude. drop_off_latitude can be retrieved from api/v1/cars/searchDestination(Search Car Location) endpoint in Car Rental collection as latitude inside coordinates object.",
+                        "example_value": "40.6397018432617",
+                        "required": true
+                    },
+                    "drop_off_longitude": {
+                        "type": "Number",
+                        "description": "The drop off location's longitude. drop_off_longitude can be retrieved from api/v1/cars/searchDestination(Search Car Location) endpoint in Car Rental collection as longitude inside coordinates object.",
+                        "example_value": "-73.7791976928711",
+                        "required": true
+                    },
+                    "pick_up_date": {
+                        "type": "Date (yyyy-mm-dd)",
+                        "description": "Pick up date\nFormat: YYYY-MM-DD",
+                        "example_value": "",
+                        "required": true
+                    },
+                    "drop_off_date": {
+                        "type": "Date (yyyy-mm-dd)",
+                        "description": "Drop off date\nFormat: YYYY-MM-DD",
+                        "example_value": "",
+                        "required": true
+                    },
+                    "pick_up_time": {
+                        "type": "Time (24-Hour Hh:Mm)",
+                        "description": "Pick up time\nFormat: HH:MM\nNote: The format of time is 24 hours.",
+                        "example_value": "10:00",
+                        "required": true
+                    },
+                    "drop_off_time": {
+                        "type": "Time (24-Hour Hh:Mm)",
+                        "description": "Drop off time\nFormat: HH:MM\nNote: The format of time is 24 hours.",
+                        "example_value": "10:00",
+                        "required": true
+                    },
+                    "driver_age": {
+                        "type": "Number",
+                        "description": "The driver's age. The default value is set to 30.\nNote: The driver age must be in the range of 20 to 65 years.",
+                        "example_value": "30",
+                        "required": false
+                    },
+                    "filters": {
+                        "type": "String",
+                        "description": "Used to refine search results based on specific suppliers, car categories, or other attributes. Multiple filters can be applied by passing them as a comma-separated list in the following format:\n::\nFor example:\nsupplier::Avis,supplier::Budget,carCategory::medium,carCategory::large\nThis will return results from Avis and Budget, and only cars in the medium and large categories.\nTo discover available filters, make a request to the /api/v1/cars/searchCarRentals endpoint and refer to the data → filter section in the response.",
+                        "example_value": "",
+                        "required": false
+                    },
+                    "languagecode": {
+                        "type": "String",
+                        "description": "To obtain the response data in a specific language, enter the languagecode. languagecode can be retrieved from api/v1/meta/getLanguages(Get Languages\n) endpoint in Meta collection.",
+                        "example_value": "",
+                        "required": false
+                    },
+                    "currency_code": {
+                        "type": "String",
+                        "description": "The currency code. currency_code can be retrieved from api/v1/meta/getCurrency(Get Currency) endpoint in Hotels collection.",
+                        "example_value": "USD",
+                        "required": false
+                    },
+                    "location": {
+                        "type": "String",
+                        "description": "location can be retrieved from api/v1/meta/getLocations(Get Location) endpoint in Meta collection.",
+                        "example_value": "US",
+                        "required": false
+                    }
+                },
+                "required": [
+                    "pick_up_latitude",
+                    "pick_up_longitude",
+                    "drop_off_latitude",
+                    "drop_off_longitude",
+                    "pick_up_date",
+                    "drop_off_date",
+                    "pick_up_time",
+                    "drop_off_time"
+                ]
+            }
+        },
+        {
+            "name": "Get_Packages",
+            "endpoint": "/api/v1/cars/getPackages",
+            "func_description": "Search the price of car rental and the protection price of insurance. ",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "vehicle_id": {
+                        "type": "String",
+                        "description": "Vehicle ID. vehicle_id can be retrieved from api/v1/cars/searchCarRentals(Search Car Rentals) endpoint in Car Rental collection as vehicle_id inside search_results object.",
+                        "example_value": "373025711",
+                        "required": true
+                    },
+                    "search_key": {
+                        "type": "String",
+                        "description": "search_key can be retrieved from api/v1/cars/searchCarRentals(Search Car Rentals) endpoint in Car Rental collection as search_key.",
+                        "example_value": "eyJkcml2ZXJzQWdlIjozMCwiZHJvcE9mZkRhdGVUaW1lIjoiMjAyMy0xMS0xN1QxMDowMDowMCIsImRyb3BPZmZMb2NhdGlvbiI6IjQwLjYzOTcwMTg0MzI2MTcsLTczLjc3OTE5NzY5Mjg3MTEiLCJkcm9wT2ZmTG9jYXRpb25UeXBlIjoiTEFUTE9ORyIsInBpY2tVcERhdGVUaW1lIjoiMjAyMy0xMS0xNVQxMDowMDowMCIsInBpY2tVcExvY2F0aW9uIjoiNDAuNjM5NzAxODQzMjYxNywtNzMuNzc5MTk3NjkyODcxMSIsInBpY2tVcExvY2F0aW9uVHlwZSI6IkxBVExPTkciLCJyZW50YWxEdXJhdGlvbkluRGF5cyI6Miwic2VydmljZUZlYXR1cmVzIjpbIk5PX09QQVFVRVMiLCJTVVBSRVNTX0ZJWEVEX1BSSUNFX1ZFSElDTEVTIl19",
+                        "required": true
+                    },
+                    "languagecode": {
+                        "type": "String",
+                        "description": "To obtain the response data in a specific language, enter the languagecode. languagecode can be retrieved from api/v1/meta/getLanguages(Get Languages\n) endpoint in Meta collection.",
+                        "example_value": "",
+                        "required": false
+                    },
+                    "currency_code": {
+                        "type": "String",
+                        "description": "The currency code. currency_code can be retrieved from api/v1/meta/getCurrency(Get Currency) endpoint in Hotels collection.",
+                        "example_value": "EUR",
+                        "required": false
+                    }
+                },
+                "required": [
+                    "vehicle_id",
+                    "search_key"
+                ]
+            }
+        },
+        {
+            "name": "Vehicle_Details",
+            "endpoint": "/api/v1/cars/vehicleDetails",
+            "func_description": "Search the detail information of a car using `vehicle id`. ",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "vehicle_id": {
+                        "type": "String",
+                        "description": "Vehicle ID. vehicle_id can be retrieved from api/v1/cars/searchCarRentals(Search Car Rentals) endpoint in Car Rental collection as vehicle_id inside search_results object.",
+                        "example_value": "373025711",
+                        "required": true
+                    },
+                    "search_key": {
+                        "type": "String",
+                        "description": "search_key can be retrieved from api/v1/cars/searchCarRentals(Search Car Rentals) endpoint in Car Rental collection as search_key.",
+                        "example_value": "eyJkcml2ZXJzQWdlIjozMCwiZHJvcE9mZkRhdGVUaW1lIjoiMjAyMy0xMS0xN1QxMDowMDowMCIsImRyb3BPZmZMb2NhdGlvbiI6IjQwLjYzOTcwMTg0MzI2MTcsLTczLjc3OTE5NzY5Mjg3MTEiLCJkcm9wT2ZmTG9jYXRpb25UeXBlIjoiTEFUTE9ORyIsInBpY2tVcERhdGVUaW1lIjoiMjAyMy0xMS0xNVQxMDowMDowMCIsInBpY2tVcExvY2F0aW9uIjoiNDAuNjM5NzAxODQzMjYxNywtNzMuNzc5MTk3NjkyODcxMSIsInBpY2tVcExvY2F0aW9uVHlwZSI6IkxBVExPTkciLCJyZW50YWxEdXJhdGlvbkluRGF5cyI6Miwic2VydmljZUZlYXR1cmVzIjpbIk5PX09QQVFVRVMiLCJTVVBSRVNTX0ZJWEVEX1BSSUNFX1ZFSElDTEVTIl19",
+                        "required": true
+                    },
+                    "units": {
+                        "type": "Enum",
+                        "description": "The measurement of distance in metric or imperial.",
+                        "example_value": "",
+                        "required": false
+                    },
+                    "currency_code": {
+                        "type": "String",
+                        "description": "The currency code. currency_code can be retrieved from api/v1/meta/getCurrency(Get Currency) endpoint in Hotels collection.",
+                        "example_value": "USD",
+                        "required": false
+                    },
+                    "languagecode": {
+                        "type": "String",
+                        "description": "To obtain the response data in a specific language, enter the languagecode. languagecode can be retrieved from api/v1/meta/getLanguages(Get Languages\n) endpoint in Meta collection.",
+                        "example_value": "en-us",
+                        "required": false
+                    }
+                },
+                "required": [
+                    "vehicle_id",
+                    "search_key"
+                ]
+            }
+        },
+        {
+            "name": "Booking_Summary",
+            "endpoint": "/api/v1/cars/bookingSummary",
+            "func_description": "Retrieve a summary of the booking details for a specific vehicle. ",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "vehicle_id": {
+                        "type": "String",
+                        "description": "Vehicle ID. vehicle_id can be retrieved from api/v1/cars/searchCarRentals(Search Car Rentals) endpoint in Car Rental collection as vehicle_id inside search_results object.",
+                        "example_value": "373025711",
+                        "required": true
+                    },
+                    "search_key": {
+                        "type": "String",
+                        "description": "search_key can be retrieved from api/v1/cars/searchCarRentals(Search Car Rentals) endpoint in Car Rental collection as search_key.",
+                        "example_value": "eyJkcml2ZXJzQWdlIjozMCwiZHJvcE9mZkRhdGVUaW1lIjoiMjAyMy0xMS0xN1QxMDowMDowMCIsImRyb3BPZmZMb2NhdGlvbiI6IjQwLjYzOTcwMTg0MzI2MTcsLTczLjc3OTE5NzY5Mjg3MTEiLCJkcm9wT2ZmTG9jYXRpb25UeXBlIjoiTEFUTE9ORyIsInBpY2tVcERhdGVUaW1lIjoiMjAyMy0xMS0xNVQxMDowMDowMCIsInBpY2tVcExvY2F0aW9uIjoiNDAuNjM5NzAxODQzMjYxNywtNzMuNzc5MTk3NjkyODcxMSIsInBpY2tVcExvY2F0aW9uVHlwZSI6IkxBVExPTkciLCJyZW50YWxEdXJhdGlvbkluRGF5cyI6Miwic2VydmljZUZlYXR1cmVzIjpbIk5PX09QQVFVRVMiLCJTVVBSRVNTX0ZJWEVEX1BSSUNFX1ZFSElDTEVTIl19",
+                        "required": true
+                    },
+                    "languagecode": {
+                        "type": "String",
+                        "description": "To obtain the response data in a specific language, enter the languagecode. languagecode can be retrieved from api/v1/meta/getLanguages(Get Languages\n) endpoint in Meta collection.",
+                        "example_value": "",
+                        "required": false
+                    },
+                    "currency_code": {
+                        "type": "String",
+                        "description": "The currency code. currency_code can be retrieved from api/v1/meta/getCurrency(Get Currency) endpoint in Hotels collection.",
+                        "example_value": "EUR",
+                        "required": false
+                    }
+                },
+                "required": [
+                    "vehicle_id",
+                    "search_key"
+                ]
+            }
+        },
+        {
+            "name": "Vehicle_Supplier_Details",
+            "endpoint": "/api/v1/cars/vehicleSupplierDetails",
+            "func_description": "Search the detail information of a vehicle supplier using `vehicle id`. ",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "vehicle_id": {
+                        "type": "String",
+                        "description": "Vehicle ID. vehicle_id can be retrieved from api/v1/cars/searchCarRentals(Search Car Rentals) endpoint in Car Rental collection as vehicle_id inside search_results object.",
+                        "example_value": "373025711",
+                        "required": true
+                    },
+                    "search_key": {
+                        "type": "String",
+                        "description": "",
+                        "example_value": "eyJkcml2ZXJzQWdlIjozMCwiZHJvcE9mZkRhdGVUaW1lIjoiMjAyMy0xMS0xN1QxMDowMDowMCIsImRyb3BPZmZMb2NhdGlvbiI6IjQwLjYzOTcwMTg0MzI2MTcsLTczLjc3OTE5NzY5Mjg3MTEiLCJkcm9wT2ZmTG9jYXRpb25UeXBlIjoiTEFUTE9ORyIsInBpY2tVcERhdGVUaW1lIjoiMjAyMy0xMS0xNVQxMDowMDowMCIsInBpY2tVcExvY2F0aW9uIjoiNDAuNjM5NzAxODQzMjYxNywtNzMuNzc5MTk3NjkyODcxMSIsInBpY2tVcExvY2F0aW9uVHlwZSI6IkxBVExPTkciLCJyZW50YWxEdXJhdGlvbkluRGF5cyI6Miwic2VydmljZUZlYXR1cmVzIjpbIk5PX09QQVFVRVMiLCJTVVBSRVNTX0ZJWEVEX1BSSUNFX1ZFSElDTEVTIl19",
+                        "required": true
+                    },
+                    "languagecode": {
+                        "type": "String",
+                        "description": "To obtain the response data in a specific language, enter the languagecode. languagecode can be retrieved from api/v1/meta/getLanguages(Get Languages\n) endpoint in Meta collection.",
+                        "example_value": "",
+                        "required": false
+                    },
+                    "currency_code": {
+                        "type": "String",
+                        "description": "The currency code. currency_code can be retrieved from api/v1/meta/getCurrency(Get Currency) endpoint in Hotels collection.",
+                        "example_value": "USD",
+                        "required": false
+                    }
+                },
+                "required": [
+                    "vehicle_id",
+                    "search_key"
+                ]
+            }
+        },
+        {
+            "name": "Vehicle_Supplier_Ratings",
+            "endpoint": "/api/v1/cars/vehicleSupplierRatings",
+            "func_description": "Retrieve ratings for the supplier of a specific vehicle. ",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "vehicle_id": {
+                        "type": "String",
+                        "description": "Vehicle ID. vehicle_id can be retrieved from api/v1/cars/searchCarRentals(Search Car Rentals) endpoint in Car Rental collection as vehicle_id inside search_results object.",
+                        "example_value": "373025711",
+                        "required": true
+                    },
+                    "search_key": {
+                        "type": "String",
+                        "description": "search_key can be retrieved from api/v1/cars/searchCarRentals(Search Car Rentals) endpoint in Car Rental collection as search_key.",
+                        "example_value": "eyJkcml2ZXJzQWdlIjozMCwiZHJvcE9mZkRhdGVUaW1lIjoiMjAyMy0xMS0xN1QxMDowMDowMCIsImRyb3BPZmZMb2NhdGlvbiI6IjQwLjYzOTcwMTg0MzI2MTcsLTczLjc3OTE5NzY5Mjg3MTEiLCJkcm9wT2ZmTG9jYXRpb25UeXBlIjoiTEFUTE9ORyIsInBpY2tVcERhdGVUaW1lIjoiMjAyMy0xMS0xNVQxMDowMDowMCIsInBpY2tVcExvY2F0aW9uIjoiNDAuNjM5NzAxODQzMjYxNywtNzMuNzc5MTk3NjkyODcxMSIsInBpY2tVcExvY2F0aW9uVHlwZSI6IkxBVExPTkciLCJyZW50YWxEdXJhdGlvbkluRGF5cyI6Miwic2VydmljZUZlYXR1cmVzIjpbIk5PX09QQVFVRVMiLCJTVVBSRVNTX0ZJWEVEX1BSSUNFX1ZFSElDTEVTIl19",
+                        "required": true
+                    },
+                    "languagecode": {
+                        "type": "String",
+                        "description": "To obtain the response data in a specific language, enter the languagecode. languagecode can be retrieved from api/v1/meta/getLanguages(Get Languages\n) endpoint in Meta collection.",
+                        "example_value": "",
+                        "required": false
+                    },
+                    "currency_code": {
+                        "type": "String",
+                        "description": "The currency code. currency_code can be retrieved from api/v1/meta/getCurrency(Get Currency) endpoint in Hotels collection.",
+                        "example_value": "USD",
+                        "required": false
+                    }
+                },
+                "required": [
+                    "vehicle_id",
+                    "search_key"
+                ]
+            }
+        },
+        {
+            "name": "Vehicle_Supplier_Review",
+            "endpoint": "/api/v1/cars/vehicleSupplierReview",
+            "func_description": "Get the reviews for the supplier of a specific vehicle. ",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "vehicle_id": {
+                        "type": "String",
+                        "description": "Vehicle ID. vehicle_id can be retrieved from api/v1/cars/searchCarRentals(Search Car Rentals) endpoint in Car Rental collection as vehicle_id inside search_results object.",
+                        "example_value": "373025711",
+                        "required": true
+                    },
+                    "search_key": {
+                        "type": "String",
+                        "description": "search_key can be retrieved from api/v1/cars/searchCarRentals(Search Car Rentals) endpoint in Car Rental collection as search_key.",
+                        "example_value": "eyJkcml2ZXJzQWdlIjozMCwiZHJvcE9mZkRhdGVUaW1lIjoiMjAyMy0xMS0xN1QxMDowMDowMCIsImRyb3BPZmZMb2NhdGlvbiI6IjQwLjYzOTcwMTg0MzI2MTcsLTczLjc3OTE5NzY5Mjg3MTEiLCJkcm9wT2ZmTG9jYXRpb25UeXBlIjoiTEFUTE9ORyIsInBpY2tVcERhdGVUaW1lIjoiMjAyMy0xMS0xNVQxMDowMDowMCIsInBpY2tVcExvY2F0aW9uIjoiNDAuNjM5NzAxODQzMjYxNywtNzMuNzc5MTk3NjkyODcxMSIsInBpY2tVcExvY2F0aW9uVHlwZSI6IkxBVExPTkciLCJyZW50YWxEdXJhdGlvbkluRGF5cyI6Miwic2VydmljZUZlYXR1cmVzIjpbIk5PX09QQVFVRVMiLCJTVVBSRVNTX0ZJWEVEX1BSSUNFX1ZFSElDTEVTIl19",
+                        "required": true
+                    },
+                    "languagecode": {
+                        "type": "String",
+                        "description": "To obtain the response data in a specific language, enter the languagecode. languagecode can be retrieved from api/v1/meta/getLanguages(Get Languages\n) endpoint in Meta collection.",
+                        "example_value": "",
+                        "required": false
+                    }
+                },
+                "required": [
+                    "vehicle_id",
+                    "search_key"
+                ]
+            }
+        },
+        {
+            "name": "Taxi_Search_Location",
+            "endpoint": "/api/v1/taxi/searchLocation",
+            "func_description": "Find the `googlePlaceId` of Pick-up/Drop-off Location for taxi. ",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "query": {
+                        "type": "String",
+                        "description": "Names of locations, cities, districts, places, countries, counties etc.",
+                        "example_value": "new",
+                        "required": true
+                    },
+                    "languagecode": {
+                        "type": "String",
+                        "description": "To obtain the response data in a specific language, enter the languagecode. languagecode can be retrieved from api/v1/meta/getLanguages(Get Languages\n) endpoint in Meta collection.",
+                        "example_value": "",
+                        "required": false
+                    }
+                },
+                "required": [
+                    "query"
+                ]
+            }
+        },
+        {
+            "name": "Search_Taxi",
+            "endpoint": "/api/v1/taxi/searchTaxi",
+            "func_description": "Search Taxi. ",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "pick_up_place_id": {
+                        "type": "String",
+                        "description": "The pick up location's place id. pick_up_place_id can be retrieved from api/v1/taxi/searchLocation(Taxi Search Location) endpoint in Taxi collection as googlePlaceId.",
+                        "example_value": "ChIJRym9mVDI5zsRrqh0xGAazB4",
+                        "required": true
+                    },
+                    "drop_off_place_id": {
+                        "type": "String",
+                        "description": "The drop off location's place id. drop_off_place_id can be retrieved from api/v1/taxi/searchLocation(Taxi Search Location) endpoint in Taxi collection as googlePlaceId.",
+                        "example_value": "ChIJ____b8DR5zsRVz_XpIUEKcA",
+                        "required": true
+                    },
+                    "pick_up_date": {
+                        "type": "Date (yyyy-mm-dd)",
+                        "description": "Pick up date\nFormat: YYYY-MM-DD",
+                        "example_value": "",
+                        "required": true
+                    },
+                    "pick_up_time": {
+                        "type": "Time (24-Hour Hh:Mm)",
+                        "description": "Pick up time\nFormat: HH:MM\nNote: The format of time is 24 hours.",
+                        "example_value": "",
+                        "required": true
+                    },
+                    "currency_code": {
+                        "type": "String",
+                        "description": "The currency code. currency_code can be retrieved from api/v1/meta/getCurrency(Get Currency) endpoint in Hotels collection.",
+                        "example_value": "EUR",
+                        "required": false
+                    },
+                    "languagecode": {
+                        "type": "String",
+                        "description": "To obtain the response data in a specific language, enter the languagecode. languagecode can be retrieved from api/v1/meta/getLanguages(Get Languages\n) endpoint in Meta collection.",
+                        "example_value": "",
+                        "required": false
+                    }
+                },
+                "required": [
+                    "pick_up_place_id",
+                    "drop_off_place_id",
+                    "pick_up_date",
+                    "pick_up_time"
+                ]
+            }
+        },
+        {
+            "name": "Search_Attraction_Location",
+            "endpoint": "/api/v1/attraction/searchLocation",
+            "func_description": "Find attractions by their location, address, state, country, etc. This API will return specific information like: `slug`, `productId`, `id`, etc.  ",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "query": {
+                        "type": "String",
+                        "description": "Names of locations, cities, districts, places, countries, counties etc.",
+                        "example_value": "new",
+                        "required": true
+                    },
+                    "languagecode": {
+                        "type": "String",
+                        "description": "To obtain the response data in a specific language, enter the languagecode. languagecode can be retrieved from api/v1/meta/getLanguages(Get Languages\n) endpoint in Meta collection.",
+                        "example_value": "en-us",
+                        "required": false
+                    }
+                },
+                "required": [
+                    "query"
+                ]
+            }
+        },
+        {
+            "name": "Search_Attractions",
+            "endpoint": "/api/v1/attraction/searchAttractions",
+            "func_description": "Search Attraction by trending/attr_book_score/lowest_price. ",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "String",
+                        "description": "id can be retrieved from api/v1/attraction/searchLocation(Search Attraction Location) endpoint in Attraction collection as id inside products or destinations.",
+                        "example_value": "eyJ1ZmkiOi0yMDkyMTc0fQ==",
+                        "required": true
+                    },
+                    "startDate": {
+                        "type": "Date (yyyy-mm-dd)",
+                        "description": "Sort the data by the start date.",
+                        "example_value": "",
+                        "required": false
+                    },
+                    "endDate": {
+                        "type": "Date (yyyy-mm-dd)",
+                        "description": "Sort the data by the end date.",
+                        "example_value": "",
+                        "required": false
+                    },
+                    "sortBy": {
+                        "type": "Enum",
+                        "description": "This parameter orders result by trending, attr_book_score or lowest_price.",
+                        "example_value": "",
+                        "required": false
+                    },
+                    "page": {
+                        "type": "Number",
+                        "description": "The page number.",
+                        "example_value": "1",
+                        "required": false
+                    },
+                    "currency_code": {
+                        "type": "String",
+                        "description": "The currency code. currency_code can be retrieved from api/v1/meta/getCurrency(Get Currency) endpoint in Hotels collection.",
+                        "example_value": "INR",
+                        "required": false
+                    },
+                    "languagecode": {
+                        "type": "String",
+                        "description": "To obtain the response data in a specific language, enter the languagecode. languagecode can be retrieved from api/v1/meta/getLanguages(Get Languages\n) endpoint in Meta collection.",
+                        "example_value": "en-us",
+                        "required": false
+                    },
+                    "typeFilters": {
+                        "type": "String",
+                        "description": "typeFilters can be retrieved from /api/v1/attraction/searchAttractions(Search Attractions) endpoint in Hotels collection. data->filterOptions-> typeFilters[]-> tagname.\nNote:- typeFilters should be separated by commas if passing multiple values.\nExample: tag1,tag2,tag",
+                        "example_value": "",
+                        "required": false
+                    },
+                    "priceFilters": {
+                        "type": "String",
+                        "description": "priceFilters can be retrieved from /api/v1/attraction/searchAttractions(Search Attractions) endpoint in Hotels collection. data->filterOptions-> priceFilters[]-> tagname.\nNote:- priceFilters should be separated by commas if passing multiple values.\nExample: tag1,tag2,tag",
+                        "example_value": "",
+                        "required": false
+                    },
+                    "ufiFilters": {
+                        "type": "String",
+                        "description": "ufiFilters can be retrieved from /api/v1/attraction/searchAttractions(Search Attractions) endpoint in Hotels collection. data->filterOptions-> ufiFilters[]-> tagname.\nNote:- ufiFilters should be separated by commas if passing multiple values.\nExample: tag1,tag2,tag",
+                        "example_value": "",
+                        "required": false
+                    },
+                    "labelFilters": {
+                        "type": "String",
+                        "description": "labelFilters can be retrieved from /api/v1/attraction/searchAttractions(Search Attractions) endpoint in Hotels collection. data->filterOptions-> labelFilters[]-> tagname.\nNote:- labelFilters should be separated by commas if passing multiple values.\nExample: tag1,tag2,tag",
+                        "example_value": "",
+                        "required": false
+                    }
+                },
+                "required": [
+                    "id"
+                ]
+            }
+        },
+        {
+            "name": "Get_Availability_Calendar",
+            "endpoint": "/api/v1/attraction/getAvailabilityCalendar",
+            "func_description": "Search the availability calendar for a specific attraction. ",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "String",
+                        "description": "id can be retrieved from api/v1/attraction/searchLocation(Search Attraction Location) endpoint in Attraction collection as id inside products or destinations.",
+                        "example_value": "PRugRDm0UamX",
+                        "required": true
+                    },
+                    "languagecode": {
+                        "type": "String",
+                        "description": "To obtain the response data in a specific language, enter the languagecode. languagecode can be retrieved from api/v1/meta/getLanguages(Get Languages\n) endpoint in Meta collection.",
+                        "example_value": "fr",
+                        "required": false
+                    }
+                },
+                "required": [
+                    "id"
+                ]
+            }
+        },
+        {
+            "name": "Get_Availability",
+            "endpoint": "/api/v1/attraction/getAvailability",
+            "func_description": "Check if tickets for tourist attractions are available. ",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "slug": {
+                        "type": "String",
+                        "description": "slug can be retrieved from api/v1/attraction/searchLocation(Search Attraction Location) endpoint in Attraction collection as productSlug  inside products or destinations.",
+                        "example_value": "prg6h2lj9jfx-city-pub-crawl-with-drinks",
+                        "required": true
+                    },
+                    "date": {
+                        "type": "Date (yyyy-mm-dd)",
+                        "description": "The availability of the data.",
+                        "example_value": "",
+                        "required": false
+                    },
+                    "currency_code": {
+                        "type": "String",
+                        "description": "The currency code. currency_code can be retrieved from api/v1/meta/getCurrency(Get Currency) endpoint in Hotels collection.",
+                        "example_value": "EUR",
+                        "required": false
+                    },
+                    "languagecode": {
+                        "type": "String",
+                        "description": "To obtain the response data in a specific language, enter the languagecode. languagecode can be retrieved from api/v1/meta/getLanguages(Get Languages\n) endpoint in Meta collection.",
+                        "example_value": "fr",
+                        "required": false
+                    }
+                },
+                "required": [
+                    "slug"
+                ]
+            }
+        },
+        {
+            "name": "Get_Attraction_Details",
+            "endpoint": "/api/v1/attraction/getAttractionDetails",
+            "func_description": "Search the attraction detail information. ",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "slug": {
+                        "type": "String",
+                        "description": "slug can be retrieved from api/v1/attraction/searchLocation(Search Attraction Location) endpoint in Attraction collection as productSlug  inside products or destinations.",
+                        "example_value": "prugrdm0uamx-small-group-dharavi-slum-tour",
+                        "required": true
+                    },
+                    "languagecode": {
+                        "type": "String",
+                        "description": "To obtain the response data in a specific language, enter the languagecode. languagecode can be retrieved from api/v1/meta/getLanguages(Get Languages\n) endpoint in Meta collection.",
+                        "example_value": "",
+                        "required": false
+                    },
+                    "currency_code": {
+                        "type": "String",
+                        "description": "The currency code. currency_code can be retrieved from api/v1/meta/getCurrency(Get Currency) endpoint in Hotels collection.",
+                        "example_value": "USD",
+                        "required": false
+                    }
+                },
+                "required": [
+                    "slug"
+                ]
+            }
+        },
+        {
+            "name": "Get_Attraction_Reviews",
+            "endpoint": " ",
+            "func_description": "",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "String",
+                        "description": "id can be retrieved from api/v1/attraction/searchAttractions(Search Attractions) endpoint in Attraction collection as id inside products (data->products->id)",
+                        "example_value": "PR6K7ZswbGBs",
+                        "required": true
+                    },
+                    "page": {
+                        "type": "Number",
+                        "description": "The page number.",
+                        "example_value": "1",
+                        "required": false
+                    }
+                },
+                "required": [
+                    "id"
+                ]
+            }
+        }
+    ]
+}

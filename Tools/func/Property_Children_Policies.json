@@ -1,0 +1,889 @@
+{
+    "shorten": {
+        "api": {
+            "name": "Property_Children_Policies",
+            "endpoint": "/api/v1/hotels/propertyChildrenPolicies",
+            "func_description": "Retrieve the policies related to children for a specific hotel. ",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "hotel_id": {
+                        "type": "String",
+                        "description": "hotel_id can be retrieved from api/v1/hotels/searchHotels(Search Hotels) or api/v1/hotels/searchHotelsByCoordinates(Search Hotels By Coordinates\n) endpoint in Hotels collection.",
+                        "example_value": "1377073",
+                        "required": true
+                    },
+                    "languagecode": {
+                        "type": "String",
+                        "description": "To obtain the response data in a specific language, enter the languagecode. languagecode can be retrieved from api/v1/meta/getLanguages(Get Languages\n) endpoint in Meta collection.",
+                        "example_value": "en-us",
+                        "required": false
+                    }
+                },
+                "required": [
+                    "hotel_id"
+                ]
+            }
+        },
+        "static_response": {
+            "function_name": "Property_Children_Policies",
+            "arguments": {
+                "hotel_id": "292326"
+            },
+            "observation": {
+                "status": true,
+                "message": "Success",
+                "data": {
+                    "serverVersion": 112,
+                    "mfeId": "b-saba-child-policies-mfe/saba",
+                    "root": {
+                        "props": {
+                            "items": [
+                                {
+                                    "type": "core.Margin",
+                                    "props": {
+                                        "component": {
+                                            "type": "bui.Label",
+                                            "props": {
+                                                "text": "Child policies",
+                                                "font": "strong_2"
+                                            }
+                                        },
+                                        "margin": {
+                                            "bottom": "spacing_1x"
+                                        }
+                                    }
+                                },
+                                {
+                                    "props": {
+                                        "items": [
+                                            {
+                                                "props": {
+                                                    "margin": {
+                                                        "top": "spacing_1x"
+                                                    },
+                                                    "component": {
+                                                        "type": "bui.Label",
+                                                        "props": {
+                                                            "text": "Children older than 1 year are welcome."
+                                                        }
+                                                    }
+                                                },
+                                                "type": "core.Margin"
+                                            },
+                                            {
+                                                "props": {
+                                                    "component": {
+                                                        "type": "bui.Label",
+                                                        "props": {
+                                                            "text": "Children 7 years and above will be charged as adults at this property."
+                                                        }
+                                                    },
+                                                    "margin": {
+                                                        "top": "spacing_1x"
+                                                    }
+                                                },
+                                                "type": "core.Margin"
+                                            },
+                                            {
+                                                "props": {
+                                                    "component": {
+                                                        "props": {
+                                                            "text": "To see correct prices and occupancy information, please add the number of children in your group and their ages to your search.",
+                                                            "font": "emphasized_2"
+                                                        },
+                                                        "type": "bui.Label"
+                                                    },
+                                                    "margin": {
+                                                        "top": "spacing_1x"
+                                                    }
+                                                },
+                                                "type": "core.Margin"
+                                            }
+                                        ]
+                                    },
+                                    "type": "core.layout.Column"
+                                },
+                                {
+                                    "type": "core.Margin",
+                                    "props": {
+                                        "component": {
+                                            "type": "bui.Label",
+                                            "props": {
+                                                "font": "strong_2",
+                                                "text": "Cot and extra bed policies"
+                                            }
+                                        },
+                                        "margin": {
+                                            "bottom": "spacing_1x",
+                                            "top": "spacing_4x"
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        "type": "core.layout.Column"
+                    },
+                    "clientVersion": 68
+                }
+            }
+        },
+        "required": {
+            "query": "I'm considering staying at a hotel with ID 1377073. Can you tell me what their policies are regarding children?",
+            "params": {
+                "hotel_id": "1377073"
+            },
+            "response": {
+                "root": {
+                    "props": {
+                        "items": [
+                            {
+                                "props": {
+                                    "component": {
+                                        "props": {
+                                            "text": "Child policies",
+                                            "font": "strong_2"
+                                        },
+                                        "type": "bui.Label"
+                                    },
+                                    "margin": {
+                                        "bottom": "spacing_1x"
+                                    }
+                                },
+                                "type": "core.Margin"
+                            },
+                            {
+                                "props": {
+                                    "items": [
+                                        {
+                                            "props": {
+                                                "component": {
+                                                    "type": "bui.Label",
+                                                    "props": {
+                                                        "text": "Children of any age are welcome."
+                                                    }
+                                                },
+                                                "margin": {
+                                                    "top": "spacing_1x"
+                                                }
+                                            },
+                                            "type": "core.Margin"
+                                        },
+                                        {
+                                            "type": "core.Margin",
+                                            "props": {
+                                                "component": {
+                                                    "props": {
+                                                        "font": "emphasized_2",
+                                                        "text": "To see correct prices and occupancy information, please add the number of children in your group and their ages to your search."
+                                                    },
+                                                    "type": "bui.Label"
+                                                },
+                                                "margin": {
+                                                    "top": "spacing_1x"
+                                                }
+                                            }
+                                        }
+                                    ]
+                                },
+                                "type": "core.layout.Column"
+                            },
+                            {
+                                "type": "core.Margin",
+                                "props": {
+                                    "margin": {
+                                        "bottom": "spacing_2x",
+                                        "top": "spacing_4x"
+                                    },
+                                    "component": {
+                                        "props": {
+                                            "font": "strong_2",
+                                            "text": "Cot and extra bed policies"
+                                        },
+                                        "type": "bui.Label"
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    "type": "core.layout.Column"
+                },
+                "mfeId": "b-saba-child-policies-mfe/saba",
+                "trackedExperiments": [
+                    {
+                        "shouldTrack": false,
+                        "variant": 1,
+                        "uviType": "device_id",
+                        "uvi": "57d11ec8bad14e119e4c15a86202c23f",
+                        "id": "2269860",
+                        "name": "ios_sega_guaranteed_cots"
+                    }
+                ],
+                "serverVersion": 131,
+                "clientVersion": 68
+            }
+        },
+        "optional": {
+            "query": "I'm planning to stay at a hotel with ID 1377073 and would like to know their policies regarding children. Could you provide this information in English?",
+            "params": {
+                "hotel_id": "1377073",
+                "languagecode": "en-us"
+            },
+            "response": {
+                "serverVersion": 131,
+                "trackedExperiments": [
+                    {
+                        "shouldTrack": false,
+                        "uviType": "device_id",
+                        "name": "ios_sega_guaranteed_cots",
+                        "variant": 1,
+                        "uvi": "57d11ec8bad14e119e4c15a86202c23f",
+                        "id": "2269860"
+                    }
+                ],
+                "clientVersion": 68,
+                "root": {
+                    "props": {
+                        "items": [
+                            {
+                                "props": {
+                                    "component": {
+                                        "props": {
+                                            "font": "strong_2",
+                                            "text": "Child policies"
+                                        },
+                                        "type": "bui.Label"
+                                    },
+                                    "margin": {
+                                        "bottom": "spacing_1x"
+                                    }
+                                },
+                                "type": "core.Margin"
+                            },
+                            {
+                                "props": {
+                                    "items": [
+                                        {
+                                            "props": {
+                                                "component": {
+                                                    "props": {
+                                                        "text": "Children of all ages are welcome."
+                                                    },
+                                                    "type": "bui.Label"
+                                                },
+                                                "margin": {
+                                                    "top": "spacing_1x"
+                                                }
+                                            },
+                                            "type": "core.Margin"
+                                        },
+                                        {
+                                            "props": {
+                                                "margin": {
+                                                    "top": "spacing_1x"
+                                                },
+                                                "component": {
+                                                    "type": "bui.Label",
+                                                    "props": {
+                                                        "text": "To see correct prices and occupancy info, add the number and ages of children in your group to your search.",
+                                                        "font": "emphasized_2"
+                                                    }
+                                                }
+                                            },
+                                            "type": "core.Margin"
+                                        }
+                                    ]
+                                },
+                                "type": "core.layout.Column"
+                            },
+                            {
+                                "type": "core.Margin",
+                                "props": {
+                                    "margin": {
+                                        "top": "spacing_4x",
+                                        "bottom": "spacing_2x"
+                                    },
+                                    "component": {
+                                        "props": {
+                                            "font": "strong_2",
+                                            "text": "Crib and extra bed policies"
+                                        },
+                                        "type": "bui.Label"
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    "type": "core.layout.Column"
+                },
+                "mfeId": "b-saba-child-policies-mfe/saba"
+            }
+        }
+    },
+    "row": {
+        "required": {
+            "root": {
+                "props": {
+                    "items": [
+                        {
+                            "props": {
+                                "component": {
+                                    "props": {
+                                        "text": "Child policies",
+                                        "font": "strong_2"
+                                    },
+                                    "type": "bui.Label"
+                                },
+                                "margin": {
+                                    "bottom": "spacing_1x"
+                                }
+                            },
+                            "type": "core.Margin"
+                        },
+                        {
+                            "props": {
+                                "items": [
+                                    {
+                                        "props": {
+                                            "component": {
+                                                "type": "bui.Label",
+                                                "props": {
+                                                    "text": "Children of any age are welcome."
+                                                }
+                                            },
+                                            "margin": {
+                                                "top": "spacing_1x"
+                                            }
+                                        },
+                                        "type": "core.Margin"
+                                    },
+                                    {
+                                        "type": "core.Margin",
+                                        "props": {
+                                            "component": {
+                                                "props": {
+                                                    "font": "emphasized_2",
+                                                    "text": "To see correct prices and occupancy information, please add the number of children in your group and their ages to your search."
+                                                },
+                                                "type": "bui.Label"
+                                            },
+                                            "margin": {
+                                                "top": "spacing_1x"
+                                            }
+                                        }
+                                    }
+                                ]
+                            },
+                            "type": "core.layout.Column"
+                        },
+                        {
+                            "type": "core.Margin",
+                            "props": {
+                                "margin": {
+                                    "bottom": "spacing_2x",
+                                    "top": "spacing_4x"
+                                },
+                                "component": {
+                                    "props": {
+                                        "font": "strong_2",
+                                        "text": "Cot and extra bed policies"
+                                    },
+                                    "type": "bui.Label"
+                                }
+                            }
+                        },
+                        {
+                            "type": "core.Margin",
+                            "props": {
+                                "margin": {
+                                    "bottom": "spacing_2x"
+                                },
+                                "component": {
+                                    "props": {
+                                        "border": "border_alt",
+                                        "component": {
+                                            "props": {
+                                                "items": [
+                                                    {
+                                                        "props": {
+                                                            "border": "border_alt",
+                                                            "component": {
+                                                                "props": {
+                                                                    "items": [
+                                                                        {
+                                                                            "props": {
+                                                                                "margin": {
+                                                                                    "start": "spacing_2x",
+                                                                                    "end": "spacing_2x",
+                                                                                    "top": "spacing_2x",
+                                                                                    "bottom": "spacing_2x"
+                                                                                },
+                                                                                "component": {
+                                                                                    "props": {
+                                                                                        "text": "0 - 2 years",
+                                                                                        "font": "emphasized_2"
+                                                                                    },
+                                                                                    "type": "bui.Label"
+                                                                                }
+                                                                            },
+                                                                            "type": "core.Margin"
+                                                                        }
+                                                                    ]
+                                                                },
+                                                                "type": "core.layout.Row"
+                                                            },
+                                                            "background": "border_alt"
+                                                        },
+                                                        "type": "bui.Decoration"
+                                                    },
+                                                    {
+                                                        "type": "core.layout.SplitRow",
+                                                        "props": {
+                                                            "alignment": "center",
+                                                            "firstItemWidth": 57,
+                                                            "items": [
+                                                                {
+                                                                    "props": {
+                                                                        "items": [
+                                                                            {
+                                                                                "type": "core.layout.Row",
+                                                                                "props": {
+                                                                                    "alignment": "center",
+                                                                                    "items": [
+                                                                                        {
+                                                                                            "props": {
+                                                                                                "component": {
+                                                                                                    "type": "bui.Icon",
+                                                                                                    "props": {
+                                                                                                        "name": "baby_cot",
+                                                                                                        "size": "smaller"
+                                                                                                    }
+                                                                                                },
+                                                                                                "margin": {
+                                                                                                    "start": "spacing_2x",
+                                                                                                    "top": "spacing_2x",
+                                                                                                    "end": "spacing_2x",
+                                                                                                    "bottom": "spacing_2x"
+                                                                                                }
+                                                                                            },
+                                                                                            "type": "core.Margin"
+                                                                                        },
+                                                                                        {
+                                                                                            "type": "core.Margin",
+                                                                                            "props": {
+                                                                                                "margin": {
+                                                                                                    "bottom": "spacing_2x",
+                                                                                                    "end": "spacing_2x",
+                                                                                                    "top": "spacing_2x"
+                                                                                                },
+                                                                                                "component": {
+                                                                                                    "props": {
+                                                                                                        "text": "Cot upon request"
+                                                                                                    },
+                                                                                                    "type": "bui.Label"
+                                                                                                }
+                                                                                            }
+                                                                                        }
+                                                                                    ]
+                                                                                }
+                                                                            }
+                                                                        ]
+                                                                    },
+                                                                    "type": "core.layout.Column"
+                                                                },
+                                                                {
+                                                                    "props": {
+                                                                        "margin": {
+                                                                            "bottom": "spacing_2x",
+                                                                            "top": "spacing_2x",
+                                                                            "end": "spacing_2x",
+                                                                            "start": "spacing_2x"
+                                                                        },
+                                                                        "component": {
+                                                                            "props": {
+                                                                                "font": "emphasized_2",
+                                                                                "text": "Free",
+                                                                                "color": "constructive_foreground"
+                                                                            },
+                                                                            "type": "bui.Label"
+                                                                        }
+                                                                    },
+                                                                    "type": "core.Margin"
+                                                                }
+                                                            ]
+                                                        }
+                                                    }
+                                                ]
+                                            },
+                                            "type": "core.layout.Column"
+                                        }
+                                    },
+                                    "type": "bui.Decoration"
+                                }
+                            }
+                        },
+                        {
+                            "props": {
+                                "items": [
+                                    {
+                                        "type": "core.Margin",
+                                        "props": {
+                                            "component": {
+                                                "type": "bui.Label",
+                                                "props": {
+                                                    "text": "Supplements are not calculated automatically in the total costs and will have to be paid for separately during your stay."
+                                                }
+                                            },
+                                            "margin": {
+                                                "top": "spacing_1x"
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "type": "core.Margin",
+                                        "props": {
+                                            "margin": {
+                                                "top": "spacing_1x"
+                                            },
+                                            "component": {
+                                                "props": {
+                                                    "text": "The maximum number of cots, extra beds and children allowed in existing beds may vary depending on the option you book."
+                                                },
+                                                "type": "bui.Label"
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "props": {
+                                            "margin": {
+                                                "top": "spacing_1x"
+                                            },
+                                            "component": {
+                                                "type": "bui.Label",
+                                                "props": {
+                                                    "text": "All cots and extra beds are subject to availability."
+                                                }
+                                            }
+                                        },
+                                        "type": "core.Margin"
+                                    },
+                                    {
+                                        "props": {
+                                            "component": {
+                                                "type": "bui.Label",
+                                                "props": {
+                                                    "text": "There is no capacity for extra beds."
+                                                }
+                                            },
+                                            "margin": {
+                                                "top": "spacing_1x"
+                                            }
+                                        },
+                                        "type": "core.Margin"
+                                    }
+                                ]
+                            },
+                            "type": "core.layout.Column"
+                        }
+                    ]
+                },
+                "type": "core.layout.Column"
+            },
+            "mfeId": "b-saba-child-policies-mfe/saba",
+            "trackedExperiments": [
+                {
+                    "shouldTrack": false,
+                    "variant": 1,
+                    "uviType": "device_id",
+                    "uvi": "57d11ec8bad14e119e4c15a86202c23f",
+                    "id": "2269860",
+                    "name": "ios_sega_guaranteed_cots"
+                }
+            ],
+            "serverVersion": 131,
+            "clientVersion": 68
+        },
+        "optional": {
+            "serverVersion": 131,
+            "trackedExperiments": [
+                {
+                    "shouldTrack": false,
+                    "uviType": "device_id",
+                    "name": "ios_sega_guaranteed_cots",
+                    "variant": 1,
+                    "uvi": "57d11ec8bad14e119e4c15a86202c23f",
+                    "id": "2269860"
+                }
+            ],
+            "clientVersion": 68,
+            "root": {
+                "props": {
+                    "items": [
+                        {
+                            "props": {
+                                "component": {
+                                    "props": {
+                                        "font": "strong_2",
+                                        "text": "Child policies"
+                                    },
+                                    "type": "bui.Label"
+                                },
+                                "margin": {
+                                    "bottom": "spacing_1x"
+                                }
+                            },
+                            "type": "core.Margin"
+                        },
+                        {
+                            "props": {
+                                "items": [
+                                    {
+                                        "props": {
+                                            "component": {
+                                                "props": {
+                                                    "text": "Children of all ages are welcome."
+                                                },
+                                                "type": "bui.Label"
+                                            },
+                                            "margin": {
+                                                "top": "spacing_1x"
+                                            }
+                                        },
+                                        "type": "core.Margin"
+                                    },
+                                    {
+                                        "props": {
+                                            "margin": {
+                                                "top": "spacing_1x"
+                                            },
+                                            "component": {
+                                                "type": "bui.Label",
+                                                "props": {
+                                                    "text": "To see correct prices and occupancy info, add the number and ages of children in your group to your search.",
+                                                    "font": "emphasized_2"
+                                                }
+                                            }
+                                        },
+                                        "type": "core.Margin"
+                                    }
+                                ]
+                            },
+                            "type": "core.layout.Column"
+                        },
+                        {
+                            "type": "core.Margin",
+                            "props": {
+                                "margin": {
+                                    "top": "spacing_4x",
+                                    "bottom": "spacing_2x"
+                                },
+                                "component": {
+                                    "props": {
+                                        "font": "strong_2",
+                                        "text": "Crib and extra bed policies"
+                                    },
+                                    "type": "bui.Label"
+                                }
+                            }
+                        },
+                        {
+                            "type": "core.Margin",
+                            "props": {
+                                "component": {
+                                    "props": {
+                                        "border": "border_alt",
+                                        "component": {
+                                            "props": {
+                                                "items": [
+                                                    {
+                                                        "type": "bui.Decoration",
+                                                        "props": {
+                                                            "component": {
+                                                                "props": {
+                                                                    "items": [
+                                                                        {
+                                                                            "type": "core.Margin",
+                                                                            "props": {
+                                                                                "margin": {
+                                                                                    "end": "spacing_2x",
+                                                                                    "top": "spacing_2x",
+                                                                                    "bottom": "spacing_2x",
+                                                                                    "start": "spacing_2x"
+                                                                                },
+                                                                                "component": {
+                                                                                    "type": "bui.Label",
+                                                                                    "props": {
+                                                                                        "font": "emphasized_2",
+                                                                                        "text": "0-2 years old"
+                                                                                    }
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    ]
+                                                                },
+                                                                "type": "core.layout.Row"
+                                                            },
+                                                            "border": "border_alt",
+                                                            "background": "border_alt"
+                                                        }
+                                                    },
+                                                    {
+                                                        "type": "core.layout.SplitRow",
+                                                        "props": {
+                                                            "alignment": "center",
+                                                            "firstItemWidth": 57,
+                                                            "items": [
+                                                                {
+                                                                    "type": "core.layout.Column",
+                                                                    "props": {
+                                                                        "items": [
+                                                                            {
+                                                                                "props": {
+                                                                                    "alignment": "center",
+                                                                                    "items": [
+                                                                                        {
+                                                                                            "type": "core.Margin",
+                                                                                            "props": {
+                                                                                                "component": {
+                                                                                                    "props": {
+                                                                                                        "size": "smaller",
+                                                                                                        "name": "baby_cot"
+                                                                                                    },
+                                                                                                    "type": "bui.Icon"
+                                                                                                },
+                                                                                                "margin": {
+                                                                                                    "top": "spacing_2x",
+                                                                                                    "end": "spacing_2x",
+                                                                                                    "start": "spacing_2x",
+                                                                                                    "bottom": "spacing_2x"
+                                                                                                }
+                                                                                            }
+                                                                                        },
+                                                                                        {
+                                                                                            "type": "core.Margin",
+                                                                                            "props": {
+                                                                                                "component": {
+                                                                                                    "props": {
+                                                                                                        "text": "Crib by request"
+                                                                                                    },
+                                                                                                    "type": "bui.Label"
+                                                                                                },
+                                                                                                "margin": {
+                                                                                                    "top": "spacing_2x",
+                                                                                                    "end": "spacing_2x",
+                                                                                                    "bottom": "spacing_2x"
+                                                                                                }
+                                                                                            }
+                                                                                        }
+                                                                                    ]
+                                                                                },
+                                                                                "type": "core.layout.Row"
+                                                                            }
+                                                                        ]
+                                                                    }
+                                                                },
+                                                                {
+                                                                    "props": {
+                                                                        "margin": {
+                                                                            "bottom": "spacing_2x",
+                                                                            "start": "spacing_2x",
+                                                                            "end": "spacing_2x",
+                                                                            "top": "spacing_2x"
+                                                                        },
+                                                                        "component": {
+                                                                            "type": "bui.Label",
+                                                                            "props": {
+                                                                                "text": "Free",
+                                                                                "color": "constructive_foreground",
+                                                                                "font": "emphasized_2"
+                                                                            }
+                                                                        }
+                                                                    },
+                                                                    "type": "core.Margin"
+                                                                }
+                                                            ]
+                                                        }
+                                                    }
+                                                ]
+                                            },
+                                            "type": "core.layout.Column"
+                                        }
+                                    },
+                                    "type": "bui.Decoration"
+                                },
+                                "margin": {
+                                    "bottom": "spacing_2x"
+                                }
+                            }
+                        },
+                        {
+                            "props": {
+                                "items": [
+                                    {
+                                        "props": {
+                                            "component": {
+                                                "type": "bui.Label",
+                                                "props": {
+                                                    "text": "Additional fees are not calculated automatically in the total cost and will have to be paid for separately during your stay."
+                                                }
+                                            },
+                                            "margin": {
+                                                "top": "spacing_1x"
+                                            }
+                                        },
+                                        "type": "core.Margin"
+                                    },
+                                    {
+                                        "type": "core.Margin",
+                                        "props": {
+                                            "margin": {
+                                                "top": "spacing_1x"
+                                            },
+                                            "component": {
+                                                "props": {
+                                                    "text": "The maximum number of cribs, extra beds, and children allowed in existing beds can vary depending on the option booked."
+                                                },
+                                                "type": "bui.Label"
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "type": "core.Margin",
+                                        "props": {
+                                            "margin": {
+                                                "top": "spacing_1x"
+                                            },
+                                            "component": {
+                                                "type": "bui.Label",
+                                                "props": {
+                                                    "text": "All cribs and extra beds are subject to availability."
+                                                }
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "type": "core.Margin",
+                                        "props": {
+                                            "margin": {
+                                                "top": "spacing_1x"
+                                            },
+                                            "component": {
+                                                "type": "bui.Label",
+                                                "props": {
+                                                    "text": "No capacity for extra beds."
+                                                }
+                                            }
+                                        }
+                                    }
+                                ]
+                            },
+                            "type": "core.layout.Column"
+                        }
+                    ]
+                },
+                "type": "core.layout.Column"
+            },
+            "mfeId": "b-saba-child-policies-mfe/saba"
+        }
+    }
+}

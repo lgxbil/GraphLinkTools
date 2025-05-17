@@ -1,0 +1,158 @@
+{
+    "shorten": {
+        "api": {
+            "name": "Get_Min_Price",
+            "endpoint": "/api/v1/flights/getMinPrice",
+            "func_description": "Get the minimum price for flights. This API will return the lowest priced flights within 5 days before and after the query date. ",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "fromId": {
+                        "type": "String",
+                        "description": "From/Departure location Id. fromId can be retrieved from api/v1/flights/searchDestination(Search Flight Location) endpoint in Flights collection as id.",
+                        "example_value": "BOM.AIRPORT",
+                        "required": true
+                    },
+                    "toId": {
+                        "type": "String",
+                        "description": "To/Arrival location Id. toId can be retrieved from api/v1/flights/searchDestination(Search Flight Location) endpoint in Flights collection as id.",
+                        "example_value": "DEL.AIRPORT",
+                        "required": true
+                    },
+                    "departDate": {
+                        "type": "Date (yyyy-mm-dd)",
+                        "description": "Departure or travel date.\nFormat: YYYY-MM-DD",
+                        "example_value": "",
+                        "required": true
+                    },
+                    "returnDate": {
+                        "type": "Date (yyyy-mm-dd)",
+                        "description": "Return date.\nFormat: YYYY-MM-DD",
+                        "example_value": "",
+                        "required": false
+                    },
+                    "cabinClass": {
+                        "type": "Enum",
+                        "description": "Search for flights that match the cabin class specified. Cabin call can be either ECONOMY, PREMIUM_ECONOMY, BUSINESS or FIRST.",
+                        "example_value": "",
+                        "required": false
+                    },
+                    "currency_code": {
+                        "type": "String",
+                        "description": "The currency code. currency_code can be retrieved from api/v1/meta/getCurrency(Get Currency) endpoint in Hotels collection.",
+                        "example_value": "AED",
+                        "required": false
+                    }
+                },
+                "required": [
+                    "fromId",
+                    "toId",
+                    "departDate"
+                ]
+            }
+        },
+        "static_response": {
+            "function_name": "Get_Min_Price",
+            "arguments": {
+                "fromId": "SFO.AIRPORT",
+                "toId": "IAD.AIRPORT",
+                "departDate": "2024-11-05"
+            },
+            "observation": {
+                "status": true,
+                "message": "Success",
+                "timestamp": 1730457298432,
+                "data": [
+                    {
+                        "departureDate": "2024-11-02",
+                        "searchDates": [
+                            "2024-11-02"
+                        ],
+                        "offsetDays": -3,
+                        "isCheapest": false,
+                        "price": {
+                            "currencyCode": "USD",
+                            "units": 463,
+                            "nanos": 470000000
+                        },
+                        "priceRounded": {
+                            "currencyCode": "USD",
+                            "units": 464,
+                            "nanos": 0
+                        }
+                    },
+                    {
+                        "departureDate": "2024-11-03",
+                        "searchDates": [
+                            "2024-11-03"
+                        ],
+                        "offsetDays": -2,
+                        "isCheapest": false,
+                        "price": {
+                            "currencyCode": "USD",
+                            "units": 463,
+                            "nanos": 470000000
+                        },
+                        "priceRounded": {
+                            "currencyCode": "USD",
+                            "units": 464,
+                            "nanos": 0
+                        }
+                    },
+                    {
+                        "departureDate": "2024-11-04",
+                        "searchDates": [
+                            "2024-11-04"
+                        ],
+                        "offsetDays": -1,
+                        "isCheapest": false,
+                        "price": {
+                            "currencyCode": "USD",
+                            "units": 205,
+                            "nanos": 620000000
+                        },
+                        "priceRounded": {
+                            "currencyCode": "USD",
+                            "units": 206,
+                            "nanos": 0
+                        }
+                    }
+                ]
+            }
+        },
+        "required": {
+            "query": "I'm planning a trip from Mumbai to Delhi on October 15, 2024. Can you find the cheapest flight options around that date?",
+            "params": {
+                "fromId": "BOM.AIRPORT",
+                "toId": "DEL.AIRPORT",
+                "departDate": "2024-10-15"
+            },
+            "response": null
+        },
+        "optional": {
+            "query": "I'm planning a trip from Mumbai (BOM.AIRPORT) to Delhi (DEL.AIRPORT) on October 15, 2024. I'd like to know the cheapest flight options around that date, preferably in economy class, with prices displayed in AED.",
+            "params": {
+                "fromId": "BOM.AIRPORT",
+                "toId": "DEL.AIRPORT",
+                "departDate": "2024-10-15",
+                "cabinClass": "ECONOMY",
+                "currency_code": "AED"
+            },
+            "response": {
+                "error": {
+                    "code": "BAD_REQUEST",
+                    "requestId": "75b2e110-325d-11f0-aec5-57a11cbd4396"
+                }
+            }
+        }
+    },
+    "row": {
+        "required": null,
+        "optional": {
+            "error": {
+                "code": "BAD_REQUEST",
+                "requestId": "75b2e110-325d-11f0-aec5-57a11cbd4396"
+            }
+        }
+    }
+}
