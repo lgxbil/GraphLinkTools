@@ -26,7 +26,7 @@ class RapidAPICall():
         
         params_copy = copy.deepcopy(func_call['arguments'])
         if params_copy == None:
-            return None
+            return {"fail":{"error": "No arguments provided"}}
         
         param_dict = {}
         for path_param in self.path_params:
@@ -35,30 +35,29 @@ class RapidAPICall():
         self.url = self.url.format(**param_dict)
         # print(self.url)
 
-        for k, value in params_copy.items():
-            if k == "legs":
-                params_copy[k] = json.dumps(value, ensure_ascii=False)
+        # for k, value in params_copy.items():
+        #     if k == "legs":
+        #         params_copy[k] = json.dumps(value, ensure_ascii=False)
         try:
             # print(params_copy)
             response = requests.get(self.url, headers=self.headers, params=params_copy)
-        except:
-            return None
+        except requests.exceptions.RequestException as e:
+            return {"error": "Network Error", "detail": str(e)}
+        return response.json()
 
         if response.status_code == 200:
             # print("Request success.")
             response = response.json()
-            if response['status'] == True and response["message"] == "Success":
+            if response['status'] == True:
                 if "timestamp" in response:
                     response.pop("timestamp")
                 if "data" in response:
                     response = response['data']
             else:
-                return None
-            
-            if not response:
-                return None
+                if "message" in response:
+                    return {"fail": response['message']}
         
-        return response
+        return {"success":response}
 
 
     def observation_shorten(self, response):
@@ -86,32 +85,16 @@ class RapidAPICall():
 
 
 if __name__ == "__main__":
-    with open("tool_info.json", 'r') as f:
-        tool_info = json.load(f)
-    tool_info = tool_info['booking-com15']
-    api_call = RapidAPICall(tool="booking-com15", tool_info=tool_info)
-    func_call = {
-                "name": "Search_Flights_Multi_Stops",
-                "arguments": {
-                    "legs": [
-                        {
-                            "fromId": "ORD.AIRPORT",
-                            "toId": "HND.AIRPORT",
-                            "date": "2024-09-01"
-                        },
-                        {
-                            "fromId": "HND.AIRPORT",
-                            "toId": "PVG.AIRPORT",
-                            "date": "2024-09-05"
-                        },
-                        {
-                            "fromId": "PVG.AIRPORT",
-                            "toId": "ORD.AIRPORT",
-                            "date": "2024-09-10"
-                        }
-                    ]
-                }
+    apis_info_path = "/home/snrobot/lin/GraphLinkTools/Tools/Apis(1).json"
+    with open(apis_info_path, 'r') as f:
+        tool = json.load(f)
+    tool_info = tool['functions']
+    host = tool['host']
+    rapidapi = RapidAPICall(tool="booking-com15", tool_info=tool_info, host=host)
+    name = "Search_Flights_Multi_Stops"
+    params = {
+                "legs": "[{'fromId':'BOM.AIRPORT','toId':'AMD.AIRPORT','date':'2025-05-25'},{'fromId':'AMD.AIRPORT','toId':'BOM.AIRPORT','date':'2025-05-28'}]"
             }
-    response = api_call._call(func_call)
+    response = rapidapi._call({"name":name, "arguments":params})
+    # response_required_shorten = rapidapi.shorten_response(response)
     print(response)
-    

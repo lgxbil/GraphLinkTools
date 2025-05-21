@@ -1,0 +1,159 @@
+{
+    "shorten": {
+        "api": {
+            "name": "Booking_Summary",
+            "endpoint": "/api/v1/cars/bookingSummary",
+            "func_description": "Retrieve a summary of the booking details for a specific vehicle. ",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "vehicle_id": {
+                        "type": "String",
+                        "description": "Vehicle ID. vehicle_id can be retrieved from api/v1/cars/searchCarRentals(Search Car Rentals) endpoint in Car Rental collection as vehicle_id inside search_results object.",
+                        "example_value": "373025711",
+                        "required": true
+                    },
+                    "search_key": {
+                        "type": "String",
+                        "description": "search_key can be retrieved from api/v1/cars/searchCarRentals(Search Car Rentals) endpoint in Car Rental collection as search_key.",
+                        "example_value": "eyJkcml2ZXJzQWdlIjozMCwiZHJvcE9mZkRhdGVUaW1lIjoiMjAyMy0xMS0xN1QxMDowMDowMCIsImRyb3BPZmZMb2NhdGlvbiI6IjQwLjYzOTcwMTg0MzI2MTcsLTczLjc3OTE5NzY5Mjg3MTEiLCJkcm9wT2ZmTG9jYXRpb25UeXBlIjoiTEFUTE9ORyIsInBpY2tVcERhdGVUaW1lIjoiMjAyMy0xMS0xNVQxMDowMDowMCIsInBpY2tVcExvY2F0aW9uIjoiNDAuNjM5NzAxODQzMjYxNywtNzMuNzc5MTk3NjkyODcxMSIsInBpY2tVcExvY2F0aW9uVHlwZSI6IkxBVExPTkciLCJyZW50YWxEdXJhdGlvbkluRGF5cyI6Miwic2VydmljZUZlYXR1cmVzIjpbIk5PX09QQVFVRVMiLCJTVVBSRVNTX0ZJWEVEX1BSSUNFX1ZFSElDTEVTIl19",
+                        "required": true
+                    },
+                    "languagecode": {
+                        "type": "String",
+                        "description": "To obtain the response data in a specific language, enter the languagecode. languagecode can be retrieved from api/v1/meta/getLanguages(Get Languages\n) endpoint in Meta collection.",
+                        "example_value": "",
+                        "required": false
+                    },
+                    "currency_code": {
+                        "type": "String",
+                        "description": "The currency code. currency_code can be retrieved from api/v1/meta/getCurrency(Get Currency) endpoint in Hotels collection.",
+                        "example_value": "EUR",
+                        "required": false
+                    }
+                },
+                "required": [
+                    "vehicle_id",
+                    "search_key"
+                ]
+            }
+        },
+        "static_response": {
+            "function_name": "Booking_Summary",
+            "arguments": {
+                "vehicle_id": "370879361",
+                "search_key": "eyJkcml2ZXJzQWdlIjozMCwiZHJvcE9mZkRhdGVUaW1lIjoiMjAyNC0xMi0wMVQxODowMDowMCIsImRyb3BPZmZMb2NhdGlvbiI6IjMyLjg5NjcwMTgxMjc0NDEsLTk3LjA0MjE5ODE4MTE1MjMiLCJkcm9wT2ZmTG9jYXRpb25UeXBlIjoiTEFUTE9ORyIsInBpY2tVcERhdGVUaW1lIjoiMjAyNC0xMS0yNVQxMjowMDowMCIsInBpY2tVcExvY2F0aW9uIjoiMzIuODk2NzAxODEyNzQ0MSwtOTcuMDQyMTk4MTgxMTUyMyIsInBpY2tVcExvY2F0aW9uVHlwZSI6IkxBVExPTkciLCJyZW50YWxEdXJhdGlvbkluRGF5cyI6Nywic2VydmljZUZlYXR1cmVzIjpbIk5PX09QQVFVRVMiLCJTVVBSRVNTX0ZJWEVEX1BSSUNFX1ZFSElDTEVTIiwiSU5DTFVERV9QUk9EVUNUX1JFTEFUSU9OU0hJUFMiLCJJTkNMVURFX0VYVFJBU19DT05UQUlOSU5HX0ZFRVMiXX0="
+            },
+            "observation": {
+                "status": true,
+                "message": "Success",
+                "data": {
+                    "priceInformation": {
+                        "title": "About the price",
+                        "items": [
+                            {
+                                "text": "The price in ₹ (INR) has been converted to show you the approximate price in US$ (USD).",
+                                "icon": "EXCHANGE"
+                            }
+                        ]
+                    },
+                    "footer": {
+                        "subtitle": "Total rental price",
+                        "title": "US$281.24",
+                        "cta": {
+                            "title": "Next step"
+                        }
+                    },
+                    "title": "Booking summary",
+                    "product": {
+                        "dropOff": {
+                            "dateTime": "Sun, 01 Dec · 18:00",
+                            "name": "Dallas-Fort Worth International Airport"
+                        },
+                        "supplier": {
+                            "name": "Dollar"
+                        },
+                        "duration": "7 days",
+                        "vehicle": {
+                            "title": "Chevrolet Spark  ",
+                            "subtitle": "or similar"
+                        },
+                        "pickUp": {
+                            "dateTime": "Mon, 25 Nov · 12:00",
+                            "name": "Dallas-Fort Worth International Airport"
+                        }
+                    },
+                    "priceBreakdown": {
+                        "sections": [
+                            {
+                                "items": [
+                                    {
+                                        "title": "Car rental price",
+                                        "price": "US$281.24"
+                                    }
+                                ],
+                                "subtotal": {
+                                    "primaryPrice": {
+                                        "title": "Subtotal",
+                                        "prefix": "approx.",
+                                        "price": "US$281.24"
+                                    },
+                                    "title": "Payable today",
+                                    "secondaryPrice": "(₹ 23,653.38)"
+                                }
+                            }
+                        ],
+                        "total": {
+                            "primaryPrice": {
+                                "price": "US$281.24",
+                                "prefix": "approx."
+                            },
+                            "subtitle": "(including any taxes, fees & extras)",
+                            "title": "Total rental price"
+                        }
+                    }
+                }
+            }
+        },
+        "required": {
+            "query": "I found a car rental with vehicle ID 373025711 and would like to see the booking summary, including pricing and any additional fees. The search key is eyJkcml2ZXJzQWdlIjozMCwiZHJvcE9mZkRhdGVUaW1lIjoiMjAyMy0xMS0xN1QxMDowMDowMCIsImRyb3BPZmZMb2NhdGlvbiI6IjQwLjYzOTcwMTg0MzI2MTcsLTczLjc3OTE5NzY5Mjg3MTEiLCJkcm9wT2ZmTG9jYXRpb25UeXBlIjoiTEFUTE9ORyIsInBpY2tVcERhdGVUaW1lIjoiMjAyMy0xMS0xNVQxMDowMDowMCIsInBpY2tVcExvY2F0aW9uIjoiNDAuNjM5NzAxODQzMjYxNywtNzMuNzc5MTk3NjkyODcxMSIsInBpY2tVcExvY2F0aW9uVHlwZSI6IkxBVExPTkciLCJyZW50YWxEdXJhdGlvbkluRGF5cyI6Miwic2VydmljZUZlYXR1cmVzIjpbIk5PX09QQVFVRVMiLCJTVVBSRVNTX0ZJWEVEX1BSSUNFX1ZFSElDTEVTIl19.",
+            "params": {
+                "vehicle_id": "373025711",
+                "search_key": "eyJkcml2ZXJzQWdlIjozMCwiZHJvcE9mZkRhdGVUaW1lIjoiMjAyMy0xMS0xN1QxMDowMDowMCIsImRyb3BPZmZMb2NhdGlvbiI6IjQwLjYzOTcwMTg0MzI2MTcsLTczLjc3OTE5NzY5Mjg3MTEiLCJkcm9wT2ZmTG9jYXRpb25UeXBlIjoiTEFUTE9ORyIsInBpY2tVcERhdGVUaW1lIjoiMjAyMy0xMS0xNVQxMDowMDowMCIsInBpY2tVcExvY2F0aW9uIjoiNDAuNjM5NzAxODQzMjYxNywtNzMuNzc5MTk3NjkyODcxMSIsInBpY2tVcExvY2F0aW9uVHlwZSI6IkxBVExPTkciLCJyZW50YWxEdXJhdGlvbkluRGF5cyI6Miwic2VydmljZUZlYXR1cmVzIjpbIk5PX09QQVFVRVMiLCJTVVBSRVNTX0ZJWEVEX1BSSUNFX1ZFSElDTEVTIl19"
+            },
+            "response": {
+                "status": true,
+                "message": "Success",
+                "timestamp": 1747651847687,
+                "data": {}
+            }
+        },
+        "optional": {
+            "query": "I found a car rental with vehicle ID 373025711 and would like to see the booking summary, including pricing and any additional fees. The search key is eyJkcml2ZXJzQWdlIjozMCwiZHJvcE9mZkRhdGVUaW1lIjoiMjAyMy0xMS0xN1QxMDowMDowMCIsImRyb3BPZmZMb2NhdGlvbiI6IjQwLjYzOTcwMTg0MzI2MTcsLTczLjc3OTE5NzY5Mjg3MTEiLCJkcm9wT2ZmTG9jYXRpb25UeXBlIjoiTEFUTE9ORyIsInBpY2tVcERhdGVUaW1lIjoiMjAyMy0xMS0xNVQxMDowMDowMCIsInBpY2tVcExvY2F0aW9uIjoiNDAuNjM5NzAxODQzMjYxNywtNzMuNzc5MTk3NjkyODcxMSIsInBpY2tVcExvY2F0aW9uVHlwZSI6IkxBVExPTkciLCJyZW50YWxEdXJhdGlvbkluRGF5cyI6Miwic2VydmljZUZlYXR1cmVzIjpbIk5PX09QQVFVRVMiLCJTVVBSRVNTX0ZJWEVEX1BSSUNFX1ZFSElDTEVTIl19. Can you provide the summary in English and display the pricing in euros?",
+            "params": {
+                "vehicle_id": "373025711",
+                "search_key": "eyJkcml2ZXJzQWdlIjozMCwiZHJvcE9mZkRhdGVUaW1lIjoiMjAyMy0xMS0xN1QxMDowMDowMCIsImRyb3BPZmZMb2NhdGlvbiI6IjQwLjYzOTcwMTg0MzI2MTcsLTczLjc3OTE5NzY5Mjg3MTEiLCJkcm9wT2ZmTG9jYXRpb25UeXBlIjoiTEFUTE9ORyIsInBpY2tVcERhdGVUaW1lIjoiMjAyMy0xMS0xNVQxMDowMDowMCIsInBpY2tVcExvY2F0aW9uIjoiNDAuNjM5NzAxODQzMjYxNywtNzMuNzc5MTk3NjkyODcxMSIsInBpY2tVcExvY2F0aW9uVHlwZSI6IkxBVExPTkciLCJyZW50YWxEdXJhdGlvbkluRGF5cyI6Miwic2VydmljZUZlYXR1cmVzIjpbIk5PX09QQVFVRVMiLCJTVVBSRVNTX0ZJWEVEX1BSSUNFX1ZFSElDTEVTIl19"
+            },
+            "response": {
+                "status": true,
+                "message": "Success",
+                "timestamp": 1747651896283,
+                "data": {}
+            }
+        }
+    },
+    "row": {
+        "required": {
+            "status": true,
+            "message": "Success",
+            "timestamp": 1747651847687,
+            "data": {}
+        },
+        "optional": {
+            "status": true,
+            "message": "Success",
+            "timestamp": 1747651896283,
+            "data": {}
+        }
+    }
+}

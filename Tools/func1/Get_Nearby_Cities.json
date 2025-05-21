@@ -1,0 +1,370 @@
+{
+    "shorten": {
+        "api": {
+            "name": "Get_Nearby_Cities",
+            "endpoint": "/api/v1/hotels/getNearbyCities",
+            "func_description": "Search for cities around a given geographical coordinates. ",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "latitude": {
+                        "type": "String",
+                        "description": "Latitude of the searched location. latitude can be retrieved from api/v1/meta/locationToLatLong(Location to Lat Long) endpoint in Meta collection.",
+                        "example_value": "65.9667",
+                        "required": true
+                    },
+                    "longitude": {
+                        "type": "String",
+                        "description": "Longitude of the searched location. longitude can be retrieved from api/v1/meta/locationToLatLong(Location to Lat Long) endpoint in Meta collection.",
+                        "example_value": "-18.5333",
+                        "required": true
+                    },
+                    "languagecode": {
+                        "type": "String",
+                        "description": "To obtain the response data in a specific language, enter the languagecode. languagecode can be retrieved from api/v1/meta/getLanguages(Get Languages\n) endpoint in Meta collection.",
+                        "example_value": "en-us",
+                        "required": false
+                    }
+                },
+                "required": [
+                    "latitude",
+                    "longitude"
+                ]
+            }
+        },
+        "static_response": {
+            "function_name": "Get_Nearby_Cities",
+            "arguments": {
+                "latitude": "42.2662099",
+                "longitude": "-70.85022959999999"
+            },
+            "observation": {
+                "status": true,
+                "message": "Success",
+                "data": [
+                    {
+                        "longitude": -70.80419921875,
+                        "nr_hotels": 2,
+                        "cc1": "us",
+                        "country": "United States",
+                        "latitude": 42.24169921875,
+                        "dest_id": 20061958,
+                        "region": "Massachusetts",
+                        "dest_type": "city",
+                        "name": "Cohasset"
+                    }
+                ]
+            }
+        },
+        "required": {
+            "query": "I'm currently at coordinates 40.7128° N, 74.0060° W in New York City. Can you tell me what cities are nearby?",
+            "params": {
+                "latitude": "40.7128",
+                "longitude": "-74.0060"
+            },
+            "response": [
+                {
+                    "latitude": 40.7164001464844,
+                    "nr_hotels": 1,
+                    "dest_type": "city",
+                    "cc1": "us",
+                    "dest_id": 20085521,
+                    "country": "United States",
+                    "longitude": -73.996696472168,
+                    "region": null,
+                    "name": "Chinatown"
+                },
+                {
+                    "nr_hotels": 530,
+                    "latitude": 40.6960857950378,
+                    "dest_type": "city",
+                    "cc1": "us",
+                    "dest_id": 20085207,
+                    "country": "United States",
+                    "longitude": -73.9845070528099,
+                    "name": "Brooklyn",
+                    "region": "New York State"
+                },
+                {
+                    "dest_id": 20081434,
+                    "country": "United States",
+                    "longitude": -74.0327987670898,
+                    "region": "New Jersey",
+                    "name": "Hoboken",
+                    "nr_hotels": 83,
+                    "latitude": 40.7439002990723,
+                    "dest_type": "city",
+                    "cc1": "us"
+                }
+            ]
+        },
+        "optional": {
+            "query": "I'm currently at coordinates 40.7128° N, 74.0060° W in New York City. Can you tell me what cities are nearby, with the information displayed in English?",
+            "params": {
+                "latitude": "40.7128",
+                "longitude": "-74.0060"
+            },
+            "response": [
+                {
+                    "country": "United States",
+                    "name": "Chinatown",
+                    "dest_id": 20085521,
+                    "region": null,
+                    "latitude": 40.7164001464844,
+                    "longitude": -73.996696472168,
+                    "cc1": "us",
+                    "nr_hotels": 1,
+                    "dest_type": "city"
+                },
+                {
+                    "dest_type": "city",
+                    "nr_hotels": 530,
+                    "latitude": 40.6960857950378,
+                    "region": "New York State",
+                    "cc1": "us",
+                    "longitude": -73.9845070528099,
+                    "dest_id": 20085207,
+                    "name": "Brooklyn",
+                    "country": "United States"
+                },
+                {
+                    "region": "New Jersey",
+                    "cc1": "us",
+                    "latitude": 40.7439002990723,
+                    "longitude": -74.0327987670898,
+                    "name": "Hoboken",
+                    "dest_id": 20081434,
+                    "country": "United States",
+                    "dest_type": "city",
+                    "nr_hotels": 83
+                }
+            ]
+        }
+    },
+    "row": {
+        "required": [
+            {
+                "latitude": 40.7164001464844,
+                "nr_hotels": 1,
+                "dest_type": "city",
+                "cc1": "us",
+                "dest_id": 20085521,
+                "country": "United States",
+                "longitude": -73.996696472168,
+                "region": null,
+                "name": "Chinatown"
+            },
+            {
+                "nr_hotels": 530,
+                "latitude": 40.6960857950378,
+                "dest_type": "city",
+                "cc1": "us",
+                "dest_id": 20085207,
+                "country": "United States",
+                "longitude": -73.9845070528099,
+                "name": "Brooklyn",
+                "region": "New York State"
+            },
+            {
+                "dest_id": 20081434,
+                "country": "United States",
+                "longitude": -74.0327987670898,
+                "region": "New Jersey",
+                "name": "Hoboken",
+                "nr_hotels": 83,
+                "latitude": 40.7439002990723,
+                "dest_type": "city",
+                "cc1": "us"
+            },
+            {
+                "dest_id": 20080887,
+                "country": "United States",
+                "longitude": -74.0614013671875,
+                "region": "New Jersey",
+                "name": "Communipaw",
+                "latitude": 40.7085990905762,
+                "nr_hotels": 2,
+                "dest_type": "city",
+                "cc1": "us"
+            },
+            {
+                "cc1": "us",
+                "nr_hotels": 1,
+                "latitude": 40.7397003173828,
+                "dest_type": "city",
+                "longitude": -74.0633010864258,
+                "region": "New Jersey",
+                "name": "Croxton",
+                "dest_id": 20080941,
+                "country": "United States"
+            },
+            {
+                "country": "United States",
+                "dest_id": 20087749,
+                "region": "New York State",
+                "name": "Long Island City",
+                "longitude": -73.9492034912109,
+                "dest_type": "city",
+                "nr_hotels": 16,
+                "latitude": 40.744701385498,
+                "cc1": "us"
+            },
+            {
+                "dest_id": 20081509,
+                "country": "United States",
+                "longitude": -74.0781021118164,
+                "region": "New Jersey",
+                "name": "Jersey City",
+                "latitude": 40.728099822998,
+                "nr_hotels": 253,
+                "dest_type": "city",
+                "cc1": "us"
+            },
+            {
+                "cc1": "us",
+                "dest_type": "city",
+                "latitude": 40.769401550293,
+                "nr_hotels": 9,
+                "region": "New Jersey",
+                "name": "Weehawken",
+                "longitude": -74.0207977294922,
+                "country": "United States",
+                "dest_id": 20082811
+            },
+            {
+                "dest_id": 20088325,
+                "country": "United States",
+                "longitude": -73.9818954467773,
+                "region": "New York State",
+                "name": "New York",
+                "nr_hotels": 2689,
+                "latitude": 40.7680740356445,
+                "dest_type": "city",
+                "cc1": "us"
+            },
+            {
+                "dest_id": 20082828,
+                "country": "United States",
+                "longitude": -74.0836029052734,
+                "region": "New Jersey",
+                "name": "West Bergen",
+                "latitude": 40.7125015258789,
+                "nr_hotels": 4,
+                "dest_type": "city",
+                "cc1": "us"
+            }
+        ],
+        "optional": [
+            {
+                "country": "United States",
+                "name": "Chinatown",
+                "dest_id": 20085521,
+                "region": null,
+                "latitude": 40.7164001464844,
+                "longitude": -73.996696472168,
+                "cc1": "us",
+                "nr_hotels": 1,
+                "dest_type": "city"
+            },
+            {
+                "dest_type": "city",
+                "nr_hotels": 530,
+                "latitude": 40.6960857950378,
+                "region": "New York State",
+                "cc1": "us",
+                "longitude": -73.9845070528099,
+                "dest_id": 20085207,
+                "name": "Brooklyn",
+                "country": "United States"
+            },
+            {
+                "region": "New Jersey",
+                "cc1": "us",
+                "latitude": 40.7439002990723,
+                "longitude": -74.0327987670898,
+                "name": "Hoboken",
+                "dest_id": 20081434,
+                "country": "United States",
+                "dest_type": "city",
+                "nr_hotels": 83
+            },
+            {
+                "name": "Communipaw",
+                "dest_id": 20080887,
+                "region": "New Jersey",
+                "latitude": 40.7085990905762,
+                "cc1": "us",
+                "longitude": -74.0614013671875,
+                "country": "United States",
+                "nr_hotels": 2,
+                "dest_type": "city"
+            },
+            {
+                "nr_hotels": 1,
+                "dest_type": "city",
+                "country": "United States",
+                "longitude": -74.0633010864258,
+                "region": "New Jersey",
+                "latitude": 40.7397003173828,
+                "cc1": "us",
+                "dest_id": 20080941,
+                "name": "Croxton"
+            },
+            {
+                "nr_hotels": 16,
+                "dest_type": "city",
+                "region": "New York State",
+                "longitude": -73.9492034912109,
+                "latitude": 40.744701385498,
+                "cc1": "us",
+                "name": "Long Island City",
+                "dest_id": 20087749,
+                "country": "United States"
+            },
+            {
+                "dest_type": "city",
+                "nr_hotels": 253,
+                "country": "United States",
+                "dest_id": 20081509,
+                "name": "Jersey City",
+                "region": "New Jersey",
+                "latitude": 40.728099822998,
+                "longitude": -74.0781021118164,
+                "cc1": "us"
+            },
+            {
+                "country": "United States",
+                "dest_id": 20082811,
+                "name": "Weehawken",
+                "region": "New Jersey",
+                "latitude": 40.769401550293,
+                "longitude": -74.0207977294922,
+                "cc1": "us",
+                "nr_hotels": 9,
+                "dest_type": "city"
+            },
+            {
+                "nr_hotels": 2689,
+                "dest_type": "city",
+                "latitude": 40.7680740356445,
+                "region": "New York State",
+                "cc1": "us",
+                "longitude": -73.9818954467773,
+                "dest_id": 20088325,
+                "name": "New York",
+                "country": "United States"
+            },
+            {
+                "nr_hotels": 4,
+                "dest_type": "city",
+                "region": "New Jersey",
+                "cc1": "us",
+                "latitude": 40.7125015258789,
+                "longitude": -74.0836029052734,
+                "name": "West Bergen",
+                "dest_id": 20082828,
+                "country": "United States"
+            }
+        ]
+    }
+}

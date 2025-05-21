@@ -1,0 +1,813 @@
+[{
+    "func_description":"This API is suitable for travel recommendations and itinerary planning. It searches bookable travel activities based on a location ID, with sorting options by popularity, rating, or lowest price. Users can filter results by date, price, type, etc., and receive detailed activity information including price, rating, reviews, and cancellation policy. The location ID must be obtained from the SearchLocation API.",
+    "api": {
+            "name": "Search_Attractions",
+            "endpoint": "/api/v1/attraction/searchAttractions",
+            "func_description": "Search Attraction by trending/attr_book_score/lowest_price. ",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "String",
+                        "description": "id can be retrieved from api/v1/attraction/searchLocation(Search Attraction Location) endpoint in Attraction collection as id inside products or destinations.",
+                        "example_value": "eyJ1ZmkiOi0yMDkyMTc0fQ==",
+                        "required": true
+                    },
+                    "startDate": {
+                        "type": "Date (yyyy-mm-dd)",
+                        "description": "Sort the data by the start date.",
+                        "example_value": "",
+                        "required": false
+                    },
+                    "endDate": {
+                        "type": "Date (yyyy-mm-dd)",
+                        "description": "Sort the data by the end date.",
+                        "example_value": "",
+                        "required": false
+                    },
+                    "sortBy": {
+                        "type": "Enum",
+                        "description": "This parameter orders result by trending, attr_book_score or lowest_price.",
+                        "example_value": "",
+                        "required": false
+                    },
+                    "page": {
+                        "type": "Number",
+                        "description": "The page number.",
+                        "example_value": "1",
+                        "required": false
+                    },
+                    "currency_code": {
+                        "type": "String",
+                        "description": "The currency code. currency_code can be retrieved from api/v1/meta/getCurrency(Get Currency) endpoint in Hotels collection.",
+                        "example_value": "INR",
+                        "required": false
+                    },
+                    "languagecode": {
+                        "type": "String",
+                        "description": "To obtain the response data in a specific language, enter the languagecode. languagecode can be retrieved from api/v1/meta/getLanguages(Get Languages\n) endpoint in Meta collection.",
+                        "example_value": "en-us",
+                        "required": false
+                    },
+                    "typeFilters": {
+                        "type": "String",
+                        "description": "typeFilters can be retrieved from /api/v1/attraction/searchAttractions(Search Attractions) endpoint in Hotels collection. data->filterOptions-> typeFilters[]-> tagname.\nNote:- typeFilters should be separated by commas if passing multiple values.\nExample: tag1,tag2,tag",
+                        "example_value": "",
+                        "required": false
+                    },
+                    "priceFilters": {
+                        "type": "String",
+                        "description": "priceFilters can be retrieved from /api/v1/attraction/searchAttractions(Search Attractions) endpoint in Hotels collection. data->filterOptions-> priceFilters[]-> tagname.\nNote:- priceFilters should be separated by commas if passing multiple values.\nExample: tag1,tag2,tag",
+                        "example_value": "",
+                        "required": false
+                    },
+                    "ufiFilters": {
+                        "type": "String",
+                        "description": "ufiFilters can be retrieved from /api/v1/attraction/searchAttractions(Search Attractions) endpoint in Hotels collection. data->filterOptions-> ufiFilters[]-> tagname.\nNote:- ufiFilters should be separated by commas if passing multiple values.\nExample: tag1,tag2,tag",
+                        "example_value": "",
+                        "required": false
+                    },
+                    "labelFilters": {
+                        "type": "String",
+                        "description": "labelFilters can be retrieved from /api/v1/attraction/searchAttractions(Search Attractions) endpoint in Hotels collection. data->filterOptions-> labelFilters[]-> tagname.\nNote:- labelFilters should be separated by commas if passing multiple values.\nExample: tag1,tag2,tag",
+                        "example_value": "",
+                        "required": false
+                    }
+                },
+                "required": [
+                    "id"
+                ]
+            }
+        },
+    "response": {
+                "status": true,
+                "message": "Success",
+                "timestamp": 1747652111866,
+                "data": {
+                    "__typename": "AttractionsProductSearchResponse",
+                    "products": [
+                        {
+                            "__typename": "AttractionsProduct",
+                            "cancellationPolicy": {
+                                "__typename": "AttractionsCancellationPolicy",
+                                "hasFreeCancellation": true
+                            },
+                            "id": "PR6K7ZswbGBs",
+                            "name": "Dharavi, Dhobighat, and Mumbai Dabbawallas",
+                            "slug": "pr6k7zswbgbs-mumbai-half-day-tour",
+                            "shortDescription": "A must do tour of Mumbai. This is an off-beat 3.5hours tour where you will see Mumbai from a wide...",
+                            "representativePrice": {
+                                "__typename": "AttractionsPrice",
+                                "chargeAmount": 18,
+                                "currency": "USD",
+                                "publicAmount": 20
+                            },
+                            "primaryPhoto": {
+                                "__typename": "AttractionsPhoto",
+                                "small": "https://q-xx.bstatic.com/xdata/images/xphoto/300x320/142005970.jpg?k=37a8dd22f2f1edb579fabb00c4d740c88e6103f7d47ba7e491e4cc3afa1bb862&o="
+                            },
+                            "reviewsStats": {
+                                "__typename": "AttractionsProductReviewStats",
+                                "allReviewsCount": 3,
+                                "percentage": "67%",
+                                "combinedNumericStats": {
+                                    "__typename": "AttractionsProductCombinedReviewStats",
+                                    "average": 4.8,
+                                    "total": 83
+                                }
+                            },
+                            "ufiDetails": {
+                                "__typename": "AttractionLocationResponse",
+                                "bCityName": "Mumbai",
+                                "ufi": -2092174,
+                                "url": {
+                                    "__typename": "AttractionLocationUrl",
+                                    "country": "in"
+                                }
+                            },
+                            "offers": [
+                                {
+                                    "__typename": "Offer",
+                                    "items": [
+                                        {
+                                            "__typename": "OfferItem",
+                                            "id": "OIEnoHP8TJsB"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "__typename": "Offer",
+                                    "items": [
+                                        {
+                                            "__typename": "OfferItem",
+                                            "id": "OIMyfydyr7zh"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "supportedFeatures": {
+                                "__typename": "AttractionsProductSupportedFeatures",
+                                "nativeApp": true
+                            },
+                            "flags": [
+                                {
+                                    "__typename": "AttractionsProductFlags",
+                                    "flag": "bestseller",
+                                    "value": true,
+                                    "rank": 1
+                                }
+                            ]
+                        },
+                        {
+                            "__typename": "AttractionsProduct",
+                            "cancellationPolicy": {
+                                "__typename": "AttractionsCancellationPolicy",
+                                "hasFreeCancellation": true
+                            },
+                            "id": "PRBQwxzOgXpj",
+                            "name": "Private Mumbai City Sightseeing Tour with Guide",
+                            "slug": "prbqwxzogxpj-private-mumbai-city-sightseeing-tour-with-guide",
+                            "shortDescription": "Uncover hidden gems with our local experts, offering a truly authentic Mumbai experience\nEnjoy pe...",
+                            "representativePrice": {
+                                "__typename": "AttractionsPrice",
+                                "chargeAmount": 66.48,
+                                "currency": "USD",
+                                "publicAmount": 66.48
+                            },
+                            "primaryPhoto": {
+                                "__typename": "AttractionsPhoto",
+                                "small": "https://r-xx.bstatic.com/xdata/images/xphoto/300x320/457652738.jpg?k=6cd35a3890da9b6fb2cba37aa41284e3d1e0d8d5cf12b29639c3a9f16c3ff41e&o="
+                            },
+                            "reviewsStats": {
+                                "__typename": "AttractionsProductReviewStats",
+                                "allReviewsCount": 0,
+                                "percentage": "0",
+                                "combinedNumericStats": {
+                                    "__typename": "AttractionsProductCombinedReviewStats",
+                                    "average": 5,
+                                    "total": 3
+                                }
+                            },
+                            "ufiDetails": {
+                                "__typename": "AttractionLocationResponse",
+                                "bCityName": "Mumbai",
+                                "ufi": -2092174,
+                                "url": {
+                                    "__typename": "AttractionLocationUrl",
+                                    "country": "in"
+                                }
+                            },
+                            "offers": [
+                                {
+                                    "__typename": "Offer",
+                                    "items": [
+                                        {
+                                            "__typename": "OfferItem",
+                                            "id": "OIgp8x8LtoSZ"
+                                        },
+                                        {
+                                            "__typename": "OfferItem",
+                                            "id": "OIa9JX52Lohp"
+                                        },
+                                        {
+                                            "__typename": "OfferItem",
+                                            "id": "OIrxdEGEqfOu"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "__typename": "Offer",
+                                    "items": [
+                                        {
+                                            "__typename": "OfferItem",
+                                            "id": "OIYlfvZ2kjTn"
+                                        },
+                                        {
+                                            "__typename": "OfferItem",
+                                            "id": "OINiYOtvrh79"
+                                        },
+                                        {
+                                            "__typename": "OfferItem",
+                                            "id": "OIantT0SdsTr"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "__typename": "Offer",
+                                    "items": [
+                                        {
+                                            "__typename": "OfferItem",
+                                            "id": "OIhCDQUYQQAe"
+                                        },
+                                        {
+                                            "__typename": "OfferItem",
+                                            "id": "OIIQLCSxgud0"
+                                        },
+                                        {
+                                            "__typename": "OfferItem",
+                                            "id": "OIFVqL30zBMM"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "supportedFeatures": {
+                                "__typename": "AttractionsProductSupportedFeatures",
+                                "nativeApp": true
+                            },
+                            "flags": [
+                                {
+                                    "__typename": "AttractionsProductFlags",
+                                    "flag": "bestseller",
+                                    "value": true,
+                                    "rank": 5
+                                }
+                            ]
+                        },
+                        {
+                            "__typename": "AttractionsProduct",
+                            "cancellationPolicy": {
+                                "__typename": "AttractionsCancellationPolicy",
+                                "hasFreeCancellation": true
+                            },
+                            "id": "PRlR4RP176tm",
+                            "name": "All inclusive Elephanta Caves Guided Tour",
+                            "slug": "prlr4rp176tm-all-inclusive-elephanta-caves-guided-tour",
+                            "shortDescription": "UNESCO World Heritage Site Elephanta Caves is a must-see destination for history buffs or archaeo...",
+                            "representativePrice": {
+                                "__typename": "AttractionsPrice",
+                                "chargeAmount": 40,
+                                "currency": "USD",
+                                "publicAmount": 50
+                            },
+                            "primaryPhoto": {
+                                "__typename": "AttractionsPhoto",
+                                "small": "https://r-xx.bstatic.com/xdata/images/xphoto/300x320/149853907.jpg?k=f7559c18c9072468449c60339f62a98501d76f13d189bd2f91a7d3724d501bdb&o="
+                            },
+                            "reviewsStats": {
+                                "__typename": "AttractionsProductReviewStats",
+                                "allReviewsCount": 0,
+                                "percentage": "0",
+                                "combinedNumericStats": {
+                                    "__typename": "AttractionsProductCombinedReviewStats",
+                                    "average": 5,
+                                    "total": 37
+                                }
+                            },
+                            "ufiDetails": {
+                                "__typename": "AttractionLocationResponse",
+                                "bCityName": "Mumbai",
+                                "ufi": -2092174,
+                                "url": {
+                                    "__typename": "AttractionLocationUrl",
+                                    "country": "in"
+                                }
+                            },
+                            "offers": [
+                                {
+                                    "__typename": "Offer",
+                                    "items": [
+                                        {
+                                            "__typename": "OfferItem",
+                                            "id": "OICcQV8G1ljD"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "__typename": "Offer",
+                                    "items": [
+                                        {
+                                            "__typename": "OfferItem",
+                                            "id": "OI516SQLUe5O"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "supportedFeatures": {
+                                "__typename": "AttractionsProductSupportedFeatures",
+                                "nativeApp": true
+                            },
+                            "flags": [
+                                {
+                                    "__typename": "AttractionsProductFlags",
+                                    "flag": "bestseller",
+                                    "value": true,
+                                    "rank": 2
+                                }
+                            ]
+                        }
+                    ],
+                    "filterStats": {
+                        "__typename": "FilterStats",
+                        "unfilteredProductCount": 684,
+                        "filteredProductCount": 684
+                    },
+                    "sorters": [
+                        {
+                            "__typename": "AttractionsSorterOption",
+                            "name": "Our top picks",
+                            "value": "trending"
+                        },
+                        {
+                            "__typename": "AttractionsSorterOption",
+                            "name": "Lowest price",
+                            "value": "lowest_price"
+                        },
+                        {
+                            "__typename": "AttractionsSorterOption",
+                            "name": "Best reviewed",
+                            "value": "highest_weighted_rating"
+                        }
+                    ],
+                    "defaultSorter": {
+                        "__typename": "AttractionsSorterOption",
+                        "name": "Our top picks",
+                        "value": "trending"
+                    },
+                    "filterOptions": {
+                        "__typename": "FilterOptions",
+                        "typeFilters": [
+                            {
+                                "__typename": "FilterOption",
+                                "name": "Tours ",
+                                "tagname": "PTCMCuXtHgrC",
+                                "productCount": 529
+                            },
+                            {
+                                "__typename": "FilterOption",
+                                "name": "Museums, arts & culture",
+                                "tagname": "PTCMCcodv3rh",
+                                "productCount": 419
+                            },
+                            {
+                                "__typename": "FilterOption",
+                                "name": "Food & drinks",
+                                "tagname": "PTCMCi9PTIPL",
+                                "productCount": 50
+                            }
+                        ],
+                        "labelFilters": [
+                            {
+                                "__typename": "FilterOption",
+                                "name": "Free cancellation",
+                                "tagname": "free_cancellation",
+                                "productCount": 647
+                            }
+                        ],
+                        "ufiFilters": [
+                            {
+                                "__typename": "FilterOption",
+                                "name": "Mumbai",
+                                "tagname": "-2092174",
+                                "productCount": 683
+                            },
+                            {
+                                "__typename": "FilterOption",
+                                "name": "Andheri",
+                                "tagname": "-2088871",
+                                "productCount": 1
+                            }
+                        ],
+                        "priceFilters": null
+                    }
+                }
+        },
+    "response_summary":"In Mumbai, there are 684 bookable travel activities, three of which are highly recommended. First, the \"Dharavi Slum, Dhobi Ghat, and Dabbawala Half-Day Tour\" is priced at $18 (originally $20) for a 3.5-hour journey that offers an in-depth exploration of Mumbai's local life. It has received 83 reviews with an average rating of 4.8 stars (67% positive reviews) and supports free cancellation. It is the top-selling item on the platform. Second, the \"Private Mumbai City Tour\" costs $66.48 and is led by a local guide to uncover the hidden corners of the city. Although it has only three reviews, all of them are perfect 5-star ratings. It also supports free cancellation and ranks fifth on the best-sellers list. Lastly, the \"Elephanta Caves All-Inclusive Guided Tour,\" a UNESCO World Heritage site, is now available for $40 (originally $50). With 37 reviews all giving 5-star ratings, it is ideal for history enthusiasts and ranks second on the best-sellers list. All activities can be booked directly through the app, with 647 of them offering free cancellation. Tourists can sort and filter by \"Smart Recommendations,\" \"Lowest Price First,\" or \"Highest Rating First.\" Popular categories include 529 tours, 419 museum and cultural experiences, and 50 food and wine activities.",
+    "response_fields":{
+        "response": {
+          "status": {
+            "type": "Boolean",
+            "description": "Indicates the success status of the API request. 'true' means the request was successful."
+          },
+          "message": {
+            "type": "String",
+            "description": "A human-readable message indicating the result of the API request, e.g., 'Success'."
+          },
+          "timestamp": {
+            "type": "Number",
+            "description": "Unix timestamp in milliseconds indicating when the API response was generated."
+          },
+          "data": {
+            "type": "Object",
+            "description": "Contains the main data payload of the API response.",
+            "fields": {
+              "__typename": {
+                "type": "String",
+                "description": "Indicates the type of the response object, e.g., 'AttractionsProductSearchResponse'."
+              },
+              "products": {
+                "type": "Array",
+                "description": "List of travel activity products.",
+                "items": {
+                  "type": "Object",
+                  "description": "Represents a travel activity product.",
+                  "fields": {
+                    "__typename": {
+                      "type": "String",
+                      "description": "Indicates the type of the product, e.g., 'AttractionsProduct'."
+                    },
+                    "cancellationPolicy": {
+                      "type": "Object",
+                      "description": "Details about the cancellation policy for the product.",
+                      "fields": {
+                        "__typename": {
+                          "type": "String",
+                          "description": "Indicates the type of the cancellation policy, e.g., 'AttractionsCancellationPolicy'."
+                        },
+                        "hasFreeCancellation": {
+                          "type": "Boolean",
+                          "description": "Indicates whether free cancellation is available for the product."
+                        }
+                      }
+                    },
+                    "id": {
+                      "type": "String",
+                      "description": "Unique identifier for the product."
+                    },
+                    "name": {
+                      "type": "String",
+                      "description": "Name of the travel activity."
+                    },
+                    "slug": {
+                      "type": "String",
+                      "description": "URL-friendly version of the product name, used for routing."
+                    },
+                    "shortDescription": {
+                      "type": "String",
+                      "description": "Brief description of the travel activity."
+                    },
+                    "representativePrice": {
+                      "type": "Object",
+                      "description": "Pricing information for the product.",
+                      "fields": {
+                        "__typename": {
+                          "type": "String",
+                          "description": "Indicates the type of the price object, e.g., 'AttractionsPrice'."
+                        },
+                        "chargeAmount": {
+                          "type": "Number",
+                          "description": "The actual price charged for the product."
+                        },
+                        "currency": {
+                          "type": "String",
+                          "description": "The currency in which the price is denominated, e.g., 'USD'."
+                        },
+                        "publicAmount": {
+                          "type": "Number",
+                          "description": "The original or public price before any discounts."
+                        }
+                      }
+                    },
+                    "primaryPhoto": {
+                      "type": "Object",
+                      "description": "Primary photo associated with the product.",
+                      "fields": {
+                        "__typename": {
+                          "type": "String",
+                          "description": "Indicates the type of the photo object, e.g., 'AttractionsPhoto'."
+                        },
+                        "small": {
+                          "type": "String",
+                          "description": "URL to a small-sized version of the photo."
+                        }
+                      }
+                    },
+                    "reviewsStats": {
+                      "type": "Object",
+                      "description": "Statistics related to product reviews.",
+                      "fields": {
+                        "__typename": {
+                          "type": "String",
+                          "description": "Indicates the type of the reviews stats object, e.g., 'AttractionsProductReviewStats'."
+                        },
+                        "allReviewsCount": {
+                          "type": "Number",
+                          "description": "Total number of reviews for the product."
+                        },
+                        "percentage": {
+                          "type": "String",
+                          "description": "Percentage of positive reviews, e.g., '67%'."
+                        },
+                        "combinedNumericStats": {
+                          "type": "Object",
+                          "description": "Combined numeric statistics for reviews.",
+                          "fields": {
+                            "__typename": {
+                              "type": "String",
+                              "description": "Indicates the type of the combined stats object, e.g., 'AttractionsProductCombinedReviewStats'."
+                            },
+                            "average": {
+                              "type": "Number",
+                              "description": "Average rating of the product."
+                            },
+                            "total": {
+                              "type": "Number",
+                              "description": "Total number of ratings."
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "ufiDetails": {
+                      "type": "Object",
+                      "description": "Details about the location of the attraction.",
+                      "fields": {
+                        "__typename": {
+                          "type": "String",
+                          "description": "Indicates the type of the location object, e.g., 'AttractionLocationResponse'."
+                        },
+                        "bCityName": {
+                          "type": "String",
+                          "description": "Name of the city where the attraction is located."
+                        },
+                        "ufi": {
+                          "type": "Number",
+                          "description": "Unique identifier for the location."
+                        },
+                        "url": {
+                          "type": "Object",
+                          "description": "URL-related details for the location.",
+                          "fields": {
+                            "__typename": {
+                              "type": "String",
+                              "description": "Indicates the type of the URL object, e.g., 'AttractionLocationUrl'."
+                            },
+                            "country": {
+                              "type": "String",
+                              "description": "Country code for the location, e.g., 'in' for India."
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "offers": {
+                      "type": "Array",
+                      "description": "List of offers available for the product.",
+                      "items": {
+                        "type": "Object",
+                        "description": "Represents an offer for the product.",
+                        "fields": {
+                          "__typename": {
+                            "type": "String",
+                            "description": "Indicates the type of the offer, e.g., 'Offer'."
+                          },
+                          "items": {
+                            "type": "Array",
+                            "description": "List of items included in the offer.",
+                            "items": {
+                              "type": "Object",
+                              "description": "Represents an item in the offer.",
+                              "fields": {
+                                "__typename": {
+                                  "type": "String",
+                                  "description": "Indicates the type of the offer item, e.g., 'OfferItem'."
+                                },
+                                "id": {
+                                  "type": "String",
+                                  "description": "Unique identifier for the offer item."
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "supportedFeatures": {
+                      "type": "Object",
+                      "description": "Features supported by the product.",
+                      "fields": {
+                        "__typename": {
+                          "type": "String",
+                          "description": "Indicates the type of the supported features object, e.g., 'AttractionsProductSupportedFeatures'."
+                        },
+                        "nativeApp": {
+                          "type": "Boolean",
+                          "description": "Indicates whether the product is supported on the native app."
+                        }
+                      }
+                    },
+                    "flags": {
+                      "type": "Array",
+                      "description": "List of flags associated with the product.",
+                      "items": {
+                        "type": "Object",
+                        "description": "Represents a flag for the product.",
+                        "fields": {
+                          "__typename": {
+                            "type": "String",
+                            "description": "Indicates the type of the flag, e.g., 'AttractionsProductFlags'."
+                          },
+                          "flag": {
+                            "type": "String",
+                            "description": "Type of flag, e.g., 'bestseller'."
+                          },
+                          "value": {
+                            "type": "Boolean",
+                            "description": "Indicates whether the flag is active."
+                          },
+                          "rank": {
+                            "type": "Number",
+                            "description": "Rank of the product in the bestseller list."
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "filterStats": {
+                "type": "Object",
+                "description": "Statistics related to filtering.",
+                "fields": {
+                  "__typename": {
+                    "type": "String",
+                    "description": "Indicates the type of the filter stats object, e.g., 'FilterStats'."
+                  },
+                  "unfilteredProductCount": {
+                    "type": "Number",
+                    "description": "Total number of products before any filters are applied."
+                  },
+                  "filteredProductCount": {
+                    "type": "Number",
+                    "description": "Total number of products after filters are applied."
+                  }
+                }
+              },
+              "sorters": {
+                "type": "Array",
+                "description": "List of sorting options available for the products.",
+                "items": {
+                  "type": "Object",
+                  "description": "Represents a sorting option.",
+                  "fields": {
+                    "__typename": {
+                      "type": "String",
+                      "description": "Indicates the type of the sorter option, e.g., 'AttractionsSorterOption'."
+                    },
+                    "name": {
+                      "type": "String",
+                      "description": "Human-readable name of the sorting option, e.g., 'Our top picks'."
+                    },
+                    "value": {
+                      "type": "String",
+                      "description": "Internal value used for sorting, e.g., 'trending'."
+                    }
+                  }
+                }
+              },
+              "defaultSorter": {
+                "type": "Object",
+                "description": "The default sorting option applied to the products.",
+                "fields": {
+                  "__typename": {
+                    "type": "String",
+                    "description": "Indicates the type of the default sorter, e.g., 'AttractionsSorterOption'."
+                  },
+                  "name": {
+                    "type": "String",
+                    "description": "Human-readable name of the default sorting option, e.g., 'Our top picks'."
+                  },
+                  "value": {
+                    "type": "String",
+                    "description": "Internal value used for the default sorting, e.g., 'trending'."
+                  }
+                }
+              },
+              "filterOptions": {
+                "type": "Object",
+                "description": "Available filtering options for the products.",
+                "fields": {
+                  "__typename": {
+                    "type": "String",
+                    "description": "Indicates the type of the filter options object, e.g., 'FilterOptions'."
+                  },
+                  "typeFilters": {
+                    "type": "Array",
+                    "description": "List of filters based on product type.",
+                    "items": {
+                      "type": "Object",
+                      "description": "Represents a type filter.",
+                      "fields": {
+                        "__typename": {
+                          "type": "String",
+                          "description": "Indicates the type of the filter option, e.g., 'FilterOption'."
+                        },
+                        "name": {
+                          "type": "String",
+                          "description": "Name of the filter, e.g., 'Tours'."
+                        },
+                        "tagname": {
+                          "type": "String",
+                          "description": "Internal tag name for the filter, e.g., 'PTCMCuXtHgrC'."
+                        },
+                        "productCount": {
+                          "type": "Number",
+                          "description": "Number of products matching the filter."
+                        }
+                      }
+                    }
+                  },
+                  "labelFilters": {
+                    "type": "Array",
+                    "description": "List of filters based on labels.",
+                    "items": {
+                      "type": "Object",
+                      "description": "Represents a label filter.",
+                      "fields": {
+                        "__typename": {
+                          "type": "String",
+                          "description": "Indicates the type of the filter option, e.g., 'FilterOption'."
+                        },
+                        "name": {
+                          "type": "String",
+                          "description": "Name of the filter, e.g., 'Free cancellation'."
+                        },
+                        "tagname": {
+                          "type": "String",
+                          "description": "Internal tag name for the filter, e.g., 'free_cancellation'."
+                        },
+                        "productCount": {
+                          "type": "Number",
+                          "description": "Number of products matching the filter."
+                        }
+                      }
+                    }
+                  },
+                  "ufiFilters": {
+                    "type": "Array",
+                    "description": "List of filters based on location (UFI).",
+                    "items": {
+                      "type": "Object",
+                      "description": "Represents a location filter.",
+                      "fields": {
+                        "__typename": {
+                          "type": "String",
+                          "description": "Indicates the type of the filter option, e.g., 'FilterOption'."
+                        },
+                        "name": {
+                          "type": "String",
+                          "description": "Name of the location, e.g., 'Mumbai'."
+                        },
+                        "tagname": {
+                          "type": "String",
+                          "description": "Internal tag name for the location, e.g., '-2092174'."
+                        },
+                        "productCount": {
+                          "type": "Number",
+                          "description": "Number of products matching the filter."
+                        }
+                      }
+                    }
+                  },
+                  "priceFilters": {
+                    "type": "null",
+                    "description": "Indicates that no price filters are currently applied."
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    
+}
+]

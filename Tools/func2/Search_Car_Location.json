@@ -1,0 +1,90 @@
+{
+    "shorten": {
+        "api": {
+            "name": "Search_Car_Location",
+            "endpoint": "/api/v1/cars/searchDestination",
+            "func_description": "Find car rental location by searching for their name, address, city, state, country, etc.. ",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "query": {
+                        "type": "String",
+                        "description": "Names of locations, cities, districts, places, countries, counties etc.",
+                        "example_value": "new",
+                        "required": true
+                    },
+                    "languagecode": {
+                        "type": "String",
+                        "description": "To obtain the response data in a specific language, enter the languagecode. languagecode can be retrieved from api/v1/meta/getLanguages(Get Languages\n) endpoint in Meta collection.",
+                        "example_value": "",
+                        "required": false
+                    }
+                },
+                "required": [
+                    "query"
+                ]
+            }
+        },
+        "static_response": {
+            "function_name": "Search_Car_Location",
+            "arguments": {
+                "query": "Fiumicino Airport"
+            },
+            "observation": {
+                "status": true,
+                "message": "Success",
+                "data": [
+                    {
+                        "type": "airport",
+                        "coordinates": {
+                            "latitude": 41.7927017211914,
+                            "longitude": 12.2523002624512
+                        },
+                        "name": "Fiumicino Airport",
+                        "iata_code": "FCO",
+                        "country": "Italy",
+                        "city": "Rome"
+                    }
+                ]
+            }
+        },
+        "required": {
+            "query": "I'm looking for car rental locations in New York City. Can you help me find them?",
+            "params": {
+                "query": "New York City"
+            },
+            "response": {
+                "status": true,
+                "message": "Success",
+                "timestamp": 1747651690038,
+                "data": []
+            }
+        },
+        "optional": {
+            "query": "I'm looking for car rental locations in New York City. Can you help me find them? Also, I'd prefer the results to be displayed in English if possible.",
+            "params": {
+                "query": "New York City"
+            },
+            "response": {
+                "status": true,
+                "message": "Success",
+                "timestamp": 1747651707519,
+                "data": []
+            }
+        }
+    },
+    "row": {
+        "required": {
+            "status": true,
+            "message": "Success",
+            "timestamp": 1747651690038,
+            "data": []
+        },
+        "optional": {
+            "status": true,
+            "message": "Success",
+            "timestamp": 1747651707519,
+            "data": []
+        }
+    }
+}

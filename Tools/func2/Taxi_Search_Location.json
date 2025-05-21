@@ -1,0 +1,285 @@
+{
+    "shorten": {
+        "api": {
+            "name": "Taxi_Search_Location",
+            "endpoint": "/api/v1/taxi/searchLocation",
+            "func_description": "Find the `googlePlaceId` of Pick-up/Drop-off Location for taxi. ",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "query": {
+                        "type": "String",
+                        "description": "Names of locations, cities, districts, places, countries, counties etc.",
+                        "example_value": "new",
+                        "required": true
+                    },
+                    "languagecode": {
+                        "type": "String",
+                        "description": "To obtain the response data in a specific language, enter the languagecode. languagecode can be retrieved from api/v1/meta/getLanguages(Get Languages\n) endpoint in Meta collection.",
+                        "example_value": "",
+                        "required": false
+                    }
+                },
+                "required": [
+                    "query"
+                ]
+            }
+        },
+        "static_response": {
+            "function_name": "Taxi_Search_Location",
+            "arguments": {
+                "query": "Waterfront Skytrain Station"
+            },
+            "observation": {
+                "status": true,
+                "message": "Success",
+                "data": [
+                    {
+                        "city": "Vancouver",
+                        "country": "Canada",
+                        "countryCode": "ca",
+                        "latitude": 49.285164,
+                        "googlePlaceId": "ChIJD_-SC3hxhlQRLJAnr1qTaqg",
+                        "longitude": -123.11408,
+                        "name": "Waterfront Skytrain Station",
+                        "types": "underground_railway_station"
+                    }
+                ]
+            }
+        },
+        "required": {
+            "query": "I need to find the exact location ID for a taxi pickup at Times Square in New York City.",
+            "params": {
+                "query": "Times Square, New York City"
+            },
+            "response": {
+                "status": true,
+                "message": "Success",
+                "timestamp": 1747652038998,
+                "data": [
+                    {
+                        "description": null,
+                        "countryCode": "us",
+                        "latitude": 40.760246,
+                        "longitude": -73.98844,
+                        "iata": null,
+                        "name": "Riu Plaza New York Times Square",
+                        "country": "United States",
+                        "city": "New York",
+                        "types": "hotel",
+                        "googlePlaceId": "ChIJDwzsBVRYwokRvSHYftloJ1I"
+                    },
+                    {
+                        "name": "YOTEL New York Times Square",
+                        "iata": null,
+                        "googlePlaceId": "ChIJpY9Tg01YwokRCr_aQpDrqgk",
+                        "country": "United States",
+                        "types": "hotel",
+                        "city": "New York",
+                        "description": null,
+                        "longitude": -73.99545,
+                        "countryCode": "us",
+                        "latitude": 40.759155
+                    },
+                    {
+                        "iata": null,
+                        "name": "Hyatt Place New York City - Times Square",
+                        "country": "United States",
+                        "city": "New York",
+                        "types": "hotel",
+                        "googlePlaceId": "ChIJM_my671ZwokRyGPQqhdoTys",
+                        "description": null,
+                        "countryCode": "us",
+                        "latitude": 40.755966,
+                        "longitude": -73.993706
+                    }
+                ]
+            }
+        },
+        "optional": {
+            "query": "I need to find the exact location ID for a taxi pickup at Times Square in New York City. Can you help me with that? Also, I'd prefer the response in English if possible.",
+            "params": {
+                "query": "Times Square, New York City"
+            },
+            "response": {
+                "status": true,
+                "message": "Success",
+                "timestamp": 1747652050883,
+                "data": [
+                    {
+                        "latitude": 40.760246,
+                        "city": "New York",
+                        "googlePlaceId": "ChIJDwzsBVRYwokRvSHYftloJ1I",
+                        "countryCode": "us",
+                        "name": "Riu Plaza New York Times Square",
+                        "types": "hotel",
+                        "longitude": -73.98844,
+                        "description": null,
+                        "country": "United States",
+                        "iata": null
+                    },
+                    {
+                        "longitude": -73.99545,
+                        "types": "hotel",
+                        "country": "United States",
+                        "description": null,
+                        "iata": null,
+                        "latitude": 40.759155,
+                        "city": "New York",
+                        "googlePlaceId": "ChIJpY9Tg01YwokRCr_aQpDrqgk",
+                        "countryCode": "us",
+                        "name": "YOTEL New York Times Square"
+                    },
+                    {
+                        "name": "Hyatt Place New York City - Times Square",
+                        "countryCode": "us",
+                        "city": "New York",
+                        "googlePlaceId": "ChIJM_my671ZwokRyGPQqhdoTys",
+                        "latitude": 40.755966,
+                        "iata": null,
+                        "longitude": -73.993706,
+                        "types": "hotel",
+                        "description": null,
+                        "country": "United States"
+                    }
+                ]
+            }
+        }
+    },
+    "row": {
+        "required": {
+            "status": true,
+            "message": "Success",
+            "timestamp": 1747652038998,
+            "data": [
+                {
+                    "description": null,
+                    "countryCode": "us",
+                    "latitude": 40.760246,
+                    "longitude": -73.98844,
+                    "iata": null,
+                    "name": "Riu Plaza New York Times Square",
+                    "country": "United States",
+                    "city": "New York",
+                    "types": "hotel",
+                    "googlePlaceId": "ChIJDwzsBVRYwokRvSHYftloJ1I"
+                },
+                {
+                    "name": "YOTEL New York Times Square",
+                    "iata": null,
+                    "googlePlaceId": "ChIJpY9Tg01YwokRCr_aQpDrqgk",
+                    "country": "United States",
+                    "types": "hotel",
+                    "city": "New York",
+                    "description": null,
+                    "longitude": -73.99545,
+                    "countryCode": "us",
+                    "latitude": 40.759155
+                },
+                {
+                    "iata": null,
+                    "name": "Hyatt Place New York City - Times Square",
+                    "country": "United States",
+                    "city": "New York",
+                    "types": "hotel",
+                    "googlePlaceId": "ChIJM_my671ZwokRyGPQqhdoTys",
+                    "description": null,
+                    "countryCode": "us",
+                    "latitude": 40.755966,
+                    "longitude": -73.993706
+                },
+                {
+                    "description": null,
+                    "latitude": 40.759,
+                    "countryCode": "us",
+                    "longitude": -73.98443,
+                    "iata": null,
+                    "name": "Tempo By Hilton New York Times Square",
+                    "country": "United States",
+                    "types": "hotel",
+                    "city": "New York",
+                    "googlePlaceId": "ChIJKYQAHH9ZwokRcv2MnQjbDno"
+                },
+                {
+                    "description": null,
+                    "countryCode": "us",
+                    "latitude": 40.762657,
+                    "longitude": -73.98189,
+                    "iata": null,
+                    "name": "Sheraton New York Times Square Hotel",
+                    "types": "hotel",
+                    "city": "New York",
+                    "country": "United States",
+                    "googlePlaceId": "ChIJw_JUgvhYwokR91EMxVDhB8M"
+                }
+            ]
+        },
+        "optional": {
+            "status": true,
+            "message": "Success",
+            "timestamp": 1747652050883,
+            "data": [
+                {
+                    "latitude": 40.760246,
+                    "city": "New York",
+                    "googlePlaceId": "ChIJDwzsBVRYwokRvSHYftloJ1I",
+                    "countryCode": "us",
+                    "name": "Riu Plaza New York Times Square",
+                    "types": "hotel",
+                    "longitude": -73.98844,
+                    "description": null,
+                    "country": "United States",
+                    "iata": null
+                },
+                {
+                    "longitude": -73.99545,
+                    "types": "hotel",
+                    "country": "United States",
+                    "description": null,
+                    "iata": null,
+                    "latitude": 40.759155,
+                    "city": "New York",
+                    "googlePlaceId": "ChIJpY9Tg01YwokRCr_aQpDrqgk",
+                    "countryCode": "us",
+                    "name": "YOTEL New York Times Square"
+                },
+                {
+                    "name": "Hyatt Place New York City - Times Square",
+                    "countryCode": "us",
+                    "city": "New York",
+                    "googlePlaceId": "ChIJM_my671ZwokRyGPQqhdoTys",
+                    "latitude": 40.755966,
+                    "iata": null,
+                    "longitude": -73.993706,
+                    "types": "hotel",
+                    "description": null,
+                    "country": "United States"
+                },
+                {
+                    "googlePlaceId": "ChIJKYQAHH9ZwokRcv2MnQjbDno",
+                    "city": "New York",
+                    "name": "Tempo By Hilton New York Times Square",
+                    "countryCode": "us",
+                    "latitude": 40.759,
+                    "description": null,
+                    "types": "hotel",
+                    "longitude": -73.98443,
+                    "country": "United States",
+                    "iata": null
+                },
+                {
+                    "latitude": 40.762657,
+                    "googlePlaceId": "ChIJw_JUgvhYwokR91EMxVDhB8M",
+                    "city": "New York",
+                    "name": "Sheraton New York Times Square Hotel",
+                    "countryCode": "us",
+                    "description": null,
+                    "types": "hotel",
+                    "longitude": -73.98189,
+                    "country": "United States",
+                    "iata": null
+                }
+            ]
+        }
+    }
+}

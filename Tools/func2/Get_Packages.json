@@ -1,0 +1,199 @@
+{
+    "shorten": {
+        "api": {
+            "name": "Get_Packages",
+            "endpoint": "/api/v1/cars/getPackages",
+            "func_description": "Search the price of car rental and the protection price of insurance. ",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "vehicle_id": {
+                        "type": "String",
+                        "description": "Vehicle ID. vehicle_id can be retrieved from api/v1/cars/searchCarRentals(Search Car Rentals) endpoint in Car Rental collection as vehicle_id inside search_results object.",
+                        "example_value": "373025711",
+                        "required": true
+                    },
+                    "search_key": {
+                        "type": "String",
+                        "description": "search_key can be retrieved from api/v1/cars/searchCarRentals(Search Car Rentals) endpoint in Car Rental collection as search_key.",
+                        "example_value": "eyJkcml2ZXJzQWdlIjozMCwiZHJvcE9mZkRhdGVUaW1lIjoiMjAyMy0xMS0xN1QxMDowMDowMCIsImRyb3BPZmZMb2NhdGlvbiI6IjQwLjYzOTcwMTg0MzI2MTcsLTczLjc3OTE5NzY5Mjg3MTEiLCJkcm9wT2ZmTG9jYXRpb25UeXBlIjoiTEFUTE9ORyIsInBpY2tVcERhdGVUaW1lIjoiMjAyMy0xMS0xNVQxMDowMDowMCIsInBpY2tVcExvY2F0aW9uIjoiNDAuNjM5NzAxODQzMjYxNywtNzMuNzc5MTk3NjkyODcxMSIsInBpY2tVcExvY2F0aW9uVHlwZSI6IkxBVExPTkciLCJyZW50YWxEdXJhdGlvbkluRGF5cyI6Miwic2VydmljZUZlYXR1cmVzIjpbIk5PX09QQVFVRVMiLCJTVVBSRVNTX0ZJWEVEX1BSSUNFX1ZFSElDTEVTIl19",
+                        "required": true
+                    },
+                    "languagecode": {
+                        "type": "String",
+                        "description": "To obtain the response data in a specific language, enter the languagecode. languagecode can be retrieved from api/v1/meta/getLanguages(Get Languages\n) endpoint in Meta collection.",
+                        "example_value": "",
+                        "required": false
+                    },
+                    "currency_code": {
+                        "type": "String",
+                        "description": "The currency code. currency_code can be retrieved from api/v1/meta/getCurrency(Get Currency) endpoint in Hotels collection.",
+                        "example_value": "EUR",
+                        "required": false
+                    }
+                },
+                "required": [
+                    "vehicle_id",
+                    "search_key"
+                ]
+            }
+        },
+        "static_response": {
+            "function_name": "Get_Packages",
+            "arguments": {
+                "vehicle_id": "759111721",
+                "search_key": "eyJkcml2ZXJzQWdlIjozMCwiZHJvcE9mZkRhdGVUaW1lIjoiMjAyNC0xMi0yNlQwOTowMDowMCIsImRyb3BPZmZMb2NhdGlvbiI6IjI1Ljc4OTM0MywtODAuMTMwMDQiLCJkcm9wT2ZmTG9jYXRpb25UeXBlIjoiTEFUTE9ORyIsInBpY2tVcERhdGVUaW1lIjoiMjAyNC0xMi0yNVQwOTowMDowMCIsInBpY2tVcExvY2F0aW9uIjoiMjUuNzg5MzQzLC04MC4xMzAwNCIsInBpY2tVcExvY2F0aW9uVHlwZSI6IkxBVExPTkciLCJyZW50YWxEdXJhdGlvbkluRGF5cyI6MSwic2VydmljZUZlYXR1cmVzIjpbIk5PX09QQVFVRVMiLCJTVVBSRVNTX0ZJWEVEX1BSSUNFX1ZFSElDTEVTIiwiSU5DTFVERV9QUk9EVUNUX1JFTEFUSU9OU0hJUFMiLCJJTkNMVURFX0VYVFJBU19DT05UQUlOSU5HX0ZFRVMiXX0="
+            },
+            "observation": {
+                "status": true,
+                "message": "Success",
+                "data": [
+                    {
+                        "cta": {
+                            "attach": "Add Extra Cover",
+                            "remove": "Remove Extra Cover"
+                        },
+                        "id": "EXTRA_COVER",
+                        "forcedStepCta": {
+                            "bookWith": "Go to book with Extra Protection",
+                            "bookWithout": "Go to book without Extra Protection"
+                        },
+                        "metadata": {
+                            "name": "Extra Cover",
+                            "displayPrice": {
+                                "currency": "USD",
+                                "prePayable": true,
+                                "amount": 16.49
+                            },
+                            "basePrice": {
+                                "currency": "INR",
+                                "amount": 1387.14,
+                                "prePayable": true
+                            },
+                            "id": "244cb4b3-30fe-4926-bafd-4140c6c8590b"
+                        },
+                        "details": {
+                            "disclaimers": {
+                                "title": "Exclusions apply."
+                            },
+                            "priceDisplay": {
+                                "displayPrice": "US$16.49",
+                                "suffix": "Free cancellation",
+                                "title": "Total protection price"
+                            },
+                            "footer": {
+                                "body": "For details of who provides and distributes the insurance available on our platform: {link}\n\n(The cover price you see includes all applicable taxes and fees.)",
+                                "placeholders": [
+                                    {
+                                        "link": {
+                                            "title": "Insurance information"
+                                        },
+                                        "type": "LINK",
+                                        "id": "{link}"
+                                    }
+                                ]
+                            },
+                            "pageTitle": "Add insurance?"
+                        },
+                        "moreInformation": {
+                            "priceDisplay": {
+                                "title": "Total protection price",
+                                "suffix": "Free cancellation",
+                                "displayPrice": "US$16.49"
+                            },
+                            "moreInfoData": {
+                                "body": {
+                                    "atAGlance": {
+                                        "list": [
+                                            {
+                                                "content": "Also refunds you for damage to tyres, glass, undercarriage and more.",
+                                                "title": "More than just bodywork"
+                                            },
+                                            {
+                                                "content": "Refunds you for breakdown, towing, key loss and admin fees.",
+                                                "title": "Recovery charges"
+                                            },
+                                            {
+                                                "content": "Refunds costs such as emergency transport or accommodation after an incident.",
+                                                "title": "Hidden charges"
+                                            }
+                                        ],
+                                        "title": "Your car's zero-excess policy doesn't cover every kind of damage, or the other costs you might incur if something goes wrong. Why not add  ₹235,400 of Extra Protection?"
+                                    }
+                                },
+                                "header": {
+                                    "subtitle": "₹235,400 of additional protection per claim",
+                                    "title": "Extra Protection"
+                                }
+                            },
+                            "label": "Protection options",
+                            "calloutBanner": {
+                                "title": "Please note:",
+                                "content": "Your own car insurance is unlikely to cover hire cars."
+                            }
+                        },
+                        "price": {
+                            "label": "Total protection price",
+                            "displayPrice": "US$16.49",
+                            "priceAnnotation": {
+                                "text": "Free cancellation"
+                            }
+                        },
+                        "type": "insurance"
+                    }
+                ]
+            }
+        },
+        "required": {
+            "query": "I found a car rental with vehicle ID 373025711 and would like to see the rental price and insurance options. Can you provide the details?",
+            "params": {
+                "vehicle_id": "373025711",
+                "search_key": "eyJkcml2ZXJzQWdlIjozMCwiZHJvcE9mZkRhdGVUaW1lIjoiMjAyMy0xMS0xN1QxMDowMDowMCIsImRyb3BPZmZMb2NhdGlvbiI6IjQwLjYzOTcwMTg0MzI2MTcsLTczLjc3OTE5NzY5Mjg3MTEiLCJkcm9wT2ZmTG9jYXRpb25UeXBlIjoiTEFUTE9ORyIsInBpY2tVcERhdGVUaW1lIjoiMjAyMy0xMS0xNVQxMDowMDowMCIsInBpY2tVcExvY2F0aW9uIjoiNDAuNjM5NzAxODQzMjYxNywtNzMuNzc5MTk3NjkyODcxMSIsInBpY2tVcExvY2F0aW9uVHlwZSI6IkxBVExPTkciLCJyZW50YWxEdXJhdGlvbkluRGF5cyI6Miwic2VydmljZUZlYXR1cmVzIjpbIk5PX09QQVFVRVMiLCJTVVBSRVNTX0ZJWEVEX1BSSUNFX1ZFSElDTEVTIl19"
+            },
+            "response": {
+                "status": true,
+                "message": "Success",
+                "timestamp": 1747651772211,
+                "data": []
+            }
+        },
+        "optional": {
+            "query": "I found a car rental with vehicle ID 373025711 and would like to see the rental price and insurance options. Can you provide the details in English and display the prices in euros?",
+            "params": {
+                "vehicle_id": "373025711",
+                "languagecode": "en",
+                "currency_code": "EUR"
+            },
+            "response": {
+                "status": false,
+                "message": [
+                    {
+                        "search_key": "Invalid value"
+                    },
+                    {
+                        "search_key": "Invalid value"
+                    }
+                ]
+            }
+        }
+    },
+    "row": {
+        "required": {
+            "status": true,
+            "message": "Success",
+            "timestamp": 1747651772211,
+            "data": []
+        },
+        "optional": {
+            "status": false,
+            "message": [
+                {
+                    "search_key": "Invalid value"
+                },
+                {
+                    "search_key": "Invalid value"
+                }
+            ]
+        }
+    }
+}

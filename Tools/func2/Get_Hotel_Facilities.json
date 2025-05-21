@@ -1,0 +1,2613 @@
+{
+    "enchance": "This API retrieves detailed information about the facilities and services offered by a specific hotel during the selected stay period, such as air conditioning, non-smoking rooms, internet access, and room service. It indicates whether each facility is free, available during the stay. Results can be displayed in different languages for better accessibility. This helps users evaluate whether a hotel meets their personal preferences before making a booking decision.",
+    "shorten": {
+        "api": {
+            "name": "Get_Hotel_Facilities",
+            "endpoint": "/api/v1/hotels/getHotelFacilities",
+            "func_description": "Retrieves a list of facilities and services (e.g., pool, gym, Wi-Fi) offered by a specified hotel, with optional filtering by date and language.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "hotel_id": {
+                        "type": "String",
+                        "description": "hotel_id can be retrieved from api/v1/hotels/searchHotels(Search Hotels) or api/v1/hotels/searchHotelsByCoordinates(Search Hotels By Coordinates\n) endpoint in Hotels collection.",
+                        "example_value": "5955189",
+                        "required": true
+                    },
+                    "arrival_date": {
+                        "type": "Date (yyyy-mm-dd)",
+                        "description": "The date on which you will arrive or check-in",
+                        "example_value": "",
+                        "required": false
+                    },
+                    "departure_date": {
+                        "type": "Date (yyyy-mm-dd)",
+                        "description": "The date of departure or check-out.",
+                        "example_value": "",
+                        "required": false
+                    },
+                    "languagecode": {
+                        "type": "String",
+                        "description": "To obtain the response data in a specific language, enter the languagecode. languagecode can be retrieved from api/v1/meta/getLanguages(Get Languages\n) endpoint in Meta collection.",
+                        "example_value": "en-us",
+                        "required": false
+                    }
+                },
+                "required": [
+                    "hotel_id"
+                ]
+            }
+        },
+        "static_response": null,
+        "required": {
+            "query": "I'm considering staying at a hotel with ID 5955189. Can you tell me what facilities they offer, like if they have a pool or gym?",
+            "params": {
+                "hotel_id": "5955189"
+            },
+            "response": {
+                "status": true,
+                "message": "Success",
+                "timestamp": 1747651452891,
+                "data": {
+                    "accommodationHighlights": [],
+                    "facilities": [
+                        {
+                            "id": 110,
+                            "groupId": 1,
+                            "instances": [
+                                {
+                                    "title": "Designated smoking area",
+                                    "subFacilities": [],
+                                    "attributes": {
+                                        "name": null,
+                                        "paymentInfo": {
+                                            "chargeMode": "UNKNOWN_CHARGE_MODE"
+                                        },
+                                        "closureScheduleDuringStay": [],
+                                        "scheduleEntry": [],
+                                        "extendedAttributes": null
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "id": 109,
+                            "groupId": 1,
+                            "instances": [
+                                {
+                                    "title": "Air conditioning",
+                                    "subFacilities": [],
+                                    "attributes": {
+                                        "name": null,
+                                        "paymentInfo": {
+                                            "chargeMode": "FREE"
+                                        },
+                                        "closureScheduleDuringStay": [],
+                                        "scheduleEntry": [],
+                                        "extendedAttributes": null
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "id": 108,
+                            "groupId": 1,
+                            "instances": [
+                                {
+                                    "title": "Non-smoking throughout",
+                                    "subFacilities": [],
+                                    "attributes": {
+                                        "name": null,
+                                        "paymentInfo": {
+                                            "chargeMode": "UNKNOWN_CHARGE_MODE"
+                                        },
+                                        "closureScheduleDuringStay": [],
+                                        "scheduleEntry": [],
+                                        "extendedAttributes": null
+                                    }
+                                }
+                            ]
+                        }
+                    ],
+                    "highlights": [
+                        {
+                            "instances": [
+                                {
+                                    "title": "Internet services"
+                                }
+                            ]
+                        },
+                        {
+                            "instances": [
+                                {
+                                    "title": "Non-smoking rooms"
+                                }
+                            ]
+                        },
+                        {
+                            "instances": [
+                                {
+                                    "title": "Room service"
+                                }
+                            ]
+                        }
+                    ],
+                    "facilityGroups": [
+                        {
+                            "id": -3,
+                            "title": "General",
+                            "summary": null
+                        },
+                        {
+                            "id": -4,
+                            "title": "Some rooms",
+                            "summary": null
+                        },
+                        {
+                            "id": 18,
+                            "title": "Layout",
+                            "summary": null
+                        }
+                    ]
+                }
+            }
+        },
+        "optional": {
+            "query": "I'm planning to stay at a hotel with ID 5955189. Could you provide me with a list of all the facilities and services they offer, such as a swimming pool, gym, or Wi-Fi? Also, if possible, I'd like the information to be in English.",
+            "params": {
+                "hotel_id": "5955189"
+            },
+            "response": {
+                "status": true,
+                "message": "Success",
+                "timestamp": 1747651464438,
+                "data": {
+                    "accommodationHighlights": [
+                        {
+                            "title": "Parking"
+                        },
+                        {
+                            "title": "Private bathroom"
+                        },
+                        {
+                            "title": "Air conditioning"
+                        }
+                    ],
+                    "facilities": [
+                        {
+                            "id": 110,
+                            "groupId": 1,
+                            "instances": [
+                                {
+                                    "title": "Designated smoking area",
+                                    "subFacilities": [],
+                                    "attributes": {
+                                        "name": null,
+                                        "paymentInfo": {
+                                            "chargeMode": "UNKNOWN_CHARGE_MODE"
+                                        },
+                                        "closureScheduleDuringStay": [],
+                                        "scheduleEntry": [],
+                                        "extendedAttributes": null
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "id": 109,
+                            "groupId": 1,
+                            "instances": [
+                                {
+                                    "title": "Air conditioning",
+                                    "subFacilities": [],
+                                    "attributes": {
+                                        "name": null,
+                                        "paymentInfo": {
+                                            "chargeMode": "FREE"
+                                        },
+                                        "closureScheduleDuringStay": [],
+                                        "scheduleEntry": [],
+                                        "extendedAttributes": null
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "id": 108,
+                            "groupId": 1,
+                            "instances": [
+                                {
+                                    "title": "Non-smoking throughout",
+                                    "subFacilities": [],
+                                    "attributes": {
+                                        "name": null,
+                                        "paymentInfo": {
+                                            "chargeMode": "UNKNOWN_CHARGE_MODE"
+                                        },
+                                        "closureScheduleDuringStay": [],
+                                        "scheduleEntry": [],
+                                        "extendedAttributes": null
+                                    }
+                                }
+                            ]
+                        }
+                    ],
+                    "highlights": [
+                        {
+                            "instances": [
+                                {
+                                    "title": "Internet services"
+                                }
+                            ]
+                        },
+                        {
+                            "instances": [
+                                {
+                                    "title": "Non-smoking rooms"
+                                }
+                            ]
+                        },
+                        {
+                            "instances": [
+                                {
+                                    "title": "Parking"
+                                }
+                            ]
+                        }
+                    ],
+                    "facilityGroups": [
+                        {
+                            "id": -3,
+                            "title": "General",
+                            "summary": null
+                        },
+                        {
+                            "id": -4,
+                            "title": "Some rooms",
+                            "summary": null
+                        },
+                        {
+                            "id": 18,
+                            "title": "Layout",
+                            "summary": null
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    "row": {
+        "required": {
+            "status": true,
+            "message": "Success",
+            "timestamp": 1747651452891,
+            "data": {
+                "accommodationHighlights": [],
+                "facilities": [
+                    {
+                        "id": 110,
+                        "groupId": 1,
+                        "instances": [
+                            {
+                                "title": "Designated smoking area",
+                                "subFacilities": [],
+                                "attributes": {
+                                    "name": null,
+                                    "paymentInfo": {
+                                        "chargeMode": "UNKNOWN_CHARGE_MODE"
+                                    },
+                                    "closureScheduleDuringStay": [],
+                                    "scheduleEntry": [],
+                                    "extendedAttributes": null
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "id": 109,
+                        "groupId": 1,
+                        "instances": [
+                            {
+                                "title": "Air conditioning",
+                                "subFacilities": [],
+                                "attributes": {
+                                    "name": null,
+                                    "paymentInfo": {
+                                        "chargeMode": "FREE"
+                                    },
+                                    "closureScheduleDuringStay": [],
+                                    "scheduleEntry": [],
+                                    "extendedAttributes": null
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "id": 108,
+                        "groupId": 1,
+                        "instances": [
+                            {
+                                "title": "Non-smoking throughout",
+                                "subFacilities": [],
+                                "attributes": {
+                                    "name": null,
+                                    "paymentInfo": {
+                                        "chargeMode": "UNKNOWN_CHARGE_MODE"
+                                    },
+                                    "closureScheduleDuringStay": [],
+                                    "scheduleEntry": [],
+                                    "extendedAttributes": null
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "id": 80,
+                        "groupId": 1,
+                        "instances": [
+                            {
+                                "title": "Tile/marble floor",
+                                "subFacilities": [],
+                                "attributes": null
+                            }
+                        ]
+                    },
+                    {
+                        "id": 30,
+                        "groupId": 1,
+                        "instances": [
+                            {
+                                "title": "Fan",
+                                "subFacilities": [],
+                                "attributes": null
+                            }
+                        ]
+                    },
+                    {
+                        "id": 28,
+                        "groupId": 1,
+                        "instances": [
+                            {
+                                "title": "Family rooms",
+                                "subFacilities": [],
+                                "attributes": {
+                                    "name": null,
+                                    "paymentInfo": {
+                                        "chargeMode": "UNKNOWN_CHARGE_MODE"
+                                    },
+                                    "closureScheduleDuringStay": [],
+                                    "scheduleEntry": [],
+                                    "extendedAttributes": null
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "id": 16,
+                        "groupId": 1,
+                        "instances": [
+                            {
+                                "title": "Non-smoking rooms",
+                                "subFacilities": [],
+                                "attributes": {
+                                    "name": null,
+                                    "paymentInfo": {
+                                        "chargeMode": "UNKNOWN_CHARGE_MODE"
+                                    },
+                                    "closureScheduleDuringStay": [],
+                                    "scheduleEntry": [],
+                                    "extendedAttributes": null
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "id": 158,
+                        "groupId": 3,
+                        "instances": [
+                            {
+                                "title": "Daily housekeeping",
+                                "subFacilities": [],
+                                "attributes": {
+                                    "name": null,
+                                    "paymentInfo": {
+                                        "chargeMode": "FREE"
+                                    },
+                                    "closureScheduleDuringStay": [],
+                                    "scheduleEntry": [],
+                                    "extendedAttributes": null
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "id": 91,
+                        "groupId": 3,
+                        "instances": [
+                            {
+                                "title": "Luggage storage",
+                                "subFacilities": [],
+                                "attributes": {
+                                    "name": null,
+                                    "paymentInfo": {
+                                        "chargeMode": "PAID"
+                                    },
+                                    "closureScheduleDuringStay": [],
+                                    "scheduleEntry": [],
+                                    "extendedAttributes": null
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "id": 81,
+                        "groupId": 3,
+                        "instances": [
+                            {
+                                "title": "Fax/photocopying",
+                                "subFacilities": [],
+                                "attributes": {
+                                    "name": null,
+                                    "paymentInfo": {
+                                        "chargeMode": "PAID"
+                                    },
+                                    "closureScheduleDuringStay": [],
+                                    "scheduleEntry": [],
+                                    "extendedAttributes": null
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "id": 8,
+                        "groupId": 3,
+                        "instances": [
+                            {
+                                "title": "24-hour front desk",
+                                "subFacilities": [],
+                                "attributes": {
+                                    "name": null,
+                                    "paymentInfo": {
+                                        "chargeMode": "UNKNOWN_CHARGE_MODE"
+                                    },
+                                    "closureScheduleDuringStay": [],
+                                    "scheduleEntry": [],
+                                    "extendedAttributes": null
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "id": 5,
+                        "groupId": 3,
+                        "instances": [
+                            {
+                                "title": "Room service",
+                                "subFacilities": [],
+                                "attributes": {
+                                    "name": null,
+                                    "paymentInfo": {
+                                        "chargeMode": "UNKNOWN_CHARGE_MODE"
+                                    },
+                                    "closureScheduleDuringStay": [],
+                                    "scheduleEntry": [],
+                                    "extendedAttributes": null
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "id": 184,
+                        "groupId": 4,
+                        "instances": [
+                            {
+                                "title": "Socket near the bed",
+                                "subFacilities": [],
+                                "attributes": null
+                            }
+                        ]
+                    },
+                    {
+                        "id": 140,
+                        "groupId": 4,
+                        "instances": [
+                            {
+                                "title": "Drying rack for clothing",
+                                "subFacilities": [],
+                                "attributes": null
+                            }
+                        ]
+                    },
+                    {
+                        "id": 138,
+                        "groupId": 4,
+                        "instances": [
+                            {
+                                "title": "Clothes rack",
+                                "subFacilities": [],
+                                "attributes": null
+                            }
+                        ]
+                    },
+                    {
+                        "id": 141,
+                        "groupId": 5,
+                        "instances": [
+                            {
+                                "title": "Toilet paper",
+                                "subFacilities": [],
+                                "attributes": null
+                            }
+                        ]
+                    },
+                    {
+                        "id": 124,
+                        "groupId": 5,
+                        "instances": [
+                            {
+                                "title": "Towels",
+                                "subFacilities": [],
+                                "attributes": null
+                            }
+                        ]
+                    },
+                    {
+                        "id": 38,
+                        "groupId": 5,
+                        "instances": [
+                            {
+                                "title": "Private bathroom",
+                                "subFacilities": [],
+                                "attributes": {
+                                    "name": null,
+                                    "paymentInfo": null,
+                                    "closureScheduleDuringStay": [],
+                                    "scheduleEntry": [],
+                                    "extendedAttributes": {}
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "id": 31,
+                        "groupId": 5,
+                        "instances": [
+                            {
+                                "title": "Toilet",
+                                "subFacilities": [],
+                                "attributes": null
+                            }
+                        ]
+                    },
+                    {
+                        "id": 27,
+                        "groupId": 5,
+                        "instances": [
+                            {
+                                "title": "Free toiletries",
+                                "subFacilities": [],
+                                "attributes": null
+                            }
+                        ]
+                    },
+                    {
+                        "id": 4,
+                        "groupId": 5,
+                        "instances": [
+                            {
+                                "title": "Shower",
+                                "subFacilities": [],
+                                "attributes": null
+                            }
+                        ]
+                    },
+                    {
+                        "id": 75,
+                        "groupId": 6,
+                        "instances": [
+                            {
+                                "title": "Flat-screen TV",
+                                "subFacilities": [],
+                                "attributes": null
+                            }
+                        ]
+                    },
+                    {
+                        "id": 68,
+                        "groupId": 6,
+                        "instances": [
+                            {
+                                "title": "Cable channels",
+                                "subFacilities": [],
+                                "attributes": null
+                            }
+                        ]
+                    },
+                    {
+                        "id": 9,
+                        "groupId": 6,
+                        "instances": [
+                            {
+                                "title": "Telephone",
+                                "subFacilities": [],
+                                "attributes": null
+                            }
+                        ]
+                    },
+                    {
+                        "id": 8,
+                        "groupId": 6,
+                        "instances": [
+                            {
+                                "title": "TV",
+                                "subFacilities": [],
+                                "attributes": null
+                            }
+                        ]
+                    },
+                    {
+                        "id": 43,
+                        "groupId": 7,
+                        "instances": [
+                            {
+                                "title": "Breakfast in the room",
+                                "subFacilities": [],
+                                "attributes": {
+                                    "name": null,
+                                    "paymentInfo": {
+                                        "chargeMode": "UNKNOWN_CHARGE_MODE"
+                                    },
+                                    "closureScheduleDuringStay": [],
+                                    "scheduleEntry": [],
+                                    "extendedAttributes": null
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "id": 47,
+                        "groupId": 11,
+                        "instances": [
+                            {
+                                "title": "Internet services",
+                                "subFacilities": [],
+                                "attributes": {
+                                    "name": null,
+                                    "paymentInfo": {
+                                        "chargeMode": "FREE"
+                                    },
+                                    "closureScheduleDuringStay": [],
+                                    "scheduleEntry": [],
+                                    "extendedAttributes": {}
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "id": 222,
+                        "groupId": 13,
+                        "instances": [
+                            {
+                                "title": "Outdoor furniture",
+                                "subFacilities": [],
+                                "attributes": {
+                                    "name": null,
+                                    "paymentInfo": {
+                                        "chargeMode": "UNKNOWN_CHARGE_MODE"
+                                    },
+                                    "closureScheduleDuringStay": [],
+                                    "scheduleEntry": [],
+                                    "extendedAttributes": null
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "id": 26,
+                        "groupId": 15,
+                        "instances": [
+                            {
+                                "title": "Seating Area",
+                                "subFacilities": [],
+                                "attributes": null
+                            }
+                        ]
+                    },
+                    {
+                        "id": 2,
+                        "groupId": 16,
+                        "instances": [
+                            {
+                                "title": "Parking",
+                                "subFacilities": [],
+                                "attributes": {
+                                    "name": null,
+                                    "paymentInfo": {
+                                        "chargeMode": "FREE"
+                                    },
+                                    "closureScheduleDuringStay": [],
+                                    "scheduleEntry": [],
+                                    "extendedAttributes": {}
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "id": 95,
+                        "groupId": 17,
+                        "instances": [
+                            {
+                                "title": "Wardrobe or closet",
+                                "subFacilities": [],
+                                "attributes": null
+                            }
+                        ]
+                    },
+                    {
+                        "id": 465,
+                        "groupId": 23,
+                        "instances": [
+                            {
+                                "title": "Invoice provided",
+                                "subFacilities": [],
+                                "attributes": {
+                                    "name": null,
+                                    "paymentInfo": {
+                                        "chargeMode": "UNKNOWN_CHARGE_MODE"
+                                    },
+                                    "closureScheduleDuringStay": [],
+                                    "scheduleEntry": [],
+                                    "extendedAttributes": null
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "id": 425,
+                        "groupId": 34,
+                        "instances": [
+                            {
+                                "title": "Fire extinguishers",
+                                "subFacilities": [],
+                                "attributes": {
+                                    "name": null,
+                                    "paymentInfo": {
+                                        "chargeMode": "UNKNOWN_CHARGE_MODE"
+                                    },
+                                    "closureScheduleDuringStay": [],
+                                    "scheduleEntry": [],
+                                    "extendedAttributes": null
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "id": 423,
+                        "groupId": 34,
+                        "instances": [
+                            {
+                                "title": "CCTV in common areas",
+                                "subFacilities": [],
+                                "attributes": {
+                                    "name": null,
+                                    "paymentInfo": {
+                                        "chargeMode": "UNKNOWN_CHARGE_MODE"
+                                    },
+                                    "closureScheduleDuringStay": [],
+                                    "scheduleEntry": [],
+                                    "extendedAttributes": null
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "id": 422,
+                        "groupId": 34,
+                        "instances": [
+                            {
+                                "title": "Smoke alarms",
+                                "subFacilities": [],
+                                "attributes": {
+                                    "name": null,
+                                    "paymentInfo": {
+                                        "chargeMode": "UNKNOWN_CHARGE_MODE"
+                                    },
+                                    "closureScheduleDuringStay": [],
+                                    "scheduleEntry": [],
+                                    "extendedAttributes": null
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "id": 420,
+                        "groupId": 34,
+                        "instances": [
+                            {
+                                "title": "Key card access",
+                                "subFacilities": [],
+                                "attributes": {
+                                    "name": null,
+                                    "paymentInfo": {
+                                        "chargeMode": "UNKNOWN_CHARGE_MODE"
+                                    },
+                                    "closureScheduleDuringStay": [],
+                                    "scheduleEntry": [],
+                                    "extendedAttributes": null
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "id": 459,
+                        "groupId": 37,
+                        "instances": [
+                            {
+                                "title": "First aid kit available",
+                                "subFacilities": [],
+                                "attributes": {
+                                    "name": null,
+                                    "paymentInfo": {
+                                        "chargeMode": "UNKNOWN_CHARGE_MODE"
+                                    },
+                                    "closureScheduleDuringStay": [],
+                                    "scheduleEntry": [],
+                                    "extendedAttributes": null
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "id": 458,
+                        "groupId": 37,
+                        "instances": [
+                            {
+                                "title": "Process in place to check health of guests",
+                                "subFacilities": [],
+                                "attributes": {
+                                    "name": null,
+                                    "paymentInfo": {
+                                        "chargeMode": "UNKNOWN_CHARGE_MODE"
+                                    },
+                                    "closureScheduleDuringStay": [],
+                                    "scheduleEntry": [],
+                                    "extendedAttributes": null
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "id": 457,
+                        "groupId": 37,
+                        "instances": [
+                            {
+                                "title": "Hand sanitizer in guest accommodation and key areas",
+                                "subFacilities": [],
+                                "attributes": {
+                                    "name": null,
+                                    "paymentInfo": {
+                                        "chargeMode": "UNKNOWN_CHARGE_MODE"
+                                    },
+                                    "closureScheduleDuringStay": [],
+                                    "scheduleEntry": [],
+                                    "extendedAttributes": null
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "id": 456,
+                        "groupId": 37,
+                        "instances": [
+                            {
+                                "title": "Shared stationery such as printed menus, magazines, pens, and paper removed",
+                                "subFacilities": [],
+                                "attributes": {
+                                    "name": null,
+                                    "paymentInfo": {
+                                        "chargeMode": "UNKNOWN_CHARGE_MODE"
+                                    },
+                                    "closureScheduleDuringStay": [],
+                                    "scheduleEntry": [],
+                                    "extendedAttributes": null
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "id": 455,
+                        "groupId": 37,
+                        "instances": [
+                            {
+                                "title": "Staff follow all safety protocols as directed by local authorities",
+                                "subFacilities": [],
+                                "attributes": {
+                                    "name": null,
+                                    "paymentInfo": {
+                                        "chargeMode": "UNKNOWN_CHARGE_MODE"
+                                    },
+                                    "closureScheduleDuringStay": [],
+                                    "scheduleEntry": [],
+                                    "extendedAttributes": null
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "id": 464,
+                        "groupId": 39,
+                        "instances": [
+                            {
+                                "title": "Screens or physical barriers placed between staff and guests in appropriate areas",
+                                "subFacilities": [],
+                                "attributes": {
+                                    "name": null,
+                                    "paymentInfo": {
+                                        "chargeMode": "UNKNOWN_CHARGE_MODE"
+                                    },
+                                    "closureScheduleDuringStay": [],
+                                    "scheduleEntry": [],
+                                    "extendedAttributes": null
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "id": 462,
+                        "groupId": 39,
+                        "instances": [
+                            {
+                                "title": "Physical distancing rules followed",
+                                "subFacilities": [],
+                                "attributes": {
+                                    "name": null,
+                                    "paymentInfo": {
+                                        "chargeMode": "UNKNOWN_CHARGE_MODE"
+                                    },
+                                    "closureScheduleDuringStay": [],
+                                    "scheduleEntry": [],
+                                    "extendedAttributes": null
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "id": 461,
+                        "groupId": 39,
+                        "instances": [
+                            {
+                                "title": "Cashless payment available",
+                                "subFacilities": [],
+                                "attributes": {
+                                    "name": null,
+                                    "paymentInfo": {
+                                        "chargeMode": "UNKNOWN_CHARGE_MODE"
+                                    },
+                                    "closureScheduleDuringStay": [],
+                                    "scheduleEntry": [],
+                                    "extendedAttributes": null
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "id": 460,
+                        "groupId": 39,
+                        "instances": [
+                            {
+                                "title": "Contactless check-in/check-out",
+                                "subFacilities": [],
+                                "attributes": {
+                                    "name": null,
+                                    "paymentInfo": {
+                                        "chargeMode": "UNKNOWN_CHARGE_MODE"
+                                    },
+                                    "closureScheduleDuringStay": [],
+                                    "scheduleEntry": [],
+                                    "extendedAttributes": null
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "id": 452,
+                        "groupId": 40,
+                        "instances": [
+                            {
+                                "title": "Guest accommodation sealed after cleaning",
+                                "subFacilities": [],
+                                "attributes": {
+                                    "name": null,
+                                    "paymentInfo": {
+                                        "chargeMode": "UNKNOWN_CHARGE_MODE"
+                                    },
+                                    "closureScheduleDuringStay": [],
+                                    "scheduleEntry": [],
+                                    "extendedAttributes": null
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "id": 450,
+                        "groupId": 40,
+                        "instances": [
+                            {
+                                "title": "Linens, towels and laundry washed in accordance with local authority guidelines",
+                                "subFacilities": [],
+                                "attributes": {
+                                    "name": null,
+                                    "paymentInfo": {
+                                        "chargeMode": "UNKNOWN_CHARGE_MODE"
+                                    },
+                                    "closureScheduleDuringStay": [],
+                                    "scheduleEntry": [],
+                                    "extendedAttributes": null
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "id": 449,
+                        "groupId": 40,
+                        "instances": [
+                            {
+                                "title": "Use of cleaning chemicals that are effective against Coronavirus",
+                                "subFacilities": [],
+                                "attributes": {
+                                    "name": null,
+                                    "paymentInfo": {
+                                        "chargeMode": "UNKNOWN_CHARGE_MODE"
+                                    },
+                                    "closureScheduleDuringStay": [],
+                                    "scheduleEntry": [],
+                                    "extendedAttributes": null
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "id": 231,
+                        "groupId": 40,
+                        "instances": [
+                            {
+                                "title": "Hand sanitiser",
+                                "subFacilities": [],
+                                "attributes": null
+                            }
+                        ]
+                    },
+                    {
+                        "id": 467,
+                        "groupId": 41,
+                        "instances": [
+                            {
+                                "title": "All plates, cutlery, glasses and other tableware have been sanitized",
+                                "subFacilities": [],
+                                "attributes": {
+                                    "name": null,
+                                    "paymentInfo": {
+                                        "chargeMode": "UNKNOWN_CHARGE_MODE"
+                                    },
+                                    "closureScheduleDuringStay": [],
+                                    "scheduleEntry": [],
+                                    "extendedAttributes": null
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "id": 454,
+                        "groupId": 41,
+                        "instances": [
+                            {
+                                "title": "Food can be delivered to guest accommodation",
+                                "subFacilities": [],
+                                "attributes": {
+                                    "name": null,
+                                    "paymentInfo": {
+                                        "chargeMode": "UNKNOWN_CHARGE_MODE"
+                                    },
+                                    "closureScheduleDuringStay": [],
+                                    "scheduleEntry": [],
+                                    "extendedAttributes": null
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "id": 453,
+                        "groupId": 41,
+                        "instances": [
+                            {
+                                "title": "Physical distancing in dining areas",
+                                "subFacilities": [],
+                                "attributes": {
+                                    "name": null,
+                                    "paymentInfo": {
+                                        "chargeMode": "UNKNOWN_CHARGE_MODE"
+                                    },
+                                    "closureScheduleDuringStay": [],
+                                    "scheduleEntry": [],
+                                    "extendedAttributes": null
+                                }
+                            }
+                        ]
+                    }
+                ],
+                "highlights": [
+                    {
+                        "instances": [
+                            {
+                                "title": "Internet services"
+                            }
+                        ]
+                    },
+                    {
+                        "instances": [
+                            {
+                                "title": "Non-smoking rooms"
+                            }
+                        ]
+                    },
+                    {
+                        "instances": [
+                            {
+                                "title": "Room service"
+                            }
+                        ]
+                    },
+                    {
+                        "instances": [
+                            {
+                                "title": "Parking"
+                            }
+                        ]
+                    },
+                    {
+                        "instances": [
+                            {
+                                "title": "Family rooms"
+                            }
+                        ]
+                    },
+                    {
+                        "instances": [
+                            {
+                                "title": "24-hour front desk"
+                            }
+                        ]
+                    },
+                    {
+                        "instances": [
+                            {
+                                "title": "Air conditioning"
+                            }
+                        ]
+                    },
+                    {
+                        "instances": [
+                            {
+                                "title": "Daily housekeeping"
+                            }
+                        ]
+                    },
+                    {}
+                ],
+                "facilityGroups": [
+                    {
+                        "id": -3,
+                        "title": "General",
+                        "summary": null
+                    },
+                    {
+                        "id": -4,
+                        "title": "Some rooms",
+                        "summary": null
+                    },
+                    {
+                        "id": 18,
+                        "title": "Layout",
+                        "summary": null
+                    },
+                    {
+                        "id": 5,
+                        "title": "Bathroom",
+                        "summary": null
+                    },
+                    {
+                        "id": 17,
+                        "title": "Bedroom",
+                        "summary": null
+                    },
+                    {
+                        "id": 14,
+                        "title": "View",
+                        "summary": null
+                    },
+                    {
+                        "id": 13,
+                        "title": "Outdoors",
+                        "summary": null
+                    },
+                    {
+                        "id": 12,
+                        "title": "Kitchen",
+                        "summary": null
+                    },
+                    {
+                        "id": 4,
+                        "title": "Room Amenities",
+                        "summary": null
+                    },
+                    {
+                        "id": 10,
+                        "title": "Ski",
+                        "summary": null
+                    },
+                    {
+                        "id": 9,
+                        "title": "Outdoor & View",
+                        "summary": null
+                    },
+                    {
+                        "id": 8,
+                        "title": "Services & Extras",
+                        "summary": null
+                    },
+                    {
+                        "id": -2,
+                        "title": "Pets",
+                        "summary": null
+                    },
+                    {
+                        "id": 2,
+                        "title": "Activities",
+                        "summary": null
+                    },
+                    {
+                        "id": 15,
+                        "title": "Living Area",
+                        "summary": null
+                    },
+                    {
+                        "id": 6,
+                        "title": "Media & Technology",
+                        "summary": null
+                    },
+                    {
+                        "id": 7,
+                        "title": "Food & Drink",
+                        "summary": null
+                    },
+                    {
+                        "id": -5,
+                        "title": "Breakfast",
+                        "summary": null
+                    },
+                    {
+                        "id": 11,
+                        "title": "Internet",
+                        "summary": "WiFi is available in the rooms and is free of charge."
+                    },
+                    {
+                        "id": 16,
+                        "title": "Parking",
+                        "summary": "Free public parking is possible at a location nearby (reservation is not needed)."
+                    },
+                    {
+                        "id": 22,
+                        "title": "Transport",
+                        "summary": null
+                    },
+                    {
+                        "id": -6,
+                        "title": "Checking in and out",
+                        "summary": null
+                    },
+                    {
+                        "id": 3,
+                        "title": "Services",
+                        "summary": null
+                    },
+                    {
+                        "id": 23,
+                        "title": "Reception services",
+                        "summary": null
+                    },
+                    {
+                        "id": 25,
+                        "title": "Entertainment and family services",
+                        "summary": null
+                    },
+                    {
+                        "id": 26,
+                        "title": "Cleaning services",
+                        "summary": null
+                    },
+                    {
+                        "id": 27,
+                        "title": "Business facilities",
+                        "summary": null
+                    },
+                    {
+                        "id": 34,
+                        "title": "Safety & security",
+                        "summary": null
+                    },
+                    {
+                        "id": 33,
+                        "title": "Hostel facilities",
+                        "summary": null
+                    },
+                    {
+                        "id": 1,
+                        "title": "General",
+                        "summary": null
+                    },
+                    {
+                        "id": 19,
+                        "title": "Accessibility",
+                        "summary": null
+                    },
+                    {
+                        "id": 20,
+                        "title": "Building characteristics",
+                        "summary": null
+                    },
+                    {
+                        "id": 21,
+                        "title": "Wellness",
+                        "summary": null
+                    },
+                    {
+                        "id": 24,
+                        "title": "Common areas",
+                        "summary": null
+                    },
+                    {
+                        "id": 28,
+                        "title": "Shops",
+                        "summary": null
+                    },
+                    {
+                        "id": 29,
+                        "title": "Miscellaneous",
+                        "summary": null
+                    },
+                    {
+                        "id": 30,
+                        "title": "Bath/Hot spring",
+                        "summary": null
+                    },
+                    {
+                        "id": 35,
+                        "title": "Your sustainability practices",
+                        "summary": null
+                    },
+                    {
+                        "id": 37,
+                        "title": "Safety features",
+                        "summary": null
+                    },
+                    {
+                        "id": 38,
+                        "title": "Hygiene",
+                        "summary": null
+                    },
+                    {
+                        "id": 39,
+                        "title": "Physical distancing",
+                        "summary": null
+                    },
+                    {
+                        "id": 40,
+                        "title": "Cleanliness & disinfecting",
+                        "summary": null
+                    },
+                    {
+                        "id": 41,
+                        "title": "Food & drink safety",
+                        "summary": null
+                    },
+                    {
+                        "id": 42,
+                        "title": "Self check-in",
+                        "summary": null
+                    },
+                    {
+                        "id": 43,
+                        "title": null,
+                        "summary": null
+                    }
+                ]
+            }
+        },
+        "optional": {
+            "status": true,
+            "message": "Success",
+            "timestamp": 1747651464438,
+            "data": {
+                "accommodationHighlights": [
+                    {
+                        "title": "Parking"
+                    },
+                    {
+                        "title": "Private bathroom"
+                    },
+                    {
+                        "title": "Air conditioning"
+                    },
+                    {
+                        "title": "Free WiFi"
+                    },
+                    {
+                        "title": "Family rooms"
+                    },
+                    {
+                        "title": "Free parking"
+                    },
+                    {
+                        "title": "Room service"
+                    },
+                    {
+                        "title": "Non-smoking rooms"
+                    },
+                    {
+                        "title": "Flat-screen TV"
+                    },
+                    {
+                        "title": "Shower"
+                    },
+                    {
+                        "title": "Luggage storage"
+                    },
+                    {
+                        "title": "Designated smoking area"
+                    },
+                    {
+                        "title": "Cable channels"
+                    }
+                ],
+                "facilities": [
+                    {
+                        "id": 110,
+                        "groupId": 1,
+                        "instances": [
+                            {
+                                "title": "Designated smoking area",
+                                "subFacilities": [],
+                                "attributes": {
+                                    "name": null,
+                                    "paymentInfo": {
+                                        "chargeMode": "UNKNOWN_CHARGE_MODE"
+                                    },
+                                    "closureScheduleDuringStay": [],
+                                    "scheduleEntry": [],
+                                    "extendedAttributes": null
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "id": 109,
+                        "groupId": 1,
+                        "instances": [
+                            {
+                                "title": "Air conditioning",
+                                "subFacilities": [],
+                                "attributes": {
+                                    "name": null,
+                                    "paymentInfo": {
+                                        "chargeMode": "FREE"
+                                    },
+                                    "closureScheduleDuringStay": [],
+                                    "scheduleEntry": [],
+                                    "extendedAttributes": null
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "id": 108,
+                        "groupId": 1,
+                        "instances": [
+                            {
+                                "title": "Non-smoking throughout",
+                                "subFacilities": [],
+                                "attributes": {
+                                    "name": null,
+                                    "paymentInfo": {
+                                        "chargeMode": "UNKNOWN_CHARGE_MODE"
+                                    },
+                                    "closureScheduleDuringStay": [],
+                                    "scheduleEntry": [],
+                                    "extendedAttributes": null
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "id": 80,
+                        "groupId": 1,
+                        "instances": [
+                            {
+                                "title": "Tile/marble floor",
+                                "subFacilities": [],
+                                "attributes": null
+                            }
+                        ]
+                    },
+                    {
+                        "id": 30,
+                        "groupId": 1,
+                        "instances": [
+                            {
+                                "title": "Fan",
+                                "subFacilities": [],
+                                "attributes": null
+                            }
+                        ]
+                    },
+                    {
+                        "id": 28,
+                        "groupId": 1,
+                        "instances": [
+                            {
+                                "title": "Family rooms",
+                                "subFacilities": [],
+                                "attributes": {
+                                    "name": null,
+                                    "paymentInfo": {
+                                        "chargeMode": "UNKNOWN_CHARGE_MODE"
+                                    },
+                                    "closureScheduleDuringStay": [],
+                                    "scheduleEntry": [],
+                                    "extendedAttributes": null
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "id": 16,
+                        "groupId": 1,
+                        "instances": [
+                            {
+                                "title": "Non-smoking rooms",
+                                "subFacilities": [],
+                                "attributes": {
+                                    "name": null,
+                                    "paymentInfo": {
+                                        "chargeMode": "UNKNOWN_CHARGE_MODE"
+                                    },
+                                    "closureScheduleDuringStay": [],
+                                    "scheduleEntry": [],
+                                    "extendedAttributes": null
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "id": 158,
+                        "groupId": 3,
+                        "instances": [
+                            {
+                                "title": "Daily housekeeping",
+                                "subFacilities": [],
+                                "attributes": {
+                                    "name": null,
+                                    "paymentInfo": {
+                                        "chargeMode": "FREE"
+                                    },
+                                    "closureScheduleDuringStay": [],
+                                    "scheduleEntry": [],
+                                    "extendedAttributes": null
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "id": 91,
+                        "groupId": 3,
+                        "instances": [
+                            {
+                                "title": "Luggage storage",
+                                "subFacilities": [],
+                                "attributes": {
+                                    "name": null,
+                                    "paymentInfo": {
+                                        "chargeMode": "PAID"
+                                    },
+                                    "closureScheduleDuringStay": [],
+                                    "scheduleEntry": [],
+                                    "extendedAttributes": null
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "id": 81,
+                        "groupId": 3,
+                        "instances": [
+                            {
+                                "title": "Fax/photocopying",
+                                "subFacilities": [],
+                                "attributes": {
+                                    "name": null,
+                                    "paymentInfo": {
+                                        "chargeMode": "PAID"
+                                    },
+                                    "closureScheduleDuringStay": [],
+                                    "scheduleEntry": [],
+                                    "extendedAttributes": null
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "id": 8,
+                        "groupId": 3,
+                        "instances": [
+                            {
+                                "title": "24-hour front desk",
+                                "subFacilities": [],
+                                "attributes": {
+                                    "name": null,
+                                    "paymentInfo": {
+                                        "chargeMode": "UNKNOWN_CHARGE_MODE"
+                                    },
+                                    "closureScheduleDuringStay": [],
+                                    "scheduleEntry": [],
+                                    "extendedAttributes": null
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "id": 5,
+                        "groupId": 3,
+                        "instances": [
+                            {
+                                "title": "Room service",
+                                "subFacilities": [],
+                                "attributes": {
+                                    "name": null,
+                                    "paymentInfo": {
+                                        "chargeMode": "UNKNOWN_CHARGE_MODE"
+                                    },
+                                    "closureScheduleDuringStay": [],
+                                    "scheduleEntry": [],
+                                    "extendedAttributes": null
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "id": 184,
+                        "groupId": 4,
+                        "instances": [
+                            {
+                                "title": "Socket near the bed",
+                                "subFacilities": [],
+                                "attributes": null
+                            }
+                        ]
+                    },
+                    {
+                        "id": 140,
+                        "groupId": 4,
+                        "instances": [
+                            {
+                                "title": "Drying rack for clothing",
+                                "subFacilities": [],
+                                "attributes": null
+                            }
+                        ]
+                    },
+                    {
+                        "id": 138,
+                        "groupId": 4,
+                        "instances": [
+                            {
+                                "title": "Clothes rack",
+                                "subFacilities": [],
+                                "attributes": null
+                            }
+                        ]
+                    },
+                    {
+                        "id": 141,
+                        "groupId": 5,
+                        "instances": [
+                            {
+                                "title": "Toilet paper",
+                                "subFacilities": [],
+                                "attributes": null
+                            }
+                        ]
+                    },
+                    {
+                        "id": 124,
+                        "groupId": 5,
+                        "instances": [
+                            {
+                                "title": "Towels",
+                                "subFacilities": [],
+                                "attributes": null
+                            }
+                        ]
+                    },
+                    {
+                        "id": 38,
+                        "groupId": 5,
+                        "instances": [
+                            {
+                                "title": "Private bathroom",
+                                "subFacilities": [],
+                                "attributes": {
+                                    "name": null,
+                                    "paymentInfo": null,
+                                    "closureScheduleDuringStay": [],
+                                    "scheduleEntry": [],
+                                    "extendedAttributes": {}
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "id": 31,
+                        "groupId": 5,
+                        "instances": [
+                            {
+                                "title": "Toilet",
+                                "subFacilities": [],
+                                "attributes": null
+                            }
+                        ]
+                    },
+                    {
+                        "id": 27,
+                        "groupId": 5,
+                        "instances": [
+                            {
+                                "title": "Free toiletries",
+                                "subFacilities": [],
+                                "attributes": null
+                            }
+                        ]
+                    },
+                    {
+                        "id": 4,
+                        "groupId": 5,
+                        "instances": [
+                            {
+                                "title": "Shower",
+                                "subFacilities": [],
+                                "attributes": null
+                            }
+                        ]
+                    },
+                    {
+                        "id": 75,
+                        "groupId": 6,
+                        "instances": [
+                            {
+                                "title": "Flat-screen TV",
+                                "subFacilities": [],
+                                "attributes": null
+                            }
+                        ]
+                    },
+                    {
+                        "id": 68,
+                        "groupId": 6,
+                        "instances": [
+                            {
+                                "title": "Cable channels",
+                                "subFacilities": [],
+                                "attributes": null
+                            }
+                        ]
+                    },
+                    {
+                        "id": 9,
+                        "groupId": 6,
+                        "instances": [
+                            {
+                                "title": "Telephone",
+                                "subFacilities": [],
+                                "attributes": null
+                            }
+                        ]
+                    },
+                    {
+                        "id": 8,
+                        "groupId": 6,
+                        "instances": [
+                            {
+                                "title": "TV",
+                                "subFacilities": [],
+                                "attributes": null
+                            }
+                        ]
+                    },
+                    {
+                        "id": 43,
+                        "groupId": 7,
+                        "instances": [
+                            {
+                                "title": "Breakfast in the room",
+                                "subFacilities": [],
+                                "attributes": {
+                                    "name": null,
+                                    "paymentInfo": {
+                                        "chargeMode": "UNKNOWN_CHARGE_MODE"
+                                    },
+                                    "closureScheduleDuringStay": [],
+                                    "scheduleEntry": [],
+                                    "extendedAttributes": null
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "id": 47,
+                        "groupId": 11,
+                        "instances": [
+                            {
+                                "title": "Internet services",
+                                "subFacilities": [],
+                                "attributes": {
+                                    "name": null,
+                                    "paymentInfo": {
+                                        "chargeMode": "FREE"
+                                    },
+                                    "closureScheduleDuringStay": [],
+                                    "scheduleEntry": [],
+                                    "extendedAttributes": {}
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "id": 222,
+                        "groupId": 13,
+                        "instances": [
+                            {
+                                "title": "Outdoor furniture",
+                                "subFacilities": [],
+                                "attributes": {
+                                    "name": null,
+                                    "paymentInfo": {
+                                        "chargeMode": "UNKNOWN_CHARGE_MODE"
+                                    },
+                                    "closureScheduleDuringStay": [],
+                                    "scheduleEntry": [],
+                                    "extendedAttributes": null
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "id": 26,
+                        "groupId": 15,
+                        "instances": [
+                            {
+                                "title": "Seating Area",
+                                "subFacilities": [],
+                                "attributes": null
+                            }
+                        ]
+                    },
+                    {
+                        "id": 2,
+                        "groupId": 16,
+                        "instances": [
+                            {
+                                "title": "Parking",
+                                "subFacilities": [],
+                                "attributes": {
+                                    "name": null,
+                                    "paymentInfo": {
+                                        "chargeMode": "FREE"
+                                    },
+                                    "closureScheduleDuringStay": [],
+                                    "scheduleEntry": [],
+                                    "extendedAttributes": {}
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "id": 95,
+                        "groupId": 17,
+                        "instances": [
+                            {
+                                "title": "Wardrobe or closet",
+                                "subFacilities": [],
+                                "attributes": null
+                            }
+                        ]
+                    },
+                    {
+                        "id": 465,
+                        "groupId": 23,
+                        "instances": [
+                            {
+                                "title": "Invoice provided",
+                                "subFacilities": [],
+                                "attributes": {
+                                    "name": null,
+                                    "paymentInfo": {
+                                        "chargeMode": "UNKNOWN_CHARGE_MODE"
+                                    },
+                                    "closureScheduleDuringStay": [],
+                                    "scheduleEntry": [],
+                                    "extendedAttributes": null
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "id": 425,
+                        "groupId": 34,
+                        "instances": [
+                            {
+                                "title": "Fire extinguishers",
+                                "subFacilities": [],
+                                "attributes": {
+                                    "name": null,
+                                    "paymentInfo": {
+                                        "chargeMode": "UNKNOWN_CHARGE_MODE"
+                                    },
+                                    "closureScheduleDuringStay": [],
+                                    "scheduleEntry": [],
+                                    "extendedAttributes": null
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "id": 423,
+                        "groupId": 34,
+                        "instances": [
+                            {
+                                "title": "CCTV in common areas",
+                                "subFacilities": [],
+                                "attributes": {
+                                    "name": null,
+                                    "paymentInfo": {
+                                        "chargeMode": "UNKNOWN_CHARGE_MODE"
+                                    },
+                                    "closureScheduleDuringStay": [],
+                                    "scheduleEntry": [],
+                                    "extendedAttributes": null
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "id": 422,
+                        "groupId": 34,
+                        "instances": [
+                            {
+                                "title": "Smoke alarms",
+                                "subFacilities": [],
+                                "attributes": {
+                                    "name": null,
+                                    "paymentInfo": {
+                                        "chargeMode": "UNKNOWN_CHARGE_MODE"
+                                    },
+                                    "closureScheduleDuringStay": [],
+                                    "scheduleEntry": [],
+                                    "extendedAttributes": null
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "id": 420,
+                        "groupId": 34,
+                        "instances": [
+                            {
+                                "title": "Key card access",
+                                "subFacilities": [],
+                                "attributes": {
+                                    "name": null,
+                                    "paymentInfo": {
+                                        "chargeMode": "UNKNOWN_CHARGE_MODE"
+                                    },
+                                    "closureScheduleDuringStay": [],
+                                    "scheduleEntry": [],
+                                    "extendedAttributes": null
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "id": 459,
+                        "groupId": 37,
+                        "instances": [
+                            {
+                                "title": "First aid kit available",
+                                "subFacilities": [],
+                                "attributes": {
+                                    "name": null,
+                                    "paymentInfo": {
+                                        "chargeMode": "UNKNOWN_CHARGE_MODE"
+                                    },
+                                    "closureScheduleDuringStay": [],
+                                    "scheduleEntry": [],
+                                    "extendedAttributes": null
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "id": 458,
+                        "groupId": 37,
+                        "instances": [
+                            {
+                                "title": "Process in place to check health of guests",
+                                "subFacilities": [],
+                                "attributes": {
+                                    "name": null,
+                                    "paymentInfo": {
+                                        "chargeMode": "UNKNOWN_CHARGE_MODE"
+                                    },
+                                    "closureScheduleDuringStay": [],
+                                    "scheduleEntry": [],
+                                    "extendedAttributes": null
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "id": 457,
+                        "groupId": 37,
+                        "instances": [
+                            {
+                                "title": "Hand sanitizer in guest accommodation and key areas",
+                                "subFacilities": [],
+                                "attributes": {
+                                    "name": null,
+                                    "paymentInfo": {
+                                        "chargeMode": "UNKNOWN_CHARGE_MODE"
+                                    },
+                                    "closureScheduleDuringStay": [],
+                                    "scheduleEntry": [],
+                                    "extendedAttributes": null
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "id": 456,
+                        "groupId": 37,
+                        "instances": [
+                            {
+                                "title": "Shared stationery such as printed menus, magazines, pens, and paper removed",
+                                "subFacilities": [],
+                                "attributes": {
+                                    "name": null,
+                                    "paymentInfo": {
+                                        "chargeMode": "UNKNOWN_CHARGE_MODE"
+                                    },
+                                    "closureScheduleDuringStay": [],
+                                    "scheduleEntry": [],
+                                    "extendedAttributes": null
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "id": 455,
+                        "groupId": 37,
+                        "instances": [
+                            {
+                                "title": "Staff follow all safety protocols as directed by local authorities",
+                                "subFacilities": [],
+                                "attributes": {
+                                    "name": null,
+                                    "paymentInfo": {
+                                        "chargeMode": "UNKNOWN_CHARGE_MODE"
+                                    },
+                                    "closureScheduleDuringStay": [],
+                                    "scheduleEntry": [],
+                                    "extendedAttributes": null
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "id": 464,
+                        "groupId": 39,
+                        "instances": [
+                            {
+                                "title": "Screens or physical barriers placed between staff and guests in appropriate areas",
+                                "subFacilities": [],
+                                "attributes": {
+                                    "name": null,
+                                    "paymentInfo": {
+                                        "chargeMode": "UNKNOWN_CHARGE_MODE"
+                                    },
+                                    "closureScheduleDuringStay": [],
+                                    "scheduleEntry": [],
+                                    "extendedAttributes": null
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "id": 462,
+                        "groupId": 39,
+                        "instances": [
+                            {
+                                "title": "Physical distancing rules followed",
+                                "subFacilities": [],
+                                "attributes": {
+                                    "name": null,
+                                    "paymentInfo": {
+                                        "chargeMode": "UNKNOWN_CHARGE_MODE"
+                                    },
+                                    "closureScheduleDuringStay": [],
+                                    "scheduleEntry": [],
+                                    "extendedAttributes": null
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "id": 461,
+                        "groupId": 39,
+                        "instances": [
+                            {
+                                "title": "Cashless payment available",
+                                "subFacilities": [],
+                                "attributes": {
+                                    "name": null,
+                                    "paymentInfo": {
+                                        "chargeMode": "UNKNOWN_CHARGE_MODE"
+                                    },
+                                    "closureScheduleDuringStay": [],
+                                    "scheduleEntry": [],
+                                    "extendedAttributes": null
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "id": 460,
+                        "groupId": 39,
+                        "instances": [
+                            {
+                                "title": "Contactless check-in/check-out",
+                                "subFacilities": [],
+                                "attributes": {
+                                    "name": null,
+                                    "paymentInfo": {
+                                        "chargeMode": "UNKNOWN_CHARGE_MODE"
+                                    },
+                                    "closureScheduleDuringStay": [],
+                                    "scheduleEntry": [],
+                                    "extendedAttributes": null
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "id": 452,
+                        "groupId": 40,
+                        "instances": [
+                            {
+                                "title": "Guest accommodation sealed after cleaning",
+                                "subFacilities": [],
+                                "attributes": {
+                                    "name": null,
+                                    "paymentInfo": {
+                                        "chargeMode": "UNKNOWN_CHARGE_MODE"
+                                    },
+                                    "closureScheduleDuringStay": [],
+                                    "scheduleEntry": [],
+                                    "extendedAttributes": null
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "id": 450,
+                        "groupId": 40,
+                        "instances": [
+                            {
+                                "title": "Linens, towels and laundry washed in accordance with local authority guidelines",
+                                "subFacilities": [],
+                                "attributes": {
+                                    "name": null,
+                                    "paymentInfo": {
+                                        "chargeMode": "UNKNOWN_CHARGE_MODE"
+                                    },
+                                    "closureScheduleDuringStay": [],
+                                    "scheduleEntry": [],
+                                    "extendedAttributes": null
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "id": 449,
+                        "groupId": 40,
+                        "instances": [
+                            {
+                                "title": "Use of cleaning chemicals that are effective against Coronavirus",
+                                "subFacilities": [],
+                                "attributes": {
+                                    "name": null,
+                                    "paymentInfo": {
+                                        "chargeMode": "UNKNOWN_CHARGE_MODE"
+                                    },
+                                    "closureScheduleDuringStay": [],
+                                    "scheduleEntry": [],
+                                    "extendedAttributes": null
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "id": 231,
+                        "groupId": 40,
+                        "instances": [
+                            {
+                                "title": "Hand sanitiser",
+                                "subFacilities": [],
+                                "attributes": null
+                            }
+                        ]
+                    },
+                    {
+                        "id": 467,
+                        "groupId": 41,
+                        "instances": [
+                            {
+                                "title": "All plates, cutlery, glasses and other tableware have been sanitized",
+                                "subFacilities": [],
+                                "attributes": {
+                                    "name": null,
+                                    "paymentInfo": {
+                                        "chargeMode": "UNKNOWN_CHARGE_MODE"
+                                    },
+                                    "closureScheduleDuringStay": [],
+                                    "scheduleEntry": [],
+                                    "extendedAttributes": null
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "id": 454,
+                        "groupId": 41,
+                        "instances": [
+                            {
+                                "title": "Food can be delivered to guest accommodation",
+                                "subFacilities": [],
+                                "attributes": {
+                                    "name": null,
+                                    "paymentInfo": {
+                                        "chargeMode": "UNKNOWN_CHARGE_MODE"
+                                    },
+                                    "closureScheduleDuringStay": [],
+                                    "scheduleEntry": [],
+                                    "extendedAttributes": null
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "id": 453,
+                        "groupId": 41,
+                        "instances": [
+                            {
+                                "title": "Physical distancing in dining areas",
+                                "subFacilities": [],
+                                "attributes": {
+                                    "name": null,
+                                    "paymentInfo": {
+                                        "chargeMode": "UNKNOWN_CHARGE_MODE"
+                                    },
+                                    "closureScheduleDuringStay": [],
+                                    "scheduleEntry": [],
+                                    "extendedAttributes": null
+                                }
+                            }
+                        ]
+                    }
+                ],
+                "highlights": [
+                    {
+                        "instances": [
+                            {
+                                "title": "Internet services"
+                            }
+                        ]
+                    },
+                    {
+                        "instances": [
+                            {
+                                "title": "Non-smoking rooms"
+                            }
+                        ]
+                    },
+                    {
+                        "instances": [
+                            {
+                                "title": "Parking"
+                            }
+                        ]
+                    },
+                    {
+                        "instances": [
+                            {
+                                "title": "Room service"
+                            }
+                        ]
+                    },
+                    {
+                        "instances": [
+                            {
+                                "title": "Family rooms"
+                            }
+                        ]
+                    },
+                    {
+                        "instances": [
+                            {
+                                "title": "24-hour front desk"
+                            }
+                        ]
+                    },
+                    {
+                        "instances": [
+                            {
+                                "title": "Air conditioning"
+                            }
+                        ]
+                    },
+                    {
+                        "instances": [
+                            {
+                                "title": "Daily housekeeping"
+                            }
+                        ]
+                    },
+                    {}
+                ],
+                "facilityGroups": [
+                    {
+                        "id": -3,
+                        "title": "General",
+                        "summary": null
+                    },
+                    {
+                        "id": -4,
+                        "title": "Some rooms",
+                        "summary": null
+                    },
+                    {
+                        "id": 18,
+                        "title": "Layout",
+                        "summary": null
+                    },
+                    {
+                        "id": 5,
+                        "title": "Bathroom",
+                        "summary": null
+                    },
+                    {
+                        "id": 17,
+                        "title": "Bedroom",
+                        "summary": null
+                    },
+                    {
+                        "id": 14,
+                        "title": "View",
+                        "summary": null
+                    },
+                    {
+                        "id": 13,
+                        "title": "Outdoors",
+                        "summary": null
+                    },
+                    {
+                        "id": 12,
+                        "title": "Kitchen",
+                        "summary": null
+                    },
+                    {
+                        "id": 4,
+                        "title": "Room Amenities",
+                        "summary": null
+                    },
+                    {
+                        "id": 10,
+                        "title": "Ski",
+                        "summary": null
+                    },
+                    {
+                        "id": 9,
+                        "title": "Outdoor & View",
+                        "summary": null
+                    },
+                    {
+                        "id": 8,
+                        "title": "Services & Extras",
+                        "summary": null
+                    },
+                    {
+                        "id": -2,
+                        "title": "Pets",
+                        "summary": null
+                    },
+                    {
+                        "id": 2,
+                        "title": "Activities",
+                        "summary": null
+                    },
+                    {
+                        "id": 15,
+                        "title": "Living Area",
+                        "summary": null
+                    },
+                    {
+                        "id": 6,
+                        "title": "Media & Technology",
+                        "summary": null
+                    },
+                    {
+                        "id": 7,
+                        "title": "Food & Drink",
+                        "summary": null
+                    },
+                    {
+                        "id": -5,
+                        "title": "Breakfast",
+                        "summary": null
+                    },
+                    {
+                        "id": 11,
+                        "title": "Internet",
+                        "summary": "WiFi is available in the rooms and is free of charge."
+                    },
+                    {
+                        "id": 16,
+                        "title": "Parking",
+                        "summary": "Free public parking is possible at a location nearby (reservation is not needed)."
+                    },
+                    {
+                        "id": 22,
+                        "title": "Transport",
+                        "summary": null
+                    },
+                    {
+                        "id": -6,
+                        "title": "Checking in and out",
+                        "summary": null
+                    },
+                    {
+                        "id": 3,
+                        "title": "Services",
+                        "summary": null
+                    },
+                    {
+                        "id": 23,
+                        "title": "Reception services",
+                        "summary": null
+                    },
+                    {
+                        "id": 25,
+                        "title": "Entertainment and family services",
+                        "summary": null
+                    },
+                    {
+                        "id": 26,
+                        "title": "Cleaning services",
+                        "summary": null
+                    },
+                    {
+                        "id": 27,
+                        "title": "Business facilities",
+                        "summary": null
+                    },
+                    {
+                        "id": 34,
+                        "title": "Safety & security",
+                        "summary": null
+                    },
+                    {
+                        "id": 33,
+                        "title": "Hostel facilities",
+                        "summary": null
+                    },
+                    {
+                        "id": 1,
+                        "title": "General",
+                        "summary": null
+                    },
+                    {
+                        "id": 19,
+                        "title": "Accessibility",
+                        "summary": null
+                    },
+                    {
+                        "id": 20,
+                        "title": "Building characteristics",
+                        "summary": null
+                    },
+                    {
+                        "id": 21,
+                        "title": "Wellness",
+                        "summary": null
+                    },
+                    {
+                        "id": 24,
+                        "title": "Common areas",
+                        "summary": null
+                    },
+                    {
+                        "id": 28,
+                        "title": "Shops",
+                        "summary": null
+                    },
+                    {
+                        "id": 29,
+                        "title": "Miscellaneous",
+                        "summary": null
+                    },
+                    {
+                        "id": 30,
+                        "title": "Bath/Hot spring",
+                        "summary": null
+                    },
+                    {
+                        "id": 35,
+                        "title": "Your sustainability practices",
+                        "summary": null
+                    },
+                    {
+                        "id": 37,
+                        "title": "Safety features",
+                        "summary": null
+                    },
+                    {
+                        "id": 38,
+                        "title": "Hygiene",
+                        "summary": null
+                    },
+                    {
+                        "id": 39,
+                        "title": "Physical distancing",
+                        "summary": null
+                    },
+                    {
+                        "id": 40,
+                        "title": "Cleanliness & disinfecting",
+                        "summary": null
+                    },
+                    {
+                        "id": 41,
+                        "title": "Food & drink safety",
+                        "summary": null
+                    },
+                    {
+                        "id": 42,
+                        "title": "Self check-in",
+                        "summary": null
+                    },
+                    {
+                        "id": 43,
+                        "title": null,
+                        "summary": null
+                    }
+                ]
+            }
+        }
+    }
+}

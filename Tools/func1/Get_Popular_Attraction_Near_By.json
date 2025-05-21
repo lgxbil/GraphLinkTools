@@ -1,0 +1,1017 @@
+{
+    "shorten": {
+        "api": {
+            "name": "Get_Popular_Attraction_Near_By",
+            "endpoint": "/api/v1/hotels/getPopularAttractionNearBy",
+            "func_description": "Search for popular attractions around a given hotel. ",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "hotel_id": {
+                        "type": "String",
+                        "description": "hotel_id can be retrieved from api/v1/hotels/searchHotels(Search Hotels) or api/v1/hotels/searchHotelsByCoordinates(Search Hotels By Coordinates\n) endpoint in Hotels collection.",
+                        "example_value": "5955189",
+                        "required": true
+                    },
+                    "languagecode": {
+                        "type": "String",
+                        "description": "To obtain the response data in a specific language, enter the languagecode. languagecode can be retrieved from api/v1/meta/getLanguages(Get Languages\n) endpoint in Meta collection.",
+                        "example_value": "en-us",
+                        "required": false
+                    }
+                },
+                "required": [
+                    "hotel_id"
+                ]
+            }
+        },
+        "static_response": {
+            "function_name": "Get_Popular_Attraction_Near_By",
+            "arguments": {
+                "hotel_id": "3629638"
+            },
+            "observation": {
+                "status": true,
+                "message": "Success",
+                "data": {
+                    "closest_landmarks": [
+                        {
+                            "total_votes": 5,
+                            "tag": "Delaware Water Gap National Recreation Area",
+                            "average_out_of_10": 9.6,
+                            "latitude": 40.973183,
+                            "longitude": -75.136566,
+                            "distance": 9.18829117403391
+                        }
+                    ]
+                }
+            }
+        },
+        "required": {
+            "query": "I'm staying at a hotel with ID 5955189. Can you tell me what popular attractions are nearby?",
+            "params": {
+                "hotel_id": "5955189"
+            },
+            "response": {
+                "closest_landmarks": [
+                    {
+                        "longitude": 72.8525733947754,
+                        "total_votes": 43,
+                        "latitude": 19.0915227852161,
+                        "distance": 2.98855388737106,
+                        "tag": "Mumbai Domestic Terminal 1",
+                        "average_out_of_10": 8.4
+                    },
+                    {
+                        "longitude": 72.826211,
+                        "latitude": 19.113262,
+                        "total_votes": 16,
+                        "tag": "ISKCON",
+                        "distance": 4.28912195423714,
+                        "average_out_of_10": 9.2
+                    },
+                    {
+                        "distance": 4.46375117197715,
+                        "tag": "Juhu Beach",
+                        "average_out_of_10": 8.6,
+                        "longitude": 72.8246784210205,
+                        "latitude": 19.1018369233517,
+                        "total_votes": 44
+                    }
+                ],
+                "popular_landmarks": [
+                    {
+                        "tag": "Mumbai Domestic Terminal 1",
+                        "distance": 2.98855388737106,
+                        "average_out_of_10": 8.4,
+                        "longitude": 72.8525733947754,
+                        "total_votes": 43,
+                        "latitude": 19.0915227852161
+                    },
+                    {
+                        "tag": "Vihar Lake",
+                        "distance": 3.05151419162776,
+                        "average_out_of_10": 8.6,
+                        "longitude": 72.910269,
+                        "total_votes": 10,
+                        "latitude": 19.154184
+                    },
+                    {
+                        "tag": "ISKCON",
+                        "distance": 4.28912195423714,
+                        "average_out_of_10": 9.2,
+                        "longitude": 72.826211,
+                        "total_votes": 16,
+                        "latitude": 19.113262
+                    }
+                ]
+            }
+        },
+        "optional": {
+            "query": "I'm staying at a hotel with ID 5955189. Can you tell me what popular attractions are nearby? Also, could you provide the information in English?",
+            "params": {
+                "hotel_id": "5955189"
+            },
+            "response": {
+                "closest_landmarks": [
+                    {
+                        "average_out_of_10": 8.4,
+                        "latitude": 19.0915227852161,
+                        "tag": "Mumbai Domestic Terminal 1",
+                        "total_votes": 43,
+                        "distance": 2.98855388737106,
+                        "longitude": 72.8525733947754
+                    },
+                    {
+                        "average_out_of_10": 9.2,
+                        "latitude": 19.113262,
+                        "tag": "ISKCON",
+                        "total_votes": 16,
+                        "distance": 4.28912195423714,
+                        "longitude": 72.826211
+                    },
+                    {
+                        "longitude": 72.8246784210205,
+                        "distance": 4.46375117197715,
+                        "total_votes": 44,
+                        "tag": "Juhu Beach",
+                        "latitude": 19.1018369233517,
+                        "average_out_of_10": 8.6
+                    }
+                ],
+                "popular_landmarks": [
+                    {
+                        "total_votes": 43,
+                        "distance": 2.98855388737106,
+                        "longitude": 72.8525733947754,
+                        "average_out_of_10": 8.4,
+                        "tag": "Mumbai Domestic Terminal 1",
+                        "latitude": 19.0915227852161
+                    },
+                    {
+                        "average_out_of_10": 8.6,
+                        "tag": "Vihar Lake",
+                        "latitude": 19.154184,
+                        "total_votes": 10,
+                        "distance": 3.05151419162776,
+                        "longitude": 72.910269
+                    },
+                    {
+                        "distance": 4.28912195423714,
+                        "longitude": 72.826211,
+                        "total_votes": 16,
+                        "average_out_of_10": 9.2,
+                        "tag": "ISKCON",
+                        "latitude": 19.113262
+                    }
+                ]
+            }
+        }
+    },
+    "row": {
+        "required": {
+            "closest_landmarks": [
+                {
+                    "longitude": 72.8525733947754,
+                    "total_votes": 43,
+                    "latitude": 19.0915227852161,
+                    "distance": 2.98855388737106,
+                    "tag": "Mumbai Domestic Terminal 1",
+                    "average_out_of_10": 8.4
+                },
+                {
+                    "longitude": 72.826211,
+                    "latitude": 19.113262,
+                    "total_votes": 16,
+                    "tag": "ISKCON",
+                    "distance": 4.28912195423714,
+                    "average_out_of_10": 9.2
+                },
+                {
+                    "distance": 4.46375117197715,
+                    "tag": "Juhu Beach",
+                    "average_out_of_10": 8.6,
+                    "longitude": 72.8246784210205,
+                    "latitude": 19.1018369233517,
+                    "total_votes": 44
+                },
+                {
+                    "longitude": 72.8179441,
+                    "latitude": 19.1235627,
+                    "total_votes": 11,
+                    "tag": "Versova Beach",
+                    "distance": 4.87739666912667,
+                    "average_out_of_10": 8.7
+                },
+                {
+                    "total_votes": 14,
+                    "latitude": 19.046538,
+                    "longitude": 72.822237,
+                    "average_out_of_10": "9.0",
+                    "tag": "Mount Mary Church",
+                    "distance": 6.49636994122623
+                },
+                {
+                    "latitude": 19.03333,
+                    "total_votes": 261,
+                    "longitude": 72.83333,
+                    "average_out_of_10": 8.4,
+                    "distance": 6.74195236972442,
+                    "tag": "Mātunga"
+                },
+                {
+                    "longitude": 72.818393,
+                    "latitude": 19.042042,
+                    "total_votes": 16,
+                    "distance": 6.89412326503754,
+                    "tag": "Bandra Fort",
+                    "average_out_of_10": 8.6
+                },
+                {
+                    "average_out_of_10": 7.3,
+                    "distance": 7.24174583516069,
+                    "tag": "Wadala",
+                    "latitude": 19.01667,
+                    "total_votes": 51,
+                    "longitude": 72.8500000000001
+                },
+                {
+                    "distance": 7.29847273888592,
+                    "tag": "Bandra Worli Sea Link",
+                    "average_out_of_10": 9.2,
+                    "longitude": 72.816846370697,
+                    "total_votes": 57,
+                    "latitude": 19.0353988400392
+                },
+                {
+                    "distance": 7.61828684786949,
+                    "tag": "Aksa Beach",
+                    "average_out_of_10": 8.7,
+                    "longitude": 72.7939081192017,
+                    "total_votes": 11,
+                    "latitude": 19.1734130663581
+                },
+                {
+                    "average_out_of_10": 9.1,
+                    "distance": 7.80245660295242,
+                    "tag": "Siddhi Vinayak Temple",
+                    "latitude": 19.01698,
+                    "total_votes": 27,
+                    "longitude": 72.830233
+                },
+                {
+                    "tag": "Viviana Mall",
+                    "distance": 8.38674754856051,
+                    "average_out_of_10": 8.8,
+                    "longitude": 72.971261,
+                    "total_votes": 18,
+                    "latitude": 19.209012
+                },
+                {
+                    "longitude": 72.7967086,
+                    "latitude": 19.1978597,
+                    "total_votes": 10,
+                    "distance": 8.5199394776401,
+                    "tag": "Marve Beach",
+                    "average_out_of_10": 8.6
+                },
+                {
+                    "distance": 9.41736884905009,
+                    "tag": "Sewri Port",
+                    "average_out_of_10": 8.1,
+                    "longitude": 72.85,
+                    "total_votes": 240,
+                    "latitude": 18.98333
+                },
+                {
+                    "distance": 9.71607716738599,
+                    "tag": "Global Vipassana Pagoda",
+                    "average_out_of_10": 9.6,
+                    "longitude": 72.80587,
+                    "total_votes": 5,
+                    "latitude": 19.22821
+                },
+                {
+                    "average_out_of_10": "8.0",
+                    "tag": "Nerul Railway Station",
+                    "distance": 9.92173878186217,
+                    "latitude": 19.0335335000374,
+                    "total_votes": 1,
+                    "longitude": 73.0181377764435
+                },
+                {
+                    "distance": 10.090158716175,
+                    "tag": "Dhobi Ghat",
+                    "average_out_of_10": 8.5,
+                    "longitude": 72.8246730566025,
+                    "latitude": 18.9822522201954,
+                    "total_votes": 27
+                },
+                {
+                    "longitude": 72.815568,
+                    "total_votes": 4,
+                    "latitude": 18.98657,
+                    "distance": 10.1015288671374,
+                    "tag": "The National Sports Club of India",
+                    "average_out_of_10": "9.0"
+                },
+                {
+                    "tag": "Mahalakshmi Temple",
+                    "distance": 10.9631013890019,
+                    "average_out_of_10": 9.3,
+                    "longitude": 72.805956,
+                    "latitude": 18.977434,
+                    "total_votes": 30
+                },
+                {
+                    "tag": "Imperial Towers",
+                    "distance": 11.1308423027835,
+                    "average_out_of_10": 7.8,
+                    "longitude": 72.812925,
+                    "latitude": 18.970986,
+                    "total_votes": 8
+                },
+                {
+                    "average_out_of_10": 8.4,
+                    "distance": 11.1836311719231,
+                    "tag": "Jaslok Hospital",
+                    "total_votes": 15,
+                    "latitude": 18.97166,
+                    "longitude": 72.809869
+                },
+                {
+                    "total_votes": 17,
+                    "latitude": 18.951844,
+                    "longitude": 72.831011,
+                    "average_out_of_10": 9.2,
+                    "distance": 11.8742787629677,
+                    "tag": "Mumbadevi Temple"
+                },
+                {
+                    "longitude": 72.808519,
+                    "latitude": 18.9588890000001,
+                    "total_votes": 15,
+                    "distance": 12.0063400293528,
+                    "tag": "Babulnath Temple",
+                    "average_out_of_10": 9.1
+                },
+                {
+                    "average_out_of_10": "9.0",
+                    "tag": "Haji Ali Dargah",
+                    "distance": 10.5476629972647,
+                    "total_votes": 27,
+                    "latitude": 18.982745,
+                    "longitude": 72.808946
+                },
+                {
+                    "longitude": 72.807244,
+                    "latitude": 18.962136,
+                    "total_votes": 48,
+                    "distance": 11.8451602507293,
+                    "tag": "Towers of Silence",
+                    "average_out_of_10": 7.7
+                },
+                {
+                    "average_out_of_10": "8.0",
+                    "distance": 12.3061365780401,
+                    "tag": "Utsav Chowk",
+                    "latitude": 19.0360952660609,
+                    "total_votes": 28,
+                    "longitude": 73.0617427825928
+                },
+                {
+                    "latitude": 18.9903277590399,
+                    "total_votes": 20,
+                    "longitude": 72.8180694580078,
+                    "average_out_of_10": 9.1,
+                    "tag": "Nehru Science Centre",
+                    "distance": 9.79492240809514
+                },
+                {
+                    "average_out_of_10": 8.6,
+                    "tag": "Vihar Lake",
+                    "distance": 3.05151419162776,
+                    "latitude": 19.154184,
+                    "total_votes": 10,
+                    "longitude": 72.910269
+                },
+                {
+                    "average_out_of_10": "8.0",
+                    "tag": "Sagar Vihar",
+                    "distance": 6.59131873338986,
+                    "latitude": 19.0751986393621,
+                    "total_votes": 31,
+                    "longitude": 72.9844200611115
+                },
+                {
+                    "average_out_of_10": 7.6,
+                    "distance": 9.72684321408567,
+                    "tag": "Nerul Lake and nature park",
+                    "latitude": 19.0259325600001,
+                    "total_votes": 26,
+                    "longitude": 73.0085277600001
+                },
+                {
+                    "distance": 11.8595755530228,
+                    "tag": "Kharghar Hills",
+                    "average_out_of_10": 7.7,
+                    "longitude": 73.051700592041,
+                    "latitude": 19.0317746704565,
+                    "total_votes": 28
+                },
+                {
+                    "tag": "Hanging Gardens",
+                    "distance": 12.2736145784182,
+                    "average_out_of_10": 8.3,
+                    "longitude": 72.804722,
+                    "latitude": 18.956389,
+                    "total_votes": 127
+                },
+                {
+                    "latitude": 18.954948725005,
+                    "total_votes": 16,
+                    "longitude": 72.8053450584412,
+                    "average_out_of_10": 8.5,
+                    "distance": 12.3433128742035,
+                    "tag": "Kamala Nehru Park"
+                },
+                {
+                    "average_out_of_10": 8.3,
+                    "tag": "Priyadarshini Park & Sports Complex",
+                    "distance": 12.3797382148901,
+                    "total_votes": 39,
+                    "latitude": 18.957778,
+                    "longitude": 72.798611
+                },
+                {
+                    "total_votes": 13,
+                    "latitude": 19.067323,
+                    "longitude": 72.826737,
+                    "average_out_of_10": 9.1,
+                    "distance": 5.3242220773127,
+                    "tag": "Pali Hill"
+                },
+                {
+                    "longitude": 72.8559788,
+                    "latitude": 19.0442194,
+                    "total_votes": 22,
+                    "tag": "Dharavi",
+                    "distance": 5.34205932497457,
+                    "average_out_of_10": 7.9
+                },
+                {
+                    "average_out_of_10": 8.3,
+                    "distance": 10.2532881214442,
+                    "tag": "Byculla",
+                    "total_votes": 275,
+                    "latitude": 18.9748256300001,
+                    "longitude": 72.8367161800001
+                },
+                {
+                    "longitude": 72.8465933000001,
+                    "latitude": 18.9637815,
+                    "total_votes": 43,
+                    "tag": "Wadi Bandar",
+                    "distance": 10.7773516405175,
+                    "average_out_of_10": 7.8
+                },
+                {
+                    "distance": 11.439816085671,
+                    "tag": "Peddar Road",
+                    "average_out_of_10": 8.9,
+                    "longitude": 72.8084656989502,
+                    "latitude": 18.9681642299953,
+                    "total_votes": 11
+                },
+                {
+                    "total_votes": 29,
+                    "latitude": 18.95763759,
+                    "longitude": 72.83154756,
+                    "average_out_of_10": 8.6,
+                    "distance": 11.4853703931047,
+                    "tag": "Bhendi Bazaar"
+                },
+                {
+                    "tag": "Mohd Ali Road",
+                    "distance": 11.627652275083,
+                    "average_out_of_10": 7.1,
+                    "longitude": 72.832794,
+                    "latitude": 18.955031,
+                    "total_votes": 7
+                },
+                {
+                    "longitude": 72.811111,
+                    "total_votes": 79,
+                    "latitude": 18.954167,
+                    "tag": "Girgaon Chowpatty Beach",
+                    "distance": 12.2244689535475,
+                    "average_out_of_10": 8.4
+                },
+                {
+                    "longitude": 72.8257191181183,
+                    "total_votes": 11,
+                    "latitude": 19.1059341915931,
+                    "distance": 4.35350918307225,
+                    "tag": "Prithvi Theatre",
+                    "average_out_of_10": 9.1
+                },
+                {
+                    "average_out_of_10": 8.1,
+                    "tag": "Plaza Theatre, Dadar",
+                    "distance": 7.12239602075592,
+                    "latitude": 19.021667,
+                    "total_votes": 42,
+                    "longitude": 72.842778
+                }
+            ],
+            "popular_landmarks": [
+                {
+                    "tag": "Mumbai Domestic Terminal 1",
+                    "distance": 2.98855388737106,
+                    "average_out_of_10": 8.4,
+                    "longitude": 72.8525733947754,
+                    "total_votes": 43,
+                    "latitude": 19.0915227852161
+                },
+                {
+                    "tag": "Vihar Lake",
+                    "distance": 3.05151419162776,
+                    "average_out_of_10": 8.6,
+                    "longitude": 72.910269,
+                    "total_votes": 10,
+                    "latitude": 19.154184
+                },
+                {
+                    "tag": "ISKCON",
+                    "distance": 4.28912195423714,
+                    "average_out_of_10": 9.2,
+                    "longitude": 72.826211,
+                    "total_votes": 16,
+                    "latitude": 19.113262
+                },
+                {
+                    "tag": "Prithvi Theatre",
+                    "distance": 4.35350918307225,
+                    "average_out_of_10": 9.1,
+                    "longitude": 72.8257191181183,
+                    "latitude": 19.1059341915931,
+                    "total_votes": 11
+                },
+                {
+                    "total_votes": 44,
+                    "latitude": 19.1018369233517,
+                    "longitude": 72.8246784210205,
+                    "average_out_of_10": 8.6,
+                    "tag": "Juhu Beach",
+                    "distance": 4.46375117197715
+                },
+                {
+                    "average_out_of_10": 8.7,
+                    "tag": "Versova Beach",
+                    "distance": 4.87739666912667,
+                    "latitude": 19.1235627,
+                    "total_votes": 11,
+                    "longitude": 72.8179441
+                },
+                {
+                    "latitude": 19.067323,
+                    "total_votes": 13,
+                    "longitude": 72.826737,
+                    "average_out_of_10": 9.1,
+                    "tag": "Pali Hill",
+                    "distance": 5.3242220773127
+                },
+                {
+                    "longitude": 72.8559788,
+                    "latitude": 19.0442194,
+                    "total_votes": 22,
+                    "distance": 5.34205932497457,
+                    "tag": "Dharavi",
+                    "average_out_of_10": 7.9
+                }
+            ]
+        },
+        "optional": {
+            "closest_landmarks": [
+                {
+                    "average_out_of_10": 8.4,
+                    "latitude": 19.0915227852161,
+                    "tag": "Mumbai Domestic Terminal 1",
+                    "total_votes": 43,
+                    "distance": 2.98855388737106,
+                    "longitude": 72.8525733947754
+                },
+                {
+                    "average_out_of_10": 9.2,
+                    "latitude": 19.113262,
+                    "tag": "ISKCON",
+                    "total_votes": 16,
+                    "distance": 4.28912195423714,
+                    "longitude": 72.826211
+                },
+                {
+                    "longitude": 72.8246784210205,
+                    "distance": 4.46375117197715,
+                    "total_votes": 44,
+                    "tag": "Juhu Beach",
+                    "latitude": 19.1018369233517,
+                    "average_out_of_10": 8.6
+                },
+                {
+                    "distance": 4.87739666912667,
+                    "longitude": 72.8179441,
+                    "total_votes": 11,
+                    "average_out_of_10": 8.7,
+                    "latitude": 19.1235627,
+                    "tag": "Versova Beach"
+                },
+                {
+                    "average_out_of_10": "9.0",
+                    "tag": "Mount Mary Church",
+                    "latitude": 19.046538,
+                    "total_votes": 14,
+                    "distance": 6.49636994122623,
+                    "longitude": 72.822237
+                },
+                {
+                    "total_votes": 261,
+                    "longitude": 72.83333,
+                    "distance": 6.74195236972442,
+                    "latitude": 19.03333,
+                    "tag": "Mātunga",
+                    "average_out_of_10": 8.4
+                },
+                {
+                    "total_votes": 16,
+                    "longitude": 72.818393,
+                    "distance": 6.89412326503754,
+                    "latitude": 19.042042,
+                    "tag": "Bandra Fort",
+                    "average_out_of_10": 8.6
+                },
+                {
+                    "distance": 7.24174583516069,
+                    "longitude": 72.8500000000001,
+                    "total_votes": 51,
+                    "average_out_of_10": 7.3,
+                    "tag": "Wadala",
+                    "latitude": 19.01667
+                },
+                {
+                    "total_votes": 57,
+                    "longitude": 72.816846370697,
+                    "distance": 7.29847273888592,
+                    "tag": "Bandra Worli Sea Link",
+                    "latitude": 19.0353988400392,
+                    "average_out_of_10": 9.2
+                },
+                {
+                    "total_votes": 11,
+                    "longitude": 72.7939081192017,
+                    "distance": 7.61828684786949,
+                    "latitude": 19.1734130663581,
+                    "tag": "Aksa Beach",
+                    "average_out_of_10": 8.7
+                },
+                {
+                    "distance": 7.80245660295242,
+                    "longitude": 72.830233,
+                    "total_votes": 27,
+                    "average_out_of_10": 9.1,
+                    "latitude": 19.01698,
+                    "tag": "Siddhi Vinayak Temple"
+                },
+                {
+                    "distance": 8.38674754856051,
+                    "longitude": 72.971261,
+                    "total_votes": 18,
+                    "average_out_of_10": 8.8,
+                    "tag": "Viviana Mall",
+                    "latitude": 19.209012
+                },
+                {
+                    "tag": "Marve Beach",
+                    "latitude": 19.1978597,
+                    "average_out_of_10": 8.6,
+                    "total_votes": 10,
+                    "longitude": 72.7967086,
+                    "distance": 8.5199394776401
+                },
+                {
+                    "latitude": 18.98333,
+                    "tag": "Sewri Port",
+                    "average_out_of_10": 8.1,
+                    "total_votes": 240,
+                    "longitude": 72.85,
+                    "distance": 9.41736884905009
+                },
+                {
+                    "total_votes": 5,
+                    "distance": 9.71607716738599,
+                    "longitude": 72.80587,
+                    "average_out_of_10": 9.6,
+                    "latitude": 19.22821,
+                    "tag": "Global Vipassana Pagoda"
+                },
+                {
+                    "tag": "Nerul Railway Station",
+                    "latitude": 19.0335335000374,
+                    "average_out_of_10": "8.0",
+                    "total_votes": 1,
+                    "longitude": 73.0181377764435,
+                    "distance": 9.92173878186217
+                },
+                {
+                    "average_out_of_10": 8.5,
+                    "latitude": 18.9822522201954,
+                    "tag": "Dhobi Ghat",
+                    "total_votes": 27,
+                    "distance": 10.090158716175,
+                    "longitude": 72.8246730566025
+                },
+                {
+                    "longitude": 72.815568,
+                    "distance": 10.1015288671374,
+                    "total_votes": 4,
+                    "latitude": 18.98657,
+                    "tag": "The National Sports Club of India",
+                    "average_out_of_10": "9.0"
+                },
+                {
+                    "average_out_of_10": 9.3,
+                    "tag": "Mahalakshmi Temple",
+                    "latitude": 18.977434,
+                    "total_votes": 30,
+                    "distance": 10.9631013890019,
+                    "longitude": 72.805956
+                },
+                {
+                    "longitude": 72.812925,
+                    "distance": 11.1308423027835,
+                    "total_votes": 8,
+                    "latitude": 18.970986,
+                    "tag": "Imperial Towers",
+                    "average_out_of_10": 7.8
+                },
+                {
+                    "longitude": 72.809869,
+                    "distance": 11.1836311719231,
+                    "total_votes": 15,
+                    "tag": "Jaslok Hospital",
+                    "latitude": 18.97166,
+                    "average_out_of_10": 8.4
+                },
+                {
+                    "average_out_of_10": 9.2,
+                    "tag": "Mumbadevi Temple",
+                    "latitude": 18.951844,
+                    "distance": 11.8742787629677,
+                    "longitude": 72.831011,
+                    "total_votes": 17
+                },
+                {
+                    "longitude": 72.808519,
+                    "distance": 12.0063400293528,
+                    "total_votes": 15,
+                    "latitude": 18.9588890000001,
+                    "tag": "Babulnath Temple",
+                    "average_out_of_10": 9.1
+                },
+                {
+                    "average_out_of_10": "9.0",
+                    "tag": "Haji Ali Dargah",
+                    "latitude": 18.982745,
+                    "distance": 10.5476629972647,
+                    "longitude": 72.808946,
+                    "total_votes": 27
+                },
+                {
+                    "distance": 11.8451602507293,
+                    "longitude": 72.807244,
+                    "total_votes": 48,
+                    "average_out_of_10": 7.7,
+                    "latitude": 18.962136,
+                    "tag": "Towers of Silence"
+                },
+                {
+                    "average_out_of_10": "8.0",
+                    "latitude": 19.0360952660609,
+                    "tag": "Utsav Chowk",
+                    "distance": 12.3061365780401,
+                    "longitude": 73.0617427825928,
+                    "total_votes": 28
+                },
+                {
+                    "average_out_of_10": 9.1,
+                    "tag": "Nehru Science Centre",
+                    "latitude": 18.9903277590399,
+                    "distance": 9.79492240809514,
+                    "longitude": 72.8180694580078,
+                    "total_votes": 20
+                },
+                {
+                    "longitude": 72.910269,
+                    "distance": 3.05151419162776,
+                    "total_votes": 10,
+                    "tag": "Vihar Lake",
+                    "latitude": 19.154184,
+                    "average_out_of_10": 8.6
+                },
+                {
+                    "tag": "Sagar Vihar",
+                    "latitude": 19.0751986393621,
+                    "average_out_of_10": "8.0",
+                    "total_votes": 31,
+                    "longitude": 72.9844200611115,
+                    "distance": 6.59131873338986
+                },
+                {
+                    "longitude": 73.0085277600001,
+                    "distance": 9.72684321408567,
+                    "total_votes": 26,
+                    "tag": "Nerul Lake and nature park",
+                    "latitude": 19.0259325600001,
+                    "average_out_of_10": 7.6
+                },
+                {
+                    "average_out_of_10": 7.7,
+                    "latitude": 19.0317746704565,
+                    "tag": "Kharghar Hills",
+                    "total_votes": 28,
+                    "distance": 11.8595755530228,
+                    "longitude": 73.051700592041
+                },
+                {
+                    "total_votes": 127,
+                    "longitude": 72.804722,
+                    "distance": 12.2736145784182,
+                    "latitude": 18.956389,
+                    "tag": "Hanging Gardens",
+                    "average_out_of_10": 8.3
+                },
+                {
+                    "total_votes": 16,
+                    "longitude": 72.8053450584412,
+                    "distance": 12.3433128742035,
+                    "latitude": 18.954948725005,
+                    "tag": "Kamala Nehru Park",
+                    "average_out_of_10": 8.5
+                },
+                {
+                    "distance": 12.3797382148901,
+                    "longitude": 72.798611,
+                    "total_votes": 39,
+                    "average_out_of_10": 8.3,
+                    "latitude": 18.957778,
+                    "tag": "Priyadarshini Park & Sports Complex"
+                },
+                {
+                    "total_votes": 13,
+                    "distance": 5.3242220773127,
+                    "longitude": 72.826737,
+                    "average_out_of_10": 9.1,
+                    "tag": "Pali Hill",
+                    "latitude": 19.067323
+                },
+                {
+                    "latitude": 19.0442194,
+                    "tag": "Dharavi",
+                    "average_out_of_10": 7.9,
+                    "total_votes": 22,
+                    "longitude": 72.8559788,
+                    "distance": 5.34205932497457
+                },
+                {
+                    "total_votes": 275,
+                    "distance": 10.2532881214442,
+                    "longitude": 72.8367161800001,
+                    "average_out_of_10": 8.3,
+                    "latitude": 18.9748256300001,
+                    "tag": "Byculla"
+                },
+                {
+                    "latitude": 18.9637815,
+                    "tag": "Wadi Bandar",
+                    "average_out_of_10": 7.8,
+                    "total_votes": 43,
+                    "longitude": 72.8465933000001,
+                    "distance": 10.7773516405175
+                },
+                {
+                    "latitude": 18.9681642299953,
+                    "tag": "Peddar Road",
+                    "average_out_of_10": 8.9,
+                    "total_votes": 11,
+                    "longitude": 72.8084656989502,
+                    "distance": 11.439816085671
+                },
+                {
+                    "tag": "Bhendi Bazaar",
+                    "latitude": 18.95763759,
+                    "average_out_of_10": 8.6,
+                    "total_votes": 29,
+                    "longitude": 72.83154756,
+                    "distance": 11.4853703931047
+                },
+                {
+                    "total_votes": 7,
+                    "longitude": 72.832794,
+                    "distance": 11.627652275083,
+                    "tag": "Mohd Ali Road",
+                    "latitude": 18.955031,
+                    "average_out_of_10": 7.1
+                },
+                {
+                    "latitude": 18.954167,
+                    "tag": "Girgaon Chowpatty Beach",
+                    "average_out_of_10": 8.4,
+                    "total_votes": 79,
+                    "longitude": 72.811111,
+                    "distance": 12.2244689535475
+                },
+                {
+                    "tag": "Prithvi Theatre",
+                    "latitude": 19.1059341915931,
+                    "average_out_of_10": 9.1,
+                    "total_votes": 11,
+                    "longitude": 72.8257191181183,
+                    "distance": 4.35350918307225
+                },
+                {
+                    "total_votes": 42,
+                    "distance": 7.12239602075592,
+                    "longitude": 72.842778,
+                    "average_out_of_10": 8.1,
+                    "latitude": 19.021667,
+                    "tag": "Plaza Theatre, Dadar"
+                }
+            ],
+            "popular_landmarks": [
+                {
+                    "total_votes": 43,
+                    "distance": 2.98855388737106,
+                    "longitude": 72.8525733947754,
+                    "average_out_of_10": 8.4,
+                    "tag": "Mumbai Domestic Terminal 1",
+                    "latitude": 19.0915227852161
+                },
+                {
+                    "average_out_of_10": 8.6,
+                    "tag": "Vihar Lake",
+                    "latitude": 19.154184,
+                    "total_votes": 10,
+                    "distance": 3.05151419162776,
+                    "longitude": 72.910269
+                },
+                {
+                    "distance": 4.28912195423714,
+                    "longitude": 72.826211,
+                    "total_votes": 16,
+                    "average_out_of_10": 9.2,
+                    "tag": "ISKCON",
+                    "latitude": 19.113262
+                },
+                {
+                    "tag": "Prithvi Theatre",
+                    "latitude": 19.1059341915931,
+                    "average_out_of_10": 9.1,
+                    "total_votes": 11,
+                    "longitude": 72.8257191181183,
+                    "distance": 4.35350918307225
+                },
+                {
+                    "distance": 4.46375117197715,
+                    "longitude": 72.8246784210205,
+                    "total_votes": 44,
+                    "average_out_of_10": 8.6,
+                    "latitude": 19.1018369233517,
+                    "tag": "Juhu Beach"
+                },
+                {
+                    "average_out_of_10": 8.7,
+                    "latitude": 19.1235627,
+                    "tag": "Versova Beach",
+                    "distance": 4.87739666912667,
+                    "longitude": 72.8179441,
+                    "total_votes": 11
+                },
+                {
+                    "latitude": 19.067323,
+                    "tag": "Pali Hill",
+                    "average_out_of_10": 9.1,
+                    "longitude": 72.826737,
+                    "distance": 5.3242220773127,
+                    "total_votes": 13
+                },
+                {
+                    "total_votes": 22,
+                    "longitude": 72.8559788,
+                    "distance": 5.34205932497457,
+                    "tag": "Dharavi",
+                    "latitude": 19.0442194,
+                    "average_out_of_10": 7.9
+                }
+            ]
+        }
+    }
+}

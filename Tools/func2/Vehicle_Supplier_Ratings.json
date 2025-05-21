@@ -1,0 +1,133 @@
+{
+    "shorten": {
+        "api": {
+            "name": "Vehicle_Supplier_Ratings",
+            "endpoint": "/api/v1/cars/vehicleSupplierRatings",
+            "func_description": "Retrieve ratings for the supplier of a specific vehicle. ",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "vehicle_id": {
+                        "type": "String",
+                        "description": "Vehicle ID. vehicle_id can be retrieved from api/v1/cars/searchCarRentals(Search Car Rentals) endpoint in Car Rental collection as vehicle_id inside search_results object.",
+                        "example_value": "373025711",
+                        "required": true
+                    },
+                    "search_key": {
+                        "type": "String",
+                        "description": "search_key can be retrieved from api/v1/cars/searchCarRentals(Search Car Rentals) endpoint in Car Rental collection as search_key.",
+                        "example_value": "eyJkcml2ZXJzQWdlIjozMCwiZHJvcE9mZkRhdGVUaW1lIjoiMjAyMy0xMS0xN1QxMDowMDowMCIsImRyb3BPZmZMb2NhdGlvbiI6IjQwLjYzOTcwMTg0MzI2MTcsLTczLjc3OTE5NzY5Mjg3MTEiLCJkcm9wT2ZmTG9jYXRpb25UeXBlIjoiTEFUTE9ORyIsInBpY2tVcERhdGVUaW1lIjoiMjAyMy0xMS0xNVQxMDowMDowMCIsInBpY2tVcExvY2F0aW9uIjoiNDAuNjM5NzAxODQzMjYxNywtNzMuNzc5MTk3NjkyODcxMSIsInBpY2tVcExvY2F0aW9uVHlwZSI6IkxBVExPTkciLCJyZW50YWxEdXJhdGlvbkluRGF5cyI6Miwic2VydmljZUZlYXR1cmVzIjpbIk5PX09QQVFVRVMiLCJTVVBSRVNTX0ZJWEVEX1BSSUNFX1ZFSElDTEVTIl19",
+                        "required": true
+                    },
+                    "languagecode": {
+                        "type": "String",
+                        "description": "To obtain the response data in a specific language, enter the languagecode. languagecode can be retrieved from api/v1/meta/getLanguages(Get Languages\n) endpoint in Meta collection.",
+                        "example_value": "",
+                        "required": false
+                    },
+                    "currency_code": {
+                        "type": "String",
+                        "description": "The currency code. currency_code can be retrieved from api/v1/meta/getCurrency(Get Currency) endpoint in Hotels collection.",
+                        "example_value": "USD",
+                        "required": false
+                    }
+                },
+                "required": [
+                    "vehicle_id",
+                    "search_key"
+                ]
+            }
+        },
+        "static_response": {
+            "function_name": "Vehicle_Supplier_Ratings",
+            "arguments": {
+                "vehicle_id": "755355561",
+                "search_key": "eyJkcml2ZXJzQWdlIjozMCwiZHJvcE9mZkRhdGVUaW1lIjoiMjAyNC0xMi0wN1QxMzowMDowMCIsImRyb3BPZmZMb2NhdGlvbiI6IjQ2LjIzMTA5ODE3NTA0ODgsNi4xMDc4MTAwMjA0NDY3OCIsImRyb3BPZmZMb2NhdGlvblR5cGUiOiJMQVRMT05HIiwicGlja1VwRGF0ZVRpbWUiOiIyMDI0LTEyLTAxVDE1OjAwOjAwIiwicGlja1VwTG9jYXRpb24iOiI0Ny40NTE5MDA0ODIxNzc3LDguNTYyODA5OTQ0MTUyODMiLCJwaWNrVXBMb2NhdGlvblR5cGUiOiJMQVRMT05HIiwicmVudGFsRHVyYXRpb25JbkRheXMiOjYsInNlcnZpY2VGZWF0dXJlcyI6WyJOT19PUEFRVUVTIiwiU1VQUkVTU19GSVhFRF9QUklDRV9WRUhJQ0xFUyIsIklOQ0xVREVfUFJPRFVDVF9SRUxBVElPTlNISVBTIiwiSU5DTFVERV9FWFRSQVNfQ09OVEFJTklOR19GRUVTIl19"
+            },
+            "observation": {
+                "status": true,
+                "message": "Success",
+                "data": {
+                    "name": "Europcar",
+                    "rating": {
+                        "average": "8.9",
+                        "title": "Fabulous",
+                        "localisedRating": {
+                            "displayValue": "8.9",
+                            "rawValue": 8.9
+                        },
+                        "subtitle": "3,652 reviews",
+                        "breakdown": [
+                            {
+                                "localisedRating": {
+                                    "displayValue": "8.4",
+                                    "rawValue": 8.4
+                                },
+                                "score": "8.4",
+                                "title": "Overall value for money of your vehicle hire"
+                            },
+                            {
+                                "title": "Helpfulness",
+                                "score": "9.1",
+                                "localisedRating": {
+                                    "rawValue": 9.1,
+                                    "displayValue": "9.1"
+                                }
+                            },
+                            {
+                                "score": "8.3",
+                                "title": "Pick-up speed",
+                                "localisedRating": {
+                                    "rawValue": 8.3,
+                                    "displayValue": "8.3"
+                                }
+                            }
+                        ]
+                    },
+                    "title": "Rental company"
+                }
+            }
+        },
+        "required": {
+            "query": "I'm considering renting a car with vehicle ID 373025711 and have a search key from a previous search. Can you provide the supplier ratings for this vehicle?",
+            "params": {
+                "vehicle_id": "373025711",
+                "search_key": "eyJkcml2ZXJzQWdlIjozMCwiZHJvcE9mZkRhdGVUaW1lIjoiMjAyMy0xMS0xN1QxMDowMDowMCIsImRyb3BPZmZMb2NhdGlvbiI6IjQwLjYzOTcwMTg0MzI2MTcsLTczLjc3OTE5NzY5Mjg3MTEiLCJkcm9wT2ZmTG9jYXRpb25UeXBlIjoiTEFUTE9ORyIsInBpY2tVcERhdGVUaW1lIjoiMjAyMy0xMS0xNVQxMDowMDowMCIsInBpY2tVcExvY2F0aW9uIjoiNDAuNjM5NzAxODQzMjYxNywtNzMuNzc5MTk3NjkyODcxMSIsInBpY2tVcExvY2F0aW9uVHlwZSI6IkxBVExPTkciLCJyZW50YWxEdXJhdGlvbkluRGF5cyI6Miwic2VydmljZUZlYXR1cmVzIjpbIk5PX09QQVFVRVMiLCJTVVBSRVNTX0ZJWEVEX1BSSUNFX1ZFSElDTEVTIl19"
+            },
+            "response": {
+                "status": true,
+                "message": "Success",
+                "timestamp": 1747651983657,
+                "data": {}
+            }
+        },
+        "optional": {
+            "query": "I'm planning to rent a car with vehicle ID 373025711 and have the search key 'eyJkcml2ZXJzQWdlIjozMCwiZHJvcE9mZkRhdGVUaW1lIjoiMjAyMy0xMS0xN1QxMDowMDowMCIsImRyb3BPZmZMb2NhdGlvbiI6IjQwLjYzOTcwMTg0MzI2MTcsLTczLjc3OTE5NzY5Mjg3MTEi'. Could you provide the supplier ratings for this vehicle, with the details displayed in English and prices in US dollars?",
+            "params": {
+                "vehicle_id": "373025711",
+                "search_key": "eyJkcml2ZXJzQWdlIjozMCwiZHJvcE9mZkRhdGVUaW1lIjoiMjAyMy0xMS0xN1QxMDowMDowMCIsImRyb3BPZmZMb2NhdGlvbiI6IjQwLjYzOTcwMTg0MzI2MTcsLTczLjc3OTE5NzY5Mjg3MTEi",
+                "currency_code": "USD"
+            },
+            "response": {
+                "status": true,
+                "message": "Success",
+                "timestamp": 1747652003254,
+                "data": {}
+            }
+        }
+    },
+    "row": {
+        "required": {
+            "status": true,
+            "message": "Success",
+            "timestamp": 1747651983657,
+            "data": {}
+        },
+        "optional": {
+            "status": true,
+            "message": "Success",
+            "timestamp": 1747652003254,
+            "data": {}
+        }
+    }
+}

@@ -1,4 +1,4 @@
-from basellms import DeepSeekRequest
+from basellms import DeepSeekRequest, QwenRequest
 from rapidapi import RapidAPICall
 import sys
 import os
@@ -23,10 +23,10 @@ class ToolExplore:
         
         # 初始化gpt模型 和  rapidapi 接口文件
         params = {
-            "model_name": "deepseek-chat",
-            "api_key": os.getenv("Deepseek_API_KEY"),
-            "base_url": "https://api.deepseek.com"
-        }
+        "model_name": "deepseek-chat",
+        "api_key": "sk-f17e647c3ba449e29415f1f64c070ae6",
+        "base_url": "https://api.deepseek.com"
+    	}
         self.response_format={'type': 'json_object'}
         self.llm = DeepSeekRequest(**params)
         self.rapidapi = RapidAPICall(tool="booking-com15", tool_info=self.tool_info, host=self.host)
@@ -34,8 +34,9 @@ class ToolExplore:
         # 加载提示词中的例子
         with open(example_path, 'r') as f:
             example = json.load(f)
-        self.required_example = example['required_paramers_explore']
-        self.optional_example = example['optional_paramers_explore']
+        self.required_example = self.format_json(example['required_paramers_explore'])
+        self.optional_example = self.format_json(example['optional_paramers_explore'])
+        # print(self.required_example)
         # 加载提示词
         self.template = ExplorePrompts()
         # 加载输出响应文件
@@ -44,18 +45,17 @@ class ToolExplore:
 
         # 探索API的各种响应并将响应简洁化
         for i , tool in enumerate(self.tool_info):
-            if i <= 31 : continue
+            # if i >= 1 : break
             name = tool['name']
+            # if name != "Get_Seat_Map": continue
             print(name)
-            url = tool['endpoint']
-            description = tool['func_description']
             params = tool['parameters']
             #==================================进行两种探索，1.必选参数 ==================================
-            messages = self.template.explore_api_by_required(tool_docs = tool, Example=self.required_example)
+            messages = self.template.explore_api_by_required(tool_docs = self.format_json(tool), Example=self.required_example)
             # print(messages)
-            output = self.llm(messages, self.response_format)
+            output = self.llm(messages, self.response_format,)
             # print("=="*20)
-            # # print(output['content'])
+            # print(output['content'])
             # print(self.strip_json_markdown(output['content']))
             # print("=="*20)
             content = json.loads(self.strip_json_markdown(output['content']))
@@ -63,6 +63,7 @@ class ToolExplore:
             query_required = content['User Query']
             params_required = content['Parameters']
             params_required = self.clean_params(params, params_required)
+            # print(params_required)
             
             # 进行API调用
             response_required = self.rapidapi._call({"name":name, "arguments":params_required})
@@ -72,8 +73,8 @@ class ToolExplore:
             # print("**"*20)
             # print(response_required_shorten)
             #2. ==================================可选参数=========================================
-            messages = self.template.explore_api_by_optional(tool_docs = tool, Example=self.optional_example, previous_user_query=query_required)
-            output = self.llm(messages, self.response_format)
+            messages = self.template.explore_api_by_optional(tool_docs = self.format_json(tool), Example=self.optional_example, previous_user_query=query_required)
+            output = self.llm(messages, self.response_format, )
             # print("=="*20)
             # print(output['content'])
             # print(self.strip_json_markdown(output['content']))
@@ -108,8 +109,11 @@ class ToolExplore:
             
             
             self.save_to_file(name, record)
+    
+    def expore_params(self, name, ):
+        pass
     def save_to_file(self, api_name, record):
-        output_dir = "/home/snrobot/lin/GraphLinkTools/Tools/func"
+        output_dir = "/home/snrobot/lin/GraphLinkTools/Tools/func2"
         os.makedirs(output_dir, exist_ok=True)
         file_path = os.path.join(output_dir, f"{api_name}.json")
         with open(file_path, 'w', encoding='utf-8') as f:
@@ -121,15 +125,8 @@ class ToolExplore:
         for param, p_value in params["properties"].items():
             value = need_clean_params.get(param)
             required = p_value.get("required", False)
-            if value is None:
-                if required:
-                    return None  # 缺少必需参数
-                continue
             if isinstance(value, str) and value.strip().lower() == "i don't know":
-                if required:
-                    return None  
-                else:
-                    need_clean_params.pop(param)
+                need_clean_params.pop(param)
 
         return need_clean_params
             
@@ -151,8 +148,15 @@ class ToolExplore:
             if text.startswith("json"):
                 text = text[len("json"):].strip()
         return text  
-        
-
+    
+    def format_json(self, example):
+        example_str = ""
+        if isinstance(example, dict):
+            example_str = json.dumps(example, ensure_ascii=False, indent=4)
+        elif  isinstance(example, list):
+            for i, ex in enumerate(example):
+                example_str += f"Example{i+1}:\n    {json.dumps(ex, ensure_ascii=False, indent=4)}\n\n"
+        return example_str
     
 
 if __name__ == '__main__':

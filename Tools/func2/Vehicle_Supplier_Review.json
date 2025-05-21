@@ -1,0 +1,197 @@
+{
+    "shorten": {
+        "api": {
+            "name": "Vehicle_Supplier_Review",
+            "endpoint": "/api/v1/cars/vehicleSupplierReview",
+            "func_description": "Get the reviews for the supplier of a specific vehicle. ",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "vehicle_id": {
+                        "type": "String",
+                        "description": "Vehicle ID. vehicle_id can be retrieved from api/v1/cars/searchCarRentals(Search Car Rentals) endpoint in Car Rental collection as vehicle_id inside search_results object.",
+                        "example_value": "373025711",
+                        "required": true
+                    },
+                    "search_key": {
+                        "type": "String",
+                        "description": "search_key can be retrieved from api/v1/cars/searchCarRentals(Search Car Rentals) endpoint in Car Rental collection as search_key.",
+                        "example_value": "eyJkcml2ZXJzQWdlIjozMCwiZHJvcE9mZkRhdGVUaW1lIjoiMjAyMy0xMS0xN1QxMDowMDowMCIsImRyb3BPZmZMb2NhdGlvbiI6IjQwLjYzOTcwMTg0MzI2MTcsLTczLjc3OTE5NzY5Mjg3MTEiLCJkcm9wT2ZmTG9jYXRpb25UeXBlIjoiTEFUTE9ORyIsInBpY2tVcERhdGVUaW1lIjoiMjAyMy0xMS0xNVQxMDowMDowMCIsInBpY2tVcExvY2F0aW9uIjoiNDAuNjM5NzAxODQzMjYxNywtNzMuNzc5MTk3NjkyODcxMSIsInBpY2tVcExvY2F0aW9uVHlwZSI6IkxBVExPTkciLCJyZW50YWxEdXJhdGlvbkluRGF5cyI6Miwic2VydmljZUZlYXR1cmVzIjpbIk5PX09QQVFVRVMiLCJTVVBSRVNTX0ZJWEVEX1BSSUNFX1ZFSElDTEVTIl19",
+                        "required": true
+                    },
+                    "languagecode": {
+                        "type": "String",
+                        "description": "To obtain the response data in a specific language, enter the languagecode. languagecode can be retrieved from api/v1/meta/getLanguages(Get Languages\n) endpoint in Meta collection.",
+                        "example_value": "",
+                        "required": false
+                    }
+                },
+                "required": [
+                    "vehicle_id",
+                    "search_key"
+                ]
+            }
+        },
+        "static_response": {
+            "function_name": "Vehicle_Supplier_Review",
+            "arguments": {
+                "vehicle_id": "771584876",
+                "search_key": "eyJkcml2ZXJzQWdlIjozMCwiZHJvcE9mZkRhdGVUaW1lIjoiMjAyNC0xMS0xNFQxNjowMDowMCIsImRyb3BPZmZMb2NhdGlvbiI6Ii0zMy45MzQzLDE1MS4xNzMiLCJkcm9wT2ZmTG9jYXRpb25UeXBlIjoiTEFUTE9ORyIsInBpY2tVcERhdGVUaW1lIjoiMjAyNC0xMS0xMFQxMDowMDowMCIsInBpY2tVcExvY2F0aW9uIjoiLTM3LjY2OTYsMTQ0Ljg0OSIsInBpY2tVcExvY2F0aW9uVHlwZSI6IkxBVExPTkciLCJyZW50YWxEdXJhdGlvbkluRGF5cyI6NSwic2VydmljZUZlYXR1cmVzIjpbIk5PX09QQVFVRVMiLCJTVVBSRVNTX0ZJWEVEX1BSSUNFX1ZFSElDTEVTIiwiSU5DTFVERV9QUk9EVUNUX1JFTEFUSU9OU0hJUFMiLCJJTkNMVURFX0VYVFJBU19DT05UQUlOSU5HX0ZFRVMiXX0="
+            },
+            "observation": {
+                "status": true,
+                "message": "Success",
+                "data": {
+                    "customerReviews": {
+                        "sort": {
+                            "options": {
+                                "items": [
+                                    {
+                                        "label": "Highest scores",
+                                        "id": "score.descending"
+                                    },
+                                    {
+                                        "id": "score.ascending",
+                                        "label": "Lowest scores"
+                                    },
+                                    {
+                                        "label": "Newest first",
+                                        "id": "date.descending"
+                                    }
+                                ],
+                                "default": "score.descending"
+                            },
+                            "ctaTitle": "Sort by",
+                            "pageTitle": "Sort by"
+                        },
+                        "title": "Customer reviews",
+                        "reviews": [
+                            {
+                                "epochDay": 20007,
+                                "positive": "New and reliable car. Help from Europcar at the airport to get me to Europcar HQ.",
+                                "date": "Fri, Oct 11 2024",
+                                "negative": "Having not been at Melbourne Airport before I thought I'd be picking up the car at the airport. However, I had to get it from the HQ / Off-airport. I had no instructions on how to get from the airport to the HQ.",
+                                "localisedRating": {
+                                    "displayValue": "8.6",
+                                    "rawValue": 8.6
+                                },
+                                "rating": "8.6",
+                                "type": "Family"
+                            },
+                            {
+                                "localisedRating": {
+                                    "rawValue": 8,
+                                    "displayValue": "8"
+                                },
+                                "rating": "8.0",
+                                "type": "Couple",
+                                "epochDay": 20002,
+                                "negative": "You quoted full insurance \nBut it was with a third party\nYou then sent an email whilst I was on the trip requesting more money for the insurance to be covered\nVery poor form!",
+                                "date": "Sun, Oct 6 2024"
+                            },
+                            {
+                                "localisedRating": {
+                                    "displayValue": "7.1",
+                                    "rawValue": 7.1
+                                },
+                                "rating": "7.1",
+                                "type": "Couple",
+                                "epochDay": 19992,
+                                "date": "Thu, Sept 26 2024",
+                                "negative": "Was expecting i30 or similar and did end up getting a vehicle not familiar with. The car was much bigger than a i30 which is a hatchback receive a larger type of sedan car. "
+                            }
+                        ]
+                    },
+                    "supplier": {
+                        "title": "Rental company",
+                        "name": "Europcar",
+                        "rating": {
+                            "breakdown": [
+                                {
+                                    "score": "7.1",
+                                    "title": "Overall value for money of your vehicle hire",
+                                    "localisedRating": {
+                                        "rawValue": 7.1,
+                                        "displayValue": "7.1"
+                                    }
+                                },
+                                {
+                                    "localisedRating": {
+                                        "displayValue": "7.9",
+                                        "rawValue": 7.9
+                                    },
+                                    "title": "Helpfulness",
+                                    "score": "7.9"
+                                },
+                                {
+                                    "title": "Pick-up speed",
+                                    "score": "7.6",
+                                    "localisedRating": {
+                                        "rawValue": 7.6,
+                                        "displayValue": "7.6"
+                                    }
+                                }
+                            ],
+                            "title": "Very good",
+                            "subtitle": "2,300 reviews",
+                            "average": "8.0",
+                            "localisedRating": {
+                                "rawValue": 8,
+                                "displayValue": "8"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "required": {
+            "query": "I'm considering renting a car with vehicle ID 373025711 and would like to see reviews for the supplier. Can you help me find out what other customers have said about them?",
+            "params": {
+                "vehicle_id": "373025711"
+            },
+            "response": {
+                "status": false,
+                "message": [
+                    {
+                        "search_key": "Invalid value"
+                    },
+                    {
+                        "search_key": "Invalid value"
+                    }
+                ]
+            }
+        },
+        "optional": {
+            "query": "I'm considering renting a car with vehicle ID 373025711 and would like to see reviews for the supplier. I have the search key 'eyJkcml2ZXJzQWdlIjozMCwiZHJvcE9mZkRhdGVUaW1lIjoiMjAyMy0xMS0xN1QxMDowMDowMCIsImRyb3BPZmZMb2NhdGlvbiI6IjQwLjYzOTcwMTg0MzI2MTcsLTczLjc3OTE5NzY5Mjg3MTEi'. Can you show me the reviews in English?",
+            "params": {
+                "vehicle_id": "373025711",
+                "search_key": "eyJkcml2ZXJzQWdlIjozMCwiZHJvcE9mZkRhdGVUaW1lIjoiMjAyMy0xMS0xN1QxMDowMDowMCIsImRyb3BPZmZMb2NhdGlvbiI6IjQwLjYzOTcwMTg0MzI2MTcsLTczLjc3OTE5NzY5Mjg3MTEi"
+            },
+            "response": {
+                "status": true,
+                "message": "Success",
+                "timestamp": 1747652030045,
+                "data": {}
+            }
+        }
+    },
+    "row": {
+        "required": {
+            "status": false,
+            "message": [
+                {
+                    "search_key": "Invalid value"
+                },
+                {
+                    "search_key": "Invalid value"
+                }
+            ]
+        },
+        "optional": {
+            "status": true,
+            "message": "Success",
+            "timestamp": 1747652030045,
+            "data": {}
+        }
+    }
+}

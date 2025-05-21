@@ -1,0 +1,283 @@
+{
+    "shorten": {
+        "api": {
+            "name": "Get_Hotel_Policies",
+            "endpoint": "/api/v1/hotels/getHotelPolicies",
+            "func_description": "Retrieve policies for a specific hotel. ",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "hotel_id": {
+                        "type": "String",
+                        "description": "hotel_id can be retrieved from api/v1/hotels/searchHotels(Search Hotels) or api/v1/hotels/searchHotelsByCoordinates(Search Hotels By Coordinates\n) endpoint in Hotels collection.",
+                        "example_value": "5955189",
+                        "required": true
+                    },
+                    "languagecode": {
+                        "type": "String",
+                        "description": "To obtain the response data in a specific language, enter the languagecode. languagecode can be retrieved from api/v1/meta/getLanguages(Get Languages\n) endpoint in Meta collection.",
+                        "example_value": "en-us",
+                        "required": false
+                    }
+                },
+                "required": [
+                    "hotel_id"
+                ]
+            }
+        },
+        "static_response": {
+            "function_name": "Get_Hotel_Policies",
+            "arguments": {
+                "hotel_id": "180016"
+            },
+            "observation": {
+                "status": true,
+                "message": "Success",
+                "data": {
+                    "policy": [
+                        {
+                            "type": "POLICY_CHILDREN",
+                            "policy_id": 1234567891,
+                            "content": [
+                                {
+                                    "languagecode": "en-gb",
+                                    "text": "Children of any age are allowed.\n1 child (up to and including 3 years old) stays for free when using available cots.\t\nUp to 2 children (up to and including 12 years old) stay for free when using existing beds.\t\nYou haven't added any extra beds.\nThe maximum number of cots is 1.\nThe maximum number of guests is 6.\n"
+                                }
+                            ]
+                        },
+                        {
+                            "policy_id": 1234567891,
+                            "content": [
+                                {
+                                    "languagecode": "en-gb",
+                                    "text": "When booking more than 9 rooms, different policies and additional supplements may apply.\n"
+                                }
+                            ],
+                            "type": "POLICY_HOTEL_GROUPS"
+                        },
+                        {
+                            "policy_id": 1234567891,
+                            "content": [
+                                {
+                                    "text": "WiFi is available in all areas and is free of charge.\n",
+                                    "languagecode": "en-gb"
+                                }
+                            ],
+                            "type": "POLICY_HOTEL_INTERNET"
+                        }
+                    ],
+                    "policygroup_type_id": 215,
+                    "hotel_id": 180016,
+                    "name": "Smart Flex Reservations policy - 21 days until checkin",
+                    "policygroup_id": 312498772
+                }
+            }
+        },
+        "required": {
+            "query": "I'm considering booking a stay at a hotel with ID 5955189. Can you tell me about their policies, such as cancellation rules and check-in times?",
+            "params": {
+                "hotel_id": "5955189"
+            },
+            "response": {
+                "policy": [
+                    {
+                        "content": [
+                            {
+                                "languagecode": "en-gb",
+                                "text": "Children of any age are allowed.\n1 child (up to and including 7 years old) stays for free when using existing beds.\t\n1 child (up to and including 8 years old) stays for free when using available extra beds.\t\n1 person (9 years old and over) stays for Rs. 800 per child per night when using available extra beds.\t\nYou haven't added any cots.\nThe maximum number of extra beds is 1.\nThe maximum number of guests is 3.\n"
+                            }
+                        ],
+                        "policy_id": 1234567891,
+                        "type": "POLICY_CHILDREN"
+                    },
+                    {
+                        "content": [
+                            {
+                                "languagecode": "en-gb",
+                                "text": "When booking more than 3 rooms, different policies and additional supplements may apply.\n"
+                            }
+                        ],
+                        "policy_id": 1234567891,
+                        "type": "POLICY_HOTEL_GROUPS"
+                    },
+                    {
+                        "content": [
+                            {
+                                "text": "WiFi is available in the hotel rooms and is free of charge.\n",
+                                "languagecode": "en-gb"
+                            }
+                        ],
+                        "policy_id": 1234567891,
+                        "type": "POLICY_HOTEL_INTERNET"
+                    }
+                ],
+                "hotel_id": 5955189,
+                "policygroup_id": 382592005,
+                "policygroup_type_id": 118,
+                "name": "Special conditions 2"
+            }
+        },
+        "optional": {
+            "query": "I'm planning to book a stay at a hotel with ID 5955189. Could you provide me with detailed information about their policies, including cancellation rules, check-in and check-out times, and any other important policies? I'd prefer the information to be in English if possible.",
+            "params": {
+                "hotel_id": "5955189"
+            },
+            "response": {
+                "hotel_id": 5955189,
+                "policygroup_type_id": 118,
+                "policygroup_id": 382592005,
+                "name": "Special conditions 2",
+                "policy": [
+                    {
+                        "content": [
+                            {
+                                "text": "Children of any age are allowed.\n1 child (up to and including 7 years old) stays for free when using existing beds.\t\n1 child (up to and including 8 years old) stays for free when using available extra beds.\t\n1 person (9 years old and over) stays for Rs. 800 per child per night when using available extra beds.\t\nYou haven't added any cots.\nThe maximum number of extra beds is 1.\nThe maximum number of guests is 3.\n",
+                                "languagecode": "en-gb"
+                            }
+                        ],
+                        "policy_id": 1234567891,
+                        "type": "POLICY_CHILDREN"
+                    },
+                    {
+                        "policy_id": 1234567891,
+                        "content": [
+                            {
+                                "languagecode": "en-gb",
+                                "text": "When booking more than 3 rooms, different policies and additional supplements may apply.\n"
+                            }
+                        ],
+                        "type": "POLICY_HOTEL_GROUPS"
+                    },
+                    {
+                        "content": [
+                            {
+                                "text": "WiFi is available in the hotel rooms and is free of charge.\n",
+                                "languagecode": "en-gb"
+                            }
+                        ],
+                        "policy_id": 1234567891,
+                        "type": "POLICY_HOTEL_INTERNET"
+                    }
+                ]
+            }
+        }
+    },
+    "row": {
+        "required": {
+            "policy": [
+                {
+                    "content": [
+                        {
+                            "languagecode": "en-gb",
+                            "text": "Children of any age are allowed.\n1 child (up to and including 7 years old) stays for free when using existing beds.\t\n1 child (up to and including 8 years old) stays for free when using available extra beds.\t\n1 person (9 years old and over) stays for Rs. 800 per child per night when using available extra beds.\t\nYou haven't added any cots.\nThe maximum number of extra beds is 1.\nThe maximum number of guests is 3.\n"
+                        }
+                    ],
+                    "policy_id": 1234567891,
+                    "type": "POLICY_CHILDREN"
+                },
+                {
+                    "content": [
+                        {
+                            "languagecode": "en-gb",
+                            "text": "When booking more than 3 rooms, different policies and additional supplements may apply.\n"
+                        }
+                    ],
+                    "policy_id": 1234567891,
+                    "type": "POLICY_HOTEL_GROUPS"
+                },
+                {
+                    "content": [
+                        {
+                            "text": "WiFi is available in the hotel rooms and is free of charge.\n",
+                            "languagecode": "en-gb"
+                        }
+                    ],
+                    "policy_id": 1234567891,
+                    "type": "POLICY_HOTEL_INTERNET"
+                },
+                {
+                    "content": [
+                        {
+                            "languagecode": "en-gb",
+                            "text": "Free public parking is possible at a location nearby (reservation is not needed).\n"
+                        }
+                    ],
+                    "type": "POLICY_HOTEL_PARKING",
+                    "policy_id": 1234567891
+                },
+                {
+                    "content": [
+                        {
+                            "text": "Pets are not allowed.\n",
+                            "languagecode": "en-gb"
+                        }
+                    ],
+                    "policy_id": 1234567891,
+                    "type": "POLICY_HOTEL_PETS"
+                }
+            ],
+            "hotel_id": 5955189,
+            "policygroup_id": 382592005,
+            "policygroup_type_id": 118,
+            "name": "Special conditions 2"
+        },
+        "optional": {
+            "hotel_id": 5955189,
+            "policygroup_type_id": 118,
+            "policygroup_id": 382592005,
+            "name": "Special conditions 2",
+            "policy": [
+                {
+                    "content": [
+                        {
+                            "text": "Children of any age are allowed.\n1 child (up to and including 7 years old) stays for free when using existing beds.\t\n1 child (up to and including 8 years old) stays for free when using available extra beds.\t\n1 person (9 years old and over) stays for Rs. 800 per child per night when using available extra beds.\t\nYou haven't added any cots.\nThe maximum number of extra beds is 1.\nThe maximum number of guests is 3.\n",
+                            "languagecode": "en-gb"
+                        }
+                    ],
+                    "policy_id": 1234567891,
+                    "type": "POLICY_CHILDREN"
+                },
+                {
+                    "policy_id": 1234567891,
+                    "content": [
+                        {
+                            "languagecode": "en-gb",
+                            "text": "When booking more than 3 rooms, different policies and additional supplements may apply.\n"
+                        }
+                    ],
+                    "type": "POLICY_HOTEL_GROUPS"
+                },
+                {
+                    "content": [
+                        {
+                            "text": "WiFi is available in the hotel rooms and is free of charge.\n",
+                            "languagecode": "en-gb"
+                        }
+                    ],
+                    "policy_id": 1234567891,
+                    "type": "POLICY_HOTEL_INTERNET"
+                },
+                {
+                    "policy_id": 1234567891,
+                    "content": [
+                        {
+                            "text": "Free public parking is possible at a location nearby (reservation is not needed).\n",
+                            "languagecode": "en-gb"
+                        }
+                    ],
+                    "type": "POLICY_HOTEL_PARKING"
+                },
+                {
+                    "content": [
+                        {
+                            "languagecode": "en-gb",
+                            "text": "Pets are not allowed.\n"
+                        }
+                    ],
+                    "policy_id": 1234567891,
+                    "type": "POLICY_HOTEL_PETS"
+                }
+            ]
+        }
+    }
+}

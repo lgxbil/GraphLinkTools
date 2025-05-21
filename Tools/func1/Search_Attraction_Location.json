@@ -1,0 +1,469 @@
+{
+    "shorten": {
+        "api": {
+            "name": "Search_Attraction_Location",
+            "endpoint": "/api/v1/attraction/searchLocation",
+            "func_description": "Find attractions by their location, address, state, country, etc. This API will return specific information like: `slug`, `productId`, `id`, etc.  ",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "query": {
+                        "type": "String",
+                        "description": "Names of locations, cities, districts, places, countries, counties etc.",
+                        "example_value": "new",
+                        "required": true
+                    },
+                    "languagecode": {
+                        "type": "String",
+                        "description": "To obtain the response data in a specific language, enter the languagecode. languagecode can be retrieved from api/v1/meta/getLanguages(Get Languages\n) endpoint in Meta collection.",
+                        "example_value": "en-us",
+                        "required": false
+                    }
+                },
+                "required": [
+                    "query"
+                ]
+            }
+        },
+        "static_response": {
+            "function_name": "Search_Attraction_Location",
+            "arguments": {
+                "query": "Takamatsu Symbol Tower"
+            },
+            "observation": {
+                "status": true,
+                "message": "Success",
+                "data": {
+                    "products": [
+                        {
+                            "id": "eyJwaW5uZWRQcm9kdWN0IjoiUFI5YzBiaVNacTdmIiwidWZpIjotMjQ0OTU2fQ==",
+                            "__typename": "AttractionsSearchProductSuggestion",
+                            "title": "Private Guided Shore Excursion from Takamatsu port",
+                            "productId": "PR9c0biSZq7f",
+                            "productSlug": "pr9c0biszq7f-private-guided-shore-excursion-from-takamatsu-port",
+                            "taxonomySlug": "tours",
+                            "cityUfi": -244956,
+                            "cityName": "Takamatsu",
+                            "countryCode": "jp"
+                        }
+                    ]
+                }
+            }
+        },
+        "required": {
+            "query": "I'm visiting New York next month and would like to explore some attractions. Can you help me find popular attractions in the city?",
+            "params": {
+                "query": "New York"
+            },
+            "response": {
+                "products": [
+                    {
+                        "id": "eyJwaW5uZWRQcm9kdWN0IjoiUFI0dVBJejM2NFZ1IiwidWZpIjoyMDA4ODMyNX0=",
+                        "__typename": "AttractionsSearchProductSuggestion",
+                        "title": "New York CityPASS",
+                        "productId": "PR4uPIz364Vu",
+                        "productSlug": "pr4upiz364vu-new-york-citypass",
+                        "taxonomySlug": "transfers-services",
+                        "cityUfi": 20088325,
+                        "cityName": "New York",
+                        "countryCode": "us"
+                    },
+                    {
+                        "id": "eyJwaW5uZWRQcm9kdWN0IjoiUFJWbHEwOWMwdHhDIiwidWZpIjoyMDA4ODMyNX0=",
+                        "__typename": "AttractionsSearchProductSuggestion",
+                        "title": "New York Tours and New York City Sightseeing Tours.Flexible Tours",
+                        "productId": "PRVlq09c0txC",
+                        "productSlug": "prvlq09c0txc-2-hours-nyc-personalized-tour-new-york-toursnew-york-sightseeing",
+                        "taxonomySlug": "tours",
+                        "cityUfi": 20088325,
+                        "cityName": "New York",
+                        "countryCode": "us"
+                    },
+                    {
+                        "id": "eyJwaW5uZWRQcm9kdWN0IjoiUFJncTVVM0xUU2phIiwidWZpIjoyMDA3OTExMH0=",
+                        "__typename": "AttractionsSearchProductSuggestion",
+                        "title": "The Big Apple Coaster at New York New York Hotel and Casino",
+                        "productId": "PRgq5U3LTSja",
+                        "productSlug": "prgq5u3ltsja-roller-coaster-ride-at-new-york-new-york-hotel",
+                        "taxonomySlug": "attractions",
+                        "cityUfi": 20079110,
+                        "cityName": "Las Vegas",
+                        "countryCode": "us"
+                    }
+                ],
+                "destinations": [
+                    {
+                        "id": "eyJ1ZmkiOjIwMDg4MzI1fQ==",
+                        "__typename": "AttractionsSearchDestinationSuggestion",
+                        "ufi": 20088325,
+                        "country": "United States",
+                        "cityName": "New York",
+                        "productCount": 1999,
+                        "cc1": "us"
+                    },
+                    {
+                        "id": "eyJ1ZmkiOjkwMDA0OTYxM30=",
+                        "__typename": "AttractionsSearchDestinationSuggestion",
+                        "ufi": 900049613,
+                        "country": "United States",
+                        "cityName": "York",
+                        "productCount": 11,
+                        "cc1": "us"
+                    },
+                    {
+                        "id": "eyJ1ZmkiOjIwMDUzNDk5fQ==",
+                        "__typename": "AttractionsSearchDestinationSuggestion",
+                        "ufi": 20053499,
+                        "country": "United States",
+                        "cityName": "York Beach",
+                        "productCount": 11,
+                        "cc1": "us"
+                    }
+                ]
+            }
+        },
+        "optional": {
+            "query": "I'm planning a trip to New York next month and would like to explore popular attractions in the city. Can you help me find attractions in Manhattan, New York? I'd prefer the information to be in English.",
+            "params": {
+                "query": "Manhattan, New York",
+                "languagecode": "en-us"
+            },
+            "response": {
+                "products": [
+                    {
+                        "id": "eyJwaW5uZWRQcm9kdWN0IjoiUFJ1ZXhTWWQ1NFZoIiwidWZpIjoyMDA4ODMyNX0=",
+                        "__typename": "AttractionsSearchProductSuggestion",
+                        "title": "Wall Street and Lower Manhattan, New York History Walking Tour",
+                        "productId": "PRuexSYd54Vh",
+                        "productSlug": "pruexsyd54vh-wall-street-and-lower-manhattan-new-york-history-walking-tour",
+                        "taxonomySlug": "tours",
+                        "cityUfi": 20088325,
+                        "cityName": "New York",
+                        "countryCode": "us"
+                    },
+                    {
+                        "id": "eyJwaW5uZWRQcm9kdWN0IjoiUFJOeWZLc1F3d0pQIiwidWZpIjoyMDA4ODMyNX0=",
+                        "__typename": "AttractionsSearchProductSuggestion",
+                        "title": "Self Guided Walking Audio Tour of Lower Manhattan, New York",
+                        "productId": "PRNyfKsQwwJP",
+                        "productSlug": "prnyfksqwwjp-self-guided-walking-audi-tour-of-lower-manhattan-new-york",
+                        "taxonomySlug": "tours",
+                        "cityUfi": 20088325,
+                        "cityName": "New York",
+                        "countryCode": "us"
+                    },
+                    {
+                        "id": "eyJwaW5uZWRQcm9kdWN0IjoiUFJyVXdWbm9XTUYzIiwidWZpIjoyMDA4NTIwN30=",
+                        "__typename": "AttractionsSearchProductSuggestion",
+                        "title": "New York : Professional Photoshoot Experience in Manhattan Bridge",
+                        "productId": "PRrUwVnoWMF3",
+                        "productSlug": "prruwvnowmf3-new-york-professional-photoshoot-experience-in-manhattan-bridge",
+                        "taxonomySlug": "tours",
+                        "cityUfi": 20085207,
+                        "cityName": "Brooklyn",
+                        "countryCode": "us"
+                    }
+                ],
+                "destinations": [
+                    {
+                        "id": "eyJ1ZmkiOjIwMDg3ODU1fQ==",
+                        "__typename": "AttractionsSearchDestinationSuggestion",
+                        "ufi": 20087855,
+                        "country": "United States",
+                        "cityName": "Manhattan Beach",
+                        "productCount": 1999,
+                        "cc1": "us"
+                    }
+                ]
+            }
+        }
+    },
+    "row": {
+        "required": {
+            "products": [
+                {
+                    "id": "eyJwaW5uZWRQcm9kdWN0IjoiUFI0dVBJejM2NFZ1IiwidWZpIjoyMDA4ODMyNX0=",
+                    "__typename": "AttractionsSearchProductSuggestion",
+                    "title": "New York CityPASS",
+                    "productId": "PR4uPIz364Vu",
+                    "productSlug": "pr4upiz364vu-new-york-citypass",
+                    "taxonomySlug": "transfers-services",
+                    "cityUfi": 20088325,
+                    "cityName": "New York",
+                    "countryCode": "us"
+                },
+                {
+                    "id": "eyJwaW5uZWRQcm9kdWN0IjoiUFJWbHEwOWMwdHhDIiwidWZpIjoyMDA4ODMyNX0=",
+                    "__typename": "AttractionsSearchProductSuggestion",
+                    "title": "New York Tours and New York City Sightseeing Tours.Flexible Tours",
+                    "productId": "PRVlq09c0txC",
+                    "productSlug": "prvlq09c0txc-2-hours-nyc-personalized-tour-new-york-toursnew-york-sightseeing",
+                    "taxonomySlug": "tours",
+                    "cityUfi": 20088325,
+                    "cityName": "New York",
+                    "countryCode": "us"
+                },
+                {
+                    "id": "eyJwaW5uZWRQcm9kdWN0IjoiUFJncTVVM0xUU2phIiwidWZpIjoyMDA3OTExMH0=",
+                    "__typename": "AttractionsSearchProductSuggestion",
+                    "title": "The Big Apple Coaster at New York New York Hotel and Casino",
+                    "productId": "PRgq5U3LTSja",
+                    "productSlug": "prgq5u3ltsja-roller-coaster-ride-at-new-york-new-york-hotel",
+                    "taxonomySlug": "attractions",
+                    "cityUfi": 20079110,
+                    "cityName": "Las Vegas",
+                    "countryCode": "us"
+                },
+                {
+                    "id": "eyJwaW5uZWRQcm9kdWN0IjoiUFJvTk5lTHFoU2lSIiwidWZpIjoyMDA4ODMyNX0=",
+                    "__typename": "AttractionsSearchProductSuggestion",
+                    "title": "New York to New York Airport (LGA) - Departure Private Transfer",
+                    "productId": "PRoNNeLqhSiR",
+                    "productSlug": "pronnelqhsir-new-york-to-new-york-airport-lga-departure-private-transfer",
+                    "taxonomySlug": "transfers-services",
+                    "cityUfi": 20088325,
+                    "cityName": "New York",
+                    "countryCode": "us"
+                },
+                {
+                    "id": "eyJwaW5uZWRQcm9kdWN0IjoiUFI5RnFCdE5HNHRWIiwidWZpIjoyMDA4ODMyNX0=",
+                    "__typename": "AttractionsSearchProductSuggestion",
+                    "title": "Full Day Private Tour in New York from New York hotels",
+                    "productId": "PR9FqBtNG4tV",
+                    "productSlug": "pr9fqbtng4tv-full-day-private-shore-tour-in-new-york-from-new-york-hotels",
+                    "taxonomySlug": "tours",
+                    "cityUfi": 20088325,
+                    "cityName": "New York",
+                    "countryCode": "us"
+                },
+                {
+                    "id": "eyJwaW5uZWRQcm9kdWN0IjoiUFJucFpGRmRLd2hCIiwidWZpIjoyMDA4ODMyNX0=",
+                    "__typename": "AttractionsSearchProductSuggestion",
+                    "title": "New York J.F. Kennedy Airport JFK to New York Arrival Transfer",
+                    "productId": "PRnpZFFdKwhB",
+                    "productSlug": "prnpzffdkwhb-new-york-jf-kennedy-airport-jfk-to-new-york-arrival-transfer",
+                    "taxonomySlug": "transfers-services",
+                    "cityUfi": 20088325,
+                    "cityName": "New York",
+                    "countryCode": "us"
+                },
+                {
+                    "id": "eyJwaW5uZWRQcm9kdWN0IjoiUFJ2bFcyZUxPYXBYIiwidWZpIjoyMDA4ODMyNX0=",
+                    "__typename": "AttractionsSearchProductSuggestion",
+                    "title": "New York Airport Luxury Transfer : New York City to Newark Airport",
+                    "productId": "PRvlW2eLOapX",
+                    "productSlug": "prvlw2eloapx-new-york-airport-luxury-transfer-new-york-city-to-newark-airport",
+                    "taxonomySlug": "transfers-services",
+                    "cityUfi": 20088325,
+                    "cityName": "New York",
+                    "countryCode": "us"
+                },
+                {
+                    "id": "eyJwaW5uZWRQcm9kdWN0IjoiUFJkR09vWE8xRFNPIiwidWZpIjoyMDA4ODMyNX0=",
+                    "__typename": "AttractionsSearchProductSuggestion",
+                    "title": "New York to New York LaGuardia Airport (LGA) - Departure Private Transfer",
+                    "productId": "PRdGOoXO1DSO",
+                    "productSlug": "prdgooxo1dso-new-york-to-new-york-laguardia-airport-lga-departure-private-transf",
+                    "taxonomySlug": "transfers-services",
+                    "cityUfi": 20088325,
+                    "cityName": "New York",
+                    "countryCode": "us"
+                },
+                {
+                    "id": "eyJwaW5uZWRQcm9kdWN0IjoiUFJwS0pJYmIzWFFxIiwidWZpIjoyMDA4ODMyNX0=",
+                    "__typename": "AttractionsSearchProductSuggestion",
+                    "title": "New York Airport (LGA) to New York - Round Trip Private Transfer",
+                    "productId": "PRpKJIbb3XQq",
+                    "productSlug": "prpkjibb3xqq-new-york-airport-lga-to-new-york-round-trip-private-transfer",
+                    "taxonomySlug": "transfers-services",
+                    "cityUfi": 20088325,
+                    "cityName": "New York",
+                    "countryCode": "us"
+                },
+                {
+                    "id": "eyJwaW5uZWRQcm9kdWN0IjoiUFJDeG5vVko2d241IiwidWZpIjoyMDA4ODMyNX0=",
+                    "__typename": "AttractionsSearchProductSuggestion",
+                    "title": "New York Explorer Pass",
+                    "productId": "PRCxnoVJ6wn5",
+                    "productSlug": "prcxnovj6wn5-new-york-explorer-pass",
+                    "taxonomySlug": "transfers-services",
+                    "cityUfi": 20088325,
+                    "cityName": "New York",
+                    "countryCode": "us"
+                }
+            ],
+            "destinations": [
+                {
+                    "id": "eyJ1ZmkiOjIwMDg4MzI1fQ==",
+                    "__typename": "AttractionsSearchDestinationSuggestion",
+                    "ufi": 20088325,
+                    "country": "United States",
+                    "cityName": "New York",
+                    "productCount": 1999,
+                    "cc1": "us"
+                },
+                {
+                    "id": "eyJ1ZmkiOjkwMDA0OTYxM30=",
+                    "__typename": "AttractionsSearchDestinationSuggestion",
+                    "ufi": 900049613,
+                    "country": "United States",
+                    "cityName": "York",
+                    "productCount": 11,
+                    "cc1": "us"
+                },
+                {
+                    "id": "eyJ1ZmkiOjIwMDUzNDk5fQ==",
+                    "__typename": "AttractionsSearchDestinationSuggestion",
+                    "ufi": 20053499,
+                    "country": "United States",
+                    "cityName": "York Beach",
+                    "productCount": 11,
+                    "cc1": "us"
+                },
+                {
+                    "id": "eyJ1ZmkiOjIwMDgyODUwfQ==",
+                    "__typename": "AttractionsSearchDestinationSuggestion",
+                    "ufi": 20082850,
+                    "country": "United States",
+                    "cityName": "West New York",
+                    "productCount": 1999,
+                    "cc1": "us"
+                },
+                {
+                    "id": "eyJ1ZmkiOjIwMDg4MzEyfQ==",
+                    "__typename": "AttractionsSearchDestinationSuggestion",
+                    "ufi": 20088312,
+                    "country": "United States",
+                    "cityName": "New Rochelle",
+                    "productCount": 1997,
+                    "cc1": "us"
+                }
+            ]
+        },
+        "optional": {
+            "products": [
+                {
+                    "id": "eyJwaW5uZWRQcm9kdWN0IjoiUFJ1ZXhTWWQ1NFZoIiwidWZpIjoyMDA4ODMyNX0=",
+                    "__typename": "AttractionsSearchProductSuggestion",
+                    "title": "Wall Street and Lower Manhattan, New York History Walking Tour",
+                    "productId": "PRuexSYd54Vh",
+                    "productSlug": "pruexsyd54vh-wall-street-and-lower-manhattan-new-york-history-walking-tour",
+                    "taxonomySlug": "tours",
+                    "cityUfi": 20088325,
+                    "cityName": "New York",
+                    "countryCode": "us"
+                },
+                {
+                    "id": "eyJwaW5uZWRQcm9kdWN0IjoiUFJOeWZLc1F3d0pQIiwidWZpIjoyMDA4ODMyNX0=",
+                    "__typename": "AttractionsSearchProductSuggestion",
+                    "title": "Self Guided Walking Audio Tour of Lower Manhattan, New York",
+                    "productId": "PRNyfKsQwwJP",
+                    "productSlug": "prnyfksqwwjp-self-guided-walking-audi-tour-of-lower-manhattan-new-york",
+                    "taxonomySlug": "tours",
+                    "cityUfi": 20088325,
+                    "cityName": "New York",
+                    "countryCode": "us"
+                },
+                {
+                    "id": "eyJwaW5uZWRQcm9kdWN0IjoiUFJyVXdWbm9XTUYzIiwidWZpIjoyMDA4NTIwN30=",
+                    "__typename": "AttractionsSearchProductSuggestion",
+                    "title": "New York : Professional Photoshoot Experience in Manhattan Bridge",
+                    "productId": "PRrUwVnoWMF3",
+                    "productSlug": "prruwvnowmf3-new-york-professional-photoshoot-experience-in-manhattan-bridge",
+                    "taxonomySlug": "tours",
+                    "cityUfi": 20085207,
+                    "cityName": "Brooklyn",
+                    "countryCode": "us"
+                },
+                {
+                    "id": "eyJwaW5uZWRQcm9kdWN0IjoiUFI2ZExHVlBwajNvIiwidWZpIjoyMDA4ODAzNX0=",
+                    "__typename": "AttractionsSearchProductSuggestion",
+                    "title": "New York Private Airport Transfer (JFK) or (LGA) to Manhattan",
+                    "productId": "PR6dLGVPpj3o",
+                    "productSlug": "pr6dlgvppj3o-private-transfer-from-new-york-city-to-new-york-jfk-airport",
+                    "taxonomySlug": "transfers-services",
+                    "cityUfi": 20088035,
+                    "cityName": "Middle Island",
+                    "countryCode": "us"
+                },
+                {
+                    "id": "eyJwaW5uZWRQcm9kdWN0IjoiUFJLT2lJODVsMzdPIiwidWZpIjoyMDA4ODAzNX0=",
+                    "__typename": "AttractionsSearchProductSuggestion",
+                    "title": "Roundtrip Airport Transfer New York (JFK) - (LGA) to Manhattan",
+                    "productId": "PRKOiI85l37O",
+                    "productSlug": "prkoii85l37o-private-transfer-from-new-york-airport-lga-to-new-york-city",
+                    "taxonomySlug": "transfers-services",
+                    "cityUfi": 20088035,
+                    "cityName": "Middle Island",
+                    "countryCode": "us"
+                },
+                {
+                    "id": "eyJwaW5uZWRQcm9kdWN0IjoiUFJKSXdZSXlDbWRiIiwidWZpIjoyMDA4ODMyNX0=",
+                    "__typename": "AttractionsSearchProductSuggestion",
+                    "title": "New York City's Amazing Subway Mosaic Tour - Manhattan",
+                    "productId": "PRJIwYIyCmdb",
+                    "productSlug": "prjiwyiycmdb-new-york-citys-amazing-subway-mosaic-art-full-12-day-tours",
+                    "taxonomySlug": "tours",
+                    "cityUfi": 20088325,
+                    "cityName": "New York",
+                    "countryCode": "us"
+                },
+                {
+                    "id": "eyJwaW5uZWRQcm9kdWN0IjoiUFI4YTRGMUZDSzVMIiwidWZpIjoyMDA4ODMyNX0=",
+                    "__typename": "AttractionsSearchProductSuggestion",
+                    "title": "Private Transfer from Manhattan Port to New York Airport (LGA)",
+                    "productId": "PR8a4F1FCK5L",
+                    "productSlug": "pr8a4f1fck5l-private-transfer-from-manhattan-port-to-new-york-airport-lga",
+                    "taxonomySlug": "transfers-services",
+                    "cityUfi": 20088325,
+                    "cityName": "New York",
+                    "countryCode": "us"
+                },
+                {
+                    "id": "eyJwaW5uZWRQcm9kdWN0IjoiUFJQaVV5VmtxZUhpIiwidWZpIjoyMDA4OTA3N30=",
+                    "__typename": "AttractionsSearchProductSuggestion",
+                    "title": "NYC New York Airport LGA Private Transfer to Manhattan | Brooklyn",
+                    "productId": "PRPiUyVkqeHi",
+                    "productSlug": "prpiuyvkqehi-orlando-international-airport-mco-private-transfer",
+                    "taxonomySlug": "transfers-services",
+                    "cityUfi": 20089077,
+                    "cityName": "Queens",
+                    "countryCode": "us"
+                },
+                {
+                    "id": "eyJwaW5uZWRQcm9kdWN0IjoiUFJWMnR4Y25Na1BzIiwidWZpIjoyMDA4ODAzNX0=",
+                    "__typename": "AttractionsSearchProductSuggestion",
+                    "title": "Private Transfer from New York Airport (JFK) to Manhattan Port",
+                    "productId": "PRV2txcnMkPs",
+                    "productSlug": "prv2txcnmkps-private-transfer-from-new-york-airport-jfk-to-manhattan-port",
+                    "taxonomySlug": "transfers-services",
+                    "cityUfi": 20088035,
+                    "cityName": "Middle Island",
+                    "countryCode": "us"
+                },
+                {
+                    "id": "eyJwaW5uZWRQcm9kdWN0IjoiUFJTNWJYdGFOVXdEIiwidWZpIjoyMDA4ODMyNX0=",
+                    "__typename": "AttractionsSearchProductSuggestion",
+                    "title": "Private Transfer from New York City Hotels to Manhattan Port",
+                    "productId": "PRS5bXtaNUwD",
+                    "productSlug": "prs5bxtanuwd-private-transfer-from-new-york-city-hotels-to-manhattan-port",
+                    "taxonomySlug": "transfers-services",
+                    "cityUfi": 20088325,
+                    "cityName": "New York",
+                    "countryCode": "us"
+                }
+            ],
+            "destinations": [
+                {
+                    "id": "eyJ1ZmkiOjIwMDg3ODU1fQ==",
+                    "__typename": "AttractionsSearchDestinationSuggestion",
+                    "ufi": 20087855,
+                    "country": "United States",
+                    "cityName": "Manhattan Beach",
+                    "productCount": 1999,
+                    "cc1": "us"
+                }
+            ]
+        }
+    }
+}

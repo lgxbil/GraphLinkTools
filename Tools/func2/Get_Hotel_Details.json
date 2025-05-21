@@ -1,0 +1,329 @@
+{
+    "shorten": {
+        "api": {
+            "name": "Get_Hotel_Details",
+            "endpoint": "/api/v1/hotels/getHotelDetails",
+            "func_description": "Retrieve detail information for a specific hotel. ",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "hotel_id": {
+                        "type": "String",
+                        "description": "hotel_id can be retrieved from api/v1/hotels/searchHotels(Search Hotels) or api/v1/hotels/searchHotelsByCoordinates(Search Hotels By Coordinates\n) endpoint in Hotels collection.",
+                        "example_value": "191605",
+                        "required": true
+                    },
+                    "arrival_date": {
+                        "type": "Date (yyyy-mm-dd)",
+                        "description": "The date on which you will arrive or check-in",
+                        "example_value": "",
+                        "required": true
+                    },
+                    "departure_date": {
+                        "type": "Date (yyyy-mm-dd)",
+                        "description": "The date of departure or check-out.",
+                        "example_value": "",
+                        "required": true
+                    },
+                    "adults": {
+                        "type": "Number",
+                        "description": "The number of guests who are 18 years of age or older. The default value is set to 1.",
+                        "example_value": "1",
+                        "required": false
+                    },
+                    "children_age": {
+                        "type": "String",
+                        "description": "The number of children, including infants, who are under 18.\nExample:\nChild 1 Age = 8 months\nChild 2 Age = 1 year\nChild 3 Age = 17 years\nHere is what the request parameter would look like:\nchildren_age: 0,1,17",
+                        "example_value": "1,17",
+                        "required": false
+                    },
+                    "room_qty": {
+                        "type": "Number",
+                        "description": "The number of rooms that are required. The default value is set to 1.",
+                        "example_value": "1",
+                        "required": false
+                    },
+                    "units": {
+                        "type": "Enum",
+                        "description": "The measurement of distance in metric or imperial.",
+                        "example_value": "",
+                        "required": false
+                    },
+                    "temperature_unit": {
+                        "type": "Enum",
+                        "description": "The temperature unit in Fahrenheit or Celsius.\nc = Celsius\nf = Fahrenheit",
+                        "example_value": "",
+                        "required": false
+                    },
+                    "languagecode": {
+                        "type": "String",
+                        "description": "To obtain the response data in a specific language, enter the languagecode. languagecode can be retrieved from api/v1/meta/getLanguages(Get Languages\n) endpoint in Meta collection.",
+                        "example_value": "en-us",
+                        "required": false
+                    },
+                    "currency_code": {
+                        "type": "String",
+                        "description": "The currency code. currency_code can be retrieved from api/v1/meta/getCurrency(Get Currency) endpoint in Hotels collection.",
+                        "example_value": "EUR",
+                        "required": false
+                    }
+                },
+                "required": [
+                    "hotel_id",
+                    "arrival_date",
+                    "departure_date"
+                ]
+            }
+        },
+        "static_response": {
+            "function_name": "Get_Hotel_Details",
+            "arguments": {
+                "hotel_id": "240834"
+            },
+            "observation": {
+                "status": true,
+                "message": "Success",
+                "data": {
+                    "ufi": 20023182,
+                    "hotel_id": 240834,
+                    "hotel_name": "Kimpton Angler’s Hotel South Beach, an IHG Hotel",
+                    "review_nr": 1774,
+                    "arrival_date": "2024-12-05",
+                    "departure_date": "2024-12-15",
+                    "price_transparency_mode": "none",
+                    "accommodation_type_name": "Resorts",
+                    "latitude": 25.7765578579679,
+                    "longitude": -80.1340574026108,
+                    "address": "660 Washington Avenue",
+                    "city": "Miami Beach (Florida)",
+                    "city_trans": "Miami Beach",
+                    "city_in_trans": "in Miami Beach",
+                    "city_name_en": "Miami Beach",
+                    "district": "South Beach",
+                    "countrycode": "us",
+                    "distance_to_cc": 1.57366854263336,
+                    "default_language": "en-gb",
+                    "country_trans": "United States",
+                    "currency_code": "USD",
+                    "zip": "FL 33139",
+                    "timezone": "America/New_York",
+                    "rare_find_state": "NOT_RARE",
+                    "soldout": 1,
+                    "available_rooms": 0,
+                    "max_rooms_in_reservation": 6,
+                    "average_room_size_for_ufi_m2": "27.09",
+                    "is_family_friendly": 0,
+                    "is_closed": 0,
+                    "is_crimea": 0,
+                    "is_hotel_ctrip": 0,
+                    "is_price_transparent": 0,
+                    "is_genius_deal": 0,
+                    "is_cash_accepted_check_enabled": 1,
+                    "qualifies_for_no_cc_reservation": 0,
+                    "hotel_include_breakfast": 1,
+                    "cc1": "us",
+                    "family_facilities": [
+                        "Outdoor pool (all year)",
+                        "Outdoor pool",
+                        "Family rooms"
+                    ],
+                    "property_highlight_strip": [
+                        {
+                            "icon_list": [
+                                {
+                                    "size": 1,
+                                    "icon": "iconset/parking_sign"
+                                }
+                            ],
+                            "name": "Parking"
+                        },
+                        {
+                            "name": "Pets allowed",
+                            "icon_list": [
+                                {
+                                    "size": 1,
+                                    "icon": "iconset/pawprint"
+                                }
+                            ]
+                        },
+                        {
+                            "icon_list": [
+                                {
+                                    "icon": "iconset/pool",
+                                    "size": 1
+                                }
+                            ],
+                            "name": "Outdoor pool"
+                        }
+                    ],
+                    "facilities_block": {
+                        "name": "Most popular facilities",
+                        "type": "popular",
+                        "facilities": [
+                            {
+                                "icon": "pool",
+                                "name": "1 swimming pool"
+                            },
+                            {
+                                "name": "Non-smoking rooms",
+                                "icon": "nosmoking"
+                            },
+                            {
+                                "icon": "clean",
+                                "name": "Room service"
+                            }
+                        ]
+                    },
+                    "top_ufi_benefits": [
+                        {
+                            "icon": "parking_sign",
+                            "translated_name": "Parking"
+                        },
+                        {
+                            "translated_name": "Swimming pool",
+                            "icon": "pool"
+                        },
+                        {
+                            "icon": "wifi",
+                            "translated_name": "WiFi"
+                        }
+                    ],
+                    "languages_spoken": {
+                        "languagecode": [
+                            "fr",
+                            "es",
+                            "en-gb"
+                        ]
+                    },
+                    "spoken_languages": [
+                        "fr",
+                        "es",
+                        "en-gb"
+                    ],
+                    "breakfast_review_score": {
+                        "rating": 7.4,
+                        "review_score_word": "Good",
+                        "review_score": 7.4,
+                        "review_number": 21,
+                        "review_count": 21
+                    },
+                    "wifi_review_score": {
+                        "rating": 8.6
+                    },
+                    "min_room_distribution": {
+                        "adults": 1
+                    },
+                    "aggregated_data": {
+                        "has_seating": 1,
+                        "has_kitchen": 0,
+                        "common_kitchen_fac": [
+                            {
+                                "id": 22,
+                                "name": "Refrigerator"
+                            }
+                        ],
+                        "has_nonrefundable": 0,
+                        "has_refundable": 1
+                    },
+                    "free_facilities_cancel_breakfast": [
+                        {
+                            "facility_id": 105
+                        },
+                        {
+                            "facility_id": 106
+                        }
+                    ],
+                    "room_recommendation": [
+                        {
+                            "extra_beds_for_children_price": 0,
+                            "extra_beds_for_children_price_in_hotel_currency": 0,
+                            "extra_babycots_price_in_hotel_currency": 0,
+                            "extra_beds_for_adults_price": 0,
+                            "total_extra_bed_price": 0,
+                            "adults": 1,
+                            "babies": 0,
+                            "number_of_extra_beds_for_children": 0,
+                            "number_of_extra_beds_for_adults": 0,
+                            "extra_beds_for_adults_price_in_hotel_currency": 0,
+                            "total_extra_bed_price_in_hotel_currency": 0,
+                            "number_of_extra_beds_and_babycots_total": 0,
+                            "number_of_extra_babycots": 0,
+                            "extra_babycots_price": 0,
+                            "children": 0,
+                            "block_id": "24083428_370251043_2_2_0"
+                        }
+                    ],
+                    "districts": [
+                        994,
+                        10697
+                    ],
+                    "hotel_important_information_with_codes": [
+                        {
+                            "sentence_id": 3,
+                            "executing_phase": 0,
+                            "phrase": "Guests are required to show a photo identification and credit card upon check-in. Please note that all Special Requests are subject to availability and additional charges may apply."
+                        },
+                        {
+                            "phrase": "Bar is closed from Mon 23 Mar 2020 until Wed 22 Apr 2020",
+                            "executing_phase": 0,
+                            "sentence_id": 36
+                        },
+                        {
+                            "phrase": "A damage deposit of USD 300 is required on arrival. This will be collected by credit card. You should be reimbursed on check-out. Your deposit will be refunded in full via credit card, subject to an inspection of the property.",
+                            "executing_phase": 0,
+                            "sentence_id": 8
+                        }
+                    ]
+                }
+            }
+        },
+        "required": {
+            "query": "I'm planning a trip and would like to book a hotel with ID 123456 from June 10, 2025, to June 15, 2025. Can you provide me with the details of this hotel, including room availability and pricing?",
+            "params": {
+                "hotel_id": "123456",
+                "arrival_date": "2025-06-10",
+                "departure_date": "2025-06-15"
+            },
+            "response": {
+                "status": false,
+                "timestamp": 1747651099539,
+                "message": "Something went wrong. We have logged the error and will get the resolution."
+            }
+        },
+        "optional": {
+            "query": "I'm planning to stay at a hotel (ID: 123456) from June 10 to June 15, 2025. There will be two adults and one child (aged 5), and we will need one room. Could you provide detailed information about this hotel, including room availability and pricing, with the temperature displayed in Fahrenheit and the content in English?",
+            "params": {
+                "hotel_id": "123456",
+                "arrival_date": "2025-06-10",
+                "departure_date": "2025-06-15",
+                "adults": 2,
+                "children_age": "5",
+                "room_qty": 1,
+                "temperature_unit": "Fahrenheit"
+            },
+            "response": {
+                "status": false,
+                "message": [
+                    {
+                        "temperature_unit": "temperature_unit should be from c,f"
+                    }
+                ]
+            }
+        }
+    },
+    "row": {
+        "required": {
+            "status": false,
+            "timestamp": 1747651099539,
+            "message": "Something went wrong. We have logged the error and will get the resolution."
+        },
+        "optional": {
+            "status": false,
+            "message": [
+                {
+                    "temperature_unit": "temperature_unit should be from c,f"
+                }
+            ]
+        }
+    }
+}

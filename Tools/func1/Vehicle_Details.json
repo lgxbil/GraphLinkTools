@@ -1,0 +1,403 @@
+{
+    "shorten": {
+        "api": {
+            "name": "Vehicle_Details",
+            "endpoint": "/api/v1/cars/vehicleDetails",
+            "func_description": "Search the detail information of a car using `vehicle id`. ",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "vehicle_id": {
+                        "type": "String",
+                        "description": "Vehicle ID. vehicle_id can be retrieved from api/v1/cars/searchCarRentals(Search Car Rentals) endpoint in Car Rental collection as vehicle_id inside search_results object.",
+                        "example_value": "373025711",
+                        "required": true
+                    },
+                    "search_key": {
+                        "type": "String",
+                        "description": "search_key can be retrieved from api/v1/cars/searchCarRentals(Search Car Rentals) endpoint in Car Rental collection as search_key.",
+                        "example_value": "eyJkcml2ZXJzQWdlIjozMCwiZHJvcE9mZkRhdGVUaW1lIjoiMjAyMy0xMS0xN1QxMDowMDowMCIsImRyb3BPZmZMb2NhdGlvbiI6IjQwLjYzOTcwMTg0MzI2MTcsLTczLjc3OTE5NzY5Mjg3MTEiLCJkcm9wT2ZmTG9jYXRpb25UeXBlIjoiTEFUTE9ORyIsInBpY2tVcERhdGVUaW1lIjoiMjAyMy0xMS0xNVQxMDowMDowMCIsInBpY2tVcExvY2F0aW9uIjoiNDAuNjM5NzAxODQzMjYxNywtNzMuNzc5MTk3NjkyODcxMSIsInBpY2tVcExvY2F0aW9uVHlwZSI6IkxBVExPTkciLCJyZW50YWxEdXJhdGlvbkluRGF5cyI6Miwic2VydmljZUZlYXR1cmVzIjpbIk5PX09QQVFVRVMiLCJTVVBSRVNTX0ZJWEVEX1BSSUNFX1ZFSElDTEVTIl19",
+                        "required": true
+                    },
+                    "units": {
+                        "type": "Enum",
+                        "description": "The measurement of distance in metric or imperial.",
+                        "example_value": "",
+                        "required": false
+                    },
+                    "currency_code": {
+                        "type": "String",
+                        "description": "The currency code. currency_code can be retrieved from api/v1/meta/getCurrency(Get Currency) endpoint in Hotels collection.",
+                        "example_value": "USD",
+                        "required": false
+                    },
+                    "languagecode": {
+                        "type": "String",
+                        "description": "To obtain the response data in a specific language, enter the languagecode. languagecode can be retrieved from api/v1/meta/getLanguages(Get Languages\n) endpoint in Meta collection.",
+                        "example_value": "en-us",
+                        "required": false
+                    }
+                },
+                "required": [
+                    "vehicle_id",
+                    "search_key"
+                ]
+            }
+        },
+        "static_response": {
+            "function_name": "Vehicle_Details",
+            "arguments": {
+                "vehicle_id": "614088006",
+                "search_key": "eyJkcml2ZXJzQWdlIjozMCwiZHJvcE9mZkRhdGVUaW1lIjoiMjAyNC0xMi0yM1QyMTowMDowMCIsImRyb3BPZmZMb2NhdGlvbiI6IjMyLjg5NjcwMTgxMjc0NDEsLTk3LjA0MjE5ODE4MTE1MjMiLCJkcm9wT2ZmTG9jYXRpb25UeXBlIjoiTEFUTE9ORyIsInBpY2tVcERhdGVUaW1lIjoiMjAyNC0xMi0xOFQyMTowMDowMCIsInBpY2tVcExvY2F0aW9uIjoiMzIuODk2NzAxODEyNzQ0MSwtOTcuMDQyMTk4MTgxMTUyMyIsInBpY2tVcExvY2F0aW9uVHlwZSI6IkxBVExPTkciLCJyZW50YWxEdXJhdGlvbkluRGF5cyI6NSwic2VydmljZUZlYXR1cmVzIjpbIk5PX09QQVFVRVMiLCJTVVBSRVNTX0ZJWEVEX1BSSUNFX1ZFSElDTEVTIiwiSU5DTFVERV9QUk9EVUNUX1JFTEFUSU9OU0hJUFMiLCJJTkNMVURFX0VYVFJBU19DT05UQUlOSU5HX0ZFRVMiXX0="
+            },
+            "observation": {
+                "status": true,
+                "message": "Success",
+                "data": {
+                    "importantInfo": {
+                        "cta": {
+                            "title": "Rental terms",
+                            "text": "More details"
+                        },
+                        "subtitle": "Security deposit, damage excess, what you'll need at pick-up, and more",
+                        "title": "Important information",
+                        "items": [
+                            {
+                                "icon": "CREDIT_CARD",
+                                "text": "<b>Payment card at pick-up:</b> Credit card<br/>The main driver <b>must</b> have a credit card in their own name when picking the car up."
+                            }
+                        ]
+                    },
+                    "packages": [
+                        {
+                            "id": "RC_EC_USA",
+                            "content": {
+                                "subtitle": "for peace of mind",
+                                "cta": {
+                                    "remove": "Remove Extra Cover",
+                                    "attach": "Read more"
+                                },
+                                "price": {
+                                    "label": "Total protection price",
+                                    "displayPrice": "US$49.49",
+                                    "priceAnnotation": {
+                                        "text": "Free cancellation"
+                                    }
+                                },
+                                "included": "Extra Cover included",
+                                "description": "Your car's zero-excess policy doesn't cover every kind of damage, or the other costs you might incur if something goes wrong. Why not add ₹ 235,500 of Extra Cover - from RentalCover.com?",
+                                "title": "Add insurance..."
+                            }
+                        }
+                    ],
+                    "meta": {
+                        "response_code": 200
+                    },
+                    "supplier": {
+                        "rating": 7.8,
+                        "locationType": "Car Rental Centre"
+                    },
+                    "extras": [
+                        {
+                            "detail": "If you want other people to drive as well",
+                            "maxQuantityAvailable": 3,
+                            "name": "Additional driver",
+                            "type": "ADDITIONAL_DRIVER",
+                            "id": "13699988993010",
+                            "price": {
+                                "perRental": {
+                                    "display": {
+                                        "value": 67.5,
+                                        "currency": "USD"
+                                    },
+                                    "base": {
+                                        "value": 67.5,
+                                        "currency": "USD"
+                                    }
+                                },
+                                "prePayable": false
+                            }
+                        },
+                        {
+                            "detail": "For babies: up to 9 kg / 20 lbs (about 1 year old)",
+                            "name": "Baby seat",
+                            "type": "BABY_SEAT",
+                            "maxQuantityAvailable": 2,
+                            "id": "13659044156010",
+                            "price": {
+                                "perRental": {
+                                    "base": {
+                                        "currency": "USD",
+                                        "value": 69.95
+                                    },
+                                    "display": {
+                                        "currency": "USD",
+                                        "value": 69.95
+                                    }
+                                },
+                                "prePayable": false
+                            }
+                        },
+                        {
+                            "type": "CHILD_BOOSTER_SEAT",
+                            "name": "Booster seat",
+                            "maxQuantityAvailable": 2,
+                            "detail": "For bigger children: 18-45 kg / 40-100 lbs (about 4-11 years old)",
+                            "price": {
+                                "perRental": {
+                                    "base": {
+                                        "currency": "USD",
+                                        "value": 69.95
+                                    },
+                                    "display": {
+                                        "currency": "USD",
+                                        "value": 69.95
+                                    }
+                                },
+                                "prePayable": false
+                            },
+                            "id": "13659044161010"
+                        }
+                    ],
+                    "vehicle": {
+                        "id": "614088006",
+                        "fees": {
+                            "otherFees": [
+                                {
+                                    "distanceUnit": "M",
+                                    "name": "DAMAGE_EXCESS",
+                                    "includedInPrice": false,
+                                    "unlimited": false,
+                                    "alwaysPayable": true,
+                                    "displayPrice": {
+                                        "amount": 0,
+                                        "currency": "USD",
+                                        "maximumAmount": 0,
+                                        "taxIncluded": true,
+                                        "minimumAmount": 0
+                                    },
+                                    "price": {
+                                        "maximumAmount": 0,
+                                        "currency": "USD",
+                                        "amount": 0,
+                                        "minimumAmount": 0,
+                                        "taxIncluded": true
+                                    }
+                                },
+                                {
+                                    "distanceUnit": "M",
+                                    "name": "DEPOSIT",
+                                    "alwaysPayable": true,
+                                    "unlimited": false,
+                                    "displayPrice": {
+                                        "taxIncluded": true,
+                                        "minimumAmount": 273.98,
+                                        "amount": 684.96,
+                                        "currency": "USD",
+                                        "maximumAmount": 684.96
+                                    },
+                                    "price": {
+                                        "taxIncluded": true,
+                                        "minimumAmount": 273.98,
+                                        "currency": "USD",
+                                        "amount": 684.96,
+                                        "maximumAmount": 684.96
+                                    },
+                                    "includedInPrice": false
+                                },
+                                {
+                                    "alwaysPayable": false,
+                                    "unlimited": true,
+                                    "price": {
+                                        "taxIncluded": false,
+                                        "amount": 0
+                                    },
+                                    "displayPrice": {
+                                        "taxIncluded": false,
+                                        "amount": 0
+                                    },
+                                    "includedInPrice": false,
+                                    "distanceUnit": "M",
+                                    "name": "MILEAGE"
+                                }
+                            ]
+                        },
+                        "rentalDurationInDays": 5,
+                        "label": "Intermediate car with:",
+                        "price": {
+                            "driveAwayPriceIsApprox": true,
+                            "payWhen": "PAY_NOW",
+                            "base": {
+                                "currency": "INR",
+                                "value": 30855.29
+                            },
+                            "driveAway": {
+                                "value": 366.87,
+                                "currency": "USD"
+                            },
+                            "display": {
+                                "currency": "USD",
+                                "value": 366.87
+                            }
+                        },
+                        "specification": {
+                            "mileage": "Unlimited",
+                            "numberOfSeats": "5",
+                            "numberOfDoors": "4",
+                            "fuelPolicy": "Like for like",
+                            "bigSuitcases": 1,
+                            "airConditioning": true,
+                            "transmission": "Automatic",
+                            "smallSuitcases": 1
+                        },
+                        "makeAndModel": "Toyota Corolla",
+                        "freeCancellation": true,
+                        "carClass": "Intermediate"
+                    },
+                    "depots": {
+                        "pickup": {
+                            "iataCode": "DFW",
+                            "country": "USA - Other",
+                            "longitude": "-97.040341",
+                            "id": "3905751",
+                            "location_type": "CAR_RENTAL_CENTRE",
+                            "name": "Dallas-Fort Worth International Airport",
+                            "location_id": "3905751",
+                            "address": "3200, East Airfield Drive, Dallas, TX, USA, 75261",
+                            "country_code": "US",
+                            "city": "Dallas, TX",
+                            "latitude": "32.899806"
+                        },
+                        "dropoff": {
+                            "city": "Dallas, TX",
+                            "latitude": "32.899806",
+                            "name": "Dallas-Fort Worth International Airport",
+                            "address": "3200, East Airfield Drive, Dallas, TX, USA, 75261",
+                            "location_id": "3905751",
+                            "location_type": "CAR_RENTAL_CENTRE",
+                            "country_code": "US",
+                            "id": "3905751",
+                            "longitude": "-97.040341",
+                            "iataCode": "DFW",
+                            "country": "USA - Other"
+                        }
+                    },
+                    "content": {
+                        "carCard": {
+                            "accessibility": {
+                                "supplier_rating": "At this location, our customers have rated Hertz as 7.8 out of 10, Good.",
+                                "fuel_policy": "Fuel policy is: Like for like",
+                                "pick_up_location": "Pick-up information: Car Rental Centre",
+                                "transmission": "Automatic gearbox"
+                            },
+                            "badges": [
+                                {
+                                    "text": "Free cancellation",
+                                    "type": "CONSTRUCTIVE",
+                                    "variation": "DEFAULT"
+                                }
+                            ],
+                            "supplier": {
+                                "rating": {
+                                    "subtitle": "165 reviews",
+                                    "localisedRating": {
+                                        "rawValue": 7.8,
+                                        "displayValue": "7.8"
+                                    },
+                                    "average": "7.8",
+                                    "title": "Good"
+                                },
+                                "name": "Hertz"
+                            }
+                        },
+                        "reviews": {
+                            "title": "Reviews",
+                            "supplier": {
+                                "rating": {
+                                    "localisedRating": {
+                                        "displayValue": "7.8",
+                                        "rawValue": 7.8
+                                    },
+                                    "title": "Good",
+                                    "average": "7.8",
+                                    "subtitle": "165 reviews"
+                                },
+                                "name": "Hertz"
+                            }
+                        }
+                    },
+                    "metadata": {
+                        "navigation": {
+                            "showExtrasStep": true
+                        }
+                    },
+                    "whatsIncluded": {
+                        "items": [
+                            {
+                                "icon": "TICK",
+                                "text": "<b>Free cancellation</b> up to 48 hours before pick-up"
+                            },
+                            {
+                                "icon": "TICK",
+                                "text": "Collision Damage Waiver (CDW)"
+                            },
+                            {
+                                "icon": "TICK",
+                                "text": "Theft Cover"
+                            }
+                        ],
+                        "title": "What's included"
+                    },
+                    "links": {
+                        "fullRentalTerms": {
+                            "label": "Rental terms"
+                        }
+                    }
+                }
+            }
+        },
+        "required": {
+            "query": "I found a car rental with vehicle ID 373025711 and search key eyJkcml2ZXJzQWdlIjozMCwiZHJvcE9mZkRhdGVUaW1lIjoiMjAyMy0xMS0xN1QxMDowMDowMCIsImRyb3BPZmZMb2NhdGlvbiI6IjQwLjYzOTcwMTg0MzI2MTcsLTczLjc3OTE5NzY5Mjg3MTEiLCJkcm9wT2ZmTG9jYXRpb25UeXBlIjoiTEFUTE9ORyIsInBpY2tVcERhdGVUaW1lIjoiMjAyMy0xMS0xNVQxMDowMDowMCIsInBpY2tVcExvY2F0aW9uIjoiNDAuNjM5NzAxODQzMjYxNywtNzMuNzc5MTk3NjkyODcxMSIsInBpY2tVcExvY2F0aW9uVHlwZSI6IkxBVExPTkciLCJyZW50YWxEdXJhdGlvbkluRGF5cyI6Miwic2VydmljZUZlYXR1cmVzIjpbIk5PX09QQVFVRVMiLCJTVVBSRVNTX0ZJWEVEX1BSSUNFX1ZFSElDTEVTIl19. Can you provide me with the detailed information about this vehicle?",
+            "params": {
+                "vehicle_id": "373025711",
+                "search_key": "eyJkcml2ZXJzQWdlIjozMCwiZHJvcE9mZkRhdGVUaW1lIjoiMjAyMy0xMS0xN1QxMDowMDowMCIsImRyb3BPZmZMb2NhdGlvbiI6IjQwLjYzOTcwMTg0MzI2MTcsLTczLjc3OTE5NzY5Mjg3MTEiLCJkcm9wT2ZmTG9jYXRpb25UeXBlIjoiTEFUTE9ORyIsInBpY2tVcERhdGVUaW1lIjoiMjAyMy0xMS0xNVQxMDowMDowMCIsInBpY2tVcExvY2F0aW9uIjoiNDAuNjM5NzAxODQzMjYxNywtNzMuNzc5MTk3NjkyODcxMSIsInBpY2tVcExvY2F0aW9uVHlwZSI6IkxBVExPTkciLCJyZW50YWxEdXJhdGlvbkluRGF5cyI6Miwic2VydmljZUZlYXR1cmVzIjpbIk5PX09QQVFVRVMiLCJTVVBSRVNTX0ZJWEVEX1BSSUNFX1ZFSElDTEVTIl19"
+            },
+            "response": {
+                "meta": {
+                    "response_code": 400
+                },
+                "bgo_error": {
+                    "timestamp": 1747552947026,
+                    "status": 400,
+                    "path": "/api/search/vehicle/eyJkcml2ZXJzQWdlIjozMCwiZHJvcE9mZkRhdGVUaW1lIjoiMjAyMy0xMS0xN1QxMDowMDowMCIsImRyb3BPZmZMb2NhdGlvbiI6IjQwLjYzOTcwMTg0MzI2MTcsLTczLjc3OTE5NzY5Mjg3MTEiLCJkcm9wT2ZmTG9jYXRpb25UeXBlIjoiTEFUTE9ORyIsInBpY2tVcERhdGVUaW1lIjoiMjAyMy0xMS0xNVQxMDowMDowMCIsInBpY2tVcExvY2F0aW9uIjoiNDAuNjM5NzAxODQzMjYxNywtNzMuNzc5MTk3NjkyODcxMSIsInBpY2tVcExvY2F0aW9uVHlwZSI6IkxBVExPTkciLCJyZW50YWxEdXJhdGlvbkluRGF5cyI6Miwic2VydmljZUZlYXR1cmVzIjpbIk5PX09QQVFVRVMiLCJTVVBSRVNTX0ZJWEVEX1BSSUNFX1ZFSElDTEVTIl19/373025711",
+                    "error": "Bad Request"
+                }
+            }
+        },
+        "optional": {
+            "query": "I found a car rental with vehicle ID 373025711 and search key 'eyJkcml2ZXJzQWdlIjozMCwiZHJvcE9mZkRhdGVUaW1lIjoiMjAyMy0xMS0xN1QxMDowMDowMCIsImRyb3BPZmZMb2NhdGlvbiI6IjQwLjYzOTcwMTg0MzI2MTcsLTczLjc3OTE5NzY5Mjg3MTEiLCJkcm9wT2ZmTG9jYXRpb25UeXBlIjoiTEFUTE9ORyIsInBpY2tVcERhdGVUaW1lIjoiMjAyMy0xMS0xNVQxMDowMDowMCIsInBpY2tVcExvY2F0aW9uIjoiNDAuNjM5NzAxODQzMjYxNywtNzMuNzc5MTk3NjkyODcxMSIsInBpY2tVcExvY2F0aW9uVHlwZSI6IkxBVExPTkciLCJyZW50YWxEdXJhdGlvbkluRGF5cyI6Miwic2VydmljZUZlYXR1cmVzIjpbIk5PX09QQVFVRVMiLCJTVVBSRVNTX0ZJWEVEX1BSSUNFX1ZFSElDTEVTIl19'. Can you provide me with the detailed information about this vehicle, including its specifications and pricing in US dollars? Also, I'd like the distance measurements to be in metric units and the information displayed in English.",
+            "params": {
+                "vehicle_id": "373025711",
+                "search_key": "eyJkcml2ZXJzQWdlIjozMCwiZHJvcE9mZkRhdGVUaW1lIjoiMjAyMy0xMS0xN1QxMDowMDowMCIsImRyb3BPZmZMb2NhdGlvbiI6IjQwLjYzOTcwMTg0MzI2MTcsLTczLjc3OTE5NzY5Mjg3MTEiLCJkcm9wT2ZmTG9jYXRpb25UeXBlIjoiTEFUTE9ORyIsInBpY2tVcERhdGVUaW1lIjoiMjAyMy0xMS0xNVQxMDowMDowMCIsInBpY2tVcExvY2F0aW9uIjoiNDAuNjM5NzAxODQzMjYxNywtNzMuNzc5MTk3NjkyODcxMSIsInBpY2tVcExvY2F0aW9uVHlwZSI6IkxBVExPTkciLCJyZW50YWxEdXJhdGlvbkluRGF5cyI6Miwic2VydmljZUZlYXR1cmVzIjpbIk5PX09QQVFVRVMiLCJTVVBSRVNTX0ZJWEVEX1BSSUNFX1ZFSElDTEVTIl19",
+                "units": "metric",
+                "currency_code": "USD",
+                "languagecode": "en-us"
+            },
+            "response": "Something went wrong. We have logged the error and will get the resolution."
+        }
+    },
+    "row": {
+        "required": {
+            "meta": {
+                "response_code": 400
+            },
+            "bgo_error": {
+                "timestamp": 1747552947026,
+                "status": 400,
+                "path": "/api/search/vehicle/eyJkcml2ZXJzQWdlIjozMCwiZHJvcE9mZkRhdGVUaW1lIjoiMjAyMy0xMS0xN1QxMDowMDowMCIsImRyb3BPZmZMb2NhdGlvbiI6IjQwLjYzOTcwMTg0MzI2MTcsLTczLjc3OTE5NzY5Mjg3MTEiLCJkcm9wT2ZmTG9jYXRpb25UeXBlIjoiTEFUTE9ORyIsInBpY2tVcERhdGVUaW1lIjoiMjAyMy0xMS0xNVQxMDowMDowMCIsInBpY2tVcExvY2F0aW9uIjoiNDAuNjM5NzAxODQzMjYxNywtNzMuNzc5MTk3NjkyODcxMSIsInBpY2tVcExvY2F0aW9uVHlwZSI6IkxBVExPTkciLCJyZW50YWxEdXJhdGlvbkluRGF5cyI6Miwic2VydmljZUZlYXR1cmVzIjpbIk5PX09QQVFVRVMiLCJTVVBSRVNTX0ZJWEVEX1BSSUNFX1ZFSElDTEVTIl19/373025711",
+                "error": "Bad Request"
+            }
+        },
+        "optional": "Something went wrong. We have logged the error and will get the resolution."
+    }
+}

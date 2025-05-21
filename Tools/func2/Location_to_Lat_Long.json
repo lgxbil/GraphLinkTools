@@ -1,0 +1,304 @@
+{
+    "shorten": {
+        "api": {
+            "name": "Location_to_Lat_Long",
+            "endpoint": "/api/v1/meta/locationToLatLong",
+            "func_description": "Get location/address latitude and longitude. ",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "query": {
+                        "type": "String",
+                        "description": "Names of locations, apartment, address, cities, districts, places, countries, counties etc.",
+                        "example_value": "man",
+                        "required": true
+                    }
+                },
+                "required": [
+                    "query"
+                ]
+            }
+        },
+        "static_response": {
+            "function_name": "Location_to_Lat_Long",
+            "arguments": {
+                "query": "Kerry Park, Seattle"
+            },
+            "observation": {
+                "status": true,
+                "message": "Success",
+                "data": [
+                    {
+                        "business_status": "OPERATIONAL",
+                        "formatted_address": "211 W Highland Dr, Seattle, WA 98119, United States",
+                        "geometry": {
+                            "location": {
+                                "lat": 47.6294692,
+                                "lng": -122.3599224
+                            },
+                            "viewport": {
+                                "northeast": {
+                                    "lat": 47.63087717989272,
+                                    "lng": -122.3585865201073
+                                },
+                                "southwest": {
+                                    "lat": 47.62817752010728,
+                                    "lng": -122.3612861798927
+                                }
+                            }
+                        },
+                        "name": "Kerry Park",
+                        "opening_hours": {
+                            "open_now": true
+                        },
+                        "place_id": "ChIJUS2ELmoVkFQRjrUkJB5o9zM",
+                        "plus_code": {
+                            "compound_code": "JJHR+Q2 Seattle, Washington",
+                            "global_code": "84VVJJHR+Q2"
+                        },
+                        "rating": 4.8,
+                        "reference": "ChIJUS2ELmoVkFQRjrUkJB5o9zM",
+                        "types": [
+                            "tourist_attraction",
+                            "park",
+                            "point_of_interest"
+                        ],
+                        "user_ratings_total": 17063
+                    }
+                ]
+            }
+        },
+        "required": {
+            "query": "I need to find the latitude and longitude for the Empire State Building in New York.",
+            "params": {
+                "query": "Empire State Building, New York"
+            },
+            "response": {
+                "status": true,
+                "message": "Success",
+                "timestamp": 1747650915106,
+                "data": [
+                    {
+                        "business_status": "OPERATIONAL",
+                        "formatted_address": "20 W 34th St., New York, NY 10001, United States",
+                        "geometry": {
+                            "location": {
+                                "lat": 40.7484405,
+                                "lng": -73.98566439999999
+                            },
+                            "viewport": {
+                                "northeast": {
+                                    "lat": 40.74988942989271,
+                                    "lng": -73.98404672010727
+                                },
+                                "southwest": {
+                                    "lat": 40.74718977010727,
+                                    "lng": -73.98674637989271
+                                }
+                            }
+                        },
+                        "name": "Empire State Building",
+                        "opening_hours": {
+                            "open_now": false
+                        },
+                        "photos": [
+                            {
+                                "height": 712,
+                                "html_attributions": [
+                                    "<a href=\"https://maps.google.com/maps/contrib/108269597694188548544\">_Elisa</a>"
+                                ],
+                                "photo_reference": "AXQCQNQAU76Lwu-WqpEGwT2a-g9DfA0DONEhv54kglGd_2OsKzWdBS2zNwzmsbiDPgF_nvujO1QfLATCOHYN3eDyjUdVzZNhGv6sTQ9DOrOXbfWvY87n_BVTzorJLHfABlDYE0yTXn6yYSKTPUZUdU6u-KXB060utlMPakMVSSbaa2L16VHhfwEkig6ZJYRsaimdntXJTHNaCqftubxA-XVgTiiddtjEUTqy-PXgoYiYX252JPgGNkym0lCdQ7sh0hasZeJeJRBXbdda7q-5Wqd829gCRtoJw-ewJcJGfzyROEqAqRC9ZiH5pf23B_yfb8u0Irt13SYa29zmCYHp_UtmYymnxZTPQvzrRutaAEvEBvLVwncNJ1BorBI-nCqMrAdvsBR_IVPk_5y6_TPpVWJ78Y4Nt9Eg0tvByMetts60UDSdZbUCFONutiyZJ6gIB-38MlgScdmVO-U18noTcvxuAr-fNc6SF8MrwJXGv0Wt5O45ap6oO2ZOl_2_6fzsM75IMP6hVJXY9AQP9K7XOsXWMlxlcbsg9RLWUaXJBD96pRERvtrfRHU-NC2ZJ1sKibEJkxbfOj8k",
+                                "width": 1080
+                            }
+                        ],
+                        "place_id": "ChIJaXQRs6lZwokRY6EFpJnhNNE",
+                        "plus_code": {
+                            "compound_code": "P2X7+9P New York, USA",
+                            "global_code": "87G8P2X7+9P"
+                        },
+                        "rating": 4.7,
+                        "reference": "ChIJaXQRs6lZwokRY6EFpJnhNNE",
+                        "types": [
+                            "tourist_attraction",
+                            "museum",
+                            "point_of_interest"
+                        ],
+                        "user_ratings_total": 115461
+                    }
+                ]
+            }
+        },
+        "optional": {
+            "query": "What are the latitude and longitude coordinates for the Empire State Building located in New York City?",
+            "params": {
+                "query": "Empire State Building, New York"
+            },
+            "response": {
+                "status": true,
+                "message": "Success",
+                "timestamp": 1747650922930,
+                "data": [
+                    {
+                        "business_status": "OPERATIONAL",
+                        "formatted_address": "20 W 34th St., New York, NY 10001, United States",
+                        "geometry": {
+                            "location": {
+                                "lat": 40.7484405,
+                                "lng": -73.98566439999999
+                            },
+                            "viewport": {
+                                "northeast": {
+                                    "lat": 40.74988942989271,
+                                    "lng": -73.98404672010727
+                                },
+                                "southwest": {
+                                    "lat": 40.74718977010727,
+                                    "lng": -73.98674637989271
+                                }
+                            }
+                        },
+                        "name": "Empire State Building",
+                        "opening_hours": {
+                            "open_now": false
+                        },
+                        "photos": [
+                            {
+                                "height": 712,
+                                "html_attributions": [
+                                    "<a href=\"https://maps.google.com/maps/contrib/108269597694188548544\">_Elisa</a>"
+                                ],
+                                "photo_reference": "AXQCQNQSY6ct5i8vBJiGQh4vrLtwAPoaTTo_VtCuiK9HoXUBV7n2WnBtOoqEzbQakE0uUtxePQUIzTmqjJvhwsK0dUCGDMVLXXu2j2plR3FqV6Wa8CNYRotdA_dlyjEZeEGWEbCQ-fNhQr-tHd39qYZ7fzgbCo_rA1ZEIHgdKRxGVSyOFyYRRWlMVQLL6X43Dj5TXlkyDU0AJohLiCjuxJ_NVt3qKGrQdIF0AFi6KcfdMjOpjjcFCKYd4yhamTGgGDc4e1BJNnDo7beUWcUGrMmksMtdSfwZAi0tih2XojcX_UOohqLt2k2wf10ppWT-atsnCTO-5PHXwvaTapZjS7KDHeXZWzpMGq-o7dX8GXX36ZFRBnF-sMV1TqQRxgGXrIk198mV8hP6LoqM-NL9adHR8CIS3VS2eFJehWUJ5MyQYolLeE4AurKgp5aLVhYcTf2eNG5SQ9PqqpeWwbunR5EtARHITY_OGStvy_Y9u3n8k3tYk6JzRM2Qv4sB3TixkEpIJr5Rf92A5Q_BY68sLQkrKDc_4GrH6-W1FlKxPhy1b_r9K3A9nQCLJCAbtEAO55jNAmCrWU-w",
+                                "width": 1080
+                            }
+                        ],
+                        "place_id": "ChIJaXQRs6lZwokRY6EFpJnhNNE",
+                        "plus_code": {
+                            "compound_code": "P2X7+9P New York",
+                            "global_code": "87G8P2X7+9P"
+                        },
+                        "rating": 4.7,
+                        "reference": "ChIJaXQRs6lZwokRY6EFpJnhNNE",
+                        "types": [
+                            "tourist_attraction",
+                            "museum",
+                            "point_of_interest"
+                        ],
+                        "user_ratings_total": 115461
+                    }
+                ]
+            }
+        }
+    },
+    "row": {
+        "required": {
+            "status": true,
+            "message": "Success",
+            "timestamp": 1747650915106,
+            "data": [
+                {
+                    "business_status": "OPERATIONAL",
+                    "formatted_address": "20 W 34th St., New York, NY 10001, United States",
+                    "geometry": {
+                        "location": {
+                            "lat": 40.7484405,
+                            "lng": -73.98566439999999
+                        },
+                        "viewport": {
+                            "northeast": {
+                                "lat": 40.74988942989271,
+                                "lng": -73.98404672010727
+                            },
+                            "southwest": {
+                                "lat": 40.74718977010727,
+                                "lng": -73.98674637989271
+                            }
+                        }
+                    },
+                    "name": "Empire State Building",
+                    "opening_hours": {
+                        "open_now": false
+                    },
+                    "photos": [
+                        {
+                            "height": 712,
+                            "html_attributions": [
+                                "<a href=\"https://maps.google.com/maps/contrib/108269597694188548544\">_Elisa</a>"
+                            ],
+                            "photo_reference": "AXQCQNQAU76Lwu-WqpEGwT2a-g9DfA0DONEhv54kglGd_2OsKzWdBS2zNwzmsbiDPgF_nvujO1QfLATCOHYN3eDyjUdVzZNhGv6sTQ9DOrOXbfWvY87n_BVTzorJLHfABlDYE0yTXn6yYSKTPUZUdU6u-KXB060utlMPakMVSSbaa2L16VHhfwEkig6ZJYRsaimdntXJTHNaCqftubxA-XVgTiiddtjEUTqy-PXgoYiYX252JPgGNkym0lCdQ7sh0hasZeJeJRBXbdda7q-5Wqd829gCRtoJw-ewJcJGfzyROEqAqRC9ZiH5pf23B_yfb8u0Irt13SYa29zmCYHp_UtmYymnxZTPQvzrRutaAEvEBvLVwncNJ1BorBI-nCqMrAdvsBR_IVPk_5y6_TPpVWJ78Y4Nt9Eg0tvByMetts60UDSdZbUCFONutiyZJ6gIB-38MlgScdmVO-U18noTcvxuAr-fNc6SF8MrwJXGv0Wt5O45ap6oO2ZOl_2_6fzsM75IMP6hVJXY9AQP9K7XOsXWMlxlcbsg9RLWUaXJBD96pRERvtrfRHU-NC2ZJ1sKibEJkxbfOj8k",
+                            "width": 1080
+                        }
+                    ],
+                    "place_id": "ChIJaXQRs6lZwokRY6EFpJnhNNE",
+                    "plus_code": {
+                        "compound_code": "P2X7+9P New York, USA",
+                        "global_code": "87G8P2X7+9P"
+                    },
+                    "rating": 4.7,
+                    "reference": "ChIJaXQRs6lZwokRY6EFpJnhNNE",
+                    "types": [
+                        "tourist_attraction",
+                        "museum",
+                        "point_of_interest",
+                        "establishment"
+                    ],
+                    "user_ratings_total": 115461
+                }
+            ]
+        },
+        "optional": {
+            "status": true,
+            "message": "Success",
+            "timestamp": 1747650922930,
+            "data": [
+                {
+                    "business_status": "OPERATIONAL",
+                    "formatted_address": "20 W 34th St., New York, NY 10001, United States",
+                    "geometry": {
+                        "location": {
+                            "lat": 40.7484405,
+                            "lng": -73.98566439999999
+                        },
+                        "viewport": {
+                            "northeast": {
+                                "lat": 40.74988942989271,
+                                "lng": -73.98404672010727
+                            },
+                            "southwest": {
+                                "lat": 40.74718977010727,
+                                "lng": -73.98674637989271
+                            }
+                        }
+                    },
+                    "name": "Empire State Building",
+                    "opening_hours": {
+                        "open_now": false
+                    },
+                    "photos": [
+                        {
+                            "height": 712,
+                            "html_attributions": [
+                                "<a href=\"https://maps.google.com/maps/contrib/108269597694188548544\">_Elisa</a>"
+                            ],
+                            "photo_reference": "AXQCQNQSY6ct5i8vBJiGQh4vrLtwAPoaTTo_VtCuiK9HoXUBV7n2WnBtOoqEzbQakE0uUtxePQUIzTmqjJvhwsK0dUCGDMVLXXu2j2plR3FqV6Wa8CNYRotdA_dlyjEZeEGWEbCQ-fNhQr-tHd39qYZ7fzgbCo_rA1ZEIHgdKRxGVSyOFyYRRWlMVQLL6X43Dj5TXlkyDU0AJohLiCjuxJ_NVt3qKGrQdIF0AFi6KcfdMjOpjjcFCKYd4yhamTGgGDc4e1BJNnDo7beUWcUGrMmksMtdSfwZAi0tih2XojcX_UOohqLt2k2wf10ppWT-atsnCTO-5PHXwvaTapZjS7KDHeXZWzpMGq-o7dX8GXX36ZFRBnF-sMV1TqQRxgGXrIk198mV8hP6LoqM-NL9adHR8CIS3VS2eFJehWUJ5MyQYolLeE4AurKgp5aLVhYcTf2eNG5SQ9PqqpeWwbunR5EtARHITY_OGStvy_Y9u3n8k3tYk6JzRM2Qv4sB3TixkEpIJr5Rf92A5Q_BY68sLQkrKDc_4GrH6-W1FlKxPhy1b_r9K3A9nQCLJCAbtEAO55jNAmCrWU-w",
+                            "width": 1080
+                        }
+                    ],
+                    "place_id": "ChIJaXQRs6lZwokRY6EFpJnhNNE",
+                    "plus_code": {
+                        "compound_code": "P2X7+9P New York",
+                        "global_code": "87G8P2X7+9P"
+                    },
+                    "rating": 4.7,
+                    "reference": "ChIJaXQRs6lZwokRY6EFpJnhNNE",
+                    "types": [
+                        "tourist_attraction",
+                        "museum",
+                        "point_of_interest",
+                        "establishment"
+                    ],
+                    "user_ratings_total": 115461
+                }
+            ]
+        }
+    }
+}

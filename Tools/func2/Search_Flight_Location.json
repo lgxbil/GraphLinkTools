@@ -1,0 +1,574 @@
+{
+    "shorten": {
+        "api": {
+            "name": "Search_Flight_Location",
+            "endpoint": "/api/v1/flights/searchDestination",
+            "func_description": "Find airports by their location, address, state, country, etc. ",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "query": {
+                        "type": "String",
+                        "description": "Names of airport, locations, cities, districts, places, countries, counties etc.",
+                        "example_value": "new",
+                        "required": true
+                    },
+                    "languagecode": {
+                        "type": "String",
+                        "description": "To obtain the response data in a specific language, enter the languagecode. languagecode can be retrieved from api/v1/meta/getLanguages(Get Languages\n) endpoint in Meta collection.",
+                        "example_value": "",
+                        "required": false
+                    }
+                },
+                "required": [
+                    "query"
+                ]
+            }
+        },
+        "static_response": {
+            "function_name": "Search_Flight_Location",
+            "arguments": {
+                "query": "Miami"
+            },
+            "observation": {
+                "status": true,
+                "message": "Success",
+                "data": [
+                    {
+                        "id": "MIA.CITY",
+                        "type": "CITY",
+                        "name": "Miami",
+                        "code": "MIA",
+                        "regionName": "Florida",
+                        "country": "US",
+                        "countryName": "United States"
+                    }
+                ]
+            }
+        },
+        "required": {
+            "query": "I'm planning a trip to New York and need to find the nearest airports. Can you help me search for airports in that area?",
+            "params": {
+                "query": "New York"
+            },
+            "response": {
+                "status": true,
+                "message": "Success",
+                "timestamp": 1747651472726,
+                "data": [
+                    {
+                        "id": "NYC.CITY",
+                        "type": "CITY",
+                        "name": "New York",
+                        "code": "NYC",
+                        "regionName": "New York",
+                        "country": "US",
+                        "countryName": "United States",
+                        "photoUri": "https://q-xx.bstatic.com/xdata/images/city/square150/977436.jpg?k=ee0baaf82d482fae02bcb8dda25be1abff1da43d187bbb26ae6b2f3c9b5f4e61&o="
+                    },
+                    {
+                        "id": "JFK.AIRPORT",
+                        "type": "AIRPORT",
+                        "name": "John F. Kennedy International Airport",
+                        "code": "JFK",
+                        "city": "NYC",
+                        "cityName": "New York",
+                        "regionName": "New York",
+                        "country": "US",
+                        "countryName": "United States",
+                        "countryNameShort": "US",
+                        "photoUri": "https://q-xx.bstatic.com/xdata/images/city/square150/977436.jpg?k=ee0baaf82d482fae02bcb8dda25be1abff1da43d187bbb26ae6b2f3c9b5f4e61&o=",
+                        "distanceToCity": {
+                            "value": 21.381514773782005,
+                            "unit": "km"
+                        },
+                        "parent": "NYC"
+                    },
+                    {
+                        "id": "EWR.AIRPORT",
+                        "type": "AIRPORT",
+                        "name": "Newark Liberty International Airport",
+                        "code": "EWR",
+                        "city": "NYC",
+                        "cityName": "New York",
+                        "region": "NJ",
+                        "regionName": "New York",
+                        "country": "US",
+                        "countryName": "United States",
+                        "countryNameShort": "US",
+                        "photoUri": "https://q-xx.bstatic.com/xdata/images/city/square150/977436.jpg?k=ee0baaf82d482fae02bcb8dda25be1abff1da43d187bbb26ae6b2f3c9b5f4e61&o=",
+                        "distanceToCity": {
+                            "value": 18.736453932482238,
+                            "unit": "km"
+                        },
+                        "parent": "NYC"
+                    }
+                ]
+            }
+        },
+        "optional": {
+            "query": "I'm planning a trip to New York City and need to find all the nearby airports. Can you help me search for airports in the New York area? I'd prefer the results to be displayed in English.",
+            "params": {
+                "query": "New York"
+            },
+            "response": {
+                "status": true,
+                "message": "Success",
+                "timestamp": 1747651482469,
+                "data": [
+                    {
+                        "id": "NYC.CITY",
+                        "type": "CITY",
+                        "name": "New York",
+                        "code": "NYC",
+                        "regionName": "New York",
+                        "country": "US",
+                        "countryName": "United States",
+                        "photoUri": "https://q-xx.bstatic.com/xdata/images/city/square150/977436.jpg?k=ee0baaf82d482fae02bcb8dda25be1abff1da43d187bbb26ae6b2f3c9b5f4e61&o="
+                    },
+                    {
+                        "id": "JFK.AIRPORT",
+                        "type": "AIRPORT",
+                        "name": "John F. Kennedy International Airport",
+                        "code": "JFK",
+                        "city": "NYC",
+                        "cityName": "New York",
+                        "regionName": "New York",
+                        "country": "US",
+                        "countryName": "United States",
+                        "countryNameShort": "US",
+                        "photoUri": "https://q-xx.bstatic.com/xdata/images/city/square150/977436.jpg?k=ee0baaf82d482fae02bcb8dda25be1abff1da43d187bbb26ae6b2f3c9b5f4e61&o=",
+                        "distanceToCity": {
+                            "value": 21.381514773782005,
+                            "unit": "km"
+                        },
+                        "parent": "NYC"
+                    },
+                    {
+                        "id": "EWR.AIRPORT",
+                        "type": "AIRPORT",
+                        "name": "Newark Liberty International Airport",
+                        "code": "EWR",
+                        "city": "NYC",
+                        "cityName": "New York",
+                        "region": "NJ",
+                        "regionName": "New York",
+                        "country": "US",
+                        "countryName": "United States",
+                        "countryNameShort": "US",
+                        "photoUri": "https://q-xx.bstatic.com/xdata/images/city/square150/977436.jpg?k=ee0baaf82d482fae02bcb8dda25be1abff1da43d187bbb26ae6b2f3c9b5f4e61&o=",
+                        "distanceToCity": {
+                            "value": 18.736453932482238,
+                            "unit": "km"
+                        },
+                        "parent": "NYC"
+                    }
+                ]
+            }
+        }
+    },
+    "row": {
+        "required": {
+            "status": true,
+            "message": "Success",
+            "timestamp": 1747651472726,
+            "data": [
+                {
+                    "id": "NYC.CITY",
+                    "type": "CITY",
+                    "name": "New York",
+                    "code": "NYC",
+                    "regionName": "New York",
+                    "country": "US",
+                    "countryName": "United States",
+                    "photoUri": "https://q-xx.bstatic.com/xdata/images/city/square150/977436.jpg?k=ee0baaf82d482fae02bcb8dda25be1abff1da43d187bbb26ae6b2f3c9b5f4e61&o="
+                },
+                {
+                    "id": "JFK.AIRPORT",
+                    "type": "AIRPORT",
+                    "name": "John F. Kennedy International Airport",
+                    "code": "JFK",
+                    "city": "NYC",
+                    "cityName": "New York",
+                    "regionName": "New York",
+                    "country": "US",
+                    "countryName": "United States",
+                    "countryNameShort": "US",
+                    "photoUri": "https://q-xx.bstatic.com/xdata/images/city/square150/977436.jpg?k=ee0baaf82d482fae02bcb8dda25be1abff1da43d187bbb26ae6b2f3c9b5f4e61&o=",
+                    "distanceToCity": {
+                        "value": 21.381514773782005,
+                        "unit": "km"
+                    },
+                    "parent": "NYC"
+                },
+                {
+                    "id": "EWR.AIRPORT",
+                    "type": "AIRPORT",
+                    "name": "Newark Liberty International Airport",
+                    "code": "EWR",
+                    "city": "NYC",
+                    "cityName": "New York",
+                    "region": "NJ",
+                    "regionName": "New York",
+                    "country": "US",
+                    "countryName": "United States",
+                    "countryNameShort": "US",
+                    "photoUri": "https://q-xx.bstatic.com/xdata/images/city/square150/977436.jpg?k=ee0baaf82d482fae02bcb8dda25be1abff1da43d187bbb26ae6b2f3c9b5f4e61&o=",
+                    "distanceToCity": {
+                        "value": 18.736453932482238,
+                        "unit": "km"
+                    },
+                    "parent": "NYC"
+                },
+                {
+                    "id": "LGA.AIRPORT",
+                    "type": "AIRPORT",
+                    "name": "LaGuardia Airport",
+                    "code": "LGA",
+                    "city": "NYC",
+                    "cityName": "New York",
+                    "regionName": "New York",
+                    "country": "US",
+                    "countryName": "United States",
+                    "countryNameShort": "US",
+                    "photoUri": "https://q-xx.bstatic.com/xdata/images/city/square150/977436.jpg?k=ee0baaf82d482fae02bcb8dda25be1abff1da43d187bbb26ae6b2f3c9b5f4e61&o=",
+                    "distanceToCity": {
+                        "value": 9.28775750350465,
+                        "unit": "km"
+                    },
+                    "parent": "NYC"
+                },
+                {
+                    "id": "SWF.AIRPORT",
+                    "type": "AIRPORT",
+                    "name": "Stewart International Airport",
+                    "code": "SWF",
+                    "city": "NYC",
+                    "cityName": "New York",
+                    "regionName": "New York",
+                    "country": "US",
+                    "countryName": "United States",
+                    "countryNameShort": "US",
+                    "photoUri": "https://q-xx.bstatic.com/xdata/images/city/square150/977436.jpg?k=ee0baaf82d482fae02bcb8dda25be1abff1da43d187bbb26ae6b2f3c9b5f4e61&o=",
+                    "distanceToCity": {
+                        "value": 82.46391716356523,
+                        "unit": "km"
+                    },
+                    "parent": "NYC"
+                },
+                {
+                    "id": "BUF.AIRPORT",
+                    "type": "AIRPORT",
+                    "name": "Buffalo Niagara International Airport",
+                    "code": "BUF",
+                    "city": "BUF",
+                    "cityName": "Buffalo",
+                    "regionName": "New York",
+                    "country": "US",
+                    "countryName": "United States",
+                    "countryNameShort": "US",
+                    "photoUri": "https://q-xx.bstatic.com/xdata/images/city/square150/667263.jpg?k=7940af7db25cc52f2ce378dd0c7bdc089c5aa97a18851e6cb8dd5099a8affabd&o=",
+                    "distanceToCity": {
+                        "value": 13.36594636840895,
+                        "unit": "km"
+                    },
+                    "parent": "BUF"
+                },
+                {
+                    "id": "ALB.AIRPORT",
+                    "type": "AIRPORT",
+                    "name": "Albany International Airport",
+                    "code": "ALB",
+                    "city": "ALB",
+                    "cityName": "Albany",
+                    "region": "NY",
+                    "regionName": "New York",
+                    "country": "US",
+                    "countryName": "United States",
+                    "countryNameShort": "US",
+                    "photoUri": "https://q-xx.bstatic.com/xdata/images/city/square150/767068.jpg?k=380a8e7bd3e2357a88d863b792668a0dfb0a324c8774aa6fcabd4fd9b645ce45&o=",
+                    "distanceToCity": {
+                        "value": 11.278023321101797,
+                        "unit": "km"
+                    },
+                    "parent": "ALB"
+                },
+                {
+                    "id": "ISP.AIRPORT",
+                    "type": "AIRPORT",
+                    "name": "Long Island MacArthur Airport",
+                    "code": "ISP",
+                    "city": "ISP",
+                    "cityName": "Islip",
+                    "regionName": "New York",
+                    "country": "US",
+                    "countryName": "United States",
+                    "countryNameShort": "US",
+                    "photoUri": "https://q-xx.bstatic.com/static/img/plane-100.jpg",
+                    "distanceToCity": {
+                        "value": 11.824492677777643,
+                        "unit": "km"
+                    },
+                    "parent": "ISP"
+                },
+                {
+                    "id": "SYR.AIRPORT",
+                    "type": "AIRPORT",
+                    "name": "Syracuse Hancock International Airport",
+                    "code": "SYR",
+                    "city": "SYR",
+                    "cityName": "Syracuse",
+                    "region": "NY",
+                    "regionName": "New York",
+                    "country": "US",
+                    "countryName": "United States",
+                    "countryNameShort": "US",
+                    "photoUri": "https://q-xx.bstatic.com/xdata/images/city/square150/980159.jpg?k=bd791c980e2dd8f0d9bd3fd1dcbf5d11f786f130f07bd45b0073b22926edf134&o=",
+                    "distanceToCity": {
+                        "value": 7.781010612323974,
+                        "unit": "km"
+                    },
+                    "parent": "SYR"
+                },
+                {
+                    "id": "ROC.AIRPORT",
+                    "type": "AIRPORT",
+                    "name": "Greater Rochester International Airport",
+                    "code": "ROC",
+                    "city": "ROC",
+                    "cityName": "Rochester",
+                    "region": "NY",
+                    "regionName": "New York",
+                    "country": "US",
+                    "countryName": "United States",
+                    "countryNameShort": "US",
+                    "photoUri": "https://q-xx.bstatic.com/xdata/images/city/square150/727014.jpg?k=c75c49b682f85e73a2d1790c65f6bc6ad0126c80be6332492a2050d8baeec02d&o=",
+                    "distanceToCity": {
+                        "value": 6.077718572467777,
+                        "unit": "km"
+                    },
+                    "parent": "ROC"
+                },
+                {
+                    "id": "HPN.AIRPORT",
+                    "type": "AIRPORT",
+                    "name": "Westchester County Airport",
+                    "code": "HPN",
+                    "city": "HPN",
+                    "cityName": "White Plains",
+                    "regionName": "New York",
+                    "country": "US",
+                    "countryName": "United States",
+                    "countryNameShort": "US",
+                    "photoUri": "https://q-xx.bstatic.com/xdata/images/city/square150/907828.jpg?k=9fc67fdf80b26e6d470d9a5872b4bd4f4278f46af3976b05b40f712785a83636&o=",
+                    "distanceToCity": {
+                        "value": 5.94635564027374,
+                        "unit": "km"
+                    },
+                    "parent": "HPN"
+                }
+            ]
+        },
+        "optional": {
+            "status": true,
+            "message": "Success",
+            "timestamp": 1747651482469,
+            "data": [
+                {
+                    "id": "NYC.CITY",
+                    "type": "CITY",
+                    "name": "New York",
+                    "code": "NYC",
+                    "regionName": "New York",
+                    "country": "US",
+                    "countryName": "United States",
+                    "photoUri": "https://q-xx.bstatic.com/xdata/images/city/square150/977436.jpg?k=ee0baaf82d482fae02bcb8dda25be1abff1da43d187bbb26ae6b2f3c9b5f4e61&o="
+                },
+                {
+                    "id": "JFK.AIRPORT",
+                    "type": "AIRPORT",
+                    "name": "John F. Kennedy International Airport",
+                    "code": "JFK",
+                    "city": "NYC",
+                    "cityName": "New York",
+                    "regionName": "New York",
+                    "country": "US",
+                    "countryName": "United States",
+                    "countryNameShort": "US",
+                    "photoUri": "https://q-xx.bstatic.com/xdata/images/city/square150/977436.jpg?k=ee0baaf82d482fae02bcb8dda25be1abff1da43d187bbb26ae6b2f3c9b5f4e61&o=",
+                    "distanceToCity": {
+                        "value": 21.381514773782005,
+                        "unit": "km"
+                    },
+                    "parent": "NYC"
+                },
+                {
+                    "id": "EWR.AIRPORT",
+                    "type": "AIRPORT",
+                    "name": "Newark Liberty International Airport",
+                    "code": "EWR",
+                    "city": "NYC",
+                    "cityName": "New York",
+                    "region": "NJ",
+                    "regionName": "New York",
+                    "country": "US",
+                    "countryName": "United States",
+                    "countryNameShort": "US",
+                    "photoUri": "https://q-xx.bstatic.com/xdata/images/city/square150/977436.jpg?k=ee0baaf82d482fae02bcb8dda25be1abff1da43d187bbb26ae6b2f3c9b5f4e61&o=",
+                    "distanceToCity": {
+                        "value": 18.736453932482238,
+                        "unit": "km"
+                    },
+                    "parent": "NYC"
+                },
+                {
+                    "id": "LGA.AIRPORT",
+                    "type": "AIRPORT",
+                    "name": "LaGuardia Airport",
+                    "code": "LGA",
+                    "city": "NYC",
+                    "cityName": "New York",
+                    "regionName": "New York",
+                    "country": "US",
+                    "countryName": "United States",
+                    "countryNameShort": "US",
+                    "photoUri": "https://q-xx.bstatic.com/xdata/images/city/square150/977436.jpg?k=ee0baaf82d482fae02bcb8dda25be1abff1da43d187bbb26ae6b2f3c9b5f4e61&o=",
+                    "distanceToCity": {
+                        "value": 9.28775750350465,
+                        "unit": "km"
+                    },
+                    "parent": "NYC"
+                },
+                {
+                    "id": "SWF.AIRPORT",
+                    "type": "AIRPORT",
+                    "name": "Stewart International Airport",
+                    "code": "SWF",
+                    "city": "NYC",
+                    "cityName": "New York",
+                    "regionName": "New York",
+                    "country": "US",
+                    "countryName": "United States",
+                    "countryNameShort": "US",
+                    "photoUri": "https://q-xx.bstatic.com/xdata/images/city/square150/977436.jpg?k=ee0baaf82d482fae02bcb8dda25be1abff1da43d187bbb26ae6b2f3c9b5f4e61&o=",
+                    "distanceToCity": {
+                        "value": 82.46391716356523,
+                        "unit": "km"
+                    },
+                    "parent": "NYC"
+                },
+                {
+                    "id": "BUF.AIRPORT",
+                    "type": "AIRPORT",
+                    "name": "Buffalo Niagara International Airport",
+                    "code": "BUF",
+                    "city": "BUF",
+                    "cityName": "Buffalo",
+                    "regionName": "New York",
+                    "country": "US",
+                    "countryName": "United States",
+                    "countryNameShort": "US",
+                    "photoUri": "https://q-xx.bstatic.com/xdata/images/city/square150/667263.jpg?k=7940af7db25cc52f2ce378dd0c7bdc089c5aa97a18851e6cb8dd5099a8affabd&o=",
+                    "distanceToCity": {
+                        "value": 13.36594636840895,
+                        "unit": "km"
+                    },
+                    "parent": "BUF"
+                },
+                {
+                    "id": "ALB.AIRPORT",
+                    "type": "AIRPORT",
+                    "name": "Albany International Airport",
+                    "code": "ALB",
+                    "city": "ALB",
+                    "cityName": "Albany",
+                    "region": "NY",
+                    "regionName": "New York",
+                    "country": "US",
+                    "countryName": "United States",
+                    "countryNameShort": "US",
+                    "photoUri": "https://q-xx.bstatic.com/xdata/images/city/square150/767068.jpg?k=380a8e7bd3e2357a88d863b792668a0dfb0a324c8774aa6fcabd4fd9b645ce45&o=",
+                    "distanceToCity": {
+                        "value": 11.278023321101797,
+                        "unit": "km"
+                    },
+                    "parent": "ALB"
+                },
+                {
+                    "id": "ISP.AIRPORT",
+                    "type": "AIRPORT",
+                    "name": "Long Island MacArthur Airport",
+                    "code": "ISP",
+                    "city": "ISP",
+                    "cityName": "Islip",
+                    "regionName": "New York",
+                    "country": "US",
+                    "countryName": "United States",
+                    "countryNameShort": "US",
+                    "photoUri": "https://q-xx.bstatic.com/static/img/plane-100.jpg",
+                    "distanceToCity": {
+                        "value": 11.824492677777643,
+                        "unit": "km"
+                    },
+                    "parent": "ISP"
+                },
+                {
+                    "id": "SYR.AIRPORT",
+                    "type": "AIRPORT",
+                    "name": "Syracuse Hancock International Airport",
+                    "code": "SYR",
+                    "city": "SYR",
+                    "cityName": "Syracuse",
+                    "region": "NY",
+                    "regionName": "New York",
+                    "country": "US",
+                    "countryName": "United States",
+                    "countryNameShort": "US",
+                    "photoUri": "https://q-xx.bstatic.com/xdata/images/city/square150/980159.jpg?k=bd791c980e2dd8f0d9bd3fd1dcbf5d11f786f130f07bd45b0073b22926edf134&o=",
+                    "distanceToCity": {
+                        "value": 7.781010612323974,
+                        "unit": "km"
+                    },
+                    "parent": "SYR"
+                },
+                {
+                    "id": "ROC.AIRPORT",
+                    "type": "AIRPORT",
+                    "name": "Greater Rochester International Airport",
+                    "code": "ROC",
+                    "city": "ROC",
+                    "cityName": "Rochester",
+                    "region": "NY",
+                    "regionName": "New York",
+                    "country": "US",
+                    "countryName": "United States",
+                    "countryNameShort": "US",
+                    "photoUri": "https://q-xx.bstatic.com/xdata/images/city/square150/727014.jpg?k=c75c49b682f85e73a2d1790c65f6bc6ad0126c80be6332492a2050d8baeec02d&o=",
+                    "distanceToCity": {
+                        "value": 6.077718572467777,
+                        "unit": "km"
+                    },
+                    "parent": "ROC"
+                },
+                {
+                    "id": "HPN.AIRPORT",
+                    "type": "AIRPORT",
+                    "name": "Westchester County Airport",
+                    "code": "HPN",
+                    "city": "HPN",
+                    "cityName": "White Plains",
+                    "regionName": "New York",
+                    "country": "US",
+                    "countryName": "United States",
+                    "countryNameShort": "US",
+                    "photoUri": "https://q-xx.bstatic.com/xdata/images/city/square150/907828.jpg?k=9fc67fdf80b26e6d470d9a5872b4bd4f4278f46af3976b05b40f712785a83636&o=",
+                    "distanceToCity": {
+                        "value": 5.94635564027374,
+                        "unit": "km"
+                    },
+                    "parent": "HPN"
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,169 @@
+{
+    "shorten": {
+        "api": {
+            "name": "Vehicle_Supplier_Review",
+            "endpoint": "/api/v1/cars/vehicleSupplierReview",
+            "func_description": "Get the reviews for the supplier of a specific vehicle. ",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "vehicle_id": {
+                        "type": "String",
+                        "description": "Vehicle ID. vehicle_id can be retrieved from api/v1/cars/searchCarRentals(Search Car Rentals) endpoint in Car Rental collection as vehicle_id inside search_results object.",
+                        "example_value": "373025711",
+                        "required": true
+                    },
+                    "search_key": {
+                        "type": "String",
+                        "description": "search_key can be retrieved from api/v1/cars/searchCarRentals(Search Car Rentals) endpoint in Car Rental collection as search_key.",
+                        "example_value": "eyJkcml2ZXJzQWdlIjozMCwiZHJvcE9mZkRhdGVUaW1lIjoiMjAyMy0xMS0xN1QxMDowMDowMCIsImRyb3BPZmZMb2NhdGlvbiI6IjQwLjYzOTcwMTg0MzI2MTcsLTczLjc3OTE5NzY5Mjg3MTEiLCJkcm9wT2ZmTG9jYXRpb25UeXBlIjoiTEFUTE9ORyIsInBpY2tVcERhdGVUaW1lIjoiMjAyMy0xMS0xNVQxMDowMDowMCIsInBpY2tVcExvY2F0aW9uIjoiNDAuNjM5NzAxODQzMjYxNywtNzMuNzc5MTk3NjkyODcxMSIsInBpY2tVcExvY2F0aW9uVHlwZSI6IkxBVExPTkciLCJyZW50YWxEdXJhdGlvbkluRGF5cyI6Miwic2VydmljZUZlYXR1cmVzIjpbIk5PX09QQVFVRVMiLCJTVVBSRVNTX0ZJWEVEX1BSSUNFX1ZFSElDTEVTIl19",
+                        "required": true
+                    },
+                    "languagecode": {
+                        "type": "String",
+                        "description": "To obtain the response data in a specific language, enter the languagecode. languagecode can be retrieved from api/v1/meta/getLanguages(Get Languages\n) endpoint in Meta collection.",
+                        "example_value": "",
+                        "required": false
+                    }
+                },
+                "required": [
+                    "vehicle_id",
+                    "search_key"
+                ]
+            }
+        },
+        "static_response": {
+            "function_name": "Vehicle_Supplier_Review",
+            "arguments": {
+                "vehicle_id": "765170736",
+                "search_key": "eyJkcml2ZXJzQWdlIjozMCwiZHJvcE9mZkRhdGVUaW1lIjoiMjAyNC0xMS0xMFQxNjowMDowMCIsImRyb3BPZmZMb2NhdGlvbiI6IjQ1Ljc1Nzc2Nyw0LjgzMjIwNCIsImRyb3BPZmZMb2NhdGlvblR5cGUiOiJMQVRMT05HIiwicGlja1VwRGF0ZVRpbWUiOiIyMDI0LTExLTA1VDEwOjAwOjAwIiwicGlja1VwTG9jYXRpb24iOiI0OS4wMDcxLDIuNTY4NDQiLCJwaWNrVXBMb2NhdGlvblR5cGUiOiJMQVRMT05HIiwicmVudGFsRHVyYXRpb25JbkRheXMiOjYsInNlcnZpY2VGZWF0dXJlcyI6WyJOT19PUEFRVUVTIiwiU1VQUkVTU19GSVhFRF9QUklDRV9WRUhJQ0xFUyIsIklOQ0xVREVfUFJPRFVDVF9SRUxBVElPTlNISVBTIiwiSU5DTFVERV9FWFRSQVNfQ09OVEFJTklOR19GRUVTIl19"
+            },
+            "observation": {
+                "status": true,
+                "message": "Success",
+                "data": {
+                    "customerReviews": {
+                        "reviews": [
+                            {
+                                "rating": "4.9",
+                                "epochDay": 19956,
+                                "localisedRating": {
+                                    "rawValue": 4.9,
+                                    "displayValue": "4.9"
+                                },
+                                "type": "Group",
+                                "date": "Wed, Aug 21 2024",
+                                "negative": "We did not have the car I was suppose. So we took another one and it cost us $750 cad more. "
+                            },
+                            {
+                                "epochDay": 19947,
+                                "rating": "7.4",
+                                "localisedRating": {
+                                    "rawValue": 7.4,
+                                    "displayValue": "7.4"
+                                },
+                                "date": "Mon, Aug 12 2024",
+                                "positive": "Prep of car, clean, full tank",
+                                "type": "Family",
+                                "negative": "It took almost 2hrs to get it. Was not ready on time"
+                            },
+                            {
+                                "type": "Group",
+                                "positive": "Easy to return the car",
+                                "date": "Thu, Aug 8 2024",
+                                "negative": "I got an MG worst car ever. The car could not reach 130km/h on the freeway and overall extremely lack off power.",
+                                "rating": "8.3",
+                                "epochDay": 19943,
+                                "localisedRating": {
+                                    "displayValue": "8.3",
+                                    "rawValue": 8.3
+                                }
+                            }
+                        ],
+                        "sort": {
+                            "ctaTitle": "Sort by",
+                            "options": {
+                                "default": "score.descending",
+                                "items": [
+                                    {
+                                        "id": "score.descending",
+                                        "label": "Highest scores"
+                                    },
+                                    {
+                                        "id": "score.ascending",
+                                        "label": "Lowest scores"
+                                    },
+                                    {
+                                        "id": "date.descending",
+                                        "label": "Newest first"
+                                    }
+                                ]
+                            },
+                            "pageTitle": "Sort by"
+                        },
+                        "title": "Customer reviews"
+                    },
+                    "supplier": {
+                        "title": "Rental company",
+                        "rating": {
+                            "title": "Good",
+                            "localisedRating": {
+                                "rawValue": 7.5,
+                                "displayValue": "7.5"
+                            },
+                            "average": "7.5",
+                            "subtitle": "220 reviews",
+                            "breakdown": [
+                                {
+                                    "localisedRating": {
+                                        "rawValue": 7.4,
+                                        "displayValue": "7.4"
+                                    },
+                                    "title": "Overall value for money of your vehicle hire",
+                                    "score": "7.4"
+                                },
+                                {
+                                    "title": "Helpfulness",
+                                    "localisedRating": {
+                                        "rawValue": 7.6,
+                                        "displayValue": "7.6"
+                                    },
+                                    "score": "7.6"
+                                },
+                                {
+                                    "title": "Pick-up speed",
+                                    "localisedRating": {
+                                        "displayValue": "6",
+                                        "rawValue": 6
+                                    },
+                                    "score": "6.0"
+                                }
+                            ]
+                        },
+                        "name": "Europcar"
+                    }
+                }
+            }
+        },
+        "required": {
+            "query": "I'm considering renting a car with vehicle ID 373025711 and would like to see reviews for the supplier. Can you help me find out what other customers have said about them?",
+            "params": {
+                "vehicle_id": "373025711",
+                "search_key": "eyJkcml2ZXJzQWdlIjozMCwiZHJvcE9mZkRhdGVUaW1lIjoiMjAyMy0xMS0xN1QxMDowMDowMCIsImRyb3BPZmZMb2NhdGlvbiI6IjQwLjYzOTcwMTg0MzI2MTcsLTczLjc3OTE5NzY5Mjg3MTEiLCJkcm9wT2ZmTG9jYXRpb25UeXBlIjoiTEFUTE9ORyIsInBpY2tVcERhdGVUaW1lIjoiMjAyMy0xMS0xNVQxMDowMDowMCIsInBpY2tVcExvY2F0aW9uIjoiNDAuNjM5NzAxODQzMjYxNywtNzMuNzc5MTk3NjkyODcxMSIsInBpY2tVcExvY2F0aW9uVHlwZSI6IkxBVExPTkciLCJyZW50YWxEdXJhdGlvbkluRGF5cyI6Miwic2VydmljZUZlYXR1cmVzIjpbIk5PX09QQVFVRVMiLCJTVVBSRVNTX0ZJWEVEX1BSSUNFX1ZFSElDTEVTIl19"
+            },
+            "response": {}
+        },
+        "optional": {
+            "query": "I'm planning to rent a car with vehicle ID 373025711 and would like to check the reviews for the supplier. I have the search key 'eyJkcml2ZXJzQWdlIjozMCwiZHJvcE9mZkRhdGVUaW1lIjoiMjAyMy0xMS0xN1QxMDowMDowMCIsImRyb3BPZmZMb2NhdGlvbiI6IjQwLjYzOTcwMTg0MzI2MTcsLTczLjc3OTE5NzY5Mjg3MTEi'. Could you provide the reviews in English?",
+            "params": {
+                "vehicle_id": "373025711",
+                "search_key": "eyJkcml2ZXJzQWdlIjozMCwiZHJvcE9mZkRhdGVUaW1lIjoiMjAyMy0xMS0xN1QxMDowMDowMCIsImRyb3BPZmZMb2NhdGlvbiI6IjQwLjYzOTcwMTg0MzI2MTcsLTczLjc3OTE5NzY5Mjg3MTEi"
+            },
+            "response": {}
+        }
+    },
+    "row": {
+        "required": {},
+        "optional": {}
+    }
+}

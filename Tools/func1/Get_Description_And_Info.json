@@ -1,0 +1,98 @@
+{
+    "shorten": {
+        "api": {
+            "name": "Get_Description_And_Info",
+            "endpoint": "/api/v1/hotels/getDescriptionAndInfo",
+            "func_description": "Retrieve the detailed description and information for a specific hotel. ",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "hotel_id": {
+                        "type": "String",
+                        "description": "hotel_id can be retrieved from api/v1/hotels/searchHotels(Search Hotels) or api/v1/hotels/searchHotelsByCoordinates(Search Hotels By Coordinates\n) endpoint in Hotels collection.",
+                        "example_value": "5955189",
+                        "required": true
+                    },
+                    "languagecode": {
+                        "type": "String",
+                        "description": "To obtain the response data in a specific language, enter the languagecode. languagecode can be retrieved from api/v1/meta/getLanguages(Get Languages\n) endpoint in Meta collection.",
+                        "example_value": "en-us",
+                        "required": false
+                    }
+                },
+                "required": [
+                    "hotel_id"
+                ]
+            }
+        },
+        "static_response": {
+            "function_name": "Get_Description_And_Info",
+            "arguments": {
+                "hotel_id": "45756"
+            },
+            "observation": {
+                "status": true,
+                "message": "Success",
+                "data": [
+                    {
+                        "hotel_id": "45756",
+                        "languagecode": "en",
+                        "description": "Group Reservations over 5 room nights or more will require guaranteed payment seven (7) days prior to arrival.\nCredit Cards will be charged for the full amount of the groups stay and total room nights.\n\nGuests that require short & long term stays at our property, which would be over seven days (7), and not to exceed twenty-eight days (28) are welcome at Hotel 1550. We will charge guests seven days room and tax, seven days prior to guest arrival.",
+                        "descriptiontype_id": 7
+                    },
+                    {
+                        "descriptiontype_id": 6,
+                        "hotel_id": "45756",
+                        "languagecode": "en",
+                        "description": "Convenient to area motorways and less than 5 km from San Francisco International Airport, this hotel in San Bruno offers convenient services and amenities within walking distance of restaurants and shopping. Complimentary parking is offered for hotel guests.\n\nThe BART public transport system is also nearby for easy travel to several attractions in San Francisco.\n\nGuests staying at Hotel 1550 - SFO Airport West can enjoy amenities including free WiFi access. Tea and coffee service is available in the lobby 24 hours.\n\nChase Center is 12.7 miles (20.4 km) away from the property."
+                    }
+                ]
+            }
+        },
+        "required": {
+            "query": "I'm interested in learning more about the hotel with ID 5955189. Can you provide me with its detailed description and general information?",
+            "params": {
+                "hotel_id": "5955189"
+            },
+            "response": "Something went wrong. We have logged the error and will get the resolution."
+        },
+        "optional": {
+            "query": "I'd like to know more about the hotel with ID 5955189. Could you provide me with its detailed description and general information in English?",
+            "params": {
+                "hotel_id": "5955189",
+                "languagecode": "en-us"
+            },
+            "response": [
+                {
+                    "descriptiontype_id": 7,
+                    "languagecode": "xu",
+                    "description": "Couples are welcome here. Guests on Local ID are welcome here. Foreign guests not allowed in this property.\nPlease note due to local licensing guidelines, the property is able to accept Indian nationals only. The property apologizes for any inconvenience caused.",
+                    "hotel_id": "5955189"
+                },
+                {
+                    "description": "Ideally set in the Powai district of Mumbai, FabHotel Elvis Inn - Nr Mumbai International Airport is located 2.3 miles from Powai Lake, 2.7 miles from Indian Institute of Technology, Bombay and 2.8 miles from Phoenix Market City Mall. This 3-star hotel offers room service, a 24-hour front desk and free WiFi. The hotel has family rooms.\n\nAt the hotel, the rooms include a closet. Complete with a private bathroom equipped with a shower and free toiletries, all rooms at FabHotel Elvis Inn - Nr Mumbai International Airport have a flat-screen TV and air conditioning, and selected rooms also feature a seating area.\n\nGuests at the accommodation can enjoy a continental breakfast.\n\nBombay Exhibition Centre is 5 miles from FabHotel Elvis Inn - Nr Mumbai International Airport, while ISKCON is 5.3 miles from the property. Chhatrapati Shivaji International Mumbai Airport is 1.9 miles away.",
+                    "descriptiontype_id": 6,
+                    "languagecode": "xu",
+                    "hotel_id": "5955189"
+                }
+            ]
+        }
+    },
+    "row": {
+        "required": "Something went wrong. We have logged the error and will get the resolution.",
+        "optional": [
+            {
+                "descriptiontype_id": 7,
+                "languagecode": "xu",
+                "description": "Couples are welcome here. Guests on Local ID are welcome here. Foreign guests not allowed in this property.\nPlease note due to local licensing guidelines, the property is able to accept Indian nationals only. The property apologizes for any inconvenience caused.",
+                "hotel_id": "5955189"
+            },
+            {
+                "description": "Ideally set in the Powai district of Mumbai, FabHotel Elvis Inn - Nr Mumbai International Airport is located 2.3 miles from Powai Lake, 2.7 miles from Indian Institute of Technology, Bombay and 2.8 miles from Phoenix Market City Mall. This 3-star hotel offers room service, a 24-hour front desk and free WiFi. The hotel has family rooms.\n\nAt the hotel, the rooms include a closet. Complete with a private bathroom equipped with a shower and free toiletries, all rooms at FabHotel Elvis Inn - Nr Mumbai International Airport have a flat-screen TV and air conditioning, and selected rooms also feature a seating area.\n\nGuests at the accommodation can enjoy a continental breakfast.\n\nBombay Exhibition Centre is 5 miles from FabHotel Elvis Inn - Nr Mumbai International Airport, while ISKCON is 5.3 miles from the property. Chhatrapati Shivaji International Mumbai Airport is 1.9 miles away.",
+                "descriptiontype_id": 6,
+                "languagecode": "xu",
+                "hotel_id": "5955189"
+            }
+        ]
+    }
+}

@@ -1,0 +1,1191 @@
+{
+    "shorten": {
+        "api": {
+            "name": "Get_Availability",
+            "endpoint": "/api/v1/attraction/getAvailability",
+            "func_description": "Check if tickets for tourist attractions are available. ",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "slug": {
+                        "type": "String",
+                        "description": "slug can be retrieved from api/v1/attraction/searchLocation(Search Attraction Location) endpoint in Attraction collection as productSlug  inside products or destinations.",
+                        "example_value": "prg6h2lj9jfx-city-pub-crawl-with-drinks",
+                        "required": true
+                    },
+                    "date": {
+                        "type": "Date (yyyy-mm-dd)",
+                        "description": "The availability of the data.",
+                        "example_value": "",
+                        "required": false
+                    },
+                    "currency_code": {
+                        "type": "String",
+                        "description": "The currency code. currency_code can be retrieved from api/v1/meta/getCurrency(Get Currency) endpoint in Hotels collection.",
+                        "example_value": "EUR",
+                        "required": false
+                    },
+                    "languagecode": {
+                        "type": "String",
+                        "description": "To obtain the response data in a specific language, enter the languagecode. languagecode can be retrieved from api/v1/meta/getLanguages(Get Languages\n) endpoint in Meta collection.",
+                        "example_value": "fr",
+                        "required": false
+                    }
+                },
+                "required": [
+                    "slug"
+                ]
+            }
+        },
+        "static_response": {
+            "function_name": "Get_Availability",
+            "arguments": {
+                "slug": "prm7xecrmy7v-discover-lisbon-tagus-river-sailing-tour-at-sunset",
+                "date": "2024-12-01"
+            },
+            "observation": {
+                "status": true,
+                "message": "Success",
+                "data": [
+                    {
+                        "__typename": "AttractionTimeSlot",
+                        "fullDay": false,
+                        "start": "2024-12-01T16:00:00Z",
+                        "timeSlotId": "ATS-PRM7xEcRmy7V-202412011600-nullnull",
+                        "timeSlotOffers": [
+                            {
+                                "__typename": "AttractionTimeSlotOffer",
+                                "languageOptions": [
+                                    {
+                                        "__typename": "OfferLanguageOption",
+                                        "label": "English - Tour guide",
+                                        "language": "en",
+                                        "type": "guide"
+                                    },
+                                    {
+                                        "__typename": "OfferLanguageOption",
+                                        "label": "Portuguese - Tour guide",
+                                        "language": "pt",
+                                        "type": "guide"
+                                    },
+                                    {
+                                        "__typename": "OfferLanguageOption",
+                                        "label": "Spanish - Tour guide",
+                                        "language": "es",
+                                        "type": "guide"
+                                    }
+                                ],
+                                "benefits": {
+                                    "__typename": "Benefits"
+                                },
+                                "description": "Small group Sunset Sailing",
+                                "id": "OFbMpYI9ptBP",
+                                "items": [
+                                    {
+                                        "__typename": "AttractionTimeSlotOfferItem",
+                                        "cancellationPolicy": {
+                                            "__typename": "AttractionsCancellationPolicy",
+                                            "comparedTo": "start",
+                                            "hasFreeCancellation": true,
+                                            "isStillRefundable": true,
+                                            "percentage": 100,
+                                            "period": "P1D"
+                                        },
+                                        "constraint": {
+                                            "__typename": "Constraint",
+                                            "label": "(age 0-99)"
+                                        },
+                                        "id": "ATO-618ef21e-b09b-47ae-9a78-9144a33307c0_PRM7xEcRmy7V_20241201_1600",
+                                        "offerItemId": "OIDv2fkEptTc",
+                                        "type": "adult",
+                                        "tieredPricing": false,
+                                        "price": {
+                                            "__typename": "AttractionsPrice",
+                                            "chargeAmount": 39,
+                                            "currency": "EUR",
+                                            "publicAmount": 39
+                                        },
+                                        "convertedPrice": {
+                                            "__typename": "AttractionsPrice",
+                                            "chargeAmount": 42.02,
+                                            "currency": "USD",
+                                            "publicAmount": 42.02
+                                        },
+                                        "languageOption": {
+                                            "__typename": "LanguageOption",
+                                            "language": "pt",
+                                            "type": "guide"
+                                        },
+                                        "ticketsAvailable": 10000,
+                                        "maxPerReservation": 10,
+                                        "minPerReservation": 1,
+                                        "label": "Adult"
+                                    },
+                                    {
+                                        "__typename": "AttractionTimeSlotOfferItem",
+                                        "cancellationPolicy": {
+                                            "__typename": "AttractionsCancellationPolicy",
+                                            "comparedTo": "start",
+                                            "hasFreeCancellation": true,
+                                            "isStillRefundable": true,
+                                            "percentage": 100,
+                                            "period": "P1D"
+                                        },
+                                        "constraint": {
+                                            "__typename": "Constraint",
+                                            "label": "(age 0-99)"
+                                        },
+                                        "id": "ATO-9dc53649-d475-4fab-b6bb-e03240601a77_PRM7xEcRmy7V_20241201_1600",
+                                        "offerItemId": "OIDv2fkEptTc",
+                                        "type": "adult",
+                                        "tieredPricing": false,
+                                        "price": {
+                                            "__typename": "AttractionsPrice",
+                                            "chargeAmount": 39,
+                                            "currency": "EUR",
+                                            "publicAmount": 39
+                                        },
+                                        "convertedPrice": {
+                                            "__typename": "AttractionsPrice",
+                                            "chargeAmount": 42.02,
+                                            "currency": "USD",
+                                            "publicAmount": 42.02
+                                        },
+                                        "languageOption": {
+                                            "__typename": "LanguageOption",
+                                            "language": "es",
+                                            "type": "guide"
+                                        },
+                                        "ticketsAvailable": 10000,
+                                        "maxPerReservation": 10,
+                                        "minPerReservation": 1,
+                                        "label": "Adult"
+                                    },
+                                    {
+                                        "__typename": "AttractionTimeSlotOfferItem",
+                                        "cancellationPolicy": {
+                                            "__typename": "AttractionsCancellationPolicy",
+                                            "comparedTo": "start",
+                                            "hasFreeCancellation": true,
+                                            "isStillRefundable": true,
+                                            "percentage": 100,
+                                            "period": "P1D"
+                                        },
+                                        "constraint": {
+                                            "__typename": "Constraint",
+                                            "label": "(age 0-99)"
+                                        },
+                                        "id": "ATO-09561668-f725-4c06-af09-cf451d8781b4_PRM7xEcRmy7V_20241201_1600",
+                                        "offerItemId": "OIDv2fkEptTc",
+                                        "type": "adult",
+                                        "tieredPricing": false,
+                                        "price": {
+                                            "__typename": "AttractionsPrice",
+                                            "chargeAmount": 39,
+                                            "currency": "EUR",
+                                            "publicAmount": 39
+                                        },
+                                        "convertedPrice": {
+                                            "__typename": "AttractionsPrice",
+                                            "chargeAmount": 42.02,
+                                            "currency": "USD",
+                                            "publicAmount": 42.02
+                                        },
+                                        "languageOption": {
+                                            "__typename": "LanguageOption",
+                                            "language": "en",
+                                            "type": "guide"
+                                        },
+                                        "ticketsAvailable": 10000,
+                                        "maxPerReservation": 10,
+                                        "minPerReservation": 1,
+                                        "label": "Adult"
+                                    }
+                                ],
+                                "label": "Sunset Sailing Tour",
+                                "reservationRestrictions": {
+                                    "__typename": "ReservationRestrictions",
+                                    "adultRequiredForReservation": true,
+                                    "maxOfferItemsPerReservation": 10,
+                                    "minOfferItemsPerReservation": 1
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "required": {
+            "query": "I'm interested in checking ticket availability for the 'City Pub Crawl with Drinks' attraction. Can you help me see if there are any tickets available?",
+            "params": {
+                "slug": "prg6h2lj9jfx-city-pub-crawl-with-drinks"
+            },
+            "response": [
+                {
+                    "__typename": "AttractionTimeSlot",
+                    "fullDay": false,
+                    "start": "2025-05-19T19:00:00+05:30",
+                    "timeSlotId": "ATS-PRg6H2LJ9JFX-202505191900-nullnull",
+                    "timeSlotOffers": [
+                        {
+                            "__typename": "AttractionTimeSlotOffer",
+                            "languageOptions": [
+                                {
+                                    "__typename": "OfferLanguageOption",
+                                    "label": "Hindi - Tour guide",
+                                    "language": "hi",
+                                    "type": "guide"
+                                },
+                                {
+                                    "__typename": "OfferLanguageOption",
+                                    "label": "English - Tour guide",
+                                    "language": "en",
+                                    "type": "guide"
+                                }
+                            ],
+                            "additionalInfo": null,
+                            "benefits": {
+                                "__typename": "Benefits",
+                                "freeAudioGuide": null,
+                                "freeDrink": null,
+                                "freeTransportation": null,
+                                "inStoreDiscount": null,
+                                "priorityLane": null,
+                                "skipTheLine": null
+                            },
+                            "description": null,
+                            "id": "OFfiWXve5anX",
+                            "items": [
+                                {
+                                    "__typename": "AttractionTimeSlotOfferItem",
+                                    "cancellationPolicy": {
+                                        "__typename": "AttractionsCancellationPolicy",
+                                        "comparedTo": "start",
+                                        "hasFreeCancellation": true,
+                                        "isStillRefundable": true,
+                                        "percentage": 100,
+                                        "period": "P1D"
+                                    },
+                                    "constraint": {
+                                        "__typename": "Constraint",
+                                        "label": "(age 16-65)",
+                                        "maxGroupSize": null,
+                                        "minGroupSize": null
+                                    },
+                                    "id": "ATO-0ea7dcb7-542a-4ec8-b893-d37b0466bc58_PRg6H2LJ9JFX_20250519_1900",
+                                    "offerItemId": "OI5K8mlrnLPy",
+                                    "type": "adult",
+                                    "tieredPricing": true,
+                                    "price": {
+                                        "__typename": "AttractionsPrice",
+                                        "chargeAmount": 52.25,
+                                        "currency": "EUR",
+                                        "publicAmount": 52.25
+                                    },
+                                    "convertedPrice": {
+                                        "__typename": "AttractionsPrice",
+                                        "chargeAmount": 58.45,
+                                        "currency": "USD",
+                                        "publicAmount": 58.45
+                                    },
+                                    "languageOption": {
+                                        "__typename": "LanguageOption",
+                                        "language": "hi",
+                                        "type": "guide"
+                                    },
+                                    "travelerCountRequired": null,
+                                    "ticketsAvailable": 10000,
+                                    "maxPerReservation": 1,
+                                    "minPerReservation": 1,
+                                    "duration": null,
+                                    "label": "Adult"
+                                },
+                                {
+                                    "__typename": "AttractionTimeSlotOfferItem",
+                                    "cancellationPolicy": {
+                                        "__typename": "AttractionsCancellationPolicy",
+                                        "comparedTo": "start",
+                                        "hasFreeCancellation": true,
+                                        "isStillRefundable": true,
+                                        "percentage": 100,
+                                        "period": "P1D"
+                                    },
+                                    "constraint": {
+                                        "__typename": "Constraint",
+                                        "label": "(age 16-65)",
+                                        "maxGroupSize": null,
+                                        "minGroupSize": null
+                                    },
+                                    "id": "ATO-6f0dfab3-c07b-47f9-ac06-cba291558d15_PRg6H2LJ9JFX_20250519_1900",
+                                    "offerItemId": "OI5K8mlrnLPy",
+                                    "type": "adult",
+                                    "tieredPricing": true,
+                                    "price": {
+                                        "__typename": "AttractionsPrice",
+                                        "chargeAmount": 52.25,
+                                        "currency": "EUR",
+                                        "publicAmount": 52.25
+                                    },
+                                    "convertedPrice": {
+                                        "__typename": "AttractionsPrice",
+                                        "chargeAmount": 58.45,
+                                        "currency": "USD",
+                                        "publicAmount": 58.45
+                                    },
+                                    "languageOption": {
+                                        "__typename": "LanguageOption",
+                                        "language": "en",
+                                        "type": "guide"
+                                    },
+                                    "travelerCountRequired": null,
+                                    "ticketsAvailable": 10000,
+                                    "maxPerReservation": 1,
+                                    "minPerReservation": 1,
+                                    "duration": null,
+                                    "label": "Adult"
+                                },
+                                {
+                                    "__typename": "AttractionTimeSlotOfferItem",
+                                    "cancellationPolicy": {
+                                        "__typename": "AttractionsCancellationPolicy",
+                                        "comparedTo": "start",
+                                        "hasFreeCancellation": true,
+                                        "isStillRefundable": true,
+                                        "percentage": 100,
+                                        "period": "P1D"
+                                    },
+                                    "constraint": {
+                                        "__typename": "Constraint",
+                                        "label": "(age 16-65)",
+                                        "maxGroupSize": null,
+                                        "minGroupSize": null
+                                    },
+                                    "id": "ATO-dc32b685-7e0b-49a6-9ed5-930bc52837cc_PRg6H2LJ9JFX_20250519_1900",
+                                    "offerItemId": "OI5K8mlrnLPy",
+                                    "type": "adult",
+                                    "tieredPricing": true,
+                                    "price": {
+                                        "__typename": "AttractionsPrice",
+                                        "chargeAmount": 34.86,
+                                        "currency": "EUR",
+                                        "publicAmount": 34.86
+                                    },
+                                    "convertedPrice": {
+                                        "__typename": "AttractionsPrice",
+                                        "chargeAmount": 39,
+                                        "currency": "USD",
+                                        "publicAmount": 39
+                                    },
+                                    "languageOption": {
+                                        "__typename": "LanguageOption",
+                                        "language": "hi",
+                                        "type": "guide"
+                                    },
+                                    "travelerCountRequired": null,
+                                    "ticketsAvailable": 10000,
+                                    "maxPerReservation": 6,
+                                    "minPerReservation": 2,
+                                    "duration": null,
+                                    "label": "Adult"
+                                }
+                            ],
+                            "label": "South Bombay Pub Crawl",
+                            "locationInstructions": null,
+                            "notIncluded": null,
+                            "reservationRestrictions": {
+                                "__typename": "ReservationRestrictions",
+                                "adultRequiredForReservation": true,
+                                "maxOfferItemsPerReservation": 15,
+                                "minOfferItemsPerReservation": 1
+                            },
+                            "typicalDuration": null,
+                            "whatsIncluded": null
+                        }
+                    ]
+                }
+            ]
+        },
+        "optional": {
+            "query": "I'm planning to attend the 'City Pub Crawl with Drinks' attraction (slug: prg6h2lj9jfx-city-pub-crawl-with-drinks) on June 15, 2025. Could you check the ticket availability for that date and provide the pricing details in euros? Also, I'd prefer the information to be displayed in French.",
+            "params": {
+                "slug": "prg6h2lj9jfx-city-pub-crawl-with-drinks",
+                "date": "2025-06-15",
+                "currency_code": "EUR",
+                "languagecode": "fr"
+            },
+            "response": [
+                {
+                    "__typename": "AttractionTimeSlot",
+                    "fullDay": false,
+                    "start": "2025-06-15T19:00:00+05:30",
+                    "timeSlotId": "ATS-PRg6H2LJ9JFX-202506151900-nullnull",
+                    "timeSlotOffers": [
+                        {
+                            "__typename": "AttractionTimeSlotOffer",
+                            "languageOptions": [
+                                {
+                                    "__typename": "OfferLanguageOption",
+                                    "label": "Hindi - Services d'un guide",
+                                    "language": "hi",
+                                    "type": "guide"
+                                },
+                                {
+                                    "__typename": "OfferLanguageOption",
+                                    "label": "Anglais - Services d'un guide",
+                                    "language": "en",
+                                    "type": "guide"
+                                }
+                            ],
+                            "additionalInfo": null,
+                            "benefits": {
+                                "__typename": "Benefits",
+                                "freeAudioGuide": null,
+                                "freeDrink": null,
+                                "freeTransportation": null,
+                                "inStoreDiscount": null,
+                                "priorityLane": null,
+                                "skipTheLine": null
+                            },
+                            "description": null,
+                            "id": "OFfiWXve5anX",
+                            "items": [
+                                {
+                                    "__typename": "AttractionTimeSlotOfferItem",
+                                    "cancellationPolicy": {
+                                        "__typename": "AttractionsCancellationPolicy",
+                                        "comparedTo": "start",
+                                        "hasFreeCancellation": true,
+                                        "isStillRefundable": true,
+                                        "percentage": 100,
+                                        "period": "P1D"
+                                    },
+                                    "constraint": {
+                                        "__typename": "Constraint",
+                                        "label": "(de 16 à 65 ans)",
+                                        "maxGroupSize": null,
+                                        "minGroupSize": null
+                                    },
+                                    "id": "ATO-b7c77c87-f7f6-4a35-952a-e0bd18cf3b81_PRg6H2LJ9JFX_20250615_1900",
+                                    "offerItemId": "OI5K8mlrnLPy",
+                                    "type": "adult",
+                                    "tieredPricing": true,
+                                    "price": {
+                                        "__typename": "AttractionsPrice",
+                                        "chargeAmount": 52.25,
+                                        "currency": "EUR",
+                                        "publicAmount": 52.25
+                                    },
+                                    "convertedPrice": null,
+                                    "languageOption": {
+                                        "__typename": "LanguageOption",
+                                        "language": "hi",
+                                        "type": "guide"
+                                    },
+                                    "travelerCountRequired": null,
+                                    "ticketsAvailable": 10000,
+                                    "maxPerReservation": 1,
+                                    "minPerReservation": 1,
+                                    "duration": null,
+                                    "label": "Adulte"
+                                },
+                                {
+                                    "__typename": "AttractionTimeSlotOfferItem",
+                                    "cancellationPolicy": {
+                                        "__typename": "AttractionsCancellationPolicy",
+                                        "comparedTo": "start",
+                                        "hasFreeCancellation": true,
+                                        "isStillRefundable": true,
+                                        "percentage": 100,
+                                        "period": "P1D"
+                                    },
+                                    "constraint": {
+                                        "__typename": "Constraint",
+                                        "label": "(de 16 à 65 ans)",
+                                        "maxGroupSize": null,
+                                        "minGroupSize": null
+                                    },
+                                    "id": "ATO-bcc2e3f0-7c45-4857-81e7-8fd9102ac406_PRg6H2LJ9JFX_20250615_1900",
+                                    "offerItemId": "OI5K8mlrnLPy",
+                                    "type": "adult",
+                                    "tieredPricing": true,
+                                    "price": {
+                                        "__typename": "AttractionsPrice",
+                                        "chargeAmount": 52.25,
+                                        "currency": "EUR",
+                                        "publicAmount": 52.25
+                                    },
+                                    "convertedPrice": null,
+                                    "languageOption": {
+                                        "__typename": "LanguageOption",
+                                        "language": "en",
+                                        "type": "guide"
+                                    },
+                                    "travelerCountRequired": null,
+                                    "ticketsAvailable": 10000,
+                                    "maxPerReservation": 1,
+                                    "minPerReservation": 1,
+                                    "duration": null,
+                                    "label": "Adulte"
+                                },
+                                {
+                                    "__typename": "AttractionTimeSlotOfferItem",
+                                    "cancellationPolicy": {
+                                        "__typename": "AttractionsCancellationPolicy",
+                                        "comparedTo": "start",
+                                        "hasFreeCancellation": true,
+                                        "isStillRefundable": true,
+                                        "percentage": 100,
+                                        "period": "P1D"
+                                    },
+                                    "constraint": {
+                                        "__typename": "Constraint",
+                                        "label": "(de 16 à 65 ans)",
+                                        "maxGroupSize": null,
+                                        "minGroupSize": null
+                                    },
+                                    "id": "ATO-748b9deb-e71b-437b-961f-4c8fdaef0ca1_PRg6H2LJ9JFX_20250615_1900",
+                                    "offerItemId": "OI5K8mlrnLPy",
+                                    "type": "adult",
+                                    "tieredPricing": true,
+                                    "price": {
+                                        "__typename": "AttractionsPrice",
+                                        "chargeAmount": 34.86,
+                                        "currency": "EUR",
+                                        "publicAmount": 34.86
+                                    },
+                                    "convertedPrice": null,
+                                    "languageOption": {
+                                        "__typename": "LanguageOption",
+                                        "language": "hi",
+                                        "type": "guide"
+                                    },
+                                    "travelerCountRequired": null,
+                                    "ticketsAvailable": 10000,
+                                    "maxPerReservation": 6,
+                                    "minPerReservation": 2,
+                                    "duration": null,
+                                    "label": "Adulte"
+                                }
+                            ],
+                            "label": "South Bombay Pub Crawl",
+                            "locationInstructions": null,
+                            "notIncluded": null,
+                            "reservationRestrictions": {
+                                "__typename": "ReservationRestrictions",
+                                "adultRequiredForReservation": true,
+                                "maxOfferItemsPerReservation": 15,
+                                "minOfferItemsPerReservation": 1
+                            },
+                            "typicalDuration": null,
+                            "whatsIncluded": null
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "row": {
+        "required": [
+            {
+                "__typename": "AttractionTimeSlot",
+                "fullDay": false,
+                "start": "2025-05-19T19:00:00+05:30",
+                "timeSlotId": "ATS-PRg6H2LJ9JFX-202505191900-nullnull",
+                "timeSlotOffers": [
+                    {
+                        "__typename": "AttractionTimeSlotOffer",
+                        "languageOptions": [
+                            {
+                                "__typename": "OfferLanguageOption",
+                                "label": "Hindi - Tour guide",
+                                "language": "hi",
+                                "type": "guide"
+                            },
+                            {
+                                "__typename": "OfferLanguageOption",
+                                "label": "English - Tour guide",
+                                "language": "en",
+                                "type": "guide"
+                            }
+                        ],
+                        "additionalInfo": null,
+                        "benefits": {
+                            "__typename": "Benefits",
+                            "freeAudioGuide": null,
+                            "freeDrink": null,
+                            "freeTransportation": null,
+                            "inStoreDiscount": null,
+                            "priorityLane": null,
+                            "skipTheLine": null
+                        },
+                        "description": null,
+                        "id": "OFfiWXve5anX",
+                        "items": [
+                            {
+                                "__typename": "AttractionTimeSlotOfferItem",
+                                "cancellationPolicy": {
+                                    "__typename": "AttractionsCancellationPolicy",
+                                    "comparedTo": "start",
+                                    "hasFreeCancellation": true,
+                                    "isStillRefundable": true,
+                                    "percentage": 100,
+                                    "period": "P1D"
+                                },
+                                "constraint": {
+                                    "__typename": "Constraint",
+                                    "label": "(age 16-65)",
+                                    "maxGroupSize": null,
+                                    "minGroupSize": null
+                                },
+                                "id": "ATO-0ea7dcb7-542a-4ec8-b893-d37b0466bc58_PRg6H2LJ9JFX_20250519_1900",
+                                "offerItemId": "OI5K8mlrnLPy",
+                                "type": "adult",
+                                "tieredPricing": true,
+                                "price": {
+                                    "__typename": "AttractionsPrice",
+                                    "chargeAmount": 52.25,
+                                    "currency": "EUR",
+                                    "publicAmount": 52.25
+                                },
+                                "convertedPrice": {
+                                    "__typename": "AttractionsPrice",
+                                    "chargeAmount": 58.45,
+                                    "currency": "USD",
+                                    "publicAmount": 58.45
+                                },
+                                "languageOption": {
+                                    "__typename": "LanguageOption",
+                                    "language": "hi",
+                                    "type": "guide"
+                                },
+                                "travelerCountRequired": null,
+                                "ticketsAvailable": 10000,
+                                "maxPerReservation": 1,
+                                "minPerReservation": 1,
+                                "duration": null,
+                                "label": "Adult"
+                            },
+                            {
+                                "__typename": "AttractionTimeSlotOfferItem",
+                                "cancellationPolicy": {
+                                    "__typename": "AttractionsCancellationPolicy",
+                                    "comparedTo": "start",
+                                    "hasFreeCancellation": true,
+                                    "isStillRefundable": true,
+                                    "percentage": 100,
+                                    "period": "P1D"
+                                },
+                                "constraint": {
+                                    "__typename": "Constraint",
+                                    "label": "(age 16-65)",
+                                    "maxGroupSize": null,
+                                    "minGroupSize": null
+                                },
+                                "id": "ATO-6f0dfab3-c07b-47f9-ac06-cba291558d15_PRg6H2LJ9JFX_20250519_1900",
+                                "offerItemId": "OI5K8mlrnLPy",
+                                "type": "adult",
+                                "tieredPricing": true,
+                                "price": {
+                                    "__typename": "AttractionsPrice",
+                                    "chargeAmount": 52.25,
+                                    "currency": "EUR",
+                                    "publicAmount": 52.25
+                                },
+                                "convertedPrice": {
+                                    "__typename": "AttractionsPrice",
+                                    "chargeAmount": 58.45,
+                                    "currency": "USD",
+                                    "publicAmount": 58.45
+                                },
+                                "languageOption": {
+                                    "__typename": "LanguageOption",
+                                    "language": "en",
+                                    "type": "guide"
+                                },
+                                "travelerCountRequired": null,
+                                "ticketsAvailable": 10000,
+                                "maxPerReservation": 1,
+                                "minPerReservation": 1,
+                                "duration": null,
+                                "label": "Adult"
+                            },
+                            {
+                                "__typename": "AttractionTimeSlotOfferItem",
+                                "cancellationPolicy": {
+                                    "__typename": "AttractionsCancellationPolicy",
+                                    "comparedTo": "start",
+                                    "hasFreeCancellation": true,
+                                    "isStillRefundable": true,
+                                    "percentage": 100,
+                                    "period": "P1D"
+                                },
+                                "constraint": {
+                                    "__typename": "Constraint",
+                                    "label": "(age 16-65)",
+                                    "maxGroupSize": null,
+                                    "minGroupSize": null
+                                },
+                                "id": "ATO-dc32b685-7e0b-49a6-9ed5-930bc52837cc_PRg6H2LJ9JFX_20250519_1900",
+                                "offerItemId": "OI5K8mlrnLPy",
+                                "type": "adult",
+                                "tieredPricing": true,
+                                "price": {
+                                    "__typename": "AttractionsPrice",
+                                    "chargeAmount": 34.86,
+                                    "currency": "EUR",
+                                    "publicAmount": 34.86
+                                },
+                                "convertedPrice": {
+                                    "__typename": "AttractionsPrice",
+                                    "chargeAmount": 39,
+                                    "currency": "USD",
+                                    "publicAmount": 39
+                                },
+                                "languageOption": {
+                                    "__typename": "LanguageOption",
+                                    "language": "hi",
+                                    "type": "guide"
+                                },
+                                "travelerCountRequired": null,
+                                "ticketsAvailable": 10000,
+                                "maxPerReservation": 6,
+                                "minPerReservation": 2,
+                                "duration": null,
+                                "label": "Adult"
+                            },
+                            {
+                                "__typename": "AttractionTimeSlotOfferItem",
+                                "cancellationPolicy": {
+                                    "__typename": "AttractionsCancellationPolicy",
+                                    "comparedTo": "start",
+                                    "hasFreeCancellation": true,
+                                    "isStillRefundable": true,
+                                    "percentage": 100,
+                                    "period": "P1D"
+                                },
+                                "constraint": {
+                                    "__typename": "Constraint",
+                                    "label": "(age 16-65)",
+                                    "maxGroupSize": null,
+                                    "minGroupSize": null
+                                },
+                                "id": "ATO-48718a5e-a9b1-4bf1-a096-2957c0c1a18e_PRg6H2LJ9JFX_20250519_1900",
+                                "offerItemId": "OI5K8mlrnLPy",
+                                "type": "adult",
+                                "tieredPricing": true,
+                                "price": {
+                                    "__typename": "AttractionsPrice",
+                                    "chargeAmount": 34.86,
+                                    "currency": "EUR",
+                                    "publicAmount": 34.86
+                                },
+                                "convertedPrice": {
+                                    "__typename": "AttractionsPrice",
+                                    "chargeAmount": 39,
+                                    "currency": "USD",
+                                    "publicAmount": 39
+                                },
+                                "languageOption": {
+                                    "__typename": "LanguageOption",
+                                    "language": "en",
+                                    "type": "guide"
+                                },
+                                "travelerCountRequired": null,
+                                "ticketsAvailable": 10000,
+                                "maxPerReservation": 6,
+                                "minPerReservation": 2,
+                                "duration": null,
+                                "label": "Adult"
+                            },
+                            {
+                                "__typename": "AttractionTimeSlotOfferItem",
+                                "cancellationPolicy": {
+                                    "__typename": "AttractionsCancellationPolicy",
+                                    "comparedTo": "start",
+                                    "hasFreeCancellation": true,
+                                    "isStillRefundable": true,
+                                    "percentage": 100,
+                                    "period": "P1D"
+                                },
+                                "constraint": {
+                                    "__typename": "Constraint",
+                                    "label": "(age 16-65)",
+                                    "maxGroupSize": null,
+                                    "minGroupSize": null
+                                },
+                                "id": "ATO-d5159222-a10f-47f6-98c9-7be0f448ab62_PRg6H2LJ9JFX_20250519_1900",
+                                "offerItemId": "OI5K8mlrnLPy",
+                                "type": "adult",
+                                "tieredPricing": true,
+                                "price": {
+                                    "__typename": "AttractionsPrice",
+                                    "chargeAmount": 26.17,
+                                    "currency": "EUR",
+                                    "publicAmount": 26.17
+                                },
+                                "convertedPrice": {
+                                    "__typename": "AttractionsPrice",
+                                    "chargeAmount": 29.28,
+                                    "currency": "USD",
+                                    "publicAmount": 29.28
+                                },
+                                "languageOption": {
+                                    "__typename": "LanguageOption",
+                                    "language": "hi",
+                                    "type": "guide"
+                                },
+                                "travelerCountRequired": null,
+                                "ticketsAvailable": 10000,
+                                "maxPerReservation": 15,
+                                "minPerReservation": 7,
+                                "duration": null,
+                                "label": "Adult"
+                            },
+                            {
+                                "__typename": "AttractionTimeSlotOfferItem",
+                                "cancellationPolicy": {
+                                    "__typename": "AttractionsCancellationPolicy",
+                                    "comparedTo": "start",
+                                    "hasFreeCancellation": true,
+                                    "isStillRefundable": true,
+                                    "percentage": 100,
+                                    "period": "P1D"
+                                },
+                                "constraint": {
+                                    "__typename": "Constraint",
+                                    "label": "(age 16-65)",
+                                    "maxGroupSize": null,
+                                    "minGroupSize": null
+                                },
+                                "id": "ATO-c473c1ab-9c3c-45c2-918c-9e52e69b8864_PRg6H2LJ9JFX_20250519_1900",
+                                "offerItemId": "OI5K8mlrnLPy",
+                                "type": "adult",
+                                "tieredPricing": true,
+                                "price": {
+                                    "__typename": "AttractionsPrice",
+                                    "chargeAmount": 26.17,
+                                    "currency": "EUR",
+                                    "publicAmount": 26.17
+                                },
+                                "convertedPrice": {
+                                    "__typename": "AttractionsPrice",
+                                    "chargeAmount": 29.28,
+                                    "currency": "USD",
+                                    "publicAmount": 29.28
+                                },
+                                "languageOption": {
+                                    "__typename": "LanguageOption",
+                                    "language": "en",
+                                    "type": "guide"
+                                },
+                                "travelerCountRequired": null,
+                                "ticketsAvailable": 10000,
+                                "maxPerReservation": 15,
+                                "minPerReservation": 7,
+                                "duration": null,
+                                "label": "Adult"
+                            }
+                        ],
+                        "label": "South Bombay Pub Crawl",
+                        "locationInstructions": null,
+                        "notIncluded": null,
+                        "reservationRestrictions": {
+                            "__typename": "ReservationRestrictions",
+                            "adultRequiredForReservation": true,
+                            "maxOfferItemsPerReservation": 15,
+                            "minOfferItemsPerReservation": 1
+                        },
+                        "typicalDuration": null,
+                        "whatsIncluded": null
+                    }
+                ]
+            }
+        ],
+        "optional": [
+            {
+                "__typename": "AttractionTimeSlot",
+                "fullDay": false,
+                "start": "2025-06-15T19:00:00+05:30",
+                "timeSlotId": "ATS-PRg6H2LJ9JFX-202506151900-nullnull",
+                "timeSlotOffers": [
+                    {
+                        "__typename": "AttractionTimeSlotOffer",
+                        "languageOptions": [
+                            {
+                                "__typename": "OfferLanguageOption",
+                                "label": "Hindi - Services d'un guide",
+                                "language": "hi",
+                                "type": "guide"
+                            },
+                            {
+                                "__typename": "OfferLanguageOption",
+                                "label": "Anglais - Services d'un guide",
+                                "language": "en",
+                                "type": "guide"
+                            }
+                        ],
+                        "additionalInfo": null,
+                        "benefits": {
+                            "__typename": "Benefits",
+                            "freeAudioGuide": null,
+                            "freeDrink": null,
+                            "freeTransportation": null,
+                            "inStoreDiscount": null,
+                            "priorityLane": null,
+                            "skipTheLine": null
+                        },
+                        "description": null,
+                        "id": "OFfiWXve5anX",
+                        "items": [
+                            {
+                                "__typename": "AttractionTimeSlotOfferItem",
+                                "cancellationPolicy": {
+                                    "__typename": "AttractionsCancellationPolicy",
+                                    "comparedTo": "start",
+                                    "hasFreeCancellation": true,
+                                    "isStillRefundable": true,
+                                    "percentage": 100,
+                                    "period": "P1D"
+                                },
+                                "constraint": {
+                                    "__typename": "Constraint",
+                                    "label": "(de 16 à 65 ans)",
+                                    "maxGroupSize": null,
+                                    "minGroupSize": null
+                                },
+                                "id": "ATO-b7c77c87-f7f6-4a35-952a-e0bd18cf3b81_PRg6H2LJ9JFX_20250615_1900",
+                                "offerItemId": "OI5K8mlrnLPy",
+                                "type": "adult",
+                                "tieredPricing": true,
+                                "price": {
+                                    "__typename": "AttractionsPrice",
+                                    "chargeAmount": 52.25,
+                                    "currency": "EUR",
+                                    "publicAmount": 52.25
+                                },
+                                "convertedPrice": null,
+                                "languageOption": {
+                                    "__typename": "LanguageOption",
+                                    "language": "hi",
+                                    "type": "guide"
+                                },
+                                "travelerCountRequired": null,
+                                "ticketsAvailable": 10000,
+                                "maxPerReservation": 1,
+                                "minPerReservation": 1,
+                                "duration": null,
+                                "label": "Adulte"
+                            },
+                            {
+                                "__typename": "AttractionTimeSlotOfferItem",
+                                "cancellationPolicy": {
+                                    "__typename": "AttractionsCancellationPolicy",
+                                    "comparedTo": "start",
+                                    "hasFreeCancellation": true,
+                                    "isStillRefundable": true,
+                                    "percentage": 100,
+                                    "period": "P1D"
+                                },
+                                "constraint": {
+                                    "__typename": "Constraint",
+                                    "label": "(de 16 à 65 ans)",
+                                    "maxGroupSize": null,
+                                    "minGroupSize": null
+                                },
+                                "id": "ATO-bcc2e3f0-7c45-4857-81e7-8fd9102ac406_PRg6H2LJ9JFX_20250615_1900",
+                                "offerItemId": "OI5K8mlrnLPy",
+                                "type": "adult",
+                                "tieredPricing": true,
+                                "price": {
+                                    "__typename": "AttractionsPrice",
+                                    "chargeAmount": 52.25,
+                                    "currency": "EUR",
+                                    "publicAmount": 52.25
+                                },
+                                "convertedPrice": null,
+                                "languageOption": {
+                                    "__typename": "LanguageOption",
+                                    "language": "en",
+                                    "type": "guide"
+                                },
+                                "travelerCountRequired": null,
+                                "ticketsAvailable": 10000,
+                                "maxPerReservation": 1,
+                                "minPerReservation": 1,
+                                "duration": null,
+                                "label": "Adulte"
+                            },
+                            {
+                                "__typename": "AttractionTimeSlotOfferItem",
+                                "cancellationPolicy": {
+                                    "__typename": "AttractionsCancellationPolicy",
+                                    "comparedTo": "start",
+                                    "hasFreeCancellation": true,
+                                    "isStillRefundable": true,
+                                    "percentage": 100,
+                                    "period": "P1D"
+                                },
+                                "constraint": {
+                                    "__typename": "Constraint",
+                                    "label": "(de 16 à 65 ans)",
+                                    "maxGroupSize": null,
+                                    "minGroupSize": null
+                                },
+                                "id": "ATO-748b9deb-e71b-437b-961f-4c8fdaef0ca1_PRg6H2LJ9JFX_20250615_1900",
+                                "offerItemId": "OI5K8mlrnLPy",
+                                "type": "adult",
+                                "tieredPricing": true,
+                                "price": {
+                                    "__typename": "AttractionsPrice",
+                                    "chargeAmount": 34.86,
+                                    "currency": "EUR",
+                                    "publicAmount": 34.86
+                                },
+                                "convertedPrice": null,
+                                "languageOption": {
+                                    "__typename": "LanguageOption",
+                                    "language": "hi",
+                                    "type": "guide"
+                                },
+                                "travelerCountRequired": null,
+                                "ticketsAvailable": 10000,
+                                "maxPerReservation": 6,
+                                "minPerReservation": 2,
+                                "duration": null,
+                                "label": "Adulte"
+                            },
+                            {
+                                "__typename": "AttractionTimeSlotOfferItem",
+                                "cancellationPolicy": {
+                                    "__typename": "AttractionsCancellationPolicy",
+                                    "comparedTo": "start",
+                                    "hasFreeCancellation": true,
+                                    "isStillRefundable": true,
+                                    "percentage": 100,
+                                    "period": "P1D"
+                                },
+                                "constraint": {
+                                    "__typename": "Constraint",
+                                    "label": "(de 16 à 65 ans)",
+                                    "maxGroupSize": null,
+                                    "minGroupSize": null
+                                },
+                                "id": "ATO-e0bba6c2-4ebb-4971-96e0-c312cd978c16_PRg6H2LJ9JFX_20250615_1900",
+                                "offerItemId": "OI5K8mlrnLPy",
+                                "type": "adult",
+                                "tieredPricing": true,
+                                "price": {
+                                    "__typename": "AttractionsPrice",
+                                    "chargeAmount": 34.86,
+                                    "currency": "EUR",
+                                    "publicAmount": 34.86
+                                },
+                                "convertedPrice": null,
+                                "languageOption": {
+                                    "__typename": "LanguageOption",
+                                    "language": "en",
+                                    "type": "guide"
+                                },
+                                "travelerCountRequired": null,
+                                "ticketsAvailable": 10000,
+                                "maxPerReservation": 6,
+                                "minPerReservation": 2,
+                                "duration": null,
+                                "label": "Adulte"
+                            },
+                            {
+                                "__typename": "AttractionTimeSlotOfferItem",
+                                "cancellationPolicy": {
+                                    "__typename": "AttractionsCancellationPolicy",
+                                    "comparedTo": "start",
+                                    "hasFreeCancellation": true,
+                                    "isStillRefundable": true,
+                                    "percentage": 100,
+                                    "period": "P1D"
+                                },
+                                "constraint": {
+                                    "__typename": "Constraint",
+                                    "label": "(de 16 à 65 ans)",
+                                    "maxGroupSize": null,
+                                    "minGroupSize": null
+                                },
+                                "id": "ATO-406ab00a-4935-4bf8-9c42-7c63c9aa6376_PRg6H2LJ9JFX_20250615_1900",
+                                "offerItemId": "OI5K8mlrnLPy",
+                                "type": "adult",
+                                "tieredPricing": true,
+                                "price": {
+                                    "__typename": "AttractionsPrice",
+                                    "chargeAmount": 26.17,
+                                    "currency": "EUR",
+                                    "publicAmount": 26.17
+                                },
+                                "convertedPrice": null,
+                                "languageOption": {
+                                    "__typename": "LanguageOption",
+                                    "language": "hi",
+                                    "type": "guide"
+                                },
+                                "travelerCountRequired": null,
+                                "ticketsAvailable": 10000,
+                                "maxPerReservation": 15,
+                                "minPerReservation": 7,
+                                "duration": null,
+                                "label": "Adulte"
+                            },
+                            {
+                                "__typename": "AttractionTimeSlotOfferItem",
+                                "cancellationPolicy": {
+                                    "__typename": "AttractionsCancellationPolicy",
+                                    "comparedTo": "start",
+                                    "hasFreeCancellation": true,
+                                    "isStillRefundable": true,
+                                    "percentage": 100,
+                                    "period": "P1D"
+                                },
+                                "constraint": {
+                                    "__typename": "Constraint",
+                                    "label": "(de 16 à 65 ans)",
+                                    "maxGroupSize": null,
+                                    "minGroupSize": null
+                                },
+                                "id": "ATO-dd96c3b0-fcf0-4cec-a2dd-0f7793b46e2a_PRg6H2LJ9JFX_20250615_1900",
+                                "offerItemId": "OI5K8mlrnLPy",
+                                "type": "adult",
+                                "tieredPricing": true,
+                                "price": {
+                                    "__typename": "AttractionsPrice",
+                                    "chargeAmount": 26.17,
+                                    "currency": "EUR",
+                                    "publicAmount": 26.17
+                                },
+                                "convertedPrice": null,
+                                "languageOption": {
+                                    "__typename": "LanguageOption",
+                                    "language": "en",
+                                    "type": "guide"
+                                },
+                                "travelerCountRequired": null,
+                                "ticketsAvailable": 10000,
+                                "maxPerReservation": 15,
+                                "minPerReservation": 7,
+                                "duration": null,
+                                "label": "Adulte"
+                            }
+                        ],
+                        "label": "South Bombay Pub Crawl",
+                        "locationInstructions": null,
+                        "notIncluded": null,
+                        "reservationRestrictions": {
+                            "__typename": "ReservationRestrictions",
+                            "adultRequiredForReservation": true,
+                            "maxOfferItemsPerReservation": 15,
+                            "minOfferItemsPerReservation": 1
+                        },
+                        "typicalDuration": null,
+                        "whatsIncluded": null
+                    }
+                ]
+            }
+        ]
+    }
+}

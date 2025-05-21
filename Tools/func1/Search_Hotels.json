@@ -1,0 +1,393 @@
+{
+    "shorten": {
+        "api": {
+            "name": "Search_Hotels",
+            "endpoint": "/api/v1/hotels/searchHotels",
+            "func_description": "Search Hotels. ",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "dest_id": {
+                        "type": "Number",
+                        "description": "dest_id can be retrieved from api/v1/hotels/searchDestination(Search Hotel Destination) endpoint in Hotels collection.",
+                        "example_value": "-2092174",
+                        "required": true
+                    },
+                    "search_type": {
+                        "type": "String",
+                        "description": "search_type can be retrieved from api/v1/hotels/searchDestination(Search Hotel Destination) endpoint in Hotels collection.",
+                        "example_value": "CITY",
+                        "required": true
+                    },
+                    "arrival_date": {
+                        "type": "Date (yyyy-mm-dd)",
+                        "description": "The date on which you will arrive or check-in",
+                        "example_value": "",
+                        "required": true
+                    },
+                    "departure_date": {
+                        "type": "Date (yyyy-mm-dd)",
+                        "description": "The date of departure or check-out.",
+                        "example_value": "",
+                        "required": true
+                    },
+                    "adults": {
+                        "type": "Number",
+                        "description": "The number of guests who are 18 years of age or older. The default value is set to 1.",
+                        "example_value": "1",
+                        "required": false
+                    },
+                    "children_age": {
+                        "type": "String",
+                        "description": "The number of children, including infants, who are under 18.\nExample:\nChild 1 Age = 8 months\nChild 2 Age = 1 year\nChild 3 Age = 17 years\nHere is what the request parameter would look like:\nchildren_age: 0,1,17",
+                        "example_value": "0,17",
+                        "required": false
+                    },
+                    "room_qty": {
+                        "type": "Number",
+                        "description": "The number of rooms that are required. The default value is set to 1.",
+                        "example_value": "1",
+                        "required": false
+                    },
+                    "page_number": {
+                        "type": "Number",
+                        "description": "The page number.",
+                        "example_value": "1",
+                        "required": false
+                    },
+                    "price_min": {
+                        "type": "Number",
+                        "description": "Minimum Price filter for search.",
+                        "example_value": "",
+                        "required": false
+                    },
+                    "price_max": {
+                        "type": "Number",
+                        "description": "Maximum Price filter for search.",
+                        "example_value": "",
+                        "required": false
+                    },
+                    "sort_by": {
+                        "type": "String",
+                        "description": "sort_by can be retrieved from api/v1/hotels/getSortBy(Get Sort By) endpoint in Hotels collection.",
+                        "example_value": "",
+                        "required": false
+                    },
+                    "categories_filter": {
+                        "type": "String",
+                        "description": "categories_filter can be retrieved from api/v1/hotels/getFilter(Get Filter) endpoint in Hotels collection.",
+                        "example_value": "",
+                        "required": false
+                    },
+                    "units": {
+                        "type": "Enum",
+                        "description": "The measurement of distance in metric or imperial.",
+                        "example_value": "",
+                        "required": false
+                    },
+                    "temperature_unit": {
+                        "type": "Enum",
+                        "description": "The temperature unit in Fahrenheit or Celsius.\nc = Celsius\nf = Fahrenheit",
+                        "example_value": "",
+                        "required": false
+                    },
+                    "languagecode": {
+                        "type": "String",
+                        "description": "To obtain the response data in a specific language, enter the languagecode. languagecode can be retrieved from api/v1/meta/getLanguages(Get Languages\n) endpoint in Meta collection.",
+                        "example_value": "en-us",
+                        "required": false
+                    },
+                    "currency_code": {
+                        "type": "String",
+                        "description": "The currency code. currency_code can be retrieved from api/v1/meta/getCurrency(Get Currency) endpoint in Hotels collection.",
+                        "example_value": "AED",
+                        "required": false
+                    },
+                    "location": {
+                        "type": "String",
+                        "description": "location can be retrieved from api/v1/meta/getLocations(Get Location) endpoint in Meta collection.",
+                        "example_value": "US",
+                        "required": false
+                    }
+                },
+                "required": [
+                    "dest_id",
+                    "search_type",
+                    "arrival_date",
+                    "departure_date"
+                ]
+            }
+        },
+        "static_response": {
+            "function_name": "Search_Hotels",
+            "arguments": {
+                "dest_id": 1722,
+                "search_type": "landmark",
+                "arrival_date": "2024-12-01",
+                "departure_date": "2024-12-06"
+            },
+            "observation": {
+                "status": true,
+                "message": "Success",
+                "data": {
+                    "hotels": [
+                        {
+                            "hotel_id": 36867,
+                            "accessibilityLabel": "London Marriott Hotel County Hall.\n5 out of 5 stars.\n8.4 Very good 859 reviews.\n‎Lambeth, London‬ • ‎250 m from London Eye‬.\n Hotel room : 1 bed.\n3163 USD.\nIncludes taxes and charges.",
+                            "property": {
+                                "mainPhotoId": 433323959,
+                                "latitude": 51.5010959924622,
+                                "checkout": {
+                                    "fromTime": "00:00",
+                                    "untilTime": "12:00"
+                                },
+                                "qualityClass": 0,
+                                "accuratePropertyClass": 5,
+                                "ufi": -2601889,
+                                "isFirstPage": true,
+                                "checkinDate": "2024-12-01",
+                                "optOutFromGalleryChanges": 1,
+                                "rankingPosition": 0,
+                                "id": 36867,
+                                "checkin": {
+                                    "fromTime": "15:00",
+                                    "untilTime": "00:00"
+                                },
+                                "propertyClass": 5,
+                                "longitude": -0.119165182113647,
+                                "reviewCount": 859,
+                                "position": 0,
+                                "reviewScore": 8.4,
+                                "countryCode": "gb",
+                                "reviewScoreWord": "Very good",
+                                "priceBreakdown": {
+                                    "grossPrice": {
+                                        "currency": "USD",
+                                        "value": 3163.01952157969
+                                    }
+                                },
+                                "name": "London Marriott Hotel County Hall",
+                                "isPreferred": true,
+                                "blockIds": [
+                                    "3686707_95159600_0_2_0"
+                                ],
+                                "checkoutDate": "2024-12-06",
+                                "wishlistName": "London",
+                                "currency": "GBP"
+                            }
+                        },
+                        {
+                            "hotel_id": 12846162,
+                            "accessibilityLabel": "Lovely 4 BDR apartment parking.\n4 out of 5 for property rating.\n10 Exceptional 1 review.\n‎Lambeth, London‬ • ‎300 m from London Eye‬.\n Entire apartment – 100 m² : 5 beds • 4 bedrooms • 1 living room • 1 bathroom.\n2146 USD.\nIncludes taxes and charges.",
+                            "property": {
+                                "priceBreakdown": {
+                                    "grossPrice": {
+                                        "value": 2145.74250615952,
+                                        "currency": "USD"
+                                    }
+                                },
+                                "reviewScoreWord": "Exceptional",
+                                "countryCode": "gb",
+                                "reviewScore": 10,
+                                "position": 1,
+                                "reviewCount": 1,
+                                "longitude": -0.115684,
+                                "currency": "GBP",
+                                "wishlistName": "London",
+                                "checkoutDate": "2024-12-06",
+                                "blockIds": [
+                                    "1284616201_402591771_10_0_0_688066"
+                                ],
+                                "name": "Lovely 4 BDR apartment parking",
+                                "checkinDate": "2024-12-01",
+                                "accuratePropertyClass": 0,
+                                "isFirstPage": true,
+                                "ufi": -2601889,
+                                "qualityClass": 4,
+                                "mainPhotoId": 599286383,
+                                "latitude": 51.5045588,
+                                "checkout": {
+                                    "untilTime": "11:00",
+                                    "fromTime": "08:00"
+                                },
+                                "propertyClass": 0,
+                                "checkin": {
+                                    "untilTime": "18:00",
+                                    "fromTime": "15:00"
+                                },
+                                "rankingPosition": 1,
+                                "id": 12846162,
+                                "optOutFromGalleryChanges": 1
+                            }
+                        },
+                        {
+                            "hotel_id": 180016,
+                            "accessibilityLabel": "Park Plaza Westminster Bridge London.\n4 out of 5 stars.\n8.3 Very good 24404 reviews.\n‎Lambeth, London‬ • ‎300 m from London Eye‬.\n Hotel room : 1 bed.\n2432 USD.\nIncludes taxes and charges.",
+                            "property": {
+                                "blockIds": [
+                                    "18001603_91465416_0_2_0"
+                                ],
+                                "checkoutDate": "2024-12-06",
+                                "name": "Park Plaza Westminster Bridge London",
+                                "isPreferred": true,
+                                "currency": "GBP",
+                                "wishlistName": "London",
+                                "position": 2,
+                                "reviewScore": 8.3,
+                                "longitude": -0.11734664440155,
+                                "reviewCount": 24404,
+                                "reviewScoreWord": "Very good",
+                                "priceBreakdown": {
+                                    "grossPrice": {
+                                        "value": 2431.84150698079,
+                                        "currency": "USD"
+                                    }
+                                },
+                                "countryCode": "gb",
+                                "optOutFromGalleryChanges": 1,
+                                "rankingPosition": 2,
+                                "id": 180016,
+                                "propertyClass": 4,
+                                "checkin": {
+                                    "untilTime": "00:00",
+                                    "fromTime": "15:00"
+                                },
+                                "qualityClass": 0,
+                                "accuratePropertyClass": 4,
+                                "isFirstPage": true,
+                                "ufi": -2601889,
+                                "mainPhotoId": 329065860,
+                                "checkout": {
+                                    "untilTime": "12:00",
+                                    "fromTime": "00:00"
+                                },
+                                "latitude": 51.5008104772768,
+                                "checkinDate": "2024-12-01",
+                                "isPreferredPlus": true
+                            }
+                        }
+                    ],
+                    "meta": [
+                        {
+                            "title": "2296 properties"
+                        }
+                    ],
+                    "appear": [
+                        {
+                            "id": "cma",
+                            "component": {
+                                "props": {
+                                    "fill": true,
+                                    "content": {
+                                        "props": {
+                                            "fitContentWidth": true,
+                                            "items": [
+                                                {
+                                                    "props": {
+                                                        "component": {
+                                                            "props": {
+                                                                "items": [
+                                                                    {
+                                                                        "props": {
+                                                                            "text": [
+                                                                                {
+                                                                                    "font": "body_2",
+                                                                                    "text": "Commission paid and other benefits may affect an accommodation's ranking."
+                                                                                },
+                                                                                {
+                                                                                    "font": "strong_2",
+                                                                                    "color": "foreground",
+                                                                                    "text": "  "
+                                                                                },
+                                                                                {
+                                                                                    "text": "Find out more",
+                                                                                    "color": "action_foreground",
+                                                                                    "font": "body_2",
+                                                                                    "linkActions": [
+                                                                                        {}
+                                                                                    ]
+                                                                                }
+                                                                            ]
+                                                                        }
+                                                                    }
+                                                                ],
+                                                                "spacing": "spacing_half"
+                                                            }
+                                                        }
+                                                    }
+                                                },
+                                                {},
+                                                {
+                                                    "props": {
+                                                        "component": {
+                                                            "props": {
+                                                                "icon": "close",
+                                                                "variant": "tertiary_tinted",
+                                                                "accessibilityLabel": "Close",
+                                                                "tertiaryTintedColor": "foreground"
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        {},
+                        {
+                            "component": {
+                                "props": {
+                                    "text": "Properties with these icons have been awarded Booking.com's quality rating for homes"
+                                }
+                            },
+                            "id": "banner_qualityrating"
+                        }
+                    ]
+                }
+            }
+        },
+        "required": {
+            "query": "I'm planning a trip to New York City and would like to find hotels for my stay from June 10, 2025, to June 15, 2025. Can you help me search for available hotels?",
+            "params": null,
+            "response": {
+                "error": "No arguments provided"
+            }
+        },
+        "optional": {
+            "query": "I'm planning a trip to New York City (destination ID: -2092174, search type: CITY) and would like to find hotels for my stay from June 10, 2025, to June 15, 2025. There will be two adults and one child (aged 5), and we need one room. I'd like to see hotels priced between $150 and $300 per night, sorted by popularity, with the results displayed in English and prices in USD. Also, please show distances in miles and temperatures in Fahrenheit.",
+            "params": {
+                "dest_id": "-2092174",
+                "search_type": "CITY",
+                "arrival_date": "2025-06-10",
+                "departure_date": "2025-06-15",
+                "adults": 2,
+                "children_age": "5",
+                "room_qty": 1,
+                "price_min": 150,
+                "price_max": 300,
+                "units": "imperial",
+                "temperature_unit": "Fahrenheit",
+                "languagecode": "en-us",
+                "currency_code": "USD",
+                "location": "US"
+            },
+            "response": [
+                {
+                    "temperature_unit": "temperature_unit should be from c,f"
+                }
+            ]
+        }
+    },
+    "row": {
+        "required": {
+            "error": "No arguments provided"
+        },
+        "optional": [
+            {
+                "temperature_unit": "temperature_unit should be from c,f"
+            }
+        ]
+    }
+}

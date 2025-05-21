@@ -1,0 +1,2098 @@
+{
+    "shorten": {
+        "api": {
+            "name": "Search_Hotels",
+            "endpoint": "/api/v1/hotels/searchHotels",
+            "func_description": "Search Hotels. ",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "dest_id": {
+                        "type": "Number",
+                        "description": "dest_id can be retrieved from api/v1/hotels/searchDestination(Search Hotel Destination) endpoint in Hotels collection.",
+                        "example_value": "-2092174",
+                        "required": true
+                    },
+                    "search_type": {
+                        "type": "String",
+                        "description": "search_type can be retrieved from api/v1/hotels/searchDestination(Search Hotel Destination) endpoint in Hotels collection.",
+                        "example_value": "CITY",
+                        "required": true
+                    },
+                    "arrival_date": {
+                        "type": "Date (yyyy-mm-dd)",
+                        "description": "The date on which you will arrive or check-in",
+                        "example_value": "",
+                        "required": true
+                    },
+                    "departure_date": {
+                        "type": "Date (yyyy-mm-dd)",
+                        "description": "The date of departure or check-out.",
+                        "example_value": "",
+                        "required": true
+                    },
+                    "adults": {
+                        "type": "Number",
+                        "description": "The number of guests who are 18 years of age or older. The default value is set to 1.",
+                        "example_value": "1",
+                        "required": false
+                    },
+                    "children_age": {
+                        "type": "String",
+                        "description": "The number of children, including infants, who are under 18.\nExample:\nChild 1 Age = 8 months\nChild 2 Age = 1 year\nChild 3 Age = 17 years\nHere is what the request parameter would look like:\nchildren_age: 0,1,17",
+                        "example_value": "0,17",
+                        "required": false
+                    },
+                    "room_qty": {
+                        "type": "Number",
+                        "description": "The number of rooms that are required. The default value is set to 1.",
+                        "example_value": "1",
+                        "required": false
+                    },
+                    "page_number": {
+                        "type": "Number",
+                        "description": "The page number.",
+                        "example_value": "1",
+                        "required": false
+                    },
+                    "price_min": {
+                        "type": "Number",
+                        "description": "Minimum Price filter for search.",
+                        "example_value": "",
+                        "required": false
+                    },
+                    "price_max": {
+                        "type": "Number",
+                        "description": "Maximum Price filter for search.",
+                        "example_value": "",
+                        "required": false
+                    },
+                    "sort_by": {
+                        "type": "String",
+                        "description": "sort_by can be retrieved from api/v1/hotels/getSortBy(Get Sort By) endpoint in Hotels collection.",
+                        "example_value": "",
+                        "required": false
+                    },
+                    "categories_filter": {
+                        "type": "String",
+                        "description": "categories_filter can be retrieved from api/v1/hotels/getFilter(Get Filter) endpoint in Hotels collection.",
+                        "example_value": "",
+                        "required": false
+                    },
+                    "units": {
+                        "type": "Enum",
+                        "description": "The measurement of distance in metric or imperial.",
+                        "example_value": "",
+                        "required": false
+                    },
+                    "temperature_unit": {
+                        "type": "Enum",
+                        "description": "The temperature unit in Fahrenheit or Celsius.\nc = Celsius\nf = Fahrenheit",
+                        "example_value": "",
+                        "required": false
+                    },
+                    "languagecode": {
+                        "type": "String",
+                        "description": "To obtain the response data in a specific language, enter the languagecode. languagecode can be retrieved from api/v1/meta/getLanguages(Get Languages\n) endpoint in Meta collection.",
+                        "example_value": "en-us",
+                        "required": false
+                    },
+                    "currency_code": {
+                        "type": "String",
+                        "description": "The currency code. currency_code can be retrieved from api/v1/meta/getCurrency(Get Currency) endpoint in Hotels collection.",
+                        "example_value": "AED",
+                        "required": false
+                    },
+                    "location": {
+                        "type": "String",
+                        "description": "location can be retrieved from api/v1/meta/getLocations(Get Location) endpoint in Meta collection.",
+                        "example_value": "US",
+                        "required": false
+                    }
+                },
+                "required": [
+                    "dest_id",
+                    "search_type",
+                    "arrival_date",
+                    "departure_date"
+                ]
+            }
+        },
+        "static_response": {
+            "function_name": "Search_Hotels",
+            "arguments": {
+                "dest_id": -561990,
+                "search_type": "city",
+                "arrival_date": "2024-12-05",
+                "departure_date": "2024-12-08",
+                "adults": 4,
+                "room_qty": 2,
+                "sort_by": "popularity"
+            },
+            "observation": {
+                "status": true,
+                "message": "Success",
+                "data": {
+                    "hotels": [
+                        {
+                            "hotel_id": 1618219,
+                            "accessibilityLabel": "Park Inn by Radisson, Calgary Airport North, AB.\n3 out of 5 stars.\n8.4 Very good 3492 reviews.\n‎Northeast Calgary‬ • ‎11 km from centre‬.\n 2 private suites : 4 beds.\n657 USD.\nIncludes taxes and charges.",
+                            "property": {
+                                "wishlistName": "Calgary",
+                                "checkin": {
+                                    "fromTime": "15:00",
+                                    "untilTime": "00:00"
+                                },
+                                "longitude": -114.027292,
+                                "name": "Park Inn by Radisson, Calgary Airport North, AB",
+                                "propertyClass": 3,
+                                "blockIds": [
+                                    "161821909_94610299_2_2_0",
+                                    "161821909_94610299_2_2_0"
+                                ],
+                                "reviewScore": 8.4,
+                                "ufi": -561990,
+                                "id": 1618219,
+                                "isFirstPage": true,
+                                "reviewCount": 3492,
+                                "checkout": {
+                                    "untilTime": "12:00",
+                                    "fromTime": "00:00"
+                                },
+                                "currency": "CAD",
+                                "checkoutDate": "2024-12-08",
+                                "reviewScoreWord": "Very good",
+                                "position": 0,
+                                "checkinDate": "2024-12-05",
+                                "countryCode": "ca",
+                                "optOutFromGalleryChanges": 0,
+                                "mainPhotoId": 521209323,
+                                "latitude": 51.14153,
+                                "accuratePropertyClass": 3,
+                                "priceBreakdown": {
+                                    "grossPrice": {
+                                        "currency": "USD",
+                                        "value": 657.199528741797
+                                    }
+                                },
+                                "isPreferred": true,
+                                "qualityClass": 0,
+                                "rankingPosition": 0
+                            }
+                        },
+                        {
+                            "hotel_id": 1531823,
+                            "accessibilityLabel": "Applause Hotel Calgary Airport by CLIQUE.\n4 out of 5 stars.\n8.9 Fabulous 2746 reviews.\n‎Northeast Calgary‬ • ‎11 km from centre‬.\n 2 hotel rooms : 2 beds.\n952 USD.\nIncludes taxes and charges.\nFree cancellation.\nNo prepayment needed.",
+                            "property": {
+                                "currency": "CAD",
+                                "position": 1,
+                                "reviewScoreWord": "Fabulous",
+                                "checkoutDate": "2024-12-08",
+                                "reviewCount": 2746,
+                                "isFirstPage": true,
+                                "id": 1531823,
+                                "ufi": -561990,
+                                "checkout": {
+                                    "untilTime": "11:00",
+                                    "fromTime": "00:00"
+                                },
+                                "reviewScore": 8.9,
+                                "blockIds": [
+                                    "153182301_195301731_0_1_0",
+                                    "153182301_195301731_0_1_0"
+                                ],
+                                "propertyClass": 4,
+                                "name": "Applause Hotel Calgary Airport by CLIQUE",
+                                "longitude": -114.028231531213,
+                                "checkin": {
+                                    "untilTime": "00:00",
+                                    "fromTime": "15:00"
+                                },
+                                "wishlistName": "Calgary",
+                                "rankingPosition": 1,
+                                "qualityClass": 0,
+                                "latitude": 51.1389843934116,
+                                "mainPhotoId": 64526696,
+                                "isPreferred": true,
+                                "priceBreakdown": {
+                                    "grossPrice": {
+                                        "value": 952.084013939635,
+                                        "currency": "USD"
+                                    }
+                                },
+                                "accuratePropertyClass": 4,
+                                "optOutFromGalleryChanges": 0,
+                                "countryCode": "ca",
+                                "checkinDate": "2024-12-05"
+                            }
+                        },
+                        {
+                            "hotel_id": 4118767,
+                            "accessibilityLabel": "Alt Hotel Calgary East Village.\n8.9 Fabulous 1510 reviews.\n‎In city centre‬.\n 2 hotel rooms : 2 beds.\n740 USD.\nIncludes taxes and charges.\nFree cancellation.\nNo prepayment needed.",
+                            "property": {
+                                "wishlistName": "Calgary",
+                                "checkin": {
+                                    "fromTime": "15:00",
+                                    "untilTime": "00:00"
+                                },
+                                "longitude": -114.049331,
+                                "name": "Alt Hotel Calgary East Village",
+                                "propertyClass": 0,
+                                "reviewScore": 8.9,
+                                "blockIds": [
+                                    "411876701_179321253_2_0_0",
+                                    "411876701_179321253_2_0_0"
+                                ],
+                                "checkout": {
+                                    "fromTime": "00:00",
+                                    "untilTime": "12:00"
+                                },
+                                "id": 4118767,
+                                "ufi": -561990,
+                                "isFirstPage": true,
+                                "reviewCount": 1510,
+                                "checkoutDate": "2024-12-08",
+                                "position": 2,
+                                "reviewScoreWord": "Fabulous",
+                                "currency": "CAD",
+                                "checkinDate": "2024-12-05",
+                                "countryCode": "ca",
+                                "optOutFromGalleryChanges": 1,
+                                "accuratePropertyClass": 0,
+                                "priceBreakdown": {
+                                    "grossPrice": {
+                                        "currency": "USD",
+                                        "value": 740.072703765673
+                                    }
+                                },
+                                "isPreferred": true,
+                                "mainPhotoId": 193744871,
+                                "latitude": 51.047256,
+                                "qualityClass": 0,
+                                "rankingPosition": 2
+                            }
+                        }
+                    ],
+                    "meta": [
+                        {
+                            "title": "328 properties"
+                        }
+                    ],
+                    "appear": [
+                        {
+                            "component": {
+                                "props": {
+                                    "fill": true,
+                                    "content": {
+                                        "props": {
+                                            "items": [
+                                                {
+                                                    "props": {
+                                                        "component": {
+                                                            "props": {
+                                                                "spacing": "spacing_half",
+                                                                "items": [
+                                                                    {
+                                                                        "props": {
+                                                                            "text": [
+                                                                                {
+                                                                                    "text": "Commission paid and other benefits may affect an accommodation's ranking.",
+                                                                                    "font": "body_2"
+                                                                                },
+                                                                                {
+                                                                                    "font": "strong_2",
+                                                                                    "color": "foreground",
+                                                                                    "text": "  "
+                                                                                },
+                                                                                {
+                                                                                    "color": "action_foreground",
+                                                                                    "font": "body_2",
+                                                                                    "text": "Find out more",
+                                                                                    "linkActions": [
+                                                                                        {}
+                                                                                    ]
+                                                                                }
+                                                                            ]
+                                                                        }
+                                                                    }
+                                                                ]
+                                                            }
+                                                        }
+                                                    }
+                                                },
+                                                {},
+                                                {
+                                                    "props": {
+                                                        "component": {
+                                                            "props": {
+                                                                "tertiaryTintedColor": "foreground",
+                                                                "icon": "close",
+                                                                "variant": "tertiary_tinted",
+                                                                "accessibilityLabel": "Close"
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            ],
+                                            "fitContentWidth": true
+                                        }
+                                    }
+                                }
+                            },
+                            "id": "cma"
+                        },
+                        {},
+                        {
+                            "component": {
+                                "props": {
+                                    "text": "Get instant access to our Genius loyalty programme and enjoy discounts at properties worldwide.",
+                                    "title": "Sign in and save money"
+                                }
+                            },
+                            "id": "signin_now"
+                        }
+                    ]
+                }
+            }
+        },
+        "required": {
+            "query": "I'm looking for hotels in New York City for my trip from June 10, 2025 to June 15, 2025. Can you help me find some options?",
+            "params": {
+                "arrival_date": "2025-06-10",
+                "departure_date": "2025-06-15"
+            },
+            "response": {
+                "status": false,
+                "message": [
+                    {
+                        "dest_id": "Invalid value"
+                    },
+                    {
+                        "dest_id": "Invalid value"
+                    },
+                    {
+                        "search_type": "Invalid value"
+                    }
+                ]
+            }
+        },
+        "optional": {
+            "query": "I'm planning a trip to New York City (destination ID: -2092174, search type: CITY) from June 10 to June 15, 2025. There will be two adults and one child (aged 5), and we need one room. I'd like to see hotels sorted by price (low to high), with a minimum price of $100 and a maximum price of $300 per night. Please display the results in English, with prices in USD, and distances in miles.",
+            "params": {
+                "dest_id": "-2092174",
+                "search_type": "CITY",
+                "arrival_date": "2025-06-10",
+                "departure_date": "2025-06-15",
+                "adults": 2,
+                "children_age": "5",
+                "room_qty": 1,
+                "price_min": 100,
+                "price_max": 300,
+                "units": "imperial",
+                "languagecode": "en-us",
+                "currency_code": "USD"
+            },
+            "response": {
+                "status": true,
+                "message": "Success",
+                "timestamp": 1747651055591,
+                "data": {
+                    "hotels": [
+                        {
+                            "hotel_id": 13319193,
+                            "accessibilityLabel": "Asar Elite - Sea View by Orion Hotels.\n4 out of 5 stars.\nThis is a Preferred Plus property.\n8.1 Very Good 34 reviews.\n‎Juhu‬ • ‎4.2 miles from downtown‬\n‎150 feet from beach‬.\n Hotel room : 3 beds.\nOriginal price 421 USD. Current price 274 USD..\n+33 USD taxes and charges.\nFree cancellation.",
+                            "property": {
+                                "photoUrls": [
+                                    "https://cf.bstatic.com/xdata/images/hotel/square500/669203708.jpg?k=dbba1513312c1c8066846ff06dd1a78eb7d8d6d8702bd60a7e72f63028084c84&o=",
+                                    "https://cf.bstatic.com/xdata/images/hotel/square1024/669203708.jpg?k=dbba1513312c1c8066846ff06dd1a78eb7d8d6d8702bd60a7e72f63028084c84&o=",
+                                    "https://cf.bstatic.com/xdata/images/hotel/square2000/669203708.jpg?k=dbba1513312c1c8066846ff06dd1a78eb7d8d6d8702bd60a7e72f63028084c84&o="
+                                ],
+                                "position": 0,
+                                "name": "Asar Elite - Sea View by Orion Hotels",
+                                "longitude": 72.824029441801,
+                                "wishlistName": "Mumbai",
+                                "reviewScore": 8.1,
+                                "blockIds": [
+                                    "1331919306_406095610_2_42_0"
+                                ],
+                                "isFirstPage": true,
+                                "propertyClass": 4,
+                                "reviewScoreWord": "Very Good",
+                                "isPreferredPlus": true,
+                                "checkout": {
+                                    "untilTime": "11:00",
+                                    "fromTime": "00:00"
+                                },
+                                "checkinDate": "2025-06-10",
+                                "isPreferred": true,
+                                "checkoutDate": "2025-06-15",
+                                "currency": "INR",
+                                "mainPhotoId": 669203708,
+                                "priceBreakdown": {
+                                    "taxExceptions": [],
+                                    "grossPrice": {
+                                        "value": 273.57800705186,
+                                        "currency": "USD"
+                                    },
+                                    "excludedPrice": {
+                                        "currency": "USD",
+                                        "value": 32.8293596769406
+                                    },
+                                    "strikethroughPrice": {
+                                        "value": 420.889151673424,
+                                        "currency": "USD"
+                                    },
+                                    "benefitBadges": []
+                                },
+                                "qualityClass": 0,
+                                "reviewCount": 34,
+                                "latitude": 19.1092056444051,
+                                "accuratePropertyClass": 4,
+                                "ufi": -2092174,
+                                "rankingPosition": 0,
+                                "countryCode": "in",
+                                "checkin": {
+                                    "untilTime": "00:00",
+                                    "fromTime": "14:00"
+                                },
+                                "id": 13319193,
+                                "optOutFromGalleryChanges": 0
+                            }
+                        },
+                        {
+                            "hotel_id": 9806569,
+                            "accessibilityLabel": "FabExpress Occazia Paradise.\n3 out of 5 stars.\n‎Western Suburbs‬ • ‎6 miles from downtown‬\n‎4,750 feet from beach‬.\nGetaway Deal.\n Hotel room : 1 bed.\nOriginal price 214 USD. Current price 105 USD..\n+13 USD taxes and charges.\nFree cancellation.\nNo prepayment needed.",
+                            "property": {
+                                "checkout": {
+                                    "fromTime": "00:00",
+                                    "untilTime": "11:00"
+                                },
+                                "checkinDate": "2025-06-10",
+                                "checkoutDate": "2025-06-15",
+                                "position": 1,
+                                "photoUrls": [
+                                    "https://cf.bstatic.com/xdata/images/hotel/square500/678818543.jpg?k=530809def98adff9d0d3546d4b1b7742175b658acbc3bc323dfe27ed594dff00&o=",
+                                    "https://cf.bstatic.com/xdata/images/hotel/square1024/678818543.jpg?k=530809def98adff9d0d3546d4b1b7742175b658acbc3bc323dfe27ed594dff00&o=",
+                                    "https://cf.bstatic.com/xdata/images/hotel/square2000/678818543.jpg?k=530809def98adff9d0d3546d4b1b7742175b658acbc3bc323dfe27ed594dff00&o="
+                                ],
+                                "name": "FabExpress Occazia Paradise",
+                                "reviewScore": 0,
+                                "wishlistName": "Mumbai",
+                                "longitude": 72.821564,
+                                "blockIds": [
+                                    "980656902_412315045_2_2_0"
+                                ],
+                                "isFirstPage": true,
+                                "propertyClass": 3,
+                                "reviewScoreWord": "",
+                                "countryCode": "in",
+                                "checkin": {
+                                    "fromTime": "12:00",
+                                    "untilTime": "00:00"
+                                },
+                                "id": 9806569,
+                                "optOutFromGalleryChanges": 1,
+                                "mainPhotoId": 678818543,
+                                "currency": "INR",
+                                "reviewCount": 0,
+                                "qualityClass": 0,
+                                "priceBreakdown": {
+                                    "benefitBadges": [
+                                        {
+                                            "variant": "constructive",
+                                            "identifier": "Getaway 2021 Deals",
+                                            "explanation": "Getaway Deal",
+                                            "text": "Getaway Deal"
+                                        }
+                                    ],
+                                    "strikethroughPrice": {
+                                        "currency": "USD",
+                                        "value": 214.415459861334
+                                    },
+                                    "taxExceptions": [],
+                                    "grossPrice": {
+                                        "currency": "USD",
+                                        "value": 105.063557792813
+                                    },
+                                    "excludedPrice": {
+                                        "currency": "USD",
+                                        "value": 12.6076269351377
+                                    }
+                                },
+                                "accuratePropertyClass": 3,
+                                "ufi": -2092174,
+                                "latitude": 19.139041,
+                                "rankingPosition": 1
+                            }
+                        },
+                        {
+                            "hotel_id": 11220884,
+                            "accessibilityLabel": "HOTEL AMBER PARAMOUNT.\n3 out of 5 stars.\nThis is a Preferred Plus property.\n8.3 Very Good 305 reviews.\n‎Western Suburbs‬ • ‎6 miles from downtown‬\n‎3,650 feet from beach‬.\nGetaway Deal.\n Hotel room : 1 bed.\nOriginal price 268 USD. Current price 215 USD..\n+26 USD taxes and charges.",
+                            "property": {
+                                "checkinDate": "2025-06-10",
+                                "checkout": {
+                                    "fromTime": "00:00",
+                                    "untilTime": "11:00"
+                                },
+                                "isPreferredPlus": true,
+                                "checkoutDate": "2025-06-15",
+                                "isPreferred": true,
+                                "name": "HOTEL AMBER PARAMOUNT",
+                                "position": 2,
+                                "photoUrls": [
+                                    "https://cf.bstatic.com/xdata/images/hotel/square500/512985411.jpg?k=67d643ab04119b5ac6b59058e17a6ca56f8971c05a3e507e6493c18348acb6f7&o=",
+                                    "https://cf.bstatic.com/xdata/images/hotel/square1024/512985411.jpg?k=67d643ab04119b5ac6b59058e17a6ca56f8971c05a3e507e6493c18348acb6f7&o=",
+                                    "https://cf.bstatic.com/xdata/images/hotel/square2000/512985411.jpg?k=67d643ab04119b5ac6b59058e17a6ca56f8971c05a3e507e6493c18348acb6f7&o="
+                                ],
+                                "reviewScoreWord": "Very Good",
+                                "propertyClass": 3,
+                                "isFirstPage": true,
+                                "wishlistName": "Mumbai",
+                                "reviewScore": 8.3,
+                                "longitude": 72.8202645347488,
+                                "blockIds": [
+                                    "1122088401_384974075_2_42_0"
+                                ],
+                                "checkin": {
+                                    "fromTime": "12:00",
+                                    "untilTime": "00:00"
+                                },
+                                "countryCode": "in",
+                                "optOutFromGalleryChanges": 0,
+                                "id": 11220884,
+                                "reviewCount": 305,
+                                "priceBreakdown": {
+                                    "taxExceptions": [],
+                                    "grossPrice": {
+                                        "value": 214.638208214306,
+                                        "currency": "USD"
+                                    },
+                                    "excludedPrice": {
+                                        "currency": "USD",
+                                        "value": 25.7565849857168
+                                    },
+                                    "benefitBadges": [
+                                        {
+                                            "identifier": "Getaway 2021 Deals",
+                                            "text": "Getaway Deal",
+                                            "explanation": "Getaway Deal",
+                                            "variant": "constructive"
+                                        }
+                                    ],
+                                    "strikethroughPrice": {
+                                        "value": 268.297760267882,
+                                        "currency": "USD"
+                                    }
+                                },
+                                "qualityClass": 0,
+                                "mainPhotoId": 512985411,
+                                "currency": "INR",
+                                "rankingPosition": 2,
+                                "ufi": -2092174,
+                                "accuratePropertyClass": 3,
+                                "latitude": 19.1363658726389
+                            }
+                        }
+                    ],
+                    "meta": [
+                        {
+                            "title": "603 properties"
+                        }
+                    ],
+                    "appear": [
+                        {
+                            "id": "cma",
+                            "component": {
+                                "props": {
+                                    "fill": true,
+                                    "content": {
+                                        "props": {
+                                            "fitContentWidth": true,
+                                            "items": [
+                                                {
+                                                    "props": {
+                                                        "component": {
+                                                            "props": {
+                                                                "spacing": "spacing_half",
+                                                                "items": [
+                                                                    {
+                                                                        "props": {
+                                                                            "text": [
+                                                                                {
+                                                                                    "font": "body_2",
+                                                                                    "text": "Read more on how payments affect the order of listed properties"
+                                                                                },
+                                                                                {
+                                                                                    "color": "foreground",
+                                                                                    "text": "  ",
+                                                                                    "font": "strong_2"
+                                                                                },
+                                                                                {
+                                                                                    "color": "action_foreground",
+                                                                                    "linkActions": [
+                                                                                        {
+                                                                                            "props": {
+                                                                                                "url": "booking://webview?url=https%3A%2F%2Fm.booking.com%2Fgeneral.en-us.html%3Faid%3D332731%3Btmpl%3Ddocs%2Fterms-and-conditions"
+                                                                                            }
+                                                                                        }
+                                                                                    ],
+                                                                                    "font": "body_2",
+                                                                                    "text": "Learn more"
+                                                                                }
+                                                                            ]
+                                                                        }
+                                                                    }
+                                                                ]
+                                                            }
+                                                        }
+                                                    }
+                                                },
+                                                {
+                                                    "props": {}
+                                                },
+                                                {
+                                                    "props": {
+                                                        "component": {
+                                                            "props": {
+                                                                "tertiaryTintedColor": "foreground",
+                                                                "icon": "close",
+                                                                "variant": "tertiary_tinted",
+                                                                "accessibilityLabel": "Close"
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "contentUrl": "https://mobile-apps.booking.com/json/mobile.saba?route_path=saba-chat-entrypoint&add_bh_info=1&add_genius_percentage_value=1&add_ribbon_text=1&affiliate_id=332731&arrival_date=2025-06-10&autoextend=1&booked_x_times_for_dates=1&booked_x_times_threshold=1&categories_filter_additional_data=&change_popularity_sort_option_copy_tag=1&change_sort_options_copy_tags=1&check_excluded_charge_or_tax=1&check_flexible_dates=1&check_is_candidate_wholesaler=1&currency_code=USD&dark_mode=1&deeplink_sec_since_click=168567.9046729803&departure_date=2025-06-15&dest_ids=-2092174&device_id=57d11ec8bad14e119e4c15a86202c23f&distance_unit=metric&dl_sr_adoption=1&dotd=2&exposure_api_version=2.17&fix_dotd=1&flex_window=0&generate_map_bounding_box=1&get_cny_campaign_banner=1&get_skiing_info=1&guest_qty=2&include_amazon_banner=1&include_apartment_config=1&include_badges_in_price_breakdown=1&include_beach_information=1&include_bh_quality_classification=1&include_block_ids=1&include_bsb_info=1&include_bwallet_hotel_eligibility=1&include_composite_breakdown=1&include_cpc_non_trader_copy=1&include_excluded_charges_detail=1&include_free_cancellation=1&include_genius_badge=1&include_last_reservation=1&include_nr_bookings_best_range_message=1&include_nr_bookings_today=1&include_offered_bed_types=1&include_preview_cards=1&include_rack_rate_savings=1&include_rtb=1&include_ski_information=1&languagecode=en-us&location_source=recents&mark_first_highlighted_hotel=1&min_saba_version=31&network_type=wifi&new_segments_carousel=1&offset=0&optimized_call=1&outcome=search_results&page_define_enabled=1&pref_match=0&reason=change_sort_options&remove_wishlist_padding=1&room_qty=1&rows=auto&saba=1&saba_payload_root=1&saba_version=50&sb_calendar_open=1&search_type=city&send_ranking_version=1&send_search_id=1&show_beach_filter_badge=1&show_city_distance=1&show_distance_to_beach=1&show_distance_to_nearest_public_transport=1&show_genius_free_breakfast=0&show_if_mobile_deal=1&show_negotiated_rates=1&show_no_prepayment=1&show_policy=1&show_review_score_breakdowns=1&show_selected_filter_values=1&show_soldout=1&sort_by=auto&sort_by_source=sort_options&sort_genius_new_copy=1&source=search_results&temperature_unit=c&travel_purpose=&unfiltered_count_enabled=1&units=imperial&use_dest_based_list_creation=1&use_direct_payment=1&user_os=15.5&user_version=36.8-iphone&categories_filter=price%3A%3AUSD-100-300&children_qty=1&children_age=5&page=search-results"
+                        },
+                        {
+                            "id": "signin_now",
+                            "component": {
+                                "props": {
+                                    "text": "Get instant access to our Genius loyalty program and enjoy discounts at properties worldwide.",
+                                    "title": "Sign in and save money"
+                                }
+                            }
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    "row": {
+        "required": {
+            "status": false,
+            "message": [
+                {
+                    "dest_id": "Invalid value"
+                },
+                {
+                    "dest_id": "Invalid value"
+                },
+                {
+                    "search_type": "Invalid value"
+                },
+                {
+                    "search_type": "Invalid value"
+                }
+            ]
+        },
+        "optional": {
+            "status": true,
+            "message": "Success",
+            "timestamp": 1747651055591,
+            "data": {
+                "hotels": [
+                    {
+                        "hotel_id": 13319193,
+                        "accessibilityLabel": "Asar Elite - Sea View by Orion Hotels.\n4 out of 5 stars.\nThis is a Preferred Plus property.\n8.1 Very Good 34 reviews.\n‎Juhu‬ • ‎4.2 miles from downtown‬\n‎150 feet from beach‬.\n Hotel room : 3 beds.\nOriginal price 421 USD. Current price 274 USD..\n+33 USD taxes and charges.\nFree cancellation.",
+                        "property": {
+                            "photoUrls": [
+                                "https://cf.bstatic.com/xdata/images/hotel/square500/669203708.jpg?k=dbba1513312c1c8066846ff06dd1a78eb7d8d6d8702bd60a7e72f63028084c84&o=",
+                                "https://cf.bstatic.com/xdata/images/hotel/square1024/669203708.jpg?k=dbba1513312c1c8066846ff06dd1a78eb7d8d6d8702bd60a7e72f63028084c84&o=",
+                                "https://cf.bstatic.com/xdata/images/hotel/square2000/669203708.jpg?k=dbba1513312c1c8066846ff06dd1a78eb7d8d6d8702bd60a7e72f63028084c84&o="
+                            ],
+                            "position": 0,
+                            "name": "Asar Elite - Sea View by Orion Hotels",
+                            "longitude": 72.824029441801,
+                            "wishlistName": "Mumbai",
+                            "reviewScore": 8.1,
+                            "blockIds": [
+                                "1331919306_406095610_2_42_0"
+                            ],
+                            "isFirstPage": true,
+                            "propertyClass": 4,
+                            "reviewScoreWord": "Very Good",
+                            "isPreferredPlus": true,
+                            "checkout": {
+                                "untilTime": "11:00",
+                                "fromTime": "00:00"
+                            },
+                            "checkinDate": "2025-06-10",
+                            "isPreferred": true,
+                            "checkoutDate": "2025-06-15",
+                            "currency": "INR",
+                            "mainPhotoId": 669203708,
+                            "priceBreakdown": {
+                                "taxExceptions": [],
+                                "grossPrice": {
+                                    "value": 273.57800705186,
+                                    "currency": "USD"
+                                },
+                                "excludedPrice": {
+                                    "currency": "USD",
+                                    "value": 32.8293596769406
+                                },
+                                "strikethroughPrice": {
+                                    "value": 420.889151673424,
+                                    "currency": "USD"
+                                },
+                                "benefitBadges": []
+                            },
+                            "qualityClass": 0,
+                            "reviewCount": 34,
+                            "latitude": 19.1092056444051,
+                            "accuratePropertyClass": 4,
+                            "ufi": -2092174,
+                            "rankingPosition": 0,
+                            "countryCode": "in",
+                            "checkin": {
+                                "untilTime": "00:00",
+                                "fromTime": "14:00"
+                            },
+                            "id": 13319193,
+                            "optOutFromGalleryChanges": 0
+                        }
+                    },
+                    {
+                        "hotel_id": 9806569,
+                        "accessibilityLabel": "FabExpress Occazia Paradise.\n3 out of 5 stars.\n‎Western Suburbs‬ • ‎6 miles from downtown‬\n‎4,750 feet from beach‬.\nGetaway Deal.\n Hotel room : 1 bed.\nOriginal price 214 USD. Current price 105 USD..\n+13 USD taxes and charges.\nFree cancellation.\nNo prepayment needed.",
+                        "property": {
+                            "checkout": {
+                                "fromTime": "00:00",
+                                "untilTime": "11:00"
+                            },
+                            "checkinDate": "2025-06-10",
+                            "checkoutDate": "2025-06-15",
+                            "position": 1,
+                            "photoUrls": [
+                                "https://cf.bstatic.com/xdata/images/hotel/square500/678818543.jpg?k=530809def98adff9d0d3546d4b1b7742175b658acbc3bc323dfe27ed594dff00&o=",
+                                "https://cf.bstatic.com/xdata/images/hotel/square1024/678818543.jpg?k=530809def98adff9d0d3546d4b1b7742175b658acbc3bc323dfe27ed594dff00&o=",
+                                "https://cf.bstatic.com/xdata/images/hotel/square2000/678818543.jpg?k=530809def98adff9d0d3546d4b1b7742175b658acbc3bc323dfe27ed594dff00&o="
+                            ],
+                            "name": "FabExpress Occazia Paradise",
+                            "reviewScore": 0,
+                            "wishlistName": "Mumbai",
+                            "longitude": 72.821564,
+                            "blockIds": [
+                                "980656902_412315045_2_2_0"
+                            ],
+                            "isFirstPage": true,
+                            "propertyClass": 3,
+                            "reviewScoreWord": "",
+                            "countryCode": "in",
+                            "checkin": {
+                                "fromTime": "12:00",
+                                "untilTime": "00:00"
+                            },
+                            "id": 9806569,
+                            "optOutFromGalleryChanges": 1,
+                            "mainPhotoId": 678818543,
+                            "currency": "INR",
+                            "reviewCount": 0,
+                            "qualityClass": 0,
+                            "priceBreakdown": {
+                                "benefitBadges": [
+                                    {
+                                        "variant": "constructive",
+                                        "identifier": "Getaway 2021 Deals",
+                                        "explanation": "Getaway Deal",
+                                        "text": "Getaway Deal"
+                                    }
+                                ],
+                                "strikethroughPrice": {
+                                    "currency": "USD",
+                                    "value": 214.415459861334
+                                },
+                                "taxExceptions": [],
+                                "grossPrice": {
+                                    "currency": "USD",
+                                    "value": 105.063557792813
+                                },
+                                "excludedPrice": {
+                                    "currency": "USD",
+                                    "value": 12.6076269351377
+                                }
+                            },
+                            "accuratePropertyClass": 3,
+                            "ufi": -2092174,
+                            "latitude": 19.139041,
+                            "rankingPosition": 1
+                        }
+                    },
+                    {
+                        "hotel_id": 11220884,
+                        "accessibilityLabel": "HOTEL AMBER PARAMOUNT.\n3 out of 5 stars.\nThis is a Preferred Plus property.\n8.3 Very Good 305 reviews.\n‎Western Suburbs‬ • ‎6 miles from downtown‬\n‎3,650 feet from beach‬.\nGetaway Deal.\n Hotel room : 1 bed.\nOriginal price 268 USD. Current price 215 USD..\n+26 USD taxes and charges.",
+                        "property": {
+                            "checkinDate": "2025-06-10",
+                            "checkout": {
+                                "fromTime": "00:00",
+                                "untilTime": "11:00"
+                            },
+                            "isPreferredPlus": true,
+                            "checkoutDate": "2025-06-15",
+                            "isPreferred": true,
+                            "name": "HOTEL AMBER PARAMOUNT",
+                            "position": 2,
+                            "photoUrls": [
+                                "https://cf.bstatic.com/xdata/images/hotel/square500/512985411.jpg?k=67d643ab04119b5ac6b59058e17a6ca56f8971c05a3e507e6493c18348acb6f7&o=",
+                                "https://cf.bstatic.com/xdata/images/hotel/square1024/512985411.jpg?k=67d643ab04119b5ac6b59058e17a6ca56f8971c05a3e507e6493c18348acb6f7&o=",
+                                "https://cf.bstatic.com/xdata/images/hotel/square2000/512985411.jpg?k=67d643ab04119b5ac6b59058e17a6ca56f8971c05a3e507e6493c18348acb6f7&o="
+                            ],
+                            "reviewScoreWord": "Very Good",
+                            "propertyClass": 3,
+                            "isFirstPage": true,
+                            "wishlistName": "Mumbai",
+                            "reviewScore": 8.3,
+                            "longitude": 72.8202645347488,
+                            "blockIds": [
+                                "1122088401_384974075_2_42_0"
+                            ],
+                            "checkin": {
+                                "fromTime": "12:00",
+                                "untilTime": "00:00"
+                            },
+                            "countryCode": "in",
+                            "optOutFromGalleryChanges": 0,
+                            "id": 11220884,
+                            "reviewCount": 305,
+                            "priceBreakdown": {
+                                "taxExceptions": [],
+                                "grossPrice": {
+                                    "value": 214.638208214306,
+                                    "currency": "USD"
+                                },
+                                "excludedPrice": {
+                                    "currency": "USD",
+                                    "value": 25.7565849857168
+                                },
+                                "benefitBadges": [
+                                    {
+                                        "identifier": "Getaway 2021 Deals",
+                                        "text": "Getaway Deal",
+                                        "explanation": "Getaway Deal",
+                                        "variant": "constructive"
+                                    }
+                                ],
+                                "strikethroughPrice": {
+                                    "value": 268.297760267882,
+                                    "currency": "USD"
+                                }
+                            },
+                            "qualityClass": 0,
+                            "mainPhotoId": 512985411,
+                            "currency": "INR",
+                            "rankingPosition": 2,
+                            "ufi": -2092174,
+                            "accuratePropertyClass": 3,
+                            "latitude": 19.1363658726389
+                        }
+                    },
+                    {
+                        "hotel_id": 1102756,
+                        "accessibilityLabel": "Abode Bombay.\nThis is a Preferred property.\n8.8 Excellent 1617 reviews.\n‎Colaba‬ • ‎11 miles from downtown‬.\nBreakfast included.\n Hotel room : 1 bed.\n284 USD.\n+34 USD taxes and charges.\nFree cancellation.",
+                        "property": {
+                            "rankingPosition": 3,
+                            "ufi": -2092174,
+                            "accuratePropertyClass": 0,
+                            "latitude": 18.92376390558,
+                            "reviewCount": 1617,
+                            "priceBreakdown": {
+                                "excludedPrice": {
+                                    "currency": "USD",
+                                    "value": 34.0962821516798
+                                },
+                                "grossPrice": {
+                                    "value": 284.135694341354,
+                                    "currency": "USD"
+                                },
+                                "taxExceptions": [],
+                                "benefitBadges": []
+                            },
+                            "qualityClass": 0,
+                            "mainPhotoId": 577764726,
+                            "currency": "INR",
+                            "optOutFromGalleryChanges": 0,
+                            "id": 1102756,
+                            "checkin": {
+                                "untilTime": "00:00",
+                                "fromTime": "14:00"
+                            },
+                            "countryCode": "in",
+                            "reviewScoreWord": "Excellent",
+                            "propertyClass": 0,
+                            "isFirstPage": true,
+                            "wishlistName": "Mumbai",
+                            "longitude": 72.8323817253113,
+                            "blockIds": [
+                                "110275603_405380165_2_1_0"
+                            ],
+                            "reviewScore": 8.8,
+                            "name": "Abode Bombay",
+                            "photoUrls": [
+                                "https://cf.bstatic.com/xdata/images/hotel/square500/577764726.jpg?k=215ef8efb6f7b6cc8b544b50c1935bf2d07ca9c6f23000de61def8319dbb5703&o=",
+                                "https://cf.bstatic.com/xdata/images/hotel/square1024/577764726.jpg?k=215ef8efb6f7b6cc8b544b50c1935bf2d07ca9c6f23000de61def8319dbb5703&o=",
+                                "https://cf.bstatic.com/xdata/images/hotel/square2000/577764726.jpg?k=215ef8efb6f7b6cc8b544b50c1935bf2d07ca9c6f23000de61def8319dbb5703&o="
+                            ],
+                            "position": 3,
+                            "checkoutDate": "2025-06-15",
+                            "isPreferred": true,
+                            "checkinDate": "2025-06-10",
+                            "checkout": {
+                                "fromTime": "00:00",
+                                "untilTime": "12:00"
+                            }
+                        }
+                    },
+                    {
+                        "hotel_id": 13162022,
+                        "accessibilityLabel": "FabExpress Geet Residency.\n3 out of 5 stars.\nThis is a Preferred Plus property.\n7.6 Good 15 reviews.\n‎10 miles from downtown‬.\nGetaway Deal.\n Hotel room : 1 bed.\nOriginal price 221 USD. Current price 120 USD..\n+14 USD taxes and charges.\nFree cancellation.",
+                        "property": {
+                            "reviewScoreWord": "Good",
+                            "propertyClass": 3,
+                            "isFirstPage": true,
+                            "wishlistName": "Mumbai",
+                            "longitude": 73.0316133,
+                            "reviewScore": 7.6,
+                            "blockIds": [
+                                "1316202201_410204423_2_0_0_880109"
+                            ],
+                            "name": "FabExpress Geet Residency",
+                            "photoUrls": [
+                                "https://cf.bstatic.com/xdata/images/hotel/square500/622523238.jpg?k=ee3a3dc1ad2b3814978cfecb6d1bfe561832e3a2d6c86c4bfc9f991d5409adfb&o=",
+                                "https://cf.bstatic.com/xdata/images/hotel/square1024/622523238.jpg?k=ee3a3dc1ad2b3814978cfecb6d1bfe561832e3a2d6c86c4bfc9f991d5409adfb&o=",
+                                "https://cf.bstatic.com/xdata/images/hotel/square2000/622523238.jpg?k=ee3a3dc1ad2b3814978cfecb6d1bfe561832e3a2d6c86c4bfc9f991d5409adfb&o="
+                            ],
+                            "position": 4,
+                            "checkoutDate": "2025-06-15",
+                            "isPreferred": true,
+                            "checkinDate": "2025-06-10",
+                            "checkout": {
+                                "fromTime": "00:00",
+                                "untilTime": "11:00"
+                            },
+                            "isPreferredPlus": true,
+                            "rankingPosition": 4,
+                            "ufi": -2092174,
+                            "accuratePropertyClass": 3,
+                            "latitude": 19.0459849,
+                            "reviewCount": 15,
+                            "qualityClass": 0,
+                            "priceBreakdown": {
+                                "benefitBadges": [
+                                    {
+                                        "variant": "constructive",
+                                        "explanation": "Getaway Deal",
+                                        "text": "Getaway Deal",
+                                        "identifier": "Getaway 2021 Deals"
+                                    }
+                                ],
+                                "strikethroughPrice": {
+                                    "value": 221.353983360189,
+                                    "currency": "USD"
+                                },
+                                "excludedPrice": {
+                                    "value": 14.3437451374365,
+                                    "currency": "USD"
+                                },
+                                "grossPrice": {
+                                    "currency": "USD",
+                                    "value": 119.531209478637
+                                },
+                                "taxExceptions": []
+                            },
+                            "mainPhotoId": 622523238,
+                            "currency": "INR",
+                            "optOutFromGalleryChanges": 1,
+                            "id": 13162022,
+                            "checkin": {
+                                "fromTime": "12:00",
+                                "untilTime": "00:00"
+                            },
+                            "countryCode": "in"
+                        }
+                    },
+                    {
+                        "hotel_id": 2788298,
+                        "accessibilityLabel": "Super Townhouse Bombay Exhibition Centre Goregaon.\n3 out of 5 stars.\nThis is a Preferred property.\n7.7 Good 72 reviews.\n‎Western Suburbs‬ • ‎6 miles from downtown‬.\n Hotel room : 1 bed.\nOriginal price 358 USD. Current price 218 USD..\n+29 USD taxes and charges.\nFree cancellation.\nNo prepayment needed.",
+                        "property": {
+                            "checkoutDate": "2025-06-15",
+                            "isPreferred": true,
+                            "checkinDate": "2025-06-10",
+                            "checkout": {
+                                "untilTime": "11:00",
+                                "fromTime": "00:00"
+                            },
+                            "reviewScoreWord": "Good",
+                            "propertyClass": 3,
+                            "isFirstPage": true,
+                            "wishlistName": "Mumbai",
+                            "blockIds": [
+                                "278829802_244233087_2_32_0"
+                            ],
+                            "longitude": 72.846357,
+                            "reviewScore": 7.7,
+                            "name": "Super Townhouse Bombay Exhibition Centre Goregaon",
+                            "photoUrls": [
+                                "https://cf.bstatic.com/xdata/images/hotel/square500/676224342.jpg?k=173bb684ca1501c56ec77518be5cd5d4a5ef04c3efc0858c2f7974578c22df24&o=",
+                                "https://cf.bstatic.com/xdata/images/hotel/square1024/676224342.jpg?k=173bb684ca1501c56ec77518be5cd5d4a5ef04c3efc0858c2f7974578c22df24&o=",
+                                "https://cf.bstatic.com/xdata/images/hotel/square2000/676224342.jpg?k=173bb684ca1501c56ec77518be5cd5d4a5ef04c3efc0858c2f7974578c22df24&o="
+                            ],
+                            "position": 5,
+                            "optOutFromGalleryChanges": 1,
+                            "id": 2788298,
+                            "checkin": {
+                                "untilTime": "00:00",
+                                "fromTime": "12:00"
+                            },
+                            "countryCode": "in",
+                            "rankingPosition": 5,
+                            "latitude": 19.151322,
+                            "ufi": -2092174,
+                            "accuratePropertyClass": 3,
+                            "qualityClass": 0,
+                            "priceBreakdown": {
+                                "grossPrice": {
+                                    "currency": "USD",
+                                    "value": 218.413120459621
+                                },
+                                "taxExceptions": [],
+                                "excludedPrice": {
+                                    "currency": "USD",
+                                    "value": 29.1912453216997
+                                },
+                                "benefitBadges": [],
+                                "strikethroughPrice": {
+                                    "currency": "USD",
+                                    "value": 358.054355258007
+                                }
+                            },
+                            "reviewCount": 72,
+                            "currency": "INR",
+                            "mainPhotoId": 676224342
+                        }
+                    },
+                    {
+                        "hotel_id": 2513577,
+                        "accessibilityLabel": "FabHotel Aksa International - Nr Mumbai International Airport.\n3 out of 5 stars.\nThis is a Preferred property.\n7.0 Good 738 reviews.\n‎Western Suburbs‬ • ‎2.6 miles from downtown‬.\nGetaway Deal.\n Hotel room : 1 bed.\nOriginal price 292 USD. Current price 143 USD..\n+17 USD taxes and charges.\nFree cancellation.\nNo prepayment needed.",
+                        "property": {
+                            "rankingPosition": 6,
+                            "latitude": 19.11219215,
+                            "ufi": -2092174,
+                            "accuratePropertyClass": 3,
+                            "qualityClass": 0,
+                            "priceBreakdown": {
+                                "benefitBadges": [
+                                    {
+                                        "explanation": "Getaway Deal",
+                                        "text": "Getaway Deal",
+                                        "identifier": "Getaway 2021 Deals",
+                                        "variant": "constructive"
+                                    }
+                                ],
+                                "strikethroughPrice": {
+                                    "value": 292.37446019456,
+                                    "currency": "USD"
+                                },
+                                "taxExceptions": [],
+                                "grossPrice": {
+                                    "currency": "USD",
+                                    "value": 143.263438724027
+                                },
+                                "excludedPrice": {
+                                    "currency": "USD",
+                                    "value": 17.1916126468833
+                                }
+                            },
+                            "reviewCount": 738,
+                            "currency": "INR",
+                            "mainPhotoId": 162435417,
+                            "optOutFromGalleryChanges": 1,
+                            "id": 2513577,
+                            "checkin": {
+                                "fromTime": "12:00",
+                                "untilTime": "00:00"
+                            },
+                            "countryCode": "in",
+                            "reviewScoreWord": "Good",
+                            "propertyClass": 3,
+                            "isFirstPage": true,
+                            "wishlistName": "Mumbai",
+                            "blockIds": [
+                                "251357702_412603234_2_2_0_879566"
+                            ],
+                            "longitude": 72.88818359,
+                            "reviewScore": 7,
+                            "name": "FabHotel Aksa International - Nr Mumbai International Airport",
+                            "position": 6,
+                            "photoUrls": [
+                                "https://cf.bstatic.com/xdata/images/hotel/square500/162435417.jpg?k=d4f51e1b5cfa51ac83fb9d2f449d9960ea0cba6a92af147f3b9e0f955c59207c&o=",
+                                "https://cf.bstatic.com/xdata/images/hotel/square1024/162435417.jpg?k=d4f51e1b5cfa51ac83fb9d2f449d9960ea0cba6a92af147f3b9e0f955c59207c&o=",
+                                "https://cf.bstatic.com/xdata/images/hotel/square2000/162435417.jpg?k=d4f51e1b5cfa51ac83fb9d2f449d9960ea0cba6a92af147f3b9e0f955c59207c&o="
+                            ],
+                            "checkoutDate": "2025-06-15",
+                            "isPreferred": true,
+                            "checkinDate": "2025-06-10",
+                            "checkout": {
+                                "fromTime": "00:00",
+                                "untilTime": "11:00"
+                            }
+                        }
+                    },
+                    {
+                        "hotel_id": 11920780,
+                        "accessibilityLabel": "Super Townhouse Khar The Unicontinental.\n3 out of 5 stars.\nThis is a Preferred property.\n7.1 Good 97 reviews.\n‎Khar‬ • ‎2.5 miles from downtown‬\n‎1.2 miles from beach‬.\nMobile-only price.\n Hotel room : 1 bed.\nOriginal price 512 USD. Current price 241 USD..\n+30 USD taxes and charges.\nFree cancellation.\nNo prepayment needed.",
+                        "property": {
+                            "checkout": {
+                                "fromTime": "00:00",
+                                "untilTime": "11:00"
+                            },
+                            "checkinDate": "2025-06-10",
+                            "checkoutDate": "2025-06-15",
+                            "isPreferred": true,
+                            "position": 7,
+                            "photoUrls": [
+                                "https://cf.bstatic.com/xdata/images/hotel/square500/660884241.jpg?k=f1f4f1fc0c25b064e20982a7d7a73dc75336f3dac7e5a3ad9ac5ff2ec064677c&o=",
+                                "https://cf.bstatic.com/xdata/images/hotel/square1024/660884241.jpg?k=f1f4f1fc0c25b064e20982a7d7a73dc75336f3dac7e5a3ad9ac5ff2ec064677c&o=",
+                                "https://cf.bstatic.com/xdata/images/hotel/square2000/660884241.jpg?k=f1f4f1fc0c25b064e20982a7d7a73dc75336f3dac7e5a3ad9ac5ff2ec064677c&o="
+                            ],
+                            "name": "Super Townhouse Khar The Unicontinental",
+                            "isFirstPage": true,
+                            "wishlistName": "Mumbai",
+                            "blockIds": [
+                                "1192078005_405643804_2_0_0"
+                            ],
+                            "longitude": 72.8399854639659,
+                            "reviewScore": 7.1,
+                            "reviewScoreWord": "Good",
+                            "propertyClass": 3,
+                            "countryCode": "in",
+                            "checkin": {
+                                "untilTime": "00:00",
+                                "fromTime": "12:00"
+                            },
+                            "id": 11920780,
+                            "optOutFromGalleryChanges": 1,
+                            "currency": "INR",
+                            "mainPhotoId": 660884241,
+                            "priceBreakdown": {
+                                "benefitBadges": [
+                                    {
+                                        "variant": "constructive",
+                                        "text": "Mobile-only price",
+                                        "explanation": "Mobile-only price",
+                                        "identifier": "Mobile Rate"
+                                    }
+                                ],
+                                "strikethroughPrice": {
+                                    "currency": "USD",
+                                    "value": 512.230124712243
+                                },
+                                "grossPrice": {
+                                    "value": 240.5945300696,
+                                    "currency": "USD"
+                                },
+                                "taxExceptions": [],
+                                "excludedPrice": {
+                                    "currency": "USD",
+                                    "value": 30.4358438512687
+                                }
+                            },
+                            "qualityClass": 0,
+                            "reviewCount": 97,
+                            "latitude": 19.0707779277874,
+                            "ufi": -2092174,
+                            "accuratePropertyClass": 3,
+                            "rankingPosition": 7
+                        }
+                    },
+                    {
+                        "hotel_id": 1815701,
+                        "accessibilityLabel": "Bed and Breakfast at Colaba.\n3 out of 5 for property rating.\nThis is a Preferred property.\n8.0 Very Good 824 reviews.\n‎Colaba‬ • ‎11 miles from downtown‬.\nMobile-only price.\nBreakfast included.\n Private room : 2 beds.\nOriginal price 195 USD. Current price 175 USD..\nIncludes taxes and fees.",
+                        "property": {
+                            "currency": "INR",
+                            "mainPhotoId": 540984205,
+                            "qualityClass": 3,
+                            "priceBreakdown": {
+                                "strikethroughPrice": {
+                                    "currency": "USD",
+                                    "value": 194.860960748916
+                                },
+                                "benefitBadges": [
+                                    {
+                                        "identifier": "Mobile Rate",
+                                        "text": "Mobile-only price",
+                                        "explanation": "Mobile-only price",
+                                        "variant": "constructive"
+                                    }
+                                ],
+                                "grossPrice": {
+                                    "currency": "USD",
+                                    "value": 175.374864674025
+                                },
+                                "taxExceptions": []
+                            },
+                            "reviewCount": 824,
+                            "latitude": 18.9203187,
+                            "accuratePropertyClass": 0,
+                            "ufi": -2092174,
+                            "rankingPosition": 8,
+                            "countryCode": "in",
+                            "checkin": {
+                                "fromTime": "13:00",
+                                "untilTime": "00:00"
+                            },
+                            "id": 1815701,
+                            "optOutFromGalleryChanges": 0,
+                            "position": 8,
+                            "photoUrls": [
+                                "https://cf.bstatic.com/xdata/images/hotel/square500/540984205.jpg?k=2b3d18bace9c846653f42de5908ee4cc02afbfcada21c830089ed1dab0ff619e&o=",
+                                "https://cf.bstatic.com/xdata/images/hotel/square1024/540984205.jpg?k=2b3d18bace9c846653f42de5908ee4cc02afbfcada21c830089ed1dab0ff619e&o=",
+                                "https://cf.bstatic.com/xdata/images/hotel/square2000/540984205.jpg?k=2b3d18bace9c846653f42de5908ee4cc02afbfcada21c830089ed1dab0ff619e&o="
+                            ],
+                            "name": "Bed and Breakfast at Colaba",
+                            "blockIds": [
+                                "181570101_410251733_2_1_0_213825"
+                            ],
+                            "wishlistName": "Mumbai",
+                            "longitude": 72.8318546,
+                            "reviewScore": 8,
+                            "isFirstPage": true,
+                            "propertyClass": 0,
+                            "reviewScoreWord": "Very Good",
+                            "checkout": {
+                                "untilTime": "12:00",
+                                "fromTime": "00:00"
+                            },
+                            "checkinDate": "2025-06-10",
+                            "isPreferred": true,
+                            "checkoutDate": "2025-06-15"
+                        }
+                    },
+                    {
+                        "hotel_id": 13273180,
+                        "accessibilityLabel": "Townhouse Khar The Habitat.\nThis is a Preferred property.\n7.8 Good 71 reviews.\n‎Khar‬ • ‎2.5 miles from downtown‬\n‎1.2 miles from beach‬.\nMobile-only price.\n Hotel room : 1 bed.\nOriginal price 565 USD. Current price 265 USD..\n+32 USD taxes and charges.\nFree cancellation.",
+                        "property": {
+                            "photoUrls": [
+                                "https://cf.bstatic.com/xdata/images/hotel/square500/674985291.jpg?k=58653757b7e0fa4a22cb15bb02244f14a80c2040348a949fd3a5ffbf96abd444&o=",
+                                "https://cf.bstatic.com/xdata/images/hotel/square1024/674985291.jpg?k=58653757b7e0fa4a22cb15bb02244f14a80c2040348a949fd3a5ffbf96abd444&o=",
+                                "https://cf.bstatic.com/xdata/images/hotel/square2000/674985291.jpg?k=58653757b7e0fa4a22cb15bb02244f14a80c2040348a949fd3a5ffbf96abd444&o="
+                            ],
+                            "position": 9,
+                            "name": "Townhouse Khar The Habitat",
+                            "wishlistName": "Mumbai",
+                            "longitude": 72.839854445533,
+                            "reviewScore": 7.8,
+                            "blockIds": [
+                                "1327318002_408936322_2_0_0"
+                            ],
+                            "isFirstPage": true,
+                            "propertyClass": 0,
+                            "reviewScoreWord": "Good",
+                            "checkout": {
+                                "fromTime": "00:00",
+                                "untilTime": "11:00"
+                            },
+                            "checkinDate": "2025-06-10",
+                            "isPreferred": true,
+                            "checkoutDate": "2025-06-15",
+                            "currency": "INR",
+                            "mainPhotoId": 674985291,
+                            "priceBreakdown": {
+                                "taxExceptions": [],
+                                "grossPrice": {
+                                    "currency": "USD",
+                                    "value": 265.18466202667
+                                },
+                                "excludedPrice": {
+                                    "currency": "USD",
+                                    "value": 31.8958230835619
+                                },
+                                "strikethroughPrice": {
+                                    "value": 564.583120284926,
+                                    "currency": "USD"
+                                },
+                                "benefitBadges": [
+                                    {
+                                        "variant": "constructive",
+                                        "text": "Mobile-only price",
+                                        "explanation": "Mobile-only price",
+                                        "identifier": "Mobile Rate"
+                                    }
+                                ]
+                            },
+                            "qualityClass": 0,
+                            "reviewCount": 71,
+                            "latitude": 19.070470538331,
+                            "accuratePropertyClass": 0,
+                            "ufi": -2092174,
+                            "rankingPosition": 9,
+                            "countryCode": "in",
+                            "checkin": {
+                                "untilTime": "00:00",
+                                "fromTime": "12:00"
+                            },
+                            "id": 13273180,
+                            "optOutFromGalleryChanges": 1
+                        }
+                    },
+                    {
+                        "hotel_id": 12734278,
+                        "accessibilityLabel": "FabHotel Atithi Residency I - Nr BKC.\n3 out of 5 stars.\nThis is a Preferred Plus property.\n6.5 Pleasant 80 reviews.\n‎Western Suburbs‬ • ‎1.4 miles from downtown‬.\nGetaway Deal.\n Hotel room : 1 bed.\nOriginal price 292 USD. Current price 158 USD..\n+19 USD taxes and charges.\nFree cancellation.",
+                        "property": {
+                            "name": "FabHotel Atithi Residency I - Nr BKC",
+                            "photoUrls": [
+                                "https://cf.bstatic.com/xdata/images/hotel/square500/655385522.jpg?k=e33614b66e4854cca2c4dda5657e8ac5be21fdb84536a936c6a93928c62f3071&o=",
+                                "https://cf.bstatic.com/xdata/images/hotel/square1024/655385522.jpg?k=e33614b66e4854cca2c4dda5657e8ac5be21fdb84536a936c6a93928c62f3071&o=",
+                                "https://cf.bstatic.com/xdata/images/hotel/square2000/655385522.jpg?k=e33614b66e4854cca2c4dda5657e8ac5be21fdb84536a936c6a93928c62f3071&o="
+                            ],
+                            "position": 10,
+                            "propertyClass": 3,
+                            "reviewScoreWord": "Pleasant",
+                            "wishlistName": "Mumbai",
+                            "reviewScore": 6.5,
+                            "blockIds": [
+                                "1273427803_410204499_2_0_0_881094"
+                            ],
+                            "longitude": 72.8837016464187,
+                            "isFirstPage": true,
+                            "checkinDate": "2025-06-10",
+                            "isPreferredPlus": true,
+                            "checkout": {
+                                "untilTime": "11:00",
+                                "fromTime": "00:00"
+                            },
+                            "isPreferred": true,
+                            "checkoutDate": "2025-06-15",
+                            "qualityClass": 0,
+                            "priceBreakdown": {
+                                "excludedPrice": {
+                                    "value": 18.9505599244756,
+                                    "currency": "USD"
+                                },
+                                "grossPrice": {
+                                    "currency": "USD",
+                                    "value": 157.921332703962
+                                },
+                                "taxExceptions": [],
+                                "benefitBadges": [
+                                    {
+                                        "variant": "constructive",
+                                        "explanation": "Getaway Deal",
+                                        "text": "Getaway Deal",
+                                        "identifier": "Getaway 2021 Deals"
+                                    }
+                                ],
+                                "strikethroughPrice": {
+                                    "currency": "USD",
+                                    "value": 292.446955721512
+                                }
+                            },
+                            "reviewCount": 80,
+                            "currency": "INR",
+                            "mainPhotoId": 655385522,
+                            "rankingPosition": 10,
+                            "latitude": 19.0960486466865,
+                            "accuratePropertyClass": 3,
+                            "ufi": -2092174,
+                            "checkin": {
+                                "fromTime": "12:00",
+                                "untilTime": "00:00"
+                            },
+                            "countryCode": "in",
+                            "optOutFromGalleryChanges": 1,
+                            "id": 12734278
+                        }
+                    },
+                    {
+                        "hotel_id": 10979326,
+                        "accessibilityLabel": "FabExpress Prakash Inn - Nr Mumbai International Airport.\n3 out of 5 stars.\nThis is a Preferred property.\n8.0 Very Good 1032 reviews.\n‎Western Suburbs‬ • ‎1.7 miles from downtown‬.\nGetaway Deal.\n Hotel room : 1 bed.\nOriginal price 484 USD. Current price 262 USD..\n+31 USD taxes and charges.\nFree cancellation.",
+                        "property": {
+                            "latitude": 19.1009223204049,
+                            "accuratePropertyClass": 3,
+                            "ufi": -2092174,
+                            "rankingPosition": 11,
+                            "currency": "INR",
+                            "mainPhotoId": 622210273,
+                            "priceBreakdown": {
+                                "strikethroughPrice": {
+                                    "value": 484.339107713503,
+                                    "currency": "USD"
+                                },
+                                "benefitBadges": [
+                                    {
+                                        "variant": "constructive",
+                                        "identifier": "Getaway 2021 Deals",
+                                        "explanation": "Getaway Deal",
+                                        "text": "Getaway Deal"
+                                    }
+                                ],
+                                "taxExceptions": [],
+                                "grossPrice": {
+                                    "value": 261.543164936599,
+                                    "currency": "USD"
+                                },
+                                "excludedPrice": {
+                                    "value": 31.385179792392,
+                                    "currency": "USD"
+                                }
+                            },
+                            "qualityClass": 0,
+                            "reviewCount": 1032,
+                            "id": 10979326,
+                            "optOutFromGalleryChanges": 1,
+                            "countryCode": "in",
+                            "checkin": {
+                                "untilTime": "00:00",
+                                "fromTime": "12:00"
+                            },
+                            "wishlistName": "Mumbai",
+                            "longitude": 72.8755987712135,
+                            "blockIds": [
+                                "1097932601_410204721_2_2_0_879858"
+                            ],
+                            "reviewScore": 8,
+                            "isFirstPage": true,
+                            "propertyClass": 3,
+                            "reviewScoreWord": "Very Good",
+                            "position": 11,
+                            "photoUrls": [
+                                "https://cf.bstatic.com/xdata/images/hotel/square500/622210273.jpg?k=be7fd05a7fce2a392f26ba5fbb2aa313d1cc9c2cf9b10d23ade334f156976507&o=",
+                                "https://cf.bstatic.com/xdata/images/hotel/square1024/622210273.jpg?k=be7fd05a7fce2a392f26ba5fbb2aa313d1cc9c2cf9b10d23ade334f156976507&o=",
+                                "https://cf.bstatic.com/xdata/images/hotel/square2000/622210273.jpg?k=be7fd05a7fce2a392f26ba5fbb2aa313d1cc9c2cf9b10d23ade334f156976507&o="
+                            ],
+                            "name": "FabExpress Prakash Inn - Nr Mumbai International Airport",
+                            "isPreferred": true,
+                            "checkoutDate": "2025-06-15",
+                            "checkout": {
+                                "untilTime": "11:00",
+                                "fromTime": "00:00"
+                            },
+                            "checkinDate": "2025-06-10"
+                        }
+                    },
+                    {
+                        "hotel_id": 8394737,
+                        "accessibilityLabel": "FabExpress Abad Inn - 700m from Gateway of India.\n3 out of 5 stars.\nThis is a Preferred Plus property.\n6.2 Pleasant 275 reviews.\n‎Colaba‬ • ‎11 miles from downtown‬.\nGetaway Deal.\n Hotel room : 1 bed.\nOriginal price 385 USD. Current price 208 USD..\n+25 USD taxes and charges.\nFree cancellation.",
+                        "property": {
+                            "checkoutDate": "2025-06-15",
+                            "isPreferred": true,
+                            "checkout": {
+                                "untilTime": "11:00",
+                                "fromTime": "00:00"
+                            },
+                            "isPreferredPlus": true,
+                            "checkinDate": "2025-06-10",
+                            "isFirstPage": true,
+                            "reviewScore": 6.2,
+                            "wishlistName": "Mumbai",
+                            "blockIds": [
+                                "839473705_410205130_2_2_0_880468"
+                            ],
+                            "longitude": 72.8313107594204,
+                            "reviewScoreWord": "Pleasant",
+                            "propertyClass": 3,
+                            "photoUrls": [
+                                "https://cf.bstatic.com/xdata/images/hotel/square500/516480512.jpg?k=25f463909f2ea94587cd9199282ceec871d34fd0c78e0f56d4d1ae15123e6552&o=",
+                                "https://cf.bstatic.com/xdata/images/hotel/square1024/516480512.jpg?k=25f463909f2ea94587cd9199282ceec871d34fd0c78e0f56d4d1ae15123e6552&o=",
+                                "https://cf.bstatic.com/xdata/images/hotel/square2000/516480512.jpg?k=25f463909f2ea94587cd9199282ceec871d34fd0c78e0f56d4d1ae15123e6552&o="
+                            ],
+                            "position": 12,
+                            "name": "FabExpress Abad Inn - 700m from Gateway of India",
+                            "id": 8394737,
+                            "optOutFromGalleryChanges": 1,
+                            "countryCode": "in",
+                            "checkin": {
+                                "fromTime": "12:00",
+                                "untilTime": "00:00"
+                            },
+                            "ufi": -2092174,
+                            "accuratePropertyClass": 3,
+                            "latitude": 18.9185253892718,
+                            "rankingPosition": 12,
+                            "mainPhotoId": 516480512,
+                            "currency": "INR",
+                            "reviewCount": 275,
+                            "qualityClass": 0,
+                            "priceBreakdown": {
+                                "excludedPrice": {
+                                    "value": 24.9777304611982,
+                                    "currency": "USD"
+                                },
+                                "taxExceptions": [],
+                                "grossPrice": {
+                                    "currency": "USD",
+                                    "value": 208.147753843318
+                                },
+                                "strikethroughPrice": {
+                                    "value": 385.458716800019,
+                                    "currency": "USD"
+                                },
+                                "benefitBadges": [
+                                    {
+                                        "variant": "constructive",
+                                        "explanation": "Getaway Deal",
+                                        "text": "Getaway Deal",
+                                        "identifier": "Getaway 2021 Deals"
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "hotel_id": 11327137,
+                        "accessibilityLabel": "Indie Stays Studios, Chembur.\n3 out of 5 stars.\nThis is a Preferred property.\n7.6 Good 37 reviews.\n‎Central Suburbs‬ • ‎2.8 miles from downtown‬.\n Entire studio – 204.5 ft² : 1 bed • 1 bedroom • 1 bathroom.\nOriginal price 354 USD. Current price 283 USD..\n+34 USD taxes and charges.\nFree cancellation.\nNo prepayment needed.",
+                        "property": {
+                            "rankingPosition": 13,
+                            "latitude": 19.0536740855668,
+                            "ufi": -2092174,
+                            "accuratePropertyClass": 3,
+                            "priceBreakdown": {
+                                "excludedPrice": {
+                                    "value": 33.9447431146978,
+                                    "currency": "USD"
+                                },
+                                "taxExceptions": [],
+                                "grossPrice": {
+                                    "currency": "USD",
+                                    "value": 282.87286903317
+                                },
+                                "benefitBadges": [],
+                                "strikethroughPrice": {
+                                    "currency": "USD",
+                                    "value": 353.591086291462
+                                }
+                            },
+                            "qualityClass": 0,
+                            "reviewCount": 37,
+                            "currency": "INR",
+                            "mainPhotoId": 641375302,
+                            "optOutFromGalleryChanges": 0,
+                            "id": 11327137,
+                            "checkin": {
+                                "fromTime": "14:00",
+                                "untilTime": "00:00"
+                            },
+                            "countryCode": "in",
+                            "reviewScoreWord": "Good",
+                            "propertyClass": 3,
+                            "isFirstPage": true,
+                            "blockIds": [
+                                "1132713701_385916358_2_2_0"
+                            ],
+                            "wishlistName": "Mumbai",
+                            "reviewScore": 7.6,
+                            "longitude": 72.9142884149456,
+                            "name": "Indie Stays Studios, Chembur",
+                            "photoUrls": [
+                                "https://cf.bstatic.com/xdata/images/hotel/square500/641375302.jpg?k=71d841bca16785a66e44df5359c61566e66388ef4d7f0637d87661fc24bf6f29&o=",
+                                "https://cf.bstatic.com/xdata/images/hotel/square1024/641375302.jpg?k=71d841bca16785a66e44df5359c61566e66388ef4d7f0637d87661fc24bf6f29&o=",
+                                "https://cf.bstatic.com/xdata/images/hotel/square2000/641375302.jpg?k=71d841bca16785a66e44df5359c61566e66388ef4d7f0637d87661fc24bf6f29&o="
+                            ],
+                            "position": 13,
+                            "checkoutDate": "2025-06-15",
+                            "isPreferred": true,
+                            "checkinDate": "2025-06-10",
+                            "checkout": {
+                                "untilTime": "12:00",
+                                "fromTime": "00:00"
+                            }
+                        }
+                    },
+                    {
+                        "hotel_id": 11458182,
+                        "accessibilityLabel": "HOTEL ATLAS PLAZA BY BIZZGROW HOTELS.\n3 out of 5 stars.\nThis is a Preferred property.\n8.0 Very Good 24 reviews.\n‎Western Suburbs‬ • ‎3.6 miles from downtown‬.\n Hotel room : 3 beds.\n222 USD.\n+27 USD taxes and charges.\nFree cancellation.\nNo prepayment needed.",
+                        "property": {
+                            "propertyClass": 3,
+                            "reviewScoreWord": "Very Good",
+                            "wishlistName": "Mumbai",
+                            "longitude": 72.8506017,
+                            "blockIds": [
+                                "1145818203_387416090_0_41_0_909031"
+                            ],
+                            "reviewScore": 8,
+                            "isFirstPage": true,
+                            "name": "HOTEL ATLAS PLAZA BY BIZZGROW HOTELS",
+                            "photoUrls": [
+                                "https://cf.bstatic.com/xdata/images/hotel/square500/676713585.jpg?k=ed385f6d4e7a2b90ad9d62962f811309454cf0facdb79f414fd38b7a452f7c81&o=",
+                                "https://cf.bstatic.com/xdata/images/hotel/square1024/676713585.jpg?k=ed385f6d4e7a2b90ad9d62962f811309454cf0facdb79f414fd38b7a452f7c81&o=",
+                                "https://cf.bstatic.com/xdata/images/hotel/square2000/676713585.jpg?k=ed385f6d4e7a2b90ad9d62962f811309454cf0facdb79f414fd38b7a452f7c81&o="
+                            ],
+                            "position": 14,
+                            "isPreferred": true,
+                            "checkoutDate": "2025-06-15",
+                            "checkinDate": "2025-06-10",
+                            "checkout": {
+                                "untilTime": "11:00",
+                                "fromTime": "00:00"
+                            },
+                            "rankingPosition": 14,
+                            "latitude": 19.1214538,
+                            "accuratePropertyClass": 3,
+                            "ufi": -2092174,
+                            "priceBreakdown": {
+                                "benefitBadges": [],
+                                "excludedPrice": {
+                                    "currency": "USD",
+                                    "value": 26.6596453949913
+                                },
+                                "taxExceptions": [],
+                                "grossPrice": {
+                                    "currency": "USD",
+                                    "value": 222.163711624927
+                                }
+                            },
+                            "qualityClass": 0,
+                            "reviewCount": 24,
+                            "currency": "INR",
+                            "mainPhotoId": 676713585,
+                            "optOutFromGalleryChanges": 0,
+                            "id": 11458182,
+                            "checkin": {
+                                "fromTime": "13:00",
+                                "untilTime": "23:30"
+                            },
+                            "countryCode": "in"
+                        }
+                    },
+                    {
+                        "hotel_id": 647414,
+                        "accessibilityLabel": "Rama Krishna Hotel.\n3 out of 5 for property rating.\nThis is a Preferred property.\n7.6 Good 174 reviews.\n‎Western Suburbs‬ • ‎2.7 miles from downtown‬\n‎1.2 miles from beach‬.\nBreakfast included.\n Private room : 1 bed.\n275 USD.\n+33 USD taxes and charges.\nFree cancellation.",
+                        "property": {
+                            "countryCode": "in",
+                            "checkin": {
+                                "untilTime": "20:30",
+                                "fromTime": "12:00"
+                            },
+                            "id": 647414,
+                            "optOutFromGalleryChanges": 0,
+                            "currency": "INR",
+                            "mainPhotoId": 21478233,
+                            "priceBreakdown": {
+                                "benefitBadges": [],
+                                "taxExceptions": [],
+                                "grossPrice": {
+                                    "value": 274.781432799252,
+                                    "currency": "USD"
+                                },
+                                "excludedPrice": {
+                                    "currency": "USD",
+                                    "value": 32.9737707666276
+                                }
+                            },
+                            "qualityClass": 3,
+                            "reviewCount": 174,
+                            "latitude": 19.098874419977,
+                            "ufi": -2092174,
+                            "accuratePropertyClass": 0,
+                            "rankingPosition": 15,
+                            "checkout": {
+                                "untilTime": "12:30",
+                                "fromTime": "11:30"
+                            },
+                            "checkinDate": "2025-06-10",
+                            "checkoutDate": "2025-06-15",
+                            "isPreferred": true,
+                            "photoUrls": [
+                                "https://cf.bstatic.com/xdata/images/hotel/square500/21478233.jpg?k=f7e66c576f0962e9046666cf921745624bcb8047bc90a646072d5a548a792c83&o=",
+                                "https://cf.bstatic.com/xdata/images/hotel/square1024/21478233.jpg?k=f7e66c576f0962e9046666cf921745624bcb8047bc90a646072d5a548a792c83&o=",
+                                "https://cf.bstatic.com/xdata/images/hotel/square2000/21478233.jpg?k=f7e66c576f0962e9046666cf921745624bcb8047bc90a646072d5a548a792c83&o="
+                            ],
+                            "position": 15,
+                            "name": "Rama Krishna Hotel",
+                            "isFirstPage": true,
+                            "reviewScore": 7.6,
+                            "wishlistName": "Mumbai",
+                            "blockIds": [
+                                "64741402_212890620_2_1_0"
+                            ],
+                            "longitude": 72.8445490295417,
+                            "reviewScoreWord": "Good",
+                            "propertyClass": 0
+                        }
+                    },
+                    {
+                        "hotel_id": 12981941,
+                        "accessibilityLabel": "Hotel Amar Residency.\n3 out of 5 stars.\nThis is a Preferred property.\n7.6 Good 8 reviews.\n‎Western Suburbs‬ • ‎5 miles from downtown‬\n‎4,250 feet from beach‬.\nMobile-only price.\n Shared dorm room : 6 beds.\nOriginal price 158 USD. Current price 128 USD..\n+15 USD taxes and charges.\nFree cancellation.\nNo prepayment needed.",
+                        "property": {
+                            "id": 12981941,
+                            "optOutFromGalleryChanges": 0,
+                            "countryCode": "in",
+                            "checkin": {
+                                "untilTime": "12:00",
+                                "fromTime": "12:00"
+                            },
+                            "latitude": 19.135653,
+                            "accuratePropertyClass": 3,
+                            "ufi": -2092174,
+                            "rankingPosition": 16,
+                            "currency": "INR",
+                            "mainPhotoId": 606870007,
+                            "qualityClass": 0,
+                            "priceBreakdown": {
+                                "benefitBadges": [
+                                    {
+                                        "identifier": "Mobile Rate",
+                                        "text": "Mobile-only price",
+                                        "explanation": "Mobile-only price",
+                                        "variant": "constructive"
+                                    }
+                                ],
+                                "strikethroughPrice": {
+                                    "currency": "USD",
+                                    "value": 157.853163522974
+                                },
+                                "excludedPrice": {
+                                    "value": 15.3433274944332,
+                                    "currency": "USD"
+                                },
+                                "grossPrice": {
+                                    "currency": "USD",
+                                    "value": 127.861062453609
+                                },
+                                "taxExceptions": []
+                            },
+                            "reviewCount": 8,
+                            "isPreferred": true,
+                            "checkoutDate": "2025-06-15",
+                            "checkout": {
+                                "untilTime": "11:00",
+                                "fromTime": "11:00"
+                            },
+                            "checkinDate": "2025-06-10",
+                            "wishlistName": "Mumbai",
+                            "longitude": 72.8243512,
+                            "blockIds": [
+                                "1298194104_402727818_6_1_0"
+                            ],
+                            "reviewScore": 7.6,
+                            "isFirstPage": true,
+                            "propertyClass": 3,
+                            "reviewScoreWord": "Good",
+                            "photoUrls": [
+                                "https://cf.bstatic.com/xdata/images/hotel/square500/606870007.jpg?k=ba130f94b89db96dfafa6c476b530907886fa9b87a5d5fbb9bd6f245485cedaa&o=",
+                                "https://cf.bstatic.com/xdata/images/hotel/square1024/606870007.jpg?k=ba130f94b89db96dfafa6c476b530907886fa9b87a5d5fbb9bd6f245485cedaa&o=",
+                                "https://cf.bstatic.com/xdata/images/hotel/square2000/606870007.jpg?k=ba130f94b89db96dfafa6c476b530907886fa9b87a5d5fbb9bd6f245485cedaa&o="
+                            ],
+                            "position": 16,
+                            "name": "Hotel Amar Residency"
+                        }
+                    },
+                    {
+                        "hotel_id": 10433577,
+                        "accessibilityLabel": "FabHotel Royal International - Nr Mumbai International Airport.\n3 out of 5 stars.\nThis is a Preferred property.\n7.1 Good 753 reviews.\n‎Western Suburbs‬ • ‎3.4 miles from downtown‬.\nGetaway Deal.\n Hotel room : 1 bed.\nOriginal price 318 USD. Current price 172 USD..\n+21 USD taxes and charges.\nFree cancellation.",
+                        "property": {
+                            "propertyClass": 3,
+                            "reviewScoreWord": "Good",
+                            "wishlistName": "Mumbai",
+                            "blockIds": [
+                                "1043357701_410204806_2_2_0_879767"
+                            ],
+                            "reviewScore": 7.1,
+                            "longitude": 72.863355431352,
+                            "isFirstPage": true,
+                            "name": "FabHotel Royal International - Nr Mumbai International Airport",
+                            "position": 17,
+                            "photoUrls": [
+                                "https://cf.bstatic.com/xdata/images/hotel/square500/644243816.jpg?k=ab9dc8e3cf6f0d90cc5947ea494f42b06f40d2be2db9b40eba129131c9430187&o=",
+                                "https://cf.bstatic.com/xdata/images/hotel/square1024/644243816.jpg?k=ab9dc8e3cf6f0d90cc5947ea494f42b06f40d2be2db9b40eba129131c9430187&o=",
+                                "https://cf.bstatic.com/xdata/images/hotel/square2000/644243816.jpg?k=ab9dc8e3cf6f0d90cc5947ea494f42b06f40d2be2db9b40eba129131c9430187&o="
+                            ],
+                            "isPreferred": true,
+                            "checkoutDate": "2025-06-15",
+                            "checkinDate": "2025-06-10",
+                            "checkout": {
+                                "fromTime": "00:00",
+                                "untilTime": "11:00"
+                            },
+                            "rankingPosition": 17,
+                            "latitude": 19.122957419838,
+                            "accuratePropertyClass": 3,
+                            "ufi": -2092174,
+                            "priceBreakdown": {
+                                "strikethroughPrice": {
+                                    "currency": "USD",
+                                    "value": 318.18286778922
+                                },
+                                "benefitBadges": [
+                                    {
+                                        "identifier": "Getaway 2021 Deals",
+                                        "explanation": "Getaway Deal",
+                                        "text": "Getaway Deal",
+                                        "variant": "constructive"
+                                    }
+                                ],
+                                "taxExceptions": [],
+                                "grossPrice": {
+                                    "value": 171.818725220525,
+                                    "currency": "USD"
+                                },
+                                "excludedPrice": {
+                                    "value": 20.6182470264631,
+                                    "currency": "USD"
+                                }
+                            },
+                            "qualityClass": 0,
+                            "reviewCount": 753,
+                            "currency": "INR",
+                            "mainPhotoId": 644243816,
+                            "optOutFromGalleryChanges": 1,
+                            "id": 10433577,
+                            "checkin": {
+                                "untilTime": "00:00",
+                                "fromTime": "12:00"
+                            },
+                            "countryCode": "in"
+                        }
+                    },
+                    {
+                        "hotel_id": 10684742,
+                        "accessibilityLabel": "Hotel Arts International.\n3 out of 5 for property rating.\nThis is a Preferred property.\n7.3 Good 698 reviews.\n‎Santacruz‬ • ‎2.8 miles from downtown‬\n‎3,350 feet from beach‬.\nMobile-only price.\n Private room : 1 bed.\nOriginal price 308 USD. Current price 277 USD..\n+33 USD taxes and charges.",
+                        "property": {
+                            "countryCode": "in",
+                            "checkin": {
+                                "fromTime": "12:00",
+                                "untilTime": "00:00"
+                            },
+                            "id": 10684742,
+                            "optOutFromGalleryChanges": 0,
+                            "currency": "INR",
+                            "mainPhotoId": 489416079,
+                            "priceBreakdown": {
+                                "benefitBadges": [
+                                    {
+                                        "variant": "constructive",
+                                        "identifier": "Mobile Rate",
+                                        "explanation": "Mobile-only price",
+                                        "text": "Mobile-only price"
+                                    }
+                                ],
+                                "strikethroughPrice": {
+                                    "value": 308.252149879586,
+                                    "currency": "USD"
+                                },
+                                "grossPrice": {
+                                    "currency": "USD",
+                                    "value": 277.426934891627
+                                },
+                                "taxExceptions": [],
+                                "excludedPrice": {
+                                    "currency": "USD",
+                                    "value": 33.2912310177127
+                                }
+                            },
+                            "qualityClass": 3,
+                            "reviewCount": 698,
+                            "latitude": 19.0862384,
+                            "accuratePropertyClass": 0,
+                            "ufi": -2092174,
+                            "rankingPosition": 18,
+                            "checkout": {
+                                "fromTime": "00:00",
+                                "untilTime": "11:00"
+                            },
+                            "checkinDate": "2025-06-10",
+                            "isPreferred": true,
+                            "checkoutDate": "2025-06-15",
+                            "photoUrls": [
+                                "https://cf.bstatic.com/xdata/images/hotel/square500/489416079.jpg?k=5451d14fec77b36a51d80c2ccd1b118827b93676f263db0abb781e82554bdfcf&o=",
+                                "https://cf.bstatic.com/xdata/images/hotel/square1024/489416079.jpg?k=5451d14fec77b36a51d80c2ccd1b118827b93676f263db0abb781e82554bdfcf&o=",
+                                "https://cf.bstatic.com/xdata/images/hotel/square2000/489416079.jpg?k=5451d14fec77b36a51d80c2ccd1b118827b93676f263db0abb781e82554bdfcf&o="
+                            ],
+                            "position": 18,
+                            "name": "Hotel Arts International",
+                            "wishlistName": "Mumbai",
+                            "reviewScore": 7.3,
+                            "longitude": 72.8361314,
+                            "blockIds": [
+                                "1068474201_384557993_2_2_0"
+                            ],
+                            "isFirstPage": true,
+                            "propertyClass": 0,
+                            "reviewScoreWord": "Good"
+                        }
+                    },
+                    {
+                        "hotel_id": 8010625,
+                        "accessibilityLabel": "Hotel JK Regency, Mumbai International.\n3 out of 5 stars.\nThis is a Preferred property.\n6.7 Pleasant 91 reviews.\n‎Western Suburbs‬ • ‎3.6 miles from downtown‬\n‎1.9 miles from beach‬.\nGetaway Deal.\nBreakfast included.\n Private suite – 129.2 ft² : 4 beds • 1 bedroom • 1 living room • 1 bathroom.\nOriginal price 400 USD. Current price 281 USD..\n+34 USD taxes and charges.\nFree cancellation.",
+                        "property": {
+                            "checkinDate": "2025-06-10",
+                            "checkout": {
+                                "untilTime": "11:00",
+                                "fromTime": "10:00"
+                            },
+                            "isPreferred": true,
+                            "checkoutDate": "2025-06-15",
+                            "name": "Hotel JK Regency, Mumbai International",
+                            "position": 19,
+                            "photoUrls": [
+                                "https://cf.bstatic.com/xdata/images/hotel/square500/330722586.jpg?k=c896941ea3293b3447219d40b427e924f7226f2b3896249d4f5f068adfed8bd8&o=",
+                                "https://cf.bstatic.com/xdata/images/hotel/square1024/330722586.jpg?k=c896941ea3293b3447219d40b427e924f7226f2b3896249d4f5f068adfed8bd8&o=",
+                                "https://cf.bstatic.com/xdata/images/hotel/square2000/330722586.jpg?k=c896941ea3293b3447219d40b427e924f7226f2b3896249d4f5f068adfed8bd8&o="
+                            ],
+                            "propertyClass": 3,
+                            "reviewScoreWord": "Pleasant",
+                            "wishlistName": "Mumbai",
+                            "reviewScore": 6.7,
+                            "longitude": 72.849682,
+                            "blockIds": [
+                                "801062503_411702773_2_1_0"
+                            ],
+                            "isFirstPage": true,
+                            "checkin": {
+                                "fromTime": "12:00",
+                                "untilTime": "23:30"
+                            },
+                            "countryCode": "in",
+                            "optOutFromGalleryChanges": 1,
+                            "id": 8010625,
+                            "priceBreakdown": {
+                                "taxExceptions": [],
+                                "grossPrice": {
+                                    "currency": "USD",
+                                    "value": 280.520856896678
+                                },
+                                "excludedPrice": {
+                                    "value": 33.6625016583187,
+                                    "currency": "USD"
+                                },
+                                "strikethroughPrice": {
+                                    "value": 399.602360251678,
+                                    "currency": "USD"
+                                },
+                                "benefitBadges": [
+                                    {
+                                        "text": "Getaway Deal",
+                                        "explanation": "Getaway Deal",
+                                        "identifier": "Getaway 2021 Deals",
+                                        "variant": "constructive"
+                                    }
+                                ]
+                            },
+                            "qualityClass": 0,
+                            "reviewCount": 91,
+                            "currency": "INR",
+                            "mainPhotoId": 330722586,
+                            "rankingPosition": 19,
+                            "latitude": 19.121391,
+                            "accuratePropertyClass": 3,
+                            "ufi": -2092174
+                        }
+                    }
+                ],
+                "meta": [
+                    {
+                        "title": "603 properties"
+                    }
+                ],
+                "appear": [
+                    {
+                        "id": "cma",
+                        "component": {
+                            "props": {
+                                "fill": true,
+                                "content": {
+                                    "props": {
+                                        "fitContentWidth": true,
+                                        "items": [
+                                            {
+                                                "props": {
+                                                    "component": {
+                                                        "props": {
+                                                            "spacing": "spacing_half",
+                                                            "items": [
+                                                                {
+                                                                    "props": {
+                                                                        "text": [
+                                                                            {
+                                                                                "font": "body_2",
+                                                                                "text": "Read more on how payments affect the order of listed properties"
+                                                                            },
+                                                                            {
+                                                                                "color": "foreground",
+                                                                                "text": "  ",
+                                                                                "font": "strong_2"
+                                                                            },
+                                                                            {
+                                                                                "color": "action_foreground",
+                                                                                "linkActions": [
+                                                                                    {
+                                                                                        "props": {
+                                                                                            "url": "booking://webview?url=https%3A%2F%2Fm.booking.com%2Fgeneral.en-us.html%3Faid%3D332731%3Btmpl%3Ddocs%2Fterms-and-conditions"
+                                                                                        }
+                                                                                    }
+                                                                                ],
+                                                                                "font": "body_2",
+                                                                                "text": "Learn more"
+                                                                            }
+                                                                        ]
+                                                                    }
+                                                                }
+                                                            ]
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            {
+                                                "props": {}
+                                            },
+                                            {
+                                                "props": {
+                                                    "component": {
+                                                        "props": {
+                                                            "tertiaryTintedColor": "foreground",
+                                                            "icon": "close",
+                                                            "variant": "tertiary_tinted",
+                                                            "accessibilityLabel": "Close"
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    {
+                        "contentUrl": "https://mobile-apps.booking.com/json/mobile.saba?route_path=saba-chat-entrypoint&add_bh_info=1&add_genius_percentage_value=1&add_ribbon_text=1&affiliate_id=332731&arrival_date=2025-06-10&autoextend=1&booked_x_times_for_dates=1&booked_x_times_threshold=1&categories_filter_additional_data=&change_popularity_sort_option_copy_tag=1&change_sort_options_copy_tags=1&check_excluded_charge_or_tax=1&check_flexible_dates=1&check_is_candidate_wholesaler=1&currency_code=USD&dark_mode=1&deeplink_sec_since_click=168567.9046729803&departure_date=2025-06-15&dest_ids=-2092174&device_id=57d11ec8bad14e119e4c15a86202c23f&distance_unit=metric&dl_sr_adoption=1&dotd=2&exposure_api_version=2.17&fix_dotd=1&flex_window=0&generate_map_bounding_box=1&get_cny_campaign_banner=1&get_skiing_info=1&guest_qty=2&include_amazon_banner=1&include_apartment_config=1&include_badges_in_price_breakdown=1&include_beach_information=1&include_bh_quality_classification=1&include_block_ids=1&include_bsb_info=1&include_bwallet_hotel_eligibility=1&include_composite_breakdown=1&include_cpc_non_trader_copy=1&include_excluded_charges_detail=1&include_free_cancellation=1&include_genius_badge=1&include_last_reservation=1&include_nr_bookings_best_range_message=1&include_nr_bookings_today=1&include_offered_bed_types=1&include_preview_cards=1&include_rack_rate_savings=1&include_rtb=1&include_ski_information=1&languagecode=en-us&location_source=recents&mark_first_highlighted_hotel=1&min_saba_version=31&network_type=wifi&new_segments_carousel=1&offset=0&optimized_call=1&outcome=search_results&page_define_enabled=1&pref_match=0&reason=change_sort_options&remove_wishlist_padding=1&room_qty=1&rows=auto&saba=1&saba_payload_root=1&saba_version=50&sb_calendar_open=1&search_type=city&send_ranking_version=1&send_search_id=1&show_beach_filter_badge=1&show_city_distance=1&show_distance_to_beach=1&show_distance_to_nearest_public_transport=1&show_genius_free_breakfast=0&show_if_mobile_deal=1&show_negotiated_rates=1&show_no_prepayment=1&show_policy=1&show_review_score_breakdowns=1&show_selected_filter_values=1&show_soldout=1&sort_by=auto&sort_by_source=sort_options&sort_genius_new_copy=1&source=search_results&temperature_unit=c&travel_purpose=&unfiltered_count_enabled=1&units=imperial&use_dest_based_list_creation=1&use_direct_payment=1&user_os=15.5&user_version=36.8-iphone&categories_filter=price%3A%3AUSD-100-300&children_qty=1&children_age=5&page=search-results"
+                    },
+                    {
+                        "id": "signin_now",
+                        "component": {
+                            "props": {
+                                "text": "Get instant access to our Genius loyalty program and enjoy discounts at properties worldwide.",
+                                "title": "Sign in and save money"
+                            }
+                        }
+                    },
+                    {
+                        "id": "banner_qualityrating",
+                        "component": {
+                            "props": {
+                                "title": "",
+                                "text": "Properties with these icons have been awarded Booking.com's quality rating for homes"
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    }
+}

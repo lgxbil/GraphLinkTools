@@ -1,0 +1,635 @@
+{
+    "shorten": {
+        "api": {
+            "name": "Get_Flight_Details",
+            "endpoint": "/api/v1/flights/getFlightDetails",
+            "func_description": "Search the detail information of flights, include: baggage allowances, airline meals, ticket price breakdown (taxes, discounts, baseFare) and insurance prices, etc. ",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "token": {
+                        "type": "String",
+                        "description": "token can be retrieved from api/v1/flights/searchFlights(Search Flights) or api/v1/flights/searchFlightsMultiStops(Search Flights Multi Stops) endpoints in Flights collection as token.",
+                        "example_value": "",
+                        "required": true
+                    },
+                    "currency_code": {
+                        "type": "String",
+                        "description": "The currency code. currency_code can be retrieved from api/v1/meta/getCurrency(Get Currency) endpoint in Hotels collection.",
+                        "example_value": "AED",
+                        "required": false
+                    }
+                },
+                "required": [
+                    "token"
+                ]
+            }
+        },
+        "static_response": {
+            "function_name": "Get_Flight_Details",
+            "arguments": {
+                "token": "d7699_H4sIAAAAAAAA_y2QbW-CMBSFf41-o1BLBUyaBQEd8YU5VMK-ECgV8GUstJvIr18F05tznnNv09y0FOKHz1T1dK2KUnDll4OiFnWRCgZofVNPjZSsri_Vd6GmVaO6i8i33zXD9RwVqoo8dBa_sVYovKFkXGUMpESxLGtATsmHbb64IVOgL7f2V4BQ36K1IDrAyItcbOHdfGg2ZLny4y3uU042Lr8H3XEXdD4KulgLukP3ecy97f7y2HumsdnHbfi4t9vzYrV2YHg48_va0dq1642Q2z_CKCUQAN2wYJ_rlBPDfDEVBGoD5oKEG8uLoiEKgk19WL4lECETjzm7Miqq-nvFHsS2p1hT5F8wOtGV-WjiWG3W3koJI2TLKhJNatlrmoRraVli-dLoYHnCdOM5Zf2dU6JLrRIINPDM58SPpHUJ_EMIY_gPc6B4mq4BAAA."
+            },
+            "observation": {
+                "status": true,
+                "message": "Success",
+                "data": {
+                    "token": "d7699_H4sIAAAAAAAA_y2QbW-CMBSFf41-o1BLBUyaBQEd8YU5VMK-ECgV8GUstJvIr18F05tznnNv09y0FOKHz1T1dK2KUnDll4OiFnWRCgZofVNPjZSsri_Vd6GmVaO6i8i33zXD9RwVqoo8dBa_sVYovKFkXGUMpESxLGtATsmHbb64IVOgL7f2V4BQ36K1IDrAyItcbOHdfGg2ZLny4y3uU042Lr8H3XEXdD4KulgLukP3ecy97f7y2HumsdnHbfi4t9vzYrV2YHg48_va0dq1642Q2z_CKCUQAN2wYJ_rlBPDfDEVBGoD5oKEG8uLoiEKgk19WL4lECETjzm7Miqq-nvFHsS2p1hT5F8wOtGV-WjiWG3W3koJI2TLKhJNatlrmoRraVli-dLoYHnCdOM5Zf2dU6JLrRIINPDM58SPpHUJ_EMIY_gPc6B4mq4BAAA.",
+                    "segments": [
+                        {
+                            "departureAirport": {
+                                "type": "AIRPORT",
+                                "code": "DFW",
+                                "name": "Dallas-Fort Worth International Airport",
+                                "city": "DFW",
+                                "cityName": "Dallas",
+                                "country": "US",
+                                "countryName": "United States",
+                                "province": "Texas",
+                                "provinceCode": "TX"
+                            },
+                            "arrivalAirport": {
+                                "type": "AIRPORT",
+                                "code": "IAH",
+                                "name": "George Bush Intercontinental Airport",
+                                "city": "HOU",
+                                "cityName": "Houston",
+                                "country": "US",
+                                "countryName": "United States",
+                                "province": "Texas",
+                                "provinceCode": "TX"
+                            },
+                            "departureTime": "2024-12-07T17:09:00",
+                            "arrivalTime": "2024-12-07T18:15:00",
+                            "legs": [
+                                {
+                                    "departureTime": "2024-12-07T17:09:00",
+                                    "arrivalTime": "2024-12-07T18:15:00",
+                                    "departureAirport": {
+                                        "type": "AIRPORT",
+                                        "code": "DFW",
+                                        "name": "Dallas-Fort Worth International Airport",
+                                        "city": "DFW",
+                                        "cityName": "Dallas",
+                                        "country": "US",
+                                        "countryName": "United States",
+                                        "province": "Texas",
+                                        "provinceCode": "TX"
+                                    },
+                                    "arrivalAirport": {
+                                        "type": "AIRPORT",
+                                        "code": "IAH",
+                                        "name": "George Bush Intercontinental Airport",
+                                        "city": "HOU",
+                                        "cityName": "Houston",
+                                        "country": "US",
+                                        "countryName": "United States",
+                                        "province": "Texas",
+                                        "provinceCode": "TX"
+                                    },
+                                    "cabinClass": "ECONOMY",
+                                    "flightInfo": {
+                                        "flightNumber": 650,
+                                        "carrierInfo": {
+                                            "operatingCarrier": "AA",
+                                            "marketingCarrier": "AA"
+                                        }
+                                    },
+                                    "carriers": [
+                                        "AA",
+                                        "AA"
+                                    ],
+                                    "carriersData": [
+                                        {
+                                            "name": "American Airlines",
+                                            "code": "AA"
+                                        },
+                                        {
+                                            "name": "American Airlines",
+                                            "code": "AA"
+                                        }
+                                    ],
+                                    "totalTime": 3960,
+                                    "amenities": [
+                                        {
+                                            "category": "AIRCRAFT",
+                                            "model": "A321"
+                                        },
+                                        {
+                                            "category": "ENTERTAINMENT",
+                                            "cost": "free"
+                                        },
+                                        {
+                                            "category": "POWER",
+                                            "cost": "free",
+                                            "type": [
+                                                "power_outlet",
+                                                "usb_port"
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ],
+                            "totalTime": 3960,
+                            "travellerCabinLuggage": [
+                                {
+                                    "travellerReference": "1",
+                                    "luggageAllowance": {
+                                        "luggageType": "HAND",
+                                        "maxPiece": 1,
+                                        "sizeRestrictions": {
+                                            "maxLength": 22.1,
+                                            "maxWidth": 14.2,
+                                            "maxHeight": 9.1,
+                                            "sizeUnit": "INCH"
+                                        }
+                                    },
+                                    "personalItem": true
+                                }
+                            ],
+                            "isAtolProtected": false,
+                            "showWarningDestinationAirport": false,
+                            "showWarningOriginAirport": false
+                        }
+                    ],
+                    "priceBreakdown": {
+                        "total": {
+                            "currencyCode": "USD",
+                            "units": 58,
+                            "nanos": 480000000
+                        },
+                        "baseFare": {
+                            "currencyCode": "USD",
+                            "units": 40,
+                            "nanos": 350000000
+                        },
+                        "fee": {
+                            "currencyCode": "USD",
+                            "units": 0,
+                            "nanos": 0
+                        },
+                        "tax": {
+                            "currencyCode": "USD",
+                            "units": 18,
+                            "nanos": 130000000
+                        },
+                        "totalRounded": {
+                            "currencyCode": "USD",
+                            "nanos": 0,
+                            "units": 59
+                        },
+                        "discount": {
+                            "currencyCode": "USD",
+                            "units": 0,
+                            "nanos": 0
+                        },
+                        "totalWithoutDiscount": {
+                            "currencyCode": "USD",
+                            "units": 58,
+                            "nanos": 480000000
+                        },
+                        "totalWithoutDiscountRounded": {
+                            "currencyCode": "USD",
+                            "nanos": 0,
+                            "units": 59
+                        },
+                        "carrierTaxBreakdown": [
+                            {
+                                "carrier": {
+                                    "name": "American Airlines",
+                                    "code": "AA"
+                                },
+                                "avgPerAdult": {
+                                    "currencyCode": "USD",
+                                    "units": 18,
+                                    "nanos": 130000000
+                                }
+                            }
+                        ]
+                    },
+                    "travellerPrices": [
+                        {
+                            "travellerPriceBreakdown": {
+                                "total": {
+                                    "currencyCode": "USD",
+                                    "units": 58,
+                                    "nanos": 480000000
+                                },
+                                "baseFare": {
+                                    "currencyCode": "USD",
+                                    "units": 40,
+                                    "nanos": 350000000
+                                },
+                                "fee": {
+                                    "currencyCode": "USD",
+                                    "units": 0,
+                                    "nanos": 0
+                                },
+                                "tax": {
+                                    "currencyCode": "USD",
+                                    "units": 18,
+                                    "nanos": 130000000
+                                },
+                                "totalRounded": {
+                                    "currencyCode": "USD",
+                                    "nanos": 0,
+                                    "units": 59
+                                },
+                                "discount": {
+                                    "currencyCode": "USD",
+                                    "units": 0,
+                                    "nanos": 0
+                                },
+                                "totalWithoutDiscount": {
+                                    "currencyCode": "USD",
+                                    "units": 58,
+                                    "nanos": 480000000
+                                },
+                                "totalWithoutDiscountRounded": {
+                                    "currencyCode": "USD",
+                                    "nanos": 0,
+                                    "units": 59
+                                }
+                            },
+                            "travellerReference": "1",
+                            "travellerType": "ADULT"
+                        }
+                    ],
+                    "priceDisplayRequirements": [
+                        "AIR_PRICE_BREAKDOWN"
+                    ],
+                    "pointOfSale": "us",
+                    "tripType": "ONEWAY",
+                    "offerReference": "d7699_1806454464",
+                    "travellerDataRequirements": [
+                        "DATE_OF_BIRTH"
+                    ],
+                    "bookerDataRequirement": [
+                        "EMAIL",
+                        "PHONE"
+                    ],
+                    "travellers": [
+                        {
+                            "travellerReference": "1",
+                            "type": "ADULT"
+                        }
+                    ],
+                    "posMismatch": {
+                        "detectedPointOfSale": "us",
+                        "isPOSMismatch": false,
+                        "offerSalesCountry": "us"
+                    },
+                    "includedProductsBySegment": [
+                        [
+                            {
+                                "travellerReference": "1",
+                                "travellerProducts": [
+                                    {
+                                        "type": "cabinBaggage",
+                                        "product": {
+                                            "luggageType": "HAND",
+                                            "maxPiece": 1,
+                                            "sizeRestrictions": {
+                                                "maxLength": 22.1,
+                                                "maxWidth": 14.2,
+                                                "maxHeight": 9.1,
+                                                "sizeUnit": "INCH"
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "type": "personalItem"
+                                    }
+                                ]
+                            }
+                        ]
+                    ],
+                    "includedProducts": {
+                        "areAllSegmentsIdentical": true,
+                        "segments": [
+                            [
+                                {
+                                    "luggageType": "PERSONAL_ITEM",
+                                    "maxPiece": 1,
+                                    "piecePerPax": 1
+                                },
+                                {
+                                    "luggageType": "HAND",
+                                    "maxPiece": 1,
+                                    "sizeRestrictions": {
+                                        "maxLength": 22.1,
+                                        "maxWidth": 14.2,
+                                        "maxHeight": 9.1,
+                                        "sizeUnit": "INCH"
+                                    },
+                                    "piecePerPax": 1
+                                }
+                            ]
+                        ]
+                    },
+                    "extraProducts": [
+                        {
+                            "type": "flexibleTicket",
+                            "priceBreakdown": {
+                                "total": {
+                                    "currencyCode": "USD",
+                                    "units": 8,
+                                    "nanos": 190000000
+                                },
+                                "baseFare": {
+                                    "currencyCode": "USD",
+                                    "units": 8,
+                                    "nanos": 190000000
+                                },
+                                "fee": {
+                                    "currencyCode": "USD",
+                                    "units": 0,
+                                    "nanos": 0
+                                },
+                                "tax": {
+                                    "currencyCode": "USD",
+                                    "units": 0,
+                                    "nanos": 0
+                                },
+                                "discount": {
+                                    "currencyCode": "USD",
+                                    "units": 0,
+                                    "nanos": 0
+                                },
+                                "totalWithoutDiscount": {
+                                    "currencyCode": "USD",
+                                    "units": 8,
+                                    "nanos": 190000000
+                                }
+                            }
+                        }
+                    ],
+                    "offerExtras": {
+                        "flexibleTicket": {
+                            "airProductReference": "n/a",
+                            "travellers": [
+                                "1"
+                            ],
+                            "recommendation": {
+                                "recommended": false,
+                                "confidence": "UNKNOWN_LEVEL"
+                            },
+                            "priceBreakdown": {
+                                "total": {
+                                    "currencyCode": "USD",
+                                    "units": 8,
+                                    "nanos": 190000000
+                                },
+                                "baseFare": {
+                                    "currencyCode": "USD",
+                                    "units": 8,
+                                    "nanos": 190000000
+                                },
+                                "fee": {
+                                    "currencyCode": "USD",
+                                    "units": 0,
+                                    "nanos": 0
+                                },
+                                "tax": {
+                                    "currencyCode": "USD",
+                                    "units": 0,
+                                    "nanos": 0
+                                },
+                                "totalRounded": {
+                                    "currencyCode": "USD",
+                                    "nanos": 0,
+                                    "units": 9
+                                },
+                                "discount": {
+                                    "currencyCode": "USD",
+                                    "units": 0,
+                                    "nanos": 0
+                                },
+                                "totalWithoutDiscount": {
+                                    "currencyCode": "USD",
+                                    "units": 8,
+                                    "nanos": 190000000
+                                },
+                                "totalWithoutDiscountRounded": {
+                                    "currencyCode": "USD",
+                                    "nanos": 0,
+                                    "units": 9
+                                }
+                            },
+                            "supplierInfo": {
+                                "name": "Gotogate, Inc."
+                            }
+                        }
+                    },
+                    "ancillaries": {
+                        "flexibleTicket": {
+                            "airProductReference": "n/a",
+                            "travellers": [
+                                "1"
+                            ],
+                            "priceBreakdown": {
+                                "total": {
+                                    "currencyCode": "USD",
+                                    "units": 8,
+                                    "nanos": 190000000
+                                },
+                                "baseFare": {
+                                    "currencyCode": "USD",
+                                    "units": 8,
+                                    "nanos": 190000000
+                                },
+                                "fee": {
+                                    "currencyCode": "USD",
+                                    "units": 0,
+                                    "nanos": 0
+                                },
+                                "tax": {
+                                    "currencyCode": "USD",
+                                    "units": 0,
+                                    "nanos": 0
+                                },
+                                "discount": {
+                                    "currencyCode": "USD",
+                                    "units": 0,
+                                    "nanos": 0
+                                },
+                                "totalWithoutDiscount": {
+                                    "currencyCode": "USD",
+                                    "units": 8,
+                                    "nanos": 190000000
+                                }
+                            },
+                            "preSelected": false,
+                            "recommendation": {
+                                "recommended": false,
+                                "confidence": "UNKNOWN_LEVEL"
+                            },
+                            "supplierInfo": {
+                                "name": "Gotogate, Inc."
+                            }
+                        },
+                        "travelInsurance": {
+                            "options": {
+                                "type": "COMPREHENSIVE_INSURANCE_COVER_GENIUS",
+                                "travellers": [
+                                    "1"
+                                ],
+                                "priceBreakdown": {
+                                    "total": {
+                                        "currencyCode": "USD",
+                                        "units": 3,
+                                        "nanos": 960000000
+                                    },
+                                    "baseFare": {
+                                        "currencyCode": "USD",
+                                        "units": 3,
+                                        "nanos": 960000000
+                                    },
+                                    "fee": {
+                                        "currencyCode": "USD",
+                                        "units": 0,
+                                        "nanos": 0
+                                    },
+                                    "tax": {
+                                        "currencyCode": "USD",
+                                        "units": 0,
+                                        "nanos": 0
+                                    },
+                                    "discount": {
+                                        "currencyCode": "USD",
+                                        "units": 0,
+                                        "nanos": 0
+                                    },
+                                    "totalWithoutDiscount": {
+                                        "currencyCode": "USD",
+                                        "units": 3,
+                                        "nanos": 960000000
+                                    }
+                                },
+                                "disclaimer": "Plan is issued by Cover Genius Insurance Services, LLC, includes insurance by US Fire and non-ins. services by On Call International. By clicking the button to select this coverage, I agree that I have read and agree to the Plan Terms."
+                            },
+                            "content": {
+                                "header": "Travel protection",
+                                "subheader": "Protect yourself from the unexpected. XCover's Travel Protection covers flight costs and more.",
+                                "optInTitle": "Travel protection",
+                                "optOutTitle": "No insurance",
+                                "exclusions": [
+                                    "Terms and exclusions apply. Claims and losses due to pre-existing medical conditions are not covered."
+                                ],
+                                "coveredStatusLabel": "Insured",
+                                "notCoveredStatusLabel": "Not insured",
+                                "benefitsTitle": "What’s covered by your travel insurance",
+                                "closeA11y": "Close and go back to the travel insurance overview section.",
+                                "benefits": [
+                                    "Trip cancellation - Unforeseen covered circumstances that force you to cancel your trip",
+                                    "Trip interruption - Unexpected events that require you to return home during your trip\n",
+                                    "Travel delay - Expenses, like hotels and food, if you’re delayed during your trip"
+                                ],
+                                "finePrint": [
+                                    "This plan is issued by Cover Genius Insurance Services, LLC, and includes insurance by US Fire and non-insurance services by On Call International. By selecting this coverage, I agree that I have read and agree to the <a href='https://www.xcover.com/en-us/pds/U6RD7-9YDNV-INS' id='insurance_terms_link' target='_blank' rel='noopener noreferrer' >Plan Terms & Disclosures</a>. Coverage is not available for travellers residing in Hawaii, Kansas, New York, or Wyoming."
+                                ]
+                            },
+                            "forceForAllTravellers": true,
+                            "isPerTraveller": true,
+                            "version": 0,
+                            "recommendation": {
+                                "recommended": false,
+                                "confidence": "UNKNOWN_LEVEL"
+                            }
+                        }
+                    },
+                    "brandedFareInfo": {
+                        "fareName": "Standard",
+                        "features": [
+                            {
+                                "featureName": "PERSONAL_BAGGAGE",
+                                "category": "BAGGAGE",
+                                "code": "BK03",
+                                "label": "1 personal item",
+                                "availability": "INCLUDED"
+                            },
+                            {
+                                "featureName": "CABIN_BAGGAGE",
+                                "category": "BAGGAGE",
+                                "code": "BK02",
+                                "label": "1 cabin bag",
+                                "availability": "INCLUDED"
+                            }
+                        ],
+                        "nonIncludedFeaturesRequired": false
+                    },
+                    "offerKeyToHighlight": "1_AA650",
+                    "carbonEmissions": {
+                        "footprintForOffer": {
+                            "quantity": 63,
+                            "unit": "KG",
+                            "status": "LOWER",
+                            "average": 71.49,
+                            "percentageDifference": 11
+                        }
+                    },
+                    "displayOptions": {
+                        "skipExtrasPage": false
+                    }
+                }
+            }
+        },
+        "required": {
+            "query": "I found a flight option earlier and would like to see more details about it, such as baggage allowances and the breakdown of the ticket price. Can you help me with that?",
+            "params": {},
+            "response": {
+                "status": false,
+                "message": [
+                    {
+                        "token": "Invalid value"
+                    },
+                    {
+                        "token": "Invalid value"
+                    }
+                ]
+            }
+        },
+        "optional": {
+            "query": "I found a flight option earlier and would like to see more details about it, such as baggage allowances and the breakdown of the ticket price. The token for this flight is 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c'. Can you provide the details in US dollars?",
+            "params": {
+                "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c",
+                "currency_code": "USD"
+            },
+            "response": {
+                "status": true,
+                "message": "Success",
+                "timestamp": 1747651602847,
+                "data": {
+                    "error": {
+                        "code": "SEARCH_GETFLIGHTDETAILS_EXPIRED",
+                        "requestId": "8d32a8f0-349e-11f0-ae41-a50f5e745e50"
+                    }
+                }
+            }
+        }
+    },
+    "row": {
+        "required": {
+            "status": false,
+            "message": [
+                {
+                    "token": "Invalid value"
+                },
+                {
+                    "token": "Invalid value"
+                }
+            ]
+        },
+        "optional": {
+            "status": true,
+            "message": "Success",
+            "timestamp": 1747651602847,
+            "data": {
+                "error": {
+                    "code": "SEARCH_GETFLIGHTDETAILS_EXPIRED",
+                    "requestId": "8d32a8f0-349e-11f0-ae41-a50f5e745e50"
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,139 @@
+{
+    "shorten": {
+        "api": {
+            "name": "Booking_Summary",
+            "endpoint": "/api/v1/cars/bookingSummary",
+            "func_description": "Retrieve a summary of the booking details for a specific vehicle. ",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "vehicle_id": {
+                        "type": "String",
+                        "description": "Vehicle ID. vehicle_id can be retrieved from api/v1/cars/searchCarRentals(Search Car Rentals) endpoint in Car Rental collection as vehicle_id inside search_results object.",
+                        "example_value": "373025711",
+                        "required": true
+                    },
+                    "search_key": {
+                        "type": "String",
+                        "description": "search_key can be retrieved from api/v1/cars/searchCarRentals(Search Car Rentals) endpoint in Car Rental collection as search_key.",
+                        "example_value": "eyJkcml2ZXJzQWdlIjozMCwiZHJvcE9mZkRhdGVUaW1lIjoiMjAyMy0xMS0xN1QxMDowMDowMCIsImRyb3BPZmZMb2NhdGlvbiI6IjQwLjYzOTcwMTg0MzI2MTcsLTczLjc3OTE5NzY5Mjg3MTEiLCJkcm9wT2ZmTG9jYXRpb25UeXBlIjoiTEFUTE9ORyIsInBpY2tVcERhdGVUaW1lIjoiMjAyMy0xMS0xNVQxMDowMDowMCIsInBpY2tVcExvY2F0aW9uIjoiNDAuNjM5NzAxODQzMjYxNywtNzMuNzc5MTk3NjkyODcxMSIsInBpY2tVcExvY2F0aW9uVHlwZSI6IkxBVExPTkciLCJyZW50YWxEdXJhdGlvbkluRGF5cyI6Miwic2VydmljZUZlYXR1cmVzIjpbIk5PX09QQVFVRVMiLCJTVVBSRVNTX0ZJWEVEX1BSSUNFX1ZFSElDTEVTIl19",
+                        "required": true
+                    },
+                    "languagecode": {
+                        "type": "String",
+                        "description": "To obtain the response data in a specific language, enter the languagecode. languagecode can be retrieved from api/v1/meta/getLanguages(Get Languages\n) endpoint in Meta collection.",
+                        "example_value": "",
+                        "required": false
+                    },
+                    "currency_code": {
+                        "type": "String",
+                        "description": "The currency code. currency_code can be retrieved from api/v1/meta/getCurrency(Get Currency) endpoint in Hotels collection.",
+                        "example_value": "EUR",
+                        "required": false
+                    }
+                },
+                "required": [
+                    "vehicle_id",
+                    "search_key"
+                ]
+            }
+        },
+        "static_response": {
+            "function_name": "Booking_Summary",
+            "arguments": {
+                "vehicle_id": "757390171",
+                "search_key": "eyJkcml2ZXJzQWdlIjozMCwiZHJvcE9mZkRhdGVUaW1lIjoiMjAyNC0xMS0xNFQxNTowMDowMCIsImRyb3BPZmZMb2NhdGlvbiI6IjUyLjUxNjIxMjQ2MzM3ODksMTMuMzc2ODE3NzAzMjQ3MSIsImRyb3BPZmZMb2NhdGlvblR5cGUiOiJMQVRMT05HIiwicGlja1VwRGF0ZVRpbWUiOiIyMDI0LTExLTEwVDE1OjAwOjAwIiwicGlja1VwTG9jYXRpb24iOiI1MC4xMTM5MDMwNDU2NTQzLDguNjc5MDI5NDY0NzIxNjgiLCJwaWNrVXBMb2NhdGlvblR5cGUiOiJMQVRMT05HIiwicmVudGFsRHVyYXRpb25JbkRheXMiOjQsInNlcnZpY2VGZWF0dXJlcyI6WyJOT19PUEFRVUVTIiwiU1VQUkVTU19GSVhFRF9QUklDRV9WRUhJQ0xFUyIsIklOQ0xVREVfUFJPRFVDVF9SRUxBVElPTlNISVBTIiwiSU5DTFVERV9FWFRSQVNfQ09OVEFJTklOR19GRUVTIl19"
+            },
+            "observation": {
+                "status": true,
+                "message": "Success",
+                "data": {
+                    "priceInformation": {
+                        "title": "About the price",
+                        "items": [
+                            {
+                                "text": "The price in ₹ (INR) has been converted to show you the approximate price in US$ (USD).",
+                                "icon": "EXCHANGE"
+                            }
+                        ]
+                    },
+                    "title": "Booking summary",
+                    "priceBreakdown": {
+                        "sections": [
+                            {
+                                "items": [
+                                    {
+                                        "price": "US$387.33",
+                                        "title": "Car rental price"
+                                    }
+                                ],
+                                "subtotal": {
+                                    "primaryPrice": {
+                                        "price": "US$387.33",
+                                        "title": "Subtotal",
+                                        "prefix": "approx."
+                                    },
+                                    "title": "Payable today",
+                                    "secondaryPrice": "(₹ 32,576.53)"
+                                }
+                            }
+                        ],
+                        "total": {
+                            "title": "Total rental price",
+                            "primaryPrice": {
+                                "price": "US$387.33",
+                                "prefix": "approx."
+                            },
+                            "subtitle": "(including any taxes, fees & extras)"
+                        }
+                    },
+                    "footer": {
+                        "title": "US$387.33",
+                        "cta": {
+                            "title": "Next step"
+                        },
+                        "subtitle": "Total rental price"
+                    },
+                    "product": {
+                        "vehicle": {
+                            "title": "Fiat 500",
+                            "subtitle": "or similar"
+                        },
+                        "supplier": {
+                            "name": "Sixt"
+                        },
+                        "pickUp": {
+                            "dateTime": "Sun, 10 Nov · 15:00",
+                            "name": "Frankfurt Train Station"
+                        },
+                        "duration": "4 days",
+                        "dropOff": {
+                            "dateTime": "Thu, 14 Nov · 15:00",
+                            "name": "Berlin - Mitte"
+                        }
+                    }
+                }
+            }
+        },
+        "required": {
+            "query": "I found a car rental with vehicle ID 373025711 and would like to see the booking summary, including pricing and availability. Can you help me with that?",
+            "params": {
+                "vehicle_id": "373025711",
+                "search_key": "eyJkcml2ZXJzQWdlIjozMCwiZHJvcE9mZkRhdGVUaW1lIjoiMjAyMy0xMS0xN1QxMDowMDowMCIsImRyb3BPZmZMb2NhdGlvbiI6IjQwLjYzOTcwMTg0MzI2MTcsLTczLjc3OTE5NzY5Mjg3MTEiLCJkcm9wT2ZmTG9jYXRpb25UeXBlIjoiTEFUTE9ORyIsInBpY2tVcERhdGVUaW1lIjoiMjAyMy0xMS0xNVQxMDowMDowMCIsInBpY2tVcExvY2F0aW9uIjoiNDAuNjM5NzAxODQzMjYxNywtNzMuNzc5MTk3NjkyODcxMSIsInBpY2tVcExvY2F0aW9uVHlwZSI6IkxBVExPTkciLCJyZW50YWxEdXJhdGlvbkluRGF5cyI6Miwic2VydmljZUZlYXR1cmVzIjpbIk5PX09QQVFVRVMiLCJTVVBSRVNTX0ZJWEVEX1BSSUNFX1ZFSElDTEVTIl19"
+            },
+            "response": {}
+        },
+        "optional": {
+            "query": "I found a car rental with vehicle ID 373025711 and would like to see the booking summary, including pricing and availability. I have the search key 'eyJkcml2ZXJzQWdlIjozMCwiZHJvcE9mZkRhdGVUaW1lIjoiMjAyMy0xMS0xN1QxMDowMDowMCIsImRyb3BPZmZMb2NhdGlvbiI6IjQwLjYzOTcwMTg0MzI2MTcsLTczLjc3OTE5NzY5Mjg3MTEi'. Could you provide the summary in English and display the pricing in euros?",
+            "params": {
+                "vehicle_id": "373025711",
+                "search_key": "eyJkcml2ZXJzQWdlIjozMCwiZHJvcE9mZkRhdGVUaW1lIjoiMjAyMy0xMS0xN1QxMDowMDowMCIsImRyb3BPZmZMb2NhdGlvbiI6IjQwLjYzOTcwMTg0MzI2MTcsLTczLjc3OTE5NzY5Mjg3MTEi"
+            },
+            "response": {}
+        }
+    },
+    "row": {
+        "required": {},
+        "optional": {}
+    }
+}

@@ -1,0 +1,816 @@
+{
+    "shorten": {
+        "api": {
+            "name": "Search_Taxi",
+            "endpoint": "/api/v1/taxi/searchTaxi",
+            "func_description": "Search Taxi. ",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "pick_up_place_id": {
+                        "type": "String",
+                        "description": "The pick up location's place id. pick_up_place_id can be retrieved from api/v1/taxi/searchLocation(Taxi Search Location) endpoint in Taxi collection as googlePlaceId.",
+                        "example_value": "ChIJRym9mVDI5zsRrqh0xGAazB4",
+                        "required": true
+                    },
+                    "drop_off_place_id": {
+                        "type": "String",
+                        "description": "The drop off location's place id. drop_off_place_id can be retrieved from api/v1/taxi/searchLocation(Taxi Search Location) endpoint in Taxi collection as googlePlaceId.",
+                        "example_value": "ChIJ____b8DR5zsRVz_XpIUEKcA",
+                        "required": true
+                    },
+                    "pick_up_date": {
+                        "type": "Date (yyyy-mm-dd)",
+                        "description": "Pick up date\nFormat: YYYY-MM-DD",
+                        "example_value": "",
+                        "required": true
+                    },
+                    "pick_up_time": {
+                        "type": "Time (24-Hour Hh:Mm)",
+                        "description": "Pick up time\nFormat: HH:MM\nNote: The format of time is 24 hours.",
+                        "example_value": "",
+                        "required": true
+                    },
+                    "currency_code": {
+                        "type": "String",
+                        "description": "The currency code. currency_code can be retrieved from api/v1/meta/getCurrency(Get Currency) endpoint in Hotels collection.",
+                        "example_value": "EUR",
+                        "required": false
+                    },
+                    "languagecode": {
+                        "type": "String",
+                        "description": "To obtain the response data in a specific language, enter the languagecode. languagecode can be retrieved from api/v1/meta/getLanguages(Get Languages\n) endpoint in Meta collection.",
+                        "example_value": "",
+                        "required": false
+                    }
+                },
+                "required": [
+                    "pick_up_place_id",
+                    "drop_off_place_id",
+                    "pick_up_date",
+                    "pick_up_time"
+                ]
+            }
+        },
+        "static_response": {
+            "function_name": "Search_Taxi",
+            "arguments": {
+                "pick_up_place_id": "ChIJ9frI5Hqq2YgR5sumkJ0z4Co",
+                "drop_off_place_id": "ChIJ-R_eV4202YgRbzFULlX2YMo",
+                "pick_up_date": "2024-11-29",
+                "pick_up_time": "07:40"
+            },
+            "observation": {
+                "status": true,
+                "message": "Success",
+                "data": {
+                    "journeys": [
+                        {
+                            "janusSearchReference": "868db65a-0d7d-48f4-a965-11253767248c",
+                            "journeyDirection": "OUTBOUND",
+                            "dropOffLocation": {
+                                "postcode": "33139",
+                                "country": "US",
+                                "locationId": "ChIJ-R_eV4202YgRbzFULlX2YMo",
+                                "description": "700 Ocean Dr, Miami Beach, FL 33139, USA",
+                                "locationType": "GEO",
+                                "city": "Miami Beach",
+                                "name": "700 Ocean Dr, Miami Beach, FL 33139, USA"
+                            },
+                            "pickupLocation": {
+                                "locationId": "ChIJ9frI5Hqq2YgR5sumkJ0z4Co",
+                                "country": "US",
+                                "postcode": "33315",
+                                "locationType": "AIRPORT",
+                                "establishment": "Fort Lauderdale Hollywood International Airport (FLL)",
+                                "airportCode": "FLL",
+                                "timezone": "America/New_York",
+                                "name": "Fort Lauderdale Hollywood International Airport (FLL), 100 Terminal Dr, Fort Lauderdale, FL 33315, USA",
+                                "city": "Fort Lauderdale",
+                                "description": "100 Terminal Dr, Fort Lauderdale, FL 33315, USA"
+                            },
+                            "requestedPickupDateTime": "2024-11-29T07:40:00"
+                        }
+                    ],
+                    "results": [
+                        {
+                            "janusResultReference": "1",
+                            "drivingDistance": 44.04,
+                            "descriptionLocalised": "Perfect for solo travellers, couples and small families.",
+                            "supplierId": 668,
+                            "category": "Standard",
+                            "price": {
+                                "currencyCode": "USD",
+                                "amount": "78.72"
+                            },
+                            "geniusDiscount": false,
+                            "duration": 39,
+                            "description": "Standard",
+                            "nonRefundable": false,
+                            "vehicleType": "STANDARD",
+                            "legPriceBreakdown": [
+                                {
+                                    "supplierLocationId": 4929,
+                                    "supplierId": 668,
+                                    "price": {
+                                        "currencyCode": "USD",
+                                        "amount": "78.72"
+                                    },
+                                    "supplierName": "E-Life Limo",
+                                    "journeyDirection": "OUTBOUND"
+                                }
+                            ],
+                            "bags": 3,
+                            "meetGreet": true,
+                            "resultId": "a667c1f2-aea6-4068-b3d6-36d127a291e6",
+                            "passengerCapacity": 3,
+                            "discountType": "NONE",
+                            "categoryLocalised": "Standard",
+                            "priceRuleId": 19305,
+                            "cancellationLeadTimeMinutes": 1440,
+                            "supplierName": "E-Life Limo"
+                        },
+                        {
+                            "duration": 39,
+                            "geniusDiscount": false,
+                            "price": {
+                                "currencyCode": "USD",
+                                "amount": "79.95"
+                            },
+                            "vehicleType": "LARGE",
+                            "nonRefundable": false,
+                            "description": "People Carrier",
+                            "legPriceBreakdown": [
+                                {
+                                    "journeyDirection": "OUTBOUND",
+                                    "supplierId": 668,
+                                    "supplierLocationId": 4929,
+                                    "supplierName": "E-Life Limo",
+                                    "price": {
+                                        "currencyCode": "USD",
+                                        "amount": "79.95"
+                                    }
+                                }
+                            ],
+                            "janusResultReference": "5",
+                            "supplierId": 668,
+                            "descriptionLocalised": "Great choice for families.",
+                            "drivingDistance": 44.04,
+                            "category": "People Carrier",
+                            "discountType": "NONE",
+                            "categoryLocalised": "People carrier",
+                            "cancellationLeadTimeMinutes": 1440,
+                            "priceRuleId": 19309,
+                            "supplierName": "E-Life Limo",
+                            "meetGreet": true,
+                            "bags": 4,
+                            "resultId": "f6fd6db2-8879-48a9-abd0-b56e7feb7279",
+                            "passengerCapacity": 4
+                        },
+                        {
+                            "janusResultReference": "14",
+                            "descriptionLocalised": "100% Electric",
+                            "drivingDistance": 44.04,
+                            "supplierId": 441,
+                            "category": "Electric Standard",
+                            "geniusDiscount": false,
+                            "duration": 39,
+                            "price": {
+                                "currencyCode": "USD",
+                                "amount": "84.92"
+                            },
+                            "vehicleType": "STANDARD",
+                            "nonRefundable": false,
+                            "description": "Electric Standard",
+                            "legPriceBreakdown": [
+                                {
+                                    "supplierId": 441,
+                                    "supplierLocationId": 1695,
+                                    "supplierName": "RideAmerica",
+                                    "price": {
+                                        "currencyCode": "USD",
+                                        "amount": "84.92"
+                                    },
+                                    "journeyDirection": "OUTBOUND"
+                                }
+                            ],
+                            "bags": 2,
+                            "meetGreet": true,
+                            "resultId": "930333e5-7ac5-4c37-87ad-afdfb0741ad6",
+                            "passengerCapacity": 3,
+                            "discountType": "NONE",
+                            "categoryLocalised": "Electric Standard",
+                            "priceRuleId": 119908,
+                            "cancellationLeadTimeMinutes": 120,
+                            "supplierName": "RideAmerica"
+                        }
+                    ]
+                }
+            }
+        },
+        "required": {
+            "query": "I need to book a taxi from the Eiffel Tower to the Louvre Museum on June 15, 2025, at 14:30. Can you help me find available options?",
+            "params": {
+                "pick_up_place_id": "ChIJRym9mVDI5zsRrqh0xGAazB4",
+                "drop_off_place_id": "ChIJ____b8DR5zsRVz_XpIUEKcA",
+                "pick_up_date": "2025-06-15",
+                "pick_up_time": "14:30"
+            },
+            "response": {
+                "status": true,
+                "message": "Success",
+                "timestamp": 1747652067043,
+                "data": {
+                    "journeys": [
+                        {
+                            "requestedPickupDateTime": "2025-06-15T14:30:00",
+                            "dropOffLocation": {
+                                "city": "Mumbai",
+                                "latLng": {
+                                    "latitude": 18.9216631,
+                                    "longitude": 72.8332028
+                                },
+                                "description": "Apollo Bandar, Colaba, Mumbai, Maharashtra 400001, India",
+                                "country": "IN",
+                                "isRideNowAvailable": false,
+                                "name": "The Taj Mahal Palace, Mumbai, Apollo Bandar, Colaba, Mumbai, Maharashtra 400001, India",
+                                "locationType": "GEO",
+                                "postcode": "400001",
+                                "airportCode": null,
+                                "establishment": "The Taj Mahal Palace, Mumbai",
+                                "locationId": "ChIJ____b8DR5zsRVz_XpIUEKcA"
+                            },
+                            "journeyDirection": "OUTBOUND",
+                            "janusSearchReference": "ddea7ea5-7456-4e71-b752-14226e0d6e2a",
+                            "pickupLocation": {
+                                "timezone": "Asia/Kolkata",
+                                "latLng": {
+                                    "latitude": 19.090176,
+                                    "longitude": 72.868696
+                                },
+                                "description": "Mumbai, Maharashtra 400099, India",
+                                "isRideNowAvailable": false,
+                                "name": "Chhatrapati Shivaji International Airport (BOM), Mumbai, Maharashtra 400099, India",
+                                "locationType": "AIRPORT",
+                                "postcode": "400099",
+                                "country": "IN",
+                                "city": "Mumbai",
+                                "establishment": "Chhatrapati Shivaji International Airport (BOM)",
+                                "locationId": "ChIJRym9mVDI5zsRrqh0xGAazB4",
+                                "airportCode": "BOM"
+                            }
+                        }
+                    ],
+                    "results": [
+                        {
+                            "bags": 3,
+                            "drivingDistance": 29.12,
+                            "descriptionLocalised": "Perfect for solo travellers, couples and small families.",
+                            "price": {
+                                "currencyCode": "USD",
+                                "amount": "19.58"
+                            },
+                            "supplierId": 668,
+                            "resultId": "c939cecb-59c2-42e6-a149-05797c761e2e",
+                            "nonRefundable": false,
+                            "duration": 51,
+                            "discountType": "NONE",
+                            "legPriceBreakdown": [
+                                {
+                                    "supplierName": "E-Life Limo",
+                                    "supplierLocationId": 6189,
+                                    "price": {
+                                        "currencyCode": "USD",
+                                        "amount": "19.58"
+                                    },
+                                    "supplierId": 668,
+                                    "journeyDirection": "OUTBOUND"
+                                }
+                            ],
+                            "vehicleType": "STANDARD",
+                            "janusResultReference": "1",
+                            "geniusDiscount": false,
+                            "categoryLocalised": "Standard",
+                            "description": "Standard",
+                            "imageUrl": "https://cdn.rideways.com/images/cars/standard.jpg",
+                            "category": "Standard",
+                            "priceRuleId": 18738,
+                            "meetGreet": true,
+                            "priceBreakdown": [],
+                            "cancellationLeadTimeMinutes": 1440,
+                            "passengerCapacity": 3,
+                            "supplierName": "E-Life Limo"
+                        },
+                        {
+                            "categoryLocalised": "People carrier",
+                            "description": "People Carrier",
+                            "imageUrl": "https://cdn.rideways.com/images/cars/people-carrier.jpg",
+                            "category": "People Carrier",
+                            "priceRuleId": 18742,
+                            "meetGreet": true,
+                            "priceBreakdown": [],
+                            "cancellationLeadTimeMinutes": 1440,
+                            "passengerCapacity": 4,
+                            "supplierName": "E-Life Limo",
+                            "bags": 4,
+                            "drivingDistance": 29.12,
+                            "descriptionLocalised": "Great choice for families.",
+                            "price": {
+                                "currencyCode": "USD",
+                                "amount": "24.17"
+                            },
+                            "supplierId": 668,
+                            "resultId": "e8af0dff-7b84-410c-a1a9-843050b5de73",
+                            "nonRefundable": false,
+                            "discountType": "NONE",
+                            "legPriceBreakdown": [
+                                {
+                                    "supplierName": "E-Life Limo",
+                                    "supplierLocationId": 6189,
+                                    "supplierId": 668,
+                                    "journeyDirection": "OUTBOUND",
+                                    "price": {
+                                        "amount": "24.17",
+                                        "currencyCode": "USD"
+                                    }
+                                }
+                            ],
+                            "vehicleType": "LARGE",
+                            "duration": 51,
+                            "geniusDiscount": false,
+                            "janusResultReference": "5"
+                        },
+                        {
+                            "description": "Executive",
+                            "categoryLocalised": "Executive",
+                            "passengerCapacity": 3,
+                            "supplierName": "E-Life Limo",
+                            "cancellationLeadTimeMinutes": 1440,
+                            "priceBreakdown": [],
+                            "category": "Executive",
+                            "priceRuleId": 18739,
+                            "meetGreet": true,
+                            "imageUrl": "https://cdn.rideways.com/images/cars/executive.jpg",
+                            "price": {
+                                "currencyCode": "USD",
+                                "amount": "27.50"
+                            },
+                            "drivingDistance": 29.12,
+                            "descriptionLocalised": "Plenty of space to travel in comfort.",
+                            "bags": 3,
+                            "nonRefundable": false,
+                            "duration": 51,
+                            "discountType": "NONE",
+                            "legPriceBreakdown": [
+                                {
+                                    "supplierName": "E-Life Limo",
+                                    "supplierLocationId": 6189,
+                                    "price": {
+                                        "currencyCode": "USD",
+                                        "amount": "27.50"
+                                    },
+                                    "journeyDirection": "OUTBOUND",
+                                    "supplierId": 668
+                                }
+                            ],
+                            "vehicleType": "EXECUTIVE",
+                            "janusResultReference": "2",
+                            "geniusDiscount": false,
+                            "supplierId": 668,
+                            "resultId": "782d9561-5a37-4d8d-bfc8-b0ea076273db"
+                        }
+                    ]
+                }
+            }
+        },
+        "optional": {
+            "query": "I need to book a taxi from the Eiffel Tower (Place ID: ChIJRym9mVDI5zsRrqh0xGAazB4) to the Louvre Museum (Place ID: ChIJ____b8DR5zsRVz_XpIUEKcA) on June 15, 2025, at 14:30. Can you help me find available options? I'd like the prices displayed in euros and the information in English.",
+            "params": {
+                "pick_up_place_id": "ChIJRym9mVDI5zsRrqh0xGAazB4",
+                "drop_off_place_id": "ChIJ____b8DR5zsRVz_XpIUEKcA",
+                "pick_up_date": "2025-06-15",
+                "pick_up_time": "14:30",
+                "currency_code": "EUR",
+                "languagecode": "en"
+            },
+            "response": {
+                "status": false,
+                "message": [
+                    {
+                        "languagecode": "languagecode should be from en-gb,en-us,de,nl,fr,es,es-ar,es-mx,ca,it,pt-pt,pt-br,no,fi,sv,da,cs,hu,ro,ja,zh-cn,zh-tw,pl,el,ru,tr,bg,ar,ko,he,lv,uk,hi,id,ms,th,et,hr,lt,sk,sr,sl,vi,tl,is"
+                    }
+                ]
+            }
+        }
+    },
+    "row": {
+        "required": {
+            "status": true,
+            "message": "Success",
+            "timestamp": 1747652067043,
+            "data": {
+                "journeys": [
+                    {
+                        "requestedPickupDateTime": "2025-06-15T14:30:00",
+                        "dropOffLocation": {
+                            "city": "Mumbai",
+                            "latLng": {
+                                "latitude": 18.9216631,
+                                "longitude": 72.8332028
+                            },
+                            "description": "Apollo Bandar, Colaba, Mumbai, Maharashtra 400001, India",
+                            "country": "IN",
+                            "isRideNowAvailable": false,
+                            "name": "The Taj Mahal Palace, Mumbai, Apollo Bandar, Colaba, Mumbai, Maharashtra 400001, India",
+                            "locationType": "GEO",
+                            "postcode": "400001",
+                            "airportCode": null,
+                            "establishment": "The Taj Mahal Palace, Mumbai",
+                            "locationId": "ChIJ____b8DR5zsRVz_XpIUEKcA"
+                        },
+                        "journeyDirection": "OUTBOUND",
+                        "janusSearchReference": "ddea7ea5-7456-4e71-b752-14226e0d6e2a",
+                        "pickupLocation": {
+                            "timezone": "Asia/Kolkata",
+                            "latLng": {
+                                "latitude": 19.090176,
+                                "longitude": 72.868696
+                            },
+                            "description": "Mumbai, Maharashtra 400099, India",
+                            "isRideNowAvailable": false,
+                            "name": "Chhatrapati Shivaji International Airport (BOM), Mumbai, Maharashtra 400099, India",
+                            "locationType": "AIRPORT",
+                            "postcode": "400099",
+                            "country": "IN",
+                            "city": "Mumbai",
+                            "establishment": "Chhatrapati Shivaji International Airport (BOM)",
+                            "locationId": "ChIJRym9mVDI5zsRrqh0xGAazB4",
+                            "airportCode": "BOM"
+                        }
+                    }
+                ],
+                "results": [
+                    {
+                        "bags": 3,
+                        "drivingDistance": 29.12,
+                        "descriptionLocalised": "Perfect for solo travellers, couples and small families.",
+                        "price": {
+                            "currencyCode": "USD",
+                            "amount": "19.58"
+                        },
+                        "supplierId": 668,
+                        "resultId": "c939cecb-59c2-42e6-a149-05797c761e2e",
+                        "nonRefundable": false,
+                        "duration": 51,
+                        "discountType": "NONE",
+                        "legPriceBreakdown": [
+                            {
+                                "supplierName": "E-Life Limo",
+                                "supplierLocationId": 6189,
+                                "price": {
+                                    "currencyCode": "USD",
+                                    "amount": "19.58"
+                                },
+                                "supplierId": 668,
+                                "journeyDirection": "OUTBOUND"
+                            }
+                        ],
+                        "vehicleType": "STANDARD",
+                        "janusResultReference": "1",
+                        "geniusDiscount": false,
+                        "categoryLocalised": "Standard",
+                        "description": "Standard",
+                        "imageUrl": "https://cdn.rideways.com/images/cars/standard.jpg",
+                        "category": "Standard",
+                        "priceRuleId": 18738,
+                        "meetGreet": true,
+                        "priceBreakdown": [],
+                        "cancellationLeadTimeMinutes": 1440,
+                        "passengerCapacity": 3,
+                        "supplierName": "E-Life Limo"
+                    },
+                    {
+                        "categoryLocalised": "People carrier",
+                        "description": "People Carrier",
+                        "imageUrl": "https://cdn.rideways.com/images/cars/people-carrier.jpg",
+                        "category": "People Carrier",
+                        "priceRuleId": 18742,
+                        "meetGreet": true,
+                        "priceBreakdown": [],
+                        "cancellationLeadTimeMinutes": 1440,
+                        "passengerCapacity": 4,
+                        "supplierName": "E-Life Limo",
+                        "bags": 4,
+                        "drivingDistance": 29.12,
+                        "descriptionLocalised": "Great choice for families.",
+                        "price": {
+                            "currencyCode": "USD",
+                            "amount": "24.17"
+                        },
+                        "supplierId": 668,
+                        "resultId": "e8af0dff-7b84-410c-a1a9-843050b5de73",
+                        "nonRefundable": false,
+                        "discountType": "NONE",
+                        "legPriceBreakdown": [
+                            {
+                                "supplierName": "E-Life Limo",
+                                "supplierLocationId": 6189,
+                                "supplierId": 668,
+                                "journeyDirection": "OUTBOUND",
+                                "price": {
+                                    "amount": "24.17",
+                                    "currencyCode": "USD"
+                                }
+                            }
+                        ],
+                        "vehicleType": "LARGE",
+                        "duration": 51,
+                        "geniusDiscount": false,
+                        "janusResultReference": "5"
+                    },
+                    {
+                        "description": "Executive",
+                        "categoryLocalised": "Executive",
+                        "passengerCapacity": 3,
+                        "supplierName": "E-Life Limo",
+                        "cancellationLeadTimeMinutes": 1440,
+                        "priceBreakdown": [],
+                        "category": "Executive",
+                        "priceRuleId": 18739,
+                        "meetGreet": true,
+                        "imageUrl": "https://cdn.rideways.com/images/cars/executive.jpg",
+                        "price": {
+                            "currencyCode": "USD",
+                            "amount": "27.50"
+                        },
+                        "drivingDistance": 29.12,
+                        "descriptionLocalised": "Plenty of space to travel in comfort.",
+                        "bags": 3,
+                        "nonRefundable": false,
+                        "duration": 51,
+                        "discountType": "NONE",
+                        "legPriceBreakdown": [
+                            {
+                                "supplierName": "E-Life Limo",
+                                "supplierLocationId": 6189,
+                                "price": {
+                                    "currencyCode": "USD",
+                                    "amount": "27.50"
+                                },
+                                "journeyDirection": "OUTBOUND",
+                                "supplierId": 668
+                            }
+                        ],
+                        "vehicleType": "EXECUTIVE",
+                        "janusResultReference": "2",
+                        "geniusDiscount": false,
+                        "supplierId": 668,
+                        "resultId": "782d9561-5a37-4d8d-bfc8-b0ea076273db"
+                    },
+                    {
+                        "categoryLocalised": "Electric Standard",
+                        "description": "Electric Standard",
+                        "imageUrl": "https://cdn.rideways.com/images/cars/standard.jpg",
+                        "priceRuleId": 119682,
+                        "meetGreet": true,
+                        "category": "Electric Standard",
+                        "cancellationLeadTimeMinutes": 1440,
+                        "priceBreakdown": [],
+                        "supplierName": "Transferz",
+                        "passengerCapacity": 3,
+                        "bags": 3,
+                        "descriptionLocalised": "100% Electric",
+                        "drivingDistance": 29.12,
+                        "price": {
+                            "amount": "29.27",
+                            "currencyCode": "USD"
+                        },
+                        "resultId": "856b9b08-db8f-4610-b54d-4cd2b8e741e9",
+                        "supplierId": 2501,
+                        "janusResultReference": "14",
+                        "geniusDiscount": false,
+                        "discountType": "NONE",
+                        "duration": 51,
+                        "legPriceBreakdown": [
+                            {
+                                "supplierLocationId": 5389,
+                                "supplierName": "Transferz",
+                                "journeyDirection": "OUTBOUND",
+                                "supplierId": 2501,
+                                "price": {
+                                    "currencyCode": "USD",
+                                    "amount": "29.27"
+                                }
+                            }
+                        ],
+                        "vehicleType": "STANDARD",
+                        "nonRefundable": false
+                    },
+                    {
+                        "categoryLocalised": "Large people carrier",
+                        "description": "Large People Carrier",
+                        "meetGreet": true,
+                        "priceRuleId": 18743,
+                        "category": "Large People Carrier",
+                        "imageUrl": "https://cdn.rideways.com/images/cars/large-people-carrier.jpg",
+                        "supplierName": "E-Life Limo",
+                        "passengerCapacity": 5,
+                        "cancellationLeadTimeMinutes": 1440,
+                        "priceBreakdown": [],
+                        "drivingDistance": 29.12,
+                        "descriptionLocalised": "Ideal for small groups.",
+                        "bags": 5,
+                        "price": {
+                            "currencyCode": "USD",
+                            "amount": "39.51"
+                        },
+                        "supplierId": 668,
+                        "resultId": "e0b3fc59-1e63-41d5-9e6f-26e45fc192da",
+                        "nonRefundable": false,
+                        "geniusDiscount": false,
+                        "janusResultReference": "6",
+                        "discountType": "NONE",
+                        "duration": 51,
+                        "legPriceBreakdown": [
+                            {
+                                "supplierId": 668,
+                                "journeyDirection": "OUTBOUND",
+                                "price": {
+                                    "amount": "39.51",
+                                    "currencyCode": "USD"
+                                },
+                                "supplierName": "E-Life Limo",
+                                "supplierLocationId": 6189
+                            }
+                        ],
+                        "vehicleType": "LARGE"
+                    },
+                    {
+                        "price": {
+                            "currencyCode": "USD",
+                            "amount": "43.73"
+                        },
+                        "bags": 5,
+                        "descriptionLocalised": "Perfect for groups that want a touch of luxury.",
+                        "drivingDistance": 29.12,
+                        "discountType": "NONE",
+                        "legPriceBreakdown": [
+                            {
+                                "price": {
+                                    "amount": "43.73",
+                                    "currencyCode": "USD"
+                                },
+                                "supplierId": 668,
+                                "journeyDirection": "OUTBOUND",
+                                "supplierLocationId": 6189,
+                                "supplierName": "E-Life Limo"
+                            }
+                        ],
+                        "duration": 51,
+                        "vehicleType": "LARGE_EXECUTIVE",
+                        "geniusDiscount": false,
+                        "janusResultReference": "3",
+                        "nonRefundable": false,
+                        "resultId": "f3e22143-c206-4577-b569-9a19e3e436b7",
+                        "supplierId": 668,
+                        "description": "Executive People Carrier",
+                        "categoryLocalised": "Executive people carrier",
+                        "priceBreakdown": [],
+                        "cancellationLeadTimeMinutes": 1440,
+                        "supplierName": "E-Life Limo",
+                        "passengerCapacity": 5,
+                        "imageUrl": "https://cdn.rideways.com/images/cars/executive-people-carrier.jpg",
+                        "category": "Executive People Carrier",
+                        "priceRuleId": 18740,
+                        "meetGreet": true
+                    },
+                    {
+                        "price": {
+                            "currencyCode": "USD",
+                            "amount": "56.50"
+                        },
+                        "descriptionLocalised": "Electric Luxury",
+                        "drivingDistance": 29.12,
+                        "bags": 4,
+                        "janusResultReference": "15",
+                        "geniusDiscount": false,
+                        "discountType": "NONE",
+                        "legPriceBreakdown": [
+                            {
+                                "price": {
+                                    "currencyCode": "USD",
+                                    "amount": "56.50"
+                                },
+                                "supplierId": 2501,
+                                "journeyDirection": "OUTBOUND",
+                                "supplierName": "Transferz",
+                                "supplierLocationId": 5389
+                            }
+                        ],
+                        "duration": 51,
+                        "vehicleType": "EXECUTIVE",
+                        "nonRefundable": false,
+                        "resultId": "5a519def-7d72-4397-af1a-0de9e097024b",
+                        "supplierId": 2501,
+                        "description": "Electric Luxury",
+                        "categoryLocalised": "Electric Luxury",
+                        "supplierName": "Transferz",
+                        "passengerCapacity": 4,
+                        "cancellationLeadTimeMinutes": 1440,
+                        "priceBreakdown": [],
+                        "meetGreet": true,
+                        "priceRuleId": 120246,
+                        "category": "Electric Luxury",
+                        "imageUrl": "https://cdn.rideways.com/images/cars/luxury.jpg"
+                    },
+                    {
+                        "price": {
+                            "amount": "59.87",
+                            "currencyCode": "USD"
+                        },
+                        "drivingDistance": 29.12,
+                        "descriptionLocalised": "Offers more room to arrive in style.",
+                        "bags": 3,
+                        "nonRefundable": false,
+                        "discountType": "NONE",
+                        "legPriceBreakdown": [
+                            {
+                                "supplierId": 2501,
+                                "journeyDirection": "OUTBOUND",
+                                "price": {
+                                    "currencyCode": "USD",
+                                    "amount": "59.87"
+                                },
+                                "supplierName": "Transferz",
+                                "supplierLocationId": 5389
+                            }
+                        ],
+                        "vehicleType": "EXECUTIVE",
+                        "duration": 51,
+                        "geniusDiscount": false,
+                        "janusResultReference": "4",
+                        "supplierId": 2501,
+                        "resultId": "98dd32c4-b013-47c4-a62b-032cb2819680",
+                        "description": "Luxury",
+                        "categoryLocalised": "Luxury",
+                        "supplierName": "Transferz",
+                        "passengerCapacity": 3,
+                        "priceBreakdown": [],
+                        "cancellationLeadTimeMinutes": 1440,
+                        "category": "Luxury",
+                        "meetGreet": true,
+                        "priceRuleId": 18741,
+                        "imageUrl": "https://cdn.rideways.com/images/cars/luxury.jpg"
+                    },
+                    {
+                        "price": {
+                            "currencyCode": "USD",
+                            "amount": "76.44"
+                        },
+                        "drivingDistance": 29.12,
+                        "descriptionLocalised": "Great if you’re travelling in a large group.",
+                        "bags": 11,
+                        "nonRefundable": false,
+                        "geniusDiscount": false,
+                        "janusResultReference": "7",
+                        "discountType": "NONE",
+                        "vehicleType": "LARGE",
+                        "legPriceBreakdown": [
+                            {
+                                "supplierLocationId": 1821,
+                                "supplierName": "Travelodesk India",
+                                "journeyDirection": "OUTBOUND",
+                                "supplierId": 290,
+                                "price": {
+                                    "amount": "76.44",
+                                    "currencyCode": "USD"
+                                }
+                            }
+                        ],
+                        "duration": 51,
+                        "supplierId": 290,
+                        "resultId": "8f1eec02-3a05-406f-8709-44bee0c76e05",
+                        "description": "Minibus",
+                        "categoryLocalised": "Minibus",
+                        "passengerCapacity": 11,
+                        "supplierName": "Travelodesk India",
+                        "cancellationLeadTimeMinutes": 1440,
+                        "priceBreakdown": [],
+                        "priceRuleId": 18744,
+                        "meetGreet": true,
+                        "category": "Minibus",
+                        "imageUrl": "https://cdn.rideways.com/images/cars/minibus.jpg"
+                    }
+                ]
+            }
+        },
+        "optional": {
+            "status": false,
+            "message": [
+                {
+                    "languagecode": "languagecode should be from en-gb,en-us,de,nl,fr,es,es-ar,es-mx,ca,it,pt-pt,pt-br,no,fi,sv,da,cs,hu,ro,ja,zh-cn,zh-tw,pl,el,ru,tr,bg,ar,ko,he,lv,uk,hi,id,ms,th,et,hr,lt,sk,sr,sl,vi,tl,is"
+                }
+            ]
+        }
+    }
+}
