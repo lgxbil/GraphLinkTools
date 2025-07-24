@@ -1,0 +1,324 @@
+{
+    "name": "Get_Min_Price",
+    "docs_row": {
+        "name": "Get_Min_Price",
+        "endpoint": "/api/v1/flights/getMinPrice",
+        "func_description": "Get the minimum price for flights. This API will return the lowest priced flights within 5 days before and after the query date. ",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "fromId": {
+                    "type": "String",
+                    "description": "From/Departure location Id. fromId can be retrieved from api/v1/flights/searchDestination(Search Flight Location) endpoint in Flights collection as id.",
+                    "example_value": "BOM.AIRPORT",
+                    "required": true
+                },
+                "toId": {
+                    "type": "String",
+                    "description": "To/Arrival location Id. toId can be retrieved from api/v1/flights/searchDestination(Search Flight Location) endpoint in Flights collection as id.",
+                    "example_value": "DEL.AIRPORT",
+                    "required": true
+                },
+                "departDate": {
+                    "type": "Date (yyyy-mm-dd)",
+                    "description": "Departure or travel date.\nFormat: YYYY-MM-DD",
+                    "example_value": "",
+                    "required": true
+                },
+                "returnDate": {
+                    "type": "Date (yyyy-mm-dd)",
+                    "description": "Return date.\nFormat: YYYY-MM-DD",
+                    "example_value": "",
+                    "required": false
+                },
+                "cabinClass": {
+                    "type": "Enum",
+                    "description": "Search for flights that match the cabin class specified. Cabin call can be either ECONOMY, PREMIUM_ECONOMY, BUSINESS or FIRST.",
+                    "example_value": "",
+                    "required": false
+                },
+                "currency_code": {
+                    "type": "String",
+                    "description": "The currency code. currency_code can be retrieved from api/v1/meta/getCurrency(Get Currency) endpoint in Hotels collection.",
+                    "example_value": "AED",
+                    "required": false
+                }
+            },
+            "required": [
+                "fromId",
+                "toId",
+                "departDate"
+            ]
+        }
+    },
+    "instance": [],
+    "category": null,
+    "tool": null,
+    "api_idx": 36,
+    "params": {
+        "type": "object",
+        "properties": {
+            "fromId": {
+                "type": "String",
+                "description": "From/Departure location Id. fromId can be retrieved from api/v1/flights/searchDestination(Search Flight Location) endpoint in Flights collection as id.",
+                "example_value": "BOM.AIRPORT",
+                "required": true
+            },
+            "toId": {
+                "type": "String",
+                "description": "To/Arrival location Id. toId can be retrieved from api/v1/flights/searchDestination(Search Flight Location) endpoint in Flights collection as id.",
+                "example_value": "DEL.AIRPORT",
+                "required": true
+            },
+            "departDate": {
+                "type": "Date (yyyy-mm-dd)",
+                "description": "Departure or travel date.\nFormat: YYYY-MM-DD",
+                "example_value": "",
+                "required": true
+            },
+            "returnDate": {
+                "type": "Date (yyyy-mm-dd)",
+                "description": "Return date.\nFormat: YYYY-MM-DD",
+                "example_value": "",
+                "required": false
+            },
+            "cabinClass": {
+                "type": "Enum",
+                "description": "Search for flights that match the cabin class specified. Cabin call can be either ECONOMY, PREMIUM_ECONOMY, BUSINESS or FIRST.",
+                "example_value": "",
+                "required": false
+            },
+            "currency_code": {
+                "type": "String",
+                "description": "The currency code. currency_code can be retrieved from api/v1/meta/getCurrency(Get Currency) endpoint in Hotels collection.",
+                "example_value": "AED",
+                "required": false
+            }
+        },
+        "required": [
+            "fromId",
+            "toId",
+            "departDate"
+        ]
+    },
+    "responses": [
+        {
+            "function_name": "Get_Min_Price",
+            "arguments": {
+                "fromId": "BOM.AIRPORT",
+                "toId": "DEL.AIRPORT",
+                "departDate": "2025-06-15"
+            },
+            "observation": [
+                {
+                    "departureDate": "2025-06-10",
+                    "searchDates": [
+                        "2025-06-10"
+                    ],
+                    "offsetDays": -5,
+                    "accuracyTrackerId": "01kp0_kh0lPPIRVopJAx0O_YlYXDsel5E41QYsK-dW6uY4SiY3adyjQnJkK8uoJe",
+                    "isCheapest": false,
+                    "price": {
+                        "currencyCode": "USD",
+                        "units": 65,
+                        "nanos": 180000000
+                    },
+                    "priceRounded": {
+                        "currencyCode": "USD",
+                        "units": 66,
+                        "nanos": 0
+                    }
+                },
+                {
+                    "departureDate": "2025-06-11",
+                    "searchDates": [
+                        "2025-06-11"
+                    ],
+                    "offsetDays": -4,
+                    "accuracyTrackerId": "01kp0_kh0lPPIRVopJAx0LTl6AUql_syfcTAMjzHiKKuY4SiY3adyjQnJkK8uoJe",
+                    "isCheapest": true,
+                    "price": {
+                        "currencyCode": "USD",
+                        "units": 64,
+                        "nanos": 390000000
+                    },
+                    "priceRounded": {
+                        "currencyCode": "USD",
+                        "units": 65,
+                        "nanos": 0
+                    }
+                },
+                {
+                    "departureDate": "2025-06-12",
+                    "searchDates": [
+                        "2025-06-12"
+                    ],
+                    "offsetDays": -3,
+                    "accuracyTrackerId": "01kp0_kh0lPPIRVopJAx0EMXeqW1d8gR7JSJVlu2TZKuY4SiY3adyjQnJkK8uoJe",
+                    "isCheapest": false,
+                    "price": {
+                        "currencyCode": "USD",
+                        "units": 66,
+                        "nanos": 540000000
+                    },
+                    "priceRounded": {
+                        "currencyCode": "USD",
+                        "units": 67,
+                        "nanos": 0
+                    }
+                }
+            ]
+        },
+        {
+            "function_name": "Get_Min_Price",
+            "arguments": {
+                "fromId": "BOM.AIRPORT",
+                "toId": "DEL.AIRPORT",
+                "departDate": "2025-06-15",
+                "cabinClass": "ECONOMY",
+                "currency_code": "AED"
+            },
+            "observation": [
+                {
+                    "departureDate": "2025-06-10",
+                    "searchDates": [
+                        "2025-06-10"
+                    ],
+                    "offsetDays": -5,
+                    "accuracyTrackerId": "01kp0_kh0lPPIRVopJAx0O_YlYXDsel5E41QYsK-dW6uY4SiY3adyjQnJkK8uoJe",
+                    "isCheapest": false,
+                    "price": {
+                        "currencyCode": "AED",
+                        "units": 239,
+                        "nanos": 410000000
+                    },
+                    "priceRounded": {
+                        "currencyCode": "AED",
+                        "units": 242,
+                        "nanos": 420000000
+                    }
+                },
+                {
+                    "departureDate": "2025-06-11",
+                    "searchDates": [
+                        "2025-06-11"
+                    ],
+                    "offsetDays": -4,
+                    "accuracyTrackerId": "01kp0_kh0lPPIRVopJAx0LTl6AUql_syfcTAMjzHiKKuY4SiY3adyjQnJkK8uoJe",
+                    "isCheapest": true,
+                    "price": {
+                        "currencyCode": "AED",
+                        "units": 236,
+                        "nanos": 500000000
+                    },
+                    "priceRounded": {
+                        "currencyCode": "AED",
+                        "units": 238,
+                        "nanos": 750000000
+                    }
+                },
+                {
+                    "departureDate": "2025-06-12",
+                    "searchDates": [
+                        "2025-06-12"
+                    ],
+                    "offsetDays": -3,
+                    "accuracyTrackerId": "01kp0_kh0lPPIRVopJAx0EMXeqW1d8gR7JSJVlu2TZKuY4SiY3adyjQnJkK8uoJe",
+                    "isCheapest": false,
+                    "price": {
+                        "currencyCode": "AED",
+                        "units": 244,
+                        "nanos": 400000000
+                    },
+                    "priceRounded": {
+                        "currencyCode": "AED",
+                        "units": 246,
+                        "nanos": 90000000
+                    }
+                }
+            ]
+        }
+    ],
+    "response_summary": "The API response provides flight pricing information for three different departure dates in June 2025. On June 10th, the flight costs approximately $65.18 (rounded to $66), but it is not the cheapest option available. The best deal is for June 11th, priced at $64.39 (rounded to $65), making it the most economical choice among the listed dates. Finally, the flight on June 12th is slightly more expensive at $66.54 (rounded to $67). Each entry includes tracking details and the number of days offset from the search date, helping travelers compare prices for their preferred travel dates.",
+    "enhance_func_desc": "This API is ideal for travelers comparing flight prices for budget planning. It retrieves the minimum flight prices between specified departure and arrival locations, with optional filters for cabin class and currency. Users can check prices for specific dates or round trips, receiving detailed pricing information including the cheapest available options. The response helps travelers make informed decisions by comparing costs for different travel dates.",
+    "enhance_params_desc": {
+        "enhanced_parameters": {
+            "fromId": "Unique identifier for the departure airport/location.",
+            "toId": "Unique identifier for the arrival airport/location.",
+            "departDate": "Specifies the flight departure date (YYYY-MM-DD).",
+            "returnDate": "Optional return date for round-trip flights (YYYY-MM-DD).",
+            "cabinClass": "Filters flights by cabin class (e.g., ECONOMY, BUSINESS).",
+            "currency_code": "Currency for displaying flight prices (e.g., USD, EUR)."
+        }
+    },
+    "enhance_resfield_desc": {
+        "response_fields": [
+            {
+                "departureDate": {
+                    "type": "Date",
+                    "description": "The date of the flight departure, formatted as YYYY-MM-DD."
+                },
+                "searchDates": {
+                    "type": "Array",
+                    "description": "A list of dates related to the search, formatted as YYYY-MM-DD.",
+                    "ar_items": {
+                        "type": "Date",
+                        "description": "A specific date related to the search."
+                    }
+                },
+                "offsetDays": {
+                    "type": "Number",
+                    "description": "The number of days offset from the search date, indicating how far in advance the flight is being booked."
+                },
+                "accuracyTrackerId": {
+                    "type": "String",
+                    "description": "A unique identifier for tracking the accuracy of the flight pricing information."
+                },
+                "isCheapest": {
+                    "type": "Boolean",
+                    "description": "Indicates whether this flight option is the cheapest among the listed dates."
+                },
+                "price": {
+                    "type": "Object",
+                    "description": "The exact price of the flight, including currency and breakdown into units and nanos.",
+                    "ob_properties": {
+                        "currencyCode": {
+                            "type": "String",
+                            "description": "The currency code (ISO 4217) for the price (e.g., USD)."
+                        },
+                        "units": {
+                            "type": "Number",
+                            "description": "The whole number part of the price."
+                        },
+                        "nanos": {
+                            "type": "Number",
+                            "description": "The fractional part of the price, represented in nanoseconds (e.g., 180000000 nanos = $0.18)."
+                        }
+                    }
+                },
+                "priceRounded": {
+                    "type": "Object",
+                    "description": "The rounded price of the flight, including currency and breakdown into units and nanos.",
+                    "ob_properties": {
+                        "currencyCode": {
+                            "type": "String",
+                            "description": "The currency code (ISO 4217) for the rounded price (e.g., USD)."
+                        },
+                        "units": {
+                            "type": "Number",
+                            "description": "The whole number part of the rounded price."
+                        },
+                        "nanos": {
+                            "type": "Number",
+                            "description": "The fractional part of the rounded price, typically zero due to rounding."
+                        }
+                    }
+                }
+            }
+        ]
+    },
+    "params_desc_list": null,
+    "response_desc_list": null,
+    "depends_on": null,
+    "verified": true
+}

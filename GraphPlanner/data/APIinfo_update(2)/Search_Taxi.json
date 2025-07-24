@@ -1,0 +1,125 @@
+{
+    "name": "Search_Taxi",
+    "docs_row": {
+        "name": "Search_Taxi",
+        "endpoint": "/api/v1/taxi/searchTaxi",
+        "func_description": "Search Taxi. ",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "pick_up_place_id": {
+                    "type": "String",
+                    "description": "The pick up location's place id. pick_up_place_id can be retrieved from api/v1/taxi/searchLocation(Taxi Search Location) endpoint in Taxi collection as googlePlaceId.",
+                    "example_value": "ChIJRym9mVDI5zsRrqh0xGAazB4",
+                    "required": true
+                },
+                "drop_off_place_id": {
+                    "type": "String",
+                    "description": "The drop off location's place id. drop_off_place_id can be retrieved from api/v1/taxi/searchLocation(Taxi Search Location) endpoint in Taxi collection as googlePlaceId.",
+                    "example_value": "ChIJ____b8DR5zsRVz_XpIUEKcA",
+                    "required": true
+                },
+                "pick_up_date": {
+                    "type": "Date (yyyy-mm-dd)",
+                    "description": "Pick up date\nFormat: YYYY-MM-DD",
+                    "example_value": "",
+                    "required": true
+                },
+                "pick_up_time": {
+                    "type": "Time (24-Hour Hh:Mm)",
+                    "description": "Pick up time\nFormat: HH:MM\nNote: The format of time is 24 hours.",
+                    "example_value": "",
+                    "required": true
+                },
+                "currency_code": {
+                    "type": "String",
+                    "description": "The currency code. currency_code can be retrieved from api/v1/meta/getCurrency(Get Currency) endpoint in Hotels collection.",
+                    "example_value": "EUR",
+                    "required": false
+                },
+                "languagecode": {
+                    "type": "String",
+                    "description": "To obtain the response data in a specific language, enter the languagecode. languagecode can be retrieved from api/v1/meta/getLanguages(Get Languages\n) endpoint in Meta collection.",
+                    "example_value": "",
+                    "required": false
+                }
+            },
+            "required": [
+                "pick_up_place_id",
+                "drop_off_place_id",
+                "pick_up_date",
+                "pick_up_time"
+            ]
+        }
+    },
+    "api_response_schema": {
+        "journeys": [
+            {
+                "journeyDirection": "OUTBOUND",
+                "janusSearchReference": "1c84df9e-9651-49c7-a552-28a955e96478",
+                "pickupLocation": {
+                    "country": "IT",
+                    "description": "via dell'Airport di Fiumicino 320, 00054 Fiumicino RM, Italy",
+                    "timezone": "Europe/Rome",
+                    "airportCode": "FCO",
+                    "locationType": "AIRPORT",
+                    "locationId": "ChIJHxSYOHnwJRMRbzFY47QT5a8",
+                    "postcode": "00054",
+                    "establishment": "Fiumicino - Leonardo da Vinci International Airport (FCO)",
+                    "city": "Fiumicino",
+                    "name": "Fiumicino - Leonardo da Vinci International Airport (FCO), via dell'Airport di Fiumicino 320, 00054 Fiumicino RM, Italy"
+                },
+                "requestedPickupDateTime": "2024-11-15T08:25:00",
+                "dropOffLocation": {
+                    "postcode": "415400",
+                    "country": "RO",
+                    "locationId": "ChIJMwefjprOSEcRl4OsYmSdwi8",
+                    "name": "Hotel Four Seasons, Sat de vacanta Vartop DN 75, Km 28, DN75 nr. 30, V\u00e2rtop 415400, Romania",
+                    "locationType": "GEO",
+                    "description": "Sat de vacanta Vartop DN 75, Km 28, DN75 nr. 30, V\u00e2rtop 415400, Romania",
+                    "city": "V\u00e2rtop",
+                    "establishment": "Hotel Four Seasons"
+                }
+            }
+        ],
+        "results": [
+            {
+                "description": "Luxury",
+                "categoryLocalised": "Luxury",
+                "supplierId": 1213,
+                "category": "Luxury",
+                "passengerCapacity": 2,
+                "price": {
+                    "amount": "4751.90",
+                    "currencyCode": "USD"
+                },
+                "resultId": "4182918a-80af-4a9c-8a02-595405b2e039",
+                "vehicleType": "EXECUTIVE",
+                "priceRuleId": 18769,
+                "janusResultReference": "4",
+                "geniusDiscount": false,
+                "legPriceBreakdown": [
+                    {
+                        "price": {
+                            "amount": "4751.90",
+                            "currencyCode": "USD"
+                        },
+                        "supplierLocationId": 5413,
+                        "supplierId": 1213,
+                        "journeyDirection": "OUTBOUND",
+                        "supplierName": "World Transfer (acting as agent for local supplier)"
+                    }
+                ],
+                "duration": 1025,
+                "nonRefundable": false,
+                "discountType": "NONE",
+                "supplierName": "World Transfer (acting as agent for local supplier)",
+                "drivingDistance": 1604.73,
+                "descriptionLocalised": "Offers more room to arrive in style.",
+                "bags": 2,
+                "cancellationLeadTimeMinutes": 1440,
+                "meetGreet": true
+            }
+        ]
+    }
+}

@@ -1,0 +1,56 @@
+{
+    "name": "Location_to_Lat_Long",
+    "docs_row": {
+        "name": "Location_to_Lat_Long",
+        "description": "Get location/address latitude and longitude. EndPoint: /api/v1/meta/locationToLatLong",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "query": {
+                    "type": "string",
+                    "description": "Names of locations, apartment, address, cities, districts, places, countries, counties etc."
+                }
+            },
+            "required": [
+                "query"
+            ]
+        }
+    },
+    "api_response_schema": [
+        {
+            "business_status": "OPERATIONAL",
+            "formatted_address": "2 Chome-2-1 Minatomirai, Nishi Ward, Yokohama, Kanagawa 220-0012, Japan",
+            "geometry": {
+                "location": {
+                    "lat": 35.45495400000001,
+                    "lng": 139.6313859
+                },
+                "viewport": {
+                    "northeast": {
+                        "lat": 35.45719164999999,
+                        "lng": 139.634438
+                    },
+                    "southwest": {
+                        "lat": 35.45278385,
+                        "lng": 139.6283639999999
+                    }
+                }
+            },
+            "name": "Yokohama Landmark Tower",
+            "opening_hours": {
+                "open_now": false
+            },
+            "place_id": "ChIJEaFmc11cGGARx8g0NQrvYTY",
+            "plus_code": {
+                "compound_code": "FJ3J+XH Yokohama, Kanagawa, Japan",
+                "global_code": "8Q7XFJ3J+XH"
+            },
+            "rating": 4.2,
+            "reference": "ChIJEaFmc11cGGARx8g0NQrvYTY",
+            "types": [
+                "establishment"
+            ],
+            "user_ratings_total": 28214
+        }
+    ]
+}

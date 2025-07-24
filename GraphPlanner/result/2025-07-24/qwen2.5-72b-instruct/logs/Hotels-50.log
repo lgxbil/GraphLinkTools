@@ -1,0 +1,25 @@
+2025-07-24 08:22:17,792 - evaluation_logger_Hotels-50 - INFO - Test Example Hotels-50
+2025-07-24 08:22:17,793 - evaluation_logger_Hotels-50 - INFO - Query: My friends and I are planning to go to Hong Kong to celebrate New Year's from November 25, 2024, to December 5, 2024. We hope to find a hotel near Victoria Harbour. We also want detailed information and payment options for these hotels.
+2025-07-24 08:23:44,061 - evaluation_logger_Hotels-50 - INFO - Start compare_single_call: 
+{'name': 'Location_to_Lat_Long', 'arguments': {'query': 'Victoria Harbour, Hong Kong'}}
+{'name': 'Location_to_Lat_Long', 'arguments': {'query': 'Victoria Harbour'}}
+2025-07-24 08:23:48,910 - evaluation_logger_Hotels-50 - DEBUG - LLM-based comparison output: {'is_equal': True, 'reason': 'A location with or without a country suffix is considered equivalent.'}
+2025-07-24 08:23:48,910 - evaluation_logger_Hotels-50 - INFO - LLM-based compare success.
+2025-07-24 08:23:48,918 - evaluation_logger_Hotels-50 - INFO - Success matched: [{'name': 'Location_to_Lat_Long', 'arguments': {'query': 'Victoria Harbour'}}]
+2025-07-24 08:23:48,921 - evaluation_logger_Hotels-50 - INFO - Start compare_single_call: 
+{'name': 'Search_Hotels_By_Coordinates', 'arguments': {'arrival_date': '2024-11-25', 'departure_date': '2024-12-05', 'latitude': '22.3008759', 'longitude': '114.1669614'}}
+{'name': 'Search_Hotels_By_Coordinates', 'arguments': {'arrival_date': '2024-11-25', 'departure_date': '2024-12-05', 'latitude': '22.3008759', 'longitude': '114.1669614'}}
+2025-07-24 08:23:48,921 - evaluation_logger_Hotels-50 - INFO - Rule-based compare success.
+2025-07-24 08:23:48,921 - evaluation_logger_Hotels-50 - INFO - Success matched: [{'name': 'Search_Hotels_By_Coordinates', 'arguments': {'arrival_date': '2024-11-25', 'departure_date': '2024-12-05', 'latitude': '22.3008759', 'longitude': '114.1669614'}}]
+2025-07-24 08:23:49,517 - evaluation_logger_Hotels-50 - INFO - Success matched: []
+2025-07-24 08:24:42,789 - evaluation_logger_Hotels-50 - INFO - Success matched: []
+2025-07-24 08:25:30,663 - evaluation_logger_Hotels-50 - INFO - Start compare_single_call: 
+{'name': 'Get_Hotel_Details', 'arguments': {'hotel_id': '380793'}}
+{'name': 'Get_Hotel_Details', 'arguments': {'hotel_id': '380793'}}
+2025-07-24 08:25:30,663 - evaluation_logger_Hotels-50 - INFO - Rule-based compare success.
+2025-07-24 08:25:30,664 - evaluation_logger_Hotels-50 - INFO - Success matched: [{'name': 'Get_Hotel_Details', 'arguments': {'hotel_id': '380793'}}]
+2025-07-24 08:25:30,664 - evaluation_logger_Hotels-50 - INFO - Start compare_single_call: 
+{'name': 'Payment_features_of_the_Hotel', 'arguments': {'hotel_id': '380793'}}
+{'name': 'Payment_features_of_the_Hotel', 'arguments': {'hotel_id': '380793'}}
+2025-07-24 08:25:30,664 - evaluation_logger_Hotels-50 - INFO - Rule-based compare success.
+2025-07-24 08:25:30,664 - evaluation_logger_Hotels-50 - INFO - Success matched: [{'name': 'Payment_features_of_the_Hotel', 'arguments': {'hotel_id': '380793'}}]

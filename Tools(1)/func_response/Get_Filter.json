@@ -1,0 +1,1208 @@
+{
+    "shorten": {
+        "api": {
+            "name": "Get_Filter",
+            "endpoint": "/api/v1/hotels/getFilter",
+            "func_description": "Get the `categories_filter` parameter value for `Search_Hotels` function. ",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "dest_id": {
+                        "type": "String",
+                        "description": "dest_id can be retrieved from api/v1/hotels/searchDestination(Search Hotel Destination) endpoint in Hotels collection.",
+                        "example_value": "-2092174",
+                        "required": true
+                    },
+                    "search_type": {
+                        "type": "String",
+                        "description": "search_type can be retrieved from api/v1/hotels/searchDestination(Search Hotel Destination) endpoint in hotel collection.",
+                        "example_value": "CITY",
+                        "required": true
+                    },
+                    "arrival_date": {
+                        "type": "Date (yyyy-mm-dd)",
+                        "description": "The date on which you will arrive or check-in",
+                        "example_value": "",
+                        "required": true
+                    },
+                    "departure_date": {
+                        "type": "Date (yyyy-mm-dd)",
+                        "description": "The date of departure or check-out.",
+                        "example_value": "",
+                        "required": true
+                    },
+                    "adults": {
+                        "type": "Number",
+                        "description": "The number of guests who are 18 years of age or older. The default value is set to 1.",
+                        "example_value": "1",
+                        "required": false
+                    },
+                    "children_age": {
+                        "type": "String",
+                        "description": "The number of children, including infants, who are under 18.\nExample:\nChild 1 Age = 8 months\nChild 2 Age = 1 year\nChild 3 Age = 17 years\nHere is what the request parameter would look like:\nchildren_age: 0,1,17",
+                        "example_value": "1,17",
+                        "required": false
+                    },
+                    "room_qty": {
+                        "type": "Number",
+                        "description": "The number of rooms that are required. The default value is set to 1.",
+                        "example_value": "1",
+                        "required": false
+                    },
+                    "categories_filter": {
+                        "type": "String",
+                        "description": "categories_filter can be retrieved from api/v1/hotels/getFilter(Get Filter) endpoint in Hotels collection.\nNote: For the initial request, leave it blank.",
+                        "example_value": "",
+                        "required": false
+                    },
+                    "languagecode": {
+                        "type": "String",
+                        "description": "To obtain the response data in a specific language, enter the languagecode. languagecode can be retrieved from api/v1/meta/getLanguages(Get Languages\n) endpoint in Meta collection.",
+                        "example_value": "",
+                        "required": false
+                    }
+                },
+                "required": [
+                    "dest_id",
+                    "search_type",
+                    "arrival_date",
+                    "departure_date"
+                ]
+            }
+        },
+        "static_response": {
+            "function_name": "Get_Filter",
+            "arguments": {
+                "search_type": "landmark",
+                "dest_id": "1838",
+                "departure_date": "2024-12-20",
+                "arrival_date": "2024-12-15"
+            },
+            "observation": {
+                "status": true,
+                "message": "Success",
+                "timestamp": 1729528889487,
+                "data": {
+                    "pagination": {
+                        "nbResultsTotal": 4663
+                    },
+                    "availabilityInfo": {
+                        "totalAvailableNotAutoextended": 3799
+                    },
+                    "filters": [
+                        {
+                            "title": "Your previous filters",
+                            "field": "previous",
+                            "filterStyle": "CHECKBOX",
+                            "options": [
+                                {
+                                    "title": "24-hour front desk",
+                                    "genericId": "facility::8",
+                                    "countNotAutoextended": 283
+                                },
+                                {
+                                    "title": "Free WiFi",
+                                    "genericId": "facility::107",
+                                    "countNotAutoextended": 3644
+                                },
+                                {
+                                    "title": "Less than 1 km",
+                                    "genericId": "distance::1000",
+                                    "countNotAutoextended": 1898
+                                }
+                            ]
+                        },
+                        {
+                            "title": "Your budget (for 5 nights)",
+                            "field": "price",
+                            "filterStyle": "SLIDER",
+                            "options": [],
+                            "min": "50",
+                            "max": "2000",
+                            "minPriceStep": "50",
+                            "minSelected": "0",
+                            "histogram": [
+                                0,
+                                0,
+                                0
+                            ],
+                            "currency": "EUR"
+                        },
+                        {
+                            "title": "Popular filters",
+                            "field": "popular",
+                            "filterStyle": "CHECKBOX",
+                            "options": [
+                                {
+                                    "title": "Superb: 9+",
+                                    "genericId": "reviewscorebuckets::90",
+                                    "countNotAutoextended": 1296
+                                },
+                                {
+                                    "title": "Bed and breakfasts",
+                                    "genericId": "property_type::208",
+                                    "countNotAutoextended": 257
+                                },
+                                {
+                                    "title": "Homestays",
+                                    "genericId": "property_type::222",
+                                    "countNotAutoextended": 21
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        },
+        "required": {
+            "query": "I'm planning a trip to New York City and need to find hotel filters for my stay from June 10, 2025 to June 15, 2025. The destination ID is -2092174 and the search type is CITY.",
+            "params": {
+                "dest_id": "-2092174",
+                "search_type": "CITY",
+                "arrival_date": "2025-06-10",
+                "departure_date": "2025-06-15"
+            },
+            "response": {
+                "status": false,
+                "timestamp": 1747650978893,
+                "message": "Server down, Please try again after sometime."
+            }
+        },
+        "optional": {
+            "query": "I'm planning a family trip to New York City from June 10 to June 15, 2025. There will be two adults and two children (aged 5 and 10), and we'll need one room. Could you help me find the available hotel filters for this stay? The destination ID is -2092174 and the search type is CITY. Please provide the information in English.",
+            "params": {
+                "dest_id": "-2092174",
+                "search_type": "CITY",
+                "arrival_date": "2025-06-10",
+                "departure_date": "2025-06-15",
+                "adults": 2,
+                "children_age": "5,10",
+                "room_qty": 1
+            },
+            "response": {
+                "status": true,
+                "message": "Success",
+                "timestamp": 1747650995476,
+                "data": {
+                    "pagination": {
+                        "nbResultsTotal": 1466
+                    },
+                    "availabilityInfo": {
+                        "totalAvailableNotAutoextended": 1211
+                    },
+                    "filters": [
+                        {
+                            "title": "Your budget (for 5 nights)",
+                            "field": "price",
+                            "filterStyle": "SLIDER",
+                            "options": [],
+                            "min": "1000",
+                            "max": "60000",
+                            "minPriceStep": "1000",
+                            "minSelected": "0",
+                            "histogram": [
+                                7,
+                                19,
+                                10
+                            ],
+                            "currency": "INR"
+                        },
+                        {
+                            "title": "Popular filters",
+                            "field": "popular",
+                            "filterStyle": "CHECKBOX",
+                            "options": [
+                                {
+                                    "title": "Breakfast included",
+                                    "genericId": "mealplan::breakfast_included",
+                                    "countNotAutoextended": 523
+                                },
+                                {
+                                    "title": "South Mumbai",
+                                    "genericId": "district::2379",
+                                    "countNotAutoextended": 158
+                                },
+                                {
+                                    "title": "Very good: 8+",
+                                    "genericId": "reviewscorebuckets::80",
+                                    "countNotAutoextended": 266
+                                }
+                            ]
+                        },
+                        {
+                            "title": "Review score",
+                            "field": "review_score",
+                            "filterStyle": "CHECKBOX",
+                            "options": [
+                                {
+                                    "title": "Passable: 5+",
+                                    "genericId": "reviewscorebuckets::50",
+                                    "countNotAutoextended": 892
+                                },
+                                {
+                                    "title": "Pleasant: 6+",
+                                    "genericId": "reviewscorebuckets::60",
+                                    "countNotAutoextended": 724
+                                },
+                                {
+                                    "title": "Good: 7+",
+                                    "genericId": "reviewscorebuckets::70",
+                                    "countNotAutoextended": 495
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    "row": {
+        "required": {
+            "status": false,
+            "timestamp": 1747650978893,
+            "message": "Server down, Please try again after sometime."
+        },
+        "optional": {
+            "status": true,
+            "message": "Success",
+            "timestamp": 1747650995476,
+            "data": {
+                "pagination": {
+                    "nbResultsTotal": 1466
+                },
+                "availabilityInfo": {
+                    "totalAvailableNotAutoextended": 1211
+                },
+                "filters": [
+                    {
+                        "title": "Your budget (for 5 nights)",
+                        "field": "price",
+                        "filterStyle": "SLIDER",
+                        "options": [],
+                        "min": "1000",
+                        "max": "60000",
+                        "minPriceStep": "1000",
+                        "minSelected": "0",
+                        "histogram": [
+                            7,
+                            19,
+                            10,
+                            23,
+                            20,
+                            40,
+                            54,
+                            56,
+                            94,
+                            94,
+                            87,
+                            63,
+                            100,
+                            65,
+                            47,
+                            44,
+                            46,
+                            40,
+                            30,
+                            29,
+                            31,
+                            43,
+                            21,
+                            18,
+                            34,
+                            12,
+                            26,
+                            27,
+                            20,
+                            17,
+                            17,
+                            4,
+                            8,
+                            23,
+                            8,
+                            8,
+                            10,
+                            8,
+                            7,
+                            7,
+                            15,
+                            8,
+                            8,
+                            0,
+                            5,
+                            2,
+                            3,
+                            7,
+                            7,
+                            7
+                        ],
+                        "currency": "INR"
+                    },
+                    {
+                        "title": "Popular filters",
+                        "field": "popular",
+                        "filterStyle": "CHECKBOX",
+                        "options": [
+                            {
+                                "title": "Breakfast included",
+                                "genericId": "mealplan::breakfast_included",
+                                "countNotAutoextended": 523
+                            },
+                            {
+                                "title": "South Mumbai",
+                                "genericId": "district::2379",
+                                "countNotAutoextended": 158
+                            },
+                            {
+                                "title": "Very good: 8+",
+                                "genericId": "reviewscorebuckets::80",
+                                "countNotAutoextended": 266
+                            },
+                            {
+                                "title": "Andheri",
+                                "genericId": "district::3712",
+                                "countNotAutoextended": 450
+                            },
+                            {
+                                "title": "Bandra",
+                                "genericId": "district::3445",
+                                "countNotAutoextended": 85
+                            },
+                            {
+                                "title": "Colaba",
+                                "genericId": "district::3448",
+                                "countNotAutoextended": 37
+                            },
+                            {
+                                "title": "Good: 7+",
+                                "genericId": "reviewscorebuckets::70",
+                                "countNotAutoextended": 495
+                            },
+                            {
+                                "title": "Superb: 9+",
+                                "genericId": "reviewscorebuckets::90",
+                                "countNotAutoextended": 119
+                            }
+                        ]
+                    },
+                    {
+                        "title": "Review score",
+                        "field": "review_score",
+                        "filterStyle": "CHECKBOX",
+                        "options": [
+                            {
+                                "title": "Passable: 5+",
+                                "genericId": "reviewscorebuckets::50",
+                                "countNotAutoextended": 892
+                            },
+                            {
+                                "title": "Pleasant: 6+",
+                                "genericId": "reviewscorebuckets::60",
+                                "countNotAutoextended": 724
+                            },
+                            {
+                                "title": "Good: 7+",
+                                "genericId": "reviewscorebuckets::70",
+                                "countNotAutoextended": 495
+                            },
+                            {
+                                "title": "Very good: 8+",
+                                "genericId": "reviewscorebuckets::80",
+                                "countNotAutoextended": 266
+                            },
+                            {
+                                "title": "Superb: 9+",
+                                "genericId": "reviewscorebuckets::90",
+                                "countNotAutoextended": 119
+                            }
+                        ]
+                    },
+                    {
+                        "title": "Property accessibility",
+                        "field": "accessible_facilities",
+                        "filterStyle": "CHECKBOX",
+                        "options": [
+                            {
+                                "title": "Toilet with grab rails",
+                                "genericId": "accessible_facilities::186",
+                                "countNotAutoextended": 48
+                            },
+                            {
+                                "title": "Higher level toilet",
+                                "genericId": "accessible_facilities::187",
+                                "countNotAutoextended": 32
+                            },
+                            {
+                                "title": "Lower bathroom sink",
+                                "genericId": "accessible_facilities::188",
+                                "countNotAutoextended": 32
+                            },
+                            {
+                                "title": "Emergency cord in bathroom",
+                                "genericId": "accessible_facilities::189",
+                                "countNotAutoextended": 20
+                            },
+                            {
+                                "title": "Visual aids: Braille",
+                                "genericId": "accessible_facilities::211",
+                                "countNotAutoextended": 10
+                            },
+                            {
+                                "title": "Visual aids: Tactile signs",
+                                "genericId": "accessible_facilities::212",
+                                "countNotAutoextended": 10
+                            },
+                            {
+                                "title": "Auditory guidance",
+                                "genericId": "accessible_facilities::213",
+                                "countNotAutoextended": 12
+                            }
+                        ]
+                    },
+                    {
+                        "title": "Property type",
+                        "field": "ht_id",
+                        "filterStyle": "CHECKBOX",
+                        "options": [
+                            {
+                                "title": "Hotels",
+                                "genericId": "property_type::204",
+                                "countNotAutoextended": 796
+                            },
+                            {
+                                "title": "Entire homes & apartments",
+                                "genericId": "privacy_type::3",
+                                "countNotAutoextended": 221
+                            },
+                            {
+                                "title": "Apartments",
+                                "genericId": "property_type::201",
+                                "countNotAutoextended": 217
+                            },
+                            {
+                                "title": "Hostels",
+                                "genericId": "property_type::203",
+                                "countNotAutoextended": 77
+                            },
+                            {
+                                "title": "Guest houses",
+                                "genericId": "property_type::216",
+                                "countNotAutoextended": 60
+                            },
+                            {
+                                "title": "Homestays",
+                                "genericId": "property_type::222",
+                                "countNotAutoextended": 23
+                            },
+                            {
+                                "title": "Bed and breakfasts",
+                                "genericId": "property_type::208",
+                                "countNotAutoextended": 23
+                            },
+                            {
+                                "title": "Villas",
+                                "genericId": "property_type::213",
+                                "countNotAutoextended": 10
+                            },
+                            {
+                                "title": "Capsule hotels",
+                                "genericId": "property_type::225",
+                                "countNotAutoextended": 9
+                            },
+                            {
+                                "title": "Resorts",
+                                "genericId": "property_type::206",
+                                "countNotAutoextended": 2
+                            },
+                            {
+                                "title": "Lodges",
+                                "genericId": "property_type::221",
+                                "countNotAutoextended": 1
+                            },
+                            {
+                                "title": "Holiday homes",
+                                "genericId": "property_type::220",
+                                "countNotAutoextended": 1
+                            }
+                        ]
+                    },
+                    {
+                        "title": "Chain",
+                        "field": "chaincode",
+                        "filterStyle": "CHECKBOX",
+                        "options": [
+                            {
+                                "title": "Bloom Hotels",
+                                "genericId": "chaincode::13130",
+                                "countNotAutoextended": 4
+                            },
+                            {
+                                "title": "Courtyard by Marriott",
+                                "genericId": "chaincode::1093",
+                                "countNotAutoextended": 1
+                            },
+                            {
+                                "title": "FabHotels",
+                                "genericId": "chaincode::6129",
+                                "countNotAutoextended": 83
+                            },
+                            {
+                                "title": "Fairfield Inn",
+                                "genericId": "chaincode::2188",
+                                "countNotAutoextended": 1
+                            },
+                            {
+                                "title": "Ginger Hotels",
+                                "genericId": "chaincode::15681",
+                                "countNotAutoextended": 4
+                            },
+                            {
+                                "title": "Hilton Garden Inn",
+                                "genericId": "chaincode::2117",
+                                "countNotAutoextended": 1
+                            },
+                            {
+                                "title": "Hilton Hotels & Resorts",
+                                "genericId": "chaincode::1078",
+                                "countNotAutoextended": 1
+                            },
+                            {
+                                "title": "Holiday Inn Hotels & Resorts",
+                                "genericId": "chaincode::1072",
+                                "countNotAutoextended": 1
+                            },
+                            {
+                                "title": "ibis",
+                                "genericId": "chaincode::1053",
+                                "countNotAutoextended": 3
+                            },
+                            {
+                                "title": "InterContinental Hotels & Resorts",
+                                "genericId": "chaincode::1070",
+                                "countNotAutoextended": 1
+                            },
+                            {
+                                "title": "JW Marriott Hotels & Resorts",
+                                "genericId": "chaincode::1097",
+                                "countNotAutoextended": 2
+                            },
+                            {
+                                "title": "Luxury Collection",
+                                "genericId": "chaincode::12897",
+                                "countNotAutoextended": 2
+                            },
+                            {
+                                "title": "Marriott Executive Apartments",
+                                "genericId": "chaincode::4370",
+                                "countNotAutoextended": 1
+                            },
+                            {
+                                "title": "Marriott Hotels & Resorts",
+                                "genericId": "chaincode::1080",
+                                "countNotAutoextended": 0
+                            },
+                            {
+                                "title": "Novotel",
+                                "genericId": "chaincode::1050",
+                                "countNotAutoextended": 2
+                            },
+                            {
+                                "title": "Oberoi Hotels & Resorts",
+                                "genericId": "chaincode::2101",
+                                "countNotAutoextended": 3
+                            },
+                            {
+                                "title": "OYO Rooms",
+                                "genericId": "chaincode::6015",
+                                "countNotAutoextended": 98
+                            },
+                            {
+                                "title": "Radisson",
+                                "genericId": "chaincode::8647",
+                                "countNotAutoextended": 2
+                            },
+                            {
+                                "title": "Ramada",
+                                "genericId": "chaincode::1045",
+                                "countNotAutoextended": 1
+                            },
+                            {
+                                "title": "Royal Orchid Hotels",
+                                "genericId": "chaincode::2133",
+                                "countNotAutoextended": 0
+                            },
+                            {
+                                "title": "Sarovar (Louvre)",
+                                "genericId": "chaincode::14500",
+                                "countNotAutoextended": 3
+                            },
+                            {
+                                "title": "Sofitel",
+                                "genericId": "chaincode::1049",
+                                "countNotAutoextended": 1
+                            },
+                            {
+                                "title": "The Fern Hotels & Resorts",
+                                "genericId": "chaincode::14591",
+                                "countNotAutoextended": 7
+                            },
+                            {
+                                "title": "Treebo Hotels",
+                                "genericId": "chaincode::5975",
+                                "countNotAutoextended": 21
+                            },
+                            {
+                                "title": "Westin",
+                                "genericId": "chaincode::12898",
+                                "countNotAutoextended": 2
+                            }
+                        ]
+                    },
+                    {
+                        "title": "Facilities",
+                        "field": "hotelfacility",
+                        "filterStyle": "CHECKBOX",
+                        "options": [
+                            {
+                                "title": "Free WiFi",
+                                "genericId": "facility::107",
+                                "countNotAutoextended": 1024
+                            },
+                            {
+                                "title": "24-hour front desk",
+                                "genericId": "facility::8",
+                                "countNotAutoextended": 835
+                            },
+                            {
+                                "title": "Room service",
+                                "genericId": "facility::5",
+                                "countNotAutoextended": 822
+                            },
+                            {
+                                "title": "Non-smoking rooms",
+                                "genericId": "facility::16",
+                                "countNotAutoextended": 755
+                            },
+                            {
+                                "title": "Family rooms",
+                                "genericId": "facility::28",
+                                "countNotAutoextended": 734
+                            },
+                            {
+                                "title": "Parking",
+                                "genericId": "facility::2",
+                                "countNotAutoextended": 646
+                            },
+                            {
+                                "title": "Free parking",
+                                "genericId": "facility::46",
+                                "countNotAutoextended": 587
+                            },
+                            {
+                                "title": "Restaurant",
+                                "genericId": "facility::3",
+                                "countNotAutoextended": 266
+                            },
+                            {
+                                "title": "Airport shuttle",
+                                "genericId": "facility::17",
+                                "countNotAutoextended": 229
+                            },
+                            {
+                                "title": "Pets allowed",
+                                "genericId": "facility::4",
+                                "countNotAutoextended": 122
+                            },
+                            {
+                                "title": "Wheelchair accessible",
+                                "genericId": "facility::185",
+                                "countNotAutoextended": 100
+                            },
+                            {
+                                "title": "Fitness centre",
+                                "genericId": "facility::11",
+                                "countNotAutoextended": 92
+                            },
+                            {
+                                "title": "Swimming Pool",
+                                "genericId": "facility::433",
+                                "countNotAutoextended": 72
+                            },
+                            {
+                                "title": "Spa and wellness centre",
+                                "genericId": "facility::54",
+                                "countNotAutoextended": 48
+                            },
+                            {
+                                "title": "Electric vehicle charging station",
+                                "genericId": "facility::182",
+                                "countNotAutoextended": 29
+                            },
+                            {
+                                "title": "BBQ facilities",
+                                "genericId": "facility::72",
+                                "countNotAutoextended": 26
+                            },
+                            {
+                                "title": "Airport shuttle (free)",
+                                "genericId": "facility::139",
+                                "countNotAutoextended": 5
+                            }
+                        ]
+                    },
+                    {
+                        "title": "Room facilities",
+                        "field": "roomfacility",
+                        "filterStyle": "CHECKBOX",
+                        "options": [
+                            {
+                                "title": "Coffee/tea maker",
+                                "genericId": "room_facility::998",
+                                "countNotAutoextended": 509
+                            },
+                            {
+                                "title": "Electric kettle",
+                                "genericId": "room_facility::86",
+                                "countNotAutoextended": 442
+                            },
+                            {
+                                "title": "View",
+                                "genericId": "room_facility::81",
+                                "countNotAutoextended": 473
+                            },
+                            {
+                                "title": "Soundproofing",
+                                "genericId": "room_facility::79",
+                                "countNotAutoextended": 227
+                            },
+                            {
+                                "title": "Flat-screen TV",
+                                "genericId": "room_facility::75",
+                                "countNotAutoextended": 1027
+                            },
+                            {
+                                "title": "Bath",
+                                "genericId": "room_facility::5",
+                                "countNotAutoextended": 232
+                            },
+                            {
+                                "title": "Desk",
+                                "genericId": "room_facility::23",
+                                "countNotAutoextended": 645
+                            },
+                            {
+                                "title": "Air conditioning",
+                                "genericId": "room_facility::11",
+                                "countNotAutoextended": 1164
+                            },
+                            {
+                                "title": "Private bathroom",
+                                "genericId": "room_facility::38",
+                                "countNotAutoextended": 987
+                            },
+                            {
+                                "title": "Kitchen/kitchenette",
+                                "genericId": "room_facility::999",
+                                "countNotAutoextended": 233
+                            }
+                        ]
+                    },
+                    {
+                        "title": "Distance from city centre",
+                        "field": "distance",
+                        "filterStyle": "CHECKBOX",
+                        "options": [
+                            {
+                                "title": "Less than 1 km",
+                                "genericId": "distance::1000",
+                                "countNotAutoextended": 42
+                            },
+                            {
+                                "title": "Less than 3 km",
+                                "genericId": "distance::3000",
+                                "countNotAutoextended": 179
+                            },
+                            {
+                                "title": "Less than 5 km",
+                                "genericId": "distance::5000",
+                                "countNotAutoextended": 540
+                            }
+                        ]
+                    },
+                    {
+                        "title": "Landmarks",
+                        "field": "popular_nearby_landmarks",
+                        "filterStyle": "CHECKBOX",
+                        "options": [
+                            {
+                                "title": "Gateway of India",
+                                "genericId": "popular_nearby_landmarks::202948",
+                                "countNotAutoextended": 36
+                            },
+                            {
+                                "title": "Juhu Beach",
+                                "genericId": "popular_nearby_landmarks::261342",
+                                "countNotAutoextended": 13
+                            },
+                            {
+                                "title": "Marine Drive",
+                                "genericId": "popular_nearby_landmarks::15060",
+                                "countNotAutoextended": 7
+                            },
+                            {
+                                "title": "NITIE",
+                                "genericId": "popular_nearby_landmarks::900066749",
+                                "countNotAutoextended": 4
+                            },
+                            {
+                                "title": "Viviana Mall",
+                                "genericId": "popular_nearby_landmarks::900120953",
+                                "countNotAutoextended": 0
+                            }
+                        ]
+                    },
+                    {
+                        "title": "Neighbourhood",
+                        "field": "di",
+                        "filterStyle": "CHECKBOX",
+                        "options": [
+                            {
+                                "title": "Western Suburbs",
+                                "genericId": "district::3287",
+                                "countNotAutoextended": 829
+                            },
+                            {
+                                "title": "Andheri",
+                                "genericId": "district::3712",
+                                "countNotAutoextended": 450
+                            },
+                            {
+                                "title": "South Mumbai",
+                                "genericId": "district::2379",
+                                "countNotAutoextended": 158
+                            },
+                            {
+                                "title": "Bandra",
+                                "genericId": "district::3445",
+                                "countNotAutoextended": 85
+                            },
+                            {
+                                "title": "Bandra Kurla Complex",
+                                "genericId": "district::3446",
+                                "countNotAutoextended": 59
+                            },
+                            {
+                                "title": "Borivali ",
+                                "genericId": "district::3605",
+                                "countNotAutoextended": 12
+                            },
+                            {
+                                "title": "CBD Belapur",
+                                "genericId": "district::8667",
+                                "countNotAutoextended": 0
+                            },
+                            {
+                                "title": "Central",
+                                "genericId": "district::2559",
+                                "countNotAutoextended": 67
+                            },
+                            {
+                                "title": "Central Suburbs",
+                                "genericId": "district::2558",
+                                "countNotAutoextended": 104
+                            },
+                            {
+                                "title": "Churchgate",
+                                "genericId": "district::3451",
+                                "countNotAutoextended": 7
+                            },
+                            {
+                                "title": "Colaba",
+                                "genericId": "district::3448",
+                                "countNotAutoextended": 37
+                            },
+                            {
+                                "title": "Dadar",
+                                "genericId": "district::3442",
+                                "countNotAutoextended": 9
+                            },
+                            {
+                                "title": "Grant Road",
+                                "genericId": "district::17337",
+                                "countNotAutoextended": 16
+                            },
+                            {
+                                "title": "Juhu",
+                                "genericId": "district::2375",
+                                "countNotAutoextended": 24
+                            },
+                            {
+                                "title": "Kemps Corner",
+                                "genericId": "district::7365",
+                                "countNotAutoextended": 2
+                            },
+                            {
+                                "title": "Khar",
+                                "genericId": "district::8663",
+                                "countNotAutoextended": 35
+                            },
+                            {
+                                "title": "Kurla",
+                                "genericId": "district::17020",
+                                "countNotAutoextended": 57
+                            },
+                            {
+                                "title": "Lower Parel",
+                                "genericId": "district::8424",
+                                "countNotAutoextended": 1
+                            },
+                            {
+                                "title": "Malabar Hill",
+                                "genericId": "district::17307",
+                                "countNotAutoextended": 7
+                            },
+                            {
+                                "title": "Mumbai Historical And Heritage",
+                                "genericId": "district::17444",
+                                "countNotAutoextended": 71
+                            },
+                            {
+                                "title": "Nariman Point",
+                                "genericId": "district::3447",
+                                "countNotAutoextended": 2
+                            },
+                            {
+                                "title": "Powai",
+                                "genericId": "district::8426",
+                                "countNotAutoextended": 48
+                            },
+                            {
+                                "title": "Santacruz",
+                                "genericId": "district::3619",
+                                "countNotAutoextended": 60
+                            },
+                            {
+                                "title": "Vashi",
+                                "genericId": "district::8666",
+                                "countNotAutoextended": 0
+                            },
+                            {
+                                "title": "Vikhroli",
+                                "genericId": "district::17026",
+                                "countNotAutoextended": 1
+                            },
+                            {
+                                "title": "Worli",
+                                "genericId": "district::3449",
+                                "countNotAutoextended": 5
+                            }
+                        ]
+                    },
+                    {
+                        "title": "Property rating",
+                        "field": "class",
+                        "filterStyle": "CHECKBOX",
+                        "options": [
+                            {
+                                "title": "Unrated",
+                                "genericId": "class::0",
+                                "countNotAutoextended": 336
+                            },
+                            {
+                                "title": "1 star",
+                                "genericId": "class::1",
+                                "countNotAutoextended": 26
+                            },
+                            {
+                                "title": "2 stars",
+                                "genericId": "class::2",
+                                "countNotAutoextended": 112
+                            },
+                            {
+                                "title": "3 stars",
+                                "genericId": "class::3",
+                                "countNotAutoextended": 554
+                            },
+                            {
+                                "title": "4 stars",
+                                "genericId": "class::4",
+                                "countNotAutoextended": 139
+                            },
+                            {
+                                "title": "5 stars",
+                                "genericId": "class::5",
+                                "countNotAutoextended": 44
+                            }
+                        ]
+                    },
+                    {
+                        "title": "Bed preference",
+                        "field": "tdb",
+                        "filterStyle": "CHECKBOX",
+                        "options": [
+                            {
+                                "title": "2 single beds",
+                                "genericId": "twin_double_bed::2",
+                                "countNotAutoextended": 245
+                            },
+                            {
+                                "title": "Double bed",
+                                "genericId": "twin_double_bed::3",
+                                "countNotAutoextended": 1079
+                            }
+                        ]
+                    },
+                    {
+                        "title": "Free cancellation ",
+                        "field": "fc",
+                        "filterStyle": "CHECKBOX",
+                        "options": [
+                            {
+                                "title": "Free cancellation",
+                                "genericId": "free_cancellation::1",
+                                "countNotAutoextended": 1148
+                            }
+                        ]
+                    },
+                    {
+                        "title": "Number of bedrooms",
+                        "field": "entire_place_bedroom_count",
+                        "filterStyle": "CHECKBOX",
+                        "options": [
+                            {
+                                "title": "1+ bedrooms",
+                                "genericId": "entire_place_bedroom_count::1",
+                                "countNotAutoextended": 1211
+                            },
+                            {
+                                "title": "2+ bedrooms",
+                                "genericId": "entire_place_bedroom_count::2",
+                                "countNotAutoextended": 831
+                            },
+                            {
+                                "title": "3+ bedrooms",
+                                "genericId": "entire_place_bedroom_count::3",
+                                "countNotAutoextended": 20
+                            },
+                            {
+                                "title": "4+ bedrooms",
+                                "genericId": "entire_place_bedroom_count::4",
+                                "countNotAutoextended": 7
+                            }
+                        ]
+                    },
+                    {
+                        "title": "Meals",
+                        "field": "mealplan",
+                        "filterStyle": "CHECKBOX",
+                        "options": [
+                            {
+                                "title": "Breakfast included",
+                                "genericId": "mealplan::breakfast_included",
+                                "countNotAutoextended": 523
+                            },
+                            {
+                                "title": "Breakfast & dinner included",
+                                "genericId": "mealplan::breakfast_and_dinner",
+                                "countNotAutoextended": 70
+                            },
+                            {
+                                "title": "All-inclusive",
+                                "genericId": "mealplan::all_inclusive",
+                                "countNotAutoextended": 22
+                            },
+                            {
+                                "title": "All meals included",
+                                "genericId": "mealplan::full_board",
+                                "countNotAutoextended": 9
+                            },
+                            {
+                                "title": "Breakfast & lunch included",
+                                "genericId": "mealplan::breakfast_and_lunch",
+                                "countNotAutoextended": 9
+                            },
+                            {
+                                "title": "Self catering",
+                                "genericId": "mealplan::999",
+                                "countNotAutoextended": 233
+                            }
+                        ]
+                    },
+                    {
+                        "title": "Deals",
+                        "field": "any_deal",
+                        "filterStyle": "CHECKBOX",
+                        "options": [
+                            {
+                                "title": "All deals",
+                                "genericId": "deal::7",
+                                "countNotAutoextended": 1
+                            }
+                        ]
+                    },
+                    {
+                        "title": "Room accessibility",
+                        "field": "accessible_room_facilities",
+                        "filterStyle": "CHECKBOX",
+                        "options": [
+                            {
+                                "title": "Entire unit located on ground floor",
+                                "genericId": "accessible_room_facilities::131",
+                                "countNotAutoextended": 81
+                            },
+                            {
+                                "title": "Upper floors accessible by elevator",
+                                "genericId": "accessible_room_facilities::132",
+                                "countNotAutoextended": 212
+                            },
+                            {
+                                "title": "Entire unit wheelchair accessible",
+                                "genericId": "accessible_room_facilities::134",
+                                "countNotAutoextended": 98
+                            },
+                            {
+                                "title": "Toilet with grab rails",
+                                "genericId": "accessible_room_facilities::147",
+                                "countNotAutoextended": 30
+                            },
+                            {
+                                "title": "Adapted bath",
+                                "genericId": "accessible_room_facilities::148",
+                                "countNotAutoextended": 21
+                            },
+                            {
+                                "title": "Roll-in shower",
+                                "genericId": "accessible_room_facilities::149",
+                                "countNotAutoextended": 28
+                            },
+                            {
+                                "title": "Walk-in shower",
+                                "genericId": "accessible_room_facilities::150",
+                                "countNotAutoextended": 97
+                            },
+                            {
+                                "title": "Raised toilet",
+                                "genericId": "accessible_room_facilities::151",
+                                "countNotAutoextended": 40
+                            },
+                            {
+                                "title": "Lowered sink",
+                                "genericId": "accessible_room_facilities::152",
+                                "countNotAutoextended": 29
+                            },
+                            {
+                                "title": "Emergency cord in bathroom",
+                                "genericId": "accessible_room_facilities::153",
+                                "countNotAutoextended": 15
+                            },
+                            {
+                                "title": "Shower chair",
+                                "genericId": "accessible_room_facilities::154",
+                                "countNotAutoextended": 20
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+    }
+}

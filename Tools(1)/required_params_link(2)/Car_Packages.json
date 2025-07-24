@@ -1,0 +1,153 @@
+{
+    "name": "Car_Packages",
+    "docs_row": {
+        "name": "Car_Packages",
+        "endpoint": "https://booking-com18.p.rapidapi.com/car/packages",
+        "func_description": "",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "vehicleId": {
+                    "type": "String",
+                    "description": "Vehicle Id\nRequired: true\nvehicleId can be retrieved from /car/search endpoint(data->search_results->vehicle_info->v_id)\nEx: 678151356",
+                    "example_value": "678151356",
+                    "required": true
+                },
+                "searchKey": {
+                    "type": "String",
+                    "description": "Search key\nRequired: true\nsearchKey can be retrieved from /car/search endpoint(data->search_key)\nEx:\neyJkcml2ZXJzQWdlIjozNSwiZHJvcE9mZkRhdGVUaW1lIjoiMjAyNC0wMS0yOFQxMDowMDowMCIsImRyb3BPZmZMb2NhdGlvbiI6IjQwLjc1OTU5LC03My45ODQ5MSIsImRyb3BPZmZMb2NhdGlvblR5cGUiOiJMQVRMT05HIiwicGlja1VwRGF0ZVRpbWUiOiIyMDI0LTAxLTI3VDEwOjAwOjAwIiwicGlja1VwTG9jYXRpb24iOiI0MC43NTk1OSwtNzMuOTg0OTEiLCJwaWNrVXBMb2NhdGlvblR5cGUiOiJMQVRMT05HIiwicmVudGFsRHVyYXRpb25JbkRheXMiOjEsInNlcnZpY2VGZWF0dXJlcyI6WyJOT19PUEFRVUVTIiwiU1VQUkVTU19GSVhFRF9QUklDRV9WRUhJQ0xFUyIsIklOQ0xVREVfUFJPRFVDVF9SRUxBVElPTlNISVBTIl19",
+                    "example_value": "eyJkcml2ZXJzQWdlIjozNSwiZHJvcE9mZkRhdGVUaW1lIjoiMjAyNC0wMS0yOFQxMDowMDowMCIsImRyb3BPZmZMb2NhdGlvbiI6IjQwLjc1OTU5LC03My45ODQ5MSIsImRyb3BPZmZMb2NhdGlvblR5cGUiOiJMQVRMT05HIiwicGlja1VwRGF0ZVRpbWUiOiIyMDI0LTAxLTI3VDEwOjAwOjAwIiwicGlja1VwTG9jYXRpb24iOiI0MC43NTk1OSwtNzMuOTg0OTEiLCJwaWNrVXBMb2NhdGlvblR5cGUiOiJMQVRMT05HIiwicmVudGFsRHVyYXRpb25JbkRheXMiOjEsInNlcnZpY2VGZWF0dXJlcyI6WyJOT19PUEFRVUVTIiwiU1VQUkVTU19GSVhFRF9QUklDRV9WRUhJQ0xFUyIsIklOQ0xVREVfUFJPRFVDVF9SRUxBVElPTlNISVBTIl19",
+                    "required": true
+                },
+                "units": {
+                    "type": "Enum",
+                    "description": "Units\nEx: metric\nDefault value: metric\n\nmetric: Metric (km, m2)\nimperial: Imperial (miles, ft2)",
+                    "example_value": "",
+                    "required": false
+                },
+                "languageCode": {
+                    "type": "String",
+                    "description": "Language\nlanguageCode can be retrieved from /languages endpoint(data->code)\nEx: en-us\nDefault value: en-us",
+                    "example_value": "",
+                    "required": false
+                },
+                "currencyCode": {
+                    "type": "String",
+                    "description": "Currency\ncurrencyCode can be retrieved from /currencies endpoint(data->code)\nEx: USD\nDefault value: HOTEL(Property's Currency)",
+                    "example_value": "",
+                    "required": false
+                },
+                "countryFlag": {
+                    "type": "String",
+                    "description": "Country\ncountryFlag can be retrieved from /languages endpoint(data->countryFlag)\nEx: us\nDefault value: us",
+                    "example_value": "",
+                    "required": false
+                }
+            },
+            "required": [
+                "vehicleId",
+                "searchKey"
+            ]
+        }
+    },
+    "instance": [],
+    "category": null,
+    "tool": null,
+    "api_idx": 48,
+    "params": {
+        "type": "object",
+        "properties": {
+            "vehicleId": {
+                "type": "String",
+                "description": "Vehicle Id\nRequired: true\nvehicleId can be retrieved from /car/search endpoint(data->search_results->vehicle_info->v_id)\nEx: 678151356",
+                "example_value": "678151356",
+                "required": true
+            },
+            "searchKey": {
+                "type": "String",
+                "description": "Search key\nRequired: true\nsearchKey can be retrieved from /car/search endpoint(data->search_key)\nEx:\neyJkcml2ZXJzQWdlIjozNSwiZHJvcE9mZkRhdGVUaW1lIjoiMjAyNC0wMS0yOFQxMDowMDowMCIsImRyb3BPZmZMb2NhdGlvbiI6IjQwLjc1OTU5LC03My45ODQ5MSIsImRyb3BPZmZMb2NhdGlvblR5cGUiOiJMQVRMT05HIiwicGlja1VwRGF0ZVRpbWUiOiIyMDI0LTAxLTI3VDEwOjAwOjAwIiwicGlja1VwTG9jYXRpb24iOiI0MC43NTk1OSwtNzMuOTg0OTEiLCJwaWNrVXBMb2NhdGlvblR5cGUiOiJMQVRMT05HIiwicmVudGFsRHVyYXRpb25JbkRheXMiOjEsInNlcnZpY2VGZWF0dXJlcyI6WyJOT19PUEFRVUVTIiwiU1VQUkVTU19GSVhFRF9QUklDRV9WRUhJQ0xFUyIsIklOQ0xVREVfUFJPRFVDVF9SRUxBVElPTlNISVBTIl19",
+                "example_value": "eyJkcml2ZXJzQWdlIjozNSwiZHJvcE9mZkRhdGVUaW1lIjoiMjAyNC0wMS0yOFQxMDowMDowMCIsImRyb3BPZmZMb2NhdGlvbiI6IjQwLjc1OTU5LC03My45ODQ5MSIsImRyb3BPZmZMb2NhdGlvblR5cGUiOiJMQVRMT05HIiwicGlja1VwRGF0ZVRpbWUiOiIyMDI0LTAxLTI3VDEwOjAwOjAwIiwicGlja1VwTG9jYXRpb24iOiI0MC43NTk1OSwtNzMuOTg0OTEiLCJwaWNrVXBMb2NhdGlvblR5cGUiOiJMQVRMT05HIiwicmVudGFsRHVyYXRpb25JbkRheXMiOjEsInNlcnZpY2VGZWF0dXJlcyI6WyJOT19PUEFRVUVTIiwiU1VQUkVTU19GSVhFRF9QUklDRV9WRUhJQ0xFUyIsIklOQ0xVREVfUFJPRFVDVF9SRUxBVElPTlNISVBTIl19",
+                "required": true
+            },
+            "units": {
+                "type": "Enum",
+                "description": "Units\nEx: metric\nDefault value: metric\n\nmetric: Metric (km, m2)\nimperial: Imperial (miles, ft2)",
+                "example_value": "",
+                "required": false
+            },
+            "languageCode": {
+                "type": "String",
+                "description": "Language\nlanguageCode can be retrieved from /languages endpoint(data->code)\nEx: en-us\nDefault value: en-us",
+                "example_value": "",
+                "required": false
+            },
+            "currencyCode": {
+                "type": "String",
+                "description": "Currency\ncurrencyCode can be retrieved from /currencies endpoint(data->code)\nEx: USD\nDefault value: HOTEL(Property's Currency)",
+                "example_value": "",
+                "required": false
+            },
+            "countryFlag": {
+                "type": "String",
+                "description": "Country\ncountryFlag can be retrieved from /languages endpoint(data->countryFlag)\nEx: us\nDefault value: us",
+                "example_value": "",
+                "required": false
+            }
+        },
+        "required": [
+            "vehicleId",
+            "searchKey"
+        ]
+    },
+    "responses": [],
+    "response_summary": null,
+    "enhance_func_desc": null,
+    "enhance_params_desc": {
+        "enhanced_parameters": {
+            "vehicleId": "Unique identifier for the vehicle, obtained from car search results.",
+            "searchKey": "Encoded search parameters including pickup/drop-off details and rental duration.",
+            "units": "Measurement system for distance and area (metric or imperial).",
+            "languageCode": "Language preference for the response content.",
+            "currencyCode": "Currency for displaying rental prices.",
+            "countryFlag": "Country code for regional settings and defaults."
+        }
+    },
+    "enhance_resfield_desc": null,
+    "params_desc_list": null,
+    "response_desc_list": null,
+    "depends_on": [
+        {
+            "target_api_params": "vehicleId",
+            "reason": "The 'vehicleId' parameter in the target API requires a specific vehicle identifier from the source API's search results. The source API's 'v_id' field in the 'vehicle_info' object provides exact vehicle identifiers (e.g., '695750651'). This is a direct match as the target API explicitly states that 'vehicleId' can be retrieved from the '/car/search' endpoint's 'data->search_results->vehicle_info->v_id' field.",
+            "source_jsonpath": "$.search_results[*].vehicle_info.v_id",
+            "confidence": 100,
+            "dependency_relationship": "Hard Dependency(Prerequisite API)",
+            "source_api": "Car_Search"
+        },
+        {
+            "target_api_params": "searchKey",
+            "reason": "The 'searchKey' parameter in the target API requires a search key from the source API's response. The source API's 'search_key' field provides this exact value (e.g., 'eyJkcml2ZXJzQWdlIjozMCwiZHJvcE9mZkRhdGVUaW1lIjoiMjAyNS0wNi0xNVQxNzowMDowMCIsInBpY2tVcERhdGVUaW1lIjoiMjAyNS0wNi0xMFQwOTowMDowMCIsInBpY2tVcExvY2F0aW9uIjoiNDAuNzU5NTksLTczLjk4NDkxIiwicGlja1VwTG9jYXRpb25UeXBlIjoiTEFUTE9ORyIsInJlbnRhbER1cmF0aW9uSW5EYXlzIjo2LCJzZXJ2aWNlRmVhdHVyZXMiOlsiTk9fT1BBUVVFUyIsIlNVUFJFU1NfRklYRURfUFJJQ0VfVkVISUNMRVMiLCJJTkNMVURFX1BST0RVQ1RfUkVMQVRJT05TSElQUyIsIklOQ0xVREVfRVhUUkFTX0NPTlRBSU5JTkdfRkVFUyIsIlNVUFBSRVNTX0RJUkVDVF9QQVlfTE9DQUxfVkVISUNMRVMiXX0='). This is a direct match as the target API explicitly states that 'searchKey' can be retrieved from the '/car/search' endpoint's 'data->search_key' field.",
+            "source_jsonpath": "$.search_key",
+            "confidence": 100,
+            "dependency_relationship": "Hard Dependency(Prerequisite API)",
+            "source_api": "Car_Search"
+        },
+        {
+            "target_api_params": "searchKey",
+            "reason": "The 'searchKey' parameter in the target API is explicitly mentioned to be retrieved from the '/car/search' endpoint's response field 'data->search_key'. The source API's response includes a field '$.search_key' which matches exactly what is required by the target API. This is a direct prerequisite for calling the target API.",
+            "source_jsonpath": "$.search_key",
+            "confidence": 100,
+            "dependency_relationship": "Hard Dependency(Prerequisite API)",
+            "source_api": "Car_Search"
+        },
+        {
+            "target_api_params": "searchKey",
+            "reason": "The 'search_context' field in the source API's response contains a 'searchKey' subfield that matches the format and description of the target API's 'searchKey' parameter. This is another valid source for the required parameter.",
+            "source_jsonpath": "$.search_context.searchKey",
+            "confidence": 100,
+            "dependency_relationship": "Hard Dependency(Prerequisite API)",
+            "source_api": "Car_Search"
+        }
+    ],
+    "verified": false
+}

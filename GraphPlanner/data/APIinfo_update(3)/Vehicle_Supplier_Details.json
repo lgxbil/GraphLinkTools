@@ -1,0 +1,153 @@
+{
+    "name": "Vehicle_Supplier_Details",
+    "docs_row": {
+        "name": "Vehicle_Supplier_Details",
+        "endpoint": "/api/v1/cars/vehicleSupplierDetails",
+        "func_description": "Search the detail information of a vehicle supplier using `vehicle id`. ",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "vehicle_id": {
+                    "type": "String",
+                    "description": "Vehicle ID. vehicle_id can be retrieved from api/v1/cars/searchCarRentals(Search Car Rentals) endpoint in Car Rental collection as vehicle_id inside search_results object.",
+                    "example_value": "373025711",
+                    "required": true
+                },
+                "search_key": {
+                    "type": "String",
+                    "description": "",
+                    "example_value": "eyJkcml2ZXJzQWdlIjozMCwiZHJvcE9mZkRhdGVUaW1lIjoiMjAyMy0xMS0xN1QxMDowMDowMCIsImRyb3BPZmZMb2NhdGlvbiI6IjQwLjYzOTcwMTg0MzI2MTcsLTczLjc3OTE5NzY5Mjg3MTEiLCJkcm9wT2ZmTG9jYXRpb25UeXBlIjoiTEFUTE9ORyIsInBpY2tVcERhdGVUaW1lIjoiMjAyMy0xMS0xNVQxMDowMDowMCIsInBpY2tVcExvY2F0aW9uIjoiNDAuNjM5NzAxODQzMjYxNywtNzMuNzc5MTk3NjkyODcxMSIsInBpY2tVcExvY2F0aW9uVHlwZSI6IkxBVExPTkciLCJyZW50YWxEdXJhdGlvbkluRGF5cyI6Miwic2VydmljZUZlYXR1cmVzIjpbIk5PX09QQVFVRVMiLCJTVVBSRVNTX0ZJWEVEX1BSSUNFX1ZFSElDTEVTIl19",
+                    "required": true
+                },
+                "languagecode": {
+                    "type": "String",
+                    "description": "To obtain the response data in a specific language, enter the languagecode. languagecode can be retrieved from api/v1/meta/getLanguages(Get Languages\n) endpoint in Meta collection.",
+                    "example_value": "",
+                    "required": false
+                },
+                "currency_code": {
+                    "type": "String",
+                    "description": "The currency code. currency_code can be retrieved from api/v1/meta/getCurrency(Get Currency) endpoint in Hotels collection.",
+                    "example_value": "USD",
+                    "required": false
+                }
+            },
+            "required": [
+                "vehicle_id",
+                "search_key"
+            ]
+        }
+    },
+    "api_response_schema": {
+        "reviews": {
+            "customerReviews": {
+                "sort": {
+                    "ctaTitle": "Sort by",
+                    "options": {
+                        "items": [
+                            {
+                                "id": "date.ascending",
+                                "label": "Oldest first"
+                            }
+                        ],
+                        "default": "score.descending"
+                    },
+                    "pageTitle": "Sort by"
+                },
+                "reviews": [
+                    {
+                        "positive": "Size of car is very useful for our family of 4 people with 4 big size luggage.  ",
+                        "epochDay": 19978,
+                        "negative": "I think we should have to inspect the car with someone before taking the car.  But only one at the c",
+                        "date": "Thu, Sept 12 2024",
+                        "rating": "7.1",
+                        "type": "Family",
+                        "localisedRating": {
+                            "rawValue": 7.1,
+                            "displayValue": "7.1"
+                        }
+                    }
+                ],
+                "title": "Customer reviews"
+            },
+            "supplier": {
+                "rating": {
+                    "subtitle": "1,691 reviews",
+                    "average": "8.5",
+                    "title": "Very good",
+                    "localisedRating": {
+                        "displayValue": "8.5",
+                        "rawValue": 8.5
+                    },
+                    "breakdown": [
+                        {
+                            "score": "9.0",
+                            "title": "Car cleanliness",
+                            "localisedRating": {
+                                "displayValue": "9",
+                                "rawValue": 9
+                            }
+                        }
+                    ]
+                },
+                "title": "Rental company",
+                "name": "Sixt"
+            }
+        },
+        "details": {
+            "openingTimes": {
+                "title": "Opening times",
+                "pickUp": {
+                    "subtitle": "Sixt, Copenhagen Airport",
+                    "hours": "07:00 - 23:00",
+                    "title": "Pick-up (20 Dec)"
+                },
+                "dropOff": {
+                    "subtitle": "Sixt, Aarhus - Aarhus C",
+                    "title": "Drop-off (25 Dec)",
+                    "hours": "08:00 - 17:00"
+                }
+            },
+            "location": {
+                "address": "Lufthavnsboulevarden 5, Kastrup, Denmark, 2770"
+            },
+            "supplier": {
+                "name": "Sixt",
+                "rating": {
+                    "breakdown": [
+                        {
+                            "score": "9.0",
+                            "localisedRating": {
+                                "displayValue": "9",
+                                "rawValue": 9
+                            },
+                            "title": "Car cleanliness"
+                        }
+                    ],
+                    "subtitle": "1,691 reviews",
+                    "title": "Very good",
+                    "localisedRating": {
+                        "displayValue": "8.5",
+                        "rawValue": 8.5
+                    },
+                    "average": "8.5"
+                },
+                "title": "Rental company"
+            },
+            "instructions": {
+                "pickUp": "Shuttle Bus - T1: In parking area P1. Signposted from the Arrivals Hall. T2 & T3: Its a 12 minute wa",
+                "title": "Pick-up instructions"
+            }
+        },
+        "map": {
+            "location": {
+                "address": "Lufthavnsboulevarden 5, Kastrup, Denmark, 2770",
+                "coordinates": {
+                    "longitude": 12.639241,
+                    "latitude": 55.6295
+                },
+                "title": "Supplier location"
+            }
+        }
+    }
+}

@@ -1,0 +1,221 @@
+{
+    "name": "Get_Description_And_Info",
+    "docs_row": {
+        "name": "Get_Description_And_Info",
+        "endpoint": "/api/v1/hotels/getDescriptionAndInfo",
+        "func_description": "Retrieve the detailed description and information for a specific hotel. ",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "hotel_id": {
+                    "type": "String",
+                    "description": "hotel_id can be retrieved from api/v1/hotels/searchHotels(Search Hotels) or api/v1/hotels/searchHotelsByCoordinates(Search Hotels By Coordinates\n) endpoint in Hotels collection.",
+                    "example_value": "5955189",
+                    "required": true
+                },
+                "languagecode": {
+                    "type": "String",
+                    "description": "To obtain the response data in a specific language, enter the languagecode. languagecode can be retrieved from api/v1/meta/getLanguages(Get Languages\n) endpoint in Meta collection.",
+                    "example_value": "en-us",
+                    "required": false
+                }
+            },
+            "required": [
+                "hotel_id"
+            ]
+        }
+    },
+    "instance": [],
+    "category": null,
+    "tool": null,
+    "api_idx": 23,
+    "params": {
+        "type": "object",
+        "properties": {
+            "hotel_id": {
+                "type": "String",
+                "description": "hotel_id can be retrieved from api/v1/hotels/searchHotels(Search Hotels) or api/v1/hotels/searchHotelsByCoordinates(Search Hotels By Coordinates\n) endpoint in Hotels collection.",
+                "example_value": "5955189",
+                "required": true
+            },
+            "languagecode": {
+                "type": "String",
+                "description": "To obtain the response data in a specific language, enter the languagecode. languagecode can be retrieved from api/v1/meta/getLanguages(Get Languages\n) endpoint in Meta collection.",
+                "example_value": "en-us",
+                "required": false
+            }
+        },
+        "required": [
+            "hotel_id"
+        ]
+    },
+    "responses": [
+        {
+            "function_name": "Get_Description_And_Info",
+            "arguments": {
+                "hotel_id": "5955189"
+            },
+            "observation": [
+                {
+                    "hotel_id": "5955189",
+                    "descriptiontype_id": 6,
+                    "description": "Situated within 3.7 km of Powai Lake and 4.3 km of Indian Institute of Technology, Bombay, FabHotel Elvis Inn - Nr Mumbai International Airport features rooms with air conditioning and a private bathroom in Mumbai. This 3-star hotel offers room service, a 24-hour front desk and free WiFi. The property is non-smoking and is located 4.4 km from Phoenix Market City Mall.\n\nAll rooms at the hotel are fitted with a seating area, a flat-screen TV with cable channels and a private bathroom with free toiletries and a shower. Guest rooms have a wardrobe.\n\nGuests at FabHotel Elvis Inn - Nr Mumbai International Airport can enjoy a continental breakfast.\n\nBombay Exhibition Centre is 8.1 km from the accommodation, while ISKCON is 8.6 km from the property. Chhatrapati Shivaji International Mumbai Airport is 3 km away.",
+                    "languagecode": "en"
+                },
+                {
+                    "descriptiontype_id": 7,
+                    "hotel_id": "5955189",
+                    "description": "Couples are welcome here. Guests on Local ID are welcome here. Foreign guests not allowed in this property.\nPlease note due to local licensing guidelines, the property is able to accept Indian nationals only. The property apologises for any inconvenience caused.",
+                    "languagecode": "en"
+                }
+            ]
+        },
+        {
+            "function_name": "Get_Description_And_Info",
+            "arguments": {
+                "hotel_id": "5955189",
+                "languagecode": "en-us"
+            },
+            "observation": [
+                {
+                    "descriptiontype_id": 6,
+                    "languagecode": "xu",
+                    "description": "Ideally set in the Powai district of Mumbai, FabHotel Elvis Inn - Nr Mumbai International Airport is located 2.3 miles from Powai Lake, 2.7 miles from Indian Institute of Technology, Bombay and 2.8 miles from Phoenix Market City Mall. This 3-star hotel offers room service, a 24-hour front desk and free WiFi. The hotel has family rooms.\n\nAt the hotel, the rooms include a closet. Complete with a private bathroom equipped with a shower and free toiletries, all rooms at FabHotel Elvis Inn - Nr Mumbai International Airport have a flat-screen TV and air conditioning, and selected rooms also feature a seating area.\n\nGuests at the accommodation can enjoy a continental breakfast.\n\nBombay Exhibition Centre is 5 miles from FabHotel Elvis Inn - Nr Mumbai International Airport, while ISKCON is 5.3 miles from the property. Chhatrapati Shivaji International Mumbai Airport is 1.9 miles away.",
+                    "hotel_id": "5955189"
+                },
+                {
+                    "languagecode": "xu",
+                    "description": "Couples are welcome here. Guests on Local ID are welcome here. Foreign guests not allowed in this property.\nPlease note due to local licensing guidelines, the property is able to accept Indian nationals only. The property apologizes for any inconvenience caused.",
+                    "hotel_id": "5955189",
+                    "descriptiontype_id": 7
+                }
+            ]
+        }
+    ],
+    "response_summary": "The FabHotel Elvis Inn, located near Mumbai International Airport, is a 3-star hotel offering comfortable accommodations with air-conditioned rooms, private bathrooms, free WiFi, and a 24-hour front desk. It is conveniently situated close to Powai Lake (3.7 km), the Indian Institute of Technology (4.3 km), and Phoenix Market City Mall (4.4 km). Guests can enjoy a continental breakfast, and each room is equipped with a seating area, flat-screen TV, and wardrobe.  \n\nHowever, the hotel has specific guest restrictions\u2014it only accepts Indian nationals and does not accommodate foreign guests due to local licensing regulations. Couples and local ID holders are welcome, but international travelers will need to seek alternative accommodations. The nearest airport, Chhatrapati Shivaji International, is just 3 km away, making it a convenient option for domestic travelers.",
+    "enhance_func_desc": "This API is ideal for travelers seeking detailed hotel information before booking. It retrieves comprehensive descriptions and amenities of a specific hotel, including room features, nearby attractions, and guest policies. Users can check restrictions (e.g., nationality requirements) and convenience factors like proximity to airports or landmarks. The hotel ID must be obtained from the SearchHotels or SearchHotelsByCoordinates API.",
+    "enhance_params_desc": {
+        "enhanced_parameters": {
+            "hotel_id": "Unique identifier for the hotel, sourced from searchHotels or searchHotelsByCoordinates endpoints.",
+            "languagecode": "Language preference for the response data (e.g., 'en-us' for English)."
+        }
+    },
+    "enhance_resfield_desc": {
+        "response_fields": [
+            {
+                "hotel_id": {
+                    "type": "String",
+                    "description": "The unique identifier for the hotel (e.g., '5955189')."
+                },
+                "descriptiontype_id": {
+                    "type": "Number",
+                    "description": "An identifier representing the type of description provided (e.g., 6 for general hotel details, 7 for guest restrictions)."
+                },
+                "description": {
+                    "type": "String",
+                    "description": "A detailed description of the hotel, including amenities, location, and guest policies. The content varies based on the descriptiontype_id."
+                },
+                "languagecode": {
+                    "type": "String",
+                    "description": "The language code (ISO 639-1) in which the description is provided (e.g., 'en' for English)."
+                }
+            }
+        ]
+    },
+    "params_desc_list": null,
+    "response_desc_list": [
+        {
+            "path_name": "$[].hotel_id",
+            "name": "hotel_id",
+            "description": "The unique identifier for the hotel (e.g., '5955189')."
+        },
+        {
+            "path_name": "$[].descriptiontype_id",
+            "name": "descriptiontype_id",
+            "description": "An identifier representing the type of description provided (e.g., 6 for general hotel details, 7 for guest restrictions)."
+        },
+        {
+            "path_name": "$[].description",
+            "name": "description",
+            "description": "A detailed description of the hotel, including amenities, location, and guest policies. The content varies based on the descriptiontype_id."
+        },
+        {
+            "path_name": "$[].languagecode",
+            "name": "languagecode",
+            "description": "The language code (ISO 639-1) in which the description is provided (e.g., 'en' for English)."
+        }
+    ],
+    "depends_on": [
+        {
+            "source_api_name": "Search_Hotels",
+            "dependence_type": "Hard Dependency",
+            "depencend_field": "$.hotels[*].hotel_id",
+            "param_name": "hotel_id",
+            "reason": "The 'Search_Hotels' API is explicitly mentioned as a source for the 'hotel_id' parameter in the target API's documentation, establishing a hard dependency relationship. The 'hotels[].hotel_id' field from 'Search_Hotels' directly provides the unique identifier required by the 'hotel_id' parameter in 'Get_Description_And_Info'. Both fields are of type String (though the example shows numeric values, the description specifies String type), and the business relationship is clearly defined as the hotel information API depends on hotel IDs obtained from the search API."
+        },
+        {
+            "source_api_name": "Get_Question_And_Answer",
+            "dependence_type": "Hard Dependency",
+            "depencend_field": "$.hotel_id",
+            "param_name": "hotel_id",
+            "reason": "The 'Get_Question_And_Answer' API provides a hotel_id field that matches exactly with the target parameter 'hotel_id' required by the 'Get_Description_And_Info' API. This represents a hard dependency as the hotel_id from the source API is a necessary prerequisite for calling the target API. The data types match (both are Strings), and the example value demonstrates the field can be directly used as input for the target parameter."
+        },
+        {
+            "source_api_name": "Get_Question_And_Answer",
+            "dependence_type": "Hard Dependency",
+            "depencend_field": "$.q_and_a_pairs[*].hotel_id",
+            "param_name": "hotel_id",
+            "reason": "The 'Get_Question_And_Answer' API provides hotel IDs in its response, which directly matches the 'hotel_id' parameter required by the 'Get_Description_And_Info' API. This establishes a hard dependency as the hotel ID from the source API is essential for calling the target API. The data type (String vs. Number) differs slightly, but the numeric hotel ID can be easily converted to a string format to meet the target API's requirements."
+        },
+        {
+            "source_api_name": "Get_Hotel_Reviews(Tips)",
+            "dependence_type": "Hard Dependency",
+            "depencend_field": "$.result[*].hotel_id",
+            "param_name": "hotel_id",
+            "reason": "The 'Get_Hotel_Reviews(Tips)' API contains the same hotel_id field that is required by the 'Get_Description_And_Info' API, indicating a direct business association. The hotel_id from the reviews API can logically be used to fetch detailed hotel information, as both APIs operate on the same hotel entity. The data types match (String vs Number, but the example shows numeric values can be converted to strings), and the example values demonstrate the same hotel IDs are used across both APIs."
+        },
+        {
+            "source_api_name": "Get_Hotel_Policies",
+            "dependence_type": "Hard Dependency",
+            "depencend_field": "$.hotel_id",
+            "param_name": "hotel_id",
+            "reason": "The 'Get_Hotel_Policies' API provides the 'hotel_id' field which is explicitly required by the 'Get_Description_And_Info' API's 'hotel_id' parameter. This represents a hard dependency as the source API's response field directly provides the necessary input for the target API. The data types match (String vs Number in example, but numeric strings are commonly accepted), and the source API's documentation confirms the hotel_id comes from the same required sources as the target API expects."
+        },
+        {
+            "source_api_name": "Get_Room_List",
+            "dependence_type": "Hard Dependency",
+            "depencend_field": "$.hotel_id",
+            "param_name": "hotel_id",
+            "reason": "The 'Get_Room_List' API provides the 'hotel_id' field which is a direct match for the 'hotel_id' parameter required by the 'Get_Description_And_Info' API. This represents a hard dependency as the target API explicitly states that the hotel_id must be obtained from either the SearchHotels or SearchHotelsByCoordinates endpoints, and 'Get_Room_List' also requires the hotel_id from SearchHotels, establishing a clear prerequisite relationship."
+        },
+        {
+            "source_api_name": "Get_Hotel_Review_Scores",
+            "dependence_type": "Hard Dependency",
+            "depencend_field": "$[*].hotel_id",
+            "param_name": "hotel_id",
+            "reason": "The 'Get_Hotel_Review_Scores' API provides review scores for specific hotels, and the 'hotel_id' field in its response matches exactly with the 'hotel_id' parameter required by the 'Get_Description_And_Info' API. This establishes a hard dependency as the hotel ID from the review scores API can directly be used to fetch detailed hotel descriptions and information. The data types match (String vs. Number in example, but IDs are typically interchangeable in such contexts), and the example value aligns perfectly with the target API's requirements."
+        },
+        {
+            "source_api_name": "Search_Hotels_By_Coordinates",
+            "dependence_type": "Hard Dependency",
+            "depencend_field": "$.result[*].hotel_id",
+            "param_name": "hotel_id",
+            "reason": "The 'Search_Hotels_By_Coordinates' API is explicitly mentioned in the target API's documentation as a valid source for the 'hotel_id' parameter. The response field 'result[*].hotel_id' from the source API directly provides the unique identifier needed by the target API. This represents a hard dependency as the source API is specifically required to obtain the necessary parameter for the target API."
+        },
+        {
+            "source_api_name": "Get_Hotel_Reviews_Filter_Metadata",
+            "dependence_type": "Hard Dependency",
+            "depencend_field": "$.hotel_id",
+            "param_name": "hotel_id",
+            "reason": "The 'Get_Hotel_Reviews_Filter_Metadata' API provides a 'hotel_id' field in its response, which matches exactly with the 'hotel_id' parameter required by the 'Get_Description_And_Info' API. This establishes a hard dependency as the hotel ID from the reviews API can directly serve as input for the description API, and the data types (both String) are compatible. The source API explicitly states that the hotel ID must be obtained from SearchHotels or SearchHotelsByCoordinates, which aligns with the target API's requirements."
+        },
+        {
+            "source_api_name": "Payment_features_of_the_Hotel",
+            "dependence_type": "Hard Dependency",
+            "depencend_field": "$[*].hotel_id",
+            "param_name": "hotel_id",
+            "reason": "The 'Payment_features_of_the_Hotel' API provides the 'hotel_id' field which is a direct match for the 'hotel_id' parameter required by the 'Get_Description_And_Info' API. This establishes a hard dependency as the hotel ID from the payment features API is necessary to retrieve detailed hotel information. The data types match (both are Strings), and the example values confirm the compatibility."
+        }
+    ],
+    "verified": true
+}

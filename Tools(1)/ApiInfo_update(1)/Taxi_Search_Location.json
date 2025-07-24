@@ -1,0 +1,252 @@
+{
+    "name": "Taxi_Search_Location",
+    "docs_row": {
+        "name": "Taxi_Search_Location",
+        "endpoint": "/api/v1/taxi/searchLocation",
+        "func_description": "Find the `googlePlaceId` of Pick-up/Drop-off Location for taxi. ",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "query": {
+                    "type": "String",
+                    "description": "Names of locations, cities, districts, places, countries, counties etc.",
+                    "example_value": "new",
+                    "required": true
+                },
+                "languagecode": {
+                    "type": "String",
+                    "description": "To obtain the response data in a specific language, enter the languagecode. languagecode can be retrieved from api/v1/meta/getLanguages(Get Languages\n) endpoint in Meta collection.",
+                    "example_value": "",
+                    "required": false
+                }
+            },
+            "required": [
+                "query"
+            ]
+        }
+    },
+    "instance": [],
+    "category": null,
+    "tool": null,
+    "api_idx": 47,
+    "params": {
+        "type": "object",
+        "properties": {
+            "query": {
+                "type": "String",
+                "description": "Names of locations, cities, districts, places, countries, counties etc.",
+                "example_value": "new",
+                "required": true
+            },
+            "languagecode": {
+                "type": "String",
+                "description": "To obtain the response data in a specific language, enter the languagecode. languagecode can be retrieved from api/v1/meta/getLanguages(Get Languages\n) endpoint in Meta collection.",
+                "example_value": "",
+                "required": false
+            }
+        },
+        "required": [
+            "query"
+        ]
+    },
+    "api_response_schema": null,
+    "responses": [
+        {
+            "function_name": "Taxi_Search_Location",
+            "arguments": {
+                "query": "Times Square, New York City"
+            },
+            "observation": [
+                {
+                    "description": null,
+                    "countryCode": "us",
+                    "latitude": 40.760246,
+                    "longitude": -73.98844,
+                    "iata": null,
+                    "name": "Riu Plaza New York Times Square",
+                    "country": "United States",
+                    "city": "New York",
+                    "types": "hotel",
+                    "googlePlaceId": "ChIJDwzsBVRYwokRvSHYftloJ1I"
+                },
+                {
+                    "name": "YOTEL New York Times Square",
+                    "iata": null,
+                    "googlePlaceId": "ChIJpY9Tg01YwokRCr_aQpDrqgk",
+                    "country": "United States",
+                    "types": "hotel",
+                    "city": "New York",
+                    "description": null,
+                    "longitude": -73.99545,
+                    "countryCode": "us",
+                    "latitude": 40.759155
+                },
+                {
+                    "iata": null,
+                    "name": "Hyatt Place New York City - Times Square",
+                    "country": "United States",
+                    "city": "New York",
+                    "types": "hotel",
+                    "googlePlaceId": "ChIJM_my671ZwokRyGPQqhdoTys",
+                    "description": null,
+                    "countryCode": "us",
+                    "latitude": 40.755966,
+                    "longitude": -73.993706
+                }
+            ]
+        },
+        {
+            "function_name": "Taxi_Search_Location",
+            "arguments": {
+                "query": "Times Square, New York City"
+            },
+            "observation": [
+                {
+                    "latitude": 40.760246,
+                    "city": "New York",
+                    "googlePlaceId": "ChIJDwzsBVRYwokRvSHYftloJ1I",
+                    "countryCode": "us",
+                    "name": "Riu Plaza New York Times Square",
+                    "types": "hotel",
+                    "longitude": -73.98844,
+                    "description": null,
+                    "country": "United States",
+                    "iata": null
+                },
+                {
+                    "longitude": -73.99545,
+                    "types": "hotel",
+                    "country": "United States",
+                    "description": null,
+                    "iata": null,
+                    "latitude": 40.759155,
+                    "city": "New York",
+                    "googlePlaceId": "ChIJpY9Tg01YwokRCr_aQpDrqgk",
+                    "countryCode": "us",
+                    "name": "YOTEL New York Times Square"
+                },
+                {
+                    "name": "Hyatt Place New York City - Times Square",
+                    "countryCode": "us",
+                    "city": "New York",
+                    "googlePlaceId": "ChIJM_my671ZwokRyGPQqhdoTys",
+                    "latitude": 40.755966,
+                    "iata": null,
+                    "longitude": -73.993706,
+                    "types": "hotel",
+                    "description": null,
+                    "country": "United States"
+                }
+            ]
+        }
+    ],
+    "response_summary": "The API response lists three hotels located in New York City, United States. The first is the **Riu Plaza New York Times Square**, situated at coordinates 40.760246 latitude and -73.98844 longitude. The second is **YOTEL New York Times Square**, positioned at 40.759155 latitude and -73.99545 longitude. Lastly, the **Hyatt Place New York City - Times Square** is located at 40.755966 latitude and -73.993706 longitude. All three hotels are in the heart of New York City, specifically near Times Square, and none of them have an associated IATA code. Each hotel is identified by a unique Google Place ID, confirming their presence on Google Maps. No additional descriptions are provided for these accommodations.",
+    "enhance_func_desc": "This API is ideal for travelers and taxi services looking for location details. It searches for specific locations, cities, or places based on a query, providing coordinates and Google Place IDs for accurate mapping. The response includes precise geographic data, such as latitude and longitude, to facilitate navigation and taxi pickups. Users can also specify the response language for better accessibility.",
+    "enhance_params_desc": {
+        "enhanced_parameters": {
+            "query": "Search term for locations, cities, districts, or places.",
+            "languagecode": "Specifies the language for the response data."
+        }
+    },
+    "enhance_resfield_desc": {
+        "response_fields": [
+            {
+                "description": {
+                    "type": "String",
+                    "description": "A description of the hotel. In this case, it is null, indicating no description is provided."
+                },
+                "countryCode": {
+                    "type": "String",
+                    "description": "The ISO country code where the hotel is located (e.g., 'us' for United States)."
+                },
+                "latitude": {
+                    "type": "Number",
+                    "description": "The geographic latitude coordinate of the hotel's location (e.g., 40.760246)."
+                },
+                "longitude": {
+                    "type": "Number",
+                    "description": "The geographic longitude coordinate of the hotel's location (e.g., -73.98844)."
+                },
+                "iata": {
+                    "type": "String",
+                    "description": "The IATA code associated with the hotel. In this case, it is null, indicating no IATA code is provided."
+                },
+                "name": {
+                    "type": "String",
+                    "description": "The name of the hotel (e.g., 'Riu Plaza New York Times Square')."
+                },
+                "country": {
+                    "type": "String",
+                    "description": "The full name of the country where the hotel is located (e.g., 'United States')."
+                },
+                "city": {
+                    "type": "String",
+                    "description": "The city where the hotel is located (e.g., 'New York')."
+                },
+                "types": {
+                    "type": "String",
+                    "description": "The type of establishment (e.g., 'hotel')."
+                },
+                "googlePlaceId": {
+                    "type": "String",
+                    "description": "The unique identifier for the hotel on Google Maps (e.g., 'ChIJDwzsBVRYwokRvSHYftloJ1I')."
+                }
+            }
+        ]
+    },
+    "params_desc_list": null,
+    "response_desc_list": [
+        {
+            "path_name": "$[].description",
+            "name": "description",
+            "description": "A description of the hotel. In this case, it is null, indicating no description is provided."
+        },
+        {
+            "path_name": "$[].countryCode",
+            "name": "countryCode",
+            "description": "The ISO country code where the hotel is located (e.g., 'us' for United States)."
+        },
+        {
+            "path_name": "$[].latitude",
+            "name": "latitude",
+            "description": "The geographic latitude coordinate of the hotel's location (e.g., 40.760246)."
+        },
+        {
+            "path_name": "$[].longitude",
+            "name": "longitude",
+            "description": "The geographic longitude coordinate of the hotel's location (e.g., -73.98844)."
+        },
+        {
+            "path_name": "$[].iata",
+            "name": "iata",
+            "description": "The IATA code associated with the hotel. In this case, it is null, indicating no IATA code is provided."
+        },
+        {
+            "path_name": "$[].name",
+            "name": "name",
+            "description": "The name of the hotel (e.g., 'Riu Plaza New York Times Square')."
+        },
+        {
+            "path_name": "$[].country",
+            "name": "country",
+            "description": "The full name of the country where the hotel is located (e.g., 'United States')."
+        },
+        {
+            "path_name": "$[].city",
+            "name": "city",
+            "description": "The city where the hotel is located (e.g., 'New York')."
+        },
+        {
+            "path_name": "$[].types",
+            "name": "types",
+            "description": "The type of establishment (e.g., 'hotel')."
+        },
+        {
+            "path_name": "$[].googlePlaceId",
+            "name": "googlePlaceId",
+            "description": "The unique identifier for the hotel on Google Maps (e.g., 'ChIJDwzsBVRYwokRvSHYftloJ1I')."
+        }
+    ],
+    "depends_on": null,
+    "verified": true
+}

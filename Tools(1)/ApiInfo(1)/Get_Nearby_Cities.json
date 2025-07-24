@@ -1,0 +1,207 @@
+{
+    "name": "Get_Nearby_Cities",
+    "docs_row": {
+        "name": "Get_Nearby_Cities",
+        "endpoint": "/api/v1/hotels/getNearbyCities",
+        "func_description": "Search for cities around a given geographical coordinates. ",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "latitude": {
+                    "type": "String",
+                    "description": "Latitude of the searched location. latitude can be retrieved from api/v1/meta/locationToLatLong(Location to Lat Long) endpoint in Meta collection.",
+                    "example_value": "65.9667",
+                    "required": true
+                },
+                "longitude": {
+                    "type": "String",
+                    "description": "Longitude of the searched location. longitude can be retrieved from api/v1/meta/locationToLatLong(Location to Lat Long) endpoint in Meta collection.",
+                    "example_value": "-18.5333",
+                    "required": true
+                },
+                "languagecode": {
+                    "type": "String",
+                    "description": "To obtain the response data in a specific language, enter the languagecode. languagecode can be retrieved from api/v1/meta/getLanguages(Get Languages\n) endpoint in Meta collection.",
+                    "example_value": "en-us",
+                    "required": false
+                }
+            },
+            "required": [
+                "latitude",
+                "longitude"
+            ]
+        }
+    },
+    "instance": [],
+    "category": null,
+    "tool": null,
+    "api_idx": 22,
+    "params": {
+        "type": "object",
+        "properties": {
+            "latitude": {
+                "type": "String",
+                "description": "Latitude of the searched location. latitude can be retrieved from api/v1/meta/locationToLatLong(Location to Lat Long) endpoint in Meta collection.",
+                "example_value": "65.9667",
+                "required": true
+            },
+            "longitude": {
+                "type": "String",
+                "description": "Longitude of the searched location. longitude can be retrieved from api/v1/meta/locationToLatLong(Location to Lat Long) endpoint in Meta collection.",
+                "example_value": "-18.5333",
+                "required": true
+            },
+            "languagecode": {
+                "type": "String",
+                "description": "To obtain the response data in a specific language, enter the languagecode. languagecode can be retrieved from api/v1/meta/getLanguages(Get Languages\n) endpoint in Meta collection.",
+                "example_value": "en-us",
+                "required": false
+            }
+        },
+        "required": [
+            "latitude",
+            "longitude"
+        ]
+    },
+    "responses": [
+        {
+            "function_name": "Get_Nearby_Cities",
+            "arguments": {
+                "latitude": "40.7128",
+                "longitude": "-74.0060"
+            },
+            "observation": [
+                {
+                    "cc1": "us",
+                    "country": "United States",
+                    "region": null,
+                    "longitude": -73.996696472168,
+                    "dest_id": 20085521,
+                    "nr_hotels": 1,
+                    "name": "Chinatown",
+                    "dest_type": "city",
+                    "latitude": 40.7164001464844
+                },
+                {
+                    "longitude": -73.9845070528099,
+                    "country": "United States",
+                    "cc1": "us",
+                    "region": "New York State",
+                    "latitude": 40.6960857950378,
+                    "name": "Brooklyn",
+                    "dest_type": "city",
+                    "dest_id": 20085207,
+                    "nr_hotels": 531
+                },
+                {
+                    "country": "United States",
+                    "cc1": "us",
+                    "region": "New Jersey",
+                    "longitude": -74.0327987670898,
+                    "nr_hotels": 83,
+                    "dest_id": 20081434,
+                    "dest_type": "city",
+                    "name": "Hoboken",
+                    "latitude": 40.7439002990723
+                }
+            ]
+        },
+        {
+            "function_name": "Get_Nearby_Cities",
+            "arguments": {
+                "latitude": "40.7128",
+                "longitude": "-74.0060"
+            },
+            "observation": [
+                {
+                    "dest_id": 20085521,
+                    "region": null,
+                    "longitude": -73.996696472168,
+                    "nr_hotels": 1,
+                    "name": "Chinatown",
+                    "latitude": 40.7164001464844,
+                    "country": "United States",
+                    "dest_type": "city",
+                    "cc1": "us"
+                },
+                {
+                    "dest_type": "city",
+                    "cc1": "us",
+                    "country": "United States",
+                    "latitude": 40.6960857950378,
+                    "name": "Brooklyn",
+                    "nr_hotels": 531,
+                    "longitude": -73.9845070528099,
+                    "region": "New York State",
+                    "dest_id": 20085207
+                },
+                {
+                    "dest_type": "city",
+                    "cc1": "us",
+                    "country": "United States",
+                    "latitude": 40.7439002990723,
+                    "name": "Hoboken",
+                    "nr_hotels": 83,
+                    "longitude": -74.0327987670898,
+                    "dest_id": 20081434,
+                    "region": "New Jersey"
+                }
+            ]
+        }
+    ],
+    "response_summary": "The API response provides information about three cities in the United States. First, there's Chinatown, located in New York with coordinates at approximately 40.7164\u00b0N latitude and -73.9967\u00b0W longitude. It has only one hotel available. Next is Brooklyn, also in New York State, positioned around 40.6961\u00b0N latitude and -73.9845\u00b0W longitude, offering a much larger selection with 531 hotels. Lastly, Hoboken in New Jersey is situated near 40.7439\u00b0N latitude and -74.0328\u00b0W longitude, with 83 hotels listed. All three locations are classified as cities in the dataset.",
+    "enhance_func_desc": "This API is ideal for travelers and planners seeking accommodation options near specific coordinates. It retrieves nearby cities with their hotel availability count and precise geographic coordinates. Users input latitude/longitude to receive city details including name, location, and hotel quantity, helping them compare lodging options in adjacent areas. The response includes city classification and exact positioning for accurate navigation.",
+    "enhance_params_desc": {
+        "enhanced_parameters": {
+            "latitude": "Geographic coordinate specifying north-south position for search.",
+            "longitude": "Geographic coordinate specifying east-west position for search.",
+            "languagecode": "Language preference for the response data (e.g., 'en-us')."
+        }
+    },
+    "enhance_resfield_desc": {
+        "response_fields": [
+            {
+                "cc1": {
+                    "type": "String",
+                    "description": "The country code (ISO 3166-1 alpha-2) representing the country where the city is located (e.g., 'us' for United States)."
+                },
+                "country": {
+                    "type": "String",
+                    "description": "The full name of the country where the city is located (e.g., 'United States')."
+                },
+                "region": {
+                    "type": "String",
+                    "description": "The region or state within the country where the city is located (e.g., 'New York State'). Can be null if not applicable."
+                },
+                "longitude": {
+                    "type": "Number",
+                    "description": "The longitude coordinate of the city's location (e.g., -73.996696472168)."
+                },
+                "dest_id": {
+                    "type": "Number",
+                    "description": "A unique identifier for the destination (e.g., 20085521)."
+                },
+                "nr_hotels": {
+                    "type": "Number",
+                    "description": "The number of hotels available in the city (e.g., 1, 531, 83)."
+                },
+                "name": {
+                    "type": "String",
+                    "description": "The name of the city (e.g., 'Chinatown', 'Brooklyn', 'Hoboken')."
+                },
+                "dest_type": {
+                    "type": "String",
+                    "description": "The type of destination (e.g., 'city')."
+                },
+                "latitude": {
+                    "type": "Number",
+                    "description": "The latitude coordinate of the city's location (e.g., 40.7164001464844)."
+                }
+            }
+        ]
+    },
+    "params_desc_list": null,
+    "response_desc_list": null,
+    "depends_on": null,
+    "verified": true
+}

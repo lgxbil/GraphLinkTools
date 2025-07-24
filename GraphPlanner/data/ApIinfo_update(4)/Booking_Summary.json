@@ -1,0 +1,90 @@
+{
+    "name": "Booking_Summary",
+    "docs_row": {
+        "name": "Booking_Summary",
+        "description": "Retrieve a summary of the booking details for a specific vehicle. EndPoint: /api/v1/cars/bookingSummary",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "search_key": {
+                    "type": "string",
+                    "description": "`search_key` can be retrieved from `api/v1/cars/searchCarRentals`**(Search Car Rentals)** endpoint in **Car Rental** collection as `search_key`."
+                },
+                "vehicle_id": {
+                    "type": "string",
+                    "description": "Vehicle ID. `vehicle_id` can be retrieved from `api/v1/cars/searchCarRentals`**(Search Car Rentals)** endpoint in **Car Rental** collection as `vehicle_id` inside `search_results` object."
+                }
+            },
+            "required": [
+                "search_key",
+                "vehicle_id"
+            ]
+        }
+    },
+    "api_response_schema": {
+        "title": "Booking summary",
+        "footer": {
+            "cta": {
+                "title": "Next step"
+            },
+            "subtitle": "Total rental price",
+            "title": "US$523.00"
+        },
+        "product": {
+            "vehicle": {
+                "subtitle": "or similar",
+                "title": "MG HS"
+            },
+            "pickUp": {
+                "dateTime": "Mon, 25 Nov · 08:00",
+                "name": "Sydney Kingsford Smith Airport"
+            },
+            "dropOff": {
+                "dateTime": "Sun, 01 Dec · 14:00",
+                "name": "Melbourne Airport"
+            },
+            "duration": "7 days",
+            "supplier": {
+                "name": "Europcar"
+            }
+        },
+        "priceBreakdown": {
+            "total": {
+                "primaryPrice": {
+                    "price": "US$523.00",
+                    "prefix": "approx."
+                },
+                "subtitle": "(including any taxes, fees & extras)",
+                "title": "Total rental price"
+            },
+            "sections": [
+                {
+                    "items": [
+                        {
+                            "price": "US$132.81",
+                            "title": "One way fee"
+                        }
+                    ],
+                    "subtotal": {
+                        "primaryPrice": {
+                            "prefix": "approx.",
+                            "title": "Subtotal",
+                            "price": "US$132.81"
+                        },
+                        "secondaryPrice": "(AUD 200.00)",
+                        "title": "Payable at pickup"
+                    }
+                }
+            ]
+        },
+        "priceInformation": {
+            "items": [
+                {
+                    "icon": "HAND",
+                    "text": "You'll pay for your car today in ₹ (INR). If you pay for anything when you pick up the car, you'll p"
+                }
+            ],
+            "title": "About the price"
+        }
+    }
+}

@@ -1,0 +1,173 @@
+{
+    "name": "Get_Room_List_With_Availability",
+    "docs_row": {
+        "name": "Get_Room_List_With_Availability",
+        "endpoint": "/api/v1/hotels/getRoomListWithAvailability",
+        "func_description": "Use `hotel_id` to check the availability of hotel rooms on specific date. ",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "hotel_id": {
+                    "type": "String",
+                    "description": "hotel_id can be retrieved from api/v1/hotels/searchHotels(Search Hotels) or api/v1/hotels/searchHotelsByCoordinates(Search Hotels By Coordinates\n) endpoint in Hotels collection.",
+                    "example_value": "74717",
+                    "required": true
+                },
+                "arrival_date": {
+                    "type": "Date (yyyy-mm-dd)",
+                    "description": "The date on which you will arrive or check-in",
+                    "example_value": "",
+                    "required": true
+                },
+                "departure_date": {
+                    "type": "Date (yyyy-mm-dd)",
+                    "description": "The date of departure or check-out.",
+                    "example_value": "",
+                    "required": true
+                },
+                "adults": {
+                    "type": "Number",
+                    "description": "The number of guests who are 18 years of age or older. The default value is set to 1.",
+                    "example_value": "1",
+                    "required": false
+                },
+                "children_age": {
+                    "type": "String",
+                    "description": "The number of children, including infants, who are under 18.\nExample:\nChild 1 Age = 8 months\nChild 2 Age = 1 year\nChild 3 Age = 17 years\nHere is what the request parameter would look like:\nchildren_age: 0,1,17",
+                    "example_value": "1,0",
+                    "required": false
+                },
+                "room_qty": {
+                    "type": "Number",
+                    "description": "The number of rooms that are required. The default value is set to 1.",
+                    "example_value": "1",
+                    "required": false
+                },
+                "units": {
+                    "type": "Enum",
+                    "description": "The measurement of distance in metric or imperial.",
+                    "example_value": "",
+                    "required": false
+                },
+                "temperature_unit": {
+                    "type": "Enum",
+                    "description": "The temperature unit in Fahrenheit or Celsius.\nc = Celsius\nf = Fahrenheit",
+                    "example_value": "",
+                    "required": false
+                },
+                "languagecode": {
+                    "type": "String",
+                    "description": "To obtain the response data in a specific language, enter the languagecode. languagecode can be retrieved from api/v1/meta/getLanguages(Get Languages\n) endpoint in Meta collection.",
+                    "example_value": "en-us",
+                    "required": false
+                },
+                "currency_code": {
+                    "type": "String",
+                    "description": "The currency code. currency_code can be retrieved from api/v1/meta/getCurrency(Get Currency) endpoint in Hotels collection.",
+                    "example_value": "EUR",
+                    "required": false
+                },
+                "location": {
+                    "type": "String",
+                    "description": "location can be retrieved from api/v1/meta/getLocations(Get Location) endpoint in Meta collection.",
+                    "example_value": "US",
+                    "required": false
+                }
+            },
+            "required": [
+                "hotel_id",
+                "arrival_date",
+                "departure_date"
+            ]
+        }
+    },
+    "instance": [],
+    "category": null,
+    "tool": null,
+    "api_idx": 19,
+    "params": {
+        "type": "object",
+        "properties": {
+            "hotel_id": {
+                "type": "String",
+                "description": "hotel_id can be retrieved from api/v1/hotels/searchHotels(Search Hotels) or api/v1/hotels/searchHotelsByCoordinates(Search Hotels By Coordinates\n) endpoint in Hotels collection.",
+                "example_value": "74717",
+                "required": true
+            },
+            "arrival_date": {
+                "type": "Date (yyyy-mm-dd)",
+                "description": "The date on which you will arrive or check-in",
+                "example_value": "",
+                "required": true
+            },
+            "departure_date": {
+                "type": "Date (yyyy-mm-dd)",
+                "description": "The date of departure or check-out.",
+                "example_value": "",
+                "required": true
+            },
+            "adults": {
+                "type": "Number",
+                "description": "The number of guests who are 18 years of age or older. The default value is set to 1.",
+                "example_value": "1",
+                "required": false
+            },
+            "children_age": {
+                "type": "String",
+                "description": "The number of children, including infants, who are under 18.\nExample:\nChild 1 Age = 8 months\nChild 2 Age = 1 year\nChild 3 Age = 17 years\nHere is what the request parameter would look like:\nchildren_age: 0,1,17",
+                "example_value": "1,0",
+                "required": false
+            },
+            "room_qty": {
+                "type": "Number",
+                "description": "The number of rooms that are required. The default value is set to 1.",
+                "example_value": "1",
+                "required": false
+            },
+            "units": {
+                "type": "Enum",
+                "description": "The measurement of distance in metric or imperial.",
+                "example_value": "",
+                "required": false
+            },
+            "temperature_unit": {
+                "type": "Enum",
+                "description": "The temperature unit in Fahrenheit or Celsius.\nc = Celsius\nf = Fahrenheit",
+                "example_value": "",
+                "required": false
+            },
+            "languagecode": {
+                "type": "String",
+                "description": "To obtain the response data in a specific language, enter the languagecode. languagecode can be retrieved from api/v1/meta/getLanguages(Get Languages\n) endpoint in Meta collection.",
+                "example_value": "en-us",
+                "required": false
+            },
+            "currency_code": {
+                "type": "String",
+                "description": "The currency code. currency_code can be retrieved from api/v1/meta/getCurrency(Get Currency) endpoint in Hotels collection.",
+                "example_value": "EUR",
+                "required": false
+            },
+            "location": {
+                "type": "String",
+                "description": "location can be retrieved from api/v1/meta/getLocations(Get Location) endpoint in Meta collection.",
+                "example_value": "US",
+                "required": false
+            }
+        },
+        "required": [
+            "hotel_id",
+            "arrival_date",
+            "departure_date"
+        ]
+    },
+    "responses": [],
+    "response_summary": null,
+    "enhance_func_desc": null,
+    "enhance_params_desc": null,
+    "enhance_resfield_desc": null,
+    "params_desc_list": null,
+    "response_desc_list": null,
+    "depends_on": null,
+    "verified": false
+}

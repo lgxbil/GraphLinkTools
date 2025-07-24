@@ -1,0 +1,48 @@
+2025-07-24 05:08:17,148 - evaluation_logger_Cross-160 - INFO - Test Example Cross-160
+2025-07-24 05:08:17,148 - evaluation_logger_Cross-160 - INFO - Query: I'm planning to fly from Toronto to New York to see the exhibition. Could you help me check the first date when tickets are available for The Museum of Modern Art in New York starting from September 29, 2024? I need to find the earliest flight arriving in New York on that day.
+2025-07-24 05:09:01,494 - evaluation_logger_Cross-160 - INFO - Start compare_single_call: 
+{'name': 'Search_Attraction_Location', 'arguments': {'query': 'The Museum of Modern Art'}}
+{'name': 'Search_Attraction_Location', 'arguments': {'query': 'The Museum of Modern Art'}}
+2025-07-24 05:09:01,494 - evaluation_logger_Cross-160 - INFO - Rule-based compare success.
+2025-07-24 05:09:01,494 - evaluation_logger_Cross-160 - INFO - Success matched: [{'name': 'Search_Attraction_Location', 'arguments': {'query': 'The Museum of Modern Art'}}]
+2025-07-24 05:09:01,496 - evaluation_logger_Cross-160 - INFO - Start compare_single_call: 
+{'name': 'Get_Availability_Calendar', 'arguments': {'id': 'PRZtshIDqvnN'}}
+{'name': 'Get_Availability_Calendar', 'arguments': {'id': 'PRZtshIDqvnN'}}
+2025-07-24 05:09:01,496 - evaluation_logger_Cross-160 - INFO - Rule-based compare success.
+2025-07-24 05:09:01,496 - evaluation_logger_Cross-160 - INFO - Success matched: [{'name': 'Get_Availability_Calendar', 'arguments': {'id': 'PRZtshIDqvnN'}}]
+2025-07-24 05:09:01,497 - evaluation_logger_Cross-160 - INFO - Start compare_single_call: 
+{'name': 'Search_Flight_Location', 'arguments': {'query': 'New York'}}
+{'name': 'Search_Flight_Location', 'arguments': {'query': 'New York'}}
+2025-07-24 05:09:01,497 - evaluation_logger_Cross-160 - INFO - Rule-based compare success.
+2025-07-24 05:09:01,497 - evaluation_logger_Cross-160 - INFO - Success matched: [{'name': 'Search_Flight_Location', 'arguments': {'query': 'New York'}}]
+2025-07-24 05:09:01,497 - evaluation_logger_Cross-160 - INFO - Start compare_single_call: 
+{'name': 'Search_Flight_Location', 'arguments': {'query': 'Toronto'}}
+{'name': 'Search_Flight_Location', 'arguments': {'query': 'Toronto'}}
+2025-07-24 05:09:01,497 - evaluation_logger_Cross-160 - INFO - Rule-based compare success.
+2025-07-24 05:09:01,497 - evaluation_logger_Cross-160 - INFO - Success matched: [{'name': 'Search_Flight_Location', 'arguments': {'query': 'Toronto'}}]
+2025-07-24 05:09:02,192 - evaluation_logger_Cross-160 - INFO - Start compare_single_call: 
+{'name': 'Search_Flights', 'arguments': {'departDate': '2024-09-24', 'fromId': 'YTO.CITY', 'sort': 'FASTEST', 'toId': 'NYC.CITY'}}
+{'name': 'Search_Flights', 'arguments': {'departDate': '2024-09-29', 'fromId': 'YTO.CITY', 'toId': 'NYC.CITY'}}
+2025-07-24 05:09:02,192 - evaluation_logger_Cross-160 - INFO - {'error_type': 'value_error', 'content': "Parameter departDate value '2024-09-24' is not correct in prediction."}
+2025-07-24 05:09:02,192 - evaluation_logger_Cross-160 - INFO - Success matched: []
+2025-07-24 05:09:15,504 - evaluation_logger_Cross-160 - INFO - Start compare_single_call: 
+{'name': 'Search_Flights', 'arguments': {'departDate': '2024-09-24', 'fromId': 'YTO.CITY', 'sort': 'FASTEST', 'toId': 'NYC.CITY'}}
+{'name': 'Search_Flights', 'arguments': {'departDate': '2024-09-29', 'fromId': 'YTO.CITY', 'toId': 'NYC.CITY'}}
+2025-07-24 05:09:15,505 - evaluation_logger_Cross-160 - INFO - {'error_type': 'value_error', 'content': "Parameter departDate value '2024-09-24' is not correct in prediction."}
+2025-07-24 05:09:15,505 - evaluation_logger_Cross-160 - INFO - Success matched: []
+2025-07-24 05:09:31,950 - evaluation_logger_Cross-160 - INFO - Start compare_single_call: 
+{'name': 'Search_Flights', 'arguments': {'departDate': '2024-09-24', 'fromId': 'YTO.CITY', 'sort': 'FASTEST', 'toId': 'NYC.CITY'}}
+{'name': 'Search_Flights', 'arguments': {'departDate': '2024-09-29', 'fromId': 'YTO.CITY', 'toId': 'NYC.CITY'}}
+2025-07-24 05:09:31,950 - evaluation_logger_Cross-160 - INFO - {'error_type': 'value_error', 'content': "Parameter departDate value '2024-09-24' is not correct in prediction."}
+2025-07-24 05:09:31,950 - evaluation_logger_Cross-160 - INFO - Success matched: []
+2025-07-24 05:09:58,374 - evaluation_logger_Cross-160 - INFO - Start compare_single_call: 
+{'name': 'Search_Flights', 'arguments': {'departDate': '2024-09-29', 'fromId': 'YTO.CITY', 'sort': 'FASTEST', 'toId': 'NYC.CITY'}}
+{'name': 'Search_Flights', 'arguments': {'departDate': '2024-09-29', 'fromId': 'YTO.CITY', 'toId': 'NYC.CITY'}}
+2025-07-24 05:10:02,633 - evaluation_logger_Cross-160 - DEBUG - LLM-based comparison output: {'is_equal': False, 'reason': "The parameter 'sort' in call 1 is not present in call 2."}
+2025-07-24 05:10:02,634 - evaluation_logger_Cross-160 - INFO - All compare method failed.
+2025-07-24 05:10:02,634 - evaluation_logger_Cross-160 - INFO - Success matched: []
+2025-07-24 05:10:23,403 - evaluation_logger_Cross-160 - INFO - Start compare_single_call: 
+{'name': 'Search_Flights', 'arguments': {'departDate': '2024-09-29', 'fromId': 'YTO.CITY', 'toId': 'NYC.CITY'}}
+{'name': 'Search_Flights', 'arguments': {'departDate': '2024-09-29', 'fromId': 'YTO.CITY', 'toId': 'NYC.CITY'}}
+2025-07-24 05:10:23,403 - evaluation_logger_Cross-160 - INFO - Rule-based compare success.
+2025-07-24 05:10:23,403 - evaluation_logger_Cross-160 - INFO - Success matched: [{'name': 'Search_Flights', 'arguments': {'departDate': '2024-09-29', 'fromId': 'YTO.CITY', 'toId': 'NYC.CITY'}}]

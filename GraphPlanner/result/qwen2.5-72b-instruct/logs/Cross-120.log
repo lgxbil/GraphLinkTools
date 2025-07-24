@@ -1,0 +1,39 @@
+2025-07-22 04:14:29,000 - evaluation_logger_Cross-120 - INFO - Test Example Cross-120
+2025-07-22 04:14:29,000 - evaluation_logger_Cross-120 - INFO - Query: Find me the best-priced interlining flight around December 4, 2024, departing from New Orleans with stops in Nashville and Pittsburgh, and then continuing to Philadelphia. I'll be staying a week in each city, so I need the most affordable hotel recommendations in Nashville and Pittsburgh.
+2025-07-22 04:16:41,281 - evaluation_logger_Cross-120 - INFO - Start compare_single_call: 
+{'name': 'Search_Flight_Location', 'arguments': {'query': 'New Orleans'}}
+{'name': 'Search_Flight_Location', 'arguments': {'query': 'New Orleans'}}
+2025-07-22 04:16:41,281 - evaluation_logger_Cross-120 - INFO - Rule-based compare success.
+2025-07-22 04:16:41,282 - evaluation_logger_Cross-120 - INFO - Success matched: [{'name': 'Search_Flight_Location', 'arguments': {'query': 'New Orleans'}}]
+2025-07-22 04:16:41,283 - evaluation_logger_Cross-120 - INFO - Start compare_single_call: 
+{'name': 'Search_Flight_Location', 'arguments': {'query': 'Nashville'}}
+{'name': 'Search_Flight_Location', 'arguments': {'query': 'Nashville'}}
+2025-07-22 04:16:41,283 - evaluation_logger_Cross-120 - INFO - Rule-based compare success.
+2025-07-22 04:16:41,283 - evaluation_logger_Cross-120 - INFO - Success matched: [{'name': 'Search_Flight_Location', 'arguments': {'query': 'Nashville'}}]
+2025-07-22 04:16:41,284 - evaluation_logger_Cross-120 - INFO - Start compare_single_call: 
+{'name': 'Search_Flight_Location', 'arguments': {'query': 'Pittsburgh'}}
+{'name': 'Search_Flight_Location', 'arguments': {'query': 'Pittsburgh'}}
+2025-07-22 04:16:41,284 - evaluation_logger_Cross-120 - INFO - Rule-based compare success.
+2025-07-22 04:16:41,284 - evaluation_logger_Cross-120 - INFO - Success matched: [{'name': 'Search_Flight_Location', 'arguments': {'query': 'Pittsburgh'}}]
+2025-07-22 04:16:41,285 - evaluation_logger_Cross-120 - INFO - Start compare_single_call: 
+{'name': 'Search_Flight_Location', 'arguments': {'query': 'Philadelphia'}}
+{'name': 'Search_Flight_Location', 'arguments': {'query': 'Philadelphia'}}
+2025-07-22 04:16:41,285 - evaluation_logger_Cross-120 - INFO - Rule-based compare success.
+2025-07-22 04:16:41,285 - evaluation_logger_Cross-120 - INFO - Success matched: [{'name': 'Search_Flight_Location', 'arguments': {'query': 'Philadelphia'}}]
+2025-07-22 04:16:41,873 - evaluation_logger_Cross-120 - INFO - Start compare_single_call: 
+{'name': 'Get_Min_Price_Multi_Stops', 'arguments': {'legs': [{'fromId': 'MSY.AIRPORT', 'toId': 'BNA.AIRPORT', 'date': '2024-12-04'}, {'fromId': 'BNA.AIRPORT', 'toId': 'PIT.AIRPORT', 'date': '2024-12-04'}, {'fromId': 'PIT.AIRPORT', 'toId': 'PHL.AIRPORT', 'date': '2024-12-04'}]}}
+{'name': 'Get_Min_Price_Multi_Stops', 'arguments': {'legs': [{'fromId': 'MSY.AIRPORT', 'toId': 'BNA.AIRPORT', 'date': '2024-12-04'}, {'fromId': 'BNA.AIRPORT', 'toId': 'PIT.AIRPORT', 'date': '2024-12-11'}, {'fromId': 'PIT.AIRPORT', 'toId': 'PHL.AIRPORT', 'date': '2024-12-18'}]}}
+2025-07-22 04:16:46,335 - evaluation_logger_Cross-120 - DEBUG - LLM-based comparison output: {'is_equal': False, 'reason': 'The dates in the legs parameters differ between the two function calls.'}
+2025-07-22 04:16:46,335 - evaluation_logger_Cross-120 - INFO - All compare method failed.
+2025-07-22 04:16:46,344 - evaluation_logger_Cross-120 - INFO - Success matched: []
+2025-07-22 04:17:41,842 - evaluation_logger_Cross-120 - INFO - Start compare_single_call: 
+{'name': 'Get_Min_Price_Multi_Stops', 'arguments': {'legs': [{'fromId': 'MSY.AIRPORT', 'toId': 'BNA.AIRPORT', 'date': '2024-12-04'}, {'fromId': 'BNA.AIRPORT', 'toId': 'PIT.AIRPORT', 'date': '2024-12-11'}, {'fromId': 'PIT.AIRPORT', 'toId': 'PHL.AIRPORT', 'date': '2024-12-18'}]}}
+{'name': 'Get_Min_Price_Multi_Stops', 'arguments': {'legs': [{'fromId': 'MSY.AIRPORT', 'toId': 'BNA.AIRPORT', 'date': '2024-12-04'}, {'fromId': 'BNA.AIRPORT', 'toId': 'PIT.AIRPORT', 'date': '2024-12-11'}, {'fromId': 'PIT.AIRPORT', 'toId': 'PHL.AIRPORT', 'date': '2024-12-18'}]}}
+2025-07-22 04:17:41,842 - evaluation_logger_Cross-120 - INFO - Rule-based compare success.
+2025-07-22 04:17:41,850 - evaluation_logger_Cross-120 - INFO - Success matched: [{'name': 'Get_Min_Price_Multi_Stops', 'arguments': {'legs': [{'fromId': 'MSY.AIRPORT', 'toId': 'BNA.AIRPORT', 'date': '2024-12-04'}, {'fromId': 'BNA.AIRPORT', 'toId': 'PIT.AIRPORT', 'date': '2024-12-11'}, {'fromId': 'PIT.AIRPORT', 'toId': 'PHL.AIRPORT', 'date': '2024-12-18'}]}}]
+2025-07-22 04:19:14,379 - evaluation_logger_Cross-120 - INFO - Start compare_single_call: 
+{'name': 'Get_Min_Price_Multi_Stops', 'arguments': {'legs': [{'fromId': 'MSY.AIRPORT', 'toId': 'BNA.AIRPORT', 'date': '2024-12-04'}, {'fromId': 'BNA.AIRPORT', 'toId': 'PIT.AIRPORT', 'date': '2024-12-11'}, {'fromId': 'PIT.AIRPORT', 'toId': 'PHL.AIRPORT', 'date': '2024-12-18'}]}}
+{'name': 'Get_Min_Price_Multi_Stops', 'arguments': {'legs': [{'fromId': 'MSY.AIRPORT', 'toId': 'BNA.AIRPORT', 'date': '2024-12-04'}, {'fromId': 'BNA.AIRPORT', 'toId': 'PIT.AIRPORT', 'date': '2024-12-11'}, {'fromId': 'PIT.AIRPORT', 'toId': 'PHL.AIRPORT', 'date': '2024-12-18'}]}}
+2025-07-22 04:19:14,380 - evaluation_logger_Cross-120 - INFO - Rule-based compare success.
+2025-07-22 04:19:14,380 - evaluation_logger_Cross-120 - INFO - Success matched: [{'name': 'Get_Min_Price_Multi_Stops', 'arguments': {'legs': [{'fromId': 'MSY.AIRPORT', 'toId': 'BNA.AIRPORT', 'date': '2024-12-04'}, {'fromId': 'BNA.AIRPORT', 'toId': 'PIT.AIRPORT', 'date': '2024-12-11'}, {'fromId': 'PIT.AIRPORT', 'toId': 'PHL.AIRPORT', 'date': '2024-12-18'}]}}]
+2025-07-22 04:20:01,160 - evaluation_logger_Cross-120 - ERROR - 'questions'

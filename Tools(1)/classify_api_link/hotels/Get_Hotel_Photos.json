@@ -1,0 +1,203 @@
+{
+    "name": "Get_Hotel_Photos",
+    "docs_row": {
+        "name": "Get_Hotel_Photos",
+        "endpoint": "/api/v1/hotels/getHotelPhotos",
+        "func_description": "Retrieves a collection of photos for a specified hotel. This enables users to visually explore the property before booking.",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "hotel_id": {
+                    "type": "String",
+                    "description": "hotel_id can be retrieved from api/v1/hotels/searchHotels(Search Hotels) or api/v1/hotels/searchHotelsByCoordinates(Search Hotels By Coordinates\n) endpoint in Hotels collection.",
+                    "example_value": "5955189",
+                    "required": true
+                }
+            },
+            "required": [
+                "hotel_id"
+            ]
+        }
+    },
+    "instance": [],
+    "category": null,
+    "tool": null,
+    "api_idx": 21,
+    "params": {
+        "type": "object",
+        "properties": {
+            "hotel_id": {
+                "type": "String",
+                "description": "hotel_id can be retrieved from api/v1/hotels/searchHotels(Search Hotels) or api/v1/hotels/searchHotelsByCoordinates(Search Hotels By Coordinates\n) endpoint in Hotels collection.",
+                "example_value": "5955189",
+                "required": true
+            }
+        },
+        "required": [
+            "hotel_id"
+        ]
+    },
+    "responses": [
+        {
+            "function_name": "Get_Hotel_Photos",
+            "arguments": {
+                "hotel_id": "5955189"
+            },
+            "observation": [
+                {
+                    "id": 613758026,
+                    "url": "https://cf.bstatic.com/xdata/images/hotel/square1024/613758026.jpg?k=248663299c505b8cdd98caa01e915fa2559e0013ce3fa70cde0f1ca9dad6e581&o="
+                },
+                {
+                    "id": 613758080,
+                    "url": "https://cf.bstatic.com/xdata/images/hotel/square1024/613758080.jpg?k=a5e48375f5f377df7813999021f662da2e8d67ce3bcd692f3032adb1524c4165&o="
+                },
+                {
+                    "id": 613758060,
+                    "url": "https://cf.bstatic.com/xdata/images/hotel/square1024/613758060.jpg?k=f9bc8735de5086e316bc0849872c2d638bce3106d26a97eb55ec01318755e65d&o="
+                }
+            ]
+        }
+    ],
+    "response_summary": "The API response includes three hotel images, each with a unique identifier and a direct URL to access the photo. The first image (ID: 613758026) features a square format and can be viewed at the provided link. The second image (ID: 613758080) is also in square format and is accessible via its URL. Similarly, the third image (ID: 613758060) follows the same square format and is available for viewing through its respective link. All three images are hosted on the same domain and are likely part of a hotel's photo gallery.",
+    "enhance_func_desc": "This API is ideal for travelers and booking platforms to view hotel images. It retrieves a gallery of square-format photos for a specific hotel using its unique ID. The response provides direct URLs to access each image, enabling users to preview the hotel's appearance. The hotel ID must be obtained from SearchHotels or SearchHotelsByCoordinates APIs.",
+    "enhance_params_desc": {
+        "enhanced_parameters": {
+            "hotel_id": "Unique identifier for the hotel, sourced from searchHotels or searchHotelsByCoordinates endpoints."
+        }
+    },
+    "enhance_resfield_desc": {
+        "response_fields": {
+            "type": "Array",
+            "description": "A list of hotel images, each with a unique identifier and a direct URL to access the photo.",
+            "ar_items": {
+                "type": "Object",
+                "description": "An object representing a single hotel image with its details.",
+                "ob_properties": {
+                    "id": {
+                        "type": "Number",
+                        "description": "The unique identifier for the hotel image (e.g., 613758026)."
+                    },
+                    "url": {
+                        "type": "String",
+                        "description": "The direct URL to access the photo, hosted on a specific domain (e.g., 'https://cf.bstatic.com/xdata/images/hotel/square1024/613758026.jpg')."
+                    }
+                }
+            }
+        }
+    },
+    "params_desc_list": null,
+    "response_desc_list": [
+        {
+            "path_name": "$",
+            "name": "$",
+            "description": "A list of hotel images, each with a unique identifier and a direct URL to access the photo."
+        },
+        {
+            "path_name": "$[]",
+            "name": "$[]",
+            "description": "An object representing a single hotel image with its details."
+        },
+        {
+            "path_name": "$[].id",
+            "name": "id",
+            "description": "The unique identifier for the hotel image (e.g., 613758026)."
+        },
+        {
+            "path_name": "$[].url",
+            "name": "url",
+            "description": "The direct URL to access the photo, hosted on a specific domain (e.g., 'https://cf.bstatic.com/xdata/images/hotel/square1024/613758026.jpg')."
+        }
+    ],
+    "depends_on": [
+        {
+            "target_api_params": "hotel_id",
+            "reason": "The 'hotel_id' parameter in the target API is explicitly mentioned to be retrievable from the 'Search_Hotels' API, which is the source API in this case. The source API's response includes a 'hotel_id' field for each hotel in the 'hotels' array, which matches the required data type (String) and serves as a direct input for the target API. This is a clear prerequisite for calling the target API.",
+            "source_jsonpath": "$.hotels[].hotel_id",
+            "confidence": 100,
+            "dependency_relationship": "Hard Dependency(Prerequisite API)",
+            "source_api": "Search_Hotels"
+        },
+        {
+            "target_api_params": "hotel_id",
+            "reason": "The 'hotel_id' parameter in the target API requires a unique identifier for a hotel, which is also present in the source API's response fields. The source API's 'hotel_id' field in the response matches exactly with the target API's requirement, both in data type (String) and purpose (identifying a specific hotel). This creates a hard dependency as the source API must be called first to obtain the hotel_id before the target API can be used.",
+            "source_jsonpath": "$.hotel_id",
+            "confidence": 100,
+            "dependency_relationship": "Hard Dependency(Prerequisite API)",
+            "source_api": "Get_Question_And_Answer"
+        },
+        {
+            "target_api_params": "hotel_id",
+            "reason": "The 'hotel_id' parameter in the target API is required to fetch hotel photos, and it must be obtained from either the SearchHotels or SearchHotelsByCoordinates APIs. The source API's response field 'hotel_id' directly matches this requirement, as it is the same identifier used to fetch hotel reviews. This creates a hard dependency where the source API's hotel_id is a prerequisite for calling the target API.",
+            "source_jsonpath": "$.result[*].hotel_id",
+            "confidence": 100,
+            "dependency_relationship": "Hard Dependency(Prerequisite API)",
+            "source_api": "Get_Hotel_Reviews(Tips)"
+        },
+        {
+            "target_api_params": "hotel_id",
+            "reason": "The 'hotel_id' parameter in the target API is a unique identifier for a hotel, which is also present in the source API's response. The data types match (both are Strings), and the source API's response includes the exact same 'hotel_id' field that the target API requires. This indicates a hard dependency as the source API must be called first to obtain the hotel_id before the target API can be used.",
+            "source_jsonpath": "$.hotel_id",
+            "confidence": 100,
+            "dependency_relationship": "Hard Dependency(Prerequisite API)",
+            "source_api": "Get_Hotel_Policies"
+        },
+        {
+            "target_api_params": "hotel_id",
+            "reason": "The 'hotel_id' parameter in the target API requires a unique identifier for a hotel, which can be obtained from either the SearchHotels or SearchHotelsByCoordinates APIs. The source API's 'hotel_id' field in the response provides exactly this identifier, matching both the data type and the requirement of being sourced from the same set of APIs. This creates a hard dependency where the source API must be called first to obtain the hotel_id before the target API can be used.",
+            "source_jsonpath": "$.hotel_id",
+            "confidence": 100,
+            "dependency_relationship": "Hard Dependency(Prerequisite API)",
+            "source_api": "Get_Room_List"
+        },
+        {
+            "target_api_params": "hotel_id",
+            "reason": "The 'hotel_id' parameter in the target API is a unique identifier for a hotel, which is also present in the source API's response. The source API's 'hotel_id' field matches exactly in type and purpose, as both APIs require the hotel ID to retrieve specific information about the hotel. This creates a hard dependency where the source API's response can directly provide the necessary input for the target API.",
+            "source_jsonpath": "$[*].hotel_id",
+            "confidence": 100,
+            "dependency_relationship": "Hard Dependency(Prerequisite API)",
+            "source_api": "Get_Hotel_Review_Scores"
+        },
+        {
+            "target_api_params": "hotel_id",
+            "reason": "The 'hotel_id' parameter in the target API is explicitly mentioned to be retrievable from the 'Search_Hotels_By_Coordinates' source API. The source API's response includes a 'hotel_id' field for each hotel in the search results, which directly matches the requirement of the target API. This is a clear case where the source API provides the necessary input for the target API.",
+            "source_jsonpath": "$.result[].hotel_id",
+            "confidence": 100,
+            "dependency_relationship": "Hard Dependency(Prerequisite API)",
+            "source_api": "Search_Hotels_By_Coordinates"
+        },
+        {
+            "target_api_params": "hotel_id",
+            "reason": "The 'hotel_id' parameter in the target API is a unique identifier for a hotel, which is also required by the source API. The source API's response includes the 'hotel_id' field directly, which matches exactly in data type and purpose. This creates a hard dependency as the source API must be called first to obtain the hotel_id before it can be used in the target API.",
+            "source_jsonpath": "$.hotel_id",
+            "confidence": 100,
+            "dependency_relationship": "Hard Dependency(Prerequisite API)",
+            "source_api": "Get_Hotel_Reviews_Filter_Metadata"
+        },
+        {
+            "target_api_params": "hotel_id",
+            "reason": "The 'hotel_id' parameter in the target API requires a unique identifier for a hotel, which is the same as the 'hotel_id' parameter in the source API. Both APIs explicitly state that the 'hotel_id' can be retrieved from the same endpoints (SearchHotels or SearchHotelsByCoordinates). The data type and example values match perfectly, indicating a direct dependency.",
+            "source_jsonpath": "$[*].hotel_id",
+            "confidence": 100,
+            "dependency_relationship": "Hard Dependency(Prerequisite API)",
+            "source_api": "Get_Description_And_Info"
+        },
+        {
+            "target_api_params": "hotel_id",
+            "reason": "The 'hotel_id' parameter in the target API requires a unique identifier for a hotel, which can be obtained from the source API's response fields. The source API's response includes a 'hotel_id' field that matches exactly in data type and purpose with the target API's requirement. This establishes a hard dependency as the source API's hotel_id is a necessary prerequisite for calling the target API.",
+            "source_jsonpath": "$[*].hotel_id",
+            "confidence": 100,
+            "dependency_relationship": "Hard Dependency(Prerequisite API)",
+            "source_api": "Payment_features_of_the_Hotel"
+        },
+        {
+            "target_api_params": "hotel_id",
+            "reason": "The 'hotel_id' parameter in the target API is a prerequisite for calling the API, as it uniquely identifies the hotel for which photos are to be retrieved. The source API also requires a 'hotel_id' parameter, which must be obtained from the same endpoints as specified in the target API documentation. This indicates a hard dependency where the source API's 'hotel_id' can directly serve as input for the target API's 'hotel_id'.",
+            "source_jsonpath": "$.hotel_id",
+            "confidence": 100,
+            "dependency_relationship": "Hard Dependency(Prerequisite API)",
+            "source_api": "Get_Hotel_Facilities"
+        }
+    ],
+    "verified": true
+}

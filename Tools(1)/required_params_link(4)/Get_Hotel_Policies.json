@@ -1,0 +1,297 @@
+{
+    "name": "Get_Hotel_Policies",
+    "docs_row": {
+        "name": "Get_Hotel_Policies",
+        "endpoint": "/api/v1/hotels/getHotelPolicies",
+        "func_description": "Retrieve policies for a specific hotel. ",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "hotel_id": {
+                    "type": "String",
+                    "description": "hotel_id can be retrieved from api/v1/hotels/searchHotels(Search Hotels) or api/v1/hotels/searchHotelsByCoordinates(Search Hotels By Coordinates\n) endpoint in Hotels collection.",
+                    "example_value": "5955189",
+                    "required": true
+                },
+                "languagecode": {
+                    "type": "String",
+                    "description": "To obtain the response data in a specific language, enter the languagecode. languagecode can be retrieved from api/v1/meta/getLanguages(Get Languages\n) endpoint in Meta collection.",
+                    "example_value": "en-us",
+                    "required": false
+                }
+            },
+            "required": [
+                "hotel_id"
+            ]
+        }
+    },
+    "instance": [],
+    "category": null,
+    "tool": null,
+    "api_idx": 1,
+    "params": {
+        "type": "object",
+        "properties": {
+            "hotel_id": {
+                "type": "String",
+                "description": "hotel_id can be retrieved from api/v1/hotels/searchHotels(Search Hotels) or api/v1/hotels/searchHotelsByCoordinates(Search Hotels By Coordinates\n) endpoint in Hotels collection.",
+                "example_value": "5955189",
+                "required": true
+            },
+            "languagecode": {
+                "type": "String",
+                "description": "To obtain the response data in a specific language, enter the languagecode. languagecode can be retrieved from api/v1/meta/getLanguages(Get Languages\n) endpoint in Meta collection.",
+                "example_value": "en-us",
+                "required": false
+            }
+        },
+        "required": [
+            "hotel_id"
+        ]
+    },
+    "responses": [
+        {
+            "function_name": "Get_Hotel_Policies",
+            "arguments": {
+                "hotel_id": "5955189",
+                "languagecode": "en-us"
+            },
+            "observation": {
+                "hotel_id": 5955189,
+                "name": "Partially refundable",
+                "policygroup_type_id": 31,
+                "policy": [
+                    {
+                        "type": "POLICY_HOTEL_GROUPS",
+                        "content": [
+                            {
+                                "languagecode": "en-us",
+                                "text": "When booking more than 3 rooms, different policies and additional supplements may apply.\n"
+                            }
+                        ],
+                        "policy_id": 1234567891
+                    }
+                ],
+                "policygroup_id": 382591998
+            }
+        }
+    ],
+    "response_summary": "The hotel's policies include several important details for guests. Children of all ages are welcome, with specific conditions: one child up to 7 years old can stay for free using existing beds, while one child up to 8 years old can stay for free using an extra bed. For children aged 9 and above, there is a charge of Rs. 800 per child per night when using an extra bed. No cribs have been added, and the maximum number of extra beds allowed is one, with a total guest limit of three per room. \n\nFor group bookings, different policies and additional charges may apply if more than three rooms are reserved. \n\nAdditionally, the hotel offers free WiFi in all rooms for guests' convenience. These policies ensure a clear understanding of the accommodations and services provided.",
+    "enhance_func_desc": "This API is essential for travelers planning accommodations, especially families. It retrieves detailed hotel policies including child stay conditions (age limits, fees), extra bed rules, and WiFi availability. Users can check specific charges for children, maximum guest limits, and group booking policies. The response helps guests understand accommodation terms before booking. The hotel ID must be obtained from SearchHotels or SearchHotelsByCoordinates APIs.",
+    "enhance_params_desc": {
+        "enhanced_parameters": {
+            "hotel_id": "Unique identifier for the hotel, sourced from searchHotels or searchHotelsByCoordinates endpoints.",
+            "languagecode": "Language preference for the response data, such as 'en-us' for English."
+        }
+    },
+    "enhance_resfield_desc": {
+        "response_fields": {
+            "hotel_id": {
+                "type": "Number",
+                "description": "The unique identifier for the hotel."
+            },
+            "name": {
+                "type": "String",
+                "description": "The name of the policy group, indicating its refundability (e.g., 'Partially refundable')."
+            },
+            "policygroup_type_id": {
+                "type": "Number",
+                "description": "The identifier for the type of policy group."
+            },
+            "policy": {
+                "type": "Array",
+                "description": "A list of policies applicable to the hotel.",
+                "ar_items": {
+                    "type": "Object",
+                    "description": "An object representing a specific policy.",
+                    "ob_properties": {
+                        "content": {
+                            "type": "Array",
+                            "description": "A list of content entries for the policy, possibly in multiple languages.",
+                            "ar_items": {
+                                "type": "Object",
+                                "description": "An object representing the content of the policy in a specific language.",
+                                "ob_properties": {
+                                    "languagecode": {
+                                        "type": "String",
+                                        "description": "The language code for the content (e.g., 'en-us')."
+                                    },
+                                    "text": {
+                                        "type": "String",
+                                        "description": "The textual content of the policy."
+                                    }
+                                }
+                            }
+                        },
+                        "policy_id": {
+                            "type": "Number",
+                            "description": "The unique identifier for the policy."
+                        },
+                        "type": {
+                            "type": "String",
+                            "description": "The type of policy (e.g., 'POLICY_CHILDREN', 'POLICY_HOTEL_GROUPS', 'POLICY_HOTEL_INTERNET')."
+                        }
+                    }
+                }
+            },
+            "policygroup_id": {
+                "type": "Number",
+                "description": "The unique identifier for the policy group."
+            }
+        }
+    },
+    "params_desc_list": null,
+    "response_desc_list": [
+        {
+            "path_name": "$.hotel_id",
+            "name": "hotel_id",
+            "description": "The unique identifier for the hotel."
+        },
+        {
+            "path_name": "$.name",
+            "name": "name",
+            "description": "The name of the policy group, indicating its refundability (e.g., 'Partially refundable')."
+        },
+        {
+            "path_name": "$.policygroup_type_id",
+            "name": "policygroup_type_id",
+            "description": "The identifier for the type of policy group."
+        },
+        {
+            "path_name": "$.policy",
+            "name": "policy",
+            "description": "A list of policies applicable to the hotel."
+        },
+        {
+            "path_name": "$.policy[]",
+            "name": "policy[]",
+            "description": "An object representing a specific policy."
+        },
+        {
+            "path_name": "$.policy[].content",
+            "name": "content",
+            "description": "A list of content entries for the policy, possibly in multiple languages."
+        },
+        {
+            "path_name": "$.policy[].content[]",
+            "name": "content[]",
+            "description": "An object representing the content of the policy in a specific language."
+        },
+        {
+            "path_name": "$.policy[].content[].languagecode",
+            "name": "languagecode",
+            "description": "The language code for the content (e.g., 'en-us')."
+        },
+        {
+            "path_name": "$.policy[].content[].text",
+            "name": "text",
+            "description": "The textual content of the policy."
+        },
+        {
+            "path_name": "$.policy[].policy_id",
+            "name": "policy_id",
+            "description": "The unique identifier for the policy."
+        },
+        {
+            "path_name": "$.policy[].type",
+            "name": "type",
+            "description": "The type of policy (e.g., 'POLICY_CHILDREN', 'POLICY_HOTEL_GROUPS', 'POLICY_HOTEL_INTERNET')."
+        },
+        {
+            "path_name": "$.policygroup_id",
+            "name": "policygroup_id",
+            "description": "The unique identifier for the policy group."
+        }
+    ],
+    "depends_on": [
+        {
+            "target_api_params": "hotel_id",
+            "reason": "The 'hotel_id' parameter in the target API is explicitly mentioned to be retrievable from the 'Search_Hotels' API, which is the source API in this case. The source API's response includes a 'hotel_id' field within the 'hotels' array, which matches the required parameter type (String) and serves as a direct input for the target API. This is a clear prerequisite for calling the target API.",
+            "source_jsonpath": "$.hotels[].hotel_id",
+            "confidence": 100,
+            "dependency_relationship": "Hard Dependency(Prerequisite API)",
+            "source_api": "Search_Hotels"
+        },
+        {
+            "target_api_params": "hotel_id",
+            "reason": "The 'hotel_id' parameter in the target API is explicitly stated to be retrievable from the same source APIs as the source API's 'hotel_id'. The source API's response field 'hotel_id' directly matches the target parameter in both data type and purpose, indicating a hard dependency where the source API must be called first to obtain the hotel_id for the target API.",
+            "source_jsonpath": "$.hotel_id",
+            "confidence": 100,
+            "dependency_relationship": "Hard Dependency(Prerequisite API)",
+            "source_api": "Get_Question_And_Answer"
+        },
+        {
+            "target_api_params": "hotel_id",
+            "reason": "The 'hotel_id' parameter in the target API is explicitly mentioned to be retrievable from the same source APIs as the source API's 'hotel_id' parameter. Both APIs require the hotel_id to be obtained from the SearchHotels or SearchHotelsByCoordinates endpoints. This indicates a direct and necessary prerequisite relationship where the source API's hotel_id can be used as input for the target API.",
+            "source_jsonpath": "$.result[*].hotel_id",
+            "confidence": 100,
+            "dependency_relationship": "Hard Dependency(Prerequisite API)",
+            "source_api": "Get_Hotel_Reviews(Tips)"
+        },
+        {
+            "target_api_params": "hotel_id",
+            "reason": "The 'hotel_id' parameter in the target API is explicitly mentioned to be retrievable from the 'SearchHotels' or 'SearchHotelsByCoordinates' APIs, which is also the case for the source API 'Get_Room_List'. The source API's response includes a 'hotel_id' field that matches the data type and description required by the target API. This establishes a hard dependency as the source API's response field is a prerequisite for calling the target API.",
+            "source_jsonpath": "$.hotel_id",
+            "confidence": 100,
+            "dependency_relationship": "Hard Dependency(Prerequisite API)",
+            "source_api": "Get_Room_List"
+        },
+        {
+            "target_api_params": "hotel_id",
+            "reason": "The 'hotel_id' parameter in the target API is a prerequisite for calling the API, as it specifies which hotel's policies to retrieve. The source API's response includes a 'hotel_id' field that matches exactly in data type and purpose, as both APIs require the hotel ID to be obtained from the same endpoints (SearchHotels or SearchHotelsByCoordinates). This establishes a hard dependency where the source API's hotel_id can directly serve as input for the target API.",
+            "source_jsonpath": "$[*].hotel_id",
+            "confidence": 100,
+            "dependency_relationship": "Hard Dependency(Prerequisite API)",
+            "source_api": "Get_Hotel_Review_Scores"
+        },
+        {
+            "target_api_params": "hotel_id",
+            "reason": "The 'hotel_id' parameter in the target API is explicitly mentioned to be retrievable from the 'Search_Hotels_By_Coordinates' source API. The source API's response includes a 'hotel_id' field in the 'result' array, which matches the required parameter type (String) and serves as a direct input for the target API. This is a clear prerequisite for calling the target API.",
+            "source_jsonpath": "$.result[].hotel_id",
+            "confidence": 100,
+            "dependency_relationship": "Hard Dependency(Prerequisite API)",
+            "source_api": "Search_Hotels_By_Coordinates"
+        },
+        {
+            "target_api_params": "hotel_id",
+            "reason": "The 'hotel_id' parameter in the target API is a prerequisite for calling the API, as it specifies which hotel's policies to retrieve. The source API's response includes a 'hotel_id' field that matches exactly in data type and purpose, as both APIs require the hotel ID to be obtained from the same endpoints (SearchHotels or SearchHotelsByCoordinates).",
+            "source_jsonpath": "$.hotel_id",
+            "confidence": 100,
+            "dependency_relationship": "Hard Dependency(Prerequisite API)",
+            "source_api": "Get_Hotel_Reviews_Filter_Metadata"
+        },
+        {
+            "target_api_params": "hotel_id",
+            "reason": "The 'hotel_id' parameter in the target API is required to retrieve hotel policies, and it must be obtained from either the SearchHotels or SearchHotelsByCoordinates APIs. The source API 'Get_Hotel_Photos' also requires a 'hotel_id' parameter, which is obtained from the same endpoints. This indicates a hard dependency where the source API's 'hotel_id' is a prerequisite for calling the target API.",
+            "source_jsonpath": "$[*].id",
+            "confidence": 100,
+            "dependency_relationship": "Hard Dependency(Prerequisite API)",
+            "source_api": "Get_Hotel_Photos"
+        },
+        {
+            "target_api_params": "hotel_id",
+            "reason": "The 'hotel_id' parameter in the target API is a prerequisite for calling the Get_Hotel_Policies API, as it specifies which hotel's policies to retrieve. The source API's response includes the 'hotel_id' field, which matches exactly in data type and purpose. This is a clear case where the source API's response field is a necessary prerequisite for the target API.",
+            "source_jsonpath": "$[*].hotel_id",
+            "confidence": 100,
+            "dependency_relationship": "Hard Dependency(Prerequisite API)",
+            "source_api": "Get_Description_And_Info"
+        },
+        {
+            "target_api_params": "hotel_id",
+            "reason": "The 'hotel_id' parameter in the target API is a prerequisite for calling the 'Get_Hotel_Policies' API, as it explicitly states that the hotel_id must be obtained from the 'SearchHotels' or 'SearchHotelsByCoordinates' APIs. The source API's response field 'hotel_id' matches exactly in data type and purpose, as it also requires the hotel_id to be obtained from the same endpoints. This establishes a hard dependency where the source API's hotel_id is a necessary input for the target API.",
+            "source_jsonpath": "$[*].hotel_id",
+            "confidence": 100,
+            "dependency_relationship": "Hard Dependency(Prerequisite API)",
+            "source_api": "Payment_features_of_the_Hotel"
+        },
+        {
+            "target_api_params": "hotel_id",
+            "reason": "The 'hotel_id' parameter in the target API is a prerequisite for calling the Get_Hotel_Policies API, as it specifies which hotel's policies to retrieve. The source API, Get_Hotel_Facilities, also requires a 'hotel_id' parameter to fetch hotel facilities, indicating a direct and necessary dependency. Both APIs expect the same data type (String) and the same source for the hotel_id (SearchHotels or SearchHotelsByCoordinates APIs).",
+            "source_jsonpath": "$.hotel_id",
+            "confidence": 100,
+            "dependency_relationship": "Hard Dependency(Prerequisite API)",
+            "source_api": "Get_Hotel_Facilities"
+        }
+    ],
+    "verified": true
+}

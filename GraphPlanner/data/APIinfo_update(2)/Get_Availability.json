@@ -1,0 +1,114 @@
+{
+    "name": "Get_Availability",
+    "docs_row": {
+        "name": "Get_Availability",
+        "endpoint": "/api/v1/attraction/getAvailability",
+        "func_description": "Check if tickets for tourist attractions are available. ",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "slug": {
+                    "type": "String",
+                    "description": "slug can be retrieved from api/v1/attraction/searchLocation(Search Attraction Location) endpoint in Attraction collection as productSlug  inside products or destinations.",
+                    "example_value": "prg6h2lj9jfx-city-pub-crawl-with-drinks",
+                    "required": true
+                },
+                "date": {
+                    "type": "Date (yyyy-mm-dd)",
+                    "description": "The availability of the data.",
+                    "example_value": "",
+                    "required": false
+                },
+                "currency_code": {
+                    "type": "String",
+                    "description": "The currency code. currency_code can be retrieved from api/v1/meta/getCurrency(Get Currency) endpoint in Hotels collection.",
+                    "example_value": "EUR",
+                    "required": false
+                },
+                "languagecode": {
+                    "type": "String",
+                    "description": "To obtain the response data in a specific language, enter the languagecode. languagecode can be retrieved from api/v1/meta/getLanguages(Get Languages\n) endpoint in Meta collection.",
+                    "example_value": "fr",
+                    "required": false
+                }
+            },
+            "required": [
+                "slug"
+            ]
+        }
+    },
+    "api_response_schema": [
+        {
+            "__typename": "AttractionTimeSlot",
+            "fullDay": false,
+            "start": "2024-11-06T12:00:00Z",
+            "timeSlotId": "ATS-PRde2e31UhTl-202411061200-nullnull",
+            "timeSlotOffers": [
+                {
+                    "__typename": "AttractionTimeSlotOffer",
+                    "languageOptions": [
+                        {
+                            "__typename": "OfferLanguageOption",
+                            "label": "French - Tour guide",
+                            "language": "fr",
+                            "type": "guide"
+                        }
+                    ],
+                    "benefits": {
+                        "__typename": "Benefits"
+                    },
+                    "description": "Private Van for 8 People: If you are 8 people or less, this would be a suitable option for your group.\r\nPickup included",
+                    "id": "OFFlMA70563T",
+                    "items": [
+                        {
+                            "__typename": "AttractionTimeSlotOfferItem",
+                            "cancellationPolicy": {
+                                "__typename": "AttractionsCancellationPolicy",
+                                "hasFreeCancellation": false,
+                                "isStillRefundable": false
+                            },
+                            "constraint": {
+                                "__typename": "Constraint",
+                                "label": "(max. 8 people)",
+                                "maxGroupSize": 8
+                            },
+                            "id": "ATO-b2f41c90-ab4f-4660-9c8c-32a400aced59_PRde2e31UhTl_20241106_1200",
+                            "offerItemId": "OI3L2z4ndlqG",
+                            "type": "group",
+                            "tieredPricing": false,
+                            "price": {
+                                "__typename": "AttractionsPrice",
+                                "chargeAmount": 1193.45,
+                                "currency": "GBP",
+                                "publicAmount": 1193.45
+                            },
+                            "convertedPrice": {
+                                "__typename": "AttractionsPrice",
+                                "chargeAmount": 1545.22,
+                                "currency": "USD",
+                                "publicAmount": 1545.22
+                            },
+                            "languageOption": {
+                                "__typename": "LanguageOption",
+                                "language": "ar",
+                                "type": "guide"
+                            },
+                            "travelerCountRequired": true,
+                            "ticketsAvailable": 10000,
+                            "maxPerReservation": 1,
+                            "minPerReservation": 1,
+                            "label": "Group"
+                        }
+                    ],
+                    "label": "Private Van for 8 People",
+                    "reservationRestrictions": {
+                        "__typename": "ReservationRestrictions",
+                        "adultRequiredForReservation": false,
+                        "maxOfferItemsPerReservation": 1,
+                        "minOfferItemsPerReservation": 1
+                    }
+                }
+            ]
+        }
+    ]
+}

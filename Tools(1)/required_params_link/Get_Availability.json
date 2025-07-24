@@ -1,0 +1,1160 @@
+{
+    "name": "Get_Availability",
+    "docs_row": {
+        "name": "Get_Availability",
+        "endpoint": "/api/v1/attraction/getAvailability",
+        "func_description": "Check if tickets for tourist attractions are available. ",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "slug": {
+                    "type": "String",
+                    "description": "slug can be retrieved from api/v1/attraction/searchLocation(Search Attraction Location) endpoint in Attraction collection as productSlug  inside products or destinations.",
+                    "example_value": "prg6h2lj9jfx-city-pub-crawl-with-drinks",
+                    "required": true
+                },
+                "date": {
+                    "type": "Date (yyyy-mm-dd)",
+                    "description": "The availability of the data.",
+                    "example_value": "",
+                    "required": false
+                },
+                "currency_code": {
+                    "type": "String",
+                    "description": "The currency code. currency_code can be retrieved from api/v1/meta/getCurrency(Get Currency) endpoint in Hotels collection.",
+                    "example_value": "EUR",
+                    "required": false
+                },
+                "languagecode": {
+                    "type": "String",
+                    "description": "To obtain the response data in a specific language, enter the languagecode. languagecode can be retrieved from api/v1/meta/getLanguages(Get Languages\n) endpoint in Meta collection.",
+                    "example_value": "fr",
+                    "required": false
+                }
+            },
+            "required": [
+                "slug"
+            ]
+        }
+    },
+    "instance": [],
+    "category": null,
+    "tool": null,
+    "api_idx": 35,
+    "params": {
+        "type": "object",
+        "properties": {
+            "slug": {
+                "type": "String",
+                "description": "slug can be retrieved from api/v1/attraction/searchLocation(Search Attraction Location) endpoint in Attraction collection as productSlug  inside products or destinations.",
+                "example_value": "prg6h2lj9jfx-city-pub-crawl-with-drinks",
+                "required": true
+            },
+            "date": {
+                "type": "Date (yyyy-mm-dd)",
+                "description": "The availability of the data.",
+                "example_value": "",
+                "required": false
+            },
+            "currency_code": {
+                "type": "String",
+                "description": "The currency code. currency_code can be retrieved from api/v1/meta/getCurrency(Get Currency) endpoint in Hotels collection.",
+                "example_value": "EUR",
+                "required": false
+            },
+            "languagecode": {
+                "type": "String",
+                "description": "To obtain the response data in a specific language, enter the languagecode. languagecode can be retrieved from api/v1/meta/getLanguages(Get Languages\n) endpoint in Meta collection.",
+                "example_value": "fr",
+                "required": false
+            }
+        },
+        "required": [
+            "slug"
+        ]
+    },
+    "responses": [
+        {
+            "function_name": "Get_Availability",
+            "arguments": {
+                "slug": "prg6h2lj9jfx-city-pub-crawl-with-drinks",
+                "date": "2025-05-25"
+            },
+            "observation": [
+                {
+                    "__typename": "AttractionTimeSlot",
+                    "fullDay": false,
+                    "start": "2025-05-25T19:00:00+05:30",
+                    "timeSlotId": "ATS-PRg6H2LJ9JFX-202505251900-nullnull",
+                    "timeSlotOffers": [
+                        {
+                            "__typename": "AttractionTimeSlotOffer",
+                            "languageOptions": [
+                                {
+                                    "__typename": "OfferLanguageOption",
+                                    "label": "Hindi - Tour guide",
+                                    "language": "hi",
+                                    "type": "guide"
+                                },
+                                {
+                                    "__typename": "OfferLanguageOption",
+                                    "label": "English - Tour guide",
+                                    "language": "en",
+                                    "type": "guide"
+                                }
+                            ],
+                            "additionalInfo": null,
+                            "benefits": {
+                                "__typename": "Benefits",
+                                "freeAudioGuide": null,
+                                "freeDrink": null,
+                                "freeTransportation": null,
+                                "inStoreDiscount": null,
+                                "priorityLane": null,
+                                "skipTheLine": null
+                            },
+                            "description": null,
+                            "id": "OFfiWXve5anX",
+                            "items": [
+                                {
+                                    "__typename": "AttractionTimeSlotOfferItem",
+                                    "cancellationPolicy": {
+                                        "__typename": "AttractionsCancellationPolicy",
+                                        "comparedTo": "start",
+                                        "hasFreeCancellation": true,
+                                        "isStillRefundable": true,
+                                        "percentage": 100,
+                                        "period": "P1D"
+                                    },
+                                    "constraint": {
+                                        "__typename": "Constraint",
+                                        "label": "(age 16-65)",
+                                        "maxGroupSize": null,
+                                        "minGroupSize": null
+                                    },
+                                    "id": "ATO-e90b3d37-72e8-4b12-86e5-9c006d325a12_PRg6H2LJ9JFX_20250525_1900",
+                                    "offerItemId": "OI5K8mlrnLPy",
+                                    "type": "adult",
+                                    "tieredPricing": true,
+                                    "price": {
+                                        "__typename": "AttractionsPrice",
+                                        "chargeAmount": 52.24,
+                                        "currency": "EUR",
+                                        "publicAmount": 52.24
+                                    },
+                                    "convertedPrice": {
+                                        "__typename": "AttractionsPrice",
+                                        "chargeAmount": 58.44,
+                                        "currency": "USD",
+                                        "publicAmount": 58.44
+                                    },
+                                    "languageOption": {
+                                        "__typename": "LanguageOption",
+                                        "language": "hi",
+                                        "type": "guide"
+                                    },
+                                    "travelerCountRequired": null,
+                                    "ticketsAvailable": 10000,
+                                    "maxPerReservation": 1,
+                                    "minPerReservation": 1,
+                                    "duration": null,
+                                    "label": "Adult"
+                                },
+                                {
+                                    "__typename": "AttractionTimeSlotOfferItem",
+                                    "cancellationPolicy": {
+                                        "__typename": "AttractionsCancellationPolicy",
+                                        "comparedTo": "start",
+                                        "hasFreeCancellation": true,
+                                        "isStillRefundable": true,
+                                        "percentage": 100,
+                                        "period": "P1D"
+                                    },
+                                    "constraint": {
+                                        "__typename": "Constraint",
+                                        "label": "(age 16-65)",
+                                        "maxGroupSize": null,
+                                        "minGroupSize": null
+                                    },
+                                    "id": "ATO-666dda19-4650-42b8-bde9-729dd9bce2c5_PRg6H2LJ9JFX_20250525_1900",
+                                    "offerItemId": "OI5K8mlrnLPy",
+                                    "type": "adult",
+                                    "tieredPricing": true,
+                                    "price": {
+                                        "__typename": "AttractionsPrice",
+                                        "chargeAmount": 52.24,
+                                        "currency": "EUR",
+                                        "publicAmount": 52.24
+                                    },
+                                    "convertedPrice": {
+                                        "__typename": "AttractionsPrice",
+                                        "chargeAmount": 58.44,
+                                        "currency": "USD",
+                                        "publicAmount": 58.44
+                                    },
+                                    "languageOption": {
+                                        "__typename": "LanguageOption",
+                                        "language": "en",
+                                        "type": "guide"
+                                    },
+                                    "travelerCountRequired": null,
+                                    "ticketsAvailable": 10000,
+                                    "maxPerReservation": 1,
+                                    "minPerReservation": 1,
+                                    "duration": null,
+                                    "label": "Adult"
+                                },
+                                {
+                                    "__typename": "AttractionTimeSlotOfferItem",
+                                    "cancellationPolicy": {
+                                        "__typename": "AttractionsCancellationPolicy",
+                                        "comparedTo": "start",
+                                        "hasFreeCancellation": true,
+                                        "isStillRefundable": true,
+                                        "percentage": 100,
+                                        "period": "P1D"
+                                    },
+                                    "constraint": {
+                                        "__typename": "Constraint",
+                                        "label": "(age 16-65)",
+                                        "maxGroupSize": null,
+                                        "minGroupSize": null
+                                    },
+                                    "id": "ATO-ab4a7b72-3abd-4801-b33d-074acd04f06d_PRg6H2LJ9JFX_20250525_1900",
+                                    "offerItemId": "OI5K8mlrnLPy",
+                                    "type": "adult",
+                                    "tieredPricing": true,
+                                    "price": {
+                                        "__typename": "AttractionsPrice",
+                                        "chargeAmount": 34.86,
+                                        "currency": "EUR",
+                                        "publicAmount": 34.86
+                                    },
+                                    "convertedPrice": {
+                                        "__typename": "AttractionsPrice",
+                                        "chargeAmount": 39,
+                                        "currency": "USD",
+                                        "publicAmount": 39
+                                    },
+                                    "languageOption": {
+                                        "__typename": "LanguageOption",
+                                        "language": "hi",
+                                        "type": "guide"
+                                    },
+                                    "travelerCountRequired": null,
+                                    "ticketsAvailable": 10000,
+                                    "maxPerReservation": 6,
+                                    "minPerReservation": 2,
+                                    "duration": null,
+                                    "label": "Adult"
+                                }
+                            ],
+                            "label": "South Bombay Pub Crawl",
+                            "locationInstructions": null,
+                            "notIncluded": null,
+                            "reservationRestrictions": {
+                                "__typename": "ReservationRestrictions",
+                                "adultRequiredForReservation": true,
+                                "maxOfferItemsPerReservation": 15,
+                                "minOfferItemsPerReservation": 1
+                            },
+                            "typicalDuration": null,
+                            "whatsIncluded": null
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "function_name": "Get_Availability",
+            "arguments": {
+                "slug": "prg6h2lj9jfx-city-pub-crawl-with-drinks",
+                "date": "2025-05-25",
+                "currency_code": "EUR",
+                "languagecode": "fr"
+            },
+            "observation": [
+                {
+                    "__typename": "AttractionTimeSlot",
+                    "fullDay": false,
+                    "start": "2025-05-25T19:00:00+05:30",
+                    "timeSlotId": "ATS-PRg6H2LJ9JFX-202505251900-nullnull",
+                    "timeSlotOffers": [
+                        {
+                            "__typename": "AttractionTimeSlotOffer",
+                            "languageOptions": [
+                                {
+                                    "__typename": "OfferLanguageOption",
+                                    "label": "Hindi - Services d'un guide",
+                                    "language": "hi",
+                                    "type": "guide"
+                                },
+                                {
+                                    "__typename": "OfferLanguageOption",
+                                    "label": "Anglais - Services d'un guide",
+                                    "language": "en",
+                                    "type": "guide"
+                                }
+                            ],
+                            "additionalInfo": null,
+                            "benefits": {
+                                "__typename": "Benefits",
+                                "freeAudioGuide": null,
+                                "freeDrink": null,
+                                "freeTransportation": null,
+                                "inStoreDiscount": null,
+                                "priorityLane": null,
+                                "skipTheLine": null
+                            },
+                            "description": null,
+                            "id": "OFfiWXve5anX",
+                            "items": [
+                                {
+                                    "__typename": "AttractionTimeSlotOfferItem",
+                                    "cancellationPolicy": {
+                                        "__typename": "AttractionsCancellationPolicy",
+                                        "comparedTo": "start",
+                                        "hasFreeCancellation": true,
+                                        "isStillRefundable": true,
+                                        "percentage": 100,
+                                        "period": "P1D"
+                                    },
+                                    "constraint": {
+                                        "__typename": "Constraint",
+                                        "label": "(de 16 \u00e0 65\u00a0ans)",
+                                        "maxGroupSize": null,
+                                        "minGroupSize": null
+                                    },
+                                    "id": "ATO-e90b3d37-72e8-4b12-86e5-9c006d325a12_PRg6H2LJ9JFX_20250525_1900",
+                                    "offerItemId": "OI5K8mlrnLPy",
+                                    "type": "adult",
+                                    "tieredPricing": true,
+                                    "price": {
+                                        "__typename": "AttractionsPrice",
+                                        "chargeAmount": 52.24,
+                                        "currency": "EUR",
+                                        "publicAmount": 52.24
+                                    },
+                                    "convertedPrice": null,
+                                    "languageOption": {
+                                        "__typename": "LanguageOption",
+                                        "language": "hi",
+                                        "type": "guide"
+                                    },
+                                    "travelerCountRequired": null,
+                                    "ticketsAvailable": 10000,
+                                    "maxPerReservation": 1,
+                                    "minPerReservation": 1,
+                                    "duration": null,
+                                    "label": "Adulte"
+                                },
+                                {
+                                    "__typename": "AttractionTimeSlotOfferItem",
+                                    "cancellationPolicy": {
+                                        "__typename": "AttractionsCancellationPolicy",
+                                        "comparedTo": "start",
+                                        "hasFreeCancellation": true,
+                                        "isStillRefundable": true,
+                                        "percentage": 100,
+                                        "period": "P1D"
+                                    },
+                                    "constraint": {
+                                        "__typename": "Constraint",
+                                        "label": "(de 16 \u00e0 65\u00a0ans)",
+                                        "maxGroupSize": null,
+                                        "minGroupSize": null
+                                    },
+                                    "id": "ATO-666dda19-4650-42b8-bde9-729dd9bce2c5_PRg6H2LJ9JFX_20250525_1900",
+                                    "offerItemId": "OI5K8mlrnLPy",
+                                    "type": "adult",
+                                    "tieredPricing": true,
+                                    "price": {
+                                        "__typename": "AttractionsPrice",
+                                        "chargeAmount": 52.24,
+                                        "currency": "EUR",
+                                        "publicAmount": 52.24
+                                    },
+                                    "convertedPrice": null,
+                                    "languageOption": {
+                                        "__typename": "LanguageOption",
+                                        "language": "en",
+                                        "type": "guide"
+                                    },
+                                    "travelerCountRequired": null,
+                                    "ticketsAvailable": 10000,
+                                    "maxPerReservation": 1,
+                                    "minPerReservation": 1,
+                                    "duration": null,
+                                    "label": "Adulte"
+                                },
+                                {
+                                    "__typename": "AttractionTimeSlotOfferItem",
+                                    "cancellationPolicy": {
+                                        "__typename": "AttractionsCancellationPolicy",
+                                        "comparedTo": "start",
+                                        "hasFreeCancellation": true,
+                                        "isStillRefundable": true,
+                                        "percentage": 100,
+                                        "period": "P1D"
+                                    },
+                                    "constraint": {
+                                        "__typename": "Constraint",
+                                        "label": "(de 16 \u00e0 65\u00a0ans)",
+                                        "maxGroupSize": null,
+                                        "minGroupSize": null
+                                    },
+                                    "id": "ATO-ab4a7b72-3abd-4801-b33d-074acd04f06d_PRg6H2LJ9JFX_20250525_1900",
+                                    "offerItemId": "OI5K8mlrnLPy",
+                                    "type": "adult",
+                                    "tieredPricing": true,
+                                    "price": {
+                                        "__typename": "AttractionsPrice",
+                                        "chargeAmount": 34.86,
+                                        "currency": "EUR",
+                                        "publicAmount": 34.86
+                                    },
+                                    "convertedPrice": null,
+                                    "languageOption": {
+                                        "__typename": "LanguageOption",
+                                        "language": "hi",
+                                        "type": "guide"
+                                    },
+                                    "travelerCountRequired": null,
+                                    "ticketsAvailable": 10000,
+                                    "maxPerReservation": 6,
+                                    "minPerReservation": 2,
+                                    "duration": null,
+                                    "label": "Adulte"
+                                }
+                            ],
+                            "label": "South Bombay Pub Crawl",
+                            "locationInstructions": null,
+                            "notIncluded": null,
+                            "reservationRestrictions": {
+                                "__typename": "ReservationRestrictions",
+                                "adultRequiredForReservation": true,
+                                "maxOfferItemsPerReservation": 15,
+                                "minOfferItemsPerReservation": 1
+                            },
+                            "typicalDuration": null,
+                            "whatsIncluded": null
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "response_summary": "For the South Bombay Pub Crawl on May 25, 2025, starting at 7:00 PM, there are several booking options available. The activity offers guided tours in both Hindi and English. \n\nFor individual bookings, the price is \u20ac52.24 (approximately $58.44 USD) per adult, with free cancellation available up to one day before the event. There are two options for this price\u2014one with a Hindi-speaking guide and another with an English-speaking guide. Each reservation allows a maximum of one ticket per booking.\n\nFor groups of two to six adults, there\u2019s a discounted rate of \u20ac34.86 (around $39 USD) per person when booking with a Hindi-speaking guide. This option also supports free cancellation up to a day before the tour. \n\nThe activity has no specified duration, and tickets are plentiful, with 10,000 available for each option. The pub crawl is designed for adults aged 16 to 65, and while no additional benefits like skip-the-line access or free drinks are included, the experience promises an engaging exploration of South Bombay\u2019s nightlife. \n\nReservations can be made for up to 15 tickets at once, ensuring flexibility for both solo travelers and larger groups.",
+    "enhance_func_desc": "This API is ideal for checking event availability and pricing details for activities like pub crawls. It retrieves booking options, pricing (including group discounts), cancellation policies, and language preferences based on the activity's slug and date. The response includes ticket availability, pricing per person, and booking limits, helping users plan their participation in guided tours or events. The slug must be obtained from the SearchLocation API.",
+    "enhance_params_desc": {
+        "enhanced_parameters": {
+            "slug": "Unique identifier for the attraction, sourced from searchLocation endpoint.",
+            "date": "Filters availability for the attraction on a specific date.",
+            "currency_code": "Currency for displaying attraction prices.",
+            "languagecode": "Language preference for the response data."
+        }
+    },
+    "enhance_resfield_desc": {
+        "response_fields": [
+            {
+                "__typename": {
+                    "type": "String",
+                    "description": "The type of the object, indicating it's an attraction time slot."
+                },
+                "fullDay": {
+                    "type": "Boolean",
+                    "description": "Indicates whether the activity spans the entire day (false in this case)."
+                },
+                "start": {
+                    "type": "String",
+                    "description": "The start date and time of the activity in ISO 8601 format (e.g., '2025-05-25T19:00:00+05:30')."
+                },
+                "timeSlotId": {
+                    "type": "String",
+                    "description": "A unique identifier for the time slot (e.g., 'ATS-PRg6H2LJ9JFX-202505251900-nullnull')."
+                },
+                "timeSlotOffers": {
+                    "type": "Array",
+                    "description": "A list of offers available for the time slot.",
+                    "ar_items": {
+                        "type": "Object",
+                        "description": "An object representing an offer for the time slot.",
+                        "ob_properties": {
+                            "__typename": {
+                                "type": "String",
+                                "description": "The type of the object, indicating it's an attraction time slot offer."
+                            },
+                            "languageOptions": {
+                                "type": "Array",
+                                "description": "A list of language options available for the tour.",
+                                "ar_items": {
+                                    "type": "Object",
+                                    "description": "An object representing a language option for the tour.",
+                                    "ob_properties": {
+                                        "__typename": {
+                                            "type": "String",
+                                            "description": "The type of the object, indicating it's an offer language option."
+                                        },
+                                        "label": {
+                                            "type": "String",
+                                            "description": "The display label for the language option (e.g., 'Hindi - Tour guide')."
+                                        },
+                                        "language": {
+                                            "type": "String",
+                                            "description": "The language code (e.g., 'hi' for Hindi, 'en' for English)."
+                                        },
+                                        "type": {
+                                            "type": "String",
+                                            "description": "The type of the language option (e.g., 'guide')."
+                                        }
+                                    }
+                                }
+                            },
+                            "additionalInfo": {
+                                "type": "null",
+                                "description": "Additional information about the offer, if any (null in this case)."
+                            },
+                            "benefits": {
+                                "type": "Object",
+                                "description": "An object representing the benefits included in the offer.",
+                                "ob_properties": {
+                                    "__typename": {
+                                        "type": "String",
+                                        "description": "The type of the object, indicating it's a benefits object."
+                                    },
+                                    "freeAudioGuide": {
+                                        "type": "null",
+                                        "description": "Indicates if a free audio guide is included (null in this case)."
+                                    },
+                                    "freeDrink": {
+                                        "type": "null",
+                                        "description": "Indicates if a free drink is included (null in this case)."
+                                    },
+                                    "freeTransportation": {
+                                        "type": "null",
+                                        "description": "Indicates if free transportation is included (null in this case)."
+                                    },
+                                    "inStoreDiscount": {
+                                        "type": "null",
+                                        "description": "Indicates if an in-store discount is included (null in this case)."
+                                    },
+                                    "priorityLane": {
+                                        "type": "null",
+                                        "description": "Indicates if priority lane access is included (null in this case)."
+                                    },
+                                    "skipTheLine": {
+                                        "type": "null",
+                                        "description": "Indicates if skip-the-line access is included (null in this case)."
+                                    }
+                                }
+                            },
+                            "description": {
+                                "type": "null",
+                                "description": "A description of the offer (null in this case)."
+                            },
+                            "id": {
+                                "type": "String",
+                                "description": "A unique identifier for the offer (e.g., 'OFfiWXve5anX')."
+                            },
+                            "items": {
+                                "type": "Array",
+                                "description": "A list of items available under the offer.",
+                                "ar_items": {
+                                    "type": "Object",
+                                    "description": "An object representing an offer item.",
+                                    "ob_properties": {
+                                        "__typename": {
+                                            "type": "String",
+                                            "description": "The type of the object, indicating it's an attraction time slot offer item."
+                                        },
+                                        "cancellationPolicy": {
+                                            "type": "Object",
+                                            "description": "An object representing the cancellation policy for the offer item.",
+                                            "ob_properties": {
+                                                "__typename": {
+                                                    "type": "String",
+                                                    "description": "The type of the object, indicating it's an attractions cancellation policy."
+                                                },
+                                                "comparedTo": {
+                                                    "type": "String",
+                                                    "description": "The reference point for the cancellation policy (e.g., 'start')."
+                                                },
+                                                "hasFreeCancellation": {
+                                                    "type": "Boolean",
+                                                    "description": "Indicates if free cancellation is available (true in this case)."
+                                                },
+                                                "isStillRefundable": {
+                                                    "type": "Boolean",
+                                                    "description": "Indicates if the offer is still refundable (true in this case)."
+                                                },
+                                                "percentage": {
+                                                    "type": "Number",
+                                                    "description": "The percentage of the refund (100 in this case)."
+                                                },
+                                                "period": {
+                                                    "type": "String",
+                                                    "description": "The period within which cancellation is allowed (e.g., 'P1D' for one day)."
+                                                }
+                                            }
+                                        },
+                                        "constraint": {
+                                            "type": "Object",
+                                            "description": "An object representing constraints for the offer item.",
+                                            "ob_properties": {
+                                                "__typename": {
+                                                    "type": "String",
+                                                    "description": "The type of the object, indicating it's a constraint object."
+                                                },
+                                                "label": {
+                                                    "type": "String",
+                                                    "description": "A label describing the constraint (e.g., '(age 16-65)')."
+                                                },
+                                                "maxGroupSize": {
+                                                    "type": "null",
+                                                    "description": "The maximum group size allowed (null in this case)."
+                                                },
+                                                "minGroupSize": {
+                                                    "type": "null",
+                                                    "description": "The minimum group size required (null in this case)."
+                                                }
+                                            }
+                                        },
+                                        "id": {
+                                            "type": "String",
+                                            "description": "A unique identifier for the offer item (e.g., 'ATO-e90b3d37-72e8-4b12-86e5-9c006d325a12_PRg6H2LJ9JFX_20250525_1900')."
+                                        },
+                                        "offerItemId": {
+                                            "type": "String",
+                                            "description": "An identifier for the offer item (e.g., 'OI5K8mlrnLPy')."
+                                        },
+                                        "type": {
+                                            "type": "String",
+                                            "description": "The type of the offer item (e.g., 'adult')."
+                                        },
+                                        "tieredPricing": {
+                                            "type": "Boolean",
+                                            "description": "Indicates if tiered pricing is available (true in this case)."
+                                        },
+                                        "price": {
+                                            "type": "Object",
+                                            "description": "An object representing the price of the offer item.",
+                                            "ob_properties": {
+                                                "__typename": {
+                                                    "type": "String",
+                                                    "description": "The type of the object, indicating it's an attractions price."
+                                                },
+                                                "chargeAmount": {
+                                                    "type": "Number",
+                                                    "description": "The charge amount for the offer item (e.g., 52.24)."
+                                                },
+                                                "currency": {
+                                                    "type": "String",
+                                                    "description": "The currency code for the price (e.g., 'EUR')."
+                                                },
+                                                "publicAmount": {
+                                                    "type": "Number",
+                                                    "description": "The public amount for the offer item (e.g., 52.24)."
+                                                }
+                                            }
+                                        },
+                                        "convertedPrice": {
+                                            "type": "Object",
+                                            "description": "An object representing the converted price of the offer item.",
+                                            "ob_properties": {
+                                                "__typename": {
+                                                    "type": "String",
+                                                    "description": "The type of the object, indicating it's an attractions price."
+                                                },
+                                                "chargeAmount": {
+                                                    "type": "Number",
+                                                    "description": "The charge amount in the converted currency (e.g., 58.44)."
+                                                },
+                                                "currency": {
+                                                    "type": "String",
+                                                    "description": "The currency code for the converted price (e.g., 'USD')."
+                                                },
+                                                "publicAmount": {
+                                                    "type": "Number",
+                                                    "description": "The public amount in the converted currency (e.g., 58.44)."
+                                                }
+                                            }
+                                        },
+                                        "languageOption": {
+                                            "type": "Object",
+                                            "description": "An object representing the language option for the offer item.",
+                                            "ob_properties": {
+                                                "__typename": {
+                                                    "type": "String",
+                                                    "description": "The type of the object, indicating it's a language option."
+                                                },
+                                                "language": {
+                                                    "type": "String",
+                                                    "description": "The language code for the offer item (e.g., 'hi' for Hindi)."
+                                                },
+                                                "type": {
+                                                    "type": "String",
+                                                    "description": "The type of the language option (e.g., 'guide')."
+                                                }
+                                            }
+                                        },
+                                        "travelerCountRequired": {
+                                            "type": "null",
+                                            "description": "The number of travelers required for the offer item (null in this case)."
+                                        },
+                                        "ticketsAvailable": {
+                                            "type": "Number",
+                                            "description": "The number of tickets available for the offer item (e.g., 10000)."
+                                        },
+                                        "maxPerReservation": {
+                                            "type": "Number",
+                                            "description": "The maximum number of tickets allowed per reservation (e.g., 1)."
+                                        },
+                                        "minPerReservation": {
+                                            "type": "Number",
+                                            "description": "The minimum number of tickets required per reservation (e.g., 1)."
+                                        },
+                                        "duration": {
+                                            "type": "null",
+                                            "description": "The duration of the activity (null in this case)."
+                                        },
+                                        "label": {
+                                            "type": "String",
+                                            "description": "A label for the offer item (e.g., 'Adult')."
+                                        }
+                                    }
+                                }
+                            },
+                            "label": {
+                                "type": "String",
+                                "description": "The display label for the offer (e.g., 'South Bombay Pub Crawl')."
+                            },
+                            "locationInstructions": {
+                                "type": "null",
+                                "description": "Instructions for the location (null in this case)."
+                            },
+                            "notIncluded": {
+                                "type": "null",
+                                "description": "Items not included in the offer (null in this case)."
+                            },
+                            "reservationRestrictions": {
+                                "type": "Object",
+                                "description": "An object representing restrictions for reservations.",
+                                "ob_properties": {
+                                    "__typename": {
+                                        "type": "String",
+                                        "description": "The type of the object, indicating it's a reservation restrictions object."
+                                    },
+                                    "adultRequiredForReservation": {
+                                        "type": "Boolean",
+                                        "description": "Indicates if an adult is required for the reservation (true in this case)."
+                                    },
+                                    "maxOfferItemsPerReservation": {
+                                        "type": "Number",
+                                        "description": "The maximum number of offer items allowed per reservation (e.g., 15)."
+                                    },
+                                    "minOfferItemsPerReservation": {
+                                        "type": "Number",
+                                        "description": "The minimum number of offer items required per reservation (e.g., 1)."
+                                    }
+                                }
+                            },
+                            "typicalDuration": {
+                                "type": "null",
+                                "description": "The typical duration of the activity (null in this case)."
+                            },
+                            "whatsIncluded": {
+                                "type": "null",
+                                "description": "Items included in the offer (null in this case)."
+                            }
+                        }
+                    }
+                }
+            }
+        ]
+    },
+    "params_desc_list": null,
+    "response_desc_list": [
+        {
+            "path_name": "$[].__typename",
+            "name": "__typename",
+            "description": "The type of the object, indicating it's an attraction time slot."
+        },
+        {
+            "path_name": "$[].fullDay",
+            "name": "fullDay",
+            "description": "Indicates whether the activity spans the entire day (false in this case)."
+        },
+        {
+            "path_name": "$[].start",
+            "name": "start",
+            "description": "The start date and time of the activity in ISO 8601 format (e.g., '2025-05-25T19:00:00+05:30')."
+        },
+        {
+            "path_name": "$[].timeSlotId",
+            "name": "timeSlotId",
+            "description": "A unique identifier for the time slot (e.g., 'ATS-PRg6H2LJ9JFX-202505251900-nullnull')."
+        },
+        {
+            "path_name": "$[].timeSlotOffers",
+            "name": "timeSlotOffers",
+            "description": "A list of offers available for the time slot."
+        },
+        {
+            "path_name": "$[].timeSlotOffers[]",
+            "name": "timeSlotOffers[]",
+            "description": "An object representing an offer for the time slot."
+        },
+        {
+            "path_name": "$[].timeSlotOffers[].__typename",
+            "name": "__typename",
+            "description": "The type of the object, indicating it's an attraction time slot offer."
+        },
+        {
+            "path_name": "$[].timeSlotOffers[].languageOptions",
+            "name": "languageOptions",
+            "description": "A list of language options available for the tour."
+        },
+        {
+            "path_name": "$[].timeSlotOffers[].languageOptions[]",
+            "name": "languageOptions[]",
+            "description": "An object representing a language option for the tour."
+        },
+        {
+            "path_name": "$[].timeSlotOffers[].languageOptions[].__typename",
+            "name": "__typename",
+            "description": "The type of the object, indicating it's an offer language option."
+        },
+        {
+            "path_name": "$[].timeSlotOffers[].languageOptions[].label",
+            "name": "label",
+            "description": "The display label for the language option (e.g., 'Hindi - Tour guide')."
+        },
+        {
+            "path_name": "$[].timeSlotOffers[].languageOptions[].language",
+            "name": "language",
+            "description": "The language code (e.g., 'hi' for Hindi, 'en' for English)."
+        },
+        {
+            "path_name": "$[].timeSlotOffers[].languageOptions[].type",
+            "name": "type",
+            "description": "The type of the language option (e.g., 'guide')."
+        },
+        {
+            "path_name": "$[].timeSlotOffers[].additionalInfo",
+            "name": "additionalInfo",
+            "description": "Additional information about the offer, if any (null in this case)."
+        },
+        {
+            "path_name": "$[].timeSlotOffers[].benefits",
+            "name": "benefits",
+            "description": "An object representing the benefits included in the offer."
+        },
+        {
+            "path_name": "$[].timeSlotOffers[].benefits.__typename",
+            "name": "__typename",
+            "description": "The type of the object, indicating it's a benefits object."
+        },
+        {
+            "path_name": "$[].timeSlotOffers[].benefits.freeAudioGuide",
+            "name": "freeAudioGuide",
+            "description": "Indicates if a free audio guide is included (null in this case)."
+        },
+        {
+            "path_name": "$[].timeSlotOffers[].benefits.freeDrink",
+            "name": "freeDrink",
+            "description": "Indicates if a free drink is included (null in this case)."
+        },
+        {
+            "path_name": "$[].timeSlotOffers[].benefits.freeTransportation",
+            "name": "freeTransportation",
+            "description": "Indicates if free transportation is included (null in this case)."
+        },
+        {
+            "path_name": "$[].timeSlotOffers[].benefits.inStoreDiscount",
+            "name": "inStoreDiscount",
+            "description": "Indicates if an in-store discount is included (null in this case)."
+        },
+        {
+            "path_name": "$[].timeSlotOffers[].benefits.priorityLane",
+            "name": "priorityLane",
+            "description": "Indicates if priority lane access is included (null in this case)."
+        },
+        {
+            "path_name": "$[].timeSlotOffers[].benefits.skipTheLine",
+            "name": "skipTheLine",
+            "description": "Indicates if skip-the-line access is included (null in this case)."
+        },
+        {
+            "path_name": "$[].timeSlotOffers[].description",
+            "name": "description",
+            "description": "A description of the offer (null in this case)."
+        },
+        {
+            "path_name": "$[].timeSlotOffers[].id",
+            "name": "id",
+            "description": "A unique identifier for the offer (e.g., 'OFfiWXve5anX')."
+        },
+        {
+            "path_name": "$[].timeSlotOffers[].items",
+            "name": "items",
+            "description": "A list of items available under the offer."
+        },
+        {
+            "path_name": "$[].timeSlotOffers[].items[]",
+            "name": "items[]",
+            "description": "An object representing an offer item."
+        },
+        {
+            "path_name": "$[].timeSlotOffers[].items[].__typename",
+            "name": "__typename",
+            "description": "The type of the object, indicating it's an attraction time slot offer item."
+        },
+        {
+            "path_name": "$[].timeSlotOffers[].items[].cancellationPolicy",
+            "name": "cancellationPolicy",
+            "description": "An object representing the cancellation policy for the offer item."
+        },
+        {
+            "path_name": "$[].timeSlotOffers[].items[].cancellationPolicy.__typename",
+            "name": "__typename",
+            "description": "The type of the object, indicating it's an attractions cancellation policy."
+        },
+        {
+            "path_name": "$[].timeSlotOffers[].items[].cancellationPolicy.comparedTo",
+            "name": "comparedTo",
+            "description": "The reference point for the cancellation policy (e.g., 'start')."
+        },
+        {
+            "path_name": "$[].timeSlotOffers[].items[].cancellationPolicy.hasFreeCancellation",
+            "name": "hasFreeCancellation",
+            "description": "Indicates if free cancellation is available (true in this case)."
+        },
+        {
+            "path_name": "$[].timeSlotOffers[].items[].cancellationPolicy.isStillRefundable",
+            "name": "isStillRefundable",
+            "description": "Indicates if the offer is still refundable (true in this case)."
+        },
+        {
+            "path_name": "$[].timeSlotOffers[].items[].cancellationPolicy.percentage",
+            "name": "percentage",
+            "description": "The percentage of the refund (100 in this case)."
+        },
+        {
+            "path_name": "$[].timeSlotOffers[].items[].cancellationPolicy.period",
+            "name": "period",
+            "description": "The period within which cancellation is allowed (e.g., 'P1D' for one day)."
+        },
+        {
+            "path_name": "$[].timeSlotOffers[].items[].constraint",
+            "name": "constraint",
+            "description": "An object representing constraints for the offer item."
+        },
+        {
+            "path_name": "$[].timeSlotOffers[].items[].constraint.__typename",
+            "name": "__typename",
+            "description": "The type of the object, indicating it's a constraint object."
+        },
+        {
+            "path_name": "$[].timeSlotOffers[].items[].constraint.label",
+            "name": "label",
+            "description": "A label describing the constraint (e.g., '(age 16-65)')."
+        },
+        {
+            "path_name": "$[].timeSlotOffers[].items[].constraint.maxGroupSize",
+            "name": "maxGroupSize",
+            "description": "The maximum group size allowed (null in this case)."
+        },
+        {
+            "path_name": "$[].timeSlotOffers[].items[].constraint.minGroupSize",
+            "name": "minGroupSize",
+            "description": "The minimum group size required (null in this case)."
+        },
+        {
+            "path_name": "$[].timeSlotOffers[].items[].id",
+            "name": "id",
+            "description": "A unique identifier for the offer item (e.g., 'ATO-e90b3d37-72e8-4b12-86e5-9c006d325a12_PRg6H2LJ9JFX_20250525_1900')."
+        },
+        {
+            "path_name": "$[].timeSlotOffers[].items[].offerItemId",
+            "name": "offerItemId",
+            "description": "An identifier for the offer item (e.g., 'OI5K8mlrnLPy')."
+        },
+        {
+            "path_name": "$[].timeSlotOffers[].items[].type",
+            "name": "type",
+            "description": "The type of the offer item (e.g., 'adult')."
+        },
+        {
+            "path_name": "$[].timeSlotOffers[].items[].tieredPricing",
+            "name": "tieredPricing",
+            "description": "Indicates if tiered pricing is available (true in this case)."
+        },
+        {
+            "path_name": "$[].timeSlotOffers[].items[].price",
+            "name": "price",
+            "description": "An object representing the price of the offer item."
+        },
+        {
+            "path_name": "$[].timeSlotOffers[].items[].price.__typename",
+            "name": "__typename",
+            "description": "The type of the object, indicating it's an attractions price."
+        },
+        {
+            "path_name": "$[].timeSlotOffers[].items[].price.chargeAmount",
+            "name": "chargeAmount",
+            "description": "The charge amount for the offer item (e.g., 52.24)."
+        },
+        {
+            "path_name": "$[].timeSlotOffers[].items[].price.currency",
+            "name": "currency",
+            "description": "The currency code for the price (e.g., 'EUR')."
+        },
+        {
+            "path_name": "$[].timeSlotOffers[].items[].price.publicAmount",
+            "name": "publicAmount",
+            "description": "The public amount for the offer item (e.g., 52.24)."
+        },
+        {
+            "path_name": "$[].timeSlotOffers[].items[].convertedPrice",
+            "name": "convertedPrice",
+            "description": "An object representing the converted price of the offer item."
+        },
+        {
+            "path_name": "$[].timeSlotOffers[].items[].convertedPrice.__typename",
+            "name": "__typename",
+            "description": "The type of the object, indicating it's an attractions price."
+        },
+        {
+            "path_name": "$[].timeSlotOffers[].items[].convertedPrice.chargeAmount",
+            "name": "chargeAmount",
+            "description": "The charge amount in the converted currency (e.g., 58.44)."
+        },
+        {
+            "path_name": "$[].timeSlotOffers[].items[].convertedPrice.currency",
+            "name": "currency",
+            "description": "The currency code for the converted price (e.g., 'USD')."
+        },
+        {
+            "path_name": "$[].timeSlotOffers[].items[].convertedPrice.publicAmount",
+            "name": "publicAmount",
+            "description": "The public amount in the converted currency (e.g., 58.44)."
+        },
+        {
+            "path_name": "$[].timeSlotOffers[].items[].languageOption",
+            "name": "languageOption",
+            "description": "An object representing the language option for the offer item."
+        },
+        {
+            "path_name": "$[].timeSlotOffers[].items[].languageOption.__typename",
+            "name": "__typename",
+            "description": "The type of the object, indicating it's a language option."
+        },
+        {
+            "path_name": "$[].timeSlotOffers[].items[].languageOption.language",
+            "name": "language",
+            "description": "The language code for the offer item (e.g., 'hi' for Hindi)."
+        },
+        {
+            "path_name": "$[].timeSlotOffers[].items[].languageOption.type",
+            "name": "type",
+            "description": "The type of the language option (e.g., 'guide')."
+        },
+        {
+            "path_name": "$[].timeSlotOffers[].items[].travelerCountRequired",
+            "name": "travelerCountRequired",
+            "description": "The number of travelers required for the offer item (null in this case)."
+        },
+        {
+            "path_name": "$[].timeSlotOffers[].items[].ticketsAvailable",
+            "name": "ticketsAvailable",
+            "description": "The number of tickets available for the offer item (e.g., 10000)."
+        },
+        {
+            "path_name": "$[].timeSlotOffers[].items[].maxPerReservation",
+            "name": "maxPerReservation",
+            "description": "The maximum number of tickets allowed per reservation (e.g., 1)."
+        },
+        {
+            "path_name": "$[].timeSlotOffers[].items[].minPerReservation",
+            "name": "minPerReservation",
+            "description": "The minimum number of tickets required per reservation (e.g., 1)."
+        },
+        {
+            "path_name": "$[].timeSlotOffers[].items[].duration",
+            "name": "duration",
+            "description": "The duration of the activity (null in this case)."
+        },
+        {
+            "path_name": "$[].timeSlotOffers[].items[].label",
+            "name": "label",
+            "description": "A label for the offer item (e.g., 'Adult')."
+        },
+        {
+            "path_name": "$[].timeSlotOffers[].label",
+            "name": "label",
+            "description": "The display label for the offer (e.g., 'South Bombay Pub Crawl')."
+        },
+        {
+            "path_name": "$[].timeSlotOffers[].locationInstructions",
+            "name": "locationInstructions",
+            "description": "Instructions for the location (null in this case)."
+        },
+        {
+            "path_name": "$[].timeSlotOffers[].notIncluded",
+            "name": "notIncluded",
+            "description": "Items not included in the offer (null in this case)."
+        },
+        {
+            "path_name": "$[].timeSlotOffers[].reservationRestrictions",
+            "name": "reservationRestrictions",
+            "description": "An object representing restrictions for reservations."
+        },
+        {
+            "path_name": "$[].timeSlotOffers[].reservationRestrictions.__typename",
+            "name": "__typename",
+            "description": "The type of the object, indicating it's a reservation restrictions object."
+        },
+        {
+            "path_name": "$[].timeSlotOffers[].reservationRestrictions.adultRequiredForReservation",
+            "name": "adultRequiredForReservation",
+            "description": "Indicates if an adult is required for the reservation (true in this case)."
+        },
+        {
+            "path_name": "$[].timeSlotOffers[].reservationRestrictions.maxOfferItemsPerReservation",
+            "name": "maxOfferItemsPerReservation",
+            "description": "The maximum number of offer items allowed per reservation (e.g., 15)."
+        },
+        {
+            "path_name": "$[].timeSlotOffers[].reservationRestrictions.minOfferItemsPerReservation",
+            "name": "minOfferItemsPerReservation",
+            "description": "The minimum number of offer items required per reservation (e.g., 1)."
+        },
+        {
+            "path_name": "$[].timeSlotOffers[].typicalDuration",
+            "name": "typicalDuration",
+            "description": "The typical duration of the activity (null in this case)."
+        },
+        {
+            "path_name": "$[].timeSlotOffers[].whatsIncluded",
+            "name": "whatsIncluded",
+            "description": "Items included in the offer (null in this case)."
+        }
+    ],
+    "depends_on": [
+        {
+            "source_api_name": "Search_Attractions",
+            "dependence_type": "Hard Dependency",
+            "depencend_field": "$.products[*].slug",
+            "param_name": "slug",
+            "reason": "There is a clear business association between the Search_Attractions API and the Get_Availability API, as the former provides the necessary slug identifiers required by the latter. The 'products[].slug' field from the Search_Attractions response directly matches the 'slug' parameter needed for the Get_Availability API, both in terms of data type (String) and functional purpose (unique attraction identifier). This represents a hard dependency as the Search_Attractions API is explicitly mentioned as the source for obtaining valid slug values in the target API's documentation."
+        },
+        {
+            "source_api_name": "Search_Attraction_Location",
+            "dependence_type": "Hard Dependency",
+            "depencend_field": "$.destinations[*].id",
+            "param_name": "slug",
+            "reason": "The 'Search_Attraction_Location' API is a necessary prerequisite for the 'Get_Availability' API as it provides the 'slug' parameter required by the target API. The 'destinations[].id' field from the source API can be used as the 'slug' parameter in the target API, as indicated by the description in the target API documentation which specifies that the slug can be retrieved from the searchLocation endpoint. This establishes a hard dependency between the two APIs."
+        }
+    ],
+    "verified": true
+}

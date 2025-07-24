@@ -1,0 +1,164 @@
+{
+    "name": "Search_Car_Location",
+    "docs_row": {
+        "name": "Search_Car_Location",
+        "endpoint": "/api/v1/cars/searchDestination",
+        "func_description": "Find car rental location by searching for their name, address, city, state, country, etc.. ",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "query": {
+                    "type": "String",
+                    "description": "Names of locations, cities, districts, places, countries, counties etc.",
+                    "example_value": "new",
+                    "required": true
+                },
+                "languagecode": {
+                    "type": "String",
+                    "description": "To obtain the response data in a specific language, enter the languagecode. languagecode can be retrieved from api/v1/meta/getLanguages(Get Languages\n) endpoint in Meta collection.",
+                    "example_value": "",
+                    "required": false
+                }
+            },
+            "required": [
+                "query"
+            ]
+        }
+    },
+    "instance": [],
+    "category": null,
+    "tool": null,
+    "api_idx": 14,
+    "params": {
+        "type": "object",
+        "properties": {
+            "query": {
+                "type": "String",
+                "description": "Names of locations, cities, districts, places, countries, counties etc.",
+                "example_value": "new",
+                "required": true
+            },
+            "languagecode": {
+                "type": "String",
+                "description": "To obtain the response data in a specific language, enter the languagecode. languagecode can be retrieved from api/v1/meta/getLanguages(Get Languages\n) endpoint in Meta collection.",
+                "example_value": "",
+                "required": false
+            }
+        },
+        "required": [
+            "query"
+        ]
+    },
+    "responses": [
+        {
+            "function_name": "Search_Car_Location",
+            "arguments": {
+                "query": "Fiumicino Airport"
+            },
+            "observation": [
+                {
+                    "type": "airport",
+                    "coordinates": {
+                        "latitude": 41.7927017211914,
+                        "longitude": 12.2523002624512
+                    },
+                    "name": "Fiumicino Airport",
+                    "iata_code": "FCO",
+                    "country": "Italy",
+                    "city": "Rome"
+                }
+            ]
+        }
+    ],
+    "response_summary": "The response provides details about Fiumicino Airport, located in Rome, Italy. The airport's IATA code is FCO, and its geographical coordinates are latitude 41.7927 and longitude 12.2523. This is the primary international airport serving Rome.",
+    "enhance_func_desc": "This API is suitable for travelers looking for car rental locations. It searches for destinations like airports, cities, or districts based on a query string. Users receive detailed location information including names, IATA codes, and geographical coordinates. The response helps in identifying the nearest car rental pickup points for travel planning. The query parameter is mandatory, while language customization is optional.",
+    "enhance_params_desc": {
+        "enhanced_parameters": {
+            "query": "Search term for locations, cities, airports, or districts to find car rental options.",
+            "languagecode": "Specifies the language for the response data (e.g., 'en-us')."
+        }
+    },
+    "enhance_resfield_desc": {
+        "response_fields": {
+            "type": {
+                "type": "String",
+                "description": "Indicates the type of the location, in this case, an airport."
+            },
+            "coordinates": {
+                "type": "Object",
+                "description": "Geographical coordinates of the airport.",
+                "ob_properties": {
+                    "latitude": {
+                        "type": "Number",
+                        "description": "Latitude coordinate of the airport's location."
+                    },
+                    "longitude": {
+                        "type": "Number",
+                        "description": "Longitude coordinate of the airport's location."
+                    }
+                }
+            },
+            "name": {
+                "type": "String",
+                "description": "The full name of the airport."
+            },
+            "iata_code": {
+                "type": "String",
+                "description": "The IATA code assigned to the airport, used as an identifier in the aviation industry."
+            },
+            "country": {
+                "type": "String",
+                "description": "The country where the airport is located."
+            },
+            "city": {
+                "type": "String",
+                "description": "The city where the airport is located."
+            }
+        }
+    },
+    "params_desc_list": null,
+    "response_desc_list": [
+        {
+            "path_name": "type",
+            "name": "type",
+            "description": "Indicates the type of the location, in this case, an airport."
+        },
+        {
+            "path_name": "coordinates",
+            "name": "coordinates",
+            "description": "Geographical coordinates of the airport."
+        },
+        {
+            "path_name": "coordinates.latitude",
+            "name": "latitude",
+            "description": "Latitude coordinate of the airport's location."
+        },
+        {
+            "path_name": "coordinates.longitude",
+            "name": "longitude",
+            "description": "Longitude coordinate of the airport's location."
+        },
+        {
+            "path_name": "name",
+            "name": "name",
+            "description": "The full name of the airport."
+        },
+        {
+            "path_name": "iata_code",
+            "name": "iata_code",
+            "description": "The IATA code assigned to the airport, used as an identifier in the aviation industry."
+        },
+        {
+            "path_name": "country",
+            "name": "country",
+            "description": "The country where the airport is located."
+        },
+        {
+            "path_name": "city",
+            "name": "city",
+            "description": "The city where the airport is located."
+        }
+    ],
+    "depends_on": null,
+    "verified": true
+}

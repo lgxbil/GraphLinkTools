@@ -1,0 +1,474 @@
+{
+    "name": "Car_Auto-Complete",
+    "docs_row": {
+        "name": "Car_Auto-Complete",
+        "endpoint": "https://booking-com18.p.rapidapi.com/car/auto-complete",
+        "func_description": "",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "query": {
+                    "type": "String",
+                    "description": "Enter at least 2 characters to search\nRequired: true\nEx: New York",
+                    "example_value": "New York",
+                    "required": true
+                },
+                "languageCode": {
+                    "type": "String",
+                    "description": "Language\nlanguageCode can be retrieved from /languages endpoint(data->code)\nEx:  en-us\nDefault value: en-us",
+                    "example_value": "",
+                    "required": false
+                },
+                "countryFlag": {
+                    "type": "String",
+                    "description": "Country\ncountryFlag can be retrieved from /languages endpoint(data->countryFlag)\nEx: us\nDefault value: us",
+                    "example_value": "",
+                    "required": false
+                }
+            },
+            "required": [
+                "query"
+            ]
+        }
+    },
+    "instance": [],
+    "category": null,
+    "tool": null,
+    "api_idx": 27,
+    "params": {
+        "type": "object",
+        "properties": {
+            "query": {
+                "type": "String",
+                "description": "Enter at least 2 characters to search\nRequired: true\nEx: New York",
+                "example_value": "New York",
+                "required": true
+            },
+            "languageCode": {
+                "type": "String",
+                "description": "Language\nlanguageCode can be retrieved from /languages endpoint(data->code)\nEx:  en-us\nDefault value: en-us",
+                "example_value": "",
+                "required": false
+            },
+            "countryFlag": {
+                "type": "String",
+                "description": "Country\ncountryFlag can be retrieved from /languages endpoint(data->countryFlag)\nEx: us\nDefault value: us",
+                "example_value": "",
+                "required": false
+            }
+        },
+        "required": [
+            "query"
+        ]
+    },
+    "responses": [
+        {
+            "function_name": "Car_Auto-Complete",
+            "arguments": {
+                "query": "New York"
+            },
+            "observation": [
+                {
+                    "iata_code": null,
+                    "coordinates": {
+                        "longitude": -73.9818954467773,
+                        "latitude": 40.7680740356445
+                    },
+                    "location_id": null,
+                    "city": "New York",
+                    "city_id": null,
+                    "name": "New York",
+                    "country": "United States",
+                    "type": "city",
+                    "id": "eyJsYXRpdHVkZSI6IjQwLjc2ODA3NDAzNTY0NDUiLCJsb25naXR1ZGUiOiItNzMuOTgxODk1NDQ2Nzc3MyJ9"
+                },
+                {
+                    "name": "John F. Kennedy International Airport",
+                    "city_id": null,
+                    "city": "New York",
+                    "coordinates": {
+                        "longitude": -73.7870025634766,
+                        "latitude": 40.6450004577637
+                    },
+                    "iata_code": "JFK",
+                    "location_id": null,
+                    "type": "airport",
+                    "country": "United States",
+                    "id": "eyJsYXRpdHVkZSI6IjQwLjY0NTAwMDQ1Nzc2MzciLCJsb25naXR1ZGUiOiItNzMuNzg3MDAyNTYzNDc2NiJ9"
+                },
+                {
+                    "city": "New York",
+                    "iata_code": null,
+                    "location_id": null,
+                    "coordinates": {
+                        "longitude": -73.9849090576172,
+                        "latitude": 40.7595901489258
+                    },
+                    "name": "Central New York City",
+                    "city_id": null,
+                    "country": "United States",
+                    "type": "district",
+                    "id": "eyJsYXRpdHVkZSI6IjQwLjc1OTU5MDE0ODkyNTgiLCJsb25naXR1ZGUiOiItNzMuOTg0OTA5MDU3NjE3MiJ9"
+                }
+            ]
+        },
+        {
+            "function_name": "Car_Auto-Complete",
+            "arguments": {
+                "query": "New York",
+                "languageCode": "en-us",
+                "countryFlag": "us"
+            },
+            "observation": [
+                {
+                    "city": "New York",
+                    "name": "New York",
+                    "coordinates": {
+                        "longitude": -73.9818954467773,
+                        "latitude": 40.7680740356445
+                    },
+                    "location_id": null,
+                    "city_id": null,
+                    "iata_code": null,
+                    "country": "United States",
+                    "type": "city",
+                    "id": "eyJsYXRpdHVkZSI6IjQwLjc2ODA3NDAzNTY0NDUiLCJsb25naXR1ZGUiOiItNzMuOTgxODk1NDQ2Nzc3MyJ9"
+                },
+                {
+                    "iata_code": "JFK",
+                    "city_id": null,
+                    "location_id": null,
+                    "type": "airport",
+                    "country": "United States",
+                    "name": "John F. Kennedy International Airport",
+                    "city": "New York",
+                    "coordinates": {
+                        "latitude": 40.6450004577637,
+                        "longitude": -73.7870025634766
+                    },
+                    "id": "eyJsYXRpdHVkZSI6IjQwLjY0NTAwMDQ1Nzc2MzciLCJsb25naXR1ZGUiOiItNzMuNzg3MDAyNTYzNDc2NiJ9"
+                },
+                {
+                    "type": "district",
+                    "country": "United States",
+                    "city_id": null,
+                    "iata_code": null,
+                    "location_id": null,
+                    "coordinates": {
+                        "latitude": 40.7595901489258,
+                        "longitude": -73.9849090576172
+                    },
+                    "name": "Central New York City",
+                    "city": "New York",
+                    "id": "eyJsYXRpdHVkZSI6IjQwLjc1OTU5MDE0ODkyNTgiLCJsb25naXR1ZGUiOiItNzMuOTg0OTA5MDU3NjE3MiJ9"
+                }
+            ]
+        }
+    ],
+    "response_summary": "The response provides information about three locations in New York, United States. First, there's the city of New York itself, located at coordinates 40.7681\u00b0 N, -73.9819\u00b0 W. Second, the John F. Kennedy International Airport (JFK) is situated at 40.6450\u00b0 N, -73.7870\u00b0 W and serves as a major airport for the area. Lastly, Central New York City is identified as a district within the city, positioned at 40.7596\u00b0 N, -73.9849\u00b0 W. While the city and district entries don't have IATA codes, JFK Airport is properly coded as \"JFK\" for airline and travel reference. All three locations share New York as their parent city and are part of the United States.",
+    "enhance_func_desc": "This API is ideal for location-based car rental searches and travel planning. It provides auto-complete suggestions for locations when users search with at least 2 characters, returning detailed information including coordinates and IATA codes where applicable. The response helps identify cities, districts, and airports, with options to filter by language and country for international users.",
+    "enhance_params_desc": {
+        "enhanced_parameters": {
+            "query": "Search term for locations (minimum 2 characters required).",
+            "languageCode": "Language preference for the response (e.g., 'en-us').",
+            "countryFlag": "Country code to filter results (e.g., 'us')."
+        }
+    },
+    "enhance_resfield_desc": {
+        "response_fields": [
+            {
+                "iata_code": {
+                    "type": "String",
+                    "description": "The IATA (International Air Transport Association) code for the location, if applicable (e.g., 'JFK' for John F. Kennedy International Airport). Null if not applicable."
+                },
+                "coordinates": {
+                    "type": "Object",
+                    "description": "The geographical coordinates of the location.",
+                    "ob_properties": {
+                        "longitude": {
+                            "type": "Number",
+                            "description": "The longitude coordinate of the location in decimal degrees (e.g., -73.9818954467773)."
+                        },
+                        "latitude": {
+                            "type": "Number",
+                            "description": "The latitude coordinate of the location in decimal degrees (e.g., 40.7680740356445)."
+                        }
+                    }
+                },
+                "location_id": {
+                    "type": "String",
+                    "description": "An identifier for the location. Null in the provided examples."
+                },
+                "city": {
+                    "type": "String",
+                    "description": "The name of the city where the location is situated (e.g., 'New York')."
+                },
+                "city_id": {
+                    "type": "String",
+                    "description": "An identifier for the city. Null in the provided examples."
+                },
+                "name": {
+                    "type": "String",
+                    "description": "The name of the location (e.g., 'New York', 'John F. Kennedy International Airport', 'Central New York City')."
+                },
+                "country": {
+                    "type": "String",
+                    "description": "The country where the location is situated (e.g., 'United States')."
+                },
+                "type": {
+                    "type": "String",
+                    "description": "The type of location (e.g., 'city', 'airport', 'district')."
+                },
+                "id": {
+                    "type": "String",
+                    "description": "A unique identifier for the location, possibly encoded (e.g., 'eyJsYXRpdHVkZSI6IjQwLjc2ODA3NDAzNTY0NDUiLCJsb25naXR1ZGUiOiItNzMuOTgxODk1NDQ2Nzc3MyJ9')."
+                }
+            }
+        ]
+    },
+    "params_desc_list": null,
+    "response_desc_list": [
+        {
+            "path_name": "$[].iata_code",
+            "name": "iata_code",
+            "description": "The IATA (International Air Transport Association) code for the location, if applicable (e.g., 'JFK' for John F. Kennedy International Airport). Null if not applicable."
+        },
+        {
+            "path_name": "$[].coordinates",
+            "name": "coordinates",
+            "description": "The geographical coordinates of the location."
+        },
+        {
+            "path_name": "$[].coordinates.longitude",
+            "name": "longitude",
+            "description": "The longitude coordinate of the location in decimal degrees (e.g., -73.9818954467773)."
+        },
+        {
+            "path_name": "$[].coordinates.latitude",
+            "name": "latitude",
+            "description": "The latitude coordinate of the location in decimal degrees (e.g., 40.7680740356445)."
+        },
+        {
+            "path_name": "$[].location_id",
+            "name": "location_id",
+            "description": "An identifier for the location. Null in the provided examples."
+        },
+        {
+            "path_name": "$[].city",
+            "name": "city",
+            "description": "The name of the city where the location is situated (e.g., 'New York')."
+        },
+        {
+            "path_name": "$[].city_id",
+            "name": "city_id",
+            "description": "An identifier for the city. Null in the provided examples."
+        },
+        {
+            "path_name": "$[].name",
+            "name": "name",
+            "description": "The name of the location (e.g., 'New York', 'John F. Kennedy International Airport', 'Central New York City')."
+        },
+        {
+            "path_name": "$[].country",
+            "name": "country",
+            "description": "The country where the location is situated (e.g., 'United States')."
+        },
+        {
+            "path_name": "$[].type",
+            "name": "type",
+            "description": "The type of location (e.g., 'city', 'airport', 'district')."
+        },
+        {
+            "path_name": "$[].id",
+            "name": "id",
+            "description": "A unique identifier for the location, possibly encoded (e.g., 'eyJsYXRpdHVkZSI6IjQwLjc2ODA3NDAzNTY0NDUiLCJsb25naXR1ZGUiOiItNzMuOTgxODk1NDQ2Nzc3MyJ9')."
+        }
+    ],
+    "depends_on": [
+        {
+            "target_api_params": "query",
+            "reason": "The 'query' parameter in the target API requires a search term for locations with at least 2 characters. The source API's 'name' field in the response provides the name of the location (e.g., 'Paris', 'Paris City Centre'), which can be directly used as a search term for the target API. The data types match (both are strings), and the source API's response fields contain the exact information needed by the target API parameter.",
+            "source_jsonpath": "$[*].name",
+            "confidence": 100,
+            "dependency_relationship": "Hard Dependency(Prerequisite API)",
+            "source_api": "Search_Hotel_Destination"
+        },
+        {
+            "target_api_params": "query",
+            "reason": "The 'label' field in the source API response provides a detailed description of the location (e.g., 'Paris, Ile de France, France'), which includes the city name and can be used as a search term for the target API. However, it may contain additional information not required by the target API, which could affect the accuracy of the search results.",
+            "source_jsonpath": "$[*].label",
+            "confidence": 85,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Search_Hotel_Destination"
+        },
+        {
+            "target_api_params": "query",
+            "reason": "The 'query' parameter in the target API requires a search term for locations (minimum 2 characters). The source API's 'formatted_address' field provides detailed location information (e.g., '20 W 34th St., New York, NY 10001, United States'). This can be used as a search term for the target API, as it contains the necessary location details. The data types match (both are strings), and the source API's response provides the exact information needed for the target API's query parameter.",
+            "source_jsonpath": "$[*].formatted_address",
+            "confidence": 95,
+            "dependency_relationship": "Hard Dependency(Prerequisite API)",
+            "source_api": "Location_to_Lat_Long"
+        },
+        {
+            "target_api_params": "query",
+            "reason": "The 'name' field in the source API (e.g., 'Empire State Building') can also serve as a valid search term for the target API's query parameter. However, it may be less precise than the 'formatted_address' field, as it lacks specific address details. The data types match (both are strings), and the source API's response provides the necessary information for the target API's query parameter.",
+            "source_jsonpath": "$[*].name",
+            "confidence": 85,
+            "dependency_relationship": "Hard Dependency(Prerequisite API)",
+            "source_api": "Location_to_Lat_Long"
+        },
+        {
+            "target_api_params": "query",
+            "reason": "The 'query' parameter in the target API requires a search term for locations (minimum 2 characters). The source API's 'bCityName' field in the 'ufiDetails' provides city names (e.g., 'Mumbai'), which can be used as search terms for car rental locations. The data type matches (String), and there is a logical business association where travelers might search for car rentals in the same city as their attractions.",
+            "source_jsonpath": "$.products[].ufiDetails.bCityName",
+            "confidence": 95,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Search_Attractions"
+        },
+        {
+            "target_api_params": "query",
+            "reason": "The 'query' parameter in the target API requires a search term for locations (minimum 2 characters). The source API's response includes hotel names (e.g., 'Cherryleen Resort Nagaon', 'Palette Palghar Irayos Resort Lifestyle Retreat') which could be used as search terms for car rental locations. This creates a potential business association where a traveler might want to rent a car near their hotel.",
+            "source_jsonpath": "$.result[].hotel_name",
+            "confidence": 85,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Search_Hotels_By_Coordinates"
+        },
+        {
+            "target_api_params": "query",
+            "reason": "The 'city' field in the source API's response (e.g., 'Nagaon', 'Mumbai') could also serve as a valid search term for the target API's 'query' parameter, as it represents a location where car rentals might be needed.",
+            "source_jsonpath": "$.result[].city",
+            "confidence": 90,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Search_Hotels_By_Coordinates"
+        },
+        {
+            "target_api_params": "query",
+            "reason": "The 'query' parameter in the target API requires a search term for locations with at least 2 characters. The source API's response fields include 'name' and 'code' which can be used as search terms. For example, 'New York' or 'JFK' can be directly used as input for the target API's query parameter. This creates a potential business association where a traveler might search for car rental locations based on flight destination names or airport codes.",
+            "source_jsonpath": "$[*].name",
+            "confidence": 95,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Search_Flight_Location"
+        },
+        {
+            "target_api_params": "query",
+            "reason": "The 'code' field in the source API response (e.g., 'NYC' or 'JFK') can also serve as a valid search term for the target API's query parameter. This is particularly useful when users prefer to search by airport or city codes.",
+            "source_jsonpath": "$[*].code",
+            "confidence": 90,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Search_Flight_Location"
+        },
+        {
+            "target_api_params": "query",
+            "reason": "The 'query' parameter in the target API requires a search term for locations (minimum 2 characters). The source API's 'tag' field in the 'closest_landmarks' and 'popular_landmarks' arrays provides names of nearby attractions (e.g., 'Mumbai Domestic Terminal 1', 'ISKCON', 'Vihar Lake'). These tags can serve as potential search terms for car rental locations, creating a business association where travelers might want to rent a car near popular attractions.",
+            "source_jsonpath": "$.closest_landmarks[].tag",
+            "confidence": 85,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Get_Popular_Attraction_Near_By"
+        },
+        {
+            "target_api_params": "query",
+            "reason": "The 'query' parameter in the target API requires a search term for locations (minimum 2 characters). The source API's 'tag' field in the 'popular_landmarks' array provides names of nearby attractions (e.g., 'Mumbai Domestic Terminal 1', 'Vihar Lake'). These tags can serve as potential search terms for car rental locations, creating a business association where travelers might want to rent a car near popular attractions.",
+            "source_jsonpath": "$.popular_landmarks[].tag",
+            "confidence": 85,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Get_Popular_Attraction_Near_By"
+        },
+        {
+            "target_api_params": "query",
+            "reason": "The 'query' parameter in the target API requires a search term for locations with at least 2 characters. The source API's 'search_results[*].route_info.dropoff.name' field provides location names (e.g., 'John F Kennedy International Airport') which can be used as search terms. The data type matches (String) and the context is appropriate for location-based searches.",
+            "source_jsonpath": "$.search_results[*].route_info.dropoff.name",
+            "confidence": 95,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Car_Search"
+        },
+        {
+            "target_api_params": "query",
+            "reason": "The 'content.map.supplierLocations[*].carouselContent.title' field in the source API provides location names (e.g., 'John F Kennedy International Airport') which can be used as search terms. The data type matches (String) and the context is suitable for location-based searches.",
+            "source_jsonpath": "$.content.map.supplierLocations[*].carouselContent.title",
+            "confidence": 90,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Car_Search"
+        },
+        {
+            "target_api_params": "query",
+            "reason": "The 'query' parameter in the target API requires a search term for locations (minimum 2 characters). The source API's 'departureAirport' and 'arrivalAirport' fields provide detailed airport information including names (e.g., 'Chhatrapati Shivaji International Airport Mumbai'). These names can be used as search terms for car rental locations, creating a potential business association where a traveler might search for car rentals near their flight's departure or arrival airport.",
+            "source_jsonpath": "$.flightOffers[*].segments[*].legs[*].departureAirport.name",
+            "confidence": 85,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Search_Flights_Multi_Stops"
+        },
+        {
+            "target_api_params": "query",
+            "reason": "Similarly, the 'arrivalAirport' names in the source API can also serve as search terms for car rental locations, especially for travelers looking to rent a car upon arrival at their destination.",
+            "source_jsonpath": "$.flightOffers[*].segments[*].legs[*].arrivalAirport.name",
+            "confidence": 85,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Search_Flights_Multi_Stops"
+        },
+        {
+            "target_api_params": "query",
+            "reason": "The 'cityName' fields in the departure and arrival airport information can also be used as search terms for car rental locations, providing a broader search scope (e.g., 'Mumbai' instead of the full airport name).",
+            "source_jsonpath": "$.flightOffers[*].segments[*].legs[*].departureAirport.cityName",
+            "confidence": 80,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Search_Flights_Multi_Stops"
+        },
+        {
+            "target_api_params": "query",
+            "reason": "The 'cityName' fields in the arrival airport information can similarly be used as search terms for car rental locations at the destination city.",
+            "source_jsonpath": "$.flightOffers[*].segments[*].legs[*].arrivalAirport.cityName",
+            "confidence": 80,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Search_Flights_Multi_Stops"
+        },
+        {
+            "target_api_params": "query",
+            "reason": "The 'wishlistName' field in the source API provides a location name (e.g., 'Mumbai'), which could be a suitable search term for the target API's 'query' parameter. The data types match (both are strings), and the location name is directly relevant for car rental searches.",
+            "source_jsonpath": "$.hotels[*].property.wishlistName",
+            "confidence": 85,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Search_Hotels"
+        },
+        {
+            "target_api_params": "query",
+            "reason": "The 'query' parameter in the target API requires a search term for locations (minimum 2 characters). The source API's 'departureAirport' and 'arrivalAirport' fields provide detailed airport names (e.g., 'Chhatrapati Shivaji International Airport Mumbai') which can be used as search terms for car rental locations. The data type matches (String) and the context is relevant for travel planning where users might want to rent a car at their flight's departure or arrival location.",
+            "source_jsonpath": "$.flightOffers[*].segments[*].legs[*].departureAirport.name",
+            "confidence": 95,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Search_Flights"
+        },
+        {
+            "target_api_params": "query",
+            "reason": "The 'query' parameter in the target API requires a search term for locations (minimum 2 characters). The source API's 'arrivalAirport' fields provide detailed airport names (e.g., 'Delhi International Airport') which can be used as search terms for car rental locations. The data type matches (String) and the context is relevant for travel planning where users might want to rent a car at their flight's arrival location.",
+            "source_jsonpath": "$.flightOffers[*].segments[*].legs[*].arrivalAirport.name",
+            "confidence": 95,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Search_Flights"
+        },
+        {
+            "target_api_params": "query",
+            "reason": "The 'query' parameter in the target API requires a search term for locations. The source API's 'pickupLocation' and 'dropOffLocation' fields provide detailed location information including names and descriptions (e.g., 'Chhatrapati Shivaji International Airport (BOM), Mumbai, Maharashtra 400099, India'). These names can be used as search terms for the target API. The data types match (both are strings), and there is a clear business association where a user might search for car rentals at the same locations they are taking a taxi.",
+            "source_jsonpath": "$.journeys[*].pickupLocation.name",
+            "confidence": 95,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Search_Taxi"
+        },
+        {
+            "target_api_params": "query",
+            "reason": "The 'dropOffLocation.name' field in the source API also provides a location name that can be used as a search term for the target API. This is another valid business association where a user might search for car rentals at their taxi drop-off location.",
+            "source_jsonpath": "$.journeys[*].dropOffLocation.name",
+            "confidence": 95,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Search_Taxi"
+        },
+        {
+            "target_api_params": "query",
+            "reason": "The 'query' parameter in the target API requires a search term for locations with at least 2 characters. The source API's 'cityName' field provides exact city names (e.g., 'New York', 'York') which can be directly used as search terms. The data types match (both are strings), and the source API's response fields contain relevant location information that aligns with the target API's requirements.",
+            "source_jsonpath": "$.destinations[*].cityName",
+            "confidence": 95,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Search_Attraction_Location"
+        }
+    ],
+    "verified": true
+}

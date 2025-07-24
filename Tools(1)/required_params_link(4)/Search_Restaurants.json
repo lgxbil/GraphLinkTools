@@ -1,0 +1,322 @@
+{
+    "name": "Search_Restaurants",
+    "docs_row": {
+        "name": "Search_Restaurants",
+        "endpoint": "https://tripadvisor-scraper.p.rapidapi.com/restaurants/search",
+        "func_description": "",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "query": {
+                    "type": "String",
+                    "description": "",
+                    "example_value": "new york",
+                    "required": true
+                }
+            },
+            "required": [
+                "query"
+            ]
+        }
+    },
+    "instance": [],
+    "category": null,
+    "tool": null,
+    "api_idx": 9,
+    "params": {
+        "type": "object",
+        "properties": {
+            "query": {
+                "type": "String",
+                "description": "",
+                "example_value": "new york",
+                "required": true
+            }
+        },
+        "required": [
+            "query"
+        ]
+    },
+    "responses": [
+        {
+            "function_name": "Search_Restaurants",
+            "arguments": {
+                "query": "New York"
+            },
+            "observation": [
+                {
+                    "id": 60763,
+                    "name": "New York City",
+                    "link": "https://www.tripadvisor.com/Restaurants-g60763-New_York_City_New_York.html",
+                    "type": "city",
+                    "thumbnail_url": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1c/c5/7c/68/caption.jpg",
+                    "latitude": 40.713238,
+                    "longitude": -74.00584
+                },
+                {
+                    "id": 28953,
+                    "name": "New York",
+                    "link": "https://www.tripadvisor.com/Restaurants-g28953-New_York.html",
+                    "type": "state",
+                    "thumbnail_url": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/10/eb/87/e9/dsc-0254-largejpg.jpg",
+                    "latitude": 42.423985,
+                    "longitude": -74.88397
+                },
+                {
+                    "id": 970327,
+                    "name": "New York Caf\u00e9",
+                    "link": "https://www.tripadvisor.com/Restaurant_Review-g274887-d970327-Reviews-New_York_Cafe-Budapest_Central_Hungary.html",
+                    "type": "eatery",
+                    "thumbnail_url": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/15/01/6c/fd/20181011-131836-largejpg.jpg",
+                    "latitude": 47.498726,
+                    "longitude": 19.070456
+                }
+            ]
+        },
+        {
+            "function_name": "Search_Restaurants",
+            "arguments": {
+                "query": "New York"
+            },
+            "observation": [
+                {
+                    "id": 60763,
+                    "name": "New York City",
+                    "link": "https://www.tripadvisor.com/Restaurants-g60763-New_York_City_New_York.html",
+                    "type": "city",
+                    "thumbnail_url": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1c/c5/7c/68/caption.jpg",
+                    "latitude": 40.713238,
+                    "longitude": -74.00584
+                },
+                {
+                    "id": 28953,
+                    "name": "New York",
+                    "link": "https://www.tripadvisor.com/Restaurants-g28953-New_York.html",
+                    "type": "state",
+                    "thumbnail_url": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/10/eb/87/e9/dsc-0254-largejpg.jpg",
+                    "latitude": 42.423985,
+                    "longitude": -74.88397
+                },
+                {
+                    "id": 970327,
+                    "name": "New York Caf\u00e9",
+                    "link": "https://www.tripadvisor.com/Restaurant_Review-g274887-d970327-Reviews-New_York_Cafe-Budapest_Central_Hungary.html",
+                    "type": "eatery",
+                    "thumbnail_url": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/15/01/6c/fd/20181011-131836-largejpg.jpg",
+                    "latitude": 47.498726,
+                    "longitude": 19.070456
+                }
+            ]
+        }
+    ],
+    "response_summary": "The API response lists three distinct locations related to the name \"New York.\" First, there's New York City, a major urban destination with its own dedicated page for restaurants, located at coordinates 40.713238 latitude and -74.00584 longitude. Next is the state of New York, which also has a separate dining guide, situated at 42.423985 latitude and -74.88397 longitude. Interestingly, the third entry is not a place but a restaurant called \"New York Caf\u00e9,\" located in Budapest, Hungary, at 47.498726 latitude and 19.070456 longitude. Each entry includes a thumbnail image and a direct link to its respective TripAdvisor page for further details.",
+    "enhance_func_desc": "This API is ideal for travelers and food enthusiasts looking for dining options. It searches for restaurants and locations related to the query, providing details such as name, coordinates, and links to TripAdvisor pages. The response includes both actual locations (like cities or states) and specific restaurants, helping users find dining spots or explore food guides in various regions. The query parameter is mandatory for initiating the search.",
+    "enhance_params_desc": {
+        "enhanced_parameters": {
+            "query": "Search term for restaurants or locations, e.g., city, state, or restaurant name."
+        }
+    },
+    "enhance_resfield_desc": {
+        "response_fields": [
+            {
+                "id": {
+                    "type": "Number",
+                    "description": "A unique identifier for the location or establishment (e.g., 60763 for New York City)."
+                },
+                "name": {
+                    "type": "String",
+                    "description": "The name of the location or establishment (e.g., 'New York City', 'New York Caf\u00e9')."
+                },
+                "link": {
+                    "type": "String",
+                    "description": "The URL to the TripAdvisor page for the location or establishment, providing further details."
+                },
+                "type": {
+                    "type": "String",
+                    "description": "The category of the entry, such as 'city', 'state', or 'eatery'."
+                },
+                "thumbnail_url": {
+                    "type": "String",
+                    "description": "The URL of a thumbnail image representing the location or establishment."
+                },
+                "latitude": {
+                    "type": "Number",
+                    "description": "The geographic latitude coordinate of the location or establishment."
+                },
+                "longitude": {
+                    "type": "Number",
+                    "description": "The geographic longitude coordinate of the location or establishment."
+                }
+            }
+        ]
+    },
+    "params_desc_list": null,
+    "response_desc_list": [
+        {
+            "path_name": "$[].id",
+            "name": "id",
+            "description": "A unique identifier for the location or establishment (e.g., 60763 for New York City)."
+        },
+        {
+            "path_name": "$[].name",
+            "name": "name",
+            "description": "The name of the location or establishment (e.g., 'New York City', 'New York Caf\u00e9')."
+        },
+        {
+            "path_name": "$[].link",
+            "name": "link",
+            "description": "The URL to the TripAdvisor page for the location or establishment, providing further details."
+        },
+        {
+            "path_name": "$[].type",
+            "name": "type",
+            "description": "The category of the entry, such as 'city', 'state', or 'eatery'."
+        },
+        {
+            "path_name": "$[].thumbnail_url",
+            "name": "thumbnail_url",
+            "description": "The URL of a thumbnail image representing the location or establishment."
+        },
+        {
+            "path_name": "$[].latitude",
+            "name": "latitude",
+            "description": "The geographic latitude coordinate of the location or establishment."
+        },
+        {
+            "path_name": "$[].longitude",
+            "name": "longitude",
+            "description": "The geographic longitude coordinate of the location or establishment."
+        }
+    ],
+    "depends_on": [
+        {
+            "target_api_params": "query",
+            "reason": "The 'query' parameter in the target API requires a search term for restaurants or locations. The source API's 'name' field provides the exact name of a restaurant (e.g., 'Piccola Cucina Estiatorio'), which can be directly used as a search term. This creates a potential business association where a user might want to search for more details or similar restaurants based on a known restaurant name.",
+            "source_jsonpath": "$.name",
+            "confidence": 95,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Get_restaurant_details"
+        },
+        {
+            "target_api_params": "query",
+            "reason": "The 'city' field in the detailed address of the source API provides the city name (e.g., 'New York City'), which can be used as a search term in the target API. This is useful for scenarios where a user wants to explore all restaurants in a specific city.",
+            "source_jsonpath": "$.detailed_address.city",
+            "confidence": 90,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Get_restaurant_details"
+        },
+        {
+            "target_api_params": "query",
+            "reason": "The 'query' parameter in the target API requires a search term for restaurants or locations. The source API's 'query' parameter serves the same purpose, allowing users to search for restaurants by location or name. This creates a direct match where the output from the source API can be used as input for the target API.",
+            "source_jsonpath": "$.query",
+            "confidence": 100,
+            "dependency_relationship": "Hard Dependency(Prerequisite API)",
+            "source_api": "List_Restaurants_By_Search_Query"
+        },
+        {
+            "target_api_params": "query",
+            "reason": "The 'city' field in the source API's response provides the city names where hotels are located (e.g., 'Nagaon', 'Mumbai'). These city names could be used as search terms for restaurants in the target API. The data types match (both are strings), and the context is relevant for searching restaurants in those cities.",
+            "source_jsonpath": "$.result[].city",
+            "confidence": 85,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Search_Hotels_By_Coordinates"
+        },
+        {
+            "target_api_params": "query",
+            "reason": "The 'query' parameter in the target API requires a search term for restaurants or locations, such as a city, state, or restaurant name. The source API's 'name' field in the response provides the name of the destination (e.g., 'Paris City Centre' or 'Eiffel Tower'), which can be used as a search term for restaurants in that location. The data types match (both are strings), and there is a clear business association where a traveler might search for restaurants in a destination they found via the hotel search.",
+            "source_jsonpath": "$[*].name",
+            "confidence": 95,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Search_Hotel_Destination"
+        },
+        {
+            "target_api_params": "query",
+            "reason": "The 'label' field in the source API provides a detailed description of the destination (e.g., 'Eiffel Tower, Paris, Ile de France, France'), which includes the city name and could be used as a search term for restaurants. However, it is more verbose than necessary and might include extraneous information. The data types match (both are strings), but the confidence is slightly lower due to the potential for over-specificity.",
+            "source_jsonpath": "$[*].label",
+            "confidence": 85,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Search_Hotel_Destination"
+        },
+        {
+            "target_api_params": "query",
+            "reason": "The 'query' parameter in the target API requires a search term for restaurants or locations, such as a city or restaurant name. The source API's response fields include 'city' and 'name' fields (e.g., 'New York' or 'John F. Kennedy International Airport'), which can be used as search terms for restaurants. This creates a potential business association where a traveler might want to search for restaurants in the same city where they are renting a car.",
+            "source_jsonpath": "$[*].city",
+            "confidence": 85,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Car_Auto-Complete"
+        },
+        {
+            "target_api_params": "query",
+            "reason": "The 'name' field in the source API response (e.g., 'Central New York City') can also serve as a valid search term for the target API, as it represents a location that could have restaurants. This is another example of a business association where the location name from the car rental API can be used to search for restaurants.",
+            "source_jsonpath": "$[*].name",
+            "confidence": 85,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Car_Auto-Complete"
+        },
+        {
+            "target_api_params": "query",
+            "reason": "The 'query' parameter in the target API requires a search term for restaurants or locations, such as a city or restaurant name. The source API's 'cityName' field in the 'destinations' array provides the name of the city (e.g., 'New York'), which can be directly used as a search term for restaurants in that city. The data types match (both are strings), and there is a clear business association where a traveler might want to search for restaurants in a city they are visiting for attractions.",
+            "source_jsonpath": "$.destinations[].cityName",
+            "confidence": 95,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Search_Attraction_Location"
+        },
+        {
+            "target_api_params": "query",
+            "reason": "The 'query' parameter in the target API requires a search term for restaurants or locations, such as a city, state, or restaurant name. The source API's response fields include 'cityName' and 'regionName', which could be used as search terms for restaurants in those locations. For example, 'New York' from 'cityName' or 'regionName' could be directly used as a query for the target API. The data types match (both are strings), and there is a clear business association where a traveler might want to search for restaurants in the city or region they are flying to.",
+            "source_jsonpath": "$[*].cityName",
+            "confidence": 95,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Search_Flight_Location"
+        },
+        {
+            "target_api_params": "query",
+            "reason": "The 'query' parameter in the target API requires a search term for restaurants or locations, such as a city or restaurant name. The source API's 'ufiFilters[*].name' field provides location names (e.g., 'Mumbai', 'Andheri'), which could be used as search terms for restaurants in those locations. The data types match (both are strings), and there is a reasonable business association where a traveler might search for restaurants in the same location they are searching for attractions.",
+            "source_jsonpath": "$.filterOptions.ufiFilters[*].name",
+            "confidence": 85,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Search_Attractions"
+        },
+        {
+            "target_api_params": "query",
+            "reason": "The 'query' parameter in the target API requires a search term for restaurants or locations, such as a city or restaurant name. The source API's response fields include 'name' and 'city' which could be used as search terms for the target API. For example, the 'city' field in the source API response is 'New York', which matches the example value for the target API's 'query' parameter. This creates a potential business association where a traveler might search for restaurants in the same city where they are looking for a taxi.",
+            "source_jsonpath": "$[*].city",
+            "confidence": 85,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Taxi_Search_Location"
+        },
+        {
+            "target_api_params": "query",
+            "reason": "The 'query' parameter in the target API requires a search term for restaurants or locations, such as a city or state name. The source API's 'name' field in the response provides the names of nearby cities (e.g., 'Brooklyn', 'Hoboken'). This creates a potential business association where a traveler might want to search for restaurants in nearby cities after finding accommodation options.",
+            "source_jsonpath": "$[*].name",
+            "confidence": 85,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Get_Nearby_Cities"
+        },
+        {
+            "target_api_params": "query",
+            "reason": "The 'region' field in the source API provides the state or region name (e.g., 'New York State', 'New Jersey'), which could also be used as a search term for restaurants in the target API. This is another potential business association where a traveler might want to search for restaurants in a broader region.",
+            "source_jsonpath": "$[*].region",
+            "confidence": 80,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Get_Nearby_Cities"
+        },
+        {
+            "target_api_params": "query",
+            "reason": "The 'query' parameter in the target API requires a search term for restaurants or locations. The source API's 'arrivalAirport.cityName' field provides the city name where the flight arrives (e.g., 'Ahmedabad'). This creates a potential business association where a traveler might want to search for restaurants in the city they are arriving at.",
+            "source_jsonpath": "$.flightOffers[*].segments[*].arrivalAirport.cityName",
+            "confidence": 85,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Search_Flights_Multi_Stops"
+        },
+        {
+            "target_api_params": "query",
+            "reason": "The 'query' parameter in the target API requires a search term for restaurants or locations. The source API's 'arrivalAirport.cityName' field provides the city name where the flight arrives (e.g., 'New Delhi'). This creates a potential business association where a traveler might want to search for restaurants in the city they are arriving at.",
+            "source_jsonpath": "$.flightOffers[*].segments[*].arrivalAirport.cityName",
+            "confidence": 85,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Search_Flights"
+        }
+    ],
+    "verified": true
+}

@@ -1,0 +1,629 @@
+{
+    "name": "Get_Hotel_Facilities",
+    "docs_row": {
+        "name": "Get_Hotel_Facilities",
+        "endpoint": "/api/v1/hotels/getHotelFacilities",
+        "func_description": "Retrieves a list of facilities and services (e.g., pool, gym, Wi-Fi) offered by a specified hotel, with optional filtering by date and language.",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "hotel_id": {
+                    "type": "String",
+                    "description": "hotel_id can be retrieved from api/v1/hotels/searchHotels(Search Hotels) or api/v1/hotels/searchHotelsByCoordinates(Search Hotels By Coordinates\n) endpoint in Hotels collection.",
+                    "example_value": "5955189",
+                    "required": true
+                },
+                "arrival_date": {
+                    "type": "Date (yyyy-mm-dd)",
+                    "description": "The date on which you will arrive or check-in",
+                    "example_value": "",
+                    "required": false
+                },
+                "departure_date": {
+                    "type": "Date (yyyy-mm-dd)",
+                    "description": "The date of departure or check-out.",
+                    "example_value": "",
+                    "required": false
+                },
+                "languagecode": {
+                    "type": "String",
+                    "description": "To obtain the response data in a specific language, enter the languagecode. languagecode can be retrieved from api/v1/meta/getLanguages(Get Languages\n) endpoint in Meta collection.",
+                    "example_value": "en-us",
+                    "required": false
+                }
+            },
+            "required": [
+                "hotel_id"
+            ]
+        }
+    },
+    "instance": [],
+    "category": null,
+    "tool": null,
+    "api_idx": 32,
+    "params": {
+        "type": "object",
+        "properties": {
+            "hotel_id": {
+                "type": "String",
+                "description": "hotel_id can be retrieved from api/v1/hotels/searchHotels(Search Hotels) or api/v1/hotels/searchHotelsByCoordinates(Search Hotels By Coordinates\n) endpoint in Hotels collection.",
+                "example_value": "5955189",
+                "required": true
+            },
+            "arrival_date": {
+                "type": "Date (yyyy-mm-dd)",
+                "description": "The date on which you will arrive or check-in",
+                "example_value": "",
+                "required": false
+            },
+            "departure_date": {
+                "type": "Date (yyyy-mm-dd)",
+                "description": "The date of departure or check-out.",
+                "example_value": "",
+                "required": false
+            },
+            "languagecode": {
+                "type": "String",
+                "description": "To obtain the response data in a specific language, enter the languagecode. languagecode can be retrieved from api/v1/meta/getLanguages(Get Languages\n) endpoint in Meta collection.",
+                "example_value": "en-us",
+                "required": false
+            }
+        },
+        "required": [
+            "hotel_id"
+        ]
+    },
+    "responses": [
+        {
+            "function_name": "Get_Hotel_Facilities",
+            "arguments": {
+                "hotel_id": "5955189"
+            },
+            "observation": {
+                "accommodationHighlights": [],
+                "facilities": [
+                    {
+                        "id": 110,
+                        "groupId": 1,
+                        "instances": [
+                            {
+                                "title": "Designated smoking area",
+                                "subFacilities": [],
+                                "attributes": {
+                                    "name": null,
+                                    "paymentInfo": {
+                                        "chargeMode": "UNKNOWN_CHARGE_MODE"
+                                    },
+                                    "closureScheduleDuringStay": [],
+                                    "scheduleEntry": [],
+                                    "extendedAttributes": null
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "id": 109,
+                        "groupId": 1,
+                        "instances": [
+                            {
+                                "title": "Air conditioning",
+                                "subFacilities": [],
+                                "attributes": {
+                                    "name": null,
+                                    "paymentInfo": {
+                                        "chargeMode": "FREE"
+                                    },
+                                    "closureScheduleDuringStay": [],
+                                    "scheduleEntry": [],
+                                    "extendedAttributes": null
+                                }
+                            }
+                        ]
+                    }
+                ],
+                "highlights": [
+                    {
+                        "instances": [
+                            {
+                                "title": "Internet services"
+                            }
+                        ]
+                    },
+                    {
+                        "instances": [
+                            {
+                                "title": "Non-smoking rooms"
+                            }
+                        ]
+                    }
+                ],
+                "facilityGroups": [
+                    {
+                        "id": -3,
+                        "title": "General",
+                        "summary": null
+                    },
+                    {
+                        "id": -4,
+                        "title": "Some rooms",
+                        "summary": null
+                    }
+                ]
+            }
+        },
+        {
+            "function_name": "Get_Hotel_Facilities",
+            "arguments": {
+                "hotel_id": "5955189"
+            },
+            "observation": {
+                "accommodationHighlights": [
+                    {
+                        "title": "Parking"
+                    },
+                    {
+                        "title": "Private bathroom"
+                    },
+                    {
+                        "title": "Air conditioning"
+                    }
+                ],
+                "facilities": [
+                    {
+                        "id": 110,
+                        "groupId": 1,
+                        "instances": [
+                            {
+                                "title": "Designated smoking area",
+                                "subFacilities": [],
+                                "attributes": {
+                                    "name": null,
+                                    "paymentInfo": {
+                                        "chargeMode": "UNKNOWN_CHARGE_MODE"
+                                    },
+                                    "closureScheduleDuringStay": [],
+                                    "scheduleEntry": [],
+                                    "extendedAttributes": null
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "id": 109,
+                        "groupId": 1,
+                        "instances": [
+                            {
+                                "title": "Air conditioning",
+                                "subFacilities": [],
+                                "attributes": {
+                                    "name": null,
+                                    "paymentInfo": {
+                                        "chargeMode": "FREE"
+                                    },
+                                    "closureScheduleDuringStay": [],
+                                    "scheduleEntry": [],
+                                    "extendedAttributes": null
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "id": 108,
+                        "groupId": 1,
+                        "instances": [
+                            {
+                                "title": "Non-smoking throughout",
+                                "subFacilities": [],
+                                "attributes": {
+                                    "name": null,
+                                    "paymentInfo": {
+                                        "chargeMode": "UNKNOWN_CHARGE_MODE"
+                                    },
+                                    "closureScheduleDuringStay": [],
+                                    "scheduleEntry": [],
+                                    "extendedAttributes": null
+                                }
+                            }
+                        ]
+                    }
+                ],
+                "highlights": [
+                    {
+                        "instances": [
+                            {
+                                "title": "Internet services"
+                            }
+                        ]
+                    },
+                    {
+                        "instances": [
+                            {
+                                "title": "Non-smoking rooms"
+                            }
+                        ]
+                    },
+                    {
+                        "instances": [
+                            {
+                                "title": "Parking"
+                            }
+                        ]
+                    }
+                ],
+                "facilityGroups": [
+                    {
+                        "id": -3,
+                        "title": "General",
+                        "summary": null
+                    },
+                    {
+                        "id": -4,
+                        "title": "Some rooms",
+                        "summary": null
+                    },
+                    {
+                        "id": 18,
+                        "title": "Layout",
+                        "summary": null
+                    }
+                ]
+            }
+        }
+    ],
+    "response_summary": "The accommodation offers several facilities and highlights to enhance your stay. Among the general amenities, you'll find a designated smoking area, though the pricing details for its use are unspecified. Air conditioning is available free of charge, ensuring comfort during your visit. The property maintains a non-smoking policy throughout most areas, though the specifics of any charges related to this are not detailed.  \n\nKey highlights of the accommodation include internet services for staying connected, non-smoking rooms for a fresh environment, and room service for added convenience. The facilities are categorized under general amenities, some room-specific features, and layout details, though no further summaries are provided for these groups. Overall, the property focuses on comfort and convenience with essential services and a smoke-free environment.",
+    "enhance_func_desc": "This API is useful for travelers evaluating hotel amenities before booking. It retrieves detailed facility information for a specific hotel, including general amenities (e.g., air conditioning, smoking areas), room features (e.g., non-smoking rooms, internet), and service highlights (e.g., room service). The response helps users assess comfort and convenience factors, with optional filtering by stay dates and language preferences. The hotel ID must be obtained from SearchHotels APIs.",
+    "enhance_params_desc": {
+        "enhanced_parameters": {
+            "hotel_id": "Unique identifier for the hotel, sourced from searchHotels or searchHotelsByCoordinates endpoints.",
+            "arrival_date": "Filters facilities available from the check-in date.",
+            "departure_date": "Filters facilities available until the check-out date.",
+            "languagecode": "Language preference for the response data."
+        }
+    },
+    "enhance_resfield_desc": {
+        "response_fields": {
+            "accommodationHighlights": {
+                "type": "Array",
+                "description": "An array of accommodation highlights, currently empty in this response."
+            },
+            "facilities": {
+                "type": "Array",
+                "description": "A list of facilities available at the accommodation.",
+                "ar_items": {
+                    "type": "Object",
+                    "description": "An object representing a facility and its details.",
+                    "ob_properties": {
+                        "id": {
+                            "type": "Number",
+                            "description": "The unique identifier for the facility."
+                        },
+                        "groupId": {
+                            "type": "Number",
+                            "description": "The group ID to which the facility belongs."
+                        },
+                        "instances": {
+                            "type": "Array",
+                            "description": "A list of instances of the facility.",
+                            "ar_items": {
+                                "type": "Object",
+                                "description": "An object representing a specific instance of the facility.",
+                                "ob_properties": {
+                                    "title": {
+                                        "type": "String",
+                                        "description": "The title or name of the facility instance (e.g., 'Designated smoking area')."
+                                    },
+                                    "subFacilities": {
+                                        "type": "Array",
+                                        "description": "A list of sub-facilities related to this instance, currently empty."
+                                    },
+                                    "attributes": {
+                                        "type": "Object",
+                                        "description": "An object containing additional attributes of the facility instance.",
+                                        "ob_properties": {
+                                            "name": {
+                                                "type": "String",
+                                                "description": "The name of the facility, if specified (null in this case)."
+                                            },
+                                            "paymentInfo": {
+                                                "type": "Object",
+                                                "description": "An object containing payment-related information for the facility.",
+                                                "ob_properties": {
+                                                    "chargeMode": {
+                                                        "type": "String",
+                                                        "description": "The charge mode for the facility (e.g., 'FREE', 'UNKNOWN_CHARGE_MODE')."
+                                                    }
+                                                }
+                                            },
+                                            "closureScheduleDuringStay": {
+                                                "type": "Array",
+                                                "description": "A list of closure schedules during the stay, currently empty."
+                                            },
+                                            "scheduleEntry": {
+                                                "type": "Array",
+                                                "description": "A list of schedule entries, currently empty."
+                                            },
+                                            "extendedAttributes": {
+                                                "type": "String",
+                                                "description": "Extended attributes for the facility, if any (null in this case)."
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "highlights": {
+                "type": "Array",
+                "description": "A list of key highlights of the accommodation.",
+                "ar_items": {
+                    "type": "Object",
+                    "description": "An object representing a highlight of the accommodation.",
+                    "ob_properties": {
+                        "instances": {
+                            "type": "Array",
+                            "description": "A list of instances of the highlight.",
+                            "ar_items": {
+                                "type": "Object",
+                                "description": "An object representing a specific instance of the highlight.",
+                                "ob_properties": {
+                                    "title": {
+                                        "type": "String",
+                                        "description": "The title or name of the highlight instance (e.g., 'Internet services')."
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "facilityGroups": {
+                "type": "Array",
+                "description": "A list of facility groups available at the accommodation.",
+                "ar_items": {
+                    "type": "Object",
+                    "description": "An object representing a facility group.",
+                    "ob_properties": {
+                        "id": {
+                            "type": "Number",
+                            "description": "The unique identifier for the facility group."
+                        },
+                        "title": {
+                            "type": "String",
+                            "description": "The title or name of the facility group (e.g., 'General', 'Some rooms')."
+                        },
+                        "summary": {
+                            "type": "String",
+                            "description": "A summary of the facility group, if any (null in this case)."
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "params_desc_list": null,
+    "response_desc_list": [
+        {
+            "path_name": "$.accommodationHighlights",
+            "name": "accommodationHighlights",
+            "description": "An array of accommodation highlights, currently empty in this response."
+        },
+        {
+            "path_name": "$.facilities",
+            "name": "facilities",
+            "description": "A list of facilities available at the accommodation."
+        },
+        {
+            "path_name": "$.facilities[]",
+            "name": "facilities[]",
+            "description": "An object representing a facility and its details."
+        },
+        {
+            "path_name": "$.facilities[].id",
+            "name": "id",
+            "description": "The unique identifier for the facility."
+        },
+        {
+            "path_name": "$.facilities[].groupId",
+            "name": "groupId",
+            "description": "The group ID to which the facility belongs."
+        },
+        {
+            "path_name": "$.facilities[].instances",
+            "name": "instances",
+            "description": "A list of instances of the facility."
+        },
+        {
+            "path_name": "$.facilities[].instances[]",
+            "name": "instances[]",
+            "description": "An object representing a specific instance of the facility."
+        },
+        {
+            "path_name": "$.facilities[].instances[].title",
+            "name": "title",
+            "description": "The title or name of the facility instance (e.g., 'Designated smoking area')."
+        },
+        {
+            "path_name": "$.facilities[].instances[].subFacilities",
+            "name": "subFacilities",
+            "description": "A list of sub-facilities related to this instance, currently empty."
+        },
+        {
+            "path_name": "$.facilities[].instances[].attributes",
+            "name": "attributes",
+            "description": "An object containing additional attributes of the facility instance."
+        },
+        {
+            "path_name": "$.facilities[].instances[].attributes.name",
+            "name": "name",
+            "description": "The name of the facility, if specified (null in this case)."
+        },
+        {
+            "path_name": "$.facilities[].instances[].attributes.paymentInfo",
+            "name": "paymentInfo",
+            "description": "An object containing payment-related information for the facility."
+        },
+        {
+            "path_name": "$.facilities[].instances[].attributes.paymentInfo.chargeMode",
+            "name": "chargeMode",
+            "description": "The charge mode for the facility (e.g., 'FREE', 'UNKNOWN_CHARGE_MODE')."
+        },
+        {
+            "path_name": "$.facilities[].instances[].attributes.closureScheduleDuringStay",
+            "name": "closureScheduleDuringStay",
+            "description": "A list of closure schedules during the stay, currently empty."
+        },
+        {
+            "path_name": "$.facilities[].instances[].attributes.scheduleEntry",
+            "name": "scheduleEntry",
+            "description": "A list of schedule entries, currently empty."
+        },
+        {
+            "path_name": "$.facilities[].instances[].attributes.extendedAttributes",
+            "name": "extendedAttributes",
+            "description": "Extended attributes for the facility, if any (null in this case)."
+        },
+        {
+            "path_name": "$.highlights",
+            "name": "highlights",
+            "description": "A list of key highlights of the accommodation."
+        },
+        {
+            "path_name": "$.highlights[]",
+            "name": "highlights[]",
+            "description": "An object representing a highlight of the accommodation."
+        },
+        {
+            "path_name": "$.highlights[].instances",
+            "name": "instances",
+            "description": "A list of instances of the highlight."
+        },
+        {
+            "path_name": "$.highlights[].instances[]",
+            "name": "instances[]",
+            "description": "An object representing a specific instance of the highlight."
+        },
+        {
+            "path_name": "$.highlights[].instances[].title",
+            "name": "title",
+            "description": "The title or name of the highlight instance (e.g., 'Internet services')."
+        },
+        {
+            "path_name": "$.facilityGroups",
+            "name": "facilityGroups",
+            "description": "A list of facility groups available at the accommodation."
+        },
+        {
+            "path_name": "$.facilityGroups[]",
+            "name": "facilityGroups[]",
+            "description": "An object representing a facility group."
+        },
+        {
+            "path_name": "$.facilityGroups[].id",
+            "name": "id",
+            "description": "The unique identifier for the facility group."
+        },
+        {
+            "path_name": "$.facilityGroups[].title",
+            "name": "title",
+            "description": "The title or name of the facility group (e.g., 'General', 'Some rooms')."
+        },
+        {
+            "path_name": "$.facilityGroups[].summary",
+            "name": "summary",
+            "description": "A summary of the facility group, if any (null in this case)."
+        }
+    ],
+    "depends_on": [
+        {
+            "target_api_params": "hotel_id",
+            "reason": "The 'hotel_id' parameter in the target API is explicitly mentioned to be retrievable from the 'Search_Hotels' API, which is the source API in this case. The source API's response includes a 'hotel_id' field for each hotel in the 'hotels' array, matching exactly what the target API requires. This is a direct and necessary prerequisite for calling the target API.",
+            "source_jsonpath": "$.hotels[].hotel_id",
+            "confidence": 100,
+            "dependency_relationship": "Hard Dependency(Prerequisite API)",
+            "source_api": "Search_Hotels"
+        },
+        {
+            "target_api_params": "hotel_id",
+            "reason": "The 'hotel_id' parameter in the target API requires a specific hotel identifier. The source API's response includes a 'hotel_id' field that matches exactly in type and purpose, as both APIs expect the hotel ID to be obtained from the same endpoints (SearchHotels or SearchHotelsByCoordinates). This establishes a hard dependency as the source API's response directly provides the necessary input for the target API.",
+            "source_jsonpath": "$.hotel_id",
+            "confidence": 100,
+            "dependency_relationship": "Hard Dependency(Prerequisite API)",
+            "source_api": "Get_Question_And_Answer"
+        },
+        {
+            "target_api_params": "hotel_id",
+            "reason": "The 'hotel_id' parameter in the target API is a required field that must be obtained from the SearchHotels API. The source API's response includes a 'hotel_id' field in each review entry, which matches exactly with the target API's requirement. This establishes a hard dependency as the source API's hotel_id is a direct prerequisite for calling the target API.",
+            "source_jsonpath": "$.result[*].hotel_id",
+            "confidence": 100,
+            "dependency_relationship": "Hard Dependency(Prerequisite API)",
+            "source_api": "Get_Hotel_Reviews(Tips)"
+        },
+        {
+            "target_api_params": "hotel_id",
+            "reason": "The 'hotel_id' parameter in the target API is a prerequisite for calling the API, as it specifies which hotel's facilities to retrieve. The source API's response includes the same 'hotel_id' field, which matches exactly in data type and purpose. This creates a hard dependency where the source API must be called first to obtain the hotel_id before the target API can be used.",
+            "source_jsonpath": "$.hotel_id",
+            "confidence": 100,
+            "dependency_relationship": "Hard Dependency(Prerequisite API)",
+            "source_api": "Get_Hotel_Policies"
+        },
+        {
+            "target_api_params": "hotel_id",
+            "reason": "The 'hotel_id' parameter in the target API is required to retrieve hotel facilities. The source API's 'hotel_id' field in the response provides the exact same identifier needed by the target API. This is a direct match in both data type and purpose, making it a necessary prerequisite for calling the target API.",
+            "source_jsonpath": "$.hotel_id",
+            "confidence": 100,
+            "dependency_relationship": "Hard Dependency(Prerequisite API)",
+            "source_api": "Get_Room_List"
+        },
+        {
+            "target_api_params": "hotel_id",
+            "reason": "The 'hotel_id' parameter in the target API is a required field that must be obtained from either the 'SearchHotels' or 'SearchHotelsByCoordinates' APIs. The source API's response includes a 'hotel_id' field (e.g., '5955189') which matches exactly in data type and purpose. This creates a hard dependency as the source API's hotel_id is a prerequisite for calling the target API.",
+            "source_jsonpath": "$[*].hotel_id",
+            "confidence": 100,
+            "dependency_relationship": "Hard Dependency(Prerequisite API)",
+            "source_api": "Get_Hotel_Review_Scores"
+        },
+        {
+            "target_api_params": "hotel_id",
+            "reason": "The 'hotel_id' parameter in the target API is explicitly mentioned to be retrievable from the 'Search_Hotels_By_Coordinates' source API. The source API's response includes 'hotel_id' fields (e.g., '11361227', '12192643') which exactly match the required parameter type (String) and purpose (unique hotel identifier). This is a direct prerequisite for calling the target API.",
+            "source_jsonpath": "$.result[].hotel_id",
+            "confidence": 100,
+            "dependency_relationship": "Hard Dependency(Prerequisite API)",
+            "source_api": "Search_Hotels_By_Coordinates"
+        },
+        {
+            "target_api_params": "hotel_id",
+            "reason": "The 'hotel_id' parameter in the target API is a prerequisite for calling the API, as it specifies which hotel's facilities to retrieve. The source API's response includes the same 'hotel_id' field, which can be directly used as input for the target API. This is a clear case where the source API provides the necessary identifier required by the target API.",
+            "source_jsonpath": "$.hotel_id",
+            "confidence": 100,
+            "dependency_relationship": "Hard Dependency(Prerequisite API)",
+            "source_api": "Get_Hotel_Reviews_Filter_Metadata"
+        },
+        {
+            "target_api_params": "hotel_id",
+            "reason": "The 'hotel_id' parameter in the target API is a prerequisite for calling the API, as it uniquely identifies the hotel for which facilities are being requested. The source API's response does not contain a 'hotel_id' field, but the source API itself requires a 'hotel_id' as input, which must be obtained from the same endpoints as the target API (SearchHotels or SearchHotelsByCoordinates). This indicates a hard dependency where the same 'hotel_id' must be used for both APIs.",
+            "source_jsonpath": null,
+            "confidence": 100,
+            "dependency_relationship": "Hard Dependency(Prerequisite API)",
+            "source_api": "Get_Hotel_Photos"
+        },
+        {
+            "target_api_params": "hotel_id",
+            "reason": "The 'hotel_id' parameter in the target API is a prerequisite for calling the API, and it must be obtained from either the SearchHotels or SearchHotelsByCoordinates API. The source API's response field 'hotel_id' matches exactly in data type and purpose, as it is also retrieved from the same endpoints. This creates a hard dependency where the source API's 'hotel_id' is necessary for the target API to function.",
+            "source_jsonpath": "$[*].hotel_id",
+            "confidence": 100,
+            "dependency_relationship": "Hard Dependency(Prerequisite API)",
+            "source_api": "Get_Description_And_Info"
+        },
+        {
+            "target_api_params": "hotel_id",
+            "reason": "The 'hotel_id' parameter in the target API is a prerequisite for calling the API, as it specifies which hotel's facilities to retrieve. The source API's response includes a 'hotel_id' field that matches exactly in data type and purpose, as both APIs require the hotel ID to be obtained from the SearchHotels API. This creates a hard dependency where the source API's response can directly provide the necessary input for the target API.",
+            "source_jsonpath": "$[*].hotel_id",
+            "confidence": 100,
+            "dependency_relationship": "Hard Dependency(Prerequisite API)",
+            "source_api": "Payment_features_of_the_Hotel"
+        }
+    ],
+    "verified": true
+}

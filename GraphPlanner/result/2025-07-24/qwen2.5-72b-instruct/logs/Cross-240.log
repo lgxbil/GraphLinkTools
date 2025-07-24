@@ -1,0 +1,47 @@
+2025-07-24 06:13:16,294 - evaluation_logger_Cross-240 - INFO - Test Example Cross-240
+2025-07-24 06:13:16,294 - evaluation_logger_Cross-240 - INFO - Query: Please help me find a hotel near the University College London on November 10, 2024, and I would like to book a taxi from the hotel to Big Ben at 10 AM the next day. Assist me with the advance planning.
+2025-07-24 06:14:29,559 - evaluation_logger_Cross-240 - INFO - Start compare_single_call: 
+{'name': 'Search_Hotel_Destination', 'arguments': {'query': 'University College London'}}
+{'name': 'Search_Hotel_Destination', 'arguments': {'query': 'University College London'}}
+2025-07-24 06:14:29,560 - evaluation_logger_Cross-240 - INFO - Rule-based compare success.
+2025-07-24 06:14:29,560 - evaluation_logger_Cross-240 - INFO - Success matched: [{'name': 'Search_Hotel_Destination', 'arguments': {'query': 'University College London'}}]
+2025-07-24 06:14:30,291 - evaluation_logger_Cross-240 - INFO - Success matched: []
+2025-07-24 06:15:09,707 - evaluation_logger_Cross-240 - INFO - Start compare_single_call: 
+{'name': 'Search_Hotels', 'arguments': {'arrival_date': '2024-11-10', 'departure_date': '2024-11-11', 'dest_id': 900065367, 'search_type': 'landmark'}}
+{'name': 'Search_Hotels', 'arguments': {'arrival_date': '2024-11-10', 'departure_date': '2024-11-11', 'dest_id': 900065367, 'search_type': 'landmark'}}
+2025-07-24 06:15:09,708 - evaluation_logger_Cross-240 - INFO - Rule-based compare success.
+2025-07-24 06:15:09,708 - evaluation_logger_Cross-240 - INFO - Success matched: [{'name': 'Search_Hotels', 'arguments': {'arrival_date': '2024-11-10', 'departure_date': '2024-11-11', 'dest_id': 900065367, 'search_type': 'landmark'}}]
+2025-07-24 06:16:32,538 - evaluation_logger_Cross-240 - INFO - Start compare_single_call: 
+{'name': 'Taxi_Search_Location', 'arguments': {'query': ', , , gb'}}
+{'name': 'Taxi_Search_Location', 'arguments': {'query': 'Big Ben'}}
+2025-07-24 06:16:36,891 - evaluation_logger_Cross-240 - DEBUG - LLM-based comparison output: {'is_equal': False, 'reason': "The query parameters ',, , gb' and 'Big Ben' are not equivalent as they refer to different locations or search terms."}
+2025-07-24 06:16:36,891 - evaluation_logger_Cross-240 - INFO - All compare method failed.
+2025-07-24 06:16:36,891 - evaluation_logger_Cross-240 - INFO - Success matched: []
+2025-07-24 06:17:32,054 - evaluation_logger_Cross-240 - INFO - Start compare_single_call: 
+{'name': 'Taxi_Search_Location', 'arguments': {'query': 'Camden, London, gb'}}
+{'name': 'Taxi_Search_Location', 'arguments': {'query': 'Euston Square Hotel'}}
+2025-07-24 06:17:37,429 - evaluation_logger_Cross-240 - DEBUG - LLM-based comparison output: {'is_equal': False, 'reason': "The queries 'Camden, London, gb' and 'Euston Square Hotel' refer to different locations."}
+2025-07-24 06:17:37,429 - evaluation_logger_Cross-240 - INFO - All compare method failed.
+2025-07-24 06:17:37,429 - evaluation_logger_Cross-240 - INFO - Success matched: []
+2025-07-24 06:18:25,608 - evaluation_logger_Cross-240 - INFO - Start compare_single_call: 
+{'name': 'Taxi_Search_Location', 'arguments': {'query': 'Euston Square Hotel, , , gb'}}
+{'name': 'Taxi_Search_Location', 'arguments': {'query': 'Euston Square Hotel'}}
+2025-07-24 06:18:31,829 - evaluation_logger_Cross-240 - DEBUG - LLM-based comparison output: {'is_equal': True, 'reason': "The query parameters 'Euston Square Hotel, , , gb' and 'Euston Square Hotel' are considered equivalent as the additional details in the first query do not change the core location being searched for, which is 'Euston Square Hotel'."}
+2025-07-24 06:18:31,830 - evaluation_logger_Cross-240 - INFO - LLM-based compare success.
+2025-07-24 06:18:31,830 - evaluation_logger_Cross-240 - INFO - Success matched: [{'name': 'Taxi_Search_Location', 'arguments': {'query': 'Euston Square Hotel'}}]
+2025-07-24 06:19:29,067 - evaluation_logger_Cross-240 - INFO - Start compare_single_call: 
+{'name': 'Taxi_Search_Location', 'arguments': {'query': 'Euston Square Hotel, , , gb'}}
+{'name': 'Taxi_Search_Location', 'arguments': {'query': 'Euston Square Hotel'}}
+2025-07-24 06:19:34,212 - evaluation_logger_Cross-240 - DEBUG - LLM-based comparison output: {'is_equal': True, 'reason': "The additional details ', , , gb' in Function call 1 do not change the core query 'Euston Square Hotel', making both function calls equivalent in searching for the same location."}
+2025-07-24 06:19:34,212 - evaluation_logger_Cross-240 - INFO - LLM-based compare success.
+2025-07-24 06:19:34,213 - evaluation_logger_Cross-240 - INFO - Success matched: [{'name': 'Taxi_Search_Location', 'arguments': {'query': 'Euston Square Hotel'}}]
+2025-07-24 06:19:34,214 - evaluation_logger_Cross-240 - INFO - Start compare_single_call: 
+{'name': 'Taxi_Search_Location', 'arguments': {'query': 'Big Ben'}}
+{'name': 'Taxi_Search_Location', 'arguments': {'query': 'Big Ben'}}
+2025-07-24 06:19:34,214 - evaluation_logger_Cross-240 - INFO - Rule-based compare success.
+2025-07-24 06:19:34,214 - evaluation_logger_Cross-240 - INFO - Success matched: [{'name': 'Taxi_Search_Location', 'arguments': {'query': 'Big Ben'}}]
+2025-07-24 06:19:34,215 - evaluation_logger_Cross-240 - INFO - Start compare_single_call: 
+{'name': 'Search_Taxi', 'arguments': {'drop_off_place_id': 'ChIJ2dGMjMMEdkgRqVqkuXQkj7c', 'pick_up_date': '2024-11-11', 'pick_up_place_id': 'ChIJuSgRGyYbdkgRfE5QonVIH9k', 'pick_up_time': '10:00'}}
+{'name': 'Search_Taxi', 'arguments': {'drop_off_place_id': 'ChIJ2dGMjMMEdkgRqVqkuXQkj7c', 'pick_up_date': '2024-11-11', 'pick_up_place_id': 'ChIJuSgRGyYbdkgRfE5QonVIH9k', 'pick_up_time': '10:00'}}
+2025-07-24 06:19:34,215 - evaluation_logger_Cross-240 - INFO - Rule-based compare success.
+2025-07-24 06:19:34,215 - evaluation_logger_Cross-240 - INFO - Success matched: [{'name': 'Search_Taxi', 'arguments': {'drop_off_place_id': 'ChIJ2dGMjMMEdkgRqVqkuXQkj7c', 'pick_up_date': '2024-11-11', 'pick_up_place_id': 'ChIJuSgRGyYbdkgRfE5QonVIH9k', 'pick_up_time': '10:00'}}]

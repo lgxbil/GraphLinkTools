@@ -1,0 +1,525 @@
+{
+    "name": "Property_Children_Policies",
+    "docs_row": {
+        "name": "Property_Children_Policies",
+        "endpoint": "/api/v1/hotels/propertyChildrenPolicies",
+        "func_description": "Retrieve the policies related to children for a specific hotel. ",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "hotel_id": {
+                    "type": "String",
+                    "description": "hotel_id can be retrieved from api/v1/hotels/searchHotels(Search Hotels) or api/v1/hotels/searchHotelsByCoordinates(Search Hotels By Coordinates\n) endpoint in Hotels collection.",
+                    "example_value": "1377073",
+                    "required": true
+                },
+                "languagecode": {
+                    "type": "String",
+                    "description": "To obtain the response data in a specific language, enter the languagecode. languagecode can be retrieved from api/v1/meta/getLanguages(Get Languages\n) endpoint in Meta collection.",
+                    "example_value": "en-us",
+                    "required": false
+                }
+            },
+            "required": [
+                "hotel_id"
+            ]
+        }
+    },
+    "instance": [],
+    "category": null,
+    "tool": null,
+    "api_idx": 25,
+    "params": {
+        "type": "object",
+        "properties": {
+            "hotel_id": {
+                "type": "String",
+                "description": "hotel_id can be retrieved from api/v1/hotels/searchHotels(Search Hotels) or api/v1/hotels/searchHotelsByCoordinates(Search Hotels By Coordinates\n) endpoint in Hotels collection.",
+                "example_value": "1377073",
+                "required": true
+            },
+            "languagecode": {
+                "type": "String",
+                "description": "To obtain the response data in a specific language, enter the languagecode. languagecode can be retrieved from api/v1/meta/getLanguages(Get Languages\n) endpoint in Meta collection.",
+                "example_value": "en-us",
+                "required": false
+            }
+        },
+        "required": [
+            "hotel_id"
+        ]
+    },
+    "responses": [
+        {
+            "function_name": "Property_Children_Policies",
+            "arguments": {
+                "hotel_id": "1377073"
+            },
+            "observation": {
+                "clientVersion": 68,
+                "mfeId": "b-saba-child-policies-mfe/saba",
+                "trackedExperiments": [
+                    {
+                        "shouldTrack": false,
+                        "uviType": "device_id",
+                        "variant": 1,
+                        "name": "ios_sega_guaranteed_cots",
+                        "uvi": "57d11ec8bad14e119e4c15a86202c23f",
+                        "id": "2269860"
+                    }
+                ],
+                "root": {
+                    "type": "core.layout.Column",
+                    "props": {
+                        "items": [
+                            {
+                                "props": {
+                                    "margin": {
+                                        "bottom": "spacing_1x"
+                                    },
+                                    "component": {
+                                        "props": {
+                                            "text": "Child policies",
+                                            "font": "strong_2"
+                                        },
+                                        "type": "bui.Label"
+                                    }
+                                },
+                                "type": "core.Margin"
+                            },
+                            {
+                                "props": {
+                                    "items": [
+                                        {
+                                            "props": {
+                                                "margin": {
+                                                    "top": "spacing_1x"
+                                                },
+                                                "component": {
+                                                    "type": "bui.Label",
+                                                    "props": {
+                                                        "text": "Children of any age are welcome."
+                                                    }
+                                                }
+                                            },
+                                            "type": "core.Margin"
+                                        },
+                                        {
+                                            "props": {
+                                                "margin": {
+                                                    "top": "spacing_1x"
+                                                },
+                                                "component": {
+                                                    "props": {
+                                                        "font": "emphasized_2",
+                                                        "text": "To see correct prices and occupancy information, please add the number of children in your group and their ages to your search."
+                                                    },
+                                                    "type": "bui.Label"
+                                                }
+                                            },
+                                            "type": "core.Margin"
+                                        }
+                                    ]
+                                },
+                                "type": "core.layout.Column"
+                            },
+                            {
+                                "props": {
+                                    "component": {
+                                        "type": "bui.Label",
+                                        "props": {
+                                            "font": "strong_2",
+                                            "text": "Cot and extra bed policies"
+                                        }
+                                    },
+                                    "margin": {
+                                        "top": "spacing_4x",
+                                        "bottom": "spacing_2x"
+                                    }
+                                },
+                                "type": "core.Margin"
+                            }
+                        ]
+                    }
+                },
+                "serverVersion": 131
+            }
+        }
+    ],
+    "response_summary": "The API response outlines the child and cot policies for a booking service. It states that children of any age are welcome, but to get accurate pricing and occupancy details, users should specify the number of children and their ages during the search. Additionally, it mentions that cot and extra bed policies will be provided, though the specific details for these are not included in this response. The layout is structured with clear headings and spacing for readability, ensuring users can easily understand the policies. The response also includes technical details like client and server versions, as well as experiment tracking data, which are likely used for internal purposes.",
+    "enhance_func_desc": "This API is essential for families planning accommodations. It retrieves child and cot policies for a specific hotel, ensuring accurate pricing and occupancy details when children are included in bookings. Users must provide the hotel ID, and the response details age-specific policies, cot availability, and extra bed options. The hotel ID can be obtained from search APIs, and the response is customizable by language.",
+    "enhance_params_desc": {
+        "enhanced_parameters": {
+            "hotel_id": "Unique identifier for the hotel, sourced from search APIs.",
+            "languagecode": "Language preference for the response data."
+        }
+    },
+    "enhance_resfield_desc": {
+        "response_fields": {
+            "clientVersion": {
+                "type": "Number",
+                "description": "Version number of the client application making the API request."
+            },
+            "mfeId": {
+                "type": "String",
+                "description": "Identifier for the Micro Frontend (MFE) component, indicating the specific UI module being used."
+            },
+            "trackedExperiments": {
+                "type": "Array",
+                "description": "List of experiments being tracked for analytics or feature testing purposes.",
+                "ar_items": {
+                    "type": "Object",
+                    "description": "Details of an individual experiment being tracked.",
+                    "ob_properties": {
+                        "shouldTrack": {
+                            "type": "Boolean",
+                            "description": "Flag indicating whether the experiment should be tracked."
+                        },
+                        "uviType": {
+                            "type": "String",
+                            "description": "Type of unique visitor identifier used for tracking the experiment."
+                        },
+                        "variant": {
+                            "type": "Number",
+                            "description": "Variant number of the experiment, used for A/B testing."
+                        },
+                        "name": {
+                            "type": "String",
+                            "description": "Name of the experiment, providing a human-readable identifier."
+                        },
+                        "uvi": {
+                            "type": "String",
+                            "description": "Unique visitor identifier for the experiment tracking."
+                        },
+                        "id": {
+                            "type": "String",
+                            "description": "Unique identifier for the experiment."
+                        }
+                    }
+                }
+            },
+            "root": {
+                "type": "Object",
+                "description": "Root container for the layout and content of the child and cot policies section.",
+                "ob_properties": {
+                    "type": {
+                        "type": "String",
+                        "description": "Type of the root layout component, indicating its structure and behavior."
+                    },
+                    "props": {
+                        "type": "Object",
+                        "description": "Properties defining the content and layout of the root component.",
+                        "ob_properties": {
+                            "items": {
+                                "type": "Array",
+                                "description": "List of layout components that make up the child and cot policies section.",
+                                "ar_items": {
+                                    "type": "Object",
+                                    "description": "Individual layout component with its properties and nested components.",
+                                    "ob_properties": {
+                                        "props": {
+                                            "type": "Object",
+                                            "description": "Properties of the layout component, including margins and nested components.",
+                                            "ob_properties": {
+                                                "margin": {
+                                                    "type": "Object",
+                                                    "description": "Margin settings for the component, defining spacing around it.",
+                                                    "ob_properties": {
+                                                        "bottom": {
+                                                            "type": "String",
+                                                            "description": "Bottom margin size, using predefined spacing tokens."
+                                                        },
+                                                        "top": {
+                                                            "type": "String",
+                                                            "description": "Top margin size, using predefined spacing tokens."
+                                                        }
+                                                    }
+                                                },
+                                                "component": {
+                                                    "type": "Object",
+                                                    "description": "Nested UI component within the layout component.",
+                                                    "ob_properties": {
+                                                        "type": {
+                                                            "type": "String",
+                                                            "description": "Type of the nested UI component, indicating its functionality."
+                                                        },
+                                                        "props": {
+                                                            "type": "Object",
+                                                            "description": "Properties of the nested UI component, such as text and styling.",
+                                                            "ob_properties": {
+                                                                "text": {
+                                                                    "type": "String",
+                                                                    "description": "Text content displayed by the component."
+                                                                },
+                                                                "font": {
+                                                                    "type": "String",
+                                                                    "description": "Font style applied to the text, using predefined font tokens."
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                },
+                                                "items": {
+                                                    "type": "Array",
+                                                    "description": "List of nested layout components within a container component.",
+                                                    "ar_items": {
+                                                        "type": "Object",
+                                                        "description": "Individual nested layout component with its properties.",
+                                                        "ob_properties": {
+                                                            "props": {
+                                                                "type": "Object",
+                                                                "description": "Properties of the nested layout component, including margins and nested components.",
+                                                                "ob_properties": {
+                                                                    "margin": {
+                                                                        "type": "Object",
+                                                                        "description": "Margin settings for the nested component.",
+                                                                        "ob_properties": {
+                                                                            "top": {
+                                                                                "type": "String",
+                                                                                "description": "Top margin size, using predefined spacing tokens."
+                                                                            }
+                                                                        }
+                                                                    },
+                                                                    "component": {
+                                                                        "type": "Object",
+                                                                        "description": "Nested UI component within the layout component.",
+                                                                        "ob_properties": {
+                                                                            "type": {
+                                                                                "type": "String",
+                                                                                "description": "Type of the nested UI component."
+                                                                            },
+                                                                            "props": {
+                                                                                "type": "Object",
+                                                                                "description": "Properties of the nested UI component, such as text and styling.",
+                                                                                "ob_properties": {
+                                                                                    "text": {
+                                                                                        "type": "String",
+                                                                                        "description": "Text content displayed by the component."
+                                                                                    },
+                                                                                    "font": {
+                                                                                        "type": "String",
+                                                                                        "description": "Font style applied to the text."
+                                                                                    }
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+                                                            },
+                                                            "type": {
+                                                                "type": "String",
+                                                                "description": "Type of the nested layout component."
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "type": {
+                                            "type": "String",
+                                            "description": "Type of the layout component, indicating its role in the layout structure."
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "serverVersion": {
+                "type": "Number",
+                "description": "Version number of the server handling the API request."
+            }
+        }
+    },
+    "params_desc_list": null,
+    "response_desc_list": [
+        {
+            "path_name": "clientVersion",
+            "name": "clientVersion",
+            "description": "Version number of the client application making the API request."
+        },
+        {
+            "path_name": "mfeId",
+            "name": "mfeId",
+            "description": "Identifier for the Micro Frontend (MFE) component, indicating the specific UI module being used."
+        },
+        {
+            "path_name": "trackedExperiments",
+            "name": "trackedExperiments",
+            "description": "List of experiments being tracked for analytics or feature testing purposes."
+        },
+        {
+            "path_name": "trackedExperiments[]",
+            "name": "trackedExperiments[]",
+            "description": "Details of an individual experiment being tracked."
+        },
+        {
+            "path_name": "trackedExperiments[].shouldTrack",
+            "name": "shouldTrack",
+            "description": "Flag indicating whether the experiment should be tracked."
+        },
+        {
+            "path_name": "trackedExperiments[].uviType",
+            "name": "uviType",
+            "description": "Type of unique visitor identifier used for tracking the experiment."
+        },
+        {
+            "path_name": "trackedExperiments[].variant",
+            "name": "variant",
+            "description": "Variant number of the experiment, used for A/B testing."
+        },
+        {
+            "path_name": "trackedExperiments[].name",
+            "name": "name",
+            "description": "Name of the experiment, providing a human-readable identifier."
+        },
+        {
+            "path_name": "trackedExperiments[].uvi",
+            "name": "uvi",
+            "description": "Unique visitor identifier for the experiment tracking."
+        },
+        {
+            "path_name": "trackedExperiments[].id",
+            "name": "id",
+            "description": "Unique identifier for the experiment."
+        },
+        {
+            "path_name": "root",
+            "name": "root",
+            "description": "Root container for the layout and content of the child and cot policies section."
+        },
+        {
+            "path_name": "root.type",
+            "name": "type",
+            "description": "Type of the root layout component, indicating its structure and behavior."
+        },
+        {
+            "path_name": "root.props",
+            "name": "props",
+            "description": "Properties defining the content and layout of the root component."
+        },
+        {
+            "path_name": "root.props.items",
+            "name": "items",
+            "description": "List of layout components that make up the child and cot policies section."
+        },
+        {
+            "path_name": "root.props.items[]",
+            "name": "items[]",
+            "description": "Individual layout component with its properties and nested components."
+        },
+        {
+            "path_name": "root.props.items[].props",
+            "name": "props",
+            "description": "Properties of the layout component, including margins and nested components."
+        },
+        {
+            "path_name": "root.props.items[].props.margin",
+            "name": "margin",
+            "description": "Margin settings for the component, defining spacing around it."
+        },
+        {
+            "path_name": "root.props.items[].props.margin.bottom",
+            "name": "bottom",
+            "description": "Bottom margin size, using predefined spacing tokens."
+        },
+        {
+            "path_name": "root.props.items[].props.margin.top",
+            "name": "top",
+            "description": "Top margin size, using predefined spacing tokens."
+        },
+        {
+            "path_name": "root.props.items[].props.component",
+            "name": "component",
+            "description": "Nested UI component within the layout component."
+        },
+        {
+            "path_name": "root.props.items[].props.component.type",
+            "name": "type",
+            "description": "Type of the nested UI component, indicating its functionality."
+        },
+        {
+            "path_name": "root.props.items[].props.component.props",
+            "name": "props",
+            "description": "Properties of the nested UI component, such as text and styling."
+        },
+        {
+            "path_name": "root.props.items[].props.component.props.text",
+            "name": "text",
+            "description": "Text content displayed by the component."
+        },
+        {
+            "path_name": "root.props.items[].props.component.props.font",
+            "name": "font",
+            "description": "Font style applied to the text, using predefined font tokens."
+        },
+        {
+            "path_name": "root.props.items[].props.items",
+            "name": "items",
+            "description": "List of nested layout components within a container component."
+        },
+        {
+            "path_name": "root.props.items[].props.items[]",
+            "name": "items[]",
+            "description": "Individual nested layout component with its properties."
+        },
+        {
+            "path_name": "root.props.items[].props.items[].props",
+            "name": "props",
+            "description": "Properties of the nested layout component, including margins and nested components."
+        },
+        {
+            "path_name": "root.props.items[].props.items[].props.margin",
+            "name": "margin",
+            "description": "Margin settings for the nested component."
+        },
+        {
+            "path_name": "root.props.items[].props.items[].props.margin.top",
+            "name": "top",
+            "description": "Top margin size, using predefined spacing tokens."
+        },
+        {
+            "path_name": "root.props.items[].props.items[].props.component",
+            "name": "component",
+            "description": "Nested UI component within the layout component."
+        },
+        {
+            "path_name": "root.props.items[].props.items[].props.component.type",
+            "name": "type",
+            "description": "Type of the nested UI component."
+        },
+        {
+            "path_name": "root.props.items[].props.items[].props.component.props",
+            "name": "props",
+            "description": "Properties of the nested UI component, such as text and styling."
+        },
+        {
+            "path_name": "root.props.items[].props.items[].props.component.props.text",
+            "name": "text",
+            "description": "Text content displayed by the component."
+        },
+        {
+            "path_name": "root.props.items[].props.items[].props.component.props.font",
+            "name": "font",
+            "description": "Font style applied to the text."
+        },
+        {
+            "path_name": "root.props.items[].props.items[].type",
+            "name": "type",
+            "description": "Type of the nested layout component."
+        },
+        {
+            "path_name": "root.props.items[].type",
+            "name": "type",
+            "description": "Type of the layout component, indicating its role in the layout structure."
+        },
+        {
+            "path_name": "serverVersion",
+            "name": "serverVersion",
+            "description": "Version number of the server handling the API request."
+        }
+    ],
+    "depends_on": null,
+    "verified": true
+}

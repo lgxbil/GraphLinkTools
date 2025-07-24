@@ -1,0 +1,26 @@
+2025-07-24 08:28:29,380 - evaluation_logger_Hotels-70 - INFO - Test Example Hotels-70
+2025-07-24 08:28:29,380 - evaluation_logger_Hotels-70 - INFO - Query: I plan to take a family vacation to Canberra from November 15th to November 22nd, 2024. Find a few hotels with family rooms that allow pets and are suitable for two adults and two children aged 4 and 9.
+2025-07-24 08:29:56,329 - evaluation_logger_Hotels-70 - INFO - Start compare_single_call: 
+{'name': 'Search_Hotel_Destination', 'arguments': {'query': 'Canberra'}}
+{'name': 'Search_Hotel_Destination', 'arguments': {'query': 'Canberra'}}
+2025-07-24 08:29:56,330 - evaluation_logger_Hotels-70 - INFO - Rule-based compare success.
+2025-07-24 08:29:56,330 - evaluation_logger_Hotels-70 - INFO - Success matched: [{'name': 'Search_Hotel_Destination', 'arguments': {'query': 'Canberra'}}]
+2025-07-24 08:29:57,142 - evaluation_logger_Hotels-70 - INFO - Start compare_single_call: 
+{'name': 'Get_Filter', 'arguments': {'adults': 2, 'arrival_date': '2024-11-15', 'children_age': '4,9', 'departure_date': '2024-11-22', 'dest_id': '-1563952', 'room_qty': 1, 'search_type': 'city'}}
+{'name': 'Get_Filter', 'arguments': {'adults': 2, 'arrival_date': '2024-11-15', 'children_age': '4,9', 'departure_date': '2024-11-22', 'dest_id': '-1563952', 'search_type': 'city'}}
+2025-07-24 08:30:01,193 - evaluation_logger_Hotels-70 - DEBUG - LLM-based comparison output: {'is_equal': True, 'reason': "The parameter 'room_qty' in call 1 has the default value of 1, which is omitted in call 2, making the two calls equivalent."}
+2025-07-24 08:30:01,193 - evaluation_logger_Hotels-70 - INFO - LLM-based compare success.
+2025-07-24 08:30:01,194 - evaluation_logger_Hotels-70 - INFO - Success matched: [{'name': 'Get_Filter', 'arguments': {'adults': 2, 'arrival_date': '2024-11-15', 'children_age': '4,9', 'departure_date': '2024-11-22', 'dest_id': '-1563952', 'search_type': 'city'}}]
+2025-07-24 08:30:01,799 - evaluation_logger_Hotels-70 - INFO - Success matched: []
+2025-07-24 08:30:19,734 - evaluation_logger_Hotels-70 - INFO - Start compare_single_call: 
+{'name': 'Search_Hotels', 'arguments': {'adults': 2, 'arrival_date': '2024-11-15', 'categories_filter': 'facility::28,facility::4', 'children_age': '4,9', 'departure_date': '2024-11-22', 'dest_id': -1563952, 'room_qty': 1, 'search_type': 'city'}}
+{'name': 'Search_Hotels', 'arguments': {'adults': 2, 'arrival_date': '2024-11-15', 'categories_filter': 'facility::4,facility::28', 'children_age': '4,9', 'departure_date': '2024-11-22', 'dest_id': -1563952, 'search_type': 'city'}}
+2025-07-24 08:30:25,086 - evaluation_logger_Hotels-70 - DEBUG - LLM-based comparison output: {'is_equal': True, 'reason': "The order of parameters in 'categories_filter' does not affect equivalence, and 'room_qty' is omitted in call 2 which has a default value of 1, matching the value in call 1."}
+2025-07-24 08:30:25,086 - evaluation_logger_Hotels-70 - INFO - LLM-based compare success.
+2025-07-24 08:30:25,087 - evaluation_logger_Hotels-70 - INFO - Success matched: [{'name': 'Search_Hotels', 'arguments': {'adults': 2, 'arrival_date': '2024-11-15', 'categories_filter': 'facility::4,facility::28', 'children_age': '4,9', 'departure_date': '2024-11-22', 'dest_id': -1563952, 'search_type': 'city'}}]
+2025-07-24 08:30:42,744 - evaluation_logger_Hotels-70 - INFO - Start compare_single_call: 
+{'name': 'Search_Hotels', 'arguments': {'adults': 2, 'arrival_date': '2024-11-15', 'categories_filter': 'facility::28,facility::4', 'children_age': '4,9', 'departure_date': '2024-11-22', 'dest_id': -1563952, 'room_qty': 1, 'search_type': 'city'}}
+{'name': 'Search_Hotels', 'arguments': {'adults': 2, 'arrival_date': '2024-11-15', 'categories_filter': 'facility::4,facility::28', 'children_age': '4,9', 'departure_date': '2024-11-22', 'dest_id': -1563952, 'search_type': 'city'}}
+2025-07-24 08:30:47,902 - evaluation_logger_Hotels-70 - DEBUG - LLM-based comparison output: {'is_equal': True, 'reason': "The order of parameters in 'categories_filter' differs but the meaning is the same, and 'room_qty' is omitted in call 2 which has a default value of 1, making the function calls equivalent."}
+2025-07-24 08:30:47,903 - evaluation_logger_Hotels-70 - INFO - LLM-based compare success.
+2025-07-24 08:30:47,903 - evaluation_logger_Hotels-70 - INFO - Success matched: [{'name': 'Search_Hotels', 'arguments': {'adults': 2, 'arrival_date': '2024-11-15', 'categories_filter': 'facility::4,facility::28', 'children_age': '4,9', 'departure_date': '2024-11-22', 'dest_id': -1563952, 'search_type': 'city'}}]

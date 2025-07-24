@@ -1,0 +1,28 @@
+2025-07-24 03:22:25,395 - evaluation_logger_Cross-10 - INFO - Test Example Cross-10
+2025-07-24 03:22:25,395 - evaluation_logger_Cross-10 - INFO - Query: My partner, my parents, and I are planning to have a one-day tour in Tokyo on November 20, 2024, and stay at one of the most popular hotels in Tokyo. We need two rooms. Provide the specific details of the most popular hotels in Tokyo. Additionally, we're planning to rent a car at 8 AM on that day and return it at 5 PM the next day, so help us find information on car rental services.
+2025-07-24 03:24:24,787 - evaluation_logger_Cross-10 - INFO - Start compare_single_call: 
+{'name': 'Search_Hotel_Destination', 'arguments': {'query': 'Tokyo'}}
+{'name': 'Search_Hotel_Destination', 'arguments': {'query': 'Tokyo'}}
+2025-07-24 03:24:24,788 - evaluation_logger_Cross-10 - INFO - Rule-based compare success.
+2025-07-24 03:24:24,788 - evaluation_logger_Cross-10 - INFO - Success matched: [{'name': 'Search_Hotel_Destination', 'arguments': {'query': 'Tokyo'}}]
+2025-07-24 03:24:25,404 - evaluation_logger_Cross-10 - INFO - Success matched: []
+2025-07-24 03:25:09,688 - evaluation_logger_Cross-10 - INFO - Success matched: []
+2025-07-24 03:25:53,582 - evaluation_logger_Cross-10 - INFO - Start compare_single_call: 
+{'name': 'Search_Hotels', 'arguments': {'adults': 4, 'arrival_date': '2024-11-20', 'categories_filter': 'popular,airport_shuttle', 'departure_date': '2024-11-21', 'dest_id': -246227, 'room_qty': 2, 'search_type': 'city'}}
+{'name': 'Search_Hotels', 'arguments': {'adults': 4, 'arrival_date': '2024-11-20', 'departure_date': '2024-11-21', 'dest_id': -246227, 'room_qty': 2, 'search_type': 'city', 'sort_by': 'popularity'}}
+2025-07-24 03:25:53,582 - evaluation_logger_Cross-10 - INFO - {'error_type': 'param_missing', 'content': 'Missing parameter sort_by in prediction.'}
+2025-07-24 03:25:53,583 - evaluation_logger_Cross-10 - INFO - Success matched: []
+2025-07-24 03:27:11,948 - evaluation_logger_Cross-10 - INFO - Start compare_single_call: 
+{'name': 'Search_Hotels', 'arguments': {'adults': 4, 'arrival_date': '2024-11-20', 'categories_filter': 'popular,airport_shuttle', 'departure_date': '2024-11-21', 'dest_id': -246227, 'room_qty': 2, 'search_type': 'city', 'sort_by': 'popularity'}}
+{'name': 'Search_Hotels', 'arguments': {'adults': 4, 'arrival_date': '2024-11-20', 'departure_date': '2024-11-21', 'dest_id': -246227, 'room_qty': 2, 'search_type': 'city', 'sort_by': 'popularity'}}
+2025-07-24 03:27:17,324 - evaluation_logger_Cross-10 - DEBUG - LLM-based comparison output: {'is_equal': False, 'reason': "The parameter 'categories_filter' in call 1 is not present in call 2."}
+2025-07-24 03:27:17,325 - evaluation_logger_Cross-10 - INFO - All compare method failed.
+2025-07-24 03:27:17,325 - evaluation_logger_Cross-10 - INFO - Success matched: []
+2025-07-24 03:28:49,329 - evaluation_logger_Cross-10 - INFO - Success matched: []
+2025-07-24 03:30:02,460 - evaluation_logger_Cross-10 - INFO - Start compare_single_call: 
+{'name': 'Search_Hotels', 'arguments': {'adults': 4, 'arrival_date': '2024-11-20', 'categories_filter': 'popular,airport_shuttle', 'departure_date': '2024-11-21', 'dest_id': -246227, 'room_qty': 2, 'search_type': 'city', 'sort_by': 'popularity'}}
+{'name': 'Search_Hotels', 'arguments': {'adults': 4, 'arrival_date': '2024-11-20', 'departure_date': '2024-11-21', 'dest_id': -246227, 'room_qty': 2, 'search_type': 'city', 'sort_by': 'popularity'}}
+2025-07-24 03:30:07,153 - evaluation_logger_Cross-10 - DEBUG - LLM-based comparison output: {'is_equal': False, 'reason': "The parameter 'categories_filter' in call 1 is not present in call 2."}
+2025-07-24 03:30:07,153 - evaluation_logger_Cross-10 - INFO - All compare method failed.
+2025-07-24 03:30:07,154 - evaluation_logger_Cross-10 - INFO - Success matched: []
+2025-07-24 03:31:42,764 - evaluation_logger_Cross-10 - INFO - Success matched: []

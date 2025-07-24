@@ -1,0 +1,184 @@
+{
+    "name": "Car_Booking_Summary",
+    "docs_row": {
+        "name": "Car_Booking_Summary",
+        "endpoint": "https://booking-com18.p.rapidapi.com/car/booking-summary",
+        "func_description": "",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "vehicleId": {
+                    "type": "String",
+                    "description": "Vehicle Id\nRequired: true\nvehicleId can be retrieved from /car/search endpoint(data->search_results->vehicle_info->v_id)\nEx: 678151356",
+                    "example_value": "678151356",
+                    "required": true
+                },
+                "searchKey": {
+                    "type": "String",
+                    "description": "Search key\nRequired: true\nsearchKey can be retrieved from /car/search endpoint(data->search_key)\nEx:\neyJkcml2ZXJzQWdlIjozNSwiZHJvcE9mZkRhdGVUaW1lIjoiMjAyNC0wMS0yOFQxMDowMDowMCIsImRyb3BPZmZMb2NhdGlvbiI6IjQwLjc1OTU5LC03My45ODQ5MSIsImRyb3BPZmZMb2NhdGlvblR5cGUiOiJMQVRMT05HIiwicGlja1VwRGF0ZVRpbWUiOiIyMDI0LTAxLTI3VDEwOjAwOjAwIiwicGlja1VwTG9jYXRpb24iOiI0MC43NTk1OSwtNzMuOTg0OTEiLCJwaWNrVXBMb2NhdGlvblR5cGUiOiJMQVRMT05HIiwicmVudGFsRHVyYXRpb25JbkRheXMiOjEsInNlcnZpY2VGZWF0dXJlcyI6WyJOT19PUEFRVUVTIiwiU1VQUkVTU19GSVhFRF9QUklDRV9WRUhJQ0xFUyIsIklOQ0xVREVfUFJPRFVDVF9SRUxBVElPTlNISVBTIl19",
+                    "example_value": "eyJkcml2ZXJzQWdlIjozNSwiZHJvcE9mZkRhdGVUaW1lIjoiMjAyNC0wMS0yOFQxMDowMDowMCIsImRyb3BPZmZMb2NhdGlvbiI6IjQwLjc1OTU5LC03My45ODQ5MSIsImRyb3BPZmZMb2NhdGlvblR5cGUiOiJMQVRMT05HIiwicGlja1VwRGF0ZVRpbWUiOiIyMDI0LTAxLTI3VDEwOjAwOjAwIiwicGlja1VwTG9jYXRpb24iOiI0MC43NTk1OSwtNzMuOTg0OTEiLCJwaWNrVXBMb2NhdGlvblR5cGUiOiJMQVRMT05HIiwicmVudGFsRHVyYXRpb25JbkRheXMiOjEsInNlcnZpY2VGZWF0dXJlcyI6WyJOT19PUEFRVUVTIiwiU1VQUkVTU19GSVhFRF9QUklDRV9WRUhJQ0xFUyIsIklOQ0xVREVfUFJPRFVDVF9SRUxBVElPTlNISVBTIl19",
+                    "required": true
+                },
+                "units": {
+                    "type": "Enum",
+                    "description": "Units\nEx: metric\nDefault value: metric\n\nmetric: Metric (km, m2)\nimperial: Imperial (miles, ft2)",
+                    "example_value": "",
+                    "required": false
+                },
+                "languageCode": {
+                    "type": "String",
+                    "description": "Language\nlanguageCode can be retrieved from /languages endpoint(data->code)\nEx: en-us\nDefault value: en-us",
+                    "example_value": "",
+                    "required": false
+                },
+                "currencyCode": {
+                    "type": "String",
+                    "description": "Currency\ncurrencyCode can be retrieved from /currencies endpoint(data->code)\nEx: USD\nDefault value: HOTEL(Property's Currency)",
+                    "example_value": "",
+                    "required": false
+                },
+                "countryFlag": {
+                    "type": "String",
+                    "description": "Country\ncountryFlag can be retrieved from /languages endpoint(data->countryFlag)\nEx: us\nDefault value: us",
+                    "example_value": "",
+                    "required": false
+                }
+            },
+            "required": [
+                "vehicleId",
+                "searchKey"
+            ]
+        }
+    },
+    "instance": [],
+    "category": null,
+    "tool": null,
+    "api_idx": 0,
+    "params": {
+        "type": "object",
+        "properties": {
+            "vehicleId": {
+                "type": "String",
+                "description": "Vehicle Id\nRequired: true\nvehicleId can be retrieved from /car/search endpoint(data->search_results->vehicle_info->v_id)\nEx: 678151356",
+                "example_value": "678151356",
+                "required": true
+            },
+            "searchKey": {
+                "type": "String",
+                "description": "Search key\nRequired: true\nsearchKey can be retrieved from /car/search endpoint(data->search_key)\nEx:\neyJkcml2ZXJzQWdlIjozNSwiZHJvcE9mZkRhdGVUaW1lIjoiMjAyNC0wMS0yOFQxMDowMDowMCIsImRyb3BPZmZMb2NhdGlvbiI6IjQwLjc1OTU5LC03My45ODQ5MSIsImRyb3BPZmZMb2NhdGlvblR5cGUiOiJMQVRMT05HIiwicGlja1VwRGF0ZVRpbWUiOiIyMDI0LTAxLTI3VDEwOjAwOjAwIiwicGlja1VwTG9jYXRpb24iOiI0MC43NTk1OSwtNzMuOTg0OTEiLCJwaWNrVXBMb2NhdGlvblR5cGUiOiJMQVRMT05HIiwicmVudGFsRHVyYXRpb25JbkRheXMiOjEsInNlcnZpY2VGZWF0dXJlcyI6WyJOT19PUEFRVUVTIiwiU1VQUkVTU19GSVhFRF9QUklDRV9WRUhJQ0xFUyIsIklOQ0xVREVfUFJPRFVDVF9SRUxBVElPTlNISVBTIl19",
+                "example_value": "eyJkcml2ZXJzQWdlIjozNSwiZHJvcE9mZkRhdGVUaW1lIjoiMjAyNC0wMS0yOFQxMDowMDowMCIsImRyb3BPZmZMb2NhdGlvbiI6IjQwLjc1OTU5LC03My45ODQ5MSIsImRyb3BPZmZMb2NhdGlvblR5cGUiOiJMQVRMT05HIiwicGlja1VwRGF0ZVRpbWUiOiIyMDI0LTAxLTI3VDEwOjAwOjAwIiwicGlja1VwTG9jYXRpb24iOiI0MC43NTk1OSwtNzMuOTg0OTEiLCJwaWNrVXBMb2NhdGlvblR5cGUiOiJMQVRMT05HIiwicmVudGFsRHVyYXRpb25JbkRheXMiOjEsInNlcnZpY2VGZWF0dXJlcyI6WyJOT19PUEFRVUVTIiwiU1VQUkVTU19GSVhFRF9QUklDRV9WRUhJQ0xFUyIsIklOQ0xVREVfUFJPRFVDVF9SRUxBVElPTlNISVBTIl19",
+                "required": true
+            },
+            "units": {
+                "type": "Enum",
+                "description": "Units\nEx: metric\nDefault value: metric\n\nmetric: Metric (km, m2)\nimperial: Imperial (miles, ft2)",
+                "example_value": "",
+                "required": false
+            },
+            "languageCode": {
+                "type": "String",
+                "description": "Language\nlanguageCode can be retrieved from /languages endpoint(data->code)\nEx: en-us\nDefault value: en-us",
+                "example_value": "",
+                "required": false
+            },
+            "currencyCode": {
+                "type": "String",
+                "description": "Currency\ncurrencyCode can be retrieved from /currencies endpoint(data->code)\nEx: USD\nDefault value: HOTEL(Property's Currency)",
+                "example_value": "",
+                "required": false
+            },
+            "countryFlag": {
+                "type": "String",
+                "description": "Country\ncountryFlag can be retrieved from /languages endpoint(data->countryFlag)\nEx: us\nDefault value: us",
+                "example_value": "",
+                "required": false
+            }
+        },
+        "required": [
+            "vehicleId",
+            "searchKey"
+        ]
+    },
+    "responses": [],
+    "response_summary": null,
+    "enhance_func_desc": null,
+    "enhance_params_desc": {
+        "enhanced_parameters": {
+            "vehicleId": "Unique identifier for the vehicle, obtained from car search results.",
+            "searchKey": "Encoded search parameters including pickup/dropoff details and rental duration.",
+            "units": "Measurement system for distance (metric or imperial).",
+            "languageCode": "Preferred language for the booking summary.",
+            "currencyCode": "Currency for displaying rental prices.",
+            "countryFlag": "Country code for regional settings and defaults."
+        }
+    },
+    "enhance_resfield_desc": null,
+    "params_desc_list": null,
+    "response_desc_list": null,
+    "depends_on": [
+        {
+            "source_api_name": "Car_Search",
+            "dependence_type": "Hard Dependency",
+            "depencend_field": "$.search_results[*].vehicle_info.v_id",
+            "param_name": "vehicleId",
+            "reason": "The 'Car_Search' API is a necessary prerequisite for the 'Car_Booking_Summary' API as it provides the 'vehicleId' parameter required for booking. The 'v_id' field from the 'Car_Search' response matches exactly with the 'vehicleId' parameter in type (String) and purpose (unique vehicle identifier). This represents a hard dependency as the car search must be performed before a booking summary can be obtained."
+        },
+        {
+            "source_api_name": "Car_Search",
+            "dependence_type": "Hard Dependency",
+            "depencend_field": "$.search_key",
+            "param_name": "vehicleId",
+            "reason": "The 'Car_Search' API is a necessary prerequisite for the 'Car_Booking_Summary' API as it provides the 'vehicleId' parameter required for booking. The documentation explicitly states that the 'vehicleId' can be retrieved from the '/car/search' endpoint, establishing a hard dependency between these APIs. The 'search_key' field from the 'Car_Search' API response is specifically mentioned as the source for the 'searchKey' parameter in the target API, confirming this direct relationship."
+        },
+        {
+            "source_api_name": "Car_Search",
+            "dependence_type": "Hard Dependency",
+            "depencend_field": "$.search_context.searchKey",
+            "param_name": "vehicleId",
+            "reason": "The 'Car_Search' API is a necessary prerequisite for the 'Car_Booking_Summary' API as it provides the 'vehicleId' required for booking. The documentation explicitly states that the 'vehicleId' can be retrieved from the '/car/search' endpoint, establishing a hard dependency between these APIs. The 'searchKey' field from the 'Car_Search' API response also matches the required parameter in the target API, further reinforcing this dependency relationship."
+        },
+        {
+            "source_api_name": "Car_Search",
+            "dependence_type": "Hard Dependency",
+            "depencend_field": "$.search_key",
+            "param_name": "searchKey",
+            "reason": "The 'Car_Search' API is a necessary prerequisite for the 'Car_Booking_Summary' API, as it provides the 'searchKey' parameter which contains encoded search parameters including pickup/dropoff details and rental duration. The 'search_key' field from the 'Car_Search' API response exactly matches the 'searchKey' parameter required by the 'Car_Booking_Summary' API, both in data type (String) and in content (encoded search parameters). This represents a hard dependency as the 'Car_Search' API must be called first to obtain the necessary 'searchKey' for the booking summary."
+        },
+        {
+            "source_api_name": "Car_Search",
+            "dependence_type": "Hard Dependency",
+            "depencend_field": "$.search_context.searchKey",
+            "param_name": "searchKey",
+            "reason": "The 'Car_Search' API is a necessary prerequisite for the 'Car_Booking_Summary' API as it provides the 'searchKey' parameter which contains encoded search parameters including pickup/dropoff details and rental duration. The 'searchKey' field from the 'Car_Search' API response exactly matches the required parameter for the 'Car_Booking_Summary' API, establishing a hard dependency between these APIs."
+        },
+        {
+            "source_api_name": "Car_Search",
+            "dependence_type": "Hard Dependency",
+            "depencend_field": "$.search_context.searchId",
+            "param_name": "searchKey",
+            "reason": "The 'Car_Search' API is a necessary prerequisite for the 'Car_Booking_Summary' API as it provides the 'searchKey' parameter required for the booking summary. The 'search_context.searchId' field from the 'Car_Search' API response can be used as the 'searchKey' parameter in the 'Car_Booking_Summary' API. This represents a hard dependency as the 'Car_Search' API must be called first to obtain the necessary searchKey for the booking summary."
+        },
+        {
+            "source_api_name": "Car_Search",
+            "dependence_type": "Hard Dependency",
+            "depencend_field": "$.search_results[*].route_info",
+            "param_name": "searchKey",
+            "reason": "The 'Car_Search' API is a necessary prerequisite for the 'Car_Booking_Summary' API as it provides the 'searchKey' parameter which contains encoded search parameters including pickup/dropoff details and rental duration. This establishes a hard dependency between the two APIs. The 'route_info' field from the 'Car_Search' response contains the pickup and dropoff location details that are encoded into the 'searchKey' parameter required by the 'Car_Booking_Summary' API."
+        },
+        {
+            "source_api_name": "Car_Search",
+            "dependence_type": "Hard Dependency",
+            "depencend_field": "$.search_results[*].route_info.pickup",
+            "param_name": "searchKey",
+            "reason": "The 'Car_Search' API is a necessary prerequisite for the 'Car_Booking_Summary' API as it provides the 'searchKey' parameter which includes encoded search parameters like pickup/dropoff details and rental duration. This forms a hard dependency as the 'Car_Booking_Summary' API cannot function without the searchKey obtained from the 'Car_Search' API. The example values from the 'Car_Search' API response show the pickup location details which are part of the information encoded in the searchKey."
+        },
+        {
+            "source_api_name": "Car_Search",
+            "dependence_type": "Hard Dependency",
+            "depencend_field": "$.search_results[*].route_info.dropoff",
+            "param_name": "searchKey",
+            "reason": "The 'Car_Search' API is a necessary prerequisite for the 'Car_Booking_Summary' API as it provides the 'searchKey' parameter which includes encoded search parameters such as pickup/dropoff details and rental duration. This establishes a hard dependency between the two APIs. The 'route_info.dropoff' field from the 'Car_Search' API response contains location details that are part of the encoded 'searchKey' required by the 'Car_Booking_Summary' API."
+        }
+    ],
+    "verified": false
+}

@@ -1,0 +1,37 @@
+{
+    "name": "Get_Nearby_Cities",
+    "docs_row": {
+        "name": "Get_Nearby_Cities",
+        "description": "Search for cities around a given geographical coordinates. EndPoint: /api/v1/hotels/getNearbyCities",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "longitude": {
+                    "type": "string",
+                    "description": "Longitude of the searched location. `longitude` can be retrieved from `api/v1/meta/locationToLatLong`**(Location to Lat Long)** endpoint in **Meta** collection."
+                },
+                "latitude": {
+                    "type": "string",
+                    "description": "Latitude of the searched location. `latitude` can be retrieved from `api/v1/meta/locationToLatLong`**(Location to Lat Long)** endpoint in **Meta** collection."
+                }
+            },
+            "required": [
+                "longitude",
+                "latitude"
+            ]
+        }
+    },
+    "api_response_schema": [
+        {
+            "region": "Quebec",
+            "latitude": 45.45548,
+            "dest_type": "city",
+            "cc1": "ca",
+            "name": "Brossard",
+            "longitude": -73.46789,
+            "nr_hotels": 23,
+            "country": "Canada",
+            "dest_id": -561713
+        }
+    ]
+}

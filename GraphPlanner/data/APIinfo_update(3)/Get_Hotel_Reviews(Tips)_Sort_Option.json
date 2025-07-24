@@ -1,0 +1,35 @@
+{
+    "name": "Get_Hotel_Reviews_Sort_Option",
+    "docs_row": {
+        "name": "Get_Hotel_Reviews_Sort_Option",
+        "endpoint": "/api/v1/hotels/getHotelReviewsSortOption",
+        "func_description": "Obtain all the available sort parameters for hotel reviews. The sort parameters can be used as `sort_option_id` parameter in  '/api/v1/hotels/getHotelReviews' EndPoint. ",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "hotel_id": {
+                    "type": "String",
+                    "description": "hotel_id can be retrieved from api/v1/hotels/searchHotels(Search Hotels) or api/v1/hotels/searchHotelsByCoordinates(Search Hotels By Coordinates\n) endpoint in Hotels collection.",
+                    "example_value": "5955189",
+                    "required": true
+                },
+                "languagecode": {
+                    "type": "String",
+                    "description": "To obtain the response data in a specific language, enter the languagecode. languagecode can be retrieved from api/v1/meta/getLanguages(Get Languages\n) endpoint in Meta collection.",
+                    "example_value": "en-us",
+                    "required": false
+                }
+            },
+            "required": [
+                "hotel_id"
+            ]
+        }
+    },
+    "api_response_schema": [
+        {
+            "title": "From your country",
+            "sort_option_default": 0,
+            "sort_option_id": "user_country"
+        }
+    ]
+}

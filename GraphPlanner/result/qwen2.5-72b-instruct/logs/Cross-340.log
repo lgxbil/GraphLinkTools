@@ -1,0 +1,48 @@
+2025-07-22 05:45:52,774 - evaluation_logger_Cross-340 - INFO - Test Example Cross-340
+2025-07-22 05:45:52,775 - evaluation_logger_Cross-340 - INFO - Query: Look up the cheapest flight from Hong Kong to Singapore on December 10, 2024. I do not accept flights that require an overnight transfer. Book the cheapest hotel near Marina Bay for one night and arrange a taxi service from the airport to the hotel half an hour after the plane lands.
+2025-07-22 05:48:30,644 - evaluation_logger_Cross-340 - INFO - Start compare_single_call: 
+{'name': 'Search_Flight_Location', 'arguments': {'query': 'Hong Kong'}}
+{'name': 'Search_Flight_Location', 'arguments': {'query': 'Hong Kong'}}
+2025-07-22 05:48:30,645 - evaluation_logger_Cross-340 - INFO - Rule-based compare success.
+2025-07-22 05:48:30,645 - evaluation_logger_Cross-340 - INFO - Success matched: [{'name': 'Search_Flight_Location', 'arguments': {'query': 'Hong Kong'}}]
+2025-07-22 05:48:30,645 - evaluation_logger_Cross-340 - INFO - Start compare_single_call: 
+{'name': 'Search_Flight_Location', 'arguments': {'query': 'Singapore'}}
+{'name': 'Search_Flight_Location', 'arguments': {'query': 'Singapore'}}
+2025-07-22 05:48:30,646 - evaluation_logger_Cross-340 - INFO - Rule-based compare success.
+2025-07-22 05:48:30,646 - evaluation_logger_Cross-340 - INFO - Success matched: [{'name': 'Search_Flight_Location', 'arguments': {'query': 'Singapore'}}]
+2025-07-22 05:48:31,249 - evaluation_logger_Cross-340 - INFO - Success matched: []
+2025-07-22 05:49:37,502 - evaluation_logger_Cross-340 - INFO - Start compare_single_call: 
+{'name': 'Search_Flights', 'arguments': {'departDate': '2024-12-10', 'fromId': 'HKG.AIRPORT', 'sort': 'CHEAPEST', 'toId': 'SIN.AIRPORT'}}
+{'name': 'Search_Flights', 'arguments': {'departDate': '2024-12-10', 'fromId': 'HKG.AIRPORT', 'sort': 'CHEAPEST', 'toId': 'SIN.AIRPORT'}}
+2025-07-22 05:49:37,502 - evaluation_logger_Cross-340 - INFO - Rule-based compare success.
+2025-07-22 05:49:37,502 - evaluation_logger_Cross-340 - INFO - Success matched: [{'name': 'Search_Flights', 'arguments': {'departDate': '2024-12-10', 'fromId': 'HKG.AIRPORT', 'sort': 'CHEAPEST', 'toId': 'SIN.AIRPORT'}}]
+2025-07-22 05:49:37,864 - evaluation_logger_Cross-340 - INFO - Start compare_single_call: 
+{'name': 'Search_Hotel_Destination', 'arguments': {'query': 'Marina Bay, Singapore'}}
+{'name': 'Search_Hotel_Destination', 'arguments': {'query': 'Marina Bay'}}
+2025-07-22 05:49:43,213 - evaluation_logger_Cross-340 - DEBUG - LLM-based comparison output: {'is_equal': True, 'reason': "The parameter 'query' in both function calls refers to the same location, with or without the country suffix 'Singapore', which is considered equivalent."}
+2025-07-22 05:49:43,214 - evaluation_logger_Cross-340 - INFO - LLM-based compare success.
+2025-07-22 05:49:43,214 - evaluation_logger_Cross-340 - INFO - Success matched: [{'name': 'Search_Hotel_Destination', 'arguments': {'query': 'Marina Bay'}}]
+2025-07-22 05:49:43,567 - evaluation_logger_Cross-340 - INFO - Success matched: []
+2025-07-22 05:51:02,997 - evaluation_logger_Cross-340 - INFO - Start compare_single_call: 
+{'name': 'Search_Hotel_Destination', 'arguments': {'query': 'Marina Bay, Singapore'}}
+{'name': 'Search_Hotel_Destination', 'arguments': {'query': 'Marina Bay'}}
+2025-07-22 05:51:08,139 - evaluation_logger_Cross-340 - DEBUG - LLM-based comparison output: {'is_equal': True, 'reason': "The parameter 'query' in both function calls refers to the same location, with or without the country suffix 'Singapore', which is considered equivalent."}
+2025-07-22 05:51:08,139 - evaluation_logger_Cross-340 - INFO - LLM-based compare success.
+2025-07-22 05:51:08,139 - evaluation_logger_Cross-340 - INFO - Success matched: [{'name': 'Search_Hotel_Destination', 'arguments': {'query': 'Marina Bay'}}]
+2025-07-22 05:51:08,516 - evaluation_logger_Cross-340 - INFO - Start compare_single_call: 
+{'name': 'Search_Hotels', 'arguments': {'adults': 1, 'arrival_date': '2024-12-10', 'departure_date': '2024-12-11', 'dest_id': 1448, 'room_qty': 1, 'search_type': 'district'}}
+{'name': 'Search_Hotels', 'arguments': {'arrival_date': '2024-12-10', 'departure_date': '2024-12-11', 'dest_id': 1448, 'search_type': 'district', 'sort_by': 'price'}}
+2025-07-22 05:51:08,516 - evaluation_logger_Cross-340 - INFO - {'error_type': 'param_missing', 'content': 'Missing parameter sort_by in prediction.'}
+2025-07-22 05:51:08,516 - evaluation_logger_Cross-340 - INFO - Success matched: []
+2025-07-22 05:52:27,851 - evaluation_logger_Cross-340 - INFO - Start compare_single_call: 
+{'name': 'Search_Hotel_Destination', 'arguments': {'query': 'Marina Bay, Singapore'}}
+{'name': 'Search_Hotel_Destination', 'arguments': {'query': 'Marina Bay'}}
+2025-07-22 05:52:33,555 - evaluation_logger_Cross-340 - DEBUG - LLM-based comparison output: {'is_equal': True, 'reason': "The parameter 'query' in both function calls refers to the same location, with or without the country suffix 'Singapore', which is considered equivalent."}
+2025-07-22 05:52:33,555 - evaluation_logger_Cross-340 - INFO - LLM-based compare success.
+2025-07-22 05:52:33,555 - evaluation_logger_Cross-340 - INFO - Success matched: [{'name': 'Search_Hotel_Destination', 'arguments': {'query': 'Marina Bay'}}]
+2025-07-22 05:52:33,915 - evaluation_logger_Cross-340 - INFO - Start compare_single_call: 
+{'name': 'Search_Hotels', 'arguments': {'adults': 1, 'arrival_date': '2024-12-10', 'departure_date': '2024-12-11', 'dest_id': 1448, 'room_qty': 1, 'search_type': 'district', 'sort_by': 'PRICE'}}
+{'name': 'Search_Hotels', 'arguments': {'arrival_date': '2024-12-10', 'departure_date': '2024-12-11', 'dest_id': 1448, 'search_type': 'district', 'sort_by': 'price'}}
+2025-07-22 05:52:33,916 - evaluation_logger_Cross-340 - INFO - {'error_type': 'value_error', 'content': "Parameter sort_by value 'PRICE' is not correct in prediction."}
+2025-07-22 05:52:33,916 - evaluation_logger_Cross-340 - INFO - Success matched: []
+2025-07-22 05:52:54,338 - evaluation_logger_Cross-340 - ERROR - 'questions'

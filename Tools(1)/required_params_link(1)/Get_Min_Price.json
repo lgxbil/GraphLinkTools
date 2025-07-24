@@ -1,0 +1,516 @@
+{
+    "name": "Get_Min_Price",
+    "docs_row": {
+        "name": "Get_Min_Price",
+        "endpoint": "/api/v1/flights/getMinPrice",
+        "func_description": "Get the minimum price for flights. This API will return the lowest priced flights within 5 days before and after the query date. ",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "fromId": {
+                    "type": "String",
+                    "description": "From/Departure location Id. fromId can be retrieved from api/v1/flights/searchDestination(Search Flight Location) endpoint in Flights collection as id.",
+                    "example_value": "BOM.AIRPORT",
+                    "required": true
+                },
+                "toId": {
+                    "type": "String",
+                    "description": "To/Arrival location Id. toId can be retrieved from api/v1/flights/searchDestination(Search Flight Location) endpoint in Flights collection as id.",
+                    "example_value": "DEL.AIRPORT",
+                    "required": true
+                },
+                "departDate": {
+                    "type": "Date (yyyy-mm-dd)",
+                    "description": "Departure or travel date.\nFormat: YYYY-MM-DD",
+                    "example_value": "",
+                    "required": true
+                },
+                "returnDate": {
+                    "type": "Date (yyyy-mm-dd)",
+                    "description": "Return date.\nFormat: YYYY-MM-DD",
+                    "example_value": "",
+                    "required": false
+                },
+                "cabinClass": {
+                    "type": "Enum",
+                    "description": "Search for flights that match the cabin class specified. Cabin call can be either ECONOMY, PREMIUM_ECONOMY, BUSINESS or FIRST.",
+                    "example_value": "",
+                    "required": false
+                },
+                "currency_code": {
+                    "type": "String",
+                    "description": "The currency code. currency_code can be retrieved from api/v1/meta/getCurrency(Get Currency) endpoint in Hotels collection.",
+                    "example_value": "AED",
+                    "required": false
+                }
+            },
+            "required": [
+                "fromId",
+                "toId",
+                "departDate"
+            ]
+        }
+    },
+    "instance": [],
+    "category": null,
+    "tool": null,
+    "api_idx": 36,
+    "params": {
+        "type": "object",
+        "properties": {
+            "fromId": {
+                "type": "String",
+                "description": "From/Departure location Id. fromId can be retrieved from api/v1/flights/searchDestination(Search Flight Location) endpoint in Flights collection as id.",
+                "example_value": "BOM.AIRPORT",
+                "required": true
+            },
+            "toId": {
+                "type": "String",
+                "description": "To/Arrival location Id. toId can be retrieved from api/v1/flights/searchDestination(Search Flight Location) endpoint in Flights collection as id.",
+                "example_value": "DEL.AIRPORT",
+                "required": true
+            },
+            "departDate": {
+                "type": "Date (yyyy-mm-dd)",
+                "description": "Departure or travel date.\nFormat: YYYY-MM-DD",
+                "example_value": "",
+                "required": true
+            },
+            "returnDate": {
+                "type": "Date (yyyy-mm-dd)",
+                "description": "Return date.\nFormat: YYYY-MM-DD",
+                "example_value": "",
+                "required": false
+            },
+            "cabinClass": {
+                "type": "Enum",
+                "description": "Search for flights that match the cabin class specified. Cabin call can be either ECONOMY, PREMIUM_ECONOMY, BUSINESS or FIRST.",
+                "example_value": "",
+                "required": false
+            },
+            "currency_code": {
+                "type": "String",
+                "description": "The currency code. currency_code can be retrieved from api/v1/meta/getCurrency(Get Currency) endpoint in Hotels collection.",
+                "example_value": "AED",
+                "required": false
+            }
+        },
+        "required": [
+            "fromId",
+            "toId",
+            "departDate"
+        ]
+    },
+    "responses": [
+        {
+            "function_name": "Get_Min_Price",
+            "arguments": {
+                "fromId": "BOM.AIRPORT",
+                "toId": "DEL.AIRPORT",
+                "departDate": "2025-06-15"
+            },
+            "observation": [
+                {
+                    "departureDate": "2025-06-10",
+                    "searchDates": [
+                        "2025-06-10"
+                    ],
+                    "offsetDays": -5,
+                    "accuracyTrackerId": "01kp0_kh0lPPIRVopJAx0O_YlYXDsel5E41QYsK-dW6uY4SiY3adyjQnJkK8uoJe",
+                    "isCheapest": false,
+                    "price": {
+                        "currencyCode": "USD",
+                        "units": 65,
+                        "nanos": 180000000
+                    },
+                    "priceRounded": {
+                        "currencyCode": "USD",
+                        "units": 66,
+                        "nanos": 0
+                    }
+                },
+                {
+                    "departureDate": "2025-06-11",
+                    "searchDates": [
+                        "2025-06-11"
+                    ],
+                    "offsetDays": -4,
+                    "accuracyTrackerId": "01kp0_kh0lPPIRVopJAx0LTl6AUql_syfcTAMjzHiKKuY4SiY3adyjQnJkK8uoJe",
+                    "isCheapest": true,
+                    "price": {
+                        "currencyCode": "USD",
+                        "units": 64,
+                        "nanos": 390000000
+                    },
+                    "priceRounded": {
+                        "currencyCode": "USD",
+                        "units": 65,
+                        "nanos": 0
+                    }
+                },
+                {
+                    "departureDate": "2025-06-12",
+                    "searchDates": [
+                        "2025-06-12"
+                    ],
+                    "offsetDays": -3,
+                    "accuracyTrackerId": "01kp0_kh0lPPIRVopJAx0EMXeqW1d8gR7JSJVlu2TZKuY4SiY3adyjQnJkK8uoJe",
+                    "isCheapest": false,
+                    "price": {
+                        "currencyCode": "USD",
+                        "units": 66,
+                        "nanos": 540000000
+                    },
+                    "priceRounded": {
+                        "currencyCode": "USD",
+                        "units": 67,
+                        "nanos": 0
+                    }
+                }
+            ]
+        },
+        {
+            "function_name": "Get_Min_Price",
+            "arguments": {
+                "fromId": "BOM.AIRPORT",
+                "toId": "DEL.AIRPORT",
+                "departDate": "2025-06-15",
+                "cabinClass": "ECONOMY",
+                "currency_code": "AED"
+            },
+            "observation": [
+                {
+                    "departureDate": "2025-06-10",
+                    "searchDates": [
+                        "2025-06-10"
+                    ],
+                    "offsetDays": -5,
+                    "accuracyTrackerId": "01kp0_kh0lPPIRVopJAx0O_YlYXDsel5E41QYsK-dW6uY4SiY3adyjQnJkK8uoJe",
+                    "isCheapest": false,
+                    "price": {
+                        "currencyCode": "AED",
+                        "units": 239,
+                        "nanos": 410000000
+                    },
+                    "priceRounded": {
+                        "currencyCode": "AED",
+                        "units": 242,
+                        "nanos": 420000000
+                    }
+                },
+                {
+                    "departureDate": "2025-06-11",
+                    "searchDates": [
+                        "2025-06-11"
+                    ],
+                    "offsetDays": -4,
+                    "accuracyTrackerId": "01kp0_kh0lPPIRVopJAx0LTl6AUql_syfcTAMjzHiKKuY4SiY3adyjQnJkK8uoJe",
+                    "isCheapest": true,
+                    "price": {
+                        "currencyCode": "AED",
+                        "units": 236,
+                        "nanos": 500000000
+                    },
+                    "priceRounded": {
+                        "currencyCode": "AED",
+                        "units": 238,
+                        "nanos": 750000000
+                    }
+                },
+                {
+                    "departureDate": "2025-06-12",
+                    "searchDates": [
+                        "2025-06-12"
+                    ],
+                    "offsetDays": -3,
+                    "accuracyTrackerId": "01kp0_kh0lPPIRVopJAx0EMXeqW1d8gR7JSJVlu2TZKuY4SiY3adyjQnJkK8uoJe",
+                    "isCheapest": false,
+                    "price": {
+                        "currencyCode": "AED",
+                        "units": 244,
+                        "nanos": 400000000
+                    },
+                    "priceRounded": {
+                        "currencyCode": "AED",
+                        "units": 246,
+                        "nanos": 90000000
+                    }
+                }
+            ]
+        }
+    ],
+    "response_summary": "The API response provides flight pricing information for three different departure dates in June 2025. The cheapest option is available on June 11th, priced at $64.39 (rounded to $65). On June 10th, the flight costs $65.18 (rounded to $66), while June 12th is slightly more expensive at $66.54 (rounded to $67). Each date includes a unique tracking identifier for accuracy and shows how many days the search was conducted in advance of the departure date (ranging from 3 to 5 days prior). If you're looking for the best deal, June 11th stands out as the most economical choice.",
+    "enhance_func_desc": "This API is ideal for travelers comparing flight prices for budget planning. It retrieves the minimum flight price between specified departure and arrival locations for given dates, with optional cabin class filtering. The response includes detailed pricing information, rounded costs, and tracking identifiers. Users can identify the most economical travel dates and plan accordingly. Location IDs must be obtained from the SearchDestination API.",
+    "enhance_params_desc": {
+        "enhanced_parameters": {
+            "fromId": "Unique identifier for the departure airport/location.",
+            "toId": "Unique identifier for the arrival airport/location.",
+            "departDate": "Date of departure for the flight (YYYY-MM-DD format).",
+            "returnDate": "Optional return date for round-trip flights (YYYY-MM-DD format).",
+            "cabinClass": "Preferred flight class (ECONOMY, PREMIUM_ECONOMY, BUSINESS, FIRST).",
+            "currency_code": "Currency for displaying flight prices (e.g., AED, USD)."
+        }
+    },
+    "enhance_resfield_desc": {
+        "response_fields": [
+            {
+                "departureDate": {
+                    "type": "Date",
+                    "description": "The date of the flight departure in YYYY-MM-DD format."
+                },
+                "searchDates": {
+                    "type": "Array",
+                    "description": "A list of dates when the search was conducted, formatted as YYYY-MM-DD.",
+                    "ar_items": {
+                        "type": "Date",
+                        "description": "A specific search date."
+                    }
+                },
+                "offsetDays": {
+                    "type": "Number",
+                    "description": "The number of days prior to the departure date when the search was conducted (e.g., -5 means 5 days before departure)."
+                },
+                "accuracyTrackerId": {
+                    "type": "String",
+                    "description": "A unique identifier used for tracking the accuracy of the flight pricing information."
+                },
+                "isCheapest": {
+                    "type": "Boolean",
+                    "description": "Indicates whether this flight option is the cheapest among the provided options."
+                },
+                "price": {
+                    "type": "Object",
+                    "description": "The exact price of the flight, including currency and breakdown into units and nanos.",
+                    "ob_properties": {
+                        "currencyCode": {
+                            "type": "String",
+                            "description": "The currency code for the price (e.g., 'USD')."
+                        },
+                        "units": {
+                            "type": "Number",
+                            "description": "The whole number part of the price (e.g., 65)."
+                        },
+                        "nanos": {
+                            "type": "Number",
+                            "description": "The fractional part of the price represented in nanoseconds (e.g., 180000000 for $0.18)."
+                        }
+                    }
+                },
+                "priceRounded": {
+                    "type": "Object",
+                    "description": "The rounded price of the flight, including currency and breakdown into units and nanos.",
+                    "ob_properties": {
+                        "currencyCode": {
+                            "type": "String",
+                            "description": "The currency code for the rounded price (e.g., 'USD')."
+                        },
+                        "units": {
+                            "type": "Number",
+                            "description": "The whole number part of the rounded price (e.g., 66)."
+                        },
+                        "nanos": {
+                            "type": "Number",
+                            "description": "The fractional part of the rounded price, typically 0 since it's rounded."
+                        }
+                    }
+                }
+            }
+        ]
+    },
+    "params_desc_list": null,
+    "response_desc_list": [
+        {
+            "path_name": "$[].departureDate",
+            "name": "departureDate",
+            "description": "The date of the flight departure in YYYY-MM-DD format."
+        },
+        {
+            "path_name": "$[].searchDates",
+            "name": "searchDates",
+            "description": "A list of dates when the search was conducted, formatted as YYYY-MM-DD."
+        },
+        {
+            "path_name": "$[].searchDates[]",
+            "name": "searchDates[]",
+            "description": "A specific search date."
+        },
+        {
+            "path_name": "$[].offsetDays",
+            "name": "offsetDays",
+            "description": "The number of days prior to the departure date when the search was conducted (e.g., -5 means 5 days before departure)."
+        },
+        {
+            "path_name": "$[].accuracyTrackerId",
+            "name": "accuracyTrackerId",
+            "description": "A unique identifier used for tracking the accuracy of the flight pricing information."
+        },
+        {
+            "path_name": "$[].isCheapest",
+            "name": "isCheapest",
+            "description": "Indicates whether this flight option is the cheapest among the provided options."
+        },
+        {
+            "path_name": "$[].price",
+            "name": "price",
+            "description": "The exact price of the flight, including currency and breakdown into units and nanos."
+        },
+        {
+            "path_name": "$[].price.currencyCode",
+            "name": "currencyCode",
+            "description": "The currency code for the price (e.g., 'USD')."
+        },
+        {
+            "path_name": "$[].price.units",
+            "name": "units",
+            "description": "The whole number part of the price (e.g., 65)."
+        },
+        {
+            "path_name": "$[].price.nanos",
+            "name": "nanos",
+            "description": "The fractional part of the price represented in nanoseconds (e.g., 180000000 for $0.18)."
+        },
+        {
+            "path_name": "$[].priceRounded",
+            "name": "priceRounded",
+            "description": "The rounded price of the flight, including currency and breakdown into units and nanos."
+        },
+        {
+            "path_name": "$[].priceRounded.currencyCode",
+            "name": "currencyCode",
+            "description": "The currency code for the rounded price (e.g., 'USD')."
+        },
+        {
+            "path_name": "$[].priceRounded.units",
+            "name": "units",
+            "description": "The whole number part of the rounded price (e.g., 66)."
+        },
+        {
+            "path_name": "$[].priceRounded.nanos",
+            "name": "nanos",
+            "description": "The fractional part of the rounded price, typically 0 since it's rounded."
+        }
+    ],
+    "depends_on": [
+        {
+            "target_api_params": "fromId",
+            "reason": "The 'fromId' parameter in the target API requires a unique identifier for the departure airport/location. The source API's response field 'id' (e.g., 'JFK.AIRPORT') provides exactly this identifier when the type is 'AIRPORT'. This is a direct match in both data type and purpose, as the target API explicitly states that 'fromId' can be retrieved from this endpoint.",
+            "source_jsonpath": "$[*].id",
+            "confidence": 100,
+            "dependency_relationship": "Hard Dependency(Prerequisite API)",
+            "source_api": "Search_Flight_Location"
+        },
+        {
+            "target_api_params": "fromId",
+            "reason": "The 'fromId' parameter in the target API requires a unique identifier for the departure airport/location. The source API's response includes an 'id' field for each location, which matches the requirement of being a unique identifier. This creates a potential business association where a traveler might first search for car rental locations and then use the same location's ID to check flight prices.",
+            "source_jsonpath": "$[*].id",
+            "confidence": 90,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Car_Auto-Complete"
+        },
+        {
+            "target_api_params": "fromId",
+            "reason": "The 'fromId' parameter in the target API requires a unique identifier for the departure airport/location. The source API's 'departureAirport' field in flight segments provides the exact airport code (e.g., 'BOM') which matches the required format for 'fromId'. This creates a potential business association where a traveler wants to check the minimum price for flights from the same departure location.",
+            "source_jsonpath": "$.flightOffers[*].segments[*].departureAirport.code",
+            "confidence": 95,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Search_Flights"
+        },
+        {
+            "target_api_params": "fromId",
+            "reason": "The 'fromId' parameter in the target API requires a unique identifier for the departure airport/location. The source API's 'departureAirport.code' field in flight segments provides the exact airport code (e.g., 'BOM'). This matches the data type and format required by the target API, making it a suitable input parameter.",
+            "source_jsonpath": "$.flightOffers[*].segments[*].departureAirport.code",
+            "confidence": 95,
+            "dependency_relationship": "Hard Dependency(Prerequisite API)",
+            "source_api": "Search_Flights_Multi_Stops"
+        },
+        {
+            "target_api_params": "fromId",
+            "reason": "The 'fromId' parameter in the target API requires a unique identifier for the departure airport/location. The source API's 'location_hash' field in the pickup route info provides a unique identifier for the airport location (e.g., 'Sm9obiBGIEtlbm5lZHkgSW50ZXJuYXRpb25hbCBBaXJwb3J0'). This creates a potential business association where a traveler might want to compare flight prices from the same location where they are picking up a rental car.",
+            "source_jsonpath": "$.search_results[*].route_info.pickup.location_hash",
+            "confidence": 85,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Car_Search"
+        },
+        {
+            "target_api_params": "toId",
+            "reason": "The 'toId' parameter in the target API requires a unique identifier for the arrival airport/location. The source API's response fields include 'id' values for both cities and airports (e.g., 'JFK.AIRPORT'), which exactly match the format expected by the target API. This is a clear prerequisite for calling the target API, as the target API documentation explicitly states that location IDs must be obtained from the SearchDestination API.",
+            "source_jsonpath": "$[*].id",
+            "confidence": 100,
+            "dependency_relationship": "Hard Dependency(Prerequisite API)",
+            "source_api": "Search_Flight_Location"
+        },
+        {
+            "target_api_params": "toId",
+            "reason": "The 'toId' parameter in the target API requires a unique identifier for the arrival airport/location. The source API's 'arrivalAirport' field in flight segments provides the exact arrival airport details including the code (e.g., 'AMD'). This matches the requirement of the target API parameter as it provides the necessary identifier for the arrival location.",
+            "source_jsonpath": "$.flightOffers[*].segments[*].arrivalAirport.code",
+            "confidence": 95,
+            "dependency_relationship": "Hard Dependency(Prerequisite API)",
+            "source_api": "Search_Flights_Multi_Stops"
+        },
+        {
+            "target_api_params": "toId",
+            "reason": "The 'toId' parameter in the target API requires a unique identifier for the arrival airport/location. The source API's response includes an 'iata_code' field (e.g., 'JFK') which is a standard identifier for airports. This matches the requirement for the 'toId' parameter in the target API, as IATA codes are commonly used to identify airports in flight-related APIs.",
+            "source_jsonpath": "$[*].iata_code",
+            "confidence": 95,
+            "dependency_relationship": "Hard Dependency(Prerequisite API)",
+            "source_api": "Car_Auto-Complete"
+        },
+        {
+            "target_api_params": "toId",
+            "reason": "The 'toId' parameter in the target API requires a unique identifier for the arrival airport/location. The source API's 'arrivalAirport.code' field in flight segments provides the IATA code for the arrival airport (e.g., 'DEL'). This matches the data type (String) and serves as a valid identifier for the arrival location.",
+            "source_jsonpath": "$.flightOffers[*].segments[*].arrivalAirport.code",
+            "confidence": 95,
+            "dependency_relationship": "Hard Dependency(Prerequisite API)",
+            "source_api": "Search_Flights"
+        },
+        {
+            "target_api_params": "departDate",
+            "reason": "The 'departDate' parameter in the target API requires a specific departure date in YYYY-MM-DD format. The source API's 'departureDate' field provides exactly this format (e.g., '2025-05-20'). This creates a potential business association where a traveler might want to compare minimum prices for the same departure date across different flight options.",
+            "source_jsonpath": "$[*].departureDate",
+            "confidence": 95,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Get_Min_Price_Multi_Stops"
+        },
+        {
+            "target_api_params": "departDate",
+            "reason": "The 'departDate' parameter in the target API requires a flight departure date in YYYY-MM-DD format. The source API's 'departure_date' field provides exactly this format (e.g., '2025-06-15'). This creates a potential business association where a traveler might want to check flight prices for the same date they're checking out of a hotel.",
+            "source_jsonpath": "$.departure_date",
+            "confidence": 95,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Get_Room_List"
+        },
+        {
+            "target_api_params": "departDate",
+            "reason": "The 'departDate' parameter in the target API requires a specific departure date in YYYY-MM-DD format. The source API's 'departureTime' field in flight segments provides exact departure timestamps (e.g., '2025-05-25T01:00:00'). The date portion can be extracted to match the required format. This creates a potential business association where a traveler wants to check the minimum price for a flight on the same departure date.",
+            "source_jsonpath": "$.flightOffers[*].segments[*].departureTime",
+            "confidence": 95,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Search_Flights_Multi_Stops"
+        },
+        {
+            "target_api_params": "departDate",
+            "reason": "The 'departDate' parameter in the target API requires a specific departure date in YYYY-MM-DD format. The source API's 'departureTime' field in flight segments provides exact departure timestamps (e.g., '2025-06-15T06:00:00'). The date portion can be extracted to match the required format. This creates a potential business association where a traveler wants to check the minimum price for the same departure date.",
+            "source_jsonpath": "$.flightOffers[*].segments[*].departureTime",
+            "confidence": 95,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Search_Flights"
+        },
+        {
+            "target_api_params": "departDate",
+            "reason": "The 'departDate' parameter in the target API requires a specific flight departure date (YYYY-MM-DD format). The source API's 'checkoutDate' field in hotel properties provides exact departure dates (e.g., '2025-06-15'). The data types match exactly (both are in YYYY-MM-DD format). This creates a potential business association where a traveler might want to check flight prices for the same date they check out of their hotel.",
+            "source_jsonpath": "$.hotels[*].property.checkoutDate",
+            "confidence": 85,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Search_Hotels"
+        },
+        {
+            "target_api_params": "departDate",
+            "reason": "The 'departDate' parameter in the target API requires the departure date for a flight in YYYY-MM-DD format. The source API's 'requestedPickupDateTime' field provides a timestamp (e.g., '2025-06-15T14:30:00') which includes the date component. While the data types differ (timestamp vs date), the date portion can be extracted. This creates a potential business association where a traveler might want to check flight prices for the same date they have booked a taxi.",
+            "source_jsonpath": "$.journeys[*].requestedPickupDateTime",
+            "confidence": 85,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Search_Taxi"
+        }
+    ],
+    "verified": true
+}

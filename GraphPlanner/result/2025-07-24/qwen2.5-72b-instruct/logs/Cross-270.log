@@ -1,0 +1,46 @@
+2025-07-24 06:24:41,614 - evaluation_logger_Cross-270 - INFO - Test Example Cross-270
+2025-07-24 06:24:41,614 - evaluation_logger_Cross-270 - INFO - Query: I want to know about fun attractions in the cities near the Hotel Marrol's Bratislava. Can you provide me with detailed information about these attractions?
+2025-07-24 06:25:52,845 - evaluation_logger_Cross-270 - INFO - Start compare_single_call: 
+{'name': 'Location_to_Lat_Long', 'arguments': {'query': "Hotel Marrol's Bratislava"}}
+{'name': 'Location_to_Lat_Long', 'arguments': {'query': "Hotel Marrol's Bratislava"}}
+2025-07-24 06:25:52,845 - evaluation_logger_Cross-270 - INFO - Rule-based compare success.
+2025-07-24 06:25:52,845 - evaluation_logger_Cross-270 - INFO - Success matched: [{'name': 'Location_to_Lat_Long', 'arguments': {'query': "Hotel Marrol's Bratislava"}}]
+2025-07-24 06:25:52,846 - evaluation_logger_Cross-270 - INFO - Start compare_single_call: 
+{'name': 'Get_Nearby_Cities', 'arguments': {'latitude': '48.14137', 'longitude': '17.113571'}}
+{'name': 'Get_Nearby_Cities', 'arguments': {'latitude': '48.14137', 'longitude': '17.113571'}}
+2025-07-24 06:25:52,846 - evaluation_logger_Cross-270 - INFO - Rule-based compare success.
+2025-07-24 06:25:52,846 - evaluation_logger_Cross-270 - INFO - Success matched: [{'name': 'Get_Nearby_Cities', 'arguments': {'latitude': '48.14137', 'longitude': '17.113571'}}]
+2025-07-24 06:25:53,590 - evaluation_logger_Cross-270 - INFO - Success matched: []
+2025-07-24 06:26:18,573 - evaluation_logger_Cross-270 - INFO - Start compare_single_call: 
+{'name': 'Search_Attractions', 'arguments': {'id': '-844962', 'sortBy': 'trending'}}
+{'name': 'Search_Attractions', 'arguments': {'id': 'eyJ1ZmkiOi04NDQ5NjJ9'}}
+2025-07-24 06:26:18,574 - evaluation_logger_Cross-270 - INFO - {'error_type': 'value_error', 'content': "Parameter id value '-844962' is not correct in prediction."}
+2025-07-24 06:26:18,574 - evaluation_logger_Cross-270 - INFO - Success matched: []
+2025-07-24 06:26:42,964 - evaluation_logger_Cross-270 - INFO - Start compare_single_call: 
+{'name': 'Search_Attraction_Location', 'arguments': {'query': "cities near Hotel Marrol's Bratislava"}}
+{'name': 'Search_Attraction_Location', 'arguments': {'query': 'Petržalka'}}
+2025-07-24 06:26:47,508 - evaluation_logger_Cross-270 - DEBUG - LLM-based comparison output: {'is_equal': False, 'reason': "The query parameters 'cities near Hotel Marrol's Bratislava' and 'Petržalka' are not equivalent as they refer to different locations or search terms."}
+2025-07-24 06:26:47,508 - evaluation_logger_Cross-270 - INFO - All compare method failed.
+2025-07-24 06:26:47,517 - evaluation_logger_Cross-270 - INFO - Success matched: []
+2025-07-24 06:28:05,295 - evaluation_logger_Cross-270 - INFO - Start compare_single_call: 
+{'name': 'Search_Attractions', 'arguments': {'id': '-844962', 'sortBy': 'trending'}}
+{'name': 'Search_Attractions', 'arguments': {'id': 'eyJ1ZmkiOi04NDQ5NjJ9'}}
+2025-07-24 06:28:05,295 - evaluation_logger_Cross-270 - INFO - {'error_type': 'value_error', 'content': "Parameter id value '-844962' is not correct in prediction."}
+2025-07-24 06:28:05,295 - evaluation_logger_Cross-270 - INFO - Success matched: []
+2025-07-24 06:28:35,505 - evaluation_logger_Cross-270 - INFO - Start compare_single_call: 
+{'name': 'Search_Attraction_Location', 'arguments': {'query': "Hotel Marrol's Bratislava"}}
+{'name': 'Search_Attraction_Location', 'arguments': {'query': 'Petržalka'}}
+2025-07-24 06:28:39,827 - evaluation_logger_Cross-270 - DEBUG - LLM-based comparison output: {'is_equal': False, 'reason': "The query parameters 'Hotel Marrol's Bratislava' and 'Petržalka' refer to different locations."}
+2025-07-24 06:28:39,828 - evaluation_logger_Cross-270 - INFO - All compare method failed.
+2025-07-24 06:28:39,828 - evaluation_logger_Cross-270 - INFO - Success matched: []
+2025-07-24 06:29:50,373 - evaluation_logger_Cross-270 - INFO - Start compare_single_call: 
+{'name': 'Search_Attractions', 'arguments': {'id': '-844962', 'sortBy': 'trending'}}
+{'name': 'Search_Attractions', 'arguments': {'id': 'eyJ1ZmkiOi04NDQ5NjJ9'}}
+2025-07-24 06:29:50,373 - evaluation_logger_Cross-270 - INFO - {'error_type': 'value_error', 'content': "Parameter id value '-844962' is not correct in prediction."}
+2025-07-24 06:29:50,373 - evaluation_logger_Cross-270 - INFO - Success matched: []
+2025-07-24 06:30:28,938 - evaluation_logger_Cross-270 - INFO - Start compare_single_call: 
+{'name': 'Search_Attraction_Location', 'arguments': {'query': "cities near Hotel Marrol's Bratislava"}}
+{'name': 'Search_Attraction_Location', 'arguments': {'query': 'Petržalka'}}
+2025-07-24 06:30:34,767 - evaluation_logger_Cross-270 - DEBUG - LLM-based comparison output: {'is_equal': False, 'reason': "The queries 'cities near Hotel Marrol's Bratislava' and 'Petržalka' are not equivalent as they refer to different locations or search terms."}
+2025-07-24 06:30:34,767 - evaluation_logger_Cross-270 - INFO - All compare method failed.
+2025-07-24 06:30:34,767 - evaluation_logger_Cross-270 - INFO - Success matched: []

@@ -1,0 +1,36 @@
+{
+    "name": "Get_Description_And_Info",
+    "docs_row": {
+        "name": "Get_Description_And_Info",
+        "endpoint": "/api/v1/hotels/getDescriptionAndInfo",
+        "func_description": "Retrieve the detailed description and information for a specific hotel. ",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "hotel_id": {
+                    "type": "String",
+                    "description": "hotel_id can be retrieved from api/v1/hotels/searchHotels(Search Hotels) or api/v1/hotels/searchHotelsByCoordinates(Search Hotels By Coordinates\n) endpoint in Hotels collection.",
+                    "example_value": "5955189",
+                    "required": true
+                },
+                "languagecode": {
+                    "type": "String",
+                    "description": "To obtain the response data in a specific language, enter the languagecode. languagecode can be retrieved from api/v1/meta/getLanguages(Get Languages\n) endpoint in Meta collection.",
+                    "example_value": "en-us",
+                    "required": false
+                }
+            },
+            "required": [
+                "hotel_id"
+            ]
+        }
+    },
+    "api_response_schema": [
+        {
+            "hotel_id": "11273378",
+            "description": "Guests are required to show a photo identification and credit card upon check-in. Please note that a",
+            "descriptiontype_id": 7,
+            "languagecode": "en"
+        }
+    ]
+}

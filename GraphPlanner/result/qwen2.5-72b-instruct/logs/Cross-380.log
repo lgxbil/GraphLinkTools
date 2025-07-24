@@ -1,0 +1,52 @@
+2025-07-22 06:05:30,784 - evaluation_logger_Cross-380 - INFO - Test Example Cross-380
+2025-07-22 06:05:30,784 - evaluation_logger_Cross-380 - INFO - Query: I'm going to have a meeting at the American Airlines Center in Dallas on November 10, 2024. After the meeting ends at 2 PM, I will fly from Dallas to San Diego for a vacation. Could you help me find the earliest flight to San Diego after the meeting and call a taxi to take me to the airport right after the meeting? Don't forget to look up the hotel within 10 kilometers of the airport in San Diego and check what fun places there are around the hotel.
+2025-07-22 06:08:24,369 - evaluation_logger_Cross-380 - INFO - Start compare_single_call: 
+{'name': 'Search_Flight_Location', 'arguments': {'query': 'Dallas'}}
+{'name': 'Search_Flight_Location', 'arguments': {'query': 'Dallas'}}
+2025-07-22 06:08:24,369 - evaluation_logger_Cross-380 - INFO - Rule-based compare success.
+2025-07-22 06:08:24,369 - evaluation_logger_Cross-380 - INFO - Success matched: [{'name': 'Search_Flight_Location', 'arguments': {'query': 'Dallas'}}]
+2025-07-22 06:08:24,369 - evaluation_logger_Cross-380 - INFO - Start compare_single_call: 
+{'name': 'Search_Flight_Location', 'arguments': {'query': 'San Diego'}}
+{'name': 'Search_Flight_Location', 'arguments': {'query': 'San Diego'}}
+2025-07-22 06:08:24,370 - evaluation_logger_Cross-380 - INFO - Rule-based compare success.
+2025-07-22 06:08:24,370 - evaluation_logger_Cross-380 - INFO - Success matched: [{'name': 'Search_Flight_Location', 'arguments': {'query': 'San Diego'}}]
+2025-07-22 06:08:24,963 - evaluation_logger_Cross-380 - INFO - Start compare_single_call: 
+{'name': 'Search_Flights', 'arguments': {'departDate': '2024-11-10', 'fromId': 'DFW.CITY', 'sort': 'BEST', 'toId': 'SAN.CITY'}}
+{'name': 'Search_Flights', 'arguments': {'departDate': '2024-11-10', 'fromId': 'DFW.CITY', 'toId': 'SAN.CITY'}}
+2025-07-22 06:08:30,385 - evaluation_logger_Cross-380 - DEBUG - LLM-based comparison output: {'is_equal': True, 'reason': "The parameter 'sort' in call 1 has a default value and is not required, so its omission in call 2 does not affect equivalence."}
+2025-07-22 06:08:30,385 - evaluation_logger_Cross-380 - INFO - LLM-based compare success.
+2025-07-22 06:08:30,386 - evaluation_logger_Cross-380 - INFO - Success matched: [{'name': 'Search_Flights', 'arguments': {'departDate': '2024-11-10', 'fromId': 'DFW.CITY', 'toId': 'SAN.CITY'}}]
+2025-07-22 06:08:30,387 - evaluation_logger_Cross-380 - INFO - Start compare_single_call: 
+{'name': 'Taxi_Search_Location', 'arguments': {'query': 'American Airlines Center, Dallas'}}
+{'name': 'Taxi_Search_Location', 'arguments': {'query': 'American Airlines Center, Dallas'}}
+2025-07-22 06:08:30,387 - evaluation_logger_Cross-380 - INFO - Rule-based compare success.
+2025-07-22 06:08:30,387 - evaluation_logger_Cross-380 - INFO - Success matched: [{'name': 'Taxi_Search_Location', 'arguments': {'query': 'American Airlines Center, Dallas'}}]
+2025-07-22 06:08:30,749 - evaluation_logger_Cross-380 - INFO - Start compare_single_call: 
+{'name': 'Taxi_Search_Location', 'arguments': {'query': 'San Diego International Airport'}}
+{'name': 'Taxi_Search_Location', 'arguments': {'query': 'Dallas-Fort Worth International Airport'}}
+2025-07-22 06:08:36,145 - evaluation_logger_Cross-380 - DEBUG - LLM-based comparison output: {'is_equal': False, 'reason': "The query parameters 'San Diego International Airport' and 'Dallas-Fort Worth International Airport' refer to different locations."}
+2025-07-22 06:08:36,145 - evaluation_logger_Cross-380 - INFO - All compare method failed.
+2025-07-22 06:08:36,145 - evaluation_logger_Cross-380 - INFO - Success matched: []
+2025-07-22 06:09:51,669 - evaluation_logger_Cross-380 - INFO - Start compare_single_call: 
+{'name': 'Taxi_Search_Location', 'arguments': {'query': 'American Airlines Center, Dallas'}}
+{'name': 'Taxi_Search_Location', 'arguments': {'query': 'American Airlines Center, Dallas'}}
+2025-07-22 06:09:51,669 - evaluation_logger_Cross-380 - INFO - Rule-based compare success.
+2025-07-22 06:09:51,669 - evaluation_logger_Cross-380 - INFO - Success matched: [{'name': 'Taxi_Search_Location', 'arguments': {'query': 'American Airlines Center, Dallas'}}]
+2025-07-22 06:09:52,042 - evaluation_logger_Cross-380 - INFO - Start compare_single_call: 
+{'name': 'Taxi_Search_Location', 'arguments': {'query': 'San Diego Airport'}}
+{'name': 'Taxi_Search_Location', 'arguments': {'query': 'Dallas-Fort Worth International Airport'}}
+2025-07-22 06:09:57,380 - evaluation_logger_Cross-380 - DEBUG - LLM-based comparison output: {'is_equal': False, 'reason': "The query parameters 'San Diego Airport' and 'Dallas-Fort Worth International Airport' refer to different locations."}
+2025-07-22 06:09:57,381 - evaluation_logger_Cross-380 - INFO - All compare method failed.
+2025-07-22 06:09:57,381 - evaluation_logger_Cross-380 - INFO - Success matched: []
+2025-07-22 06:11:33,474 - evaluation_logger_Cross-380 - INFO - Start compare_single_call: 
+{'name': 'Taxi_Search_Location', 'arguments': {'query': 'American Airlines Center, Dallas'}}
+{'name': 'Taxi_Search_Location', 'arguments': {'query': 'American Airlines Center, Dallas'}}
+2025-07-22 06:11:33,475 - evaluation_logger_Cross-380 - INFO - Rule-based compare success.
+2025-07-22 06:11:33,475 - evaluation_logger_Cross-380 - INFO - Success matched: [{'name': 'Taxi_Search_Location', 'arguments': {'query': 'American Airlines Center, Dallas'}}]
+2025-07-22 06:11:33,846 - evaluation_logger_Cross-380 - INFO - Start compare_single_call: 
+{'name': 'Taxi_Search_Location', 'arguments': {'query': 'San Diego International Airport'}}
+{'name': 'Taxi_Search_Location', 'arguments': {'query': 'Dallas-Fort Worth International Airport'}}
+2025-07-22 06:11:38,520 - evaluation_logger_Cross-380 - DEBUG - LLM-based comparison output: {'is_equal': False, 'reason': "The query parameters 'San Diego International Airport' and 'Dallas-Fort Worth International Airport' refer to different locations."}
+2025-07-22 06:11:38,521 - evaluation_logger_Cross-380 - INFO - All compare method failed.
+2025-07-22 06:11:38,529 - evaluation_logger_Cross-380 - INFO - Success matched: []
+2025-07-22 06:12:06,561 - evaluation_logger_Cross-380 - ERROR - 'questions'

@@ -1,0 +1,208 @@
+{
+    "shorten": {
+        "api": {
+            "name": "Get_Hotel_Policies",
+            "endpoint": "/api/v1/hotels/getHotelPolicies",
+            "func_description": "Retrieve policies for a specific hotel. ",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "hotel_id": {
+                        "type": "String",
+                        "description": "hotel_id can be retrieved from api/v1/hotels/searchHotels(Search Hotels) or api/v1/hotels/searchHotelsByCoordinates(Search Hotels By Coordinates\n) endpoint in Hotels collection.",
+                        "example_value": "5955189",
+                        "required": true
+                    },
+                    "languagecode": {
+                        "type": "String",
+                        "description": "To obtain the response data in a specific language, enter the languagecode. languagecode can be retrieved from api/v1/meta/getLanguages(Get Languages\n) endpoint in Meta collection.",
+                        "example_value": "en-us",
+                        "required": false
+                    }
+                },
+                "required": [
+                    "hotel_id"
+                ]
+            }
+        },
+        "static_response": {
+            "function_name": "Get_Hotel_Policies",
+            "arguments": {
+                "hotel_id": "7351698"
+            },
+            "observation": {
+                "status": true,
+                "message": "Success",
+                "data": {
+                    "policy": [
+                        {
+                            "type": "POLICY_CHILDREN",
+                            "policy_id": 1234567891,
+                            "content": [
+                                {
+                                    "text": "Children of any age are allowed.\n1 child (up to and including 2 years old) stays for € 10 per child per night when using available cots.\t\n1 child (up to and including 9 years old) stays for free when using existing beds.\t\n1 person (no matter the age) stays for € 30 per child per night when using available extra beds.\t\nThe maximum number of extra beds is 1.\nThe maximum number of cots is 1.\nThe maximum number of guests is 4.\n",
+                                    "languagecode": "en-gb"
+                                }
+                            ]
+                        },
+                        {
+                            "content": [
+                                {
+                                    "languagecode": "en-gb",
+                                    "text": "When booking more than 3 rooms, different policies and additional supplements may apply.\n"
+                                }
+                            ],
+                            "policy_id": 1234567891,
+                            "type": "POLICY_HOTEL_GROUPS"
+                        },
+                        {
+                            "content": [
+                                {
+                                    "languagecode": "en-gb",
+                                    "text": "WiFi is available in all areas and is free of charge.\n"
+                                }
+                            ],
+                            "policy_id": 1234567891,
+                            "type": "POLICY_HOTEL_INTERNET"
+                        }
+                    ],
+                    "name": "Smart Flex Reservations policy - 16 days until checkin",
+                    "policygroup_type_id": 210,
+                    "hotel_id": 7351698,
+                    "policygroup_id": 377231575
+                }
+            }
+        },
+        "required": {
+            "query": "I'm considering staying at a hotel with ID 5955189. Can you provide me with the policies for this hotel, such as cancellation rules and check-in/check-out times?",
+            "params": {
+                "hotel_id": "5955189"
+            },
+            "response": {
+                "status": false,
+                "timestamp": 1747651219063,
+                "message": "Something went wrong. We have logged the error and will get the resolution."
+            }
+        },
+        "optional": {
+            "query": "I'm considering staying at a hotel with ID 5955189. Can you provide me with the policies for this hotel, such as cancellation rules, check-in/check-out times, and any other important policies? I'd prefer the information to be in English if possible.",
+            "params": {
+                "hotel_id": "5955189",
+                "languagecode": "en-us"
+            },
+            "response": {
+                "status": true,
+                "message": "Success",
+                "timestamp": 1747651229607,
+                "data": {
+                    "hotel_id": 5955189,
+                    "name": "Partially refundable",
+                    "policygroup_type_id": 31,
+                    "policy": [
+                        {
+                            "content": [
+                                {
+                                    "languagecode": "en-us",
+                                    "text": "Children of all ages are allowed.\n1 child (up to and including 7 years old) stays for free when using existing beds.\n1 child (up to and including 8 years old) stays for free when using available extra beds.\n1 person (9 years old and over) stays for Rs. 800 per child per night when using available extra beds.\nYou haven't added any cribs.\nThe maximum number of extra beds is 1.\nThe maximum number of guests is 3.\n"
+                                }
+                            ],
+                            "policy_id": 1234567891,
+                            "type": "POLICY_CHILDREN"
+                        },
+                        {
+                            "type": "POLICY_HOTEL_GROUPS",
+                            "content": [
+                                {
+                                    "languagecode": "en-us",
+                                    "text": "When booking more than 3 rooms, different policies and additional supplements may apply.\n"
+                                }
+                            ],
+                            "policy_id": 1234567891
+                        },
+                        {
+                            "policy_id": 1234567891,
+                            "content": [
+                                {
+                                    "text": "WiFi is available in the hotel rooms and is free of charge.\n",
+                                    "languagecode": "en-us"
+                                }
+                            ],
+                            "type": "POLICY_HOTEL_INTERNET"
+                        }
+                    ],
+                    "policygroup_id": 382591998
+                }
+            }
+        }
+    },
+    "row": {
+        "required": {
+            "status": false,
+            "timestamp": 1747651219063,
+            "message": "Something went wrong. We have logged the error and will get the resolution."
+        },
+        "optional": {
+            "status": true,
+            "message": "Success",
+            "timestamp": 1747651229607,
+            "data": {
+                "hotel_id": 5955189,
+                "name": "Partially refundable",
+                "policygroup_type_id": 31,
+                "policy": [
+                    {
+                        "content": [
+                            {
+                                "languagecode": "en-us",
+                                "text": "Children of all ages are allowed.\n1 child (up to and including 7 years old) stays for free when using existing beds.\n1 child (up to and including 8 years old) stays for free when using available extra beds.\n1 person (9 years old and over) stays for Rs. 800 per child per night when using available extra beds.\nYou haven't added any cribs.\nThe maximum number of extra beds is 1.\nThe maximum number of guests is 3.\n"
+                            }
+                        ],
+                        "policy_id": 1234567891,
+                        "type": "POLICY_CHILDREN"
+                    },
+                    {
+                        "type": "POLICY_HOTEL_GROUPS",
+                        "content": [
+                            {
+                                "languagecode": "en-us",
+                                "text": "When booking more than 3 rooms, different policies and additional supplements may apply.\n"
+                            }
+                        ],
+                        "policy_id": 1234567891
+                    },
+                    {
+                        "policy_id": 1234567891,
+                        "content": [
+                            {
+                                "text": "WiFi is available in the hotel rooms and is free of charge.\n",
+                                "languagecode": "en-us"
+                            }
+                        ],
+                        "type": "POLICY_HOTEL_INTERNET"
+                    },
+                    {
+                        "type": "POLICY_HOTEL_PARKING",
+                        "policy_id": 1234567891,
+                        "content": [
+                            {
+                                "languagecode": "en-us",
+                                "text": "Free public parking is available  at a location nearby (reservation is not needed).\n"
+                            }
+                        ]
+                    },
+                    {
+                        "policy_id": 1234567891,
+                        "content": [
+                            {
+                                "text": "Pets are not allowed.\n",
+                                "languagecode": "en-us"
+                            }
+                        ],
+                        "type": "POLICY_HOTEL_PETS"
+                    }
+                ],
+                "policygroup_id": 382591998
+            }
+        }
+    }
+}

@@ -1,0 +1,1656 @@
+{
+    "Search_Car_Location": {
+        "query": [
+            {
+                "target_params_value": "San Diego Marriott La Jolla",
+                "target_api_params": "query",
+                "source_api": "query",
+                "source_jsonpath": null,
+                "source_jsonpath_value": null
+            },
+            {
+                "target_params_value": "Barcelona El Prat Airport",
+                "target_api_params": "query",
+                "source_api": "Search_Flight_Location",
+                "source_jsonpath": "$[0].name",
+                "source_jsonpath_value": "Barcelona El Prat Airport"
+            },
+            {
+                "target_params_value": "Chicago O'Hare International Airport",
+                "target_api_params": "query",
+                "source_api": "Search_Flights_Multi_Stops",
+                "source_jsonpath": "$.flightOffers[0].segments[0].arrivalAirport.name",
+                "source_jsonpath_value": "Chicago O'Hare International Airport"
+            }
+        ]
+    },
+    "Search_Car_Rentals": {
+        "pick_up_latitude": [
+            {
+                "target_params_value": 32.873055,
+                "target_api_params": "pick_up_latitude",
+                "source_api": "Search_Car_Location",
+                "source_jsonpath": "$[0].coordinates.latitude",
+                "source_jsonpath_value": 32.873055
+            },
+            {
+                "target_params_value": 35.7721,
+                "target_api_params": "pick_up_latitude",
+                "source_api": "query",
+                "source_jsonpath": null,
+                "source_jsonpath_value": null
+            },
+            {
+                "target_params_value": 35.68596,
+                "target_api_params": "pick_up_latitude",
+                "source_api": "Search_Hotel_Destination",
+                "source_jsonpath": "$[0].latitude",
+                "source_jsonpath_value": 35.68596
+            },
+            {
+                "target_params_value": 47.6201293186741,
+                "target_api_params": "pick_up_latitude",
+                "source_api": "Search_Hotels",
+                "source_jsonpath": "$.hotels[0].property.latitude",
+                "source_jsonpath_value": 47.6201293186741
+            },
+            {
+                "target_params_value": 25.7725664736298,
+                "target_api_params": "pick_up_latitude",
+                "source_api": "Search_Hotels_By_Coordinates",
+                "source_jsonpath": "$.result[0].latitude",
+                "source_jsonpath_value": 25.7725664736298
+            },
+            {
+                "target_params_value": 25.7923496,
+                "target_api_params": "pick_up_latitude",
+                "source_api": "Location_to_Lat_Long",
+                "source_jsonpath": "$[0].geometry.location.lat",
+                "source_jsonpath_value": 25.7923496
+            }
+        ],
+        "pick_up_longitude": [
+            {
+                "target_params_value": -117.215935,
+                "target_api_params": "pick_up_longitude",
+                "source_api": "Search_Car_Location",
+                "source_jsonpath": "$[0].coordinates.longitude",
+                "source_jsonpath_value": -117.215935
+            },
+            {
+                "target_params_value": 140.386,
+                "target_api_params": "pick_up_longitude",
+                "source_api": "query",
+                "source_jsonpath": null,
+                "source_jsonpath_value": null
+            },
+            {
+                "target_params_value": 139.72952,
+                "target_api_params": "pick_up_longitude",
+                "source_api": "Search_Hotel_Destination",
+                "source_jsonpath": "$[0].longitude",
+                "source_jsonpath_value": 139.72952
+            },
+            {
+                "target_params_value": -122.347903163958,
+                "target_api_params": "pick_up_longitude",
+                "source_api": "Search_Hotels",
+                "source_jsonpath": "$.hotels[0].property.longitude",
+                "source_jsonpath_value": -122.347903163958
+            },
+            {
+                "target_params_value": -80.1862585544586,
+                "target_api_params": "pick_up_longitude",
+                "source_api": "Search_Hotels_By_Coordinates",
+                "source_jsonpath": "$.result[0].longitude",
+                "source_jsonpath_value": -80.1862585544586
+            },
+            {
+                "target_params_value": -80.28230590000001,
+                "target_api_params": "pick_up_longitude",
+                "source_api": "Location_to_Lat_Long",
+                "source_jsonpath": "$[0].geometry.location.lng",
+                "source_jsonpath_value": -80.28230590000001
+            }
+        ],
+        "drop_off_latitude": [
+            {
+                "target_params_value": 32.873055,
+                "target_api_params": "drop_off_latitude",
+                "source_api": "Search_Car_Location",
+                "source_jsonpath": "$[0].coordinates.latitude",
+                "source_jsonpath_value": 32.873055
+            },
+            {
+                "target_params_value": 34.4362,
+                "target_api_params": "drop_off_latitude",
+                "source_api": "query",
+                "source_jsonpath": null,
+                "source_jsonpath_value": null
+            },
+            {
+                "target_params_value": 35.68596,
+                "target_api_params": "drop_off_latitude",
+                "source_api": "Search_Hotel_Destination",
+                "source_jsonpath": "$[0].latitude",
+                "source_jsonpath_value": 35.68596
+            },
+            {
+                "target_params_value": 47.6201293186741,
+                "target_api_params": "drop_off_latitude",
+                "source_api": "Search_Hotels",
+                "source_jsonpath": "$.hotels[0].property.latitude",
+                "source_jsonpath_value": 47.6201293186741
+            },
+            {
+                "target_params_value": 25.7923496,
+                "target_api_params": "drop_off_latitude",
+                "source_api": "Location_to_Lat_Long",
+                "source_jsonpath": "$[0].geometry.location.lat",
+                "source_jsonpath_value": 25.7923496
+            },
+            {
+                "target_params_value": 42.3510417,
+                "target_api_params": "drop_off_latitude",
+                "source_api": "Search_Hotels_By_Coordinates",
+                "source_jsonpath": "$.result[0].latitude",
+                "source_jsonpath_value": 42.3510417
+            }
+        ],
+        "drop_off_longitude": [
+            {
+                "target_params_value": -117.215935,
+                "target_api_params": "drop_off_longitude",
+                "source_api": "Search_Car_Location",
+                "source_jsonpath": "$[0].coordinates.longitude",
+                "source_jsonpath_value": -117.215935
+            },
+            {
+                "target_params_value": 135.243,
+                "target_api_params": "drop_off_longitude",
+                "source_api": "query",
+                "source_jsonpath": null,
+                "source_jsonpath_value": null
+            },
+            {
+                "target_params_value": 139.72952,
+                "target_api_params": "drop_off_longitude",
+                "source_api": "Search_Hotel_Destination",
+                "source_jsonpath": "$[0].longitude",
+                "source_jsonpath_value": 139.72952
+            },
+            {
+                "target_params_value": -122.347903163958,
+                "target_api_params": "drop_off_longitude",
+                "source_api": "Search_Hotels",
+                "source_jsonpath": "$.hotels[0].property.longitude",
+                "source_jsonpath_value": -122.347903163958
+            },
+            {
+                "target_params_value": -80.28230590000001,
+                "target_api_params": "drop_off_longitude",
+                "source_api": "Location_to_Lat_Long",
+                "source_jsonpath": "$[0].geometry.location.lng",
+                "source_jsonpath_value": -80.28230590000001
+            },
+            {
+                "target_params_value": -71.0697049,
+                "target_api_params": "drop_off_longitude",
+                "source_api": "Search_Hotels_By_Coordinates",
+                "source_jsonpath": "$.result[0].longitude",
+                "source_jsonpath_value": -71.0697049
+            }
+        ],
+        "pick_up_date": [
+            {
+                "target_params_value": "2024-10-14",
+                "target_api_params": "pick_up_date",
+                "source_api": "query",
+                "source_jsonpath": null,
+                "source_jsonpath_value": null
+            }
+        ],
+        "drop_off_date": [
+            {
+                "target_params_value": "2024-10-15",
+                "target_api_params": "drop_off_date",
+                "source_api": "query",
+                "source_jsonpath": null,
+                "source_jsonpath_value": null
+            }
+        ],
+        "pick_up_time": [
+            {
+                "target_params_value": "08:00",
+                "target_api_params": "pick_up_time",
+                "source_api": "query",
+                "source_jsonpath": null,
+                "source_jsonpath_value": null
+            },
+            {
+                "target_params_value": "10:00",
+                "target_api_params": "pick_up_time",
+                "source_api": "Search_Hotels_By_Coordinates",
+                "source_jsonpath": "$.result[0].checkout.until",
+                "source_jsonpath_value": "10:00"
+            }
+        ],
+        "drop_off_time": [
+            {
+                "target_params_value": "08:00",
+                "target_api_params": "drop_off_time",
+                "source_api": "query",
+                "source_jsonpath": null,
+                "source_jsonpath_value": null
+            },
+            {
+                "target_params_value": "16:00",
+                "target_api_params": "drop_off_time",
+                "source_api": "Search_Hotels",
+                "source_jsonpath": "$.hotels[0].property.checkin.fromTime",
+                "source_jsonpath_value": "16:00"
+            },
+            {
+                "target_params_value": "15:00",
+                "target_api_params": "drop_off_time",
+                "source_api": "Search_Hotels_By_Coordinates",
+                "source_jsonpath": "$.result[0].checkin.from",
+                "source_jsonpath_value": "15:00"
+            }
+        ]
+    },
+    "Vehicle_Supplier_Ratings": {
+        "vehicle_id": [
+            {
+                "target_params_value": "657512708",
+                "target_api_params": "vehicle_id",
+                "source_api": "Search_Car_Rentals",
+                "source_jsonpath": "$.search_results[0].vehicle_id",
+                "source_jsonpath_value": "657512708"
+            }
+        ],
+        "search_key": [
+            {
+                "target_params_value": "eyJkcml2ZXJzQWdlIjozMCwiZHJvcE9mZkRhdGVUaW1lIjoiMjAyNC0xMC0xM1QxMDowMDowMCIsImRyb3BPZmZMb2NhdGlvbiI6IjM0LjQzNjIsMTM1LjI0MyIsImRyb3BPZmZMb2NhdGlvblR5cGUiOiJMQVRMT05HIiwicGlja1VwRGF0ZVRpbWUiOiIyMDI0LTEwLTEwVDEwOjAwOjAwIiwicGlja1VwTG9jYXRpb24iOiIzNS43NzIxLDE0MC4zODYiLCJwaWNrVXBMb2NhdGlvblR5cGUiOiJMQVRMT05HIiwicmVudGFsRHVyYXRpb25JbkRheXMiOjMsInNlcnZpY2VGZWF0dXJlcyI6WyJOT19PUEFRVUVTIiwiU1VQUkVTU19GSVhFRF9QUklDRV9WRUhJQ0xFUyIsIklOQ0xVREVfUFJPRFVDVF9SRUxBVElPTlNISVBTIiwiSU5DTFVERV9FWFRSQVNfQ09OVEFJTklOR19GRUVTIl19",
+                "target_api_params": "search_key",
+                "source_api": "Search_Car_Rentals",
+                "source_jsonpath": "$.search_context.searchKey",
+                "source_jsonpath_value": "eyJkcml2ZXJzQWdlIjozMCwiZHJvcE9mZkRhdGVUaW1lIjoiMjAyNC0xMC0xM1QxMDowMDowMCIsImRyb3BPZmZMb2NhdGlvbiI6IjM0LjQzNjIsMTM1LjI0MyIsImRyb3BPZmZMb2NhdGlvblR5cGUiOiJMQVRMT05HIiwicGlja1VwRGF0ZVRpbWUiOiIyMDI0LTEwLTEwVDEwOjAwOjAwIiwicGlja1VwTG9jYXRpb24iOiIzNS43NzIxLDE0MC4zODYiLCJwaWNrVXBMb2NhdGlvblR5cGUiOiJMQVRMT05HIiwicmVudGFsRHVyYXRpb25JbkRheXMiOjMsInNlcnZpY2VGZWF0dXJlcyI6WyJOT19PUEFRVUVTIiwiU1VQUkVTU19GSVhFRF9QUklDRV9WRUhJQ0xFUyIsIklOQ0xVREVfUFJPRFVDVF9SRUxBVElPTlNISVBTIiwiSU5DTFVERV9FWFRSQVNfQ09OVEFJTklOR19GRUVTIl19"
+            }
+        ]
+    },
+    "Vehicle_Details": {
+        "vehicle_id": [
+            {
+                "target_params_value": "744963261",
+                "target_api_params": "vehicle_id",
+                "source_api": "Search_Car_Rentals",
+                "source_jsonpath": "$.search_results[0].vehicle_id",
+                "source_jsonpath_value": "744963261"
+            }
+        ],
+        "search_key": [
+            {
+                "target_params_value": "eyJkcml2ZXJzQWdlIjozMCwiZHJvcE9mZkRhdGVUaW1lIjoiMjAyNC0xMS0wNlQxNTowMDowMCIsImRyb3BPZmZMb2NhdGlvbiI6Ii0zNy44MTI5OCwxNDQuOTY1MjYiLCJkcm9wT2ZmTG9jYXRpb25UeXBlIjoiTEFUTE9ORyIsInBpY2tVcERhdGVUaW1lIjoiMjAyNC0xMS0wNVQxMDowMDowMCIsInBpY2tVcExvY2F0aW9uIjoiLTMzLjg2NDc3MywxNTEuMjA1NDQiLCJwaWNrVXBMb2NhdGlvblR5cGUiOiJMQVRMT05HIiwicmVudGFsRHVyYXRpb25JbkRheXMiOjIsInNlcnZpY2VGZWF0dXJlcyI6WyJOT19PUEFRVUVTIiwiU1VQUkVTU19GSVhFRF9QUklDRV9WRUhJQ0xFUyIsIklOQ0xVREVfUFJPRFVDVF9SRUxBVElPTlNISVBTIiwiSU5DTFVERV9FWFRSQVNfQ09OVEFJTklOR19GRUVTIl19",
+                "target_api_params": "search_key",
+                "source_api": "Search_Car_Rentals",
+                "source_jsonpath": "$.search_key",
+                "source_jsonpath_value": "eyJkcml2ZXJzQWdlIjozMCwiZHJvcE9mZkRhdGVUaW1lIjoiMjAyNC0xMS0wNlQxNTowMDowMCIsImRyb3BPZmZMb2NhdGlvbiI6Ii0zNy44MTI5OCwxNDQuOTY1MjYiLCJkcm9wT2ZmTG9jYXRpb25UeXBlIjoiTEFUTE9ORyIsInBpY2tVcERhdGVUaW1lIjoiMjAyNC0xMS0wNVQxMDowMDowMCIsInBpY2tVcExvY2F0aW9uIjoiLTMzLjg2NDc3MywxNTEuMjA1NDQiLCJwaWNrVXBMb2NhdGlvblR5cGUiOiJMQVRMT05HIiwicmVudGFsRHVyYXRpb25JbkRheXMiOjIsInNlcnZpY2VGZWF0dXJlcyI6WyJOT19PUEFRVUVTIiwiU1VQUkVTU19GSVhFRF9QUklDRV9WRUhJQ0xFUyIsIklOQ0xVREVfUFJPRFVDVF9SRUxBVElPTlNISVBTIiwiSU5DTFVERV9FWFRSQVNfQ09OVEFJTklOR19GRUVTIl19"
+            }
+        ]
+    },
+    "Booking_Summary": {
+        "vehicle_id": [
+            {
+                "target_params_value": "657784501",
+                "target_api_params": "vehicle_id",
+                "source_api": "Search_Car_Rentals",
+                "source_jsonpath": "$.search_results[0].vehicle_id",
+                "source_jsonpath_value": "657784501"
+            }
+        ],
+        "search_key": [
+            {
+                "target_params_value": "eyJkcml2ZXJzQWdlIjozMCwiZHJvcE9mZkRhdGVUaW1lIjoiMjAyNC0wOS0yNVQxODowMDowMCIsImRyb3BPZmZMb2NhdGlvbiI6IjQzLjY4MzEsLTc5LjYxNDMiLCJkcm9wT2ZmTG9jYXRpb25UeXBlIjoiTEFUTE9ORyIsInBpY2tVcERhdGVUaW1lIjoiMjAyNC0wOS0yMFQxMDowMDowMCIsInBpY2tVcExvY2F0aW9uIjoiNDMuNjgzMSwtNzkuNjE0MyIsInBpY2tVcExvY2F0aW9uVHlwZSI6IkxBVExPTkciLCJyZW50YWxEdXJhdGlvbkluRGF5cyI6Niwic2VydmljZUZlYXR1cmVzIjpbIk5PX09QQVFVRVMiLCJTVVBSRVNTX0ZJWEVEX1BSSUNFX1ZFSElDTEVTIiwiSU5DTFVERV9QUk9EVUNUX1JFTEFUSU9OU0hJUFMiLCJJTkNMVURFX0VYVFJBU19DT05UQUlOSU5HX0ZFRVMiXX0=",
+                "target_api_params": "search_key",
+                "source_api": "Search_Car_Rentals",
+                "source_jsonpath": "$.search_context.searchKey",
+                "source_jsonpath_value": "eyJkcml2ZXJzQWdlIjozMCwiZHJvcE9mZkRhdGVUaW1lIjoiMjAyNC0wOS0yNVQxODowMDowMCIsImRyb3BPZmZMb2NhdGlvbiI6IjQzLjY4MzEsLTc5LjYxNDMiLCJkcm9wT2ZmTG9jYXRpb25UeXBlIjoiTEFUTE9ORyIsInBpY2tVcERhdGVUaW1lIjoiMjAyNC0wOS0yMFQxMDowMDowMCIsInBpY2tVcExvY2F0aW9uIjoiNDMuNjgzMSwtNzkuNjE0MyIsInBpY2tVcExvY2F0aW9uVHlwZSI6IkxBVExPTkciLCJyZW50YWxEdXJhdGlvbkluRGF5cyI6Niwic2VydmljZUZlYXR1cmVzIjpbIk5PX09QQVFVRVMiLCJTVVBSRVNTX0ZJWEVEX1BSSUNFX1ZFSElDTEVTIiwiSU5DTFVERV9QUk9EVUNUX1JFTEFUSU9OU0hJUFMiLCJJTkNMVURFX0VYVFJBU19DT05UQUlOSU5HX0ZFRVMiXX0="
+            }
+        ]
+    },
+    "Get_Packages": {
+        "vehicle_id": [
+            {
+                "target_params_value": "637318066",
+                "target_api_params": "vehicle_id",
+                "source_api": "Search_Car_Rentals",
+                "source_jsonpath": "$.search_results[0].vehicle_id",
+                "source_jsonpath_value": "637318066"
+            }
+        ],
+        "search_key": [
+            {
+                "target_params_value": "eyJkcml2ZXJzQWdlIjozMCwiZHJvcE9mZkRhdGVUaW1lIjoiMjAyNC0xMS0wMVQxMDowMDowMCIsImRyb3BPZmZMb2NhdGlvbiI6IjMyLjg3MzA1NSwtMTE3LjIxNTkzNSIsImRyb3BPZmZMb2NhdGlvblR5cGUiOiJMQVRMT05HIiwicGlja1VwRGF0ZVRpbWUiOiIyMDI0LTEwLTMxVDEwOjAwOjAwIiwicGlja1VwTG9jYXRpb24iOiIzMi44NzMwNTUsLTExNy4yMTU5MzUiLCJwaWNrVXBMb2NhdGlvblR5cGUiOiJMQVRMT05HIiwicmVudGFsRHVyYXRpb25JbkRheXMiOjEsInNlcnZpY2VGZWF0dXJlcyI6WyJOT19PUEFRVUVTIiwiU1VQUkVTU19GSVhFRF9QUklDRV9WRUhJQ0xFUyIsIklOQ0xVREVfUFJPRFVDVF9SRUxBVElPTlNISVBTIiwiSU5DTFVERV9FWFRSQVNfQ09OVEFJTklOR19GRUVTIl19",
+                "target_api_params": "search_key",
+                "source_api": "Search_Car_Rentals",
+                "source_jsonpath": "$.search_context.searchKey",
+                "source_jsonpath_value": "eyJkcml2ZXJzQWdlIjozMCwiZHJvcE9mZkRhdGVUaW1lIjoiMjAyNC0xMS0wMVQxMDowMDowMCIsImRyb3BPZmZMb2NhdGlvbiI6IjMyLjg3MzA1NSwtMTE3LjIxNTkzNSIsImRyb3BPZmZMb2NhdGlvblR5cGUiOiJMQVRMT05HIiwicGlja1VwRGF0ZVRpbWUiOiIyMDI0LTEwLTMxVDEwOjAwOjAwIiwicGlja1VwTG9jYXRpb24iOiIzMi44NzMwNTUsLTExNy4yMTU5MzUiLCJwaWNrVXBMb2NhdGlvblR5cGUiOiJMQVRMT05HIiwicmVudGFsRHVyYXRpb25JbkRheXMiOjEsInNlcnZpY2VGZWF0dXJlcyI6WyJOT19PUEFRVUVTIiwiU1VQUkVTU19GSVhFRF9QUklDRV9WRUhJQ0xFUyIsIklOQ0xVREVfUFJPRFVDVF9SRUxBVElPTlNISVBTIiwiSU5DTFVERV9FWFRSQVNfQ09OVEFJTklOR19GRUVTIl19"
+            }
+        ]
+    },
+    "Vehicle_Supplier_Details": {
+        "vehicle_id": [
+            {
+                "target_params_value": "755355561",
+                "target_api_params": "vehicle_id",
+                "source_api": "Search_Car_Rentals",
+                "source_jsonpath": "$.search_results[0].vehicle_id",
+                "source_jsonpath_value": "755355561"
+            }
+        ],
+        "search_key": [
+            {
+                "target_params_value": "eyJkcml2ZXJzQWdlIjozMCwiZHJvcE9mZkRhdGVUaW1lIjoiMjAyNC0xMS0zMFQxNDowMDowMCIsImRyb3BPZmZMb2NhdGlvbiI6IjQ2LjIwNzk0Nyw2LjE0NTc5OSIsImRyb3BPZmZMb2NhdGlvblR5cGUiOiJMQVRMT05HIiwicGlja1VwRGF0ZVRpbWUiOiIyMDI0LTExLTI1VDExOjAwOjAwIiwicGlja1VwTG9jYXRpb24iOiI0Ny40NTE5LDguNTYyODEiLCJwaWNrVXBMb2NhdGlvblR5cGUiOiJMQVRMT05HIiwicmVudGFsRHVyYXRpb25JbkRheXMiOjYsInNlcnZpY2VGZWF0dXJlcyI6WyJOT19PUEFRVUVTIiwiU1VQUkVTU19GSVhFRF9QUklDRV9WRUhJQ0xFUyIsIklOQ0xVREVfUFJPRFVDVF9SRUxBVElPTlNISVBTIiwiSU5DTFVERV9FWFRSQVNfQ09OVEFJTklOR19GRUVTIl19",
+                "target_api_params": "search_key",
+                "source_api": "Search_Car_Rentals",
+                "source_jsonpath": "$.search_key",
+                "source_jsonpath_value": "eyJkcml2ZXJzQWdlIjozMCwiZHJvcE9mZkRhdGVUaW1lIjoiMjAyNC0xMS0zMFQxNDowMDowMCIsImRyb3BPZmZMb2NhdGlvbiI6IjQ2LjIwNzk0Nyw2LjE0NTc5OSIsImRyb3BPZmZMb2NhdGlvblR5cGUiOiJMQVRMT05HIiwicGlja1VwRGF0ZVRpbWUiOiIyMDI0LTExLTI1VDExOjAwOjAwIiwicGlja1VwTG9jYXRpb24iOiI0Ny40NTE5LDguNTYyODEiLCJwaWNrVXBMb2NhdGlvblR5cGUiOiJMQVRMT05HIiwicmVudGFsRHVyYXRpb25JbkRheXMiOjYsInNlcnZpY2VGZWF0dXJlcyI6WyJOT19PUEFRVUVTIiwiU1VQUkVTU19GSVhFRF9QUklDRV9WRUhJQ0xFUyIsIklOQ0xVREVfUFJPRFVDVF9SRUxBVElPTlNISVBTIiwiSU5DTFVERV9FWFRSQVNfQ09OVEFJTklOR19GRUVTIl19"
+            }
+        ]
+    },
+    "Vehicle_Supplier_Review": {
+        "vehicle_id": [
+            {
+                "target_params_value": "755355561",
+                "target_api_params": "vehicle_id",
+                "source_api": "Search_Car_Rentals",
+                "source_jsonpath": "$.search_results[0].vehicle_id",
+                "source_jsonpath_value": "755355561"
+            }
+        ],
+        "search_key": [
+            {
+                "target_params_value": "eyJkcml2ZXJzQWdlIjozMCwiZHJvcE9mZkRhdGVUaW1lIjoiMjAyNC0xMS0zMFQxNDowMDowMCIsImRyb3BPZmZMb2NhdGlvbiI6IjQ2LjIwNzk0Nyw2LjE0NTc5OSIsImRyb3BPZmZMb2NhdGlvblR5cGUiOiJMQVRMT05HIiwicGlja1VwRGF0ZVRpbWUiOiIyMDI0LTExLTI1VDExOjAwOjAwIiwicGlja1VwTG9jYXRpb24iOiI0Ny40NTE5LDguNTYyODEiLCJwaWNrVXBMb2NhdGlvblR5cGUiOiJMQVRMT05HIiwicmVudGFsRHVyYXRpb25JbkRheXMiOjYsInNlcnZpY2VGZWF0dXJlcyI6WyJOT19PUEFRVUVTIiwiU1VQUkVTU19GSVhFRF9QUklDRV9WRUhJQ0xFUyIsIklOQ0xVREVfUFJPRFVDVF9SRUxBVElPTlNISVBTIiwiSU5DTFVERV9FWFRSQVNfQ09OVEFJTklOR19GRUVTIl19",
+                "target_api_params": "search_key",
+                "source_api": "Search_Car_Rentals",
+                "source_jsonpath": "$.search_key",
+                "source_jsonpath_value": "eyJkcml2ZXJzQWdlIjozMCwiZHJvcE9mZkRhdGVUaW1lIjoiMjAyNC0xMS0zMFQxNDowMDowMCIsImRyb3BPZmZMb2NhdGlvbiI6IjQ2LjIwNzk0Nyw2LjE0NTc5OSIsImRyb3BPZmZMb2NhdGlvblR5cGUiOiJMQVRMT05HIiwicGlja1VwRGF0ZVRpbWUiOiIyMDI0LTExLTI1VDExOjAwOjAwIiwicGlja1VwTG9jYXRpb24iOiI0Ny40NTE5LDguNTYyODEiLCJwaWNrVXBMb2NhdGlvblR5cGUiOiJMQVRMT05HIiwicmVudGFsRHVyYXRpb25JbkRheXMiOjYsInNlcnZpY2VGZWF0dXJlcyI6WyJOT19PUEFRVUVTIiwiU1VQUkVTU19GSVhFRF9QUklDRV9WRUhJQ0xFUyIsIklOQ0xVREVfUFJPRFVDVF9SRUxBVElPTlNISVBTIiwiSU5DTFVERV9FWFRSQVNfQ09OVEFJTklOR19GRUVTIl19"
+            }
+        ]
+    },
+    "Search_Attraction_Location": {
+        "query": [
+            {
+                "target_params_value": "Ottawa",
+                "target_api_params": "query",
+                "source_api": "query",
+                "source_jsonpath": null,
+                "source_jsonpath_value": null
+            },
+            {
+                "target_params_value": "Oriental Pearl Tower",
+                "target_api_params": "query",
+                "source_api": "Get_Popular_Attraction_Near_By",
+                "source_jsonpath": "$.closest_landmarks[0].tag",
+                "source_jsonpath_value": "Oriental Pearl Tower"
+            },
+            {
+                "target_params_value": "Petržalka",
+                "target_api_params": "query",
+                "source_api": "Get_Nearby_Cities",
+                "source_jsonpath": "$[0].name",
+                "source_jsonpath_value": "Petržalka"
+            },
+            {
+                "target_params_value": "Bath",
+                "target_api_params": "query",
+                "source_api": "Search_Attractions",
+                "source_jsonpath": "$.products[3].ufiDetails.bCityName",
+                "source_jsonpath_value": "Bath"
+            }
+        ]
+    },
+    "Search_Hotel_Destination": {
+        "query": [
+            {
+                "target_params_value": "Ottawa",
+                "target_api_params": "query",
+                "source_api": "query",
+                "source_jsonpath": null,
+                "source_jsonpath_value": null
+            },
+            {
+                "target_params_value": "Budapest Széchenyi Thermal Bath",
+                "target_api_params": "query",
+                "source_api": "Search_Attractions",
+                "source_jsonpath": "$.products[0].name",
+                "source_jsonpath_value": "Budapest Széchenyi Thermal Bath"
+            },
+            {
+                "target_params_value": "San Diego International Airport",
+                "target_api_params": "query",
+                "source_api": "Search_Flights",
+                "source_jsonpath": "$.flightOffers[0].segments[0].arrivalAirport.name",
+                "source_jsonpath_value": "San Diego International Airport"
+            }
+        ]
+    },
+    "Search_Attractions": {
+        "id": [
+            {
+                "target_params_value": "eyJ1ZmkiOi01NzA3NjB9",
+                "target_api_params": "id",
+                "source_api": "Search_Attraction_Location",
+                "source_jsonpath": "$.destinations[0].id",
+                "source_jsonpath_value": "eyJ1ZmkiOi01NzA3NjB9"
+            }
+        ],
+        "sortBy": [
+            {
+                "target_params_value": "attr_book_score",
+                "target_api_params": "sortBy",
+                "source_api": "query",
+                "source_jsonpath": null,
+                "source_jsonpath_value": null
+            }
+        ]
+    },
+    "Search_Hotels": {
+        "dest_id": [
+            {
+                "target_params_value": 2632,
+                "target_api_params": "dest_id",
+                "source_api": "Search_Hotel_Destination",
+                "source_jsonpath": "$[0].dest_id",
+                "source_jsonpath_value": "2632"
+            },
+            {
+                "target_params_value": -575268,
+                "target_api_params": "dest_id",
+                "source_api": "Search_Attraction_Location",
+                "source_jsonpath": "$.destinations[0].ufi",
+                "source_jsonpath_value": -575268
+            },
+            {
+                "target_params_value": 20022668,
+                "target_api_params": "dest_id",
+                "source_api": "Get_Nearby_Cities",
+                "source_jsonpath": "$[0].dest_id",
+                "source_jsonpath_value": 20022668
+            },
+            {
+                "target_params_value": 20112164,
+                "target_api_params": "dest_id",
+                "source_api": "Search_Hotels_By_Coordinates",
+                "source_jsonpath": "$.result[0].ufi",
+                "source_jsonpath_value": 20112164
+            }
+        ],
+        "search_type": [
+            {
+                "target_params_value": "district",
+                "target_api_params": "search_type",
+                "source_api": "Search_Hotel_Destination",
+                "source_jsonpath": "$[0].search_type",
+                "source_jsonpath_value": "district"
+            },
+            {
+                "target_params_value": "city",
+                "target_api_params": "search_type",
+                "source_api": "Get_Nearby_Cities",
+                "source_jsonpath": "$[0].dest_type",
+                "source_jsonpath_value": "city"
+            }
+        ],
+        "arrival_date": [
+            {
+                "target_params_value": "2024-12-01",
+                "target_api_params": "arrival_date",
+                "source_api": "query",
+                "source_jsonpath": null,
+                "source_jsonpath_value": null
+            },
+            {
+                "target_params_value": "2024-12-02",
+                "target_api_params": "arrival_date",
+                "source_api": "Get_Min_Price",
+                "source_jsonpath": "$[7].departureDate",
+                "source_jsonpath_value": "2024-12-02"
+            },
+            {
+                "target_params_value": "2024-12-03",
+                "target_api_params": "arrival_date",
+                "source_api": "Get_Min_Price_Multi_Stops",
+                "source_jsonpath": "$[3].departureDate",
+                "source_jsonpath_value": "2024-12-03"
+            },
+            {
+                "target_params_value": "2024-11-02",
+                "target_api_params": "arrival_date",
+                "source_api": "Get_Availability_Calendar",
+                "source_jsonpath": "$[2].date",
+                "source_jsonpath_value": "2024-11-02"
+            }
+        ],
+        "departure_date": [
+            {
+                "target_params_value": "2024-12-04",
+                "target_api_params": "departure_date",
+                "source_api": "query",
+                "source_jsonpath": null,
+                "source_jsonpath_value": null
+            },
+            {
+                "target_params_value": "2024-12-03",
+                "target_api_params": "departure_date",
+                "source_api": "Get_Min_Price",
+                "source_jsonpath": "$[8].departureDate",
+                "source_jsonpath_value": "2024-12-03"
+            },
+            {
+                "target_params_value": "2024-12-10",
+                "target_api_params": "departure_date",
+                "source_api": "Get_Min_Price_Multi_Stops",
+                "source_jsonpath": "$[3].searchDates[1]",
+                "source_jsonpath_value": "2024-12-10"
+            },
+            {
+                "target_params_value": "2024-11-03",
+                "target_api_params": "departure_date",
+                "source_api": "Get_Availability_Calendar",
+                "source_jsonpath": "$[3].date",
+                "source_jsonpath_value": "2024-11-03"
+            }
+        ],
+        "adults": [
+            {
+                "target_params_value": 4,
+                "target_api_params": "adults",
+                "source_api": "Search_Attractions",
+                "source_jsonpath": "$.products[2].reviewsStats.combinedNumericStats.total",
+                "source_jsonpath_value": 4
+            },
+            {
+                "target_params_value": 6,
+                "target_api_params": "adults",
+                "source_api": "query",
+                "source_jsonpath": null,
+                "source_jsonpath_value": null
+            },
+            {
+                "target_params_value": 4,
+                "target_api_params": "adults",
+                "source_api": "Search_Car_Rentals",
+                "source_jsonpath": "$.search_results[0].vehicle_info.doors",
+                "source_jsonpath_value": "4"
+            }
+        ],
+        "room_qty": [
+            {
+                "target_params_value": 2,
+                "target_api_params": "room_qty",
+                "source_api": "Search_Attractions",
+                "source_jsonpath": "$.filterOptions.priceFilters[4].productCount",
+                "source_jsonpath_value": 2
+            },
+            {
+                "target_params_value": 2,
+                "target_api_params": "room_qty",
+                "source_api": "Search_Car_Rentals",
+                "source_jsonpath": "$.filter[1].categories[1].count",
+                "source_jsonpath_value": 2
+            },
+            {
+                "target_params_value": 2,
+                "target_api_params": "room_qty",
+                "source_api": "query",
+                "source_jsonpath": null,
+                "source_jsonpath_value": null
+            }
+        ],
+        "sort_by": [
+            {
+                "target_params_value": "popularity",
+                "target_api_params": "sort_by",
+                "source_api": "query",
+                "source_jsonpath": null,
+                "source_jsonpath_value": null
+            },
+            {
+                "target_params_value": "price",
+                "target_api_params": "sort_by",
+                "source_api": "Get_Filter",
+                "source_jsonpath": "$.filters[1].field",
+                "source_jsonpath_value": "price"
+            }
+        ],
+        "children_age": [
+            {
+                "target_params_value": "7,10",
+                "target_api_params": "children_age",
+                "source_api": "query",
+                "source_jsonpath": null,
+                "source_jsonpath_value": null
+            }
+        ],
+        "categories_filter": [
+            {
+                "target_params_value": "facility::4,facility::28",
+                "target_api_params": "categories_filter",
+                "source_api": "query",
+                "source_jsonpath": null,
+                "source_jsonpath_value": null
+            },
+            {
+                "target_params_value": "facility::4",
+                "target_api_params": "categories_filter",
+                "source_api": "Get_Filter",
+                "source_jsonpath": "$.filters[0].options[3].genericId",
+                "source_jsonpath_value": "facility::4"
+            }
+        ],
+        "price_max": [
+            {
+                "target_params_value": 600,
+                "target_api_params": "price_max",
+                "source_api": "query",
+                "source_jsonpath": null,
+                "source_jsonpath_value": null
+            }
+        ]
+    },
+    "Taxi_Search_Location": {
+        "query": [
+            {
+                "target_params_value": "Gare de Lyon",
+                "target_api_params": "query",
+                "source_api": "query",
+                "source_jsonpath": null,
+                "source_jsonpath_value": null
+            },
+            {
+                "target_params_value": "London Heathrow Airport",
+                "target_api_params": "query",
+                "source_api": "Search_Flight_Location",
+                "source_jsonpath": "$[0].name",
+                "source_jsonpath_value": "London Heathrow Airport"
+            },
+            {
+                "target_params_value": "Samukawa Shrine",
+                "target_api_params": "query",
+                "source_api": "Get_Popular_Attraction_Near_By",
+                "source_jsonpath": "$.closest_landmarks[0].tag",
+                "source_jsonpath_value": "Samukawa Shrine"
+            },
+            {
+                "target_params_value": "John F. Kennedy International Airport",
+                "target_api_params": "query",
+                "source_api": "Search_Flights_Multi_Stops",
+                "source_jsonpath": "$.flightOffers[0].segments[2].arrivalAirport.name",
+                "source_jsonpath_value": "John F. Kennedy International Airport"
+            },
+            {
+                "target_params_value": "Hyatt Regency Los Angeles International Airport",
+                "target_api_params": "query",
+                "source_api": "Search_Hotels",
+                "source_jsonpath": "$.hotels[0].property.name",
+                "source_jsonpath_value": "Hyatt Regency Los Angeles International Airport"
+            },
+            {
+                "target_params_value": "Campanile Shanghai Bund Hotel",
+                "target_api_params": "query",
+                "source_api": "Search_Hotel_Destination",
+                "source_jsonpath": "$[0].name",
+                "source_jsonpath_value": "Campanile Shanghai Bund Hotel"
+            },
+            {
+                "target_params_value": "Los Angeles International Airport",
+                "target_api_params": "query",
+                "source_api": "Search_Flights",
+                "source_jsonpath": "$.flightOffers[0].segments[0].arrivalAirport.name",
+                "source_jsonpath_value": "Los Angeles International Airport"
+            },
+            {
+                "target_params_value": "Residence Hoche",
+                "target_api_params": "query",
+                "source_api": "Search_Hotels_By_Coordinates",
+                "source_jsonpath": "$.result[0].hotel_name_trans",
+                "source_jsonpath_value": "Residence Hoche"
+            }
+        ]
+    },
+    "Search_Taxi": {
+        "pick_up_place_id": [
+            {
+                "target_params_value": "ChIJS78AIBty5kcRZLsIMcKhPAA",
+                "target_api_params": "pick_up_place_id",
+                "source_api": "Taxi_Search_Location",
+                "source_jsonpath": "$[0].googlePlaceId",
+                "source_jsonpath_value": "ChIJS78AIBty5kcRZLsIMcKhPAA"
+            },
+            {
+                "target_params_value": "ChIJ7aBCwCsH3IARQVnHiRHmceg",
+                "target_api_params": "pick_up_place_id",
+                "source_api": "Location_to_Lat_Long",
+                "source_jsonpath": "$[0].place_id",
+                "source_jsonpath_value": "ChIJ7aBCwCsH3IARQVnHiRHmceg"
+            }
+        ],
+        "drop_off_place_id": [
+            {
+                "target_params_value": "ChIJLU7jZClu5kcR4PcOOO6p3I0",
+                "target_api_params": "drop_off_place_id",
+                "source_api": "Taxi_Search_Location",
+                "source_jsonpath": "$[0].googlePlaceId",
+                "source_jsonpath_value": "ChIJLU7jZClu5kcR4PcOOO6p3I0"
+            }
+        ],
+        "pick_up_date": [
+            {
+                "target_params_value": "2025-01-20",
+                "target_api_params": "pick_up_date",
+                "source_api": "query",
+                "source_jsonpath": null,
+                "source_jsonpath_value": null
+            }
+        ],
+        "pick_up_time": [
+            {
+                "target_params_value": "15:00",
+                "target_api_params": "pick_up_time",
+                "source_api": "query",
+                "source_jsonpath": null,
+                "source_jsonpath_value": null
+            },
+            {
+                "target_params_value": "11:00",
+                "target_api_params": "pick_up_time",
+                "source_api": "Search_Hotels",
+                "source_jsonpath": "$.hotels[0].property.checkout.untilTime",
+                "source_jsonpath_value": "11:00"
+            }
+        ]
+    },
+    "Search_Hotels_By_Coordinates": {
+        "latitude": [
+            {
+                "target_params_value": "-33.864773",
+                "target_api_params": "latitude",
+                "source_api": "Search_Car_Location",
+                "source_jsonpath": "$[0].coordinates.latitude",
+                "source_jsonpath_value": -33.864773
+            },
+            {
+                "target_params_value": "25.7923496",
+                "target_api_params": "latitude",
+                "source_api": "Location_to_Lat_Long",
+                "source_jsonpath": "$[0].geometry.location.lat",
+                "source_jsonpath_value": 25.7923496
+            },
+            {
+                "target_params_value": "32.7322",
+                "target_api_params": "latitude",
+                "source_api": "Search_Hotel_Destination",
+                "source_jsonpath": "$[0].latitude",
+                "source_jsonpath_value": 32.7322
+            },
+            {
+                "target_params_value": "39.9042",
+                "target_api_params": "latitude",
+                "source_api": "query",
+                "source_jsonpath": null,
+                "source_jsonpath_value": null
+            }
+        ],
+        "longitude": [
+            {
+                "target_params_value": "151.20544",
+                "target_api_params": "longitude",
+                "source_api": "Search_Car_Location",
+                "source_jsonpath": "$[0].coordinates.longitude",
+                "source_jsonpath_value": 151.20544
+            },
+            {
+                "target_params_value": "-80.28230590000001",
+                "target_api_params": "longitude",
+                "source_api": "Location_to_Lat_Long",
+                "source_jsonpath": "$[0].geometry.location.lng",
+                "source_jsonpath_value": -80.28230590000001
+            },
+            {
+                "target_params_value": "-117.198",
+                "target_api_params": "longitude",
+                "source_api": "Search_Hotel_Destination",
+                "source_jsonpath": "$[0].longitude",
+                "source_jsonpath_value": -117.198
+            },
+            {
+                "target_params_value": "106.4074",
+                "target_api_params": "longitude",
+                "source_api": "query",
+                "source_jsonpath": null,
+                "source_jsonpath_value": null
+            }
+        ],
+        "arrival_date": [
+            {
+                "target_params_value": "2024-11-10",
+                "target_api_params": "arrival_date",
+                "source_api": "query",
+                "source_jsonpath": null,
+                "source_jsonpath_value": null
+            }
+        ],
+        "departure_date": [
+            {
+                "target_params_value": "2024-11-11",
+                "target_api_params": "departure_date",
+                "source_api": "query",
+                "source_jsonpath": null,
+                "source_jsonpath_value": null
+            }
+        ],
+        "radius": [
+            {
+                "target_params_value": 50,
+                "target_api_params": "radius",
+                "source_api": "query",
+                "source_jsonpath": null,
+                "source_jsonpath_value": null
+            },
+            {
+                "target_params_value": 40,
+                "target_api_params": "radius",
+                "source_api": "Search_Flights",
+                "source_jsonpath": "$.flightDeals[0].price.units",
+                "source_jsonpath_value": 40
+            }
+        ],
+        "price_min": [
+            {
+                "target_params_value": 200,
+                "target_api_params": "price_min",
+                "source_api": "query",
+                "source_jsonpath": null,
+                "source_jsonpath_value": null
+            }
+        ],
+        "price_max": [
+            {
+                "target_params_value": 300,
+                "target_api_params": "price_max",
+                "source_api": "query",
+                "source_jsonpath": null,
+                "source_jsonpath_value": null
+            }
+        ],
+        "adults": [
+            {
+                "target_params_value": 5,
+                "target_api_params": "adults",
+                "source_api": "query",
+                "source_jsonpath": null,
+                "source_jsonpath_value": null
+            }
+        ],
+        "room_qty": [
+            {
+                "target_params_value": 3,
+                "target_api_params": "room_qty",
+                "source_api": "query",
+                "source_jsonpath": null,
+                "source_jsonpath_value": null
+            }
+        ]
+    },
+    "Get_Room_List_With_Availability": {
+        "hotel_id": [
+            {
+                "target_params_value": "593543",
+                "target_api_params": "hotel_id",
+                "source_api": "Search_Hotels_By_Coordinates",
+                "source_jsonpath": "$.result[0].hotel_id",
+                "source_jsonpath_value": 593543
+            },
+            {
+                "target_params_value": "1191622",
+                "target_api_params": "hotel_id",
+                "source_api": "Search_Hotel_Destination",
+                "source_jsonpath": "$[0].dest_id",
+                "source_jsonpath_value": "1191622"
+            }
+        ],
+        "arrival_date": [
+            {
+                "target_params_value": "2024-11-10",
+                "target_api_params": "arrival_date",
+                "source_api": "query",
+                "source_jsonpath": null,
+                "source_jsonpath_value": null
+            }
+        ],
+        "departure_date": [
+            {
+                "target_params_value": "2024-11-11",
+                "target_api_params": "departure_date",
+                "source_api": "query",
+                "source_jsonpath": null,
+                "source_jsonpath_value": null
+            }
+        ]
+    },
+    "Search_Flight_Location": {
+        "query": [
+            {
+                "target_params_value": "Lisbon",
+                "target_api_params": "query",
+                "source_api": "query",
+                "source_jsonpath": null,
+                "source_jsonpath_value": null
+            },
+            {
+                "target_params_value": "New York",
+                "target_api_params": "query",
+                "source_api": "Search_Attraction_Location",
+                "source_jsonpath": "$.products[0].cityName",
+                "source_jsonpath_value": "New York"
+            },
+            {
+                "target_params_value": "Birmingham",
+                "target_api_params": "query",
+                "source_api": "Get_Nearby_Cities",
+                "source_jsonpath": "$[0].name",
+                "source_jsonpath_value": "Birmingham"
+            },
+            {
+                "target_params_value": "New York",
+                "target_api_params": "query",
+                "source_api": "Search_Hotel_Destination",
+                "source_jsonpath": "$[0].city_name",
+                "source_jsonpath_value": "New York"
+            }
+        ]
+    },
+    "Get_Min_Price": {
+        "toId": [
+            {
+                "target_params_value": "ATH.AIRPORT",
+                "target_api_params": "toId",
+                "source_api": "Search_Flight_Location",
+                "source_jsonpath": "$[0].id",
+                "source_jsonpath_value": "ATH.AIRPORT"
+            }
+        ],
+        "fromId": [
+            {
+                "target_params_value": "LIS.AIRPORT",
+                "target_api_params": "fromId",
+                "source_api": "Search_Flight_Location",
+                "source_jsonpath": "$[0].id",
+                "source_jsonpath_value": "LIS.AIRPORT"
+            }
+        ],
+        "departDate": [
+            {
+                "target_params_value": "2024-11-30",
+                "target_api_params": "departDate",
+                "source_api": "query",
+                "source_jsonpath": null,
+                "source_jsonpath_value": null
+            }
+        ],
+        "cabinClass": [
+            {
+                "target_params_value": "BUSINESS",
+                "target_api_params": "cabinClass",
+                "source_api": "query",
+                "source_jsonpath": null,
+                "source_jsonpath_value": null
+            }
+        ],
+        "returnDate": [
+            {
+                "target_params_value": "2024-11-24",
+                "target_api_params": "returnDate",
+                "source_api": "query",
+                "source_jsonpath": null,
+                "source_jsonpath_value": null
+            }
+        ]
+    },
+    "Search_Flights": {
+        "fromId": [
+            {
+                "target_params_value": "BER.AIRPORT",
+                "target_api_params": "fromId",
+                "source_api": "Search_Flight_Location",
+                "source_jsonpath": "$[0].id",
+                "source_jsonpath_value": "BER.AIRPORT"
+            },
+            {
+                "target_params_value": "LAX.CITY",
+                "target_api_params": "fromId",
+                "source_api": "query",
+                "source_jsonpath": null,
+                "source_jsonpath_value": null
+            }
+        ],
+        "toId": [
+            {
+                "target_params_value": "BCN.AIRPORT",
+                "target_api_params": "toId",
+                "source_api": "Search_Flight_Location",
+                "source_jsonpath": "$[0].id",
+                "source_jsonpath_value": "BCN.AIRPORT"
+            },
+            {
+                "target_params_value": "BJS.CITY",
+                "target_api_params": "toId",
+                "source_api": "query",
+                "source_jsonpath": null,
+                "source_jsonpath_value": null
+            }
+        ],
+        "departDate": [
+            {
+                "target_params_value": "2024-10-05",
+                "target_api_params": "departDate",
+                "source_api": "query",
+                "source_jsonpath": null,
+                "source_jsonpath_value": null
+            },
+            {
+                "target_params_value": "2024-09-29",
+                "target_api_params": "departDate",
+                "source_api": "Get_Availability_Calendar",
+                "source_jsonpath": "$[5].date",
+                "source_jsonpath_value": "2024-09-29"
+            },
+            {
+                "target_params_value": "2024-11-04",
+                "target_api_params": "departDate",
+                "source_api": "Get_Room_Availability",
+                "source_jsonpath": "$.avDates[3].date",
+                "source_jsonpath_value": "2024-11-04"
+            },
+            {
+                "target_params_value": "2025-04-05",
+                "target_api_params": "departDate",
+                "source_api": "Get_Min_Price",
+                "source_jsonpath": "$[0].departureDate",
+                "source_jsonpath_value": "2025-04-05"
+            }
+        ],
+        "returnDate": [
+            {
+                "target_params_value": "2024-10-12",
+                "target_api_params": "returnDate",
+                "source_api": "query",
+                "source_jsonpath": null,
+                "source_jsonpath_value": null
+            },
+            {
+                "target_params_value": "2025-04-12",
+                "target_api_params": "returnDate",
+                "source_api": "Get_Min_Price",
+                "source_jsonpath": "$[0].returnDate",
+                "source_jsonpath_value": "2025-04-12"
+            }
+        ],
+        "cabinClass": [
+            {
+                "target_params_value": "BUSINESS",
+                "target_api_params": "cabinClass",
+                "source_api": "query",
+                "source_jsonpath": null,
+                "source_jsonpath_value": null
+            },
+            {
+                "target_params_value": "BUSINESS",
+                "target_api_params": "cabinClass",
+                "source_api": "Search_Flights_Multi_Stops",
+                "source_jsonpath": "$.flightOffers[0].segments[0].legs[0].cabinClass",
+                "source_jsonpath_value": "BUSINESS"
+            }
+        ],
+        "sort": [
+            {
+                "target_params_value": "BEST",
+                "target_api_params": "sort",
+                "source_api": "query",
+                "source_jsonpath": null,
+                "source_jsonpath_value": null
+            }
+        ],
+        "adults": [
+            {
+                "target_params_value": 4,
+                "target_api_params": "adults",
+                "source_api": "query",
+                "source_jsonpath": null,
+                "source_jsonpath_value": null
+            }
+        ],
+        "children": [
+            {
+                "target_params_value": "3,10",
+                "target_api_params": "children",
+                "source_api": "query",
+                "source_jsonpath": null,
+                "source_jsonpath_value": null
+            }
+        ]
+    },
+    "Get_Availability": {
+        "slug": [
+            {
+                "target_params_value": "pryzemnihivv-milan-cathedral-guided-tour",
+                "target_api_params": "slug",
+                "source_api": "Search_Attraction_Location",
+                "source_jsonpath": "$.products[0].productSlug",
+                "source_jsonpath_value": "pryzemnihivv-milan-cathedral-guided-tour"
+            },
+            {
+                "target_params_value": "pr1ml3zlh00q-palazzo-conte-federico-museum-admission",
+                "target_api_params": "slug",
+                "source_api": "Search_Attractions",
+                "source_jsonpath": "$.products[0].slug",
+                "source_jsonpath_value": "pr1ml3zlh00q-palazzo-conte-federico-museum-admission"
+            }
+        ],
+        "date": [
+            {
+                "target_params_value": "2024-11-20",
+                "target_api_params": "date",
+                "source_api": "query",
+                "source_jsonpath": null,
+                "source_jsonpath_value": null
+            }
+        ]
+    },
+    "Get_Flight_Details": {
+        "token": [
+            {
+                "target_params_value": "d6a1f_H4sIAAAAAAAA_y1Qa2-CMBT9NfqNQnmImDQLA506BB-Aui8N1AqoWxfaKePXr8Jyb84595H25JZCfPOJqp5vVVEKrvxwUDDBikxQQNineq4l5Ixdq69Czapa3c3daOdCLYxSFaqKDDI5vtBGKLwmaFjlFGRIcRynl5wguPuXNRoBc7r_2Gw0vWsRJpAJLLiZu5YVHOK-WaO3ZBxHWled0Mrnj6hdHqJ2FkXtUYvapEmS8jWM00UYEzttt6tgRrTYezRh6uqBP4WJf7SDeNUEfhkEniZ5am2KgeHL7J6lRPoCwLQd2NUs48jsFREI9n-zk0C7YDte9sakWdsw-_0GQcMYW0NOb5SIin2901_keCPHsRV5G3bXTWU90L2cXh55LcXAcGUWWJNYdpjh9UxSjsdbSaSnEz7Z1nNKsWnbuhRnbEqsMAQaeA4ueLGX1GLryou7-AN5yd8nwAEAAA..",
+                "target_api_params": "token",
+                "source_api": "Search_Flights",
+                "source_jsonpath": "$.flightOffers[0].token",
+                "source_jsonpath_value": "d6a1f_H4sIAAAAAAAA_y1Qa2-CMBT9NfqNQnmImDQLA506BB-Aui8N1AqoWxfaKePXr8Jyb84595H25JZCfPOJqp5vVVEKrvxwUDDBikxQQNineq4l5Ixdq69Czapa3c3daOdCLYxSFaqKDDI5vtBGKLwmaFjlFGRIcRynl5wguPuXNRoBc7r_2Gw0vWsRJpAJLLiZu5YVHOK-WaO3ZBxHWled0Mrnj6hdHqJ2FkXtUYvapEmS8jWM00UYEzttt6tgRrTYezRh6uqBP4WJf7SDeNUEfhkEniZ5am2KgeHL7J6lRPoCwLQd2NUs48jsFREI9n-zk0C7YDte9sakWdsw-_0GQcMYW0NOb5SIin2901_keCPHsRV5G3bXTWU90L2cXh55LcXAcGUWWJNYdpjh9UxSjsdbSaSnEz7Z1nNKsWnbuhRnbEqsMAQaeA4ueLGX1GLryou7-AN5yd8nwAEAAA.."
+            },
+            {
+                "target_params_value": "d6a1f_H4sIAAAAAAAA_1WRa2-bMBSGf037aRgM5lbJmlKcrFycpCGQpl8QIYSwZCWLPUH49TuBalp1wOd5XgsLOEcpL-JJVQ_nujpKofwRqGpkU-WyREXzSz1cYdk1zan-qNS8vqrb9TufvmEzni6_AUQ-1_U7A8CW7gKrWFWgiqft97KTirgW9LHelSiniuu6I4qCGv6MfMqVWog4ZuAaFh-iopGUIJIGYeKRmROO4ZX-8NPVMx5sT7nXthGbCl63t4j5NngHXfBb20fs1Z7fuvDucdyFi943gL_ci36rRSxYRR6Ok7rV1nWrz5nQ0tMlShPex5q5jNhqE59k-trPo_WJiPnsPYxxyrgmFwkTMjn7IkqDOJpVhMdtx1nSLzR3E7GJuHvKigeDDS9cFgXFCBHbHT-gyQXVRioktccf0-wljYPgxXNGlRTbpmFag3UU67prPYryXBaybj7C8kaXTDccW4GJlBedKGE24dYX3xLDxY4CYxqCbeZx29IUGNXgC3BHI_85nIjhAUMbA_age6Zu1ecLwIMxgavKNPSvwI-DY6TfCzzPXny04ghjhriPkjf0PIV4l9k2tCKzObR9hnNi6DlgmdllXgIcMgJrneHPg39m_gZan5U7sft9-QtGUvw0rgIAAA..",
+                "target_api_params": "token",
+                "source_api": "Search_Flights_Multi_Stops",
+                "source_jsonpath": "$.flightOffers[0].token",
+                "source_jsonpath_value": "d6a1f_H4sIAAAAAAAA_1WRa2-bMBSGf037aRgM5lbJmlKcrFycpCGQpl8QIYSwZCWLPUH49TuBalp1wOd5XgsLOEcpL-JJVQ_nujpKofwRqGpkU-WyREXzSz1cYdk1zan-qNS8vqrb9TufvmEzni6_AUQ-1_U7A8CW7gKrWFWgiqft97KTirgW9LHelSiniuu6I4qCGv6MfMqVWog4ZuAaFh-iopGUIJIGYeKRmROO4ZX-8NPVMx5sT7nXthGbCl63t4j5NngHXfBb20fs1Z7fuvDucdyFi943gL_ci36rRSxYRR6Ok7rV1nWrz5nQ0tMlShPex5q5jNhqE59k-trPo_WJiPnsPYxxyrgmFwkTMjn7IkqDOJpVhMdtx1nSLzR3E7GJuHvKigeDDS9cFgXFCBHbHT-gyQXVRioktccf0-wljYPgxXNGlRTbpmFag3UU67prPYryXBaybj7C8kaXTDccW4GJlBedKGE24dYX3xLDxY4CYxqCbeZx29IUGNXgC3BHI_85nIjhAUMbA_age6Zu1ecLwIMxgavKNPSvwI-DY6TfCzzPXny04ghjhriPkjf0PIV4l9k2tCKzObR9hnNi6DlgmdllXgIcMgJrneHPg39m_gZan5U7sft9-QtGUvw0rgIAAA.."
+            }
+        ]
+    },
+    "Location_to_Lat_Long": {
+        "query": [
+            {
+                "target_params_value": "Miami International Airport",
+                "target_api_params": "query",
+                "source_api": "query",
+                "source_jsonpath": null,
+                "source_jsonpath_value": null
+            },
+            {
+                "target_params_value": "LaGuardia Airport",
+                "target_api_params": "query",
+                "source_api": "Search_Flight_Location",
+                "source_jsonpath": "$[0].name",
+                "source_jsonpath_value": "LaGuardia Airport"
+            }
+        ]
+    },
+    "Get_Min_Price_Multi_Stops": {
+        "legs[0].fromId": [
+            {
+                "target_params_value": "MSY.AIRPORT",
+                "target_api_params": "legs[0].fromId",
+                "source_api": "Search_Flight_Location",
+                "source_jsonpath": "$[0].id",
+                "source_jsonpath_value": "MSY.AIRPORT"
+            }
+        ],
+        "legs[0].toId": [
+            {
+                "target_params_value": "BNA.AIRPORT",
+                "target_api_params": "legs[0].toId",
+                "source_api": "Search_Flight_Location",
+                "source_jsonpath": "$[0].id",
+                "source_jsonpath_value": "BNA.AIRPORT"
+            }
+        ],
+        "legs[0].date": [
+            {
+                "target_params_value": "2024-12-04",
+                "target_api_params": "legs[0].date",
+                "source_api": "query",
+                "source_jsonpath": null,
+                "source_jsonpath_value": null
+            }
+        ],
+        "cabinClass": [
+            {
+                "target_params_value": "BUSINESS",
+                "target_api_params": "cabinClass",
+                "source_api": "query",
+                "source_jsonpath": null,
+                "source_jsonpath_value": null
+            }
+        ]
+    },
+    "Get_Availability_Calendar": {
+        "id": [
+            {
+                "target_params_value": "PRZtshIDqvnN",
+                "target_api_params": "id",
+                "source_api": "Search_Attraction_Location",
+                "source_jsonpath": "$.products[0].productId",
+                "source_jsonpath_value": "PRZtshIDqvnN"
+            },
+            {
+                "target_params_value": "PRCMOkYUz7Um",
+                "target_api_params": "id",
+                "source_api": "Search_Attractions",
+                "source_jsonpath": "$.products[0].id",
+                "source_jsonpath_value": "PRCMOkYUz7Um"
+            }
+        ]
+    },
+    "Get_Popular_Attraction_Near_By": {
+        "hotel_id": [
+            {
+                "target_params_value": "181422",
+                "target_api_params": "hotel_id",
+                "source_api": "query",
+                "source_jsonpath": null,
+                "source_jsonpath_value": null
+            },
+            {
+                "target_params_value": "7180799",
+                "target_api_params": "hotel_id",
+                "source_api": "Search_Hotels_By_Coordinates",
+                "source_jsonpath": "$.result[0].hotel_id",
+                "source_jsonpath_value": 7180799
+            },
+            {
+                "target_params_value": "280022",
+                "target_api_params": "hotel_id",
+                "source_api": "Search_Hotel_Destination",
+                "source_jsonpath": "$[0].dest_id",
+                "source_jsonpath_value": "280022"
+            }
+        ]
+    },
+    "Get_Attraction_Details": {
+        "slug": [
+            {
+                "target_params_value": "prz1xpmyzjoq-oriental-pearl-tower-tickets-booking",
+                "target_api_params": "slug",
+                "source_api": "Search_Attraction_Location",
+                "source_jsonpath": "$.products[0].productSlug",
+                "source_jsonpath_value": "prz1xpmyzjoq-oriental-pearl-tower-tickets-booking"
+            },
+            {
+                "target_params_value": "prteag8urn5f-admission-to-schonbrunn-zoo",
+                "target_api_params": "slug",
+                "source_api": "Search_Attractions",
+                "source_jsonpath": "$.products[0].slug",
+                "source_jsonpath_value": "prteag8urn5f-admission-to-schonbrunn-zoo"
+            }
+        ]
+    },
+    "Get_Nearby_Cities": {
+        "latitude": [
+            {
+                "target_params_value": "51.5072178",
+                "target_api_params": "latitude",
+                "source_api": "Location_to_Lat_Long",
+                "source_jsonpath": "$[0].geometry.location.lat",
+                "source_jsonpath_value": 51.5072178
+            },
+            {
+                "target_params_value": "43.662785",
+                "target_api_params": "latitude",
+                "source_api": "Taxi_Search_Location",
+                "source_jsonpath": "$[0].latitude",
+                "source_jsonpath_value": 43.662785
+            },
+            {
+                "target_params_value": "41.9071492306388",
+                "target_api_params": "latitude",
+                "source_api": "Search_Hotels",
+                "source_jsonpath": "$.hotels[0].property.latitude",
+                "source_jsonpath_value": 41.9071492306388
+            },
+            {
+                "target_params_value": "25.446001825967",
+                "target_api_params": "latitude",
+                "source_api": "Search_Hotels_By_Coordinates",
+                "source_jsonpath": "$.result[0].latitude",
+                "source_jsonpath_value": 25.446001825967
+            }
+        ],
+        "longitude": [
+            {
+                "target_params_value": "-0.1275862",
+                "target_api_params": "longitude",
+                "source_api": "Location_to_Lat_Long",
+                "source_jsonpath": "$[0].geometry.location.lng",
+                "source_jsonpath_value": -0.1275862
+            },
+            {
+                "target_params_value": "-79.395836",
+                "target_api_params": "longitude",
+                "source_api": "Taxi_Search_Location",
+                "source_jsonpath": "$[0].longitude",
+                "source_jsonpath_value": -79.395836
+            },
+            {
+                "target_params_value": "12.4531938134533",
+                "target_api_params": "longitude",
+                "source_api": "Search_Hotels",
+                "source_jsonpath": "$.hotels[0].property.longitude",
+                "source_jsonpath_value": 12.4531938134533
+            },
+            {
+                "target_params_value": "-80.4757641255856",
+                "target_api_params": "longitude",
+                "source_api": "Search_Hotels_By_Coordinates",
+                "source_jsonpath": "$.result[0].longitude",
+                "source_jsonpath_value": -80.4757641255856
+            }
+        ]
+    },
+    "Search_Flights_Multi_Stops": {
+        "legs[0].fromId": [
+            {
+                "target_params_value": "BER.AIRPORT",
+                "target_api_params": "legs[0].fromId",
+                "source_api": "Search_Flight_Location",
+                "source_jsonpath": "$[0].id",
+                "source_jsonpath_value": "BER.AIRPORT"
+            }
+        ],
+        "legs[0].toId": [
+            {
+                "target_params_value": "LON.CITY",
+                "target_api_params": "legs[0].toId",
+                "source_api": "Search_Flight_Location",
+                "source_jsonpath": "$[0].id",
+                "source_jsonpath_value": "LON.CITY"
+            }
+        ],
+        "legs[0].date": [
+            {
+                "target_params_value": "2024-11-18",
+                "target_api_params": "legs[0].date",
+                "source_api": "query",
+                "source_jsonpath": null,
+                "source_jsonpath_value": null
+            },
+            {
+                "target_params_value": "2024-11-18",
+                "target_api_params": "legs[0].date",
+                "source_api": "Get_Min_Price_Multi_Stops",
+                "source_jsonpath": "$[3].departureDate",
+                "source_jsonpath_value": "2024-11-18"
+            }
+        ],
+        "sort": [
+            {
+                "target_params_value": "CHEAPEST",
+                "target_api_params": "sort",
+                "source_api": "query",
+                "source_jsonpath": null,
+                "source_jsonpath_value": null
+            }
+        ],
+        "cabinClass": [
+            {
+                "target_params_value": "ECONOMY",
+                "target_api_params": "cabinClass",
+                "source_api": "query",
+                "source_jsonpath": null,
+                "source_jsonpath_value": null
+            }
+        ],
+        "adults": [
+            {
+                "target_params_value": 2,
+                "target_api_params": "adults",
+                "source_api": "query",
+                "source_jsonpath": null,
+                "source_jsonpath_value": null
+            }
+        ]
+    },
+    "Get_Room_Availability": {
+        "hotel_id": [
+            {
+                "target_params_value": "183564",
+                "target_api_params": "hotel_id",
+                "source_api": "Search_Hotel_Destination",
+                "source_jsonpath": "$[0].dest_id",
+                "source_jsonpath_value": "183564"
+            }
+        ],
+        "min_date": [
+            {
+                "target_params_value": "2024-11-01",
+                "target_api_params": "min_date",
+                "source_api": "query",
+                "source_jsonpath": null,
+                "source_jsonpath_value": null
+            }
+        ],
+        "max_date": [
+            {
+                "target_params_value": "2024-11-10",
+                "target_api_params": "max_date",
+                "source_api": "query",
+                "source_jsonpath": null,
+                "source_jsonpath_value": null
+            }
+        ]
+    },
+    "Get_Hotel_Reviews(Tips)": {
+        "hotel_id": [
+            {
+                "target_params_value": "49327",
+                "target_api_params": "hotel_id",
+                "source_api": "Search_Hotel_Destination",
+                "source_jsonpath": "$[0].dest_id",
+                "source_jsonpath_value": "49327"
+            },
+            {
+                "target_params_value": "11393900",
+                "target_api_params": "hotel_id",
+                "source_api": "Search_Hotels_By_Coordinates",
+                "source_jsonpath": "$.result[0].hotel_id",
+                "source_jsonpath_value": 11393900
+            },
+            {
+                "target_params_value": "7260049",
+                "target_api_params": "hotel_id",
+                "source_api": "Search_Hotels",
+                "source_jsonpath": "$.hotels[0].hotel_id",
+                "source_jsonpath_value": 7260049
+            }
+        ],
+        "sort_option_id": [
+            {
+                "target_params_value": "sort_recent_desc",
+                "target_api_params": "sort_option_id",
+                "source_api": "Get_Hotel_Reviews(Tips)_Sort_Option",
+                "source_jsonpath": "$[1].sort_option_id",
+                "source_jsonpath_value": "sort_recent_desc"
+            }
+        ]
+    },
+    "Get_Description_And_Info": {
+        "hotel_id": [
+            {
+                "target_params_value": "11037108",
+                "target_api_params": "hotel_id",
+                "source_api": "Search_Hotels_By_Coordinates",
+                "source_jsonpath": "$.result[0].hotel_id",
+                "source_jsonpath_value": 11037108
+            }
+        ]
+    },
+    "Get_Hotel_Details": {
+        "hotel_id": [
+            {
+                "target_params_value": "380793",
+                "target_api_params": "hotel_id",
+                "source_api": "Search_Hotels_By_Coordinates",
+                "source_jsonpath": "$.result[0].hotel_id",
+                "source_jsonpath_value": 380793
+            },
+            {
+                "target_params_value": "2377260",
+                "target_api_params": "hotel_id",
+                "source_api": "Search_Hotels",
+                "source_jsonpath": "$.hotels[0].hotel_id",
+                "source_jsonpath_value": 2377260
+            }
+        ]
+    },
+    "Payment_features_of_the_Hotel": {
+        "hotel_id": [
+            {
+                "target_params_value": "380793",
+                "target_api_params": "hotel_id",
+                "source_api": "Search_Hotels_By_Coordinates",
+                "source_jsonpath": "$.result[0].hotel_id",
+                "source_jsonpath_value": 380793
+            },
+            {
+                "target_params_value": "2377260",
+                "target_api_params": "hotel_id",
+                "source_api": "Search_Hotels",
+                "source_jsonpath": "$.hotels[0].hotel_id",
+                "source_jsonpath_value": 2377260
+            }
+        ]
+    },
+    "Get_Filter": {
+        "search_type": [
+            {
+                "target_params_value": "city",
+                "target_api_params": "search_type",
+                "source_api": "Search_Hotel_Destination",
+                "source_jsonpath": "$[0].search_type",
+                "source_jsonpath_value": "city"
+            }
+        ],
+        "dest_id": [
+            {
+                "target_params_value": "-1563952",
+                "target_api_params": "dest_id",
+                "source_api": "Search_Hotel_Destination",
+                "source_jsonpath": "$[0].dest_id",
+                "source_jsonpath_value": "-1563952"
+            }
+        ],
+        "arrival_date": [
+            {
+                "target_params_value": "2024-11-15",
+                "target_api_params": "arrival_date",
+                "source_api": "query",
+                "source_jsonpath": null,
+                "source_jsonpath_value": null
+            }
+        ],
+        "departure_date": [
+            {
+                "target_params_value": "2024-11-22",
+                "target_api_params": "departure_date",
+                "source_api": "query",
+                "source_jsonpath": null,
+                "source_jsonpath_value": null
+            }
+        ],
+        "adults": [
+            {
+                "target_params_value": 2,
+                "target_api_params": "adults",
+                "source_api": "query",
+                "source_jsonpath": null,
+                "source_jsonpath_value": null
+            }
+        ],
+        "children_age": [
+            {
+                "target_params_value": "4,9",
+                "target_api_params": "children_age",
+                "source_api": "query",
+                "source_jsonpath": null,
+                "source_jsonpath_value": null
+            }
+        ]
+    },
+    "Get_Hotel_Policies": {
+        "hotel_id": [
+            {
+                "target_params_value": "8175829",
+                "target_api_params": "hotel_id",
+                "source_api": "Search_Hotels",
+                "source_jsonpath": "$.hotels[0].hotel_id",
+                "source_jsonpath_value": 8175829
+            }
+        ]
+    },
+    "Get_Hotel_Reviews(Tips)_Sort_Option": {
+        "hotel_id": [
+            {
+                "target_params_value": "376898",
+                "target_api_params": "hotel_id",
+                "source_api": "Search_Hotels_By_Coordinates",
+                "source_jsonpath": "$.result[0].hotel_id",
+                "source_jsonpath_value": 376898
+            },
+            {
+                "target_params_value": "7260049",
+                "target_api_params": "hotel_id",
+                "source_api": "Search_Hotels",
+                "source_jsonpath": "$.hotels[0].hotel_id",
+                "source_jsonpath_value": 7260049
+            }
+        ]
+    },
+    "Property_Children_Policies": {
+        "hotel_id": [
+            {
+                "target_params_value": "489885",
+                "target_api_params": "hotel_id",
+                "source_api": "Search_Hotels",
+                "source_jsonpath": "$.hotels[0].hotel_id",
+                "source_jsonpath_value": 489885
+            }
+        ]
+    },
+    "Get_Seat_Map": {
+        "offerToken": [
+            {
+                "target_params_value": "d7699_H4sIAAAAAAAA_12Q246bMBRFvybzNFxs7iNZFQXSDuCQCpMofbGIIYQ2HY9iV2b4-jrQvlS2zt5r6-j4cpXyXbxY1uU2DlcpjN_CHLjkQyt7k_Ff1uWuy5nzn-PbYLXj3TqRipwq4NXZHnhVQiz47DwD2zL0Yi-nT_0kDXFn6Gk892aLjCiKVisYCv-6O_JNN4BpVfrxEjEukWu6Tb537M9wV63hHX3Zl2mxUodwoqZqjgVOharmLMAkC3bbQ9GkWFXN9uuRCNncXkV5yOsyAXUzqoUxOex3o5p2TQjLNANkPv2fwZpkOvue41pnhxgu5yRKlWksSrItysSeaj0PN_wfz_hDTcdmEPiGdZZtnHS5aM8YAqZ-XwQW5q1AzuqYRNBebSdRnfv5N7iiRJ4d-V6w0IQAhJFvAseBzpPobz2TI38r-g8UJ5Gh_75_h65R0DgBtsaKSY3lBiZqdifVabNxYr0Hapu21qtWoLWlODXJw51pEGhhNHxQR93Ob4NHa0-91m61uVBX15FCEy4zftDXo5aZsnPPw_APGy4LxzgCAAA.",
+                "target_api_params": "offerToken",
+                "source_api": "Search_Flights",
+                "source_jsonpath": "$.flightOffers[0].token",
+                "source_jsonpath_value": "d7699_H4sIAAAAAAAA_12Q246bMBRFvybzNFxs7iNZFQXSDuCQCpMofbGIIYQ2HY9iV2b4-jrQvlS2zt5r6-j4cpXyXbxY1uU2DlcpjN_CHLjkQyt7k_Ff1uWuy5nzn-PbYLXj3TqRipwq4NXZHnhVQiz47DwD2zL0Yi-nT_0kDXFn6Gk892aLjCiKVisYCv-6O_JNN4BpVfrxEjEukWu6Tb537M9wV63hHX3Zl2mxUodwoqZqjgVOharmLMAkC3bbQ9GkWFXN9uuRCNncXkV5yOsyAXUzqoUxOex3o5p2TQjLNANkPv2fwZpkOvue41pnhxgu5yRKlWksSrItysSeaj0PN_wfz_hDTcdmEPiGdZZtnHS5aM8YAqZ-XwQW5q1AzuqYRNBebSdRnfv5N7iiRJ4d-V6w0IQAhJFvAseBzpPobz2TI38r-g8UJ5Gh_75_h65R0DgBtsaKSY3lBiZqdifVabNxYr0Hapu21qtWoLWlODXJw51pEGhhNHxQR93Ob4NHa0-91m61uVBX15FCEy4zftDXo5aZsnPPw_APGy4LxzgCAAA."
+            },
+            {
+                "target_params_value": "d6a1f_H4sIAAAAAAAA_1WRa2-bMBSGf037aRgM5lbJmlKcrFycpCGQpl8QIYSwZCWLPUH49TuBalp1wOd5XgsLOEcpL-JJVQ_nujpKofwRqGpkU-WyREXzSz1cYdk1zan-qNS8vqrb9TufvmEzni6_AUQ-1_U7A8CW7gKrWFWgiqft97KTirgW9LHelSiniuu6I4qCGv6MfMqVWog4ZuAaFh-iopGUIJIGYeKRmROO4ZX-8NPVMx5sT7nXthGbCl63t4j5NngHXfBb20fs1Z7fuvDucdyFi943gL_ci36rRSxYRR6Ok7rV1nWrz5nQ0tMlShPex5q5jNhqE59k-trPo_WJiPnsPYxxyrgmFwkTMjn7IkqDOJpVhMdtx1nSLzR3E7GJuHvKigeDDS9cFgXFCBHbHT-gyQXVRioktccf0-wljYPgxXNGlRTbpmFag3UU67prPYryXBaybj7C8kaXTDccW4GJlBedKGE24dYX3xLDxY4CYxqCbeZx29IUGNXgC3BHI_85nIjhAUMbA_age6Zu1ecLwIMxgavKNPSvwI-DY6TfCzzPXny04ghjhriPkjf0PIV4l9k2tCKzObR9hnNi6DlgmdllXgIcMgJrneHPg39m_gZan5U7sft9-QtGUvw0rgIAAA..",
+                "target_api_params": "offerToken",
+                "source_api": "Search_Flights_Multi_Stops",
+                "source_jsonpath": "$.flightOffers[0].token",
+                "source_jsonpath_value": "d6a1f_H4sIAAAAAAAA_1WRa2-bMBSGf037aRgM5lbJmlKcrFycpCGQpl8QIYSwZCWLPUH49TuBalp1wOd5XgsLOEcpL-JJVQ_nujpKofwRqGpkU-WyREXzSz1cYdk1zan-qNS8vqrb9TufvmEzni6_AUQ-1_U7A8CW7gKrWFWgiqft97KTirgW9LHelSiniuu6I4qCGv6MfMqVWog4ZuAaFh-iopGUIJIGYeKRmROO4ZX-8NPVMx5sT7nXthGbCl63t4j5NngHXfBb20fs1Z7fuvDucdyFi943gL_ci36rRSxYRR6Ok7rV1nWrz5nQ0tMlShPex5q5jNhqE59k-trPo_WJiPnsPYxxyrgmFwkTMjn7IkqDOJpVhMdtx1nSLzR3E7GJuHvKigeDDS9cFgXFCBHbHT-gyQXVRioktccf0-wljYPgxXNGlRTbpmFag3UU67prPYryXBaybj7C8kaXTDccW4GJlBedKGE24dYX3xLDxY4CYxqCbeZx29IUGNXgC3BHI_85nIjhAUMbA_age6Zu1ecLwIMxgavKNPSvwI-DY6TfCzzPXny04ghjhriPkjf0PIV4l9k2tCKzObR9hnNi6DlgmdllXgIcMgJrneHPg39m_gZan5U7sft9-QtGUvw0rgIAAA.."
+            }
+        ]
+    }
+}

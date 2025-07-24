@@ -1,0 +1,123 @@
+{
+    "name": "Get_Seat_Map",
+    "docs_row": {
+        "name": "Get_Seat_Map",
+        "endpoint": "/api/v1/flights/getSeatMap",
+        "func_description": "Get the seat map for a specific flight. ",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "offerToken": {
+                    "type": "String",
+                    "description": "offerToken can be retrieved from api/v1/flights/searchFlights(Search Flights) or api/v1/flights/searchFlightsMultiStops(Search Flights Multi Stops) endpoints in Flights collection as offerToken.",
+                    "example_value": "",
+                    "required": true
+                },
+                "currency_code": {
+                    "type": "String",
+                    "description": "The currency code. currency_code can be retrieved from api/v1/meta/getCurrency(Get Currency) endpoint in Hotels collection.",
+                    "example_value": "AED",
+                    "required": false
+                }
+            },
+            "required": [
+                "offerToken"
+            ]
+        }
+    },
+    "instance": [],
+    "category": null,
+    "tool": null,
+    "api_idx": 44,
+    "params": {
+        "type": "object",
+        "properties": {
+            "offerToken": {
+                "type": "String",
+                "description": "offerToken can be retrieved from api/v1/flights/searchFlights(Search Flights) or api/v1/flights/searchFlightsMultiStops(Search Flights Multi Stops) endpoints in Flights collection as offerToken.",
+                "example_value": "",
+                "required": true
+            },
+            "currency_code": {
+                "type": "String",
+                "description": "The currency code. currency_code can be retrieved from api/v1/meta/getCurrency(Get Currency) endpoint in Hotels collection.",
+                "example_value": "AED",
+                "required": false
+            }
+        },
+        "required": [
+            "offerToken"
+        ]
+    },
+    "responses": [],
+    "response_summary": null,
+    "enhance_func_desc": null,
+    "enhance_params_desc": {
+        "enhanced_parameters": {
+            "offerToken": "Unique token identifying a flight offer, obtained from flight search endpoints.",
+            "currency_code": "Currency for displaying seat prices and fees."
+        }
+    },
+    "enhance_resfield_desc": null,
+    "params_desc_list": null,
+    "response_desc_list": null,
+    "depends_on": [
+        {
+            "source_api_name": "Search_Flights_Multi_Stops",
+            "dependence_type": "Hard Dependency",
+            "depencend_field": "$.flightDeals[*].offerToken",
+            "param_name": "offerToken",
+            "reason": "The 'Search_Flights_Multi_Stops' API is explicitly mentioned in the target API's documentation as a source for obtaining the 'offerToken' parameter. This establishes a hard dependency relationship as the target API cannot function without this parameter. The 'flightDeals[].offerToken' field from the source API perfectly matches the required 'offerToken' parameter in both data type (String) and functional purpose (unique flight offer identification)."
+        },
+        {
+            "source_api_name": "Search_Flights",
+            "dependence_type": "Hard Dependency",
+            "depencend_field": "$.flightDeals[*].offerToken",
+            "param_name": "offerToken",
+            "reason": "The 'Search_Flights' API is explicitly mentioned as a source for obtaining the 'offerToken' parameter required by the 'Get_Seat_Map' API. This establishes a hard dependency relationship where the flight search must be performed first to obtain the necessary token for seat map retrieval. The 'flightDeals[].offerToken' field from 'Search_Flights' directly provides the required input for the 'offerToken' parameter in 'Get_Seat_Map', with matching string data types."
+        },
+        {
+            "source_api_name": "Search_Flights",
+            "dependence_type": "Hard Dependency",
+            "depencend_field": "$.flightOffers[*].token",
+            "param_name": "offerToken",
+            "reason": "The 'Search_Flights' API is explicitly mentioned as a source for obtaining the 'offerToken' parameter required by the 'Get_Seat_Map' API. This establishes a hard dependency relationship where the flight search must be performed first to obtain the necessary token for seat map retrieval. The 'flightOffers[*].token' field from 'Search_Flights' exactly matches the data type and purpose of the 'offerToken' parameter in 'Get_Seat_Map'."
+        },
+        {
+            "source_api_name": "Search_Flights_Multi_Stops",
+            "dependence_type": "Hard Dependency",
+            "depencend_field": "$.flightOffers[*].token",
+            "param_name": "offerToken",
+            "reason": "The 'Search_Flights_Multi_Stops' API is explicitly mentioned in the target API's documentation as a source for obtaining the 'offerToken' parameter. The 'flightOffers[*].token' field from the source API response directly provides the required token value for the target API. This represents a hard dependency as the target API cannot function without this token from the source API."
+        },
+        {
+            "source_api_name": "Search_Flights_Multi_Stops",
+            "dependence_type": "Hard Dependency",
+            "depencend_field": "$.flightOffers[*].offerKeyToHighlight",
+            "param_name": "offerToken",
+            "reason": "The 'Search_Flights_Multi_Stops' API is a necessary prerequisite for calling the 'Get_Seat_Map' API, as it provides the 'offerToken' required by the target API. The 'flightOffers[].offerKeyToHighlight' field from the source API serves as the 'offerToken' parameter for the target API, establishing a hard dependency between these APIs. The data types match (both are Strings), and the example values demonstrate the correct format for the offerToken."
+        },
+        {
+            "source_api_name": "Search_Flights",
+            "dependence_type": "Hard Dependency",
+            "depencend_field": "$.flightOffers[*].offerKeyToHighlight",
+            "param_name": "offerToken",
+            "reason": "The 'Search_Flights' API is a necessary prerequisite for calling the 'Get_Seat_Map' API, as it provides the 'offerToken' required by the target API. The 'flightOffers[].offerKeyToHighlight' field from the 'Search_Flights' response matches the 'offerToken' parameter in terms of business logic and data type (both are strings). This represents a hard dependency as the seat map cannot be retrieved without first obtaining a valid flight offer token."
+        },
+        {
+            "source_api_name": "Search_Flights_Multi_Stops",
+            "dependence_type": "Hard Dependency",
+            "depencend_field": "$.searchId",
+            "param_name": "offerToken",
+            "reason": "The 'Search_Flights_Multi_Stops' API is a necessary prerequisite for the 'Get_Seat_Map' API as it provides the 'offerToken' required to identify the flight offer. The 'searchId' field from the 'Search_Flights_Multi_Stops' API response can be used as the 'offerToken' parameter for the 'Get_Seat_Map' API, establishing a hard dependency between these APIs."
+        },
+        {
+            "source_api_name": "Search_Flights",
+            "dependence_type": "Hard Dependency",
+            "depencend_field": "$.searchId",
+            "param_name": "offerToken",
+            "reason": "The 'Search_Flights' API is a necessary prerequisite for calling the 'Get_Seat_Map' API, as the 'offerToken' parameter required by 'Get_Seat_Map' is obtained from the response of 'Search_Flights'. The 'searchId' field from 'Search_Flights' matches the requirement for 'offerToken' in 'Get_Seat_Map', as both are unique identifiers for flight offers. This represents a hard dependency as the flight search API must be called first to obtain the necessary token for seat map retrieval."
+        }
+    ],
+    "verified": false
+}

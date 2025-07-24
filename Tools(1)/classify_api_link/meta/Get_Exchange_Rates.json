@@ -1,0 +1,295 @@
+{
+    "name": "Get_Exchange_Rates",
+    "docs_row": {
+        "name": "Get_Exchange_Rates",
+        "endpoint": "/api/v1/meta/getExchangeRates",
+        "func_description": "",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "base_currency": {
+                    "type": "String",
+                    "description": "Base currency.",
+                    "example_value": "USD",
+                    "required": true
+                }
+            },
+            "required": [
+                "base_currency"
+            ]
+        }
+    },
+    "instance": [],
+    "category": null,
+    "tool": null,
+    "api_idx": 49,
+    "params": {
+        "type": "object",
+        "properties": {
+            "base_currency": {
+                "type": "String",
+                "description": "Base currency.",
+                "example_value": "USD",
+                "required": true
+            }
+        },
+        "required": [
+            "base_currency"
+        ]
+    },
+    "responses": [
+        {
+            "function_name": "Get_Exchange_Rates",
+            "arguments": {
+                "base_currency": "USD"
+            },
+            "observation": {
+                "base_currency": "USD",
+                "base_currency_date": "2025-05-18",
+                "exchange_rates": [
+                    {
+                        "currency": "ATS",
+                        "exchange_rate_buy": "12.33502980"
+                    },
+                    {
+                        "currency": "ROL",
+                        "exchange_rate_buy": "44333.27448071"
+                    }
+                ]
+            }
+        }
+    ],
+    "response_summary": "The exchange rates provided are based on the US dollar (USD) as of May 18, 2025. According to the data, one US dollar can be exchanged for approximately 12.34 Austrian schillings (ATS), 44,333.27 Romanian lei (ROL), or 15.41 Maldivian rufiyaa (MVR). These rates represent the buying prices for the respective currencies against the USD on the specified date.",
+    "enhance_func_desc": "This API is essential for financial transactions and travel planning involving currency conversion. It retrieves real-time exchange rates for various currencies against a specified base currency (default USD). The response provides buying rates, enabling users to compare currency values for budgeting, trading, or travel expenses. The base currency parameter allows flexibility for different market needs.",
+    "enhance_params_desc": {
+        "enhanced_parameters": {
+            "base_currency": "The reference currency against which exchange rates are calculated (default: USD)."
+        }
+    },
+    "enhance_resfield_desc": {
+        "response_fields": {
+            "base_currency": {
+                "type": "String",
+                "description": "The base currency code (ISO 4217) against which exchange rates are provided. In this case, it is USD (US Dollar)."
+            },
+            "base_currency_date": {
+                "type": "Date",
+                "description": "The date for which the exchange rates are provided, formatted as YYYY-MM-DD."
+            },
+            "exchange_rates": {
+                "type": "Array",
+                "description": "A list of exchange rates for various currencies against the base currency (USD).",
+                "ar_items": {
+                    "type": "Object",
+                    "description": "An object representing the exchange rate details for a specific currency.",
+                    "ob_properties": {
+                        "currency": {
+                            "type": "String",
+                            "description": "The target currency code (ISO 4217) for which the exchange rate is provided (e.g., ATS, ROL, MVR)."
+                        },
+                        "exchange_rate_buy": {
+                            "type": "String",
+                            "description": "The buying exchange rate from the base currency (USD) to the target currency. Represented as a string to preserve precision."
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "params_desc_list": null,
+    "response_desc_list": [
+        {
+            "path_name": "$.base_currency",
+            "name": "base_currency",
+            "description": "The base currency code (ISO 4217) against which exchange rates are provided. In this case, it is USD (US Dollar)."
+        },
+        {
+            "path_name": "$.base_currency_date",
+            "name": "base_currency_date",
+            "description": "The date for which the exchange rates are provided, formatted as YYYY-MM-DD."
+        },
+        {
+            "path_name": "$.exchange_rates",
+            "name": "exchange_rates",
+            "description": "A list of exchange rates for various currencies against the base currency (USD)."
+        },
+        {
+            "path_name": "$.exchange_rates[]",
+            "name": "exchange_rates[]",
+            "description": "An object representing the exchange rate details for a specific currency."
+        },
+        {
+            "path_name": "$.exchange_rates[].currency",
+            "name": "currency",
+            "description": "The target currency code (ISO 4217) for which the exchange rate is provided (e.g., ATS, ROL, MVR)."
+        },
+        {
+            "path_name": "$.exchange_rates[].exchange_rate_buy",
+            "name": "exchange_rate_buy",
+            "description": "The buying exchange rate from the base currency (USD) to the target currency. Represented as a string to preserve precision."
+        }
+    ],
+    "depends_on": [
+        {
+            "target_api_params": "base_currency",
+            "reason": "The 'base_currency' parameter in the target API requires a currency code (e.g., 'USD'). The source API's 'pricing_info' response field includes a 'base_currency' field that provides exactly this information. The data types match (both are strings), and the example values ('USD') align perfectly with the target API's requirements. This creates a potential business association where a user might want to check exchange rates for the currency used in their car rental pricing.",
+            "source_jsonpath": "$.search_results[*].pricing_info.base_currency",
+            "confidence": 95,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Car_Search"
+        },
+        {
+            "target_api_params": "base_currency",
+            "reason": "The 'base_currency' parameter in the target API requires a currency code (e.g., 'USD'). The source API's response fields contain 'currencyCode' values (e.g., 'USD') in various price-related fields. These values match the required data type and format for the target API's parameter. There is a potential business association where a user might want to get exchange rates for the currency used in their flight search results.",
+            "source_jsonpath": "$.aggregation.minPriceFiltered.currencyCode",
+            "confidence": 95,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Search_Flights"
+        },
+        {
+            "target_api_params": "base_currency",
+            "reason": "The 'currencyCode' field in the flight offers' price breakdown can serve as a valid input for the 'base_currency' parameter. The data types match, and the example values (e.g., 'USD') are exactly what the target API expects. This creates a logical scenario where a user might want to check exchange rates for the currency used in their flight booking.",
+            "source_jsonpath": "$.flightOffers[*].travellerPrices[*].travellerPriceBreakdown.total.currencyCode",
+            "confidence": 95,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Search_Flights"
+        },
+        {
+            "target_api_params": "base_currency",
+            "reason": "The 'currencyCode' in the flight deals' price field matches the required format and type for the 'base_currency' parameter. This could be useful in scenarios where a user wants to compare exchange rates for the currency used in their flight search results.",
+            "source_jsonpath": "$.flightDeals[*].price.currencyCode",
+            "confidence": 95,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Search_Flights"
+        },
+        {
+            "target_api_params": "base_currency",
+            "reason": "The 'base_currency' parameter in the target API requires a currency code (e.g., 'USD'). The source API's response fields contain currency information in various price breakdowns (e.g., 'USD', 'INR'). This creates a potential business association where a user might want to get exchange rates for the currency used in their hotel booking.",
+            "source_jsonpath": "$.result[*].composite_price_breakdown.net_amount.currency",
+            "confidence": 85,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Search_Hotels_By_Coordinates"
+        },
+        {
+            "target_api_params": "base_currency",
+            "reason": "The 'currency' field in 'composite_price_breakdown.gross_amount_hotel_currency' provides the hotel's local currency, which could be used as the base currency for exchange rate lookup if the user wants to compare against their home currency.",
+            "source_jsonpath": "$.result[*].composite_price_breakdown.gross_amount_hotel_currency.currency",
+            "confidence": 80,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Search_Hotels_By_Coordinates"
+        },
+        {
+            "target_api_params": "base_currency",
+            "reason": "The 'base_currency' parameter in the target API requires a currency code (e.g., 'USD'). The source API's response fields contain 'currencyCode' values (e.g., 'USD') within various price-related fields. This creates a potential business association where a traveler might want to get exchange rates for the currency used in their flight booking.",
+            "source_jsonpath": "$.flightOffers[*].priceBreakdown.baseFare.currencyCode",
+            "confidence": 85,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Search_Flights_Multi_Stops"
+        },
+        {
+            "target_api_params": "base_currency",
+            "reason": "The 'currencyCode' field in the source API's response matches the data type and format required by the target API's 'base_currency' parameter. This is a direct match where the currency code from flight pricing can be used to fetch exchange rates.",
+            "source_jsonpath": "$.flightDeals[*].price.currencyCode",
+            "confidence": 90,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Search_Flights_Multi_Stops"
+        },
+        {
+            "target_api_params": "base_currency",
+            "reason": "The 'currencyCode' in the aggregation fields also matches the required format for the target API's 'base_currency'. This could be useful for getting exchange rates based on the cheapest flight options.",
+            "source_jsonpath": "$.aggregation.minPrice.currencyCode",
+            "confidence": 85,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Search_Flights_Multi_Stops"
+        },
+        {
+            "target_api_params": "base_currency",
+            "reason": "The 'currencyCode' in traveller price breakdowns is another potential source for the base currency, especially if personalized exchange rates are needed for individual travelers.",
+            "source_jsonpath": "$.flightOffers[*].travellerPrices[*].travellerPriceBreakdown.total.currencyCode",
+            "confidence": 80,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Search_Flights_Multi_Stops"
+        },
+        {
+            "target_api_params": "base_currency",
+            "reason": "The 'base_currency' parameter in the target API requires a currency code (e.g., 'USD'). The source API's response includes a 'currency' field that provides the currency code used for pricing (e.g., 'USD'). This creates a potential business association where a traveler might want to check exchange rates for the currency used in their hotel booking.",
+            "source_jsonpath": "$.currency",
+            "confidence": 85,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Get_Room_Availability"
+        },
+        {
+            "target_api_params": "base_currency",
+            "reason": "The 'u_currency_code' field in the payment terms (e.g., 'USD') matches the data type required by the target API's 'base_currency' parameter. This field represents the user's preferred currency, which could be used as the base currency for exchange rates. There is a potential business association where the user's preferred currency is used to fetch exchange rates.",
+            "source_jsonpath": "$.block[*].paymentterms.prepayment.timeline.u_currency_code",
+            "confidence": 85,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Get_Room_List"
+        },
+        {
+            "target_api_params": "base_currency",
+            "reason": "The 'base_currency' parameter in the target API requires a currency code (e.g., 'USD'). The source API's 'currency' field in the price objects provides the currency code used for pricing (e.g., 'USD', 'EUR'). This creates a potential business association where the currency used for attraction pricing could be used as the base currency for exchange rate calculations.",
+            "source_jsonpath": "$[*].timeSlotOffers[*].items[*].price.currency",
+            "confidence": 85,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Get_Availability"
+        },
+        {
+            "target_api_params": "base_currency",
+            "reason": "The 'base_currency' parameter in the target API requires a currency code (e.g., 'USD'). The source API's 'currency' field in the representativePrice provides the currency code used for attraction pricing. This creates a potential business association where a traveler might want to check exchange rates for the currency they'll be using for attraction bookings.",
+            "source_jsonpath": "$.products[*].representativePrice.currency",
+            "confidence": 85,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Search_Attractions"
+        },
+        {
+            "target_api_params": "base_currency",
+            "reason": "The 'base_currency' parameter in the target API requires a currency code (e.g., 'USD'). The source API's 'price' and 'priceRounded' fields include a 'currencyCode' subfield that provides the currency in which the flight price is displayed (e.g., 'USD'). This creates a potential business association where a user might want to get exchange rates for the same currency used in their flight pricing.",
+            "source_jsonpath": "$[*].price.currencyCode",
+            "confidence": 85,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Get_Min_Price_Multi_Stops"
+        },
+        {
+            "target_api_params": "base_currency",
+            "reason": "The 'priceRounded' field also contains a 'currencyCode' subfield, similar to the 'price' field. However, this is essentially the same information as the 'price' field, just rounded, so it doesn't provide additional value for the target API parameter.",
+            "source_jsonpath": "$[*].priceRounded.currencyCode",
+            "confidence": 85,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Get_Min_Price_Multi_Stops"
+        },
+        {
+            "target_api_params": "base_currency",
+            "reason": "The 'base_currency' parameter in the target API requires a currency code (e.g., 'USD'). The source API's 'currencyCode' field in the price object provides the currency used for flight pricing (e.g., 'USD'). This creates a potential business association where a traveler might want to check exchange rates for the currency they are using to book flights.",
+            "source_jsonpath": "$[*].price.currencyCode",
+            "confidence": 85,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Get_Min_Price"
+        },
+        {
+            "target_api_params": "base_currency",
+            "reason": "The 'base_currency' parameter in the target API requires a currency code (e.g., 'USD'). The source API's 'currencyCode' field in the price object provides the currency in which the taxi fare is quoted (e.g., 'USD'). This creates a potential business association where a user might want to get exchange rates for the same currency used in their taxi fare.",
+            "source_jsonpath": "$.results[*].price.currencyCode",
+            "confidence": 85,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Search_Taxi"
+        },
+        {
+            "target_api_params": "base_currency",
+            "reason": "The 'currencyCode' field in the 'legPriceBreakdown' object also provides the currency code for the taxi fare. However, this is similar to the 'currencyCode' in the main price object and does not provide additional value for the target API parameter.",
+            "source_jsonpath": "$.results[*].legPriceBreakdown[*].price.currencyCode",
+            "confidence": 85,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Search_Taxi"
+        },
+        {
+            "target_api_params": "base_currency",
+            "reason": "The 'base_currency' parameter in the target API requires a currency code (e.g., 'USD'). The source API's 'currency' field in the price breakdown provides the currency used for hotel pricing (e.g., 'USD'). This creates a potential business association where a traveler might want to check exchange rates for the currency they are being charged in for their hotel stay.",
+            "source_jsonpath": "$.hotels[*].property.priceBreakdown.strikethroughPrice.currency",
+            "confidence": 85,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Search_Hotels"
+        }
+    ],
+    "verified": true
+}

@@ -1,0 +1,142 @@
+{
+    "name": "Get_Currency",
+    "docs_row": {
+        "name": "Get_Currency",
+        "endpoint": "/api/v1/meta/getCurrency",
+        "func_description": "",
+        "parameters": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        }
+    },
+    "instance": [],
+    "category": null,
+    "tool": null,
+    "api_idx": 2,
+    "params": {
+        "type": "object",
+        "properties": {},
+        "required": []
+    },
+    "responses": [
+        {
+            "function_name": "Get_Currency",
+            "arguments": {},
+            "observation": [
+                {
+                    "name": "Property currency",
+                    "code": "hotel_currency",
+                    "encodedSymbol": "&#x20AC;&#163;US$",
+                    "symbol": "\u20ac$\u00a3"
+                },
+                {
+                    "name": "Argentine Peso",
+                    "code": "ARS",
+                    "encodedSymbol": "AR$",
+                    "symbol": "AR$"
+                },
+                {
+                    "name": "Australian Dollar",
+                    "code": "AUD",
+                    "encodedSymbol": "AUD",
+                    "symbol": "AUD"
+                }
+            ]
+        },
+        {
+            "function_name": "Get_Currency",
+            "arguments": {},
+            "observation": [
+                {
+                    "name": "Property currency",
+                    "code": "hotel_currency",
+                    "encodedSymbol": "&#x20AC;&#163;US$",
+                    "symbol": "\u20ac$\u00a3"
+                },
+                {
+                    "name": "Argentine Peso",
+                    "code": "ARS",
+                    "encodedSymbol": "AR$",
+                    "symbol": "AR$"
+                },
+                {
+                    "name": "Australian Dollar",
+                    "code": "AUD",
+                    "encodedSymbol": "AUD",
+                    "symbol": "AUD"
+                }
+            ]
+        }
+    ],
+    "response_summary": "The API response provides information about different currencies used in property listings. The first entry is labeled as \"Property currency\" and uses the code \"hotel_currency.\" It supports multiple symbols, including the Euro (\u20ac), Dollar ($), and Pound (\u00a3), which are also represented in encoded form. The second entry is the Argentine Peso (ARS), symbolized as \"AR$\" in both encoded and standard formats. Lastly, the Australian Dollar (AUD) is listed with its code and symbol, though the symbol is simply displayed as \"AUD\" without any special characters. This data helps identify and display various currencies for property-related transactions.",
+    "enhance_func_desc": "This API is essential for property listing and transaction management. It retrieves a comprehensive list of supported currencies, including their codes and symbols, to facilitate accurate financial transactions. The response includes details like currency symbols in both standard and encoded formats, ensuring compatibility across different systems. This helps users identify and display the correct currency for property-related payments. No input parameters are required.",
+    "enhance_params_desc": {
+        "enhanced_parameters": {}
+    },
+    "enhance_resfield_desc": {
+        "response_fields": {
+            "root": {
+                "type": "Array",
+                "description": "An array of currency objects used in property listings.",
+                "ar_items": {
+                    "type": "Object",
+                    "description": "An object representing a currency with its details.",
+                    "ob_properties": {
+                        "name": {
+                            "type": "String",
+                            "description": "The display name of the currency (e.g., 'Property currency', 'Argentine Peso', 'Australian Dollar')."
+                        },
+                        "code": {
+                            "type": "String",
+                            "description": "The currency code (e.g., 'hotel_currency', 'ARS', 'AUD')."
+                        },
+                        "encodedSymbol": {
+                            "type": "String",
+                            "description": "The encoded symbol representation of the currency (e.g., '&#x20AC;&#163;US$', 'AR$', 'AUD')."
+                        },
+                        "symbol": {
+                            "type": "String",
+                            "description": "The standard symbol representation of the currency (e.g., '\u20ac$\u00a3', 'AR$', 'AUD')."
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "params_desc_list": null,
+    "response_desc_list": [
+        {
+            "path_name": "root",
+            "name": "root",
+            "description": "An array of currency objects used in property listings."
+        },
+        {
+            "path_name": "root[]",
+            "name": "root[]",
+            "description": "An object representing a currency with its details."
+        },
+        {
+            "path_name": "root[].name",
+            "name": "name",
+            "description": "The display name of the currency (e.g., 'Property currency', 'Argentine Peso', 'Australian Dollar')."
+        },
+        {
+            "path_name": "root[].code",
+            "name": "code",
+            "description": "The currency code (e.g., 'hotel_currency', 'ARS', 'AUD')."
+        },
+        {
+            "path_name": "root[].encodedSymbol",
+            "name": "encodedSymbol",
+            "description": "The encoded symbol representation of the currency (e.g., '&#x20AC;&#163;US$', 'AR$', 'AUD')."
+        },
+        {
+            "path_name": "root[].symbol",
+            "name": "symbol",
+            "description": "The standard symbol representation of the currency (e.g., '\u20ac$\u00a3', 'AR$', 'AUD')."
+        }
+    ],
+    "depends_on": null,
+    "verified": true
+}

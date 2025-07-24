@@ -1,0 +1,494 @@
+{
+    "name": "Get_Nearby_Cities",
+    "docs_row": {
+        "name": "Get_Nearby_Cities",
+        "endpoint": "/api/v1/hotels/getNearbyCities",
+        "func_description": "Search for cities around a given geographical coordinates. ",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "latitude": {
+                    "type": "String",
+                    "description": "Latitude of the searched location. latitude can be retrieved from api/v1/meta/locationToLatLong(Location to Lat Long) endpoint in Meta collection.",
+                    "example_value": "65.9667",
+                    "required": true
+                },
+                "longitude": {
+                    "type": "String",
+                    "description": "Longitude of the searched location. longitude can be retrieved from api/v1/meta/locationToLatLong(Location to Lat Long) endpoint in Meta collection.",
+                    "example_value": "-18.5333",
+                    "required": true
+                },
+                "languagecode": {
+                    "type": "String",
+                    "description": "To obtain the response data in a specific language, enter the languagecode. languagecode can be retrieved from api/v1/meta/getLanguages(Get Languages\n) endpoint in Meta collection.",
+                    "example_value": "en-us",
+                    "required": false
+                }
+            },
+            "required": [
+                "latitude",
+                "longitude"
+            ]
+        }
+    },
+    "instance": [],
+    "category": null,
+    "tool": null,
+    "api_idx": 22,
+    "params": {
+        "type": "object",
+        "properties": {
+            "latitude": {
+                "type": "String",
+                "description": "Latitude of the searched location. latitude can be retrieved from api/v1/meta/locationToLatLong(Location to Lat Long) endpoint in Meta collection.",
+                "example_value": "65.9667",
+                "required": true
+            },
+            "longitude": {
+                "type": "String",
+                "description": "Longitude of the searched location. longitude can be retrieved from api/v1/meta/locationToLatLong(Location to Lat Long) endpoint in Meta collection.",
+                "example_value": "-18.5333",
+                "required": true
+            },
+            "languagecode": {
+                "type": "String",
+                "description": "To obtain the response data in a specific language, enter the languagecode. languagecode can be retrieved from api/v1/meta/getLanguages(Get Languages\n) endpoint in Meta collection.",
+                "example_value": "en-us",
+                "required": false
+            }
+        },
+        "required": [
+            "latitude",
+            "longitude"
+        ]
+    },
+    "responses": [
+        {
+            "function_name": "Get_Nearby_Cities",
+            "arguments": {
+                "latitude": "40.7128",
+                "longitude": "-74.0060"
+            },
+            "observation": [
+                {
+                    "cc1": "us",
+                    "country": "United States",
+                    "region": null,
+                    "longitude": -73.996696472168,
+                    "dest_id": 20085521,
+                    "nr_hotels": 1,
+                    "name": "Chinatown",
+                    "dest_type": "city",
+                    "latitude": 40.7164001464844
+                },
+                {
+                    "longitude": -73.9845070528099,
+                    "country": "United States",
+                    "cc1": "us",
+                    "region": "New York State",
+                    "latitude": 40.6960857950378,
+                    "name": "Brooklyn",
+                    "dest_type": "city",
+                    "dest_id": 20085207,
+                    "nr_hotels": 531
+                },
+                {
+                    "country": "United States",
+                    "cc1": "us",
+                    "region": "New Jersey",
+                    "longitude": -74.0327987670898,
+                    "nr_hotels": 83,
+                    "dest_id": 20081434,
+                    "dest_type": "city",
+                    "name": "Hoboken",
+                    "latitude": 40.7439002990723
+                }
+            ]
+        },
+        {
+            "function_name": "Get_Nearby_Cities",
+            "arguments": {
+                "latitude": "40.7128",
+                "longitude": "-74.0060"
+            },
+            "observation": [
+                {
+                    "dest_id": 20085521,
+                    "region": null,
+                    "longitude": -73.996696472168,
+                    "nr_hotels": 1,
+                    "name": "Chinatown",
+                    "latitude": 40.7164001464844,
+                    "country": "United States",
+                    "dest_type": "city",
+                    "cc1": "us"
+                },
+                {
+                    "dest_type": "city",
+                    "cc1": "us",
+                    "country": "United States",
+                    "latitude": 40.6960857950378,
+                    "name": "Brooklyn",
+                    "nr_hotels": 531,
+                    "longitude": -73.9845070528099,
+                    "region": "New York State",
+                    "dest_id": 20085207
+                },
+                {
+                    "dest_type": "city",
+                    "cc1": "us",
+                    "country": "United States",
+                    "latitude": 40.7439002990723,
+                    "name": "Hoboken",
+                    "nr_hotels": 83,
+                    "longitude": -74.0327987670898,
+                    "dest_id": 20081434,
+                    "region": "New Jersey"
+                }
+            ]
+        }
+    ],
+    "response_summary": "The API response provides information about three cities in the United States. First, there's Chinatown, located in New York with coordinates at approximately 40.7164\u00b0N latitude and -73.9967\u00b0W longitude. It has only one hotel available. Next is Brooklyn, also in New York State, positioned around 40.6961\u00b0N latitude and -73.9845\u00b0W longitude, offering a much larger selection with 531 hotels. Lastly, Hoboken in New Jersey is situated near 40.7439\u00b0N latitude and -74.0328\u00b0W longitude, with 83 hotels listed. All three locations are classified as cities in the dataset.",
+    "enhance_func_desc": "This API is ideal for travelers and planners seeking accommodation options near specific coordinates. It retrieves nearby cities with their hotel availability count and precise geographic coordinates. Users input latitude/longitude to receive city details including name, location, and hotel quantity, helping them compare lodging options in adjacent areas. The response includes city classification and exact positioning for accurate navigation.",
+    "enhance_params_desc": {
+        "enhanced_parameters": {
+            "latitude": "Geographic coordinate specifying north-south position for search.",
+            "longitude": "Geographic coordinate specifying east-west position for search.",
+            "languagecode": "Language preference for the response data (e.g., 'en-us')."
+        }
+    },
+    "enhance_resfield_desc": {
+        "response_fields": [
+            {
+                "cc1": {
+                    "type": "String",
+                    "description": "The country code (ISO 3166-1 alpha-2) representing the country where the city is located (e.g., 'us' for United States)."
+                },
+                "country": {
+                    "type": "String",
+                    "description": "The full name of the country where the city is located (e.g., 'United States')."
+                },
+                "region": {
+                    "type": "String",
+                    "description": "The region or state within the country where the city is located (e.g., 'New York State'). Can be null if not applicable."
+                },
+                "longitude": {
+                    "type": "Number",
+                    "description": "The longitude coordinate of the city's location (e.g., -73.996696472168)."
+                },
+                "dest_id": {
+                    "type": "Number",
+                    "description": "A unique identifier for the destination (e.g., 20085521)."
+                },
+                "nr_hotels": {
+                    "type": "Number",
+                    "description": "The number of hotels available in the city (e.g., 1, 531, 83)."
+                },
+                "name": {
+                    "type": "String",
+                    "description": "The name of the city (e.g., 'Chinatown', 'Brooklyn', 'Hoboken')."
+                },
+                "dest_type": {
+                    "type": "String",
+                    "description": "The type of destination (e.g., 'city')."
+                },
+                "latitude": {
+                    "type": "Number",
+                    "description": "The latitude coordinate of the city's location (e.g., 40.7164001464844)."
+                }
+            }
+        ]
+    },
+    "params_desc_list": null,
+    "response_desc_list": [
+        {
+            "path_name": "$[].cc1",
+            "name": "cc1",
+            "description": "The country code (ISO 3166-1 alpha-2) representing the country where the city is located (e.g., 'us' for United States)."
+        },
+        {
+            "path_name": "$[].country",
+            "name": "country",
+            "description": "The full name of the country where the city is located (e.g., 'United States')."
+        },
+        {
+            "path_name": "$[].region",
+            "name": "region",
+            "description": "The region or state within the country where the city is located (e.g., 'New York State'). Can be null if not applicable."
+        },
+        {
+            "path_name": "$[].longitude",
+            "name": "longitude",
+            "description": "The longitude coordinate of the city's location (e.g., -73.996696472168)."
+        },
+        {
+            "path_name": "$[].dest_id",
+            "name": "dest_id",
+            "description": "A unique identifier for the destination (e.g., 20085521)."
+        },
+        {
+            "path_name": "$[].nr_hotels",
+            "name": "nr_hotels",
+            "description": "The number of hotels available in the city (e.g., 1, 531, 83)."
+        },
+        {
+            "path_name": "$[].name",
+            "name": "name",
+            "description": "The name of the city (e.g., 'Chinatown', 'Brooklyn', 'Hoboken')."
+        },
+        {
+            "path_name": "$[].dest_type",
+            "name": "dest_type",
+            "description": "The type of destination (e.g., 'city')."
+        },
+        {
+            "path_name": "$[].latitude",
+            "name": "latitude",
+            "description": "The latitude coordinate of the city's location (e.g., 40.7164001464844)."
+        }
+    ],
+    "depends_on": [
+        {
+            "target_api_params": "latitude",
+            "reason": "The 'latitude' parameter in the target API requires geographic coordinates for searching nearby cities. The source API's response includes 'coordinates.latitude' fields (e.g., '40.7680740356445') which exactly match the required data type (String) and purpose (geographic position). This creates a direct prerequisite relationship where the car rental location's coordinates can be used to find nearby hotel cities.",
+            "source_jsonpath": "$[*].coordinates.latitude",
+            "confidence": 100,
+            "dependency_relationship": "Hard Dependency(Prerequisite API)",
+            "source_api": "Car_Auto-Complete"
+        },
+        {
+            "target_api_params": "latitude",
+            "reason": "The 'latitude' parameter in the target API requires a geographic coordinate for searching nearby cities. The source API's response includes 'latitude' fields for each restaurant or location result (e.g., 40.713238 for New York City). The data types match (both are numeric coordinates), and there's a clear business association where travelers might want to find hotels near restaurants they've discovered.",
+            "source_jsonpath": "$[*].latitude",
+            "confidence": 95,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Search_Restaurants"
+        },
+        {
+            "target_api_params": "latitude",
+            "reason": "The 'latitude' parameter in the target API requires geographic coordinates for searching nearby cities. The source API's response includes 'latitude' fields for both closest and popular landmarks (e.g., '19.0915227852161'). These values match the required data type (String) and represent valid geographic coordinates that could be used to search for nearby cities.",
+            "source_jsonpath": "$.closest_landmarks[].latitude",
+            "confidence": 95,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Get_Popular_Attraction_Near_By"
+        },
+        {
+            "target_api_params": "latitude",
+            "reason": "The 'latitude' fields in the 'popular_landmarks' array also provide valid geographic coordinates that match the target API's requirements. These could be used to search for nearby cities, creating a business association where travelers might want to explore accommodation options near popular attractions.",
+            "source_jsonpath": "$.popular_landmarks[].latitude",
+            "confidence": 95,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Get_Popular_Attraction_Near_By"
+        },
+        {
+            "target_api_params": "latitude",
+            "reason": "The 'latitude' parameter in the target API requires a geographic coordinate specifying north-south position. The source API's 'geometry.location.lat' field provides exact latitude coordinates (e.g., 40.7484405). The data types match (both are numeric values representing latitude), and the source API is specifically designed to convert location names into geographic coordinates, making it a perfect match for the target API's needs.",
+            "source_jsonpath": "$[*].geometry.location.lat",
+            "confidence": 100,
+            "dependency_relationship": "Hard Dependency(Prerequisite API)",
+            "source_api": "Location_to_Lat_Long"
+        },
+        {
+            "target_api_params": "latitude",
+            "reason": "The 'latitude' parameter in the target API requires geographic coordinates for searching nearby cities. The source API's 'supplier_info' field provides exact latitude values (e.g., '40.663756') for car rental locations. This creates a potential business association where a traveler might want to find hotels near their car rental location.",
+            "source_jsonpath": "$.search_results[*].supplier_info.latitude",
+            "confidence": 90,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Car_Search"
+        },
+        {
+            "target_api_params": "latitude",
+            "reason": "The 'route_info.dropoff' and 'route_info.pickup' fields in the source API also provide latitude values (e.g., '40.663756') for car rental locations. This could be used similarly to find nearby hotels, maintaining the business association.",
+            "source_jsonpath": "$.search_results[*].route_info.dropoff.latitude",
+            "confidence": 90,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Car_Search"
+        },
+        {
+            "target_api_params": "latitude",
+            "reason": "The 'supplierPinContent.latLong.latitude' field in the source API provides latitude values (e.g., '40.663756') for car rental locations. This is another valid source for the latitude parameter in the target API.",
+            "source_jsonpath": "$.content.map.supplierLocations[*].supplierPinContent.latLong.latitude",
+            "confidence": 90,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Car_Search"
+        },
+        {
+            "target_api_params": "latitude",
+            "reason": "The 'latitude' parameter in the target API requires a geographic coordinate for searching nearby cities. The source API's response includes 'latitude' fields for each restaurant (e.g., 40.767174, 40.757282), which exactly match the required data type and format. This creates a potential business association where a traveler might want to find nearby cities based on the location of a restaurant they are interested in.",
+            "source_jsonpath": "$.results[*].latitude",
+            "confidence": 95,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "List_Restaurants_By_Search_Query"
+        },
+        {
+            "target_api_params": "latitude",
+            "reason": "The 'latitude' parameter in the target API requires geographic coordinates for searching nearby cities. The source API's response includes a 'latitude' field (e.g., 40.724686) which directly matches the required data type and purpose. This creates a potential business association where a traveler might want to find nearby cities based on a restaurant's location.",
+            "source_jsonpath": "$.latitude",
+            "confidence": 95,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Get_restaurant_details"
+        },
+        {
+            "target_api_params": "latitude",
+            "reason": "The 'latitude' parameter in the target API requires a geographic coordinate for searching nearby cities. The source API's 'pickupLocation' and 'dropOffLocation' fields in the response include 'latLng' objects with precise latitude and longitude values. The data type matches (numeric latitude value), and there is a reasonable scenario where a traveler might want to find nearby cities after booking a taxi (e.g., to explore accommodation options near the drop-off location).",
+            "source_jsonpath": "$.journeys[*].pickupLocation.latLng.latitude",
+            "confidence": 90,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Search_Taxi"
+        },
+        {
+            "target_api_params": "latitude",
+            "reason": "Similarly, the 'dropOffLocation' field also contains latitude information that could be used to find nearby cities. This is particularly relevant for travelers who might want to explore accommodation options near their final destination after a taxi ride.",
+            "source_jsonpath": "$.journeys[*].dropOffLocation.latLng.latitude",
+            "confidence": 90,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Search_Taxi"
+        },
+        {
+            "target_api_params": "latitude",
+            "reason": "The 'latitude' parameter in the target API requires geographic coordinates for searching nearby cities. The source API's response includes a 'latitude' field (e.g., 48.85668) for each destination, which directly matches the data type and purpose of the target parameter. This creates a hard dependency as the source API provides the exact latitude needed by the target API.",
+            "source_jsonpath": "$[*].latitude",
+            "confidence": 100,
+            "dependency_relationship": "Hard Dependency(Prerequisite API)",
+            "source_api": "Search_Hotel_Destination"
+        },
+        {
+            "target_api_params": "latitude",
+            "reason": "The 'latitude' parameter in the target API requires a geographic coordinate specifying north-south position. The source API's response includes 'latitude' fields for each hotel property (e.g., '19.1092056444051'), which exactly matches the required data type and purpose. This creates a potential business association where a traveler might want to find nearby cities based on the latitude of a hotel they are considering.",
+            "source_jsonpath": "$.hotels[*].property.latitude",
+            "confidence": 95,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Search_Hotels"
+        },
+        {
+            "target_api_params": "latitude",
+            "reason": "The 'latitude' parameter in the target API requires a geographic coordinate for north-south position. The source API's response fields include 'latitude' values (e.g., 40.760246) which exactly match the required data type and purpose. This creates a direct prerequisite relationship where the taxi location search provides the necessary coordinates for finding nearby cities.",
+            "source_jsonpath": "$[*].latitude",
+            "confidence": 100,
+            "dependency_relationship": "Hard Dependency(Prerequisite API)",
+            "source_api": "Taxi_Search_Location"
+        },
+        {
+            "target_api_params": "latitude",
+            "reason": "The 'latitude' parameter in the target API requires a geographic coordinate for searching nearby cities. The source API's response includes a 'latitude' field for each hotel result, which matches the data type and purpose of the target parameter. This creates a potential business association where a traveler might want to find nearby cities based on the coordinates of a hotel they are considering.",
+            "source_jsonpath": "$.result[*].latitude",
+            "confidence": 95,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Search_Hotels_By_Coordinates"
+        },
+        {
+            "target_api_params": "longitude",
+            "reason": "The 'longitude' parameter in the target API requires a geographic coordinate for east-west position. The source API's response includes 'coordinates.longitude' fields for each location suggestion (e.g., -73.9818954467773 for New York city). The data types match (both are strings representing longitude values), and the source API provides the exact longitude information needed by the target API.",
+            "source_jsonpath": "$[*].coordinates.longitude",
+            "confidence": 100,
+            "dependency_relationship": "Hard Dependency(Prerequisite API)",
+            "source_api": "Car_Auto-Complete"
+        },
+        {
+            "target_api_params": "longitude",
+            "reason": "The 'longitude' parameter in the target API requires a geographic coordinate specifying east-west position for search. The source API's response fields include 'longitude' values (e.g., -74.00584, -74.88397) which match the required data type (String). This creates a potential business association where a traveler might want to find nearby cities to the restaurants they are searching for.",
+            "source_jsonpath": "$[*].longitude",
+            "confidence": 95,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Search_Restaurants"
+        },
+        {
+            "target_api_params": "longitude",
+            "reason": "The 'longitude' parameter in the target API requires a geographic coordinate specifying east-west position for search. The source API's 'geometry.location.lng' field provides the exact longitude of the location (e.g., -73.98566439999999). The data types match (both are strings representing longitude values), and this is a direct prerequisite for calling the target API.",
+            "source_jsonpath": "$[*].geometry.location.lng",
+            "confidence": 100,
+            "dependency_relationship": "Hard Dependency(Prerequisite API)",
+            "source_api": "Location_to_Lat_Long"
+        },
+        {
+            "target_api_params": "longitude",
+            "reason": "The 'longitude' parameter in the target API requires a geographic coordinate specifying east-west position for search. The source API's response includes 'longitude' fields for both closest and popular landmarks (e.g., 72.8525733947754, 72.826211). The data types match (String vs numeric, but numeric can be converted to String), and there is a clear business association where a traveler might want to find nearby cities based on the longitude of popular attractions near their hotel.",
+            "source_jsonpath": "$.closest_landmarks[].longitude",
+            "confidence": 95,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Get_Popular_Attraction_Near_By"
+        },
+        {
+            "target_api_params": "longitude",
+            "reason": "The 'longitude' parameter in the target API requires a geographic coordinate specifying east-west position for search. The source API's response includes 'longitude' fields for popular landmarks (e.g., 72.910269). The data types match (String vs numeric, but numeric can be converted to String), and there is a clear business association where a traveler might want to find nearby cities based on the longitude of popular attractions near their hotel.",
+            "source_jsonpath": "$.popular_landmarks[].longitude",
+            "confidence": 95,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Get_Popular_Attraction_Near_By"
+        },
+        {
+            "target_api_params": "longitude",
+            "reason": "The 'longitude' parameter in the target API requires geographic coordinates for searching nearby cities. The source API's 'supplier_info.longitude' field provides exact longitude values for car rental locations (e.g., '-73.818973'). The data types match (both are strings), and there's a logical business association where travelers might want to find hotels near their car rental location.",
+            "source_jsonpath": "$.search_results[*].supplier_info.longitude",
+            "confidence": 90,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Car_Search"
+        },
+        {
+            "target_api_params": "longitude",
+            "reason": "The 'route_info.dropoff.longitude' field in the source API provides exact drop-off location coordinates (e.g., '-73.818973'). This matches the data type and could be used to find nearby cities for accommodation after dropping off a rental car.",
+            "source_jsonpath": "$.search_results[*].route_info.dropoff.longitude",
+            "confidence": 85,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Car_Search"
+        },
+        {
+            "target_api_params": "longitude",
+            "reason": "The 'longitude' parameter in the target API requires a geographic coordinate for searching nearby cities. The source API's response includes a 'longitude' field (e.g., -74.00318) which provides the exact geographic coordinate of the restaurant. This creates a potential business association where a traveler might want to find nearby cities based on the location of a restaurant they are interested in.",
+            "source_jsonpath": "$.longitude",
+            "confidence": 95,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Get_restaurant_details"
+        },
+        {
+            "target_api_params": "longitude",
+            "reason": "The 'longitude' parameter in the target API requires a geographic coordinate specifying east-west position. The source API's response includes 'longitude' fields for each restaurant (e.g., -73.98199, -73.97662), which exactly match the data type and purpose of the target parameter. This creates a potential business association where a traveler might want to find nearby cities based on the longitude of a restaurant they are interested in.",
+            "source_jsonpath": "$.results[*].longitude",
+            "confidence": 95,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "List_Restaurants_By_Search_Query"
+        },
+        {
+            "target_api_params": "longitude",
+            "reason": "The 'longitude' parameter in the target API requires a geographic coordinate specifying east-west position for search. The source API's response includes 'longitude' fields for each hotel property (e.g., 'longitude': 72.824029441801). The data type matches (String vs Number, but can be converted), and the field provides the exact longitude of hotel locations, which could be used to search for nearby cities.",
+            "source_jsonpath": "$.hotels[*].property.longitude",
+            "confidence": 95,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Search_Hotels"
+        },
+        {
+            "target_api_params": "longitude",
+            "reason": "The 'longitude' parameter in the target API requires a geographic coordinate for searching nearby cities. The source API's 'pickupLocation.latLng.longitude' field provides the exact longitude of the pickup location (e.g., 72.868696). The data types match (both are strings representing longitude values), and there is a clear business association where a traveler might want to find nearby cities to their taxi pickup location.",
+            "source_jsonpath": "$.journeys[*].pickupLocation.latLng.longitude",
+            "confidence": 95,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Search_Taxi"
+        },
+        {
+            "target_api_params": "longitude",
+            "reason": "The 'longitude' parameter in the target API requires a geographic coordinate for east-west position. The source API's response fields include 'longitude' values (e.g., -73.98844, -73.99545) which exactly match the data type and purpose required by the target API. This creates a hard dependency as the source API provides the necessary geographic coordinates that can be directly used as input for the target API.",
+            "source_jsonpath": "$[*].longitude",
+            "confidence": 100,
+            "dependency_relationship": "Hard Dependency(Prerequisite API)",
+            "source_api": "Taxi_Search_Location"
+        },
+        {
+            "target_api_params": "longitude",
+            "reason": "The 'longitude' parameter in the target API requires a geographic coordinate specifying east-west position for search. The source API's response field 'longitude' in the hotel details provides the exact geographic coordinate (e.g., '72.899979171893'). The data types match (both are strings representing longitude values), and the source field directly provides the required input for the target parameter.",
+            "source_jsonpath": "$.result[*].longitude",
+            "confidence": 100,
+            "dependency_relationship": "Hard Dependency(Prerequisite API)",
+            "source_api": "Search_Hotels_By_Coordinates"
+        },
+        {
+            "target_api_params": "longitude",
+            "reason": "The 'longitude' parameter in the target API requires geographic coordinates for searching nearby cities. The source API's response fields include 'longitude' values for each destination (e.g., 2.3514764 for Paris), which exactly match the data type and purpose required by the target API. This creates a hard dependency as the source API provides the necessary prerequisite data for the target API to function.",
+            "source_jsonpath": "$[*].longitude",
+            "confidence": 100,
+            "dependency_relationship": "Hard Dependency(Prerequisite API)",
+            "source_api": "Search_Hotel_Destination"
+        }
+    ],
+    "verified": true
+}

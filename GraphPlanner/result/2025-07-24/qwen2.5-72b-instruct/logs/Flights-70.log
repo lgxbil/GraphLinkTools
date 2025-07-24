@@ -1,0 +1,48 @@
+2025-07-24 09:31:08,878 - evaluation_logger_Flights-70 - INFO - Test Example Flights-70
+2025-07-24 09:31:08,878 - evaluation_logger_Flights-70 - INFO - Query: We're planning to leave Chicago on November 10th, 2024, and travel to Tokyo. After staying in Tokyo for three days, we'll go to Sydney, then return to Chicago on November 24th, 2024. I'm looking for the cheapest business class flights for this time period. If the ticket price is over 1800 dollars, we won't stay in Tokyo. Instead, check the lowest price for a direct round-trip from Chicago to Sydney during this time.
+2025-07-24 14:06:49,153 - evaluation_logger_Flights-70 - INFO - Test Example Flights-70
+2025-07-24 14:06:49,153 - evaluation_logger_Flights-70 - INFO - Query: We're planning to leave Chicago on November 10th, 2024, and travel to Tokyo. After staying in Tokyo for three days, we'll go to Sydney, then return to Chicago on November 24th, 2024. I'm looking for the cheapest business class flights for this time period. If the ticket price is over 1800 dollars, we won't stay in Tokyo. Instead, check the lowest price for a direct round-trip from Chicago to Sydney during this time.
+2025-07-24 14:09:43,265 - evaluation_logger_Flights-70 - INFO - Start compare_single_call: 
+{'name': 'Search_Flight_Location', 'arguments': {'query': 'Chicago'}}
+{'name': 'Search_Flight_Location', 'arguments': {'query': 'Chicago'}}
+2025-07-24 14:09:43,265 - evaluation_logger_Flights-70 - INFO - Rule-based compare success.
+2025-07-24 14:09:43,266 - evaluation_logger_Flights-70 - INFO - Success matched: [{'name': 'Search_Flight_Location', 'arguments': {'query': 'Chicago'}}]
+2025-07-24 14:09:43,267 - evaluation_logger_Flights-70 - INFO - Start compare_single_call: 
+{'name': 'Search_Flight_Location', 'arguments': {'query': 'Tokyo'}}
+{'name': 'Search_Flight_Location', 'arguments': {'query': 'Tokyo'}}
+2025-07-24 14:09:43,267 - evaluation_logger_Flights-70 - INFO - Rule-based compare success.
+2025-07-24 14:09:43,267 - evaluation_logger_Flights-70 - INFO - Success matched: [{'name': 'Search_Flight_Location', 'arguments': {'query': 'Tokyo'}}]
+2025-07-24 14:09:43,267 - evaluation_logger_Flights-70 - INFO - Start compare_single_call: 
+{'name': 'Search_Flight_Location', 'arguments': {'query': 'Sydney'}}
+{'name': 'Search_Flight_Location', 'arguments': {'query': 'Sydney'}}
+2025-07-24 14:09:43,268 - evaluation_logger_Flights-70 - INFO - Rule-based compare success.
+2025-07-24 14:09:43,268 - evaluation_logger_Flights-70 - INFO - Success matched: [{'name': 'Search_Flight_Location', 'arguments': {'query': 'Sydney'}}]
+2025-07-24 14:09:43,268 - evaluation_logger_Flights-70 - INFO - Start compare_single_call: 
+{'name': 'Get_Min_Price_Multi_Stops', 'arguments': {'cabinClass': 'BUSINESS', 'legs': [{'fromId': 'ORD.AIRPORT', 'toId': 'HND.AIRPORT', 'date': '2024-11-10'}, {'fromId': 'HND.AIRPORT', 'toId': 'SYD.AIRPORT', 'date': '2024-11-13'}, {'fromId': 'SYD.AIRPORT', 'toId': 'ORD.AIRPORT', 'date': '2024-11-24'}]}}
+{'name': 'Get_Min_Price_Multi_Stops', 'arguments': {'cabinClass': 'BUSINESS', 'legs': [{'fromId': 'ORD.AIRPORT', 'toId': 'HND.AIRPORT', 'date': '2024-11-10'}, {'fromId': 'HND.AIRPORT', 'toId': 'SYD.AIRPORT', 'date': '2024-11-13'}, {'fromId': 'SYD.AIRPORT', 'toId': 'ORD.AIRPORT', 'date': '2024-11-24'}]}}
+2025-07-24 14:09:43,269 - evaluation_logger_Flights-70 - INFO - Rule-based compare success.
+2025-07-24 14:09:43,269 - evaluation_logger_Flights-70 - INFO - Success matched: [{'name': 'Get_Min_Price_Multi_Stops', 'arguments': {'cabinClass': 'BUSINESS', 'legs': [{'fromId': 'ORD.AIRPORT', 'toId': 'HND.AIRPORT', 'date': '2024-11-10'}, {'fromId': 'HND.AIRPORT', 'toId': 'SYD.AIRPORT', 'date': '2024-11-13'}, {'fromId': 'SYD.AIRPORT', 'toId': 'ORD.AIRPORT', 'date': '2024-11-24'}]}}]
+2025-07-24 14:09:43,897 - evaluation_logger_Flights-70 - INFO - Start compare_single_call: 
+{'name': 'Get_Min_Price_Multi_Stops', 'arguments': {'cabinClass': 'BUSINESS', 'legs': [{'fromId': 'ORD.AIRPORT', 'toId': 'SYD.AIRPORT', 'date': '2024-11-10'}, {'fromId': 'SYD.AIRPORT', 'toId': 'ORD.AIRPORT', 'date': '2024-11-24'}]}}
+{'name': 'Get_Min_Price_Multi_Stops', 'arguments': {'cabinClass': 'BUSINESS', 'legs': [{'fromId': 'ORD.AIRPORT', 'toId': 'HND.AIRPORT', 'date': '2024-11-10'}, {'fromId': 'HND.AIRPORT', 'toId': 'SYD.AIRPORT', 'date': '2024-11-13'}, {'fromId': 'SYD.AIRPORT', 'toId': 'ORD.AIRPORT', 'date': '2024-11-24'}]}}
+2025-07-24 14:09:53,879 - evaluation_logger_Flights-70 - DEBUG - LLM-based comparison output: {'is_equal': False, 'reason': 'The legs parameters in the two function calls are different. Function call 1 has two legs, while function call 2 has three legs, and the intermediate destinations (SYD.AIRPORT vs. HND.AIRPORT) and dates differ.'}
+2025-07-24 14:09:53,880 - evaluation_logger_Flights-70 - INFO - All compare method failed.
+2025-07-24 14:09:53,880 - evaluation_logger_Flights-70 - INFO - Success matched: []
+2025-07-24 14:10:19,631 - evaluation_logger_Flights-70 - INFO - Start compare_single_call: 
+{'name': 'Get_Min_Price_Multi_Stops', 'arguments': {'cabinClass': 'BUSINESS', 'legs': [{'fromId': 'ORD.AIRPORT', 'toId': 'SYD.AIRPORT', 'date': '2024-11-10'}, {'fromId': 'SYD.AIRPORT', 'toId': 'ORD.AIRPORT', 'date': '2024-11-24'}]}}
+{'name': 'Get_Min_Price_Multi_Stops', 'arguments': {'cabinClass': 'BUSINESS', 'legs': [{'fromId': 'ORD.AIRPORT', 'toId': 'HND.AIRPORT', 'date': '2024-11-10'}, {'fromId': 'HND.AIRPORT', 'toId': 'SYD.AIRPORT', 'date': '2024-11-13'}, {'fromId': 'SYD.AIRPORT', 'toId': 'ORD.AIRPORT', 'date': '2024-11-24'}]}}
+2025-07-24 14:10:27,808 - evaluation_logger_Flights-70 - DEBUG - LLM-based comparison output: {'is_equal': False, 'reason': 'The legs parameters in the two function calls are different. Function call 1 has two legs (ORD.AIRPORT to SYD.AIRPORT and SYD.AIRPORT to ORD.AIRPORT), while function call 2 has three legs (ORD.AIRPORT to HND.AIRPORT, HND.AIRPORT to SYD.AIRPORT, and SYD.AIRPORT to ORD.AIRPORT).'}
+2025-07-24 14:10:27,809 - evaluation_logger_Flights-70 - INFO - All compare method failed.
+2025-07-24 14:10:27,809 - evaluation_logger_Flights-70 - INFO - Success matched: []
+2025-07-24 14:11:00,574 - evaluation_logger_Flights-70 - INFO - Start compare_single_call: 
+{'name': 'Get_Min_Price_Multi_Stops', 'arguments': {'cabinClass': 'BUSINESS', 'legs': [{'fromId': 'ORD.AIRPORT', 'toId': 'SYD.AIRPORT', 'date': '2024-11-10'}, {'fromId': 'SYD.AIRPORT', 'toId': 'ORD.AIRPORT', 'date': '2024-11-24'}]}}
+{'name': 'Get_Min_Price_Multi_Stops', 'arguments': {'cabinClass': 'BUSINESS', 'legs': [{'fromId': 'ORD.AIRPORT', 'toId': 'HND.AIRPORT', 'date': '2024-11-10'}, {'fromId': 'HND.AIRPORT', 'toId': 'SYD.AIRPORT', 'date': '2024-11-13'}, {'fromId': 'SYD.AIRPORT', 'toId': 'ORD.AIRPORT', 'date': '2024-11-24'}]}}
+2025-07-24 14:11:07,668 - evaluation_logger_Flights-70 - DEBUG - LLM-based comparison output: {'is_equal': False, 'reason': 'The legs parameters in the two function calls are different. Function call 1 has two legs while function call 2 has three legs, and the intermediate destinations (SYD.AIRPORT vs. HND.AIRPORT) and dates differ.'}
+2025-07-24 14:11:07,668 - evaluation_logger_Flights-70 - INFO - All compare method failed.
+2025-07-24 14:11:07,668 - evaluation_logger_Flights-70 - INFO - Success matched: []
+2025-07-24 14:11:59,779 - evaluation_logger_Flights-70 - INFO - Start compare_single_call: 
+{'name': 'Get_Min_Price_Multi_Stops', 'arguments': {'cabinClass': 'BUSINESS', 'legs': [{'fromId': 'ORD.AIRPORT', 'toId': 'SYD.AIRPORT', 'date': '2024-11-10'}, {'fromId': 'SYD.AIRPORT', 'toId': 'ORD.AIRPORT', 'date': '2024-11-24'}]}}
+{'name': 'Get_Min_Price_Multi_Stops', 'arguments': {'cabinClass': 'BUSINESS', 'legs': [{'fromId': 'ORD.AIRPORT', 'toId': 'HND.AIRPORT', 'date': '2024-11-10'}, {'fromId': 'HND.AIRPORT', 'toId': 'SYD.AIRPORT', 'date': '2024-11-13'}, {'fromId': 'SYD.AIRPORT', 'toId': 'ORD.AIRPORT', 'date': '2024-11-24'}]}}
+2025-07-24 14:12:08,098 - evaluation_logger_Flights-70 - DEBUG - LLM-based comparison output: {'is_equal': False, 'reason': 'The legs parameters in the two function calls are different. Function call 1 has two legs (ORD.AIRPORT to SYD.AIRPORT and SYD.AIRPORT to ORD.AIRPORT), while function call 2 has three legs (ORD.AIRPORT to HND.AIRPORT, HND.AIRPORT to SYD.AIRPORT, and SYD.AIRPORT to ORD.AIRPORT).'}
+2025-07-24 14:12:08,099 - evaluation_logger_Flights-70 - INFO - All compare method failed.
+2025-07-24 14:12:08,099 - evaluation_logger_Flights-70 - INFO - Success matched: []

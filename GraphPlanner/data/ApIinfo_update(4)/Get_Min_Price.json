@@ -1,0 +1,64 @@
+{
+    "name": "Get_Min_Price",
+    "docs_row": {
+        "name": "Get_Min_Price",
+        "description": "Get the minimum price for flights. This API will return the lowest priced flights within 5 days before and after the query date. EndPoint: /api/v1/flights/getMinPrice",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "cabinClass": {
+                    "type": "string",
+                    "description": "Search for flights that match the cabin class specified. Cabin call can be either ECONOMY, PREMIUM_ECONOMY, BUSINESS or FIRST.",
+                    "enum": [
+                        "ECONOMY",
+                        "PREMIUM_ECONOMY",
+                        "BUSINESS",
+                        "FIRST"
+                    ]
+                },
+                "fromId": {
+                    "type": "string",
+                    "description": "**From/Departure** location **Id**. `fromId` can be retrieved from `api/v1/flights/searchDestination`**(Search Flight Location)** endpoint in **Flights** collection as `id`."
+                },
+                "returnDate": {
+                    "type": "string",
+                    "description": "**Return** date.\nFormat: **YYYY-MM-DD**DATE (YYYY-MM-DD)"
+                },
+                "toId": {
+                    "type": "string",
+                    "description": "**To/Arrival** location **Id**. `toId` can be retrieved from `api/v1/flights/searchDestination`**(Search Flight Location)** endpoint in **Flights** collection as `id`."
+                },
+                "departDate": {
+                    "type": "string",
+                    "description": "**Departure** or **travel** date.\nFormat: **YYYY-MM-DD**DATE (YYYY-MM-DD)"
+                }
+            },
+            "required": [
+                "fromId",
+                "toId",
+                "departDate"
+            ]
+        }
+    },
+    "api_response_schema": [
+        {
+            "departureDate": "2024-11-20",
+            "returnDate": "2024-12-04",
+            "searchDates": [
+                "2024-12-04"
+            ],
+            "offsetDays": 5,
+            "isCheapest": false,
+            "price": {
+                "currencyCode": "USD",
+                "units": 1772,
+                "nanos": 610000000
+            },
+            "priceRounded": {
+                "currencyCode": "USD",
+                "units": 1773,
+                "nanos": 0
+            }
+        }
+    ]
+}

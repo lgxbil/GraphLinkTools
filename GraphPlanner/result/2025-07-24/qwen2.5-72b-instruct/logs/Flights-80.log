@@ -1,0 +1,43 @@
+2025-07-24 09:31:09,590 - evaluation_logger_Flights-80 - INFO - Test Example Flights-80
+2025-07-24 09:31:09,590 - evaluation_logger_Flights-80 - INFO - Query: We need to go to Vancouver for a meeting. We're planning to fly from Beijing to Vancouver around December 20, 2024. Check the cheapest economy class ticket price from Beijing to Vancouver around that time. If it’s more than $500, check if it’s cheaper to transfer at San Francisco International Airport. Overnight transfer flights are not accepted.
+2025-07-24 14:13:03,503 - evaluation_logger_Flights-80 - INFO - Test Example Flights-80
+2025-07-24 14:13:03,503 - evaluation_logger_Flights-80 - INFO - Query: We need to go to Vancouver for a meeting. We're planning to fly from Beijing to Vancouver around December 20, 2024. Check the cheapest economy class ticket price from Beijing to Vancouver around that time. If it’s more than $500, check if it’s cheaper to transfer at San Francisco International Airport. Overnight transfer flights are not accepted.
+2025-07-24 14:15:05,572 - evaluation_logger_Flights-80 - INFO - Start compare_single_call: 
+{'name': 'Search_Flight_Location', 'arguments': {'query': 'Beijing'}}
+{'name': 'Search_Flight_Location', 'arguments': {'query': 'Beijing'}}
+2025-07-24 14:15:05,572 - evaluation_logger_Flights-80 - INFO - Rule-based compare success.
+2025-07-24 14:15:05,572 - evaluation_logger_Flights-80 - INFO - Success matched: [{'name': 'Search_Flight_Location', 'arguments': {'query': 'Beijing'}}]
+2025-07-24 14:15:05,573 - evaluation_logger_Flights-80 - INFO - Start compare_single_call: 
+{'name': 'Search_Flight_Location', 'arguments': {'query': 'Vancouver'}}
+{'name': 'Search_Flight_Location', 'arguments': {'query': 'Vancouver'}}
+2025-07-24 14:15:05,573 - evaluation_logger_Flights-80 - INFO - Rule-based compare success.
+2025-07-24 14:15:05,573 - evaluation_logger_Flights-80 - INFO - Success matched: [{'name': 'Search_Flight_Location', 'arguments': {'query': 'Vancouver'}}]
+2025-07-24 14:15:05,574 - evaluation_logger_Flights-80 - INFO - Start compare_single_call: 
+{'name': 'Get_Min_Price', 'arguments': {'cabinClass': 'ECONOMY', 'departDate': '2024-12-20', 'fromId': 'BJS.CITY', 'toId': 'YVR.CITY'}}
+{'name': 'Get_Min_Price', 'arguments': {'cabinClass': 'ECONOMY', 'departDate': '2024-12-20', 'fromId': 'BJS.CITY', 'toId': 'YVR.CITY'}}
+2025-07-24 14:15:05,574 - evaluation_logger_Flights-80 - INFO - Rule-based compare success.
+2025-07-24 14:15:05,575 - evaluation_logger_Flights-80 - INFO - Success matched: [{'name': 'Get_Min_Price', 'arguments': {'cabinClass': 'ECONOMY', 'departDate': '2024-12-20', 'fromId': 'BJS.CITY', 'toId': 'YVR.CITY'}}]
+2025-07-24 14:15:06,218 - evaluation_logger_Flights-80 - INFO - Start compare_single_call: 
+{'name': 'Search_Flight_Location', 'arguments': {'query': 'San Francisco International Airport'}}
+{'name': 'Search_Flight_Location', 'arguments': {'query': 'San Francisco'}}
+2025-07-24 14:15:12,491 - evaluation_logger_Flights-80 - DEBUG - LLM-based comparison output: {'is_equal': False, 'reason': "The query parameter 'San Francisco International Airport' in call 1 is not equivalent to 'San Francisco' in call 2 as they refer to different levels of specificity in location."}
+2025-07-24 14:15:12,491 - evaluation_logger_Flights-80 - INFO - All compare method failed.
+2025-07-24 14:15:12,491 - evaluation_logger_Flights-80 - INFO - Success matched: []
+2025-07-24 14:15:46,379 - evaluation_logger_Flights-80 - INFO - Start compare_single_call: 
+{'name': 'Search_Flight_Location', 'arguments': {'query': 'San Francisco'}}
+{'name': 'Search_Flight_Location', 'arguments': {'query': 'San Francisco'}}
+2025-07-24 14:15:46,380 - evaluation_logger_Flights-80 - INFO - Rule-based compare success.
+2025-07-24 14:15:46,380 - evaluation_logger_Flights-80 - INFO - Success matched: [{'name': 'Search_Flight_Location', 'arguments': {'query': 'San Francisco'}}]
+2025-07-24 14:15:46,851 - evaluation_logger_Flights-80 - INFO - Success matched: []
+2025-07-24 14:16:09,418 - evaluation_logger_Flights-80 - INFO - Start compare_single_call: 
+{'name': 'Get_Min_Price_Multi_Stops', 'arguments': {'cabinClass': 'ECONOMY', 'legs': [{'fromId': 'BJS.CITY', 'toId': 'SFO.AIRPORT', 'date': '2024-12-20'}, {'fromId': 'SFO.AIRPORT', 'toId': 'YVR.CITY', 'date': '2024-12-21'}]}}
+{'name': 'Get_Min_Price_Multi_Stops', 'arguments': {'cabinClass': 'ECONOMY', 'legs': [{'fromId': 'BJS.CITY', 'toId': 'SFO.AIRPORT', 'date': '2024-12-20'}, {'fromId': 'SFO.AIRPORT', 'toId': 'YVR.CITY', 'date': '2024-12-20'}]}}
+2025-07-24 14:16:15,525 - evaluation_logger_Flights-80 - DEBUG - LLM-based comparison output: {'is_equal': False, 'reason': "The date in the second leg of the function calls differs; '2024-12-21' in call 1 vs '2024-12-20' in call 2."}
+2025-07-24 14:16:15,525 - evaluation_logger_Flights-80 - INFO - All compare method failed.
+2025-07-24 14:16:15,525 - evaluation_logger_Flights-80 - INFO - Success matched: []
+2025-07-24 14:16:39,388 - evaluation_logger_Flights-80 - INFO - Start compare_single_call: 
+{'name': 'Get_Min_Price_Multi_Stops', 'arguments': {'cabinClass': 'ECONOMY', 'legs': [{'fromId': 'BJS.CITY', 'toId': 'SFO.AIRPORT', 'date': '2024-12-20'}, {'fromId': 'SFO.AIRPORT', 'toId': 'YVR.CITY', 'date': '2024-12-21'}]}}
+{'name': 'Get_Min_Price_Multi_Stops', 'arguments': {'cabinClass': 'ECONOMY', 'legs': [{'fromId': 'BJS.CITY', 'toId': 'SFO.AIRPORT', 'date': '2024-12-20'}, {'fromId': 'SFO.AIRPORT', 'toId': 'YVR.CITY', 'date': '2024-12-20'}]}}
+2025-07-24 14:16:46,571 - evaluation_logger_Flights-80 - DEBUG - LLM-based comparison output: {'is_equal': False, 'reason': "The date in the second leg of the flights differs between the two function calls. In Function call 1, the date is '2024-12-21', whereas in Function call 2, it is '2024-12-20'."}
+2025-07-24 14:16:46,572 - evaluation_logger_Flights-80 - INFO - All compare method failed.
+2025-07-24 14:16:46,572 - evaluation_logger_Flights-80 - INFO - Success matched: []

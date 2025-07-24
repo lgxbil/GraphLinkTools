@@ -1,0 +1,107 @@
+2025-07-24 04:06:33,080 - evaluation_logger_Cross-90 - INFO - Test Example Cross-90
+2025-07-24 04:06:33,080 - evaluation_logger_Cross-90 - INFO - Query: I want to leave Munich for Frankfurt to visit my friends on November 18, 2024. Help me look up the best air tickets. Also, arrange a taxi for me to get to and from the airport. I'm planning to leave Munich Marriott Hotel for the airport at 10 AM. The taxi should wait at the Frankfurt airport when the plane lands and take me to InterContinental Hotel Frankfurt.
+2025-07-24 04:09:12,058 - evaluation_logger_Cross-90 - INFO - Start compare_single_call: 
+{'name': 'Search_Flight_Location', 'arguments': {'query': 'Munich'}}
+{'name': 'Search_Flight_Location', 'arguments': {'query': 'Munich'}}
+2025-07-24 04:09:12,058 - evaluation_logger_Cross-90 - INFO - Rule-based compare success.
+2025-07-24 04:09:12,058 - evaluation_logger_Cross-90 - INFO - Success matched: [{'name': 'Search_Flight_Location', 'arguments': {'query': 'Munich'}}]
+2025-07-24 04:09:12,060 - evaluation_logger_Cross-90 - INFO - Start compare_single_call: 
+{'name': 'Search_Flight_Location', 'arguments': {'query': 'Frankfurt'}}
+{'name': 'Search_Flight_Location', 'arguments': {'query': 'Frankfurt'}}
+2025-07-24 04:09:12,060 - evaluation_logger_Cross-90 - INFO - Rule-based compare success.
+2025-07-24 04:09:12,060 - evaluation_logger_Cross-90 - INFO - Success matched: [{'name': 'Search_Flight_Location', 'arguments': {'query': 'Frankfurt'}}]
+2025-07-24 04:09:12,719 - evaluation_logger_Cross-90 - INFO - Start compare_single_call: 
+{'name': 'Search_Flights', 'arguments': {'adults': 1, 'departDate': '2024-11-18', 'fromId': 'MUC.AIRPORT', 'toId': 'FRA.AIRPORT'}}
+{'name': 'Search_Flights', 'arguments': {'departDate': '2024-11-18', 'fromId': 'MUC.AIRPORT', 'sort': 'BEST', 'toId': 'FRA.AIRPORT'}}
+2025-07-24 04:09:12,719 - evaluation_logger_Cross-90 - INFO - {'error_type': 'param_missing', 'content': 'Missing parameter sort in prediction.'}
+2025-07-24 04:09:12,719 - evaluation_logger_Cross-90 - INFO - Success matched: []
+2025-07-24 04:09:33,610 - evaluation_logger_Cross-90 - INFO - Start compare_single_call: 
+{'name': 'Search_Flights', 'arguments': {'adults': 1, 'departDate': '2024-11-18', 'fromId': 'MUC.AIRPORT', 'sort': 'FASTEST', 'toId': 'FRA.AIRPORT'}}
+{'name': 'Search_Flights', 'arguments': {'departDate': '2024-11-18', 'fromId': 'MUC.AIRPORT', 'sort': 'BEST', 'toId': 'FRA.AIRPORT'}}
+2025-07-24 04:09:33,611 - evaluation_logger_Cross-90 - INFO - {'error_type': 'value_error', 'content': "Parameter sort value 'FASTEST' is not correct in prediction."}
+2025-07-24 04:09:33,611 - evaluation_logger_Cross-90 - INFO - Success matched: []
+2025-07-24 04:10:15,599 - evaluation_logger_Cross-90 - INFO - Start compare_single_call: 
+{'name': 'Search_Flights', 'arguments': {'adults': 1, 'departDate': '2024-11-18', 'fromId': 'MUC.AIRPORT', 'sort': 'BEST', 'toId': 'FRA.AIRPORT'}}
+{'name': 'Search_Flights', 'arguments': {'departDate': '2024-11-18', 'fromId': 'MUC.AIRPORT', 'sort': 'BEST', 'toId': 'FRA.AIRPORT'}}
+2025-07-24 04:10:24,540 - evaluation_logger_Cross-90 - DEBUG - LLM-based comparison output: {'is_equal': True, 'reason': "The parameter 'adults' in call 1 has the default value of 1, which is the same as the default value in the function description, and thus can be omitted in call 2."}
+2025-07-24 04:10:24,540 - evaluation_logger_Cross-90 - INFO - LLM-based compare success.
+2025-07-24 04:10:24,541 - evaluation_logger_Cross-90 - INFO - Success matched: [{'name': 'Search_Flights', 'arguments': {'departDate': '2024-11-18', 'fromId': 'MUC.AIRPORT', 'sort': 'BEST', 'toId': 'FRA.AIRPORT'}}]
+2025-07-24 04:11:20,848 - evaluation_logger_Cross-90 - INFO - Start compare_single_call: 
+{'name': 'Taxi_Search_Location', 'arguments': {'query': 'Munich Marriott Hotel'}}
+{'name': 'Taxi_Search_Location', 'arguments': {'query': 'Munich Marriott Hotel'}}
+2025-07-24 04:11:20,849 - evaluation_logger_Cross-90 - INFO - Rule-based compare success.
+2025-07-24 04:11:20,849 - evaluation_logger_Cross-90 - INFO - Success matched: [{'name': 'Taxi_Search_Location', 'arguments': {'query': 'Munich Marriott Hotel'}}]
+2025-07-24 04:11:21,308 - evaluation_logger_Cross-90 - INFO - Start compare_single_call: 
+{'name': 'Taxi_Search_Location', 'arguments': {'query': 'Munich airport'}}
+{'name': 'Taxi_Search_Location', 'arguments': {'query': 'Munich Airport'}}
+2025-07-24 04:11:30,410 - evaluation_logger_Cross-90 - DEBUG - LLM-based comparison output: {'is_equal': True, 'reason': 'Munich airport and Munich Airport are equivalent as they refer to the same location with only a difference in capitalization.'}
+2025-07-24 04:11:30,410 - evaluation_logger_Cross-90 - INFO - LLM-based compare success.
+2025-07-24 04:11:30,410 - evaluation_logger_Cross-90 - INFO - Success matched: [{'name': 'Taxi_Search_Location', 'arguments': {'query': 'Munich Airport'}}]
+2025-07-24 04:11:30,411 - evaluation_logger_Cross-90 - INFO - Start compare_single_call: 
+{'name': 'Taxi_Search_Location', 'arguments': {'query': 'Frankfurt Airport'}}
+{'name': 'Taxi_Search_Location', 'arguments': {'query': 'Frankfurt Airport'}}
+2025-07-24 04:11:30,411 - evaluation_logger_Cross-90 - INFO - Rule-based compare success.
+2025-07-24 04:11:30,411 - evaluation_logger_Cross-90 - INFO - Success matched: [{'name': 'Taxi_Search_Location', 'arguments': {'query': 'Frankfurt Airport'}}]
+2025-07-24 04:11:30,411 - evaluation_logger_Cross-90 - INFO - Start compare_single_call: 
+{'name': 'Taxi_Search_Location', 'arguments': {'query': 'InterContinental Hotel Frankfurt'}}
+{'name': 'Taxi_Search_Location', 'arguments': {'query': 'InterContinental Hotel Frankfurt'}}
+2025-07-24 04:11:30,412 - evaluation_logger_Cross-90 - INFO - Rule-based compare success.
+2025-07-24 04:11:30,412 - evaluation_logger_Cross-90 - INFO - Success matched: [{'name': 'Taxi_Search_Location', 'arguments': {'query': 'InterContinental Hotel Frankfurt'}}]
+2025-07-24 04:11:30,412 - evaluation_logger_Cross-90 - INFO - Start compare_single_call: 
+{'name': 'Search_Taxi', 'arguments': {'drop_off_place_id': 'ChIJRW3aI1kTnkcRS89WOoV6xeM', 'pick_up_date': '2024-11-18', 'pick_up_place_id': 'ChIJ4WMz6Ep0nkcRWGN3f0Wc7Uw', 'pick_up_time': '10:00'}}
+{'name': 'Search_Taxi', 'arguments': {'drop_off_place_id': 'ChIJRW3aI1kTnkcRS89WOoV6xeM', 'pick_up_date': '2024-11-18', 'pick_up_place_id': 'ChIJ4WMz6Ep0nkcRWGN3f0Wc7Uw', 'pick_up_time': '10:00'}}
+2025-07-24 04:11:30,412 - evaluation_logger_Cross-90 - INFO - Rule-based compare success.
+2025-07-24 04:11:30,413 - evaluation_logger_Cross-90 - INFO - Success matched: [{'name': 'Search_Taxi', 'arguments': {'drop_off_place_id': 'ChIJRW3aI1kTnkcRS89WOoV6xeM', 'pick_up_date': '2024-11-18', 'pick_up_place_id': 'ChIJ4WMz6Ep0nkcRWGN3f0Wc7Uw', 'pick_up_time': '10:00'}}]
+2025-07-24 04:11:30,859 - evaluation_logger_Cross-90 - INFO - Start compare_single_call: 
+{'name': 'Search_Taxi', 'arguments': {'drop_off_place_id': 'ChIJ84g_-AAMvUcR6er9IWN1h4A', 'pick_up_date': '2024-11-18', 'pick_up_place_id': 'ChIJeflCVHQLvUcRMfP4IU3YdIo', 'pick_up_time': '13:05:00'}}
+{'name': 'Search_Taxi', 'arguments': {'drop_off_place_id': 'ChIJ84g_-AAMvUcR6er9IWN1h4A', 'pick_up_date': '2024-11-18', 'pick_up_place_id': 'ChIJeflCVHQLvUcRMfP4IU3YdIo', 'pick_up_time': '13:05'}}
+2025-07-24 04:11:30,860 - evaluation_logger_Cross-90 - INFO - {'error_type': 'value_error', 'content': "Parameter pick_up_time value '13:05:00' is not correct in prediction."}
+2025-07-24 04:11:30,860 - evaluation_logger_Cross-90 - INFO - Success matched: []
+2025-07-24 04:12:54,879 - evaluation_logger_Cross-90 - INFO - Start compare_single_call: 
+{'name': 'Search_Flights', 'arguments': {'adults': 1, 'departDate': '2024-11-18', 'fromId': 'MUC.AIRPORT', 'sort': 'BEST', 'toId': 'FRA.AIRPORT'}}
+{'name': 'Search_Flights', 'arguments': {'departDate': '2024-11-18', 'fromId': 'MUC.AIRPORT', 'sort': 'BEST', 'toId': 'FRA.AIRPORT'}}
+2025-07-24 04:12:59,719 - evaluation_logger_Cross-90 - DEBUG - LLM-based comparison output: {'is_equal': True, 'reason': "The parameter 'adults' in call 1 has the default value of 1, which is the same as the default value in the function description, and thus can be omitted in call 2."}
+2025-07-24 04:12:59,720 - evaluation_logger_Cross-90 - INFO - LLM-based compare success.
+2025-07-24 04:12:59,728 - evaluation_logger_Cross-90 - INFO - Success matched: [{'name': 'Search_Flights', 'arguments': {'departDate': '2024-11-18', 'fromId': 'MUC.AIRPORT', 'sort': 'BEST', 'toId': 'FRA.AIRPORT'}}]
+2025-07-24 04:12:59,729 - evaluation_logger_Cross-90 - INFO - Start compare_single_call: 
+{'name': 'Search_Taxi', 'arguments': {'drop_off_place_id': 'ChIJRW3aI1kTnkcRS89WOoV6xeM', 'pick_up_date': '2024-11-18', 'pick_up_place_id': 'ChIJ4WMz6Ep0nkcRWGN3f0Wc7Uw', 'pick_up_time': '10:00'}}
+{'name': 'Search_Taxi', 'arguments': {'drop_off_place_id': 'ChIJRW3aI1kTnkcRS89WOoV6xeM', 'pick_up_date': '2024-11-18', 'pick_up_place_id': 'ChIJ4WMz6Ep0nkcRWGN3f0Wc7Uw', 'pick_up_time': '10:00'}}
+2025-07-24 04:12:59,729 - evaluation_logger_Cross-90 - INFO - Rule-based compare success.
+2025-07-24 04:12:59,729 - evaluation_logger_Cross-90 - INFO - Success matched: [{'name': 'Search_Taxi', 'arguments': {'drop_off_place_id': 'ChIJRW3aI1kTnkcRS89WOoV6xeM', 'pick_up_date': '2024-11-18', 'pick_up_place_id': 'ChIJ4WMz6Ep0nkcRWGN3f0Wc7Uw', 'pick_up_time': '10:00'}}]
+2025-07-24 04:13:00,172 - evaluation_logger_Cross-90 - INFO - Start compare_single_call: 
+{'name': 'Search_Taxi', 'arguments': {'drop_off_place_id': 'ChIJ84g_-AAMvUcR6er9IWN1h4A', 'pick_up_date': '2024-11-18', 'pick_up_place_id': 'ChIJeflCVHQLvUcRMfP4IU3YdIo', 'pick_up_time': '13:05:00'}}
+{'name': 'Search_Taxi', 'arguments': {'drop_off_place_id': 'ChIJ84g_-AAMvUcR6er9IWN1h4A', 'pick_up_date': '2024-11-18', 'pick_up_place_id': 'ChIJeflCVHQLvUcRMfP4IU3YdIo', 'pick_up_time': '13:05'}}
+2025-07-24 04:13:00,172 - evaluation_logger_Cross-90 - INFO - {'error_type': 'value_error', 'content': "Parameter pick_up_time value '13:05:00' is not correct in prediction."}
+2025-07-24 04:13:00,172 - evaluation_logger_Cross-90 - INFO - Success matched: []
+2025-07-24 04:14:25,397 - evaluation_logger_Cross-90 - INFO - Start compare_single_call: 
+{'name': 'Search_Flights', 'arguments': {'adults': 1, 'departDate': '2024-11-18', 'fromId': 'MUC.AIRPORT', 'sort': 'BEST', 'toId': 'FRA.AIRPORT'}}
+{'name': 'Search_Flights', 'arguments': {'departDate': '2024-11-18', 'fromId': 'MUC.AIRPORT', 'sort': 'BEST', 'toId': 'FRA.AIRPORT'}}
+2025-07-24 04:14:31,712 - evaluation_logger_Cross-90 - DEBUG - LLM-based comparison output: {'is_equal': True, 'reason': "The parameter 'adults' in call 1 has the default value of 1, which is the same as the default value in the function description, and thus can be omitted in call 2."}
+2025-07-24 04:14:31,712 - evaluation_logger_Cross-90 - INFO - LLM-based compare success.
+2025-07-24 04:14:31,712 - evaluation_logger_Cross-90 - INFO - Success matched: [{'name': 'Search_Flights', 'arguments': {'departDate': '2024-11-18', 'fromId': 'MUC.AIRPORT', 'sort': 'BEST', 'toId': 'FRA.AIRPORT'}}]
+2025-07-24 04:14:31,713 - evaluation_logger_Cross-90 - INFO - Start compare_single_call: 
+{'name': 'Search_Taxi', 'arguments': {'drop_off_place_id': 'ChIJRW3aI1kTnkcRS89WOoV6xeM', 'pick_up_date': '2024-11-18', 'pick_up_place_id': 'ChIJ4WMz6Ep0nkcRWGN3f0Wc7Uw', 'pick_up_time': '10:00'}}
+{'name': 'Search_Taxi', 'arguments': {'drop_off_place_id': 'ChIJRW3aI1kTnkcRS89WOoV6xeM', 'pick_up_date': '2024-11-18', 'pick_up_place_id': 'ChIJ4WMz6Ep0nkcRWGN3f0Wc7Uw', 'pick_up_time': '10:00'}}
+2025-07-24 04:14:31,713 - evaluation_logger_Cross-90 - INFO - Rule-based compare success.
+2025-07-24 04:14:31,714 - evaluation_logger_Cross-90 - INFO - Success matched: [{'name': 'Search_Taxi', 'arguments': {'drop_off_place_id': 'ChIJRW3aI1kTnkcRS89WOoV6xeM', 'pick_up_date': '2024-11-18', 'pick_up_place_id': 'ChIJ4WMz6Ep0nkcRWGN3f0Wc7Uw', 'pick_up_time': '10:00'}}]
+2025-07-24 04:14:32,156 - evaluation_logger_Cross-90 - INFO - Start compare_single_call: 
+{'name': 'Search_Taxi', 'arguments': {'drop_off_place_id': 'ChIJ84g_-AAMvUcR6er9IWN1h4A', 'pick_up_date': '2024-11-18', 'pick_up_place_id': 'ChIJeflCVHQLvUcRMfP4IU3YdIo', 'pick_up_time': '13:30'}}
+{'name': 'Search_Taxi', 'arguments': {'drop_off_place_id': 'ChIJ84g_-AAMvUcR6er9IWN1h4A', 'pick_up_date': '2024-11-18', 'pick_up_place_id': 'ChIJeflCVHQLvUcRMfP4IU3YdIo', 'pick_up_time': '13:05'}}
+2025-07-24 04:14:32,156 - evaluation_logger_Cross-90 - INFO - {'error_type': 'value_error', 'content': "Parameter pick_up_time value '13:30' is not correct in prediction."}
+2025-07-24 04:14:32,156 - evaluation_logger_Cross-90 - INFO - Success matched: []
+2025-07-24 04:15:12,200 - evaluation_logger_Cross-90 - INFO - Start compare_single_call: 
+{'name': 'Search_Flights', 'arguments': {'adults': 1, 'departDate': '2024-11-18', 'fromId': 'MUC.AIRPORT', 'sort': 'BEST', 'toId': 'FRA.AIRPORT'}}
+{'name': 'Search_Flights', 'arguments': {'departDate': '2024-11-18', 'fromId': 'MUC.AIRPORT', 'sort': 'BEST', 'toId': 'FRA.AIRPORT'}}
+2025-07-24 04:15:18,328 - evaluation_logger_Cross-90 - DEBUG - LLM-based comparison output: {'is_equal': True, 'reason': "The parameter 'adults' in call 1 has the default value of 1, which is the same as the default value in the function description, and thus can be omitted in call 2."}
+2025-07-24 04:15:18,328 - evaluation_logger_Cross-90 - INFO - LLM-based compare success.
+2025-07-24 04:15:18,328 - evaluation_logger_Cross-90 - INFO - Success matched: [{'name': 'Search_Flights', 'arguments': {'departDate': '2024-11-18', 'fromId': 'MUC.AIRPORT', 'sort': 'BEST', 'toId': 'FRA.AIRPORT'}}]
+2025-07-24 04:15:18,329 - evaluation_logger_Cross-90 - INFO - Start compare_single_call: 
+{'name': 'Search_Taxi', 'arguments': {'drop_off_place_id': 'ChIJRW3aI1kTnkcRS89WOoV6xeM', 'pick_up_date': '2024-11-18', 'pick_up_place_id': 'ChIJ4WMz6Ep0nkcRWGN3f0Wc7Uw', 'pick_up_time': '10:00'}}
+{'name': 'Search_Taxi', 'arguments': {'drop_off_place_id': 'ChIJRW3aI1kTnkcRS89WOoV6xeM', 'pick_up_date': '2024-11-18', 'pick_up_place_id': 'ChIJ4WMz6Ep0nkcRWGN3f0Wc7Uw', 'pick_up_time': '10:00'}}
+2025-07-24 04:15:18,329 - evaluation_logger_Cross-90 - INFO - Rule-based compare success.
+2025-07-24 04:15:18,329 - evaluation_logger_Cross-90 - INFO - Success matched: [{'name': 'Search_Taxi', 'arguments': {'drop_off_place_id': 'ChIJRW3aI1kTnkcRS89WOoV6xeM', 'pick_up_date': '2024-11-18', 'pick_up_place_id': 'ChIJ4WMz6Ep0nkcRWGN3f0Wc7Uw', 'pick_up_time': '10:00'}}]
+2025-07-24 04:15:18,773 - evaluation_logger_Cross-90 - INFO - Start compare_single_call: 
+{'name': 'Search_Taxi', 'arguments': {'drop_off_place_id': 'ChIJ84g_-AAMvUcR6er9IWN1h4A', 'pick_up_date': '2024-11-18', 'pick_up_place_id': 'ChIJeflCVHQLvUcRMfP4IU3YdIo', 'pick_up_time': '13:30'}}
+{'name': 'Search_Taxi', 'arguments': {'drop_off_place_id': 'ChIJ84g_-AAMvUcR6er9IWN1h4A', 'pick_up_date': '2024-11-18', 'pick_up_place_id': 'ChIJeflCVHQLvUcRMfP4IU3YdIo', 'pick_up_time': '13:05'}}
+2025-07-24 04:15:18,773 - evaluation_logger_Cross-90 - INFO - {'error_type': 'value_error', 'content': "Parameter pick_up_time value '13:30' is not correct in prediction."}
+2025-07-24 04:15:18,773 - evaluation_logger_Cross-90 - INFO - Success matched: []

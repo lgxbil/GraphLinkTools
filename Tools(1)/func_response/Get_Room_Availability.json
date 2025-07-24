@@ -1,0 +1,276 @@
+{
+    "shorten": {
+        "api": {
+            "name": "Get_Room_Availability",
+            "endpoint": "/api/v1/hotels/getAvailability",
+            "func_description": "Search the room price and availability for future dates. ",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "hotel_id": {
+                        "type": "String",
+                        "description": "hotel_id can be retrieved from api/v1/hotels/searchHotels(Search Hotels) or api/v1/hotels/searchHotelsByCoordinates(Search Hotels By Coordinates\n) endpoint in Hotels collection.",
+                        "example_value": "5218600",
+                        "required": true
+                    },
+                    "min_date": {
+                        "type": "Date (yyyy-mm-dd)",
+                        "description": "The starting date range.",
+                        "example_value": "",
+                        "required": true
+                    },
+                    "max_date": {
+                        "type": "Date (yyyy-mm-dd)",
+                        "description": "The ending date range",
+                        "example_value": "",
+                        "required": true
+                    },
+                    "room_qty": {
+                        "type": "Number",
+                        "description": "The number of rooms that are required. The default value is set to 1.",
+                        "example_value": "",
+                        "required": false
+                    },
+                    "adults": {
+                        "type": "Number",
+                        "description": "The number of guests who are 18 years of age or older. The default value is set to 1.",
+                        "example_value": "",
+                        "required": false
+                    },
+                    "currency_code": {
+                        "type": "String",
+                        "description": "The currency code. currency_code can be retrieved from api/v1/meta/getCurrency(Get Currency) endpoint in Hotels collection.",
+                        "example_value": "USD",
+                        "required": false
+                    },
+                    "location": {
+                        "type": "String",
+                        "description": "location can be retrieved from api/v1/meta/getLocations(Get Location) endpoint in Meta collection.",
+                        "example_value": "US",
+                        "required": false
+                    }
+                },
+                "required": [
+                    "hotel_id",
+                    "min_date",
+                    "max_date"
+                ]
+            }
+        },
+        "static_response": {
+            "function_name": "Get_Room_Availability",
+            "arguments": {
+                "hotel_id": "29938",
+                "min_date": "2024-11-01",
+                "max_date": "2024-11-10"
+            },
+            "observation": {
+                "status": true,
+                "message": "Success",
+                "data": {
+                    "lengthsOfStay": [
+                        {
+                            "2024-11-01": 1
+                        },
+                        {
+                            "2024-11-02": 1
+                        },
+                        {
+                            "2024-11-03": 1
+                        }
+                    ],
+                    "avDates": [
+                        {
+                            "2024-11-01": 139
+                        },
+                        {
+                            "2024-11-02": 139
+                        },
+                        {
+                            "2024-11-03": 177.66
+                        }
+                    ],
+                    "currency": "USD"
+                }
+            }
+        },
+        "required": {
+            "query": "I'm planning a trip and would like to check room availability and prices for hotel ID 5218600 from June 10, 2025 to June 15, 2025. Can you help me with that?",
+            "params": {
+                "hotel_id": "5218600",
+                "min_date": "2025-06-10",
+                "max_date": "2025-06-15"
+            },
+            "response": {
+                "status": true,
+                "message": "Success",
+                "timestamp": 1747651125774,
+                "data": {
+                    "currency": "USD",
+                    "avDates": [
+                        {
+                            "2025-06-10": 389
+                        },
+                        {
+                            "2025-06-11": 389
+                        },
+                        {
+                            "2025-06-12": 269
+                        }
+                    ],
+                    "lengthsOfStay": [
+                        {
+                            "2025-06-10": 1
+                        },
+                        {
+                            "2025-06-11": 1
+                        },
+                        {
+                            "2025-06-12": 1
+                        }
+                    ]
+                }
+            }
+        },
+        "optional": {
+            "query": "I'm planning a trip and would like to check room availability and prices for hotel ID 5218600 from June 10, 2025 to June 15, 2025. We will have 2 adults and need 1 room. Could you provide the prices in USD and check availability for the US location?",
+            "params": {
+                "hotel_id": "5218600",
+                "min_date": "2025-06-10",
+                "max_date": "2025-06-15",
+                "room_qty": 1,
+                "adults": 2,
+                "currency_code": "USD",
+                "location": "US"
+            },
+            "response": {
+                "status": true,
+                "message": "Success",
+                "timestamp": 1747651140149,
+                "data": {
+                    "lengthsOfStay": [
+                        {
+                            "2025-06-10": 1
+                        },
+                        {
+                            "2025-06-11": 1
+                        },
+                        {
+                            "2025-06-12": 1
+                        }
+                    ],
+                    "currency": "USD",
+                    "avDates": [
+                        {
+                            "2025-06-10": 449.8775
+                        },
+                        {
+                            "2025-06-11": 449.8775
+                        },
+                        {
+                            "2025-06-12": 312.1775
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    "row": {
+        "required": {
+            "status": true,
+            "message": "Success",
+            "timestamp": 1747651125774,
+            "data": {
+                "currency": "USD",
+                "avDates": [
+                    {
+                        "2025-06-10": 389
+                    },
+                    {
+                        "2025-06-11": 389
+                    },
+                    {
+                        "2025-06-12": 269
+                    },
+                    {
+                        "2025-06-13": 309
+                    },
+                    {
+                        "2025-06-14": 339
+                    },
+                    {
+                        "2025-06-15": 177
+                    }
+                ],
+                "lengthsOfStay": [
+                    {
+                        "2025-06-10": 1
+                    },
+                    {
+                        "2025-06-11": 1
+                    },
+                    {
+                        "2025-06-12": 1
+                    },
+                    {
+                        "2025-06-13": 1
+                    },
+                    {
+                        "2025-06-14": 1
+                    },
+                    {
+                        "2025-06-15": 1
+                    }
+                ]
+            }
+        },
+        "optional": {
+            "status": true,
+            "message": "Success",
+            "timestamp": 1747651140149,
+            "data": {
+                "lengthsOfStay": [
+                    {
+                        "2025-06-10": 1
+                    },
+                    {
+                        "2025-06-11": 1
+                    },
+                    {
+                        "2025-06-12": 1
+                    },
+                    {
+                        "2025-06-13": 1
+                    },
+                    {
+                        "2025-06-14": 1
+                    },
+                    {
+                        "2025-06-15": 1
+                    }
+                ],
+                "currency": "USD",
+                "avDates": [
+                    {
+                        "2025-06-10": 449.8775
+                    },
+                    {
+                        "2025-06-11": 449.8775
+                    },
+                    {
+                        "2025-06-12": 312.1775
+                    },
+                    {
+                        "2025-06-13": 358.0775
+                    },
+                    {
+                        "2025-06-14": 392.5025
+                    },
+                    {
+                        "2025-06-15": 206.6075
+                    }
+                ]
+            }
+        }
+    }
+}

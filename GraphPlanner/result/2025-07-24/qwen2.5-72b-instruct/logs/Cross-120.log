@@ -1,0 +1,81 @@
+2025-07-24 04:38:46,599 - evaluation_logger_Cross-120 - INFO - Test Example Cross-120
+2025-07-24 04:38:46,599 - evaluation_logger_Cross-120 - INFO - Query: Find me the best-priced interlining flight around December 4, 2024, departing from New Orleans with stops in Nashville and Pittsburgh, and then continuing to Philadelphia. I'll be staying a week in each city, so I need the most affordable hotel recommendations in Nashville and Pittsburgh.
+2025-07-24 04:41:05,633 - evaluation_logger_Cross-120 - INFO - Start compare_single_call: 
+{'name': 'Search_Flight_Location', 'arguments': {'query': 'New Orleans'}}
+{'name': 'Search_Flight_Location', 'arguments': {'query': 'New Orleans'}}
+2025-07-24 04:41:05,633 - evaluation_logger_Cross-120 - INFO - Rule-based compare success.
+2025-07-24 04:41:05,633 - evaluation_logger_Cross-120 - INFO - Success matched: [{'name': 'Search_Flight_Location', 'arguments': {'query': 'New Orleans'}}]
+2025-07-24 04:41:05,635 - evaluation_logger_Cross-120 - INFO - Start compare_single_call: 
+{'name': 'Search_Flight_Location', 'arguments': {'query': 'Nashville'}}
+{'name': 'Search_Flight_Location', 'arguments': {'query': 'Nashville'}}
+2025-07-24 04:41:05,635 - evaluation_logger_Cross-120 - INFO - Rule-based compare success.
+2025-07-24 04:41:05,636 - evaluation_logger_Cross-120 - INFO - Success matched: [{'name': 'Search_Flight_Location', 'arguments': {'query': 'Nashville'}}]
+2025-07-24 04:41:05,636 - evaluation_logger_Cross-120 - INFO - Start compare_single_call: 
+{'name': 'Search_Flight_Location', 'arguments': {'query': 'Pittsburgh'}}
+{'name': 'Search_Flight_Location', 'arguments': {'query': 'Pittsburgh'}}
+2025-07-24 04:41:05,636 - evaluation_logger_Cross-120 - INFO - Rule-based compare success.
+2025-07-24 04:41:05,636 - evaluation_logger_Cross-120 - INFO - Success matched: [{'name': 'Search_Flight_Location', 'arguments': {'query': 'Pittsburgh'}}]
+2025-07-24 04:41:05,637 - evaluation_logger_Cross-120 - INFO - Start compare_single_call: 
+{'name': 'Search_Flight_Location', 'arguments': {'query': 'Philadelphia'}}
+{'name': 'Search_Flight_Location', 'arguments': {'query': 'Philadelphia'}}
+2025-07-24 04:41:05,637 - evaluation_logger_Cross-120 - INFO - Rule-based compare success.
+2025-07-24 04:41:05,637 - evaluation_logger_Cross-120 - INFO - Success matched: [{'name': 'Search_Flight_Location', 'arguments': {'query': 'Philadelphia'}}]
+2025-07-24 04:41:06,307 - evaluation_logger_Cross-120 - INFO - Success matched: []
+2025-07-24 04:41:46,270 - evaluation_logger_Cross-120 - INFO - Start compare_single_call: 
+{'name': 'Get_Min_Price_Multi_Stops', 'arguments': {'cabinClass': 'ECONOMY', 'legs': [{'fromId': 'MSY.AIRPORT', 'toId': 'BNA.AIRPORT', 'date': '2024-12-04'}, {'fromId': 'BNA.AIRPORT', 'toId': 'PIT.AIRPORT', 'date': '2024-12-11'}, {'fromId': 'PIT.AIRPORT', 'toId': 'PHL.AIRPORT', 'date': '2024-12-18'}]}}
+{'name': 'Get_Min_Price_Multi_Stops', 'arguments': {'legs': [{'fromId': 'MSY.AIRPORT', 'toId': 'BNA.AIRPORT', 'date': '2024-12-04'}, {'fromId': 'BNA.AIRPORT', 'toId': 'PIT.AIRPORT', 'date': '2024-12-11'}, {'fromId': 'PIT.AIRPORT', 'toId': 'PHL.AIRPORT', 'date': '2024-12-18'}]}}
+2025-07-24 04:41:52,720 - evaluation_logger_Cross-120 - DEBUG - LLM-based comparison output: {'is_equal': True, 'reason': "The parameter 'cabinClass' in Function call 1 is set to 'ECONOMY', which is the default value as per the function description, and thus can be omitted in Function call 2. All other parameters are identical in both calls."}
+2025-07-24 04:41:52,720 - evaluation_logger_Cross-120 - INFO - LLM-based compare success.
+2025-07-24 04:41:52,720 - evaluation_logger_Cross-120 - INFO - Success matched: [{'name': 'Get_Min_Price_Multi_Stops', 'arguments': {'legs': [{'fromId': 'MSY.AIRPORT', 'toId': 'BNA.AIRPORT', 'date': '2024-12-04'}, {'fromId': 'BNA.AIRPORT', 'toId': 'PIT.AIRPORT', 'date': '2024-12-11'}, {'fromId': 'PIT.AIRPORT', 'toId': 'PHL.AIRPORT', 'date': '2024-12-18'}]}}]
+2025-07-24 04:42:52,140 - evaluation_logger_Cross-120 - INFO - Start compare_single_call: 
+{'name': 'Get_Min_Price_Multi_Stops', 'arguments': {'cabinClass': 'ECONOMY', 'legs': [{'fromId': 'MSY.AIRPORT', 'toId': 'BNA.AIRPORT', 'date': '2024-12-04'}, {'fromId': 'BNA.AIRPORT', 'toId': 'PIT.AIRPORT', 'date': '2024-12-11'}, {'fromId': 'PIT.AIRPORT', 'toId': 'PHL.AIRPORT', 'date': '2024-12-18'}]}}
+{'name': 'Get_Min_Price_Multi_Stops', 'arguments': {'legs': [{'fromId': 'MSY.AIRPORT', 'toId': 'BNA.AIRPORT', 'date': '2024-12-04'}, {'fromId': 'BNA.AIRPORT', 'toId': 'PIT.AIRPORT', 'date': '2024-12-11'}, {'fromId': 'PIT.AIRPORT', 'toId': 'PHL.AIRPORT', 'date': '2024-12-18'}]}}
+2025-07-24 04:42:58,093 - evaluation_logger_Cross-120 - DEBUG - LLM-based comparison output: {'is_equal': True, 'reason': "The cabinClass parameter in Function call 1 is set to 'ECONOMY', which is the default value as per the function description. Since default values can be omitted, both function calls are equivalent."}
+2025-07-24 04:42:58,093 - evaluation_logger_Cross-120 - INFO - LLM-based compare success.
+2025-07-24 04:42:58,093 - evaluation_logger_Cross-120 - INFO - Success matched: [{'name': 'Get_Min_Price_Multi_Stops', 'arguments': {'legs': [{'fromId': 'MSY.AIRPORT', 'toId': 'BNA.AIRPORT', 'date': '2024-12-04'}, {'fromId': 'BNA.AIRPORT', 'toId': 'PIT.AIRPORT', 'date': '2024-12-11'}, {'fromId': 'PIT.AIRPORT', 'toId': 'PHL.AIRPORT', 'date': '2024-12-18'}]}}]
+2025-07-24 04:42:58,547 - evaluation_logger_Cross-120 - INFO - Success matched: []
+2025-07-24 04:43:50,573 - evaluation_logger_Cross-120 - INFO - Start compare_single_call: 
+{'name': 'Get_Min_Price_Multi_Stops', 'arguments': {'cabinClass': 'ECONOMY', 'legs': [{'fromId': 'MSY.AIRPORT', 'toId': 'BNA.AIRPORT', 'date': '2024-12-04'}, {'fromId': 'BNA.AIRPORT', 'toId': 'PIT.AIRPORT', 'date': '2024-12-11'}, {'fromId': 'PIT.AIRPORT', 'toId': 'PHL.AIRPORT', 'date': '2024-12-18'}]}}
+{'name': 'Get_Min_Price_Multi_Stops', 'arguments': {'legs': [{'fromId': 'MSY.AIRPORT', 'toId': 'BNA.AIRPORT', 'date': '2024-12-04'}, {'fromId': 'BNA.AIRPORT', 'toId': 'PIT.AIRPORT', 'date': '2024-12-11'}, {'fromId': 'PIT.AIRPORT', 'toId': 'PHL.AIRPORT', 'date': '2024-12-18'}]}}
+2025-07-24 04:43:55,978 - evaluation_logger_Cross-120 - DEBUG - LLM-based comparison output: {'is_equal': True, 'reason': "The cabinClass parameter in Function call 1 is set to 'ECONOMY', which is the default value as per the function description. Since default values can be omitted, both function calls are equivalent."}
+2025-07-24 04:43:55,979 - evaluation_logger_Cross-120 - INFO - LLM-based compare success.
+2025-07-24 04:43:55,979 - evaluation_logger_Cross-120 - INFO - Success matched: [{'name': 'Get_Min_Price_Multi_Stops', 'arguments': {'legs': [{'fromId': 'MSY.AIRPORT', 'toId': 'BNA.AIRPORT', 'date': '2024-12-04'}, {'fromId': 'BNA.AIRPORT', 'toId': 'PIT.AIRPORT', 'date': '2024-12-11'}, {'fromId': 'PIT.AIRPORT', 'toId': 'PHL.AIRPORT', 'date': '2024-12-18'}]}}]
+2025-07-24 04:45:50,736 - evaluation_logger_Cross-120 - INFO - Start compare_single_call: 
+{'name': 'Get_Min_Price_Multi_Stops', 'arguments': {'cabinClass': 'ECONOMY', 'legs': [{'fromId': 'MSY.AIRPORT', 'toId': 'BNA.AIRPORT', 'date': '2024-12-04'}, {'fromId': 'BNA.AIRPORT', 'toId': 'PIT.AIRPORT', 'date': '2024-12-11'}, {'fromId': 'PIT.AIRPORT', 'toId': 'PHL.AIRPORT', 'date': '2024-12-18'}]}}
+{'name': 'Get_Min_Price_Multi_Stops', 'arguments': {'legs': [{'fromId': 'MSY.AIRPORT', 'toId': 'BNA.AIRPORT', 'date': '2024-12-04'}, {'fromId': 'BNA.AIRPORT', 'toId': 'PIT.AIRPORT', 'date': '2024-12-11'}, {'fromId': 'PIT.AIRPORT', 'toId': 'PHL.AIRPORT', 'date': '2024-12-18'}]}}
+2025-07-24 04:45:57,221 - evaluation_logger_Cross-120 - DEBUG - LLM-based comparison output: {'is_equal': True, 'reason': "The parameter 'cabinClass' in Function call 1 is set to 'ECONOMY', which is the default value as per the function description, and thus can be omitted in Function call 2. All other parameters are identical in both calls."}
+2025-07-24 04:45:57,221 - evaluation_logger_Cross-120 - INFO - LLM-based compare success.
+2025-07-24 04:45:57,221 - evaluation_logger_Cross-120 - INFO - Success matched: [{'name': 'Get_Min_Price_Multi_Stops', 'arguments': {'legs': [{'fromId': 'MSY.AIRPORT', 'toId': 'BNA.AIRPORT', 'date': '2024-12-04'}, {'fromId': 'BNA.AIRPORT', 'toId': 'PIT.AIRPORT', 'date': '2024-12-11'}, {'fromId': 'PIT.AIRPORT', 'toId': 'PHL.AIRPORT', 'date': '2024-12-18'}]}}]
+2025-07-24 04:45:57,222 - evaluation_logger_Cross-120 - INFO - Start compare_single_call: 
+{'name': 'Search_Hotel_Destination', 'arguments': {'query': 'Nashville'}}
+{'name': 'Search_Hotel_Destination', 'arguments': {'query': 'Nashville'}}
+2025-07-24 04:45:57,222 - evaluation_logger_Cross-120 - INFO - Rule-based compare success.
+2025-07-24 04:45:57,222 - evaluation_logger_Cross-120 - INFO - Success matched: [{'name': 'Search_Hotel_Destination', 'arguments': {'query': 'Nashville'}}]
+2025-07-24 04:45:57,223 - evaluation_logger_Cross-120 - INFO - Start compare_single_call: 
+{'name': 'Search_Hotel_Destination', 'arguments': {'query': 'Pittsburgh'}}
+{'name': 'Search_Hotel_Destination', 'arguments': {'query': 'Pittsburgh'}}
+2025-07-24 04:45:57,223 - evaluation_logger_Cross-120 - INFO - Rule-based compare success.
+2025-07-24 04:45:57,223 - evaluation_logger_Cross-120 - INFO - Success matched: [{'name': 'Search_Hotel_Destination', 'arguments': {'query': 'Pittsburgh'}}]
+2025-07-24 04:45:57,678 - evaluation_logger_Cross-120 - INFO - Success matched: []
+2025-07-24 04:46:41,590 - evaluation_logger_Cross-120 - INFO - Start compare_single_call: 
+{'name': 'Get_Min_Price_Multi_Stops', 'arguments': {'cabinClass': 'ECONOMY', 'legs': [{'fromId': 'MSY.AIRPORT', 'toId': 'BNA.AIRPORT', 'date': '2024-12-04'}, {'fromId': 'BNA.AIRPORT', 'toId': 'PIT.AIRPORT', 'date': '2024-12-11'}, {'fromId': 'PIT.AIRPORT', 'toId': 'PHL.AIRPORT', 'date': '2024-12-18'}]}}
+{'name': 'Get_Min_Price_Multi_Stops', 'arguments': {'legs': [{'fromId': 'MSY.AIRPORT', 'toId': 'BNA.AIRPORT', 'date': '2024-12-04'}, {'fromId': 'BNA.AIRPORT', 'toId': 'PIT.AIRPORT', 'date': '2024-12-11'}, {'fromId': 'PIT.AIRPORT', 'toId': 'PHL.AIRPORT', 'date': '2024-12-18'}]}}
+2025-07-24 04:46:47,158 - evaluation_logger_Cross-120 - DEBUG - LLM-based comparison output: {'is_equal': True, 'reason': "The cabinClass parameter in Function call 1 is set to 'ECONOMY', which is the default value as per the function description. Since default values can be omitted, both function calls are equivalent."}
+2025-07-24 04:46:47,158 - evaluation_logger_Cross-120 - INFO - LLM-based compare success.
+2025-07-24 04:46:47,159 - evaluation_logger_Cross-120 - INFO - Success matched: [{'name': 'Get_Min_Price_Multi_Stops', 'arguments': {'legs': [{'fromId': 'MSY.AIRPORT', 'toId': 'BNA.AIRPORT', 'date': '2024-12-04'}, {'fromId': 'BNA.AIRPORT', 'toId': 'PIT.AIRPORT', 'date': '2024-12-11'}, {'fromId': 'PIT.AIRPORT', 'toId': 'PHL.AIRPORT', 'date': '2024-12-18'}]}}]
+2025-07-24 04:46:47,617 - evaluation_logger_Cross-120 - INFO - Start compare_single_call: 
+{'name': 'Search_Hotels', 'arguments': {'arrival_date': '2024-12-04', 'departure_date': '2024-12-11', 'dest_id': 20123908, 'price_max': 1000, 'price_min': 0, 'search_type': 'city', 'sort_by': 'PRICE'}}
+{'name': 'Search_Hotels', 'arguments': {'arrival_date': '2024-12-05', 'departure_date': '2024-12-12', 'dest_id': 20123908, 'search_type': 'city', 'sort_by': 'price'}}
+2025-07-24 04:46:47,618 - evaluation_logger_Cross-120 - INFO - {'error_type': 'value_error', 'content': "Parameter arrival_date value '2024-12-04' is not correct in prediction."}
+2025-07-24 04:46:47,618 - evaluation_logger_Cross-120 - INFO - Success matched: []
+2025-07-24 04:47:45,004 - evaluation_logger_Cross-120 - INFO - Start compare_single_call: 
+{'name': 'Get_Min_Price_Multi_Stops', 'arguments': {'cabinClass': 'ECONOMY', 'legs': [{'fromId': 'MSY.AIRPORT', 'toId': 'BNA.AIRPORT', 'date': '2024-12-04'}, {'fromId': 'BNA.AIRPORT', 'toId': 'PIT.AIRPORT', 'date': '2024-12-11'}, {'fromId': 'PIT.AIRPORT', 'toId': 'PHL.AIRPORT', 'date': '2024-12-18'}]}}
+{'name': 'Get_Min_Price_Multi_Stops', 'arguments': {'legs': [{'fromId': 'MSY.AIRPORT', 'toId': 'BNA.AIRPORT', 'date': '2024-12-04'}, {'fromId': 'BNA.AIRPORT', 'toId': 'PIT.AIRPORT', 'date': '2024-12-11'}, {'fromId': 'PIT.AIRPORT', 'toId': 'PHL.AIRPORT', 'date': '2024-12-18'}]}}
+2025-07-24 04:47:50,959 - evaluation_logger_Cross-120 - DEBUG - LLM-based comparison output: {'is_equal': True, 'reason': "The cabinClass parameter in Function call 1 is set to 'ECONOMY', which is the default value as per the function description. Therefore, omitting it in Function call 2 does not affect the equivalence of the function calls."}
+2025-07-24 04:47:50,959 - evaluation_logger_Cross-120 - INFO - LLM-based compare success.
+2025-07-24 04:47:50,959 - evaluation_logger_Cross-120 - INFO - Success matched: [{'name': 'Get_Min_Price_Multi_Stops', 'arguments': {'legs': [{'fromId': 'MSY.AIRPORT', 'toId': 'BNA.AIRPORT', 'date': '2024-12-04'}, {'fromId': 'BNA.AIRPORT', 'toId': 'PIT.AIRPORT', 'date': '2024-12-11'}, {'fromId': 'PIT.AIRPORT', 'toId': 'PHL.AIRPORT', 'date': '2024-12-18'}]}}]
+2025-07-24 04:47:51,416 - evaluation_logger_Cross-120 - INFO - Start compare_single_call: 
+{'name': 'Search_Hotels', 'arguments': {'arrival_date': '2024-12-04', 'departure_date': '2024-12-11', 'dest_id': 20123908, 'price_max': 1000, 'price_min': 0, 'search_type': 'city', 'sort_by': 'PRICE'}}
+{'name': 'Search_Hotels', 'arguments': {'arrival_date': '2024-12-05', 'departure_date': '2024-12-12', 'dest_id': 20123908, 'search_type': 'city', 'sort_by': 'price'}}
+2025-07-24 04:47:51,416 - evaluation_logger_Cross-120 - INFO - {'error_type': 'value_error', 'content': "Parameter arrival_date value '2024-12-04' is not correct in prediction."}
+2025-07-24 04:47:51,416 - evaluation_logger_Cross-120 - INFO - Success matched: []

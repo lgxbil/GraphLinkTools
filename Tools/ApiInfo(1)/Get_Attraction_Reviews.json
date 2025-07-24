@@ -1,0 +1,171 @@
+{
+    "name": "Get_Attraction_Reviews",
+    "docs_row": {
+        "name": "Get_Attraction_Reviews",
+        "endpoint": "/api/v1/attraction/getAttractionReviews",
+        "func_description": "Retrieves user reviews and ratings for a specific attraction, supporting pagination to browse through large review sets.",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "String",
+                    "description": "id can be retrieved from api/v1/attraction/searchAttractions(Search Attractions) endpoint in Attraction collection as id inside products (data->products->id)",
+                    "example_value": "PR6K7ZswbGBs",
+                    "required": true
+                },
+                "page": {
+                    "type": "Number",
+                    "description": "The page number.",
+                    "example_value": "1",
+                    "required": false
+                }
+            },
+            "required": [
+                "id"
+            ]
+        }
+    },
+    "instance": [],
+    "category": null,
+    "tool": null,
+    "api_idx": 20,
+    "params": {
+        "type": "object",
+        "properties": {
+            "id": {
+                "type": "String",
+                "description": "id can be retrieved from api/v1/attraction/searchAttractions(Search Attractions) endpoint in Attraction collection as id inside products (data->products->id)",
+                "example_value": "PR6K7ZswbGBs",
+                "required": true
+            },
+            "page": {
+                "type": "Number",
+                "description": "The page number.",
+                "example_value": "1",
+                "required": false
+            }
+        },
+        "required": [
+            "id"
+        ]
+    },
+    "responses": [
+        {
+            "function_name": "Get_Attraction_Reviews",
+            "arguments": {
+                "id": "PR6K7ZswbGBs",
+                "page": "1"
+            },
+            "observation": [
+                {
+                    "content": "guide Dawood very professionanl including language proficiency",
+                    "epochMs": 1747218592000,
+                    "id": "RSd46bU1rS8I",
+                    "language": "it",
+                    "numericRating": 4,
+                    "providerName": null,
+                    "travelPartnerTypes": [
+                        "alone"
+                    ],
+                    "user": {
+                        "avatar": null,
+                        "cc1": "it",
+                        "name": "Loris"
+                    }
+                },
+                {
+                    "content": "Eye opener in terms of experience. Rameez, the guide, was exceptional",
+                    "epochMs": 1746289180000,
+                    "id": "RSPaJdEnE0Yf",
+                    "language": "en-gb",
+                    "numericRating": 5,
+                    "providerName": null,
+                    "travelPartnerTypes": [
+                        "partner"
+                    ],
+                    "user": {
+                        "avatar": null,
+                        "cc1": "mu",
+                        "name": "Mohamed Sadeck"
+                    }
+                },
+                {
+                    "content": null,
+                    "epochMs": 1745231685000,
+                    "id": "RSyRTLlxh2sg",
+                    "language": null,
+                    "numericRating": 5,
+                    "providerName": null,
+                    "travelPartnerTypes": [],
+                    "user": null
+                }
+            ]
+        }
+    ],
+    "response_summary": "The API response includes three reviews for different tour guides. The first review, written in Italian by a user named Loris, praises guide Dawood for his professionalism and language skills, giving a rating of 4 out of 5. The second review, in English, comes from Mohamed Sadeck, who describes his experience as an \"eye-opener\" and commends guide Rameez as exceptional, awarding a perfect 5-star rating. The third review, lacking specific content or user details, also gives a 5-star rating but provides no additional feedback. The reviews reflect positive experiences, with travelers appreciating the guides' expertise, whether exploring alone or with a partner.",
+    "enhance_func_desc": "This API is ideal for travelers seeking insights into tour guides and attractions. It retrieves user reviews for specific attractions, including ratings, feedback, and reviewer details. Users can assess guide quality and tour experiences before booking. The response includes ratings, language, reviewer names, and comments, helping travelers make informed decisions. The attraction ID must be obtained from the SearchAttractions API.",
+    "enhance_params_desc": {
+        "enhanced_parameters": {
+            "id": "Unique identifier for the attraction, sourced from SearchAttractions API.",
+            "page": "Specifies the pagination number for review results."
+        }
+    },
+    "enhance_resfield_desc": {
+        "response_fields": {
+            "content": {
+                "type": "String",
+                "description": "The textual content of the review, providing feedback about the tour guide. Can be null if no feedback is provided."
+            },
+            "epochMs": {
+                "type": "Number",
+                "description": "The timestamp of the review in milliseconds since the Unix epoch, indicating when the review was created."
+            },
+            "id": {
+                "type": "String",
+                "description": "A unique identifier for the review."
+            },
+            "language": {
+                "type": "String",
+                "description": "The language code indicating the language in which the review was written. Can be null if not specified."
+            },
+            "numericRating": {
+                "type": "Number",
+                "description": "The numerical rating given by the reviewer, typically on a scale (e.g., 1 to 5)."
+            },
+            "providerName": {
+                "type": "String",
+                "description": "The name of the provider associated with the review. Currently null in the provided examples."
+            },
+            "travelPartnerTypes": {
+                "type": "Array",
+                "description": "A list indicating the type of travel companions the reviewer had during the tour (e.g., 'alone', 'partner'). Can be empty if not specified.",
+                "ar_items": {
+                    "type": "String",
+                    "description": "A string representing the type of travel companion (e.g., 'alone', 'partner')."
+                }
+            },
+            "user": {
+                "type": "Object",
+                "description": "An object containing details about the user who wrote the review. Can be null if user details are not provided.",
+                "ob_properties": {
+                    "avatar": {
+                        "type": "String",
+                        "description": "The URL or reference to the user's avatar image. Currently null in the provided examples."
+                    },
+                    "cc1": {
+                        "type": "String",
+                        "description": "A country code or similar identifier for the user's location."
+                    },
+                    "name": {
+                        "type": "String",
+                        "description": "The name of the user who wrote the review."
+                    }
+                }
+            }
+        }
+    },
+    "params_desc_list": null,
+    "response_desc_list": null,
+    "depends_on": null,
+    "verified": true
+}

@@ -1,0 +1,240 @@
+{
+    "name": "Search_Flights",
+    "docs_row": {
+        "name": "Search_Flights",
+        "endpoint": "/api/v1/flights/searchFlights",
+        "func_description": "Search Flights. ",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "fromId": {
+                    "type": "String",
+                    "description": "From/Departure location Id. fromId can be retrieved from api/v1/flights/searchDestination(Search Flight Location) endpoint in Flights collection as id.",
+                    "example_value": "BOM.AIRPORT",
+                    "required": true
+                },
+                "toId": {
+                    "type": "String",
+                    "description": "To/Arrival location Id. toId can be retrieved from api/v1/flights/searchDestination(Search Flight Location) endpoint in Flights collection as id.",
+                    "example_value": "DEL.AIRPORT",
+                    "required": true
+                },
+                "departDate": {
+                    "type": "Date (yyyy-mm-dd)",
+                    "description": "Departure or travel date.\nFormat: YYYY-MM-DD",
+                    "example_value": "",
+                    "required": true
+                },
+                "returnDate": {
+                    "type": "Date (yyyy-mm-dd)",
+                    "description": "Return date.\nFormat: YYYY-MM-DD",
+                    "example_value": "",
+                    "required": false
+                },
+                "stops": {
+                    "type": "Enum",
+                    "description": "Filters flights based on the number of stops. Accepted values are:\nnone for no preference (returns flights with any number of stops)\n0 for non-stop flights\n1 for one-stop flights\n2 for two-stop flights\nIf provided, the value must be either none, 0, 1, or 2.",
+                    "example_value": "",
+                    "required": false
+                },
+                "pageNo": {
+                    "type": "Number",
+                    "description": "The page number.",
+                    "example_value": "1",
+                    "required": false
+                },
+                "adults": {
+                    "type": "Number",
+                    "description": "The number of guests who are 18 years of age or older. The default value is set to 1.",
+                    "example_value": "1",
+                    "required": false
+                },
+                "children": {
+                    "type": "String",
+                    "description": "The number of children, including infants, who are under 18.\nExample:\nChild 1 Age = 8 months\nChild 2 Age = 1 year\nChild 3 Age = 17 years\nHere is what the request parameter would look like:\nchildren_age: 0,1,17",
+                    "example_value": "0,17",
+                    "required": false
+                },
+                "sort": {
+                    "type": "Enum",
+                    "description": "This parameter orders result by BEST, CHEAPEST or FASTEST flights.",
+                    "example_value": "",
+                    "required": false
+                },
+                "cabinClass": {
+                    "type": "Enum",
+                    "description": "Search for flights that match the cabin class specified. Cabin call can be either ECONOMY, PREMIUM_ECONOMY, BUSINESS or FIRST.",
+                    "example_value": "",
+                    "required": false
+                },
+                "currency_code": {
+                    "type": "String",
+                    "description": "The currency code. currency_code can be retrieved from api/v1/meta/getCurrency(Get Currency) endpoint in Hotels collection.",
+                    "example_value": "AED",
+                    "required": false
+                }
+            },
+            "required": [
+                "fromId",
+                "toId",
+                "departDate"
+            ]
+        }
+    },
+    "api_response_schema": {
+        "flightOffers": [
+            {
+                "token": "d7699_H4sIAAAAAAAA_1WQW0_jMBCFfw28xamdO5KFAi1QNheWJIX2xUpdNw0FDLEhaX_9Drgqi8aac74jzciajdZv6sy2189ts9HK-lCokVo2tRaIyxd73UFbSrltXxu7bjs7LpN0koyiLJ9hAs3GtgXFz-bnYtCW6jg9bZcC1dSKoshYxWl4cB31kTuJFou8MBGXmrrIw16Q31SPF4kJO3p9e3NxbeZXNL3s-2Qcq7Toh2Q8CY5sNEjHasj381G-r4asXN0VVxW53zZBWmazdNcP2dNVBnMkrfogL6dfc8P3asE5xQi5QYS_WdaKOsZxTcnI2JWmRXKbLWYGNcWBG_nm_wPFjhN6p0o8C65b-fpH7GgVE8ez4Ejyk7hWyaoYO374K4h-o48tOOcRCQHzf4ADHP4EJ-QS75qX916BO3FieA0boWMBbw6Mvwq4ZvchenhEGGcoydF0jqoC4iUL_4JwFpYgK4br2hM1WME490HXzIXeMnzY-8SmDyB7JqQin9t_gUS23EACAAA.",
+                "segments": [
+                    {
+                        "departureAirport": {
+                            "type": "AIRPORT",
+                            "code": "MEL",
+                            "name": "Melbourne Airport",
+                            "city": "MEL",
+                            "cityName": "Melbourne",
+                            "country": "AU",
+                            "countryName": "Australia"
+                        },
+                        "arrivalAirport": {
+                            "type": "AIRPORT",
+                            "code": "ATL",
+                            "name": "Hartsfield\u2013Jackson Atlanta International Airport",
+                            "city": "ATL",
+                            "cityName": "Atlanta",
+                            "country": "US",
+                            "countryName": "United States"
+                        },
+                        "departureTime": "2024-11-12T13:00:00",
+                        "arrivalTime": "2024-11-12T21:30:00",
+                        "legs": [
+                            {
+                                "departureTime": "2024-11-12T18:28:00",
+                                "arrivalTime": "2024-11-12T21:30:00",
+                                "departureAirport": {
+                                    "type": "AIRPORT",
+                                    "code": "IAH",
+                                    "name": "George Bush Intercontinental Airport",
+                                    "city": "HOU",
+                                    "cityName": "Houston",
+                                    "country": "US",
+                                    "countryName": "United States"
+                                },
+                                "arrivalAirport": {
+                                    "type": "AIRPORT",
+                                    "code": "ATL",
+                                    "name": "Hartsfield\u2013Jackson Atlanta International Airport",
+                                    "city": "ATL",
+                                    "cityName": "Atlanta",
+                                    "country": "US",
+                                    "countryName": "United States"
+                                },
+                                "cabinClass": "ECONOMY",
+                                "flightInfo": {
+                                    "flightNumber": 1718,
+                                    "planeType": "738",
+                                    "carrierInfo": {
+                                        "operatingCarrier": "UA",
+                                        "marketingCarrier": "UA"
+                                    }
+                                },
+                                "carriers": [
+                                    "UA"
+                                ],
+                                "carriersData": [
+                                    {
+                                        "name": "United Airlines",
+                                        "code": "UA"
+                                    }
+                                ],
+                                "totalTime": 7320,
+                                "amenities": [
+                                    {
+                                        "category": "WIFI",
+                                        "cost": "paid"
+                                    }
+                                ],
+                                "departureTerminal": "C",
+                                "arrivalTerminal": "N"
+                            }
+                        ],
+                        "totalTime": 88200,
+                        "isAtolProtected": false,
+                        "showWarningDestinationAirport": false,
+                        "showWarningOriginAirport": false
+                    }
+                ]
+            }
+        ],
+        "flightDeals": [
+            {
+                "key": "BEST",
+                "offerToken": "d7699_H4sIAAAAAAAA_1WQ3U7jMBCFnwbu4nTcpE6QrFW2LVA2P0CSQntjpa6bhnbxKjYk7dNjcNUFjTXnfEeakTVbrf-pK9fd7Jt6q5XzplAttawrLRCXf91Na9pKyl3zWrtV07pRESfTeBCm2RywaS64jil-tfgleu2oltPLZiVQRZ0wDK1VnAYn19IR8qbhcpnlNuJSUw_54JPstnweRzZs6c3d7e8bO7-mybjr4kmkkrzr48mUnNkqSSaqz46LQXYs-7RY3-fXJX7c1SQp0nly6Pr05To1czgpO5IVs8-5_mu14JwCQh4J4YtlpejQOq4pHli71jSP79Ll3KKmQLxwZP_fUxgOA_9Sib3gupGvf8SBlhEOiGOOJN-x5xSsjADwzyAMfuAIHHPOM2JszPcACAT_gws8hsPel4obdzGMzKvZAJ3L8PbE8FmGK1ZE6BkjgBTFGZotUJmbeMWCByOcBYWRNYOq8kVlrGCcj4xumGd6w-C094XNnowcmZAKv-8-AHm1qHxAAgAA",
+                "price": {
+                    "currencyCode": "USD",
+                    "units": 1749,
+                    "nanos": 680000000
+                },
+                "travellerPrices": [
+                    {
+                        "travellerPriceBreakdown": {
+                            "total": {
+                                "currencyCode": "USD",
+                                "units": 1749,
+                                "nanos": 680000000
+                            },
+                            "baseFare": {
+                                "currencyCode": "USD",
+                                "units": 1299,
+                                "nanos": 0
+                            },
+                            "fee": {
+                                "currencyCode": "USD",
+                                "units": 3,
+                                "nanos": 270000000
+                            },
+                            "tax": {
+                                "currencyCode": "USD",
+                                "units": 447,
+                                "nanos": 410000000
+                            },
+                            "totalRounded": {
+                                "currencyCode": "USD",
+                                "nanos": 0,
+                                "units": 1750
+                            },
+                            "discount": {
+                                "currencyCode": "USD",
+                                "units": 0,
+                                "nanos": 0
+                            },
+                            "totalWithoutDiscount": {
+                                "currencyCode": "USD",
+                                "units": 1749,
+                                "nanos": 680000000
+                            },
+                            "totalWithoutDiscountRounded": {
+                                "currencyCode": "USD",
+                                "nanos": 0,
+                                "units": 1750
+                            }
+                        },
+                        "travellerReference": "1",
+                        "travellerType": "ADULT"
+                    }
+                ]
+            }
+        ],
+        "atolProtectedStatus": "NONE",
+        "searchId": "3D53AE3CA336C40AAF9D1239776581F8",
+        "displayOptions": {
+            "brandedFaresShownByDefault": false,
+            "directFlightsOnlyFilterIgnored": false,
+            "hideFlexiblePricesBanner": false
+        },
+        "isOffersCabinClassExtended": false,
+        "searchCriteria": {
+            "cabinClass": "ECONOMY"
+        }
+    }
+}

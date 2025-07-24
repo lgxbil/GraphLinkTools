@@ -1,0 +1,528 @@
+{
+    "name": "Get_Hotel_Reviews(Tips)",
+    "docs_row": {
+        "name": "Get_Hotel_Reviews(Tips)",
+        "endpoint": "/api/v1/hotels/getHotelReviews",
+        "func_description": "Retrieve reviews and tips for a specified hotel. ",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "hotel_id": {
+                    "type": "String",
+                    "description": "hotel_id can be retrieved from api/v1/hotels/searchHotels(Search Hotels) or api/v1/hotels/searchHotelsByCoordinates(Search Hotels By Coordinates\n) endpoint in Hotels collection.",
+                    "example_value": "5955189",
+                    "required": true
+                },
+                "sort_option_id": {
+                    "type": "String",
+                    "description": "sort_option_id can be retrieved from api/v1/hotels/getHotelReviewsSortOption(Get Hotel Reviews(Tips) Sort Option) endpoint in Hotels collection.",
+                    "example_value": "sort_most_relevant",
+                    "required": false
+                },
+                "page_number": {
+                    "type": "Number",
+                    "description": "The page number.",
+                    "example_value": "1",
+                    "required": false
+                },
+                "languagecode": {
+                    "type": "String",
+                    "description": "To obtain the response data in a specific language, enter the languagecode. languagecode can be retrieved from api/v1/meta/getLanguages(Get Languages\n) endpoint in Meta collection.",
+                    "example_value": "en-us",
+                    "required": false
+                }
+            },
+            "required": [
+                "hotel_id"
+            ]
+        }
+    },
+    "instance": [],
+    "category": null,
+    "tool": null,
+    "api_idx": 4,
+    "params": {
+        "type": "object",
+        "properties": {
+            "hotel_id": {
+                "type": "String",
+                "description": "hotel_id can be retrieved from api/v1/hotels/searchHotels(Search Hotels) or api/v1/hotels/searchHotelsByCoordinates(Search Hotels By Coordinates\n) endpoint in Hotels collection.",
+                "example_value": "5955189",
+                "required": true
+            },
+            "sort_option_id": {
+                "type": "String",
+                "description": "sort_option_id can be retrieved from api/v1/hotels/getHotelReviewsSortOption(Get Hotel Reviews(Tips) Sort Option) endpoint in Hotels collection.",
+                "example_value": "sort_most_relevant",
+                "required": false
+            },
+            "page_number": {
+                "type": "Number",
+                "description": "The page number.",
+                "example_value": "1",
+                "required": false
+            },
+            "languagecode": {
+                "type": "String",
+                "description": "To obtain the response data in a specific language, enter the languagecode. languagecode can be retrieved from api/v1/meta/getLanguages(Get Languages\n) endpoint in Meta collection.",
+                "example_value": "en-us",
+                "required": false
+            }
+        },
+        "required": [
+            "hotel_id"
+        ]
+    },
+    "responses": [
+        {
+            "function_name": "Get_Hotel_Reviews(Tips)",
+            "arguments": {
+                "hotel_id": "5955189"
+            },
+            "observation": {
+                "sort_options": [
+                    {
+                        "sort_option_id": "sort_most_relevant",
+                        "sort_option_default": 1,
+                        "title": "Most relevant"
+                    },
+                    {
+                        "title": "Date (newer to older)",
+                        "sort_option_default": 0,
+                        "sort_option_id": "sort_recent_desc"
+                    },
+                    {
+                        "sort_option_default": 0,
+                        "title": "Close to property score",
+                        "sort_option_id": "proximity_to_hotel_average"
+                    }
+                ],
+                "result": [
+                    {
+                        "is_moderated": 0,
+                        "hotelier_response_date": 1747211244,
+                        "languagecode": "en-gb",
+                        "is_incentivised": 0,
+                        "stayed_room_info": {
+                            "num_nights": 1,
+                            "room_id": 595518907,
+                            "checkout": "2025-05-09",
+                            "photo": {
+                                "url_max300": "https://cf.bstatic.com/xdata/images/hotel/max300/613758060.jpg?k=07dfa57061d0fc4cb175fb16d3b0dbc492b89aa5c0af9d0938960bc61495058d&o=",
+                                "photo_id": 613758060,
+                                "url_original": "https://cf.bstatic.com/xdata/images/hotel/max500/613758060.jpg?k=07dfa57061d0fc4cb175fb16d3b0dbc492b89aa5c0af9d0938960bc61495058d&o=",
+                                "ratio": 1.50037509377344,
+                                "url_square60": "https://cf.bstatic.com/xdata/images/hotel/square60/613758060.jpg?k=07dfa57061d0fc4cb175fb16d3b0dbc492b89aa5c0af9d0938960bc61495058d&o=",
+                                "url_640x200": "https://cf.bstatic.com/xdata/images/hotel/640x200/613758060.jpg?k=07dfa57061d0fc4cb175fb16d3b0dbc492b89aa5c0af9d0938960bc61495058d&o="
+                            },
+                            "room_name": "Deluxe Room",
+                            "checkin": "2025-05-08"
+                        },
+                        "helpful_vote_count": 0,
+                        "user_new_badges": [],
+                        "title_translated": "",
+                        "no_user_title": 1,
+                        "countrycode": "cl",
+                        "reviewer_photos": [],
+                        "review_hash": "785217a961c6f2e5",
+                        "tags": [],
+                        "pros_translated": "",
+                        "average_score": 2.79999995231628,
+                        "reviewng": 1,
+                        "travel_purpose": "leisure",
+                        "title": "Pleasant",
+                        "hotelier_response": "We are glad to have provided you with a pleasant experience. It is extremely inspiring for us to get to know from guests that they had a beautiful stay. Looking forward to hosting you soon again!\n",
+                        "pros": "Cleanliness",
+                        "cons": "",
+                        "review_id": 5156141446,
+                        "anonymous": "",
+                        "date": "2025-05-09 20:58:54",
+                        "author": {
+                            "nr_reviews": 0,
+                            "helpful_vote_count": 0,
+                            "countrycode": "cl",
+                            "user_id": 812335710,
+                            "type_string": "Solo traveller",
+                            "type": "solo_traveller",
+                            "name": "Felipe",
+                            "city": ""
+                        },
+                        "hotel_id": 5955189,
+                        "cons_translated": ""
+                    },
+                    {
+                        "review_id": 5141870268,
+                        "cons": "",
+                        "cons_translated": "",
+                        "hotel_id": 5955189,
+                        "author": {
+                            "type": "review_category_group_of_friends",
+                            "name": "Hitesh",
+                            "user_id": 402544223,
+                            "type_string": "Group of friends",
+                            "countrycode": "in",
+                            "helpful_vote_count": 0,
+                            "nr_reviews": 0,
+                            "avatar": "https://lh3.googleusercontent.com/a/AATXAJz_7_GOeO5FSzgYuXgKQbJ0qp3WFWZN-tnaVFa55QU=s96-c64",
+                            "city": ""
+                        },
+                        "anonymous": "",
+                        "date": "2025-03-28 15:02:09",
+                        "title": "Pleasant",
+                        "hotelier_response": "We are glad to have provided you with a pleasant experience. It is extremely inspiring for us to get to know from guests that they had a beautiful stay. Looking forward to hosting you soon again!\n",
+                        "average_score": 2.79999995231628,
+                        "reviewng": 1,
+                        "travel_purpose": "leisure",
+                        "pros_translated": "",
+                        "pros": "Good breakfast",
+                        "title_translated": "",
+                        "user_new_badges": [],
+                        "tags": [],
+                        "reviewer_photos": [],
+                        "review_hash": "145781d6c5214118",
+                        "no_user_title": 1,
+                        "countrycode": "in",
+                        "is_incentivised": 0,
+                        "languagecode": "en-gb",
+                        "is_moderated": 0,
+                        "hotelier_response_date": 1743406304,
+                        "stayed_room_info": {
+                            "photo": {
+                                "url_square60": "https://cf.bstatic.com/xdata/images/hotel/square60/613758060.jpg?k=07dfa57061d0fc4cb175fb16d3b0dbc492b89aa5c0af9d0938960bc61495058d&o=",
+                                "url_640x200": "https://cf.bstatic.com/xdata/images/hotel/640x200/613758060.jpg?k=07dfa57061d0fc4cb175fb16d3b0dbc492b89aa5c0af9d0938960bc61495058d&o=",
+                                "url_max300": "https://cf.bstatic.com/xdata/images/hotel/max300/613758060.jpg?k=07dfa57061d0fc4cb175fb16d3b0dbc492b89aa5c0af9d0938960bc61495058d&o=",
+                                "photo_id": 613758060,
+                                "ratio": 1.50037509377344,
+                                "url_original": "https://cf.bstatic.com/xdata/images/hotel/max500/613758060.jpg?k=07dfa57061d0fc4cb175fb16d3b0dbc492b89aa5c0af9d0938960bc61495058d&o="
+                            },
+                            "room_name": "Deluxe Room",
+                            "checkin": "2025-03-17",
+                            "num_nights": 4,
+                            "room_id": 595518907,
+                            "checkout": "2025-03-21"
+                        },
+                        "helpful_vote_count": 0
+                    },
+                    {
+                        "hotelier_response": "We\u2019re glad to hear that our staff was helpful and kind, and that you appreciated the convenience of our location near the airport. However, we apologize for the unpleasant experience you had with the hallway, and we truly appreciate you bringing it to our attention. We\u2019ll take immediate action to address the cleanliness and maintenance issues to ensure a more comfortable stay for our future guests. We hope to have the opportunity to welcome you back soon.",
+                        "title": "Pleasant",
+                        "pros_translated": "",
+                        "reviewng": 1,
+                        "travel_purpose": "leisure",
+                        "average_score": 2.79999995231628,
+                        "pros": "The hotel employees were very helpful and kind. It is possible to order breakfast for certain time. Really close to the aeroport.",
+                        "cons": "To reach our room, we had to go through really long hall that was extremely dusty, smelly and it looked like a part of a chair factory.",
+                        "review_id": 5134883641,
+                        "hotel_id": 5955189,
+                        "author": {
+                            "city": "",
+                            "countrycode": "cz",
+                            "type": "family_with_children",
+                            "name": "Eli\u0161ka",
+                            "user_id": 501921300,
+                            "type_string": "Family",
+                            "helpful_vote_count": 0,
+                            "nr_reviews": 0,
+                            "avatar": "https://lh3.googleusercontent.com/a/AATXAJwIEHA8kT02qSaQeOxlZSSCOYPxnFn19AKouptQ=s96-c64"
+                        },
+                        "cons_translated": "",
+                        "date": "2025-03-02 18:07:03",
+                        "anonymous": "",
+                        "is_incentivised": 0,
+                        "is_moderated": 0,
+                        "hotelier_response_date": 1741858620,
+                        "languagecode": "en-gb",
+                        "helpful_vote_count": 0,
+                        "stayed_room_info": {
+                            "num_nights": 2,
+                            "room_id": 595518907,
+                            "checkout": "2025-02-16",
+                            "room_name": "Deluxe Room",
+                            "checkin": "2025-02-14",
+                            "photo": {
+                                "url_max300": "https://cf.bstatic.com/xdata/images/hotel/max300/613758060.jpg?k=07dfa57061d0fc4cb175fb16d3b0dbc492b89aa5c0af9d0938960bc61495058d&o=",
+                                "url_original": "https://cf.bstatic.com/xdata/images/hotel/max500/613758060.jpg?k=07dfa57061d0fc4cb175fb16d3b0dbc492b89aa5c0af9d0938960bc61495058d&o=",
+                                "ratio": 1.50037509377344,
+                                "photo_id": 613758060,
+                                "url_640x200": "https://cf.bstatic.com/xdata/images/hotel/640x200/613758060.jpg?k=07dfa57061d0fc4cb175fb16d3b0dbc492b89aa5c0af9d0938960bc61495058d&o=",
+                                "url_square60": "https://cf.bstatic.com/xdata/images/hotel/square60/613758060.jpg?k=07dfa57061d0fc4cb175fb16d3b0dbc492b89aa5c0af9d0938960bc61495058d&o="
+                            }
+                        },
+                        "title_translated": "",
+                        "user_new_badges": [],
+                        "review_hash": "b77b6b5957c53a33",
+                        "reviewer_photos": [],
+                        "tags": [],
+                        "countrycode": "cz",
+                        "no_user_title": 1
+                    }
+                ],
+                "count": 25
+            }
+        }
+    ],
+    "response_summary": "The API response provides a list of hotel reviews along with sorting options. Guests can sort reviews by \"Most Relevant,\" \"Date (newer to older),\" or \"Close to Property Score.\" There are a total of 25 reviews available, with three of them displayed in detail.  \n\nThe first review, left by Felipe from Chile, describes a \"Pleasant\" stay in a Deluxe Room, highlighting cleanliness as a positive aspect. The hotel responded warmly, expressing gratitude for the feedback.  \n\nHitesh from India also rated their stay as \"Pleasant,\" praising the breakfast during their four-night visit in a Deluxe Room. The hotel\u2019s response mirrored the previous one, thanking the guest for their kind words.  \n\nEli\u0161ka from the Czech Republic, traveling with family, appreciated the helpful staff and the hotel's proximity to the airport but criticized the dusty and unpleasant hallway leading to their room. The hotel acknowledged the issue and promised improvements while thanking them for their feedback.  \n\nOverall, the reviews reflect a mix of positive experiences and constructive criticism, with the hotel actively engaging with guests to address concerns.",
+    "enhance_func_desc": "This API is ideal for travelers researching hotel stays and for hoteliers monitoring guest feedback. It retrieves hotel reviews sorted by relevance, date, or proximity score, providing insights into guest experiences. The response includes detailed reviews with ratings, comments, and hotel responses, helping users make informed decisions. The hotel ID must be obtained from the SearchHotels API.",
+    "enhance_params_desc": {
+        "enhanced_parameters": {
+            "hotel_id": "Unique identifier for the hotel, sourced from searchHotels or searchHotelsByCoordinates endpoints.",
+            "sort_option_id": "Sorts reviews by relevance, date, or proximity score (e.g., 'sort_most_relevant').",
+            "page_number": "Specifies the pagination number for review results.",
+            "languagecode": "Language preference for the review response data (e.g., 'en-us')."
+        }
+    },
+    "enhance_resfield_desc": {
+        "response_fields": {
+            "sort_options": {
+                "type": "Array",
+                "description": "List of available sorting options for the reviews.",
+                "ar_items": {
+                    "type": "Object",
+                    "description": "Details of a single sorting option.",
+                    "ob_properties": {
+                        "sort_option_id": {
+                            "type": "String",
+                            "description": "Unique identifier for the sorting option."
+                        },
+                        "sort_option_default": {
+                            "type": "Number",
+                            "description": "Indicates if this sorting option is the default (1 for yes, 0 for no)."
+                        },
+                        "title": {
+                            "type": "String",
+                            "description": "Display name of the sorting option."
+                        }
+                    }
+                }
+            },
+            "result": {
+                "type": "Array",
+                "description": "List of hotel reviews.",
+                "ar_items": {
+                    "type": "Object",
+                    "description": "Details of a single review.",
+                    "ob_properties": {
+                        "is_moderated": {
+                            "type": "Number",
+                            "description": "Indicates if the review has been moderated (1 for yes, 0 for no)."
+                        },
+                        "hotelier_response_date": {
+                            "type": "Number",
+                            "description": "Timestamp of the hotel's response to the review."
+                        },
+                        "languagecode": {
+                            "type": "String",
+                            "description": "Language code of the review."
+                        },
+                        "is_incentivised": {
+                            "type": "Number",
+                            "description": "Indicates if the review was incentivized (1 for yes, 0 for no)."
+                        },
+                        "stayed_room_info": {
+                            "type": "Object",
+                            "description": "Details about the room the reviewer stayed in.",
+                            "ob_properties": {
+                                "num_nights": {
+                                    "type": "Number",
+                                    "description": "Number of nights the reviewer stayed."
+                                },
+                                "room_id": {
+                                    "type": "Number",
+                                    "description": "Unique identifier for the room."
+                                },
+                                "checkout": {
+                                    "type": "String",
+                                    "description": "Check-out date in YYYY-MM-DD format."
+                                },
+                                "photo": {
+                                    "type": "Object",
+                                    "description": "Photos of the room.",
+                                    "ob_properties": {
+                                        "url_max300": {
+                                            "type": "String",
+                                            "description": "URL of the room photo with a maximum width of 300 pixels."
+                                        },
+                                        "photo_id": {
+                                            "type": "Number",
+                                            "description": "Unique identifier for the photo."
+                                        },
+                                        "url_original": {
+                                            "type": "String",
+                                            "description": "URL of the original room photo."
+                                        },
+                                        "ratio": {
+                                            "type": "Number",
+                                            "description": "Aspect ratio of the photo."
+                                        },
+                                        "url_square60": {
+                                            "type": "String",
+                                            "description": "URL of the room photo in a square 60x60 format."
+                                        },
+                                        "url_640x200": {
+                                            "type": "String",
+                                            "description": "URL of the room photo in 640x200 format."
+                                        }
+                                    }
+                                },
+                                "room_name": {
+                                    "type": "String",
+                                    "description": "Name of the room type."
+                                },
+                                "checkin": {
+                                    "type": "String",
+                                    "description": "Check-in date in YYYY-MM-DD format."
+                                }
+                            }
+                        },
+                        "helpful_vote_count": {
+                            "type": "Number",
+                            "description": "Number of helpful votes the review has received."
+                        },
+                        "user_new_badges": {
+                            "type": "Array",
+                            "description": "List of new badges the reviewer has earned.",
+                            "ar_items": {
+                                "type": "String",
+                                "description": "Name of the badge."
+                            }
+                        },
+                        "title_translated": {
+                            "type": "String",
+                            "description": "Translated title of the review (if available)."
+                        },
+                        "no_user_title": {
+                            "type": "Number",
+                            "description": "Indicates if the reviewer has no title (1 for yes, 0 for no)."
+                        },
+                        "countrycode": {
+                            "type": "String",
+                            "description": "Country code of the reviewer."
+                        },
+                        "reviewer_photos": {
+                            "type": "Array",
+                            "description": "Photos uploaded by the reviewer.",
+                            "ar_items": {
+                                "type": "String",
+                                "description": "URL of the photo."
+                            }
+                        },
+                        "review_hash": {
+                            "type": "String",
+                            "description": "Unique hash identifier for the review."
+                        },
+                        "tags": {
+                            "type": "Array",
+                            "description": "Tags associated with the review.",
+                            "ar_items": {
+                                "type": "String",
+                                "description": "Name of the tag."
+                            }
+                        },
+                        "pros_translated": {
+                            "type": "String",
+                            "description": "Translated pros of the review (if available)."
+                        },
+                        "average_score": {
+                            "type": "Number",
+                            "description": "Average score given by the reviewer."
+                        },
+                        "reviewng": {
+                            "type": "Number",
+                            "description": "Rating given by the reviewer (1 for Pleasant, etc.)."
+                        },
+                        "travel_purpose": {
+                            "type": "String",
+                            "description": "Purpose of the trip (e.g., leisure)."
+                        },
+                        "title": {
+                            "type": "String",
+                            "description": "Title of the review."
+                        },
+                        "hotelier_response": {
+                            "type": "String",
+                            "description": "Response from the hotel to the review."
+                        },
+                        "pros": {
+                            "type": "String",
+                            "description": "Positive aspects mentioned in the review."
+                        },
+                        "cons": {
+                            "type": "String",
+                            "description": "Negative aspects mentioned in the review."
+                        },
+                        "review_id": {
+                            "type": "Number",
+                            "description": "Unique identifier for the review."
+                        },
+                        "anonymous": {
+                            "type": "String",
+                            "description": "Indicates if the review is anonymous (empty if not)."
+                        },
+                        "date": {
+                            "type": "String",
+                            "description": "Date and time the review was posted."
+                        },
+                        "author": {
+                            "type": "Object",
+                            "description": "Details about the reviewer.",
+                            "ob_properties": {
+                                "nr_reviews": {
+                                    "type": "Number",
+                                    "description": "Number of reviews the reviewer has written."
+                                },
+                                "helpful_vote_count": {
+                                    "type": "Number",
+                                    "description": "Number of helpful votes the reviewer has received."
+                                },
+                                "countrycode": {
+                                    "type": "String",
+                                    "description": "Country code of the reviewer."
+                                },
+                                "user_id": {
+                                    "type": "Number",
+                                    "description": "Unique identifier for the reviewer."
+                                },
+                                "type_string": {
+                                    "type": "String",
+                                    "description": "Type of traveler (e.g., Solo traveller, Group of friends, Family)."
+                                },
+                                "type": {
+                                    "type": "String",
+                                    "description": "Internal type identifier for the traveler."
+                                },
+                                "name": {
+                                    "type": "String",
+                                    "description": "Name of the reviewer."
+                                },
+                                "city": {
+                                    "type": "String",
+                                    "description": "City of the reviewer (if provided)."
+                                },
+                                "avatar": {
+                                    "type": "String",
+                                    "description": "URL of the reviewer's avatar (if provided)."
+                                }
+                            }
+                        },
+                        "hotel_id": {
+                            "type": "Number",
+                            "description": "Unique identifier for the hotel."
+                        },
+                        "cons_translated": {
+                            "type": "String",
+                            "description": "Translated cons of the review (if available)."
+                        }
+                    }
+                }
+            },
+            "count": {
+                "type": "Number",
+                "description": "Total number of reviews available."
+            }
+        }
+    },
+    "params_desc_list": null,
+    "response_desc_list": null,
+    "depends_on": null,
+    "verified": true
+}

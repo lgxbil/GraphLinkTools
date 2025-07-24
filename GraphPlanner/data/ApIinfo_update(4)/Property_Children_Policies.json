@@ -1,0 +1,52 @@
+{
+    "name": "Property_Children_Policies",
+    "docs_row": {
+        "name": "Property_Children_Policies",
+        "description": "Retrieve the policies related to children for a specific hotel. EndPoint: /api/v1/hotels/propertyChildrenPolicies",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "hotel_id": {
+                    "type": "string",
+                    "description": " `hotel_id` can be retrieved from `api/v1/hotels/searchHotels`**(Search Hotels)** or `api/v1/hotels/searchHotelsByCoordinates`**(Search Hotels By Coordinates\n)** endpoint in **Hotels** collection."
+                }
+            },
+            "required": [
+                "hotel_id"
+            ]
+        }
+    },
+    "api_response_schema": {
+        "mfeId": "b-saba-child-policies-mfe/saba",
+        "root": {
+            "props": {
+                "items": [
+                    {
+                        "props": {
+                            "items": [
+                                {
+                                    "type": "core.Margin",
+                                    "props": {
+                                        "margin": {
+                                            "top": "spacing_1x"
+                                        },
+                                        "component": {
+                                            "type": "bui.Label",
+                                            "props": {
+                                                "text": "There is no capacity for cots."
+                                            }
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        "type": "core.layout.Column"
+                    }
+                ]
+            },
+            "type": "core.layout.Column"
+        },
+        "clientVersion": 68,
+        "serverVersion": 112
+    }
+}

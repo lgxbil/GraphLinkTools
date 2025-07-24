@@ -1,0 +1,30 @@
+2025-07-24 09:16:03,733 - evaluation_logger_Hotels-120 - INFO - Test Example Hotels-120
+2025-07-24 09:16:03,733 - evaluation_logger_Hotels-120 - INFO - Query: Find a hotel under $600 near the Eiffel Tower in Paris for the dates December 1, 2024, to December 10, 2024. I want to know the user comments about these hotels, with the latest reviews first.
+2025-07-24 09:17:34,635 - evaluation_logger_Hotels-120 - INFO - Start compare_single_call: 
+{'name': 'Search_Hotel_Destination', 'arguments': {'query': 'Eiffel Tower, Paris'}}
+{'name': 'Search_Hotel_Destination', 'arguments': {'query': 'Eiffel Tower, France'}}
+2025-07-24 09:17:40,064 - evaluation_logger_Hotels-120 - DEBUG - LLM-based comparison output: {'is_equal': True, 'reason': 'Paris is a city in France, and both queries refer to the same landmark, the Eiffel Tower, in the same country context.'}
+2025-07-24 09:17:40,065 - evaluation_logger_Hotels-120 - INFO - LLM-based compare success.
+2025-07-24 09:17:40,065 - evaluation_logger_Hotels-120 - INFO - Success matched: [{'name': 'Search_Hotel_Destination', 'arguments': {'query': 'Eiffel Tower, France'}}]
+2025-07-24 09:17:40,702 - evaluation_logger_Hotels-120 - INFO - Success matched: []
+2025-07-24 09:18:18,638 - evaluation_logger_Hotels-120 - INFO - Start compare_single_call: 
+{'name': 'Search_Hotels', 'arguments': {'arrival_date': '2024-12-01', 'departure_date': '2024-12-10', 'dest_id': 735, 'price_max': 600, 'search_type': 'landmark', 'sort_by': 'latest_reviews'}}
+{'name': 'Search_Hotels', 'arguments': {'arrival_date': '2024-12-01', 'departure_date': '2024-12-10', 'dest_id': 735, 'price_max': 600, 'search_type': 'landmark'}}
+2025-07-24 09:18:23,236 - evaluation_logger_Hotels-120 - DEBUG - LLM-based comparison output: {'is_equal': False, 'reason': "The parameter 'sort_by' in call 1 is not present in call 2."}
+2025-07-24 09:18:23,237 - evaluation_logger_Hotels-120 - INFO - All compare method failed.
+2025-07-24 09:18:23,245 - evaluation_logger_Hotels-120 - INFO - Success matched: []
+2025-07-24 09:18:57,601 - evaluation_logger_Hotels-120 - INFO - Success matched: []
+2025-07-24 09:19:40,720 - evaluation_logger_Hotels-120 - INFO - Start compare_single_call: 
+{'name': 'Search_Hotels', 'arguments': {'arrival_date': '2024-12-01', 'departure_date': '2024-12-10', 'dest_id': 735, 'price_max': 600, 'search_type': 'landmark', 'sort_by': 'sort_most_recent'}}
+{'name': 'Search_Hotels', 'arguments': {'arrival_date': '2024-12-01', 'departure_date': '2024-12-10', 'dest_id': 735, 'price_max': 600, 'search_type': 'landmark'}}
+2025-07-24 09:19:45,511 - evaluation_logger_Hotels-120 - DEBUG - LLM-based comparison output: {'is_equal': False, 'reason': "The parameter 'sort_by' in call 1 is not present in call 2."}
+2025-07-24 09:19:45,511 - evaluation_logger_Hotels-120 - INFO - All compare method failed.
+2025-07-24 09:19:45,520 - evaluation_logger_Hotels-120 - INFO - Success matched: []
+2025-07-24 09:20:30,897 - evaluation_logger_Hotels-120 - INFO - Success matched: []
+2025-07-24 09:21:53,321 - evaluation_logger_Hotels-120 - INFO - Start compare_single_call: 
+{'name': 'Search_Hotels', 'arguments': {'arrival_date': '2024-12-01', 'departure_date': '2024-12-10', 'dest_id': 735, 'price_max': 600, 'search_type': 'landmark', 'sort_by': 'RELEVANCE'}}
+{'name': 'Search_Hotels', 'arguments': {'arrival_date': '2024-12-01', 'departure_date': '2024-12-10', 'dest_id': 735, 'price_max': 600, 'search_type': 'landmark'}}
+2025-07-24 09:21:58,904 - evaluation_logger_Hotels-120 - DEBUG - LLM-based comparison output: {'is_equal': False, 'reason': "The parameter 'sort_by' in call 1 is not present in call 2."}
+2025-07-24 09:21:58,905 - evaluation_logger_Hotels-120 - INFO - All compare method failed.
+2025-07-24 09:21:58,905 - evaluation_logger_Hotels-120 - INFO - Success matched: []
+2025-07-24 09:22:32,850 - evaluation_logger_Hotels-120 - INFO - Success matched: []

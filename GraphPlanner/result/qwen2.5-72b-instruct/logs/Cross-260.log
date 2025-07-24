@@ -1,0 +1,38 @@
+2025-07-22 05:12:48,196 - evaluation_logger_Cross-260 - INFO - Test Example Cross-260
+2025-07-22 05:12:48,196 - evaluation_logger_Cross-260 - INFO - Query: I'm traveling to Amsterdam on November 22, 2024. Find the cheapest flight from Taipei. Besides that, arrange a taxi to pick me up from the airport two hours after my flight lands and take me to the Van Gogh Museum for a visit.
+2025-07-22 05:14:10,933 - evaluation_logger_Cross-260 - INFO - Start compare_single_call: 
+{'name': 'Search_Flight_Location', 'arguments': {'query': 'Taipei'}}
+{'name': 'Search_Flight_Location', 'arguments': {'query': 'Taipei'}}
+2025-07-22 05:14:10,933 - evaluation_logger_Cross-260 - INFO - Rule-based compare success.
+2025-07-22 05:14:10,933 - evaluation_logger_Cross-260 - INFO - Success matched: [{'name': 'Search_Flight_Location', 'arguments': {'query': 'Taipei'}}]
+2025-07-22 05:14:10,933 - evaluation_logger_Cross-260 - INFO - Start compare_single_call: 
+{'name': 'Search_Flight_Location', 'arguments': {'query': 'Amsterdam'}}
+{'name': 'Search_Flight_Location', 'arguments': {'query': 'Amsterdam'}}
+2025-07-22 05:14:10,934 - evaluation_logger_Cross-260 - INFO - Rule-based compare success.
+2025-07-22 05:14:10,934 - evaluation_logger_Cross-260 - INFO - Success matched: [{'name': 'Search_Flight_Location', 'arguments': {'query': 'Amsterdam'}}]
+2025-07-22 05:14:11,530 - evaluation_logger_Cross-260 - INFO - Start compare_single_call: 
+{'name': 'Search_Flights', 'arguments': {'adults': 1, 'departDate': '2024-11-22', 'fromId': 'TPE.CITY', 'sort': 'CHEAPEST', 'toId': 'AMS.AIRPORT'}}
+{'name': 'Search_Flights', 'arguments': {'departDate': '2024-11-22', 'fromId': 'TPE.CITY', 'sort': 'CHEAPEST', 'toId': 'AMS.AIRPORT'}}
+2025-07-22 05:14:17,540 - evaluation_logger_Cross-260 - DEBUG - LLM-based comparison output: {'is_equal': True, 'reason': "The parameter 'adults' in call 1 has the default value of 1, which is the same as the default value in the function description, and thus can be omitted in call 2."}
+2025-07-22 05:14:17,540 - evaluation_logger_Cross-260 - INFO - LLM-based compare success.
+2025-07-22 05:14:17,540 - evaluation_logger_Cross-260 - INFO - Success matched: [{'name': 'Search_Flights', 'arguments': {'departDate': '2024-11-22', 'fromId': 'TPE.CITY', 'sort': 'CHEAPEST', 'toId': 'AMS.AIRPORT'}}]
+2025-07-22 05:14:17,541 - evaluation_logger_Cross-260 - INFO - Start compare_single_call: 
+{'name': 'Taxi_Search_Location', 'arguments': {'query': 'Van Gogh Museum'}}
+{'name': 'Taxi_Search_Location', 'arguments': {'query': 'Van Gogh Museum'}}
+2025-07-22 05:14:17,541 - evaluation_logger_Cross-260 - INFO - Rule-based compare success.
+2025-07-22 05:14:17,541 - evaluation_logger_Cross-260 - INFO - Success matched: [{'name': 'Taxi_Search_Location', 'arguments': {'query': 'Van Gogh Museum'}}]
+2025-07-22 05:14:17,542 - evaluation_logger_Cross-260 - INFO - Start compare_single_call: 
+{'name': 'Taxi_Search_Location', 'arguments': {'query': 'Schiphol Airport'}}
+{'name': 'Taxi_Search_Location', 'arguments': {'query': 'Schiphol Airport'}}
+2025-07-22 05:14:17,542 - evaluation_logger_Cross-260 - INFO - Rule-based compare success.
+2025-07-22 05:14:17,542 - evaluation_logger_Cross-260 - INFO - Success matched: [{'name': 'Taxi_Search_Location', 'arguments': {'query': 'Schiphol Airport'}}]
+2025-07-22 05:14:17,890 - evaluation_logger_Cross-260 - INFO - Start compare_single_call: 
+{'name': 'Search_Taxi', 'arguments': {'drop_off_place_id': 'ChIJX1rTlu8JxkcRGsV8-a4oKMI', 'pick_up_date': '2024-11-22', 'pick_up_place_id': 'ChIJLRb94DThxUcRiPHO8YMV1cc', 'pick_up_time': '19:30'}}
+{'name': 'Search_Taxi', 'arguments': {'drop_off_place_id': 'ChIJX1rTlu8JxkcRGsV8-a4oKMI', 'pick_up_date': '2024-11-23', 'pick_up_place_id': 'ChIJLRb94DThxUcRiPHO8YMV1cc', 'pick_up_time': '19:30'}}
+2025-07-22 05:14:17,890 - evaluation_logger_Cross-260 - INFO - {'error_type': 'value_error', 'content': "Parameter pick_up_date value '2024-11-22' is not correct in prediction."}
+2025-07-22 05:14:17,890 - evaluation_logger_Cross-260 - INFO - Success matched: []
+2025-07-22 05:14:45,312 - evaluation_logger_Cross-260 - INFO - Start compare_single_call: 
+{'name': 'Search_Taxi', 'arguments': {'drop_off_place_id': 'ChIJX1rTlu8JxkcRGsV8-a4oKMI', 'pick_up_date': '2024-11-23', 'pick_up_place_id': 'ChIJLRb94DThxUcRiPHO8YMV1cc', 'pick_up_time': '19:30'}}
+{'name': 'Search_Taxi', 'arguments': {'drop_off_place_id': 'ChIJX1rTlu8JxkcRGsV8-a4oKMI', 'pick_up_date': '2024-11-23', 'pick_up_place_id': 'ChIJLRb94DThxUcRiPHO8YMV1cc', 'pick_up_time': '19:30'}}
+2025-07-22 05:14:45,313 - evaluation_logger_Cross-260 - INFO - Rule-based compare success.
+2025-07-22 05:14:45,313 - evaluation_logger_Cross-260 - INFO - Success matched: [{'name': 'Search_Taxi', 'arguments': {'drop_off_place_id': 'ChIJX1rTlu8JxkcRGsV8-a4oKMI', 'pick_up_date': '2024-11-23', 'pick_up_place_id': 'ChIJLRb94DThxUcRiPHO8YMV1cc', 'pick_up_time': '19:30'}}]

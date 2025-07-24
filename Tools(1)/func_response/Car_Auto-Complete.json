@@ -1,0 +1,356 @@
+{
+    "shorten": {
+        "api": {
+            "name": "Car_Auto-Complete",
+            "endpoint": "https://booking-com18.p.rapidapi.com/car/auto-complete",
+            "func_description": "",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "query": {
+                        "type": "String",
+                        "description": "Enter at least 2 characters to search\nRequired: true\nEx: New York",
+                        "example_value": "New York",
+                        "required": true
+                    },
+                    "languageCode": {
+                        "type": "String",
+                        "description": "Language\nlanguageCode can be retrieved from /languages endpoint(data->code)\nEx:  en-us\nDefault value: en-us",
+                        "example_value": "",
+                        "required": false
+                    },
+                    "countryFlag": {
+                        "type": "String",
+                        "description": "Country\ncountryFlag can be retrieved from /languages endpoint(data->countryFlag)\nEx: us\nDefault value: us",
+                        "example_value": "",
+                        "required": false
+                    }
+                },
+                "required": [
+                    "query"
+                ]
+            }
+        },
+        "static_response": null,
+        "required": {
+            "query": "I'm looking for car rental options in New York. Can you help me find some?",
+            "params": {
+                "query": "New York"
+            },
+            "response": {
+                "data": [
+                    {
+                        "iata_code": null,
+                        "coordinates": {
+                            "longitude": -73.9818954467773,
+                            "latitude": 40.7680740356445
+                        },
+                        "location_id": null,
+                        "city": "New York",
+                        "city_id": null,
+                        "name": "New York",
+                        "country": "United States",
+                        "type": "city",
+                        "id": "eyJsYXRpdHVkZSI6IjQwLjc2ODA3NDAzNTY0NDUiLCJsb25naXR1ZGUiOiItNzMuOTgxODk1NDQ2Nzc3MyJ9"
+                    },
+                    {
+                        "name": "John F. Kennedy International Airport",
+                        "city_id": null,
+                        "city": "New York",
+                        "coordinates": {
+                            "longitude": -73.7870025634766,
+                            "latitude": 40.6450004577637
+                        },
+                        "iata_code": "JFK",
+                        "location_id": null,
+                        "type": "airport",
+                        "country": "United States",
+                        "id": "eyJsYXRpdHVkZSI6IjQwLjY0NTAwMDQ1Nzc2MzciLCJsb25naXR1ZGUiOiItNzMuNzg3MDAyNTYzNDc2NiJ9"
+                    },
+                    {
+                        "city": "New York",
+                        "iata_code": null,
+                        "location_id": null,
+                        "coordinates": {
+                            "longitude": -73.9849090576172,
+                            "latitude": 40.7595901489258
+                        },
+                        "name": "Central New York City",
+                        "city_id": null,
+                        "country": "United States",
+                        "type": "district",
+                        "id": "eyJsYXRpdHVkZSI6IjQwLjc1OTU5MDE0ODkyNTgiLCJsb25naXR1ZGUiOiItNzMuOTg0OTA5MDU3NjE3MiJ9"
+                    }
+                ],
+                "status": true,
+                "message": "Successful"
+            }
+        },
+        "optional": {
+            "query": "I'm planning a trip to New York and need to rent a car. Can you help me find some options? I'd like the search results to be in English (language code: en-us) and show options available in the United States (country flag: us).",
+            "params": {
+                "query": "New York",
+                "languageCode": "en-us",
+                "countryFlag": "us"
+            },
+            "response": {
+                "data": [
+                    {
+                        "city": "New York",
+                        "name": "New York",
+                        "coordinates": {
+                            "longitude": -73.9818954467773,
+                            "latitude": 40.7680740356445
+                        },
+                        "location_id": null,
+                        "city_id": null,
+                        "iata_code": null,
+                        "country": "United States",
+                        "type": "city",
+                        "id": "eyJsYXRpdHVkZSI6IjQwLjc2ODA3NDAzNTY0NDUiLCJsb25naXR1ZGUiOiItNzMuOTgxODk1NDQ2Nzc3MyJ9"
+                    },
+                    {
+                        "iata_code": "JFK",
+                        "city_id": null,
+                        "location_id": null,
+                        "type": "airport",
+                        "country": "United States",
+                        "name": "John F. Kennedy International Airport",
+                        "city": "New York",
+                        "coordinates": {
+                            "latitude": 40.6450004577637,
+                            "longitude": -73.7870025634766
+                        },
+                        "id": "eyJsYXRpdHVkZSI6IjQwLjY0NTAwMDQ1Nzc2MzciLCJsb25naXR1ZGUiOiItNzMuNzg3MDAyNTYzNDc2NiJ9"
+                    },
+                    {
+                        "type": "district",
+                        "country": "United States",
+                        "city_id": null,
+                        "iata_code": null,
+                        "location_id": null,
+                        "coordinates": {
+                            "latitude": 40.7595901489258,
+                            "longitude": -73.9849090576172
+                        },
+                        "name": "Central New York City",
+                        "city": "New York",
+                        "id": "eyJsYXRpdHVkZSI6IjQwLjc1OTU5MDE0ODkyNTgiLCJsb25naXR1ZGUiOiItNzMuOTg0OTA5MDU3NjE3MiJ9"
+                    }
+                ],
+                "status": true,
+                "message": "Successful"
+            }
+        }
+    },
+    "row": {
+        "required": {
+            "data": [
+                {
+                    "iata_code": null,
+                    "coordinates": {
+                        "longitude": -73.9818954467773,
+                        "latitude": 40.7680740356445
+                    },
+                    "location_id": null,
+                    "city": "New York",
+                    "city_id": null,
+                    "name": "New York",
+                    "country": "United States",
+                    "type": "city",
+                    "id": "eyJsYXRpdHVkZSI6IjQwLjc2ODA3NDAzNTY0NDUiLCJsb25naXR1ZGUiOiItNzMuOTgxODk1NDQ2Nzc3MyJ9"
+                },
+                {
+                    "name": "John F. Kennedy International Airport",
+                    "city_id": null,
+                    "city": "New York",
+                    "coordinates": {
+                        "longitude": -73.7870025634766,
+                        "latitude": 40.6450004577637
+                    },
+                    "iata_code": "JFK",
+                    "location_id": null,
+                    "type": "airport",
+                    "country": "United States",
+                    "id": "eyJsYXRpdHVkZSI6IjQwLjY0NTAwMDQ1Nzc2MzciLCJsb25naXR1ZGUiOiItNzMuNzg3MDAyNTYzNDc2NiJ9"
+                },
+                {
+                    "city": "New York",
+                    "iata_code": null,
+                    "location_id": null,
+                    "coordinates": {
+                        "longitude": -73.9849090576172,
+                        "latitude": 40.7595901489258
+                    },
+                    "name": "Central New York City",
+                    "city_id": null,
+                    "country": "United States",
+                    "type": "district",
+                    "id": "eyJsYXRpdHVkZSI6IjQwLjc1OTU5MDE0ODkyNTgiLCJsb25naXR1ZGUiOiItNzMuOTg0OTA5MDU3NjE3MiJ9"
+                },
+                {
+                    "coordinates": {
+                        "latitude": 40.7742004394531,
+                        "longitude": -73.8719024658203
+                    },
+                    "iata_code": "LGA",
+                    "location_id": null,
+                    "city": "New York",
+                    "name": "LaGuardia Airport",
+                    "city_id": null,
+                    "country": "United States",
+                    "type": "airport",
+                    "id": "eyJsYXRpdHVkZSI6IjQwLjc3NDIwMDQzOTQ1MzEiLCJsb25naXR1ZGUiOiItNzMuODcxOTAyNDY1ODIwMyJ9"
+                },
+                {
+                    "type": "district",
+                    "country": "United States",
+                    "name": "New York Central Park",
+                    "city_id": null,
+                    "city": "New York",
+                    "location_id": null,
+                    "iata_code": null,
+                    "coordinates": {
+                        "latitude": 40.7820205688477,
+                        "longitude": -73.9658279418945
+                    },
+                    "id": "eyJsYXRpdHVkZSI6IjQwLjc4MjAyMDU2ODg0NzciLCJsb25naXR1ZGUiOiItNzMuOTY1ODI3OTQxODk0NSJ9"
+                },
+                {
+                    "location_id": null,
+                    "iata_code": null,
+                    "coordinates": {
+                        "longitude": -73.9933547973633,
+                        "latitude": 40.752628326416
+                    },
+                    "city": "New York",
+                    "city_id": null,
+                    "name": "The New Yorker",
+                    "country": "United States",
+                    "type": null,
+                    "id": "eyJsYXRpdHVkZSI6IjQwLjc1MjYyODMyNjQxNiIsImxvbmdpdHVkZSI6Ii03My45OTMzNTQ3OTczNjMzIn0="
+                },
+                {
+                    "iata_code": null,
+                    "location_id": null,
+                    "coordinates": {
+                        "latitude": 40.7602462768555,
+                        "longitude": -73.9884414672852
+                    },
+                    "city": "New York",
+                    "city_id": null,
+                    "name": "Riu Plaza New York Times Square",
+                    "country": "United States",
+                    "type": null,
+                    "id": "eyJsYXRpdHVkZSI6IjQwLjc2MDI0NjI3Njg1NTUiLCJsb25naXR1ZGUiOiItNzMuOTg4NDQxNDY3Mjg1MiJ9"
+                }
+            ],
+            "status": true,
+            "message": "Successful"
+        },
+        "optional": {
+            "data": [
+                {
+                    "city": "New York",
+                    "name": "New York",
+                    "coordinates": {
+                        "longitude": -73.9818954467773,
+                        "latitude": 40.7680740356445
+                    },
+                    "location_id": null,
+                    "city_id": null,
+                    "iata_code": null,
+                    "country": "United States",
+                    "type": "city",
+                    "id": "eyJsYXRpdHVkZSI6IjQwLjc2ODA3NDAzNTY0NDUiLCJsb25naXR1ZGUiOiItNzMuOTgxODk1NDQ2Nzc3MyJ9"
+                },
+                {
+                    "iata_code": "JFK",
+                    "city_id": null,
+                    "location_id": null,
+                    "type": "airport",
+                    "country": "United States",
+                    "name": "John F. Kennedy International Airport",
+                    "city": "New York",
+                    "coordinates": {
+                        "latitude": 40.6450004577637,
+                        "longitude": -73.7870025634766
+                    },
+                    "id": "eyJsYXRpdHVkZSI6IjQwLjY0NTAwMDQ1Nzc2MzciLCJsb25naXR1ZGUiOiItNzMuNzg3MDAyNTYzNDc2NiJ9"
+                },
+                {
+                    "type": "district",
+                    "country": "United States",
+                    "city_id": null,
+                    "iata_code": null,
+                    "location_id": null,
+                    "coordinates": {
+                        "latitude": 40.7595901489258,
+                        "longitude": -73.9849090576172
+                    },
+                    "name": "Central New York City",
+                    "city": "New York",
+                    "id": "eyJsYXRpdHVkZSI6IjQwLjc1OTU5MDE0ODkyNTgiLCJsb25naXR1ZGUiOiItNzMuOTg0OTA5MDU3NjE3MiJ9"
+                },
+                {
+                    "coordinates": {
+                        "latitude": 40.7742004394531,
+                        "longitude": -73.8719024658203
+                    },
+                    "name": "LaGuardia Airport",
+                    "city": "New York",
+                    "country": "United States",
+                    "type": "airport",
+                    "city_id": null,
+                    "iata_code": "LGA",
+                    "location_id": null,
+                    "id": "eyJsYXRpdHVkZSI6IjQwLjc3NDIwMDQzOTQ1MzEiLCJsb25naXR1ZGUiOiItNzMuODcxOTAyNDY1ODIwMyJ9"
+                },
+                {
+                    "country": "United States",
+                    "type": "district",
+                    "location_id": null,
+                    "iata_code": null,
+                    "city_id": null,
+                    "coordinates": {
+                        "longitude": -73.9658279418945,
+                        "latitude": 40.7820205688477
+                    },
+                    "city": "New York",
+                    "name": "New York Central Park",
+                    "id": "eyJsYXRpdHVkZSI6IjQwLjc4MjAyMDU2ODg0NzciLCJsb25naXR1ZGUiOiItNzMuOTY1ODI3OTQxODk0NSJ9"
+                },
+                {
+                    "coordinates": {
+                        "latitude": 40.752628326416,
+                        "longitude": -73.9933547973633
+                    },
+                    "city": "New York",
+                    "name": "The New Yorker",
+                    "type": null,
+                    "country": "United States",
+                    "location_id": null,
+                    "iata_code": null,
+                    "city_id": null,
+                    "id": "eyJsYXRpdHVkZSI6IjQwLjc1MjYyODMyNjQxNiIsImxvbmdpdHVkZSI6Ii03My45OTMzNTQ3OTczNjMzIn0="
+                },
+                {
+                    "name": "Riu Plaza New York Times Square",
+                    "city": "New York",
+                    "coordinates": {
+                        "longitude": -73.9884414672852,
+                        "latitude": 40.7602462768555
+                    },
+                    "city_id": null,
+                    "iata_code": null,
+                    "location_id": null,
+                    "type": null,
+                    "country": "United States",
+                    "id": "eyJsYXRpdHVkZSI6IjQwLjc2MDI0NjI3Njg1NTUiLCJsb25naXR1ZGUiOiItNzMuOTg4NDQxNDY3Mjg1MiJ9"
+                }
+            ],
+            "status": true,
+            "message": "Successful"
+        }
+    }
+}

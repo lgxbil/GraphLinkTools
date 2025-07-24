@@ -1,0 +1,771 @@
+{
+    "name": "Get_Hotel_Reviews(Tips)",
+    "docs_row": {
+        "name": "Get_Hotel_Reviews(Tips)",
+        "endpoint": "/api/v1/hotels/getHotelReviews",
+        "func_description": "Retrieve reviews and tips for a specified hotel. ",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "hotel_id": {
+                    "type": "String",
+                    "description": "hotel_id can be retrieved from api/v1/hotels/searchHotels(Search Hotels) or api/v1/hotels/searchHotelsByCoordinates(Search Hotels By Coordinates\n) endpoint in Hotels collection.",
+                    "example_value": "5955189",
+                    "required": true
+                },
+                "sort_option_id": {
+                    "type": "String",
+                    "description": "sort_option_id can be retrieved from api/v1/hotels/getHotelReviewsSortOption(Get Hotel Reviews(Tips) Sort Option) endpoint in Hotels collection.",
+                    "example_value": "sort_most_relevant",
+                    "required": false
+                },
+                "page_number": {
+                    "type": "Number",
+                    "description": "The page number.",
+                    "example_value": "1",
+                    "required": false
+                },
+                "languagecode": {
+                    "type": "String",
+                    "description": "To obtain the response data in a specific language, enter the languagecode. languagecode can be retrieved from api/v1/meta/getLanguages(Get Languages\n) endpoint in Meta collection.",
+                    "example_value": "en-us",
+                    "required": false
+                }
+            },
+            "required": [
+                "hotel_id"
+            ]
+        }
+    },
+    "instance": [],
+    "category": null,
+    "tool": null,
+    "api_idx": 3,
+    "params": {
+        "type": "object",
+        "properties": {
+            "hotel_id": {
+                "type": "String",
+                "description": "hotel_id can be retrieved from api/v1/hotels/searchHotels(Search Hotels) or api/v1/hotels/searchHotelsByCoordinates(Search Hotels By Coordinates\n) endpoint in Hotels collection.",
+                "example_value": "5955189",
+                "required": true
+            },
+            "sort_option_id": {
+                "type": "String",
+                "description": "sort_option_id can be retrieved from api/v1/hotels/getHotelReviewsSortOption(Get Hotel Reviews(Tips) Sort Option) endpoint in Hotels collection.",
+                "example_value": "sort_most_relevant",
+                "required": false
+            },
+            "page_number": {
+                "type": "Number",
+                "description": "The page number.",
+                "example_value": "1",
+                "required": false
+            },
+            "languagecode": {
+                "type": "String",
+                "description": "To obtain the response data in a specific language, enter the languagecode. languagecode can be retrieved from api/v1/meta/getLanguages(Get Languages\n) endpoint in Meta collection.",
+                "example_value": "en-us",
+                "required": false
+            }
+        },
+        "required": [
+            "hotel_id"
+        ]
+    },
+    "responses": [
+        {
+            "function_name": "Get_Hotel_Reviews(Tips)",
+            "arguments": {
+                "hotel_id": "5955189"
+            },
+            "observation": {
+                "sort_options": [
+                    {
+                        "title": "Date (newer to older)",
+                        "sort_option_default": 0,
+                        "sort_option_id": "sort_recent_desc"
+                    }
+                ],
+                "result": [
+                    {
+                        "review_id": 5141870268,
+                        "cons": "",
+                        "cons_translated": "",
+                        "hotel_id": 5955189,
+                        "author": {
+                            "type": "review_category_group_of_friends",
+                            "name": "Hitesh",
+                            "user_id": 402544223,
+                            "type_string": "Group of friends",
+                            "countrycode": "in",
+                            "helpful_vote_count": 0,
+                            "nr_reviews": 0,
+                            "avatar": "https://lh3.googleusercontent.com/a/AATXAJz_7_GOeO5FSzgYuXgKQbJ0qp3WFWZN-tnaVFa55QU=s96-c64",
+                            "city": ""
+                        },
+                        "anonymous": "",
+                        "date": "2025-03-28 15:02:09",
+                        "title": "Pleasant",
+                        "hotelier_response": "We are glad to have provided you with a pleasant experience. It is extremely inspiring for us to get to know from guests that they had a beautiful stay. Looking forward to hosting you soon again!\n",
+                        "average_score": 2.79999995231628,
+                        "reviewng": 1,
+                        "travel_purpose": "leisure",
+                        "pros_translated": "",
+                        "pros": "Good breakfast",
+                        "title_translated": "",
+                        "user_new_badges": [],
+                        "tags": [],
+                        "reviewer_photos": [],
+                        "review_hash": "145781d6c5214118",
+                        "no_user_title": 1,
+                        "countrycode": "in",
+                        "is_incentivised": 0,
+                        "languagecode": "en-gb",
+                        "is_moderated": 0,
+                        "hotelier_response_date": 1743406304,
+                        "stayed_room_info": {
+                            "photo": {
+                                "url_square60": "https://cf.bstatic.com/xdata/images/hotel/square60/613758060.jpg?k=07dfa57061d0fc4cb175fb16d3b0dbc492b89aa5c0af9d0938960bc61495058d&o=",
+                                "url_640x200": "https://cf.bstatic.com/xdata/images/hotel/640x200/613758060.jpg?k=07dfa57061d0fc4cb175fb16d3b0dbc492b89aa5c0af9d0938960bc61495058d&o=",
+                                "url_max300": "https://cf.bstatic.com/xdata/images/hotel/max300/613758060.jpg?k=07dfa57061d0fc4cb175fb16d3b0dbc492b89aa5c0af9d0938960bc61495058d&o=",
+                                "photo_id": 613758060,
+                                "ratio": 1.50037509377344,
+                                "url_original": "https://cf.bstatic.com/xdata/images/hotel/max500/613758060.jpg?k=07dfa57061d0fc4cb175fb16d3b0dbc492b89aa5c0af9d0938960bc61495058d&o="
+                            },
+                            "room_name": "Deluxe Room",
+                            "checkin": "2025-03-17",
+                            "num_nights": 4,
+                            "room_id": 595518907,
+                            "checkout": "2025-03-21"
+                        },
+                        "helpful_vote_count": 0
+                    }
+                ],
+                "count": 25
+            }
+        }
+    ],
+    "response_summary": "The response includes reviews for a hotel, with three highlighted guest experiences. Guests can sort the reviews by \"Most Relevant,\" \"Date (Newer to Older),\" or \"Close to Property Score.\" \n\nThe first review, from Felipe, a solo traveler from Chile, rated his stay as \"Pleasant\" with a score of 2.8 out of 5. He appreciated the cleanliness of the hotel and stayed in a Deluxe Room for one night in May 2025. The hotel responded warmly, expressing gratitude for his feedback and hoping to welcome him back.\n\nHitesh, a traveler from India visiting with friends, also rated his stay as \"Pleasant\" with the same score. He enjoyed the breakfast during his four-night stay in March 2025. The hotel acknowledged his positive experience and looked forward to hosting him again.\n\nEli\u0161ka, a family traveler from the Czech Republic, gave the same rating but had mixed feedback. She praised the helpful staff and the hotel's proximity to the airport but criticized the dusty, unpleasant hallway leading to her room. The hotel apologized for the inconvenience and promised to address the issue.\n\nIn total, there are 25 reviews available for this hotel, providing a range of perspectives on the guest experience.",
+    "enhance_func_desc": "This API is useful for travelers researching hotel stays and for hotel management to gather feedback. It retrieves guest reviews for a specific hotel, allowing sorting by relevance, date, or proximity score. The response includes detailed reviews with ratings, traveler types, stay details, and hotel responses, helping users assess the overall guest experience. The hotel ID must be obtained from the SearchHotels API.",
+    "enhance_params_desc": {
+        "enhanced_parameters": {
+            "hotel_id": "Unique identifier for the hotel, sourced from searchHotels or searchHotelsByCoordinates.",
+            "sort_option_id": "Sorts reviews by relevance, date, or proximity score.",
+            "page_number": "Specifies the pagination number for review results.",
+            "languagecode": "Language preference for the review response data."
+        }
+    },
+    "enhance_resfield_desc": {
+        "response_fields": {
+            "sort_options": {
+                "type": "Array",
+                "description": "A list of sorting options available for the reviews.",
+                "ar_items": {
+                    "type": "Object",
+                    "description": "An object representing a sorting option.",
+                    "ob_properties": {
+                        "sort_option_id": {
+                            "type": "String",
+                            "description": "The unique identifier for the sorting option (e.g., 'sort_most_relevant')."
+                        },
+                        "sort_option_default": {
+                            "type": "Number",
+                            "description": "Indicates if this sorting option is the default (1 for yes, 0 for no)."
+                        },
+                        "title": {
+                            "type": "String",
+                            "description": "The display name of the sorting option (e.g., 'Most relevant')."
+                        }
+                    }
+                }
+            },
+            "result": {
+                "type": "Array",
+                "description": "A list of reviews for the hotel.",
+                "ar_items": {
+                    "type": "Object",
+                    "description": "An object representing a single review.",
+                    "ob_properties": {
+                        "is_moderated": {
+                            "type": "Number",
+                            "description": "Indicates if the review has been moderated (1 for yes, 0 for no)."
+                        },
+                        "hotelier_response_date": {
+                            "type": "Number",
+                            "description": "The timestamp of the hotel's response to the review."
+                        },
+                        "languagecode": {
+                            "type": "String",
+                            "description": "The language code of the review (e.g., 'en-gb')."
+                        },
+                        "is_incentivised": {
+                            "type": "Number",
+                            "description": "Indicates if the review was incentivized (1 for yes, 0 for no)."
+                        },
+                        "stayed_room_info": {
+                            "type": "Object",
+                            "description": "Details about the room the guest stayed in.",
+                            "ob_properties": {
+                                "num_nights": {
+                                    "type": "Number",
+                                    "description": "The number of nights the guest stayed."
+                                },
+                                "room_id": {
+                                    "type": "Number",
+                                    "description": "The unique identifier for the room."
+                                },
+                                "checkout": {
+                                    "type": "String",
+                                    "description": "The checkout date in YYYY-MM-DD format."
+                                },
+                                "photo": {
+                                    "type": "Object",
+                                    "description": "Details about the room photo.",
+                                    "ob_properties": {
+                                        "url_max300": {
+                                            "type": "String",
+                                            "description": "URL for the photo with a maximum width of 300 pixels."
+                                        },
+                                        "photo_id": {
+                                            "type": "Number",
+                                            "description": "The unique identifier for the photo."
+                                        },
+                                        "url_original": {
+                                            "type": "String",
+                                            "description": "URL for the original size photo."
+                                        },
+                                        "ratio": {
+                                            "type": "Number",
+                                            "description": "The aspect ratio of the photo."
+                                        },
+                                        "url_square60": {
+                                            "type": "String",
+                                            "description": "URL for the square 60x60 pixels photo."
+                                        },
+                                        "url_640x200": {
+                                            "type": "String",
+                                            "description": "URL for the photo with dimensions 640x200 pixels."
+                                        }
+                                    }
+                                },
+                                "room_name": {
+                                    "type": "String",
+                                    "description": "The name of the room (e.g., 'Deluxe Room')."
+                                },
+                                "checkin": {
+                                    "type": "String",
+                                    "description": "The check-in date in YYYY-MM-DD format."
+                                }
+                            }
+                        },
+                        "helpful_vote_count": {
+                            "type": "Number",
+                            "description": "The number of helpful votes the review has received."
+                        },
+                        "user_new_badges": {
+                            "type": "Array",
+                            "description": "A list of new badges the user has earned (empty in the examples)."
+                        },
+                        "title_translated": {
+                            "type": "String",
+                            "description": "The translated title of the review (empty in the examples)."
+                        },
+                        "no_user_title": {
+                            "type": "Number",
+                            "description": "Indicates if the user has no title (1 for yes, 0 for no)."
+                        },
+                        "countrycode": {
+                            "type": "String",
+                            "description": "The country code of the reviewer (e.g., 'cl')."
+                        },
+                        "reviewer_photos": {
+                            "type": "Array",
+                            "description": "A list of photos uploaded by the reviewer (empty in the examples)."
+                        },
+                        "review_hash": {
+                            "type": "String",
+                            "description": "A unique hash identifier for the review."
+                        },
+                        "tags": {
+                            "type": "Array",
+                            "description": "A list of tags associated with the review (empty in the examples)."
+                        },
+                        "pros_translated": {
+                            "type": "String",
+                            "description": "The translated pros of the review (empty in the examples)."
+                        },
+                        "average_score": {
+                            "type": "Number",
+                            "description": "The average score given by the reviewer (e.g., 2.8)."
+                        },
+                        "reviewng": {
+                            "type": "Number",
+                            "description": "Indicates if the review is positive (1 for yes, 0 for no)."
+                        },
+                        "travel_purpose": {
+                            "type": "String",
+                            "description": "The purpose of the traveler's stay (e.g., 'leisure')."
+                        },
+                        "title": {
+                            "type": "String",
+                            "description": "The title of the review (e.g., 'Pleasant')."
+                        },
+                        "hotelier_response": {
+                            "type": "String",
+                            "description": "The hotel's response to the review."
+                        },
+                        "pros": {
+                            "type": "String",
+                            "description": "The positive aspects mentioned in the review (e.g., 'Cleanliness')."
+                        },
+                        "cons": {
+                            "type": "String",
+                            "description": "The negative aspects mentioned in the review (empty in some examples)."
+                        },
+                        "review_id": {
+                            "type": "Number",
+                            "description": "The unique identifier for the review."
+                        },
+                        "anonymous": {
+                            "type": "String",
+                            "description": "Indicates if the review is anonymous (empty in the examples)."
+                        },
+                        "date": {
+                            "type": "String",
+                            "description": "The date and time the review was posted (e.g., '2025-05-09 20:58:54')."
+                        },
+                        "author": {
+                            "type": "Object",
+                            "description": "Details about the reviewer.",
+                            "ob_properties": {
+                                "nr_reviews": {
+                                    "type": "Number",
+                                    "description": "The number of reviews the author has written."
+                                },
+                                "helpful_vote_count": {
+                                    "type": "Number",
+                                    "description": "The number of helpful votes the author has received."
+                                },
+                                "countrycode": {
+                                    "type": "String",
+                                    "description": "The country code of the author (e.g., 'cl')."
+                                },
+                                "user_id": {
+                                    "type": "Number",
+                                    "description": "The unique identifier for the author."
+                                },
+                                "type_string": {
+                                    "type": "String",
+                                    "description": "The type of traveler (e.g., 'Solo traveller')."
+                                },
+                                "type": {
+                                    "type": "String",
+                                    "description": "The type of traveler in code format (e.g., 'solo_traveller')."
+                                },
+                                "name": {
+                                    "type": "String",
+                                    "description": "The name of the author (e.g., 'Felipe')."
+                                },
+                                "city": {
+                                    "type": "String",
+                                    "description": "The city of the author (empty in the examples)."
+                                },
+                                "avatar": {
+                                    "type": "String",
+                                    "description": "URL for the author's avatar (present in some examples)."
+                                }
+                            }
+                        },
+                        "hotel_id": {
+                            "type": "Number",
+                            "description": "The unique identifier for the hotel."
+                        },
+                        "cons_translated": {
+                            "type": "String",
+                            "description": "The translated cons of the review (empty in the examples)."
+                        }
+                    }
+                }
+            },
+            "count": {
+                "type": "Number",
+                "description": "The total number of reviews available for the hotel."
+            }
+        }
+    },
+    "params_desc_list": null,
+    "response_desc_list": [
+        {
+            "path_name": "$.sort_options",
+            "name": "sort_options",
+            "description": "A list of sorting options available for the reviews."
+        },
+        {
+            "path_name": "$.sort_options[]",
+            "name": "sort_options[]",
+            "description": "An object representing a sorting option."
+        },
+        {
+            "path_name": "$.sort_options[].sort_option_id",
+            "name": "sort_option_id",
+            "description": "The unique identifier for the sorting option (e.g., 'sort_most_relevant')."
+        },
+        {
+            "path_name": "$.sort_options[].sort_option_default",
+            "name": "sort_option_default",
+            "description": "Indicates if this sorting option is the default (1 for yes, 0 for no)."
+        },
+        {
+            "path_name": "$.sort_options[].title",
+            "name": "title",
+            "description": "The display name of the sorting option (e.g., 'Most relevant')."
+        },
+        {
+            "path_name": "$.result",
+            "name": "result",
+            "description": "A list of reviews for the hotel."
+        },
+        {
+            "path_name": "$.result[]",
+            "name": "result[]",
+            "description": "An object representing a single review."
+        },
+        {
+            "path_name": "$.result[].is_moderated",
+            "name": "is_moderated",
+            "description": "Indicates if the review has been moderated (1 for yes, 0 for no)."
+        },
+        {
+            "path_name": "$.result[].hotelier_response_date",
+            "name": "hotelier_response_date",
+            "description": "The timestamp of the hotel's response to the review."
+        },
+        {
+            "path_name": "$.result[].languagecode",
+            "name": "languagecode",
+            "description": "The language code of the review (e.g., 'en-gb')."
+        },
+        {
+            "path_name": "$.result[].is_incentivised",
+            "name": "is_incentivised",
+            "description": "Indicates if the review was incentivized (1 for yes, 0 for no)."
+        },
+        {
+            "path_name": "$.result[].stayed_room_info",
+            "name": "stayed_room_info",
+            "description": "Details about the room the guest stayed in."
+        },
+        {
+            "path_name": "$.result[].stayed_room_info.num_nights",
+            "name": "num_nights",
+            "description": "The number of nights the guest stayed."
+        },
+        {
+            "path_name": "$.result[].stayed_room_info.room_id",
+            "name": "room_id",
+            "description": "The unique identifier for the room."
+        },
+        {
+            "path_name": "$.result[].stayed_room_info.checkout",
+            "name": "checkout",
+            "description": "The checkout date in YYYY-MM-DD format."
+        },
+        {
+            "path_name": "$.result[].stayed_room_info.photo",
+            "name": "photo",
+            "description": "Details about the room photo."
+        },
+        {
+            "path_name": "$.result[].stayed_room_info.photo.url_max300",
+            "name": "url_max300",
+            "description": "URL for the photo with a maximum width of 300 pixels."
+        },
+        {
+            "path_name": "$.result[].stayed_room_info.photo.photo_id",
+            "name": "photo_id",
+            "description": "The unique identifier for the photo."
+        },
+        {
+            "path_name": "$.result[].stayed_room_info.photo.url_original",
+            "name": "url_original",
+            "description": "URL for the original size photo."
+        },
+        {
+            "path_name": "$.result[].stayed_room_info.photo.ratio",
+            "name": "ratio",
+            "description": "The aspect ratio of the photo."
+        },
+        {
+            "path_name": "$.result[].stayed_room_info.photo.url_square60",
+            "name": "url_square60",
+            "description": "URL for the square 60x60 pixels photo."
+        },
+        {
+            "path_name": "$.result[].stayed_room_info.photo.url_640x200",
+            "name": "url_640x200",
+            "description": "URL for the photo with dimensions 640x200 pixels."
+        },
+        {
+            "path_name": "$.result[].stayed_room_info.room_name",
+            "name": "room_name",
+            "description": "The name of the room (e.g., 'Deluxe Room')."
+        },
+        {
+            "path_name": "$.result[].stayed_room_info.checkin",
+            "name": "checkin",
+            "description": "The check-in date in YYYY-MM-DD format."
+        },
+        {
+            "path_name": "$.result[].helpful_vote_count",
+            "name": "helpful_vote_count",
+            "description": "The number of helpful votes the review has received."
+        },
+        {
+            "path_name": "$.result[].user_new_badges",
+            "name": "user_new_badges",
+            "description": "A list of new badges the user has earned (empty in the examples)."
+        },
+        {
+            "path_name": "$.result[].title_translated",
+            "name": "title_translated",
+            "description": "The translated title of the review (empty in the examples)."
+        },
+        {
+            "path_name": "$.result[].no_user_title",
+            "name": "no_user_title",
+            "description": "Indicates if the user has no title (1 for yes, 0 for no)."
+        },
+        {
+            "path_name": "$.result[].countrycode",
+            "name": "countrycode",
+            "description": "The country code of the reviewer (e.g., 'cl')."
+        },
+        {
+            "path_name": "$.result[].reviewer_photos",
+            "name": "reviewer_photos",
+            "description": "A list of photos uploaded by the reviewer (empty in the examples)."
+        },
+        {
+            "path_name": "$.result[].review_hash",
+            "name": "review_hash",
+            "description": "A unique hash identifier for the review."
+        },
+        {
+            "path_name": "$.result[].tags",
+            "name": "tags",
+            "description": "A list of tags associated with the review (empty in the examples)."
+        },
+        {
+            "path_name": "$.result[].pros_translated",
+            "name": "pros_translated",
+            "description": "The translated pros of the review (empty in the examples)."
+        },
+        {
+            "path_name": "$.result[].average_score",
+            "name": "average_score",
+            "description": "The average score given by the reviewer (e.g., 2.8)."
+        },
+        {
+            "path_name": "$.result[].reviewng",
+            "name": "reviewng",
+            "description": "Indicates if the review is positive (1 for yes, 0 for no)."
+        },
+        {
+            "path_name": "$.result[].travel_purpose",
+            "name": "travel_purpose",
+            "description": "The purpose of the traveler's stay (e.g., 'leisure')."
+        },
+        {
+            "path_name": "$.result[].title",
+            "name": "title",
+            "description": "The title of the review (e.g., 'Pleasant')."
+        },
+        {
+            "path_name": "$.result[].hotelier_response",
+            "name": "hotelier_response",
+            "description": "The hotel's response to the review."
+        },
+        {
+            "path_name": "$.result[].pros",
+            "name": "pros",
+            "description": "The positive aspects mentioned in the review (e.g., 'Cleanliness')."
+        },
+        {
+            "path_name": "$.result[].cons",
+            "name": "cons",
+            "description": "The negative aspects mentioned in the review (empty in some examples)."
+        },
+        {
+            "path_name": "$.result[].review_id",
+            "name": "review_id",
+            "description": "The unique identifier for the review."
+        },
+        {
+            "path_name": "$.result[].anonymous",
+            "name": "anonymous",
+            "description": "Indicates if the review is anonymous (empty in the examples)."
+        },
+        {
+            "path_name": "$.result[].date",
+            "name": "date",
+            "description": "The date and time the review was posted (e.g., '2025-05-09 20:58:54')."
+        },
+        {
+            "path_name": "$.result[].author",
+            "name": "author",
+            "description": "Details about the reviewer."
+        },
+        {
+            "path_name": "$.result[].author.nr_reviews",
+            "name": "nr_reviews",
+            "description": "The number of reviews the author has written."
+        },
+        {
+            "path_name": "$.result[].author.helpful_vote_count",
+            "name": "helpful_vote_count",
+            "description": "The number of helpful votes the author has received."
+        },
+        {
+            "path_name": "$.result[].author.countrycode",
+            "name": "countrycode",
+            "description": "The country code of the author (e.g., 'cl')."
+        },
+        {
+            "path_name": "$.result[].author.user_id",
+            "name": "user_id",
+            "description": "The unique identifier for the author."
+        },
+        {
+            "path_name": "$.result[].author.type_string",
+            "name": "type_string",
+            "description": "The type of traveler (e.g., 'Solo traveller')."
+        },
+        {
+            "path_name": "$.result[].author.type",
+            "name": "type",
+            "description": "The type of traveler in code format (e.g., 'solo_traveller')."
+        },
+        {
+            "path_name": "$.result[].author.name",
+            "name": "name",
+            "description": "The name of the author (e.g., 'Felipe')."
+        },
+        {
+            "path_name": "$.result[].author.city",
+            "name": "city",
+            "description": "The city of the author (empty in the examples)."
+        },
+        {
+            "path_name": "$.result[].author.avatar",
+            "name": "avatar",
+            "description": "URL for the author's avatar (present in some examples)."
+        },
+        {
+            "path_name": "$.result[].hotel_id",
+            "name": "hotel_id",
+            "description": "The unique identifier for the hotel."
+        },
+        {
+            "path_name": "$.result[].cons_translated",
+            "name": "cons_translated",
+            "description": "The translated cons of the review (empty in the examples)."
+        },
+        {
+            "path_name": "$.count",
+            "name": "count",
+            "description": "The total number of reviews available for the hotel."
+        }
+    ],
+    "depends_on": [
+        {
+            "target_api_params": "hotel_id",
+            "reason": "The 'hotel_id' parameter in the target API is explicitly mentioned to be retrievable from the 'Search_Hotels' API, which is the source API in this case. The source API's response includes a 'hotel_id' field within the 'hotels' array, which directly matches the requirement of the target API. This is a clear case of a prerequisite relationship where the source API must be called first to obtain the hotel_id needed for the target API.",
+            "source_jsonpath": "$.hotels[].hotel_id",
+            "confidence": 100,
+            "dependency_relationship": "Hard Dependency(Prerequisite API)",
+            "source_api": "Search_Hotels"
+        },
+        {
+            "target_api_params": "hotel_id",
+            "reason": "The 'hotel_id' parameter in the target API is explicitly mentioned to be retrievable from the same source APIs (SearchHotels or SearchHotelsByCoordinates) as the source API's 'hotel_id'. The source API's response includes the 'hotel_id' field with the exact same data type (String) and purpose, making it a perfect match for the target API's requirement.",
+            "source_jsonpath": "$.hotel_id",
+            "confidence": 100,
+            "dependency_relationship": "Hard Dependency(Prerequisite API)",
+            "source_api": "Get_Question_And_Answer"
+        },
+        {
+            "target_api_params": "hotel_id",
+            "reason": "The 'hotel_id' parameter in the target API requires a specific hotel identifier to retrieve reviews. The source API's response includes the same 'hotel_id' field (e.g., '5955189') which matches exactly in data type and purpose. This creates a hard dependency where the source API must be called first to obtain the hotel_id before the target API can be used.",
+            "source_jsonpath": "$.hotel_id",
+            "confidence": 100,
+            "dependency_relationship": "Hard Dependency(Prerequisite API)",
+            "source_api": "Get_Hotel_Policies"
+        },
+        {
+            "target_api_params": "hotel_id",
+            "reason": "The 'hotel_id' parameter in the target API is required to retrieve hotel reviews, and it must be obtained from the SearchHotels API. The source API's response field '$.hotel_id' provides the exact same hotel ID that can be used as input for the target API. The data types match (both are strings), and the context is directly related as both APIs deal with hotel information.",
+            "source_jsonpath": "$.hotel_id",
+            "confidence": 100,
+            "dependency_relationship": "Hard Dependency(Prerequisite API)",
+            "source_api": "Get_Room_List"
+        },
+        {
+            "target_api_params": "hotel_id",
+            "reason": "The 'hotel_id' parameter in the target API is required to fetch hotel reviews, and it must be obtained from the SearchHotels or SearchHotelsByCoordinates APIs. The source API's response includes a 'hotel_id' field (e.g., '5955189'), which matches the exact same requirement. This indicates a hard dependency where the source API's response field is a prerequisite for calling the target API.",
+            "source_jsonpath": "$[*].hotel_id",
+            "confidence": 100,
+            "dependency_relationship": "Hard Dependency(Prerequisite API)",
+            "source_api": "Get_Hotel_Review_Scores"
+        },
+        {
+            "target_api_params": "hotel_id",
+            "reason": "The 'hotel_id' parameter in the target API is explicitly mentioned to be retrievable from the 'Search_Hotels_By_Coordinates' source API. The source API's response includes 'hotel_id' fields (e.g., '11361227', '12192643') which directly match the required parameter type (String) and purpose (identifying specific hotels). This is a clear prerequisite for calling the target API.",
+            "source_jsonpath": "$.result[].hotel_id",
+            "confidence": 100,
+            "dependency_relationship": "Hard Dependency(Prerequisite API)",
+            "source_api": "Search_Hotels_By_Coordinates"
+        },
+        {
+            "target_api_params": "hotel_id",
+            "reason": "The 'hotel_id' parameter in the target API requires a specific hotel identifier, which is also required by the source API. Both APIs explicitly state that the 'hotel_id' can be retrieved from the same endpoints (SearchHotels or SearchHotelsByCoordinates). This indicates a direct prerequisite relationship where the source API's 'hotel_id' is a necessary input for the target API.",
+            "source_jsonpath": "$",
+            "confidence": 100,
+            "dependency_relationship": "Hard Dependency(Prerequisite API)",
+            "source_api": "Get_Hotel_Photos"
+        },
+        {
+            "target_api_params": "hotel_id",
+            "reason": "The 'hotel_id' parameter in the target API is explicitly stated to be retrievable from the SearchHotels or SearchHotelsByCoordinates API. The source API's response field 'hotel_id' matches exactly in name and purpose, as it is also meant to be obtained from the same endpoints. This is a clear prerequisite for calling the target API.",
+            "source_jsonpath": "$.hotel_id",
+            "confidence": 100,
+            "dependency_relationship": "Hard Dependency(Prerequisite API)",
+            "source_api": "Get_Hotel_Reviews_Filter_Metadata"
+        },
+        {
+            "target_api_params": "hotel_id",
+            "reason": "The 'hotel_id' parameter in the target API is a prerequisite for retrieving hotel reviews, and it must be obtained from either the SearchHotels or SearchHotelsByCoordinates API. The source API's response field 'hotel_id' directly matches this requirement, as it is the same identifier used to fetch hotel descriptions and info. This is a hard dependency because the target API cannot function without this parameter, and the source API provides it directly.",
+            "source_jsonpath": "$[*].hotel_id",
+            "confidence": 100,
+            "dependency_relationship": "Hard Dependency(Prerequisite API)",
+            "source_api": "Get_Description_And_Info"
+        },
+        {
+            "target_api_params": "hotel_id",
+            "reason": "The 'hotel_id' parameter in the target API is a required field that must be obtained from the SearchHotels API or SearchHotelsByCoordinates API. The source API's response fields include 'hotel_id' which matches exactly in data type and purpose. This creates a hard dependency as the source API's hotel_id is a necessary prerequisite for calling the target API.",
+            "source_jsonpath": "$[*].hotel_id",
+            "confidence": 100,
+            "dependency_relationship": "Hard Dependency(Prerequisite API)",
+            "source_api": "Payment_features_of_the_Hotel"
+        },
+        {
+            "target_api_params": "hotel_id",
+            "reason": "The 'hotel_id' parameter in the target API is explicitly stated to be retrievable from the same source APIs as the source API's 'hotel_id' parameter. Both APIs require the hotel_id to be obtained from either 'api/v1/hotels/searchHotels' or 'api/v1/hotels/searchHotelsByCoordinates'. This indicates a direct prerequisite relationship where the source API's hotel_id is a necessary input for the target API.",
+            "source_jsonpath": "$.facilities[*]",
+            "confidence": 100,
+            "dependency_relationship": "Hard Dependency(Prerequisite API)",
+            "source_api": "Get_Hotel_Facilities"
+        }
+    ],
+    "verified": true
+}

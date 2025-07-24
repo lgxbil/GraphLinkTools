@@ -1,0 +1,52 @@
+{
+    "name": "Get_Room_Availability",
+    "docs_row": {
+        "name": "Get_Room_Availability",
+        "description": "Search the room price and availability for future dates. EndPoint: /api/v1/hotels/getAvailability",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "min_date": {
+                    "type": "string",
+                    "description": "The starting date range.DATE (YYYY-MM-DD)"
+                },
+                "room_qty": {
+                    "type": "number",
+                    "description": "The **number** of **rooms** that are required. The **default** value is set to **1**."
+                },
+                "adults": {
+                    "type": "number",
+                    "description": "The **number** of guests who are **18 years** of age or **older**. The **default** value is set to **1**."
+                },
+                "hotel_id": {
+                    "type": "string",
+                    "description": " `hotel_id` can be retrieved from `api/v1/hotels/searchHotels`**(Search Hotels)** or `api/v1/hotels/searchHotelsByCoordinates`**(Search Hotels By Coordinates\n)** endpoint in **Hotels** collection."
+                },
+                "max_date": {
+                    "type": "string",
+                    "description": "The ending date rangeDATE (YYYY-MM-DD)"
+                }
+            },
+            "required": [
+                "min_date",
+                "hotel_id",
+                "max_date"
+            ]
+        }
+    },
+    "api_response_schema": {
+        "currency": "USD",
+        "avDates": [
+            {
+                "date": "2024-11-05",
+                "price": 252
+            }
+        ],
+        "lengthsOfStay": [
+            {
+                "date": "2024-11-05",
+                "min_nights": 1
+            }
+        ]
+    }
+}

@@ -1,0 +1,704 @@
+{
+    "shorten": {
+        "api": {
+            "name": "Get_Min_Price",
+            "endpoint": "/api/v1/flights/getMinPrice",
+            "func_description": "Get the minimum price for flights. This API will return the lowest priced flights within 5 days before and after the query date. ",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "fromId": {
+                        "type": "String",
+                        "description": "From/Departure location Id. fromId can be retrieved from api/v1/flights/searchDestination(Search Flight Location) endpoint in Flights collection as id.",
+                        "example_value": "BOM.AIRPORT",
+                        "required": true
+                    },
+                    "toId": {
+                        "type": "String",
+                        "description": "To/Arrival location Id. toId can be retrieved from api/v1/flights/searchDestination(Search Flight Location) endpoint in Flights collection as id.",
+                        "example_value": "DEL.AIRPORT",
+                        "required": true
+                    },
+                    "departDate": {
+                        "type": "Date (yyyy-mm-dd)",
+                        "description": "Departure or travel date.\nFormat: YYYY-MM-DD",
+                        "example_value": "",
+                        "required": true
+                    },
+                    "returnDate": {
+                        "type": "Date (yyyy-mm-dd)",
+                        "description": "Return date.\nFormat: YYYY-MM-DD",
+                        "example_value": "",
+                        "required": false
+                    },
+                    "cabinClass": {
+                        "type": "Enum",
+                        "description": "Search for flights that match the cabin class specified. Cabin call can be either ECONOMY, PREMIUM_ECONOMY, BUSINESS or FIRST.",
+                        "example_value": "",
+                        "required": false
+                    },
+                    "currency_code": {
+                        "type": "String",
+                        "description": "The currency code. currency_code can be retrieved from api/v1/meta/getCurrency(Get Currency) endpoint in Hotels collection.",
+                        "example_value": "AED",
+                        "required": false
+                    }
+                },
+                "required": [
+                    "fromId",
+                    "toId",
+                    "departDate"
+                ]
+            }
+        },
+        "static_response": {
+            "function_name": "Get_Min_Price",
+            "arguments": {
+                "fromId": "LAX.AIRPORT",
+                "toId": "SEA.AIRPORT",
+                "departDate": "2024-11-01"
+            },
+            "observation": {
+                "status": true,
+                "message": "Success",
+                "timestamp": 1730457007629,
+                "data": [
+                    {
+                        "departureDate": "2024-11-02",
+                        "searchDates": [
+                            "2024-11-02"
+                        ],
+                        "offsetDays": 1,
+                        "isCheapest": false,
+                        "price": {
+                            "currencyCode": "USD",
+                            "units": 195,
+                            "nanos": 890000000
+                        },
+                        "priceRounded": {
+                            "currencyCode": "USD",
+                            "units": 196,
+                            "nanos": 0
+                        }
+                    },
+                    {
+                        "departureDate": "2024-11-03",
+                        "searchDates": [
+                            "2024-11-03"
+                        ],
+                        "offsetDays": 2,
+                        "isCheapest": false,
+                        "price": {
+                            "currencyCode": "USD",
+                            "units": 228,
+                            "nanos": 690000000
+                        },
+                        "priceRounded": {
+                            "currencyCode": "USD",
+                            "units": 229,
+                            "nanos": 0
+                        }
+                    },
+                    {
+                        "departureDate": "2024-11-04",
+                        "searchDates": [
+                            "2024-11-04"
+                        ],
+                        "offsetDays": 3,
+                        "isCheapest": false,
+                        "price": {
+                            "currencyCode": "USD",
+                            "units": 120,
+                            "nanos": 40000000
+                        },
+                        "priceRounded": {
+                            "currencyCode": "USD",
+                            "units": 121,
+                            "nanos": 0
+                        }
+                    }
+                ]
+            }
+        },
+        "required": {
+            "query": "I'm looking for the cheapest flights from Mumbai Airport (BOM) to Delhi Airport (DEL) on June 15, 2025. Can you find the lowest prices available around that date?",
+            "params": {
+                "fromId": "BOM.AIRPORT",
+                "toId": "DEL.AIRPORT",
+                "departDate": "2025-06-15"
+            },
+            "response": {
+                "status": true,
+                "message": "Success",
+                "timestamp": 1747651613584,
+                "data": [
+                    {
+                        "departureDate": "2025-06-10",
+                        "searchDates": [
+                            "2025-06-10"
+                        ],
+                        "offsetDays": -5,
+                        "accuracyTrackerId": "01kp0_kh0lPPIRVopJAx0O_YlYXDsel5E41QYsK-dW6uY4SiY3adyjQnJkK8uoJe",
+                        "isCheapest": false,
+                        "price": {
+                            "currencyCode": "USD",
+                            "units": 65,
+                            "nanos": 180000000
+                        },
+                        "priceRounded": {
+                            "currencyCode": "USD",
+                            "units": 66,
+                            "nanos": 0
+                        }
+                    },
+                    {
+                        "departureDate": "2025-06-11",
+                        "searchDates": [
+                            "2025-06-11"
+                        ],
+                        "offsetDays": -4,
+                        "accuracyTrackerId": "01kp0_kh0lPPIRVopJAx0LTl6AUql_syfcTAMjzHiKKuY4SiY3adyjQnJkK8uoJe",
+                        "isCheapest": true,
+                        "price": {
+                            "currencyCode": "USD",
+                            "units": 64,
+                            "nanos": 390000000
+                        },
+                        "priceRounded": {
+                            "currencyCode": "USD",
+                            "units": 65,
+                            "nanos": 0
+                        }
+                    },
+                    {
+                        "departureDate": "2025-06-12",
+                        "searchDates": [
+                            "2025-06-12"
+                        ],
+                        "offsetDays": -3,
+                        "accuracyTrackerId": "01kp0_kh0lPPIRVopJAx0EMXeqW1d8gR7JSJVlu2TZKuY4SiY3adyjQnJkK8uoJe",
+                        "isCheapest": false,
+                        "price": {
+                            "currencyCode": "USD",
+                            "units": 66,
+                            "nanos": 540000000
+                        },
+                        "priceRounded": {
+                            "currencyCode": "USD",
+                            "units": 67,
+                            "nanos": 0
+                        }
+                    }
+                ]
+            }
+        },
+        "optional": {
+            "query": "I'm planning to travel from Mumbai Airport (BOM) to Delhi Airport (DEL) on June 15, 2025. I'm looking for the cheapest flight options available around that date, including 5 days before and after. I'd prefer economy class and would like the prices displayed in AED.",
+            "params": {
+                "fromId": "BOM.AIRPORT",
+                "toId": "DEL.AIRPORT",
+                "departDate": "2025-06-15",
+                "cabinClass": "ECONOMY",
+                "currency_code": "AED"
+            },
+            "response": {
+                "status": true,
+                "message": "Success",
+                "timestamp": 1747651629458,
+                "data": [
+                    {
+                        "departureDate": "2025-06-10",
+                        "searchDates": [
+                            "2025-06-10"
+                        ],
+                        "offsetDays": -5,
+                        "accuracyTrackerId": "01kp0_kh0lPPIRVopJAx0O_YlYXDsel5E41QYsK-dW6uY4SiY3adyjQnJkK8uoJe",
+                        "isCheapest": false,
+                        "price": {
+                            "currencyCode": "AED",
+                            "units": 239,
+                            "nanos": 410000000
+                        },
+                        "priceRounded": {
+                            "currencyCode": "AED",
+                            "units": 242,
+                            "nanos": 420000000
+                        }
+                    },
+                    {
+                        "departureDate": "2025-06-11",
+                        "searchDates": [
+                            "2025-06-11"
+                        ],
+                        "offsetDays": -4,
+                        "accuracyTrackerId": "01kp0_kh0lPPIRVopJAx0LTl6AUql_syfcTAMjzHiKKuY4SiY3adyjQnJkK8uoJe",
+                        "isCheapest": true,
+                        "price": {
+                            "currencyCode": "AED",
+                            "units": 236,
+                            "nanos": 500000000
+                        },
+                        "priceRounded": {
+                            "currencyCode": "AED",
+                            "units": 238,
+                            "nanos": 750000000
+                        }
+                    },
+                    {
+                        "departureDate": "2025-06-12",
+                        "searchDates": [
+                            "2025-06-12"
+                        ],
+                        "offsetDays": -3,
+                        "accuracyTrackerId": "01kp0_kh0lPPIRVopJAx0EMXeqW1d8gR7JSJVlu2TZKuY4SiY3adyjQnJkK8uoJe",
+                        "isCheapest": false,
+                        "price": {
+                            "currencyCode": "AED",
+                            "units": 244,
+                            "nanos": 400000000
+                        },
+                        "priceRounded": {
+                            "currencyCode": "AED",
+                            "units": 246,
+                            "nanos": 90000000
+                        }
+                    }
+                ]
+            }
+        }
+    },
+    "row": {
+        "required": {
+            "status": true,
+            "message": "Success",
+            "timestamp": 1747651613584,
+            "data": [
+                {
+                    "departureDate": "2025-06-10",
+                    "searchDates": [
+                        "2025-06-10"
+                    ],
+                    "offsetDays": -5,
+                    "accuracyTrackerId": "01kp0_kh0lPPIRVopJAx0O_YlYXDsel5E41QYsK-dW6uY4SiY3adyjQnJkK8uoJe",
+                    "isCheapest": false,
+                    "price": {
+                        "currencyCode": "USD",
+                        "units": 65,
+                        "nanos": 180000000
+                    },
+                    "priceRounded": {
+                        "currencyCode": "USD",
+                        "units": 66,
+                        "nanos": 0
+                    }
+                },
+                {
+                    "departureDate": "2025-06-11",
+                    "searchDates": [
+                        "2025-06-11"
+                    ],
+                    "offsetDays": -4,
+                    "accuracyTrackerId": "01kp0_kh0lPPIRVopJAx0LTl6AUql_syfcTAMjzHiKKuY4SiY3adyjQnJkK8uoJe",
+                    "isCheapest": true,
+                    "price": {
+                        "currencyCode": "USD",
+                        "units": 64,
+                        "nanos": 390000000
+                    },
+                    "priceRounded": {
+                        "currencyCode": "USD",
+                        "units": 65,
+                        "nanos": 0
+                    }
+                },
+                {
+                    "departureDate": "2025-06-12",
+                    "searchDates": [
+                        "2025-06-12"
+                    ],
+                    "offsetDays": -3,
+                    "accuracyTrackerId": "01kp0_kh0lPPIRVopJAx0EMXeqW1d8gR7JSJVlu2TZKuY4SiY3adyjQnJkK8uoJe",
+                    "isCheapest": false,
+                    "price": {
+                        "currencyCode": "USD",
+                        "units": 66,
+                        "nanos": 540000000
+                    },
+                    "priceRounded": {
+                        "currencyCode": "USD",
+                        "units": 67,
+                        "nanos": 0
+                    }
+                },
+                {
+                    "departureDate": "2025-06-13",
+                    "searchDates": [
+                        "2025-06-13"
+                    ],
+                    "offsetDays": -2,
+                    "accuracyTrackerId": "01kp0_kh0lPPIRVopJAx0EMXeqW1d8gR7JSJVlu2TZKuY4SiY3adyjQnJkK8uoJe",
+                    "isCheapest": false,
+                    "price": {
+                        "currencyCode": "USD",
+                        "units": 66,
+                        "nanos": 990000000
+                    },
+                    "priceRounded": {
+                        "currencyCode": "USD",
+                        "units": 67,
+                        "nanos": 0
+                    }
+                },
+                {
+                    "departureDate": "2025-06-14",
+                    "searchDates": [
+                        "2025-06-14"
+                    ],
+                    "offsetDays": -1,
+                    "accuracyTrackerId": "01kp0_kh0lPPIRVopJAx0EMXeqW1d8gR7JSJVlu2TZKuY4SiY3adyjQnJkK8uoJe",
+                    "isCheapest": false,
+                    "price": {
+                        "currencyCode": "USD",
+                        "units": 66,
+                        "nanos": 950000000
+                    },
+                    "priceRounded": {
+                        "currencyCode": "USD",
+                        "units": 67,
+                        "nanos": 0
+                    }
+                },
+                {
+                    "departureDate": "2025-06-15",
+                    "searchDates": [
+                        "2025-06-15"
+                    ],
+                    "offsetDays": 0,
+                    "accuracyTrackerId": "01kp0_kh0lPPIRVopJAx0KqTUYswzoDg2aCHyDHwf_euY4SiY3adyjQnJkK8uoJe",
+                    "isCheapest": false,
+                    "price": {
+                        "currencyCode": "USD",
+                        "units": 67,
+                        "nanos": 710000000
+                    },
+                    "priceRounded": {
+                        "currencyCode": "USD",
+                        "units": 68,
+                        "nanos": 0
+                    }
+                },
+                {
+                    "departureDate": "2025-06-16",
+                    "searchDates": [
+                        "2025-06-16"
+                    ],
+                    "offsetDays": 1,
+                    "accuracyTrackerId": "01kp0_kh0lPPIRVopJAx0EMXeqW1d8gR7JSJVlu2TZKuY4SiY3adyjQnJkK8uoJe",
+                    "isCheapest": false,
+                    "price": {
+                        "currencyCode": "USD",
+                        "units": 66,
+                        "nanos": 300000000
+                    },
+                    "priceRounded": {
+                        "currencyCode": "USD",
+                        "units": 67,
+                        "nanos": 0
+                    }
+                },
+                {
+                    "departureDate": "2025-06-17",
+                    "searchDates": [
+                        "2025-06-17"
+                    ],
+                    "offsetDays": 2,
+                    "accuracyTrackerId": "01kp0_kh0lPPIRVopJAx0O_YlYXDsel5E41QYsK-dW6uY4SiY3adyjQnJkK8uoJe",
+                    "isCheapest": false,
+                    "price": {
+                        "currencyCode": "USD",
+                        "units": 65,
+                        "nanos": 180000000
+                    },
+                    "priceRounded": {
+                        "currencyCode": "USD",
+                        "units": 66,
+                        "nanos": 0
+                    }
+                },
+                {
+                    "departureDate": "2025-06-18",
+                    "searchDates": [
+                        "2025-06-18"
+                    ],
+                    "offsetDays": 3,
+                    "accuracyTrackerId": "01kp0_kh0lPPIRVopJAx0LTl6AUql_syfcTAMjzHiKKuY4SiY3adyjQnJkK8uoJe",
+                    "isCheapest": true,
+                    "price": {
+                        "currencyCode": "USD",
+                        "units": 64,
+                        "nanos": 390000000
+                    },
+                    "priceRounded": {
+                        "currencyCode": "USD",
+                        "units": 65,
+                        "nanos": 0
+                    }
+                },
+                {
+                    "departureDate": "2025-06-19",
+                    "searchDates": [
+                        "2025-06-19"
+                    ],
+                    "offsetDays": 4,
+                    "accuracyTrackerId": "01kp0_kh0lPPIRVopJAx0LTl6AUql_syfcTAMjzHiKKuY4SiY3adyjQnJkK8uoJe",
+                    "isCheapest": true,
+                    "price": {
+                        "currencyCode": "USD",
+                        "units": 64,
+                        "nanos": 390000000
+                    },
+                    "priceRounded": {
+                        "currencyCode": "USD",
+                        "units": 65,
+                        "nanos": 0
+                    }
+                },
+                {
+                    "departureDate": "2025-06-20",
+                    "searchDates": [
+                        "2025-06-20"
+                    ],
+                    "offsetDays": 5,
+                    "accuracyTrackerId": "01kp0_kh0lPPIRVopJAx0EMXeqW1d8gR7JSJVlu2TZKuY4SiY3adyjQnJkK8uoJe",
+                    "isCheapest": false,
+                    "price": {
+                        "currencyCode": "USD",
+                        "units": 66,
+                        "nanos": 990000000
+                    },
+                    "priceRounded": {
+                        "currencyCode": "USD",
+                        "units": 67,
+                        "nanos": 0
+                    }
+                }
+            ]
+        },
+        "optional": {
+            "status": true,
+            "message": "Success",
+            "timestamp": 1747651629458,
+            "data": [
+                {
+                    "departureDate": "2025-06-10",
+                    "searchDates": [
+                        "2025-06-10"
+                    ],
+                    "offsetDays": -5,
+                    "accuracyTrackerId": "01kp0_kh0lPPIRVopJAx0O_YlYXDsel5E41QYsK-dW6uY4SiY3adyjQnJkK8uoJe",
+                    "isCheapest": false,
+                    "price": {
+                        "currencyCode": "AED",
+                        "units": 239,
+                        "nanos": 410000000
+                    },
+                    "priceRounded": {
+                        "currencyCode": "AED",
+                        "units": 242,
+                        "nanos": 420000000
+                    }
+                },
+                {
+                    "departureDate": "2025-06-11",
+                    "searchDates": [
+                        "2025-06-11"
+                    ],
+                    "offsetDays": -4,
+                    "accuracyTrackerId": "01kp0_kh0lPPIRVopJAx0LTl6AUql_syfcTAMjzHiKKuY4SiY3adyjQnJkK8uoJe",
+                    "isCheapest": true,
+                    "price": {
+                        "currencyCode": "AED",
+                        "units": 236,
+                        "nanos": 500000000
+                    },
+                    "priceRounded": {
+                        "currencyCode": "AED",
+                        "units": 238,
+                        "nanos": 750000000
+                    }
+                },
+                {
+                    "departureDate": "2025-06-12",
+                    "searchDates": [
+                        "2025-06-12"
+                    ],
+                    "offsetDays": -3,
+                    "accuracyTrackerId": "01kp0_kh0lPPIRVopJAx0EMXeqW1d8gR7JSJVlu2TZKuY4SiY3adyjQnJkK8uoJe",
+                    "isCheapest": false,
+                    "price": {
+                        "currencyCode": "AED",
+                        "units": 244,
+                        "nanos": 400000000
+                    },
+                    "priceRounded": {
+                        "currencyCode": "AED",
+                        "units": 246,
+                        "nanos": 90000000
+                    }
+                },
+                {
+                    "departureDate": "2025-06-13",
+                    "searchDates": [
+                        "2025-06-13"
+                    ],
+                    "offsetDays": -2,
+                    "accuracyTrackerId": "01kp0_kh0lPPIRVopJAx0EMXeqW1d8gR7JSJVlu2TZKuY4SiY3adyjQnJkK8uoJe",
+                    "isCheapest": false,
+                    "price": {
+                        "currencyCode": "AED",
+                        "units": 246,
+                        "nanos": 50000000
+                    },
+                    "priceRounded": {
+                        "currencyCode": "AED",
+                        "units": 246,
+                        "nanos": 90000000
+                    }
+                },
+                {
+                    "departureDate": "2025-06-14",
+                    "searchDates": [
+                        "2025-06-14"
+                    ],
+                    "offsetDays": -1,
+                    "accuracyTrackerId": "01kp0_kh0lPPIRVopJAx0EMXeqW1d8gR7JSJVlu2TZKuY4SiY3adyjQnJkK8uoJe",
+                    "isCheapest": false,
+                    "price": {
+                        "currencyCode": "AED",
+                        "units": 245,
+                        "nanos": 910000000
+                    },
+                    "priceRounded": {
+                        "currencyCode": "AED",
+                        "units": 246,
+                        "nanos": 90000000
+                    }
+                },
+                {
+                    "departureDate": "2025-06-15",
+                    "searchDates": [
+                        "2025-06-15"
+                    ],
+                    "offsetDays": 0,
+                    "accuracyTrackerId": "01kp0_kh0lPPIRVopJAx0KqTUYswzoDg2aCHyDHwf_euY4SiY3adyjQnJkK8uoJe",
+                    "isCheapest": false,
+                    "price": {
+                        "currencyCode": "AED",
+                        "units": 248,
+                        "nanos": 700000000
+                    },
+                    "priceRounded": {
+                        "currencyCode": "AED",
+                        "units": 249,
+                        "nanos": 760000000
+                    }
+                },
+                {
+                    "departureDate": "2025-06-16",
+                    "searchDates": [
+                        "2025-06-16"
+                    ],
+                    "offsetDays": 1,
+                    "accuracyTrackerId": "01kp0_kh0lPPIRVopJAx0EMXeqW1d8gR7JSJVlu2TZKuY4SiY3adyjQnJkK8uoJe",
+                    "isCheapest": false,
+                    "price": {
+                        "currencyCode": "AED",
+                        "units": 243,
+                        "nanos": 520000000
+                    },
+                    "priceRounded": {
+                        "currencyCode": "AED",
+                        "units": 246,
+                        "nanos": 90000000
+                    }
+                },
+                {
+                    "departureDate": "2025-06-17",
+                    "searchDates": [
+                        "2025-06-17"
+                    ],
+                    "offsetDays": 2,
+                    "accuracyTrackerId": "01kp0_kh0lPPIRVopJAx0O_YlYXDsel5E41QYsK-dW6uY4SiY3adyjQnJkK8uoJe",
+                    "isCheapest": false,
+                    "price": {
+                        "currencyCode": "AED",
+                        "units": 239,
+                        "nanos": 410000000
+                    },
+                    "priceRounded": {
+                        "currencyCode": "AED",
+                        "units": 242,
+                        "nanos": 420000000
+                    }
+                },
+                {
+                    "departureDate": "2025-06-18",
+                    "searchDates": [
+                        "2025-06-18"
+                    ],
+                    "offsetDays": 3,
+                    "accuracyTrackerId": "01kp0_kh0lPPIRVopJAx0LTl6AUql_syfcTAMjzHiKKuY4SiY3adyjQnJkK8uoJe",
+                    "isCheapest": true,
+                    "price": {
+                        "currencyCode": "AED",
+                        "units": 236,
+                        "nanos": 500000000
+                    },
+                    "priceRounded": {
+                        "currencyCode": "AED",
+                        "units": 238,
+                        "nanos": 750000000
+                    }
+                },
+                {
+                    "departureDate": "2025-06-19",
+                    "searchDates": [
+                        "2025-06-19"
+                    ],
+                    "offsetDays": 4,
+                    "accuracyTrackerId": "01kp0_kh0lPPIRVopJAx0LTl6AUql_syfcTAMjzHiKKuY4SiY3adyjQnJkK8uoJe",
+                    "isCheapest": true,
+                    "price": {
+                        "currencyCode": "AED",
+                        "units": 236,
+                        "nanos": 500000000
+                    },
+                    "priceRounded": {
+                        "currencyCode": "AED",
+                        "units": 238,
+                        "nanos": 750000000
+                    }
+                },
+                {
+                    "departureDate": "2025-06-20",
+                    "searchDates": [
+                        "2025-06-20"
+                    ],
+                    "offsetDays": 5,
+                    "accuracyTrackerId": "01kp0_kh0lPPIRVopJAx0EMXeqW1d8gR7JSJVlu2TZKuY4SiY3adyjQnJkK8uoJe",
+                    "isCheapest": false,
+                    "price": {
+                        "currencyCode": "AED",
+                        "units": 246,
+                        "nanos": 50000000
+                    },
+                    "priceRounded": {
+                        "currencyCode": "AED",
+                        "units": 246,
+                        "nanos": 90000000
+                    }
+                }
+            ]
+        }
+    }
+}

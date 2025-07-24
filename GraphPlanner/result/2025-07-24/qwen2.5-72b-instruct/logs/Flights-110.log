@@ -1,0 +1,43 @@
+2025-07-24 09:31:11,683 - evaluation_logger_Flights-110 - INFO - Test Example Flights-110
+2025-07-24 09:31:11,683 - evaluation_logger_Flights-110 - INFO - Query: My friend plans to depart from Guangzhou to Chicago around November 20, 2024, with a layover in Amsterdam. Look for the departure dates of the cheapest multi-stop flight and get the seat map for the flight. Please note, she doesn't accept flights with overnight layovers.
+2025-07-24 14:37:39,261 - evaluation_logger_Flights-110 - INFO - Test Example Flights-110
+2025-07-24 14:37:39,261 - evaluation_logger_Flights-110 - INFO - Query: My friend plans to depart from Guangzhou to Chicago around November 20, 2024, with a layover in Amsterdam. Look for the departure dates of the cheapest multi-stop flight and get the seat map for the flight. Please note, she doesn't accept flights with overnight layovers.
+2025-07-24 14:39:51,566 - evaluation_logger_Flights-110 - INFO - Start compare_single_call: 
+{'name': 'Search_Flight_Location', 'arguments': {'query': 'Guangzhou'}}
+{'name': 'Search_Flight_Location', 'arguments': {'query': 'Guangzhou'}}
+2025-07-24 14:39:51,566 - evaluation_logger_Flights-110 - INFO - Rule-based compare success.
+2025-07-24 14:39:51,566 - evaluation_logger_Flights-110 - INFO - Success matched: [{'name': 'Search_Flight_Location', 'arguments': {'query': 'Guangzhou'}}]
+2025-07-24 14:39:51,570 - evaluation_logger_Flights-110 - INFO - Start compare_single_call: 
+{'name': 'Search_Flight_Location', 'arguments': {'query': 'Amsterdam'}}
+{'name': 'Search_Flight_Location', 'arguments': {'query': 'Amsterdam'}}
+2025-07-24 14:39:51,570 - evaluation_logger_Flights-110 - INFO - Rule-based compare success.
+2025-07-24 14:39:51,570 - evaluation_logger_Flights-110 - INFO - Success matched: [{'name': 'Search_Flight_Location', 'arguments': {'query': 'Amsterdam'}}]
+2025-07-24 14:39:51,571 - evaluation_logger_Flights-110 - INFO - Start compare_single_call: 
+{'name': 'Search_Flight_Location', 'arguments': {'query': 'Chicago'}}
+{'name': 'Search_Flight_Location', 'arguments': {'query': 'Chicago'}}
+2025-07-24 14:39:51,571 - evaluation_logger_Flights-110 - INFO - Rule-based compare success.
+2025-07-24 14:39:51,572 - evaluation_logger_Flights-110 - INFO - Success matched: [{'name': 'Search_Flight_Location', 'arguments': {'query': 'Chicago'}}]
+2025-07-24 14:39:52,252 - evaluation_logger_Flights-110 - INFO - Start compare_single_call: 
+{'name': 'Search_Flights_Multi_Stops', 'arguments': {'legs': [{'fromId': 'CAN.AIRPORT', 'toId': 'AMS.AIRPORT', 'date': '2024-11-20'}, {'fromId': 'AMS.AIRPORT', 'toId': 'CHI.CITY', 'date': '2024-11-20'}], 'sort': 'CHEAPEST'}}
+{'name': 'Search_Flights_Multi_Stops', 'arguments': {'legs': [{'fromId': 'CAN.AIRPORT', 'toId': 'AMS.AIRPORT', 'date': '2024-11-18'}, {'fromId': 'AMS.AIRPORT', 'toId': 'CHI.CITY', 'date': '2024-11-18'}], 'sort': 'CHEAPEST'}}
+2025-07-24 14:40:00,820 - evaluation_logger_Flights-110 - DEBUG - LLM-based comparison output: {'is_equal': False, 'reason': "The dates in the legs parameters are different: '2024-11-20' in call 1 vs '2024-11-18' in call 2."}
+2025-07-24 14:40:00,821 - evaluation_logger_Flights-110 - INFO - All compare method failed.
+2025-07-24 14:40:00,821 - evaluation_logger_Flights-110 - INFO - Success matched: []
+2025-07-24 14:41:02,060 - evaluation_logger_Flights-110 - INFO - Start compare_single_call: 
+{'name': 'Search_Flights_Multi_Stops', 'arguments': {'legs': [{'fromId': 'CAN.AIRPORT', 'toId': 'AMS.AIRPORT', 'date': '2024-11-20'}, {'fromId': 'AMS.AIRPORT', 'toId': 'CHI.CITY', 'date': '2024-11-21'}], 'sort': 'CHEAPEST'}}
+{'name': 'Search_Flights_Multi_Stops', 'arguments': {'legs': [{'fromId': 'CAN.AIRPORT', 'toId': 'AMS.AIRPORT', 'date': '2024-11-18'}, {'fromId': 'AMS.AIRPORT', 'toId': 'CHI.CITY', 'date': '2024-11-18'}], 'sort': 'CHEAPEST'}}
+2025-07-24 14:41:07,997 - evaluation_logger_Flights-110 - DEBUG - LLM-based comparison output: {'is_equal': False, 'reason': 'The dates in the legs parameters are different between the two function calls.'}
+2025-07-24 14:41:07,998 - evaluation_logger_Flights-110 - INFO - All compare method failed.
+2025-07-24 14:41:07,998 - evaluation_logger_Flights-110 - INFO - Success matched: []
+2025-07-24 14:42:12,652 - evaluation_logger_Flights-110 - INFO - Start compare_single_call: 
+{'name': 'Search_Flights_Multi_Stops', 'arguments': {'legs': [{'fromId': 'CAN.AIRPORT', 'toId': 'AMS.AIRPORT', 'date': '2024-11-20'}, {'fromId': 'AMS.AIRPORT', 'toId': 'ORD.AIRPORT', 'date': '2024-11-21'}], 'sort': 'CHEAPEST'}}
+{'name': 'Search_Flights_Multi_Stops', 'arguments': {'legs': [{'fromId': 'CAN.AIRPORT', 'toId': 'AMS.AIRPORT', 'date': '2024-11-18'}, {'fromId': 'AMS.AIRPORT', 'toId': 'CHI.CITY', 'date': '2024-11-18'}], 'sort': 'CHEAPEST'}}
+2025-07-24 14:42:18,850 - evaluation_logger_Flights-110 - DEBUG - LLM-based comparison output: {'is_equal': False, 'reason': "The legs parameters in the two function calls have different 'date' values and different 'toId' values in the second leg."}
+2025-07-24 14:42:18,850 - evaluation_logger_Flights-110 - INFO - All compare method failed.
+2025-07-24 14:42:18,850 - evaluation_logger_Flights-110 - INFO - Success matched: []
+2025-07-24 14:44:07,998 - evaluation_logger_Flights-110 - INFO - Start compare_single_call: 
+{'name': 'Search_Flights_Multi_Stops', 'arguments': {'legs': [{'fromId': 'CAN.AIRPORT', 'toId': 'AMS.AIRPORT', 'date': '2024-11-20'}, {'fromId': 'AMS.AIRPORT', 'toId': 'ORD.AIRPORT', 'date': '2024-11-21'}], 'sort': 'CHEAPEST'}}
+{'name': 'Search_Flights_Multi_Stops', 'arguments': {'legs': [{'fromId': 'CAN.AIRPORT', 'toId': 'AMS.AIRPORT', 'date': '2024-11-18'}, {'fromId': 'AMS.AIRPORT', 'toId': 'CHI.CITY', 'date': '2024-11-18'}], 'sort': 'CHEAPEST'}}
+2025-07-24 14:44:14,406 - evaluation_logger_Flights-110 - DEBUG - LLM-based comparison output: {'is_equal': False, 'reason': "The legs parameters in the two function calls have different values for 'toId' and 'date' in the second leg, and the first leg's 'date' is also different."}
+2025-07-24 14:44:14,406 - evaluation_logger_Flights-110 - INFO - All compare method failed.
+2025-07-24 14:44:14,407 - evaluation_logger_Flights-110 - INFO - Success matched: []

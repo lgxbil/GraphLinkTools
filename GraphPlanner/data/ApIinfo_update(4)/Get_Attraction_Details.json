@@ -1,0 +1,119 @@
+{
+    "name": "Get_Attraction_Details",
+    "docs_row": {
+        "name": "Get_Attraction_Details",
+        "description": "Search the attraction detail information. EndPoint: /api/v1/attraction/getAttractionDetails",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "slug": {
+                    "type": "string",
+                    "description": " `slug` can be retrieved from `api/v1/attraction/searchLocation`**(Search Attraction Location)** endpoint in **Attraction** collection as `productSlug ` inside `products` or `destinations`."
+                }
+            },
+            "required": [
+                "slug"
+            ]
+        }
+    },
+    "api_response_schema": {
+        "__typename": "AttractionsProduct",
+        "additionalBookingInfo": {
+            "__typename": "AttractionsAdditionalBookingInfo",
+            "freeForChildren": {
+                "__typename": "AttractionsFreeForChildren",
+                "age": {
+                    "__typename": "MinMax",
+                    "label": "Children aged 0 to 3 years can participate for free. "
+                }
+            }
+        },
+        "additionalInfo": "Please note that food and drinks are strictly prohibited in the conservatories (Flower Dome and Clou",
+        "applicableTerms": [
+            {
+                "__typename": "TermsConditions",
+                "policyProvider": "Musement"
+            }
+        ],
+        "cancellationPolicy": {
+            "__typename": "AttractionsCancellationPolicy",
+            "hasFreeCancellation": false
+        },
+        "description": "This admission ticket will gain you access to Gardens by the Bay, a Marina Bay waterfront attraction",
+        "flags": [
+            {
+                "__typename": "AttractionsProductFlags",
+                "flag": "bestseller",
+                "value": true,
+                "rank": 2
+            }
+        ],
+        "id": "PRPSPHOxMKB1",
+        "isBookable": true,
+        "name": "Admission to Gardens by the Bay",
+        "offers": [
+            {
+                "__typename": "Offer",
+                "availabilityType": "date_time",
+                "id": "OFvB7YbmlQvy"
+            }
+        ],
+        "onSiteRequirements": {
+            "__typename": "OnSiteRequirements"
+        },
+        "operatedBy": "Globaltix Pte Ltd",
+        "representativePrice": {
+            "__typename": "AttractionsPrice",
+            "chargeAmount": 15.16,
+            "currency": "USD",
+            "publicAmount": 15.16
+        },
+        "reviews": {
+            "__typename": "AttractionsGetReviewsResponse",
+            "total": 218,
+            "reviews": [
+                {
+                    "__typename": "AttractionsReview",
+                    "id": "RSxd9p8EvWra",
+                    "epochMs": 1728811574000,
+                    "language": "zh-tw",
+                    "numericRating": 4,
+                    "user": {
+                        "__typename": "AttractionsReviewUser",
+                        "name": "志龍",
+                        "cc1": "tw"
+                    }
+                }
+            ]
+        },
+        "reviewsStats": {
+            "__typename": "AttractionsProductReviewStats",
+            "allReviewsCount": 57,
+            "percentage": "81%",
+            "combinedNumericStats": {
+                "__typename": "AttractionsProductCombinedReviewStats",
+                "average": 4.3,
+                "total": 167
+            }
+        },
+        "shortDescription": "An exploration of the nature park's Flower Dome and Cloud Forest",
+        "slug": "prpsphoxmkb1-admission-to-gardens-by-the-bay",
+        "supportedFeatures": {
+            "__typename": "AttractionsProductSupportedFeatures",
+            "nativeApp": true,
+            "nativeAppBookProcess": true,
+            "liveAvailabilityCheckSupported": true
+        },
+        "uniqueSellingPoints": [
+            "Insights into horticulture and gardening within Singapore"
+        ],
+        "ufiDetails": {
+            "__typename": "AttractionLocationResponse",
+            "ufi": -73635,
+            "bCityName": "Singapore"
+        },
+        "whatsIncluded": [
+            "Admission tickets"
+        ]
+    }
+}

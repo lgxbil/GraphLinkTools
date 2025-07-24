@@ -1,0 +1,328 @@
+{
+    "name": "Search_Hotels_By_Coordinates",
+    "docs_row": {
+        "name": "Search_Hotels_By_Coordinates",
+        "endpoint": "/api/v1/hotels/searchHotelsByCoordinates",
+        "func_description": "Search for hotels around a given geographical coordinates. ",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "latitude": {
+                    "type": "String",
+                    "description": "Latitude of the searched location. latitude can be retrieved from api/v1/meta/locationToLatLong(Location to Lat Long) endpoint in Meta collection.",
+                    "example_value": "19.24232736426361",
+                    "required": true
+                },
+                "longitude": {
+                    "type": "String",
+                    "description": "Longitude of the searched location. longitude can be retrieved from api/v1/meta/locationToLatLong(Location to Lat Long) endpoint in Meta collection.",
+                    "example_value": "72.85841985686734",
+                    "required": true
+                },
+                "arrival_date": {
+                    "type": "Date (yyyy-mm-dd)",
+                    "description": "The date on which you will arrive or check-in",
+                    "example_value": "",
+                    "required": true
+                },
+                "departure_date": {
+                    "type": "Date (yyyy-mm-dd)",
+                    "description": "The date of departure or check-out.",
+                    "example_value": "",
+                    "required": true
+                },
+                "radius": {
+                    "type": "Number",
+                    "description": "The hotels that are within the radius. The radius is measured in kilometers.\nDefault is set to 100.\nRange is between 10 to 500.",
+                    "example_value": "",
+                    "required": false
+                },
+                "adults": {
+                    "type": "Number",
+                    "description": "The number of guests who are 18 years of age or older. The default value is set to 1.",
+                    "example_value": "1",
+                    "required": false
+                },
+                "children_age": {
+                    "type": "String",
+                    "description": "The number of children, including infants, who are under 18.\nExample:\nChild 1 Age = 8 months\nChild 2 Age = 1 year\nChild 3 Age = 17 years\nHere is what the request parameter would look like:\nchildren_age: 0,1,17",
+                    "example_value": "0,17",
+                    "required": false
+                },
+                "room_qty": {
+                    "type": "Number",
+                    "description": "The number of rooms that are required. The default value is set to 1.",
+                    "example_value": "1",
+                    "required": false
+                },
+                "price_min": {
+                    "type": "Number",
+                    "description": "Minimum Price filter for search.",
+                    "example_value": "",
+                    "required": false
+                },
+                "price_max": {
+                    "type": "Number",
+                    "description": "Maximum Price filter for search.",
+                    "example_value": "",
+                    "required": false
+                },
+                "units": {
+                    "type": "Enum",
+                    "description": "The measurement of distance in metric or imperial.",
+                    "example_value": "",
+                    "required": false
+                },
+                "page_number": {
+                    "type": "String",
+                    "description": "",
+                    "example_value": "1",
+                    "required": false
+                },
+                "temperature_unit": {
+                    "type": "Enum",
+                    "description": "The temperature unit in Fahrenheit or Celsius.\nc = Celsius\nf = Fahrenheit",
+                    "example_value": "",
+                    "required": false
+                },
+                "languagecode": {
+                    "type": "String",
+                    "description": "To obtain the response data in a specific language, enter the languagecode. languagecode can be retrieved from api/v1/meta/getLanguages(Get Languages\n) endpoint in Meta collection.",
+                    "example_value": "en-us",
+                    "required": false
+                },
+                "currency_code": {
+                    "type": "String",
+                    "description": "The currency code. currency_code can be retrieved from api/v1/meta/getCurrency(Get Currency) endpoint in Hotels collection.",
+                    "example_value": "EUR",
+                    "required": false
+                },
+                "location": {
+                    "type": "String",
+                    "description": "location can be retrieved from api/v1/meta/getLocations(Get Location) endpoint in Meta collection.",
+                    "example_value": "US",
+                    "required": false
+                }
+            },
+            "required": [
+                "latitude",
+                "longitude",
+                "arrival_date",
+                "departure_date"
+            ]
+        }
+    },
+    "api_response_schema": {
+        "count": 3737,
+        "primary_count": 3737,
+        "extended_count": 0,
+        "page_loading_threshold": 10,
+        "filters": [
+            {
+                "field": "fc",
+                "title": "Free cancellation "
+            }
+        ],
+        "result": [
+            {
+                "hotel_id": 6333737,
+                "default_wishlist_name": "Kissimmee",
+                "bwallet": {
+                    "hotel_eligibility": 0
+                },
+                "is_no_prepayment_block": 0,
+                "has_swimming_pool": 1,
+                "is_genius_deal": 0,
+                "type": "property_card",
+                "review_score_word": "Superb",
+                "default_language": "xu",
+                "main_photo_id": 384985967,
+                "preferred": 1,
+                "is_free_cancellable": 1,
+                "ufi": 20022851,
+                "countrycode": "us",
+                "composite_price_breakdown": {
+                    "strikethrough_amount": {
+                        "value": 360,
+                        "amount_unrounded": "US$360",
+                        "currency": "USD",
+                        "amount_rounded": "US$360"
+                    },
+                    "gross_amount_hotel_currency": {
+                        "currency": "USD",
+                        "value": 298.08,
+                        "amount_unrounded": "US$298.08",
+                        "amount_rounded": "US$298"
+                    },
+                    "gross_amount": {
+                        "currency": "USD",
+                        "amount_unrounded": "US$298.08",
+                        "value": 298.08,
+                        "amount_rounded": "US$298"
+                    },
+                    "charges_details": {
+                        "amount": {
+                            "currency": "USD",
+                            "value": 321
+                        },
+                        "mode": "extra_charges"
+                    },
+                    "all_inclusive_amount_hotel_currency": {
+                        "amount_rounded": "US$615",
+                        "currency": "USD",
+                        "amount_unrounded": "US$614.96",
+                        "value": 614.9566
+                    },
+                    "has_long_stays_monthly_rate_price": 0,
+                    "discounted_amount": {
+                        "currency": "USD",
+                        "amount_unrounded": "US$61.92",
+                        "value": 61.92,
+                        "amount_rounded": "US$62"
+                    },
+                    "included_taxes_and_charges_amount": {
+                        "amount_unrounded": "US$0",
+                        "value": 0,
+                        "currency": "USD",
+                        "amount_rounded": "US$0"
+                    },
+                    "items": [
+                        {
+                            "name": "Mobile-only price",
+                            "item_amount": {
+                                "currency": "USD",
+                                "value": 36,
+                                "amount_unrounded": "US$36",
+                                "amount_rounded": "US$36"
+                            },
+                            "details": "You\u2019re getting a reduced rate compared to the rate available on a computer or laptop.",
+                            "base": {
+                                "kind": "rate"
+                            },
+                            "kind": "discount",
+                            "identifier": "mobile-discount"
+                        }
+                    ],
+                    "strikethrough_amount_per_night": {
+                        "currency": "USD",
+                        "value": 180,
+                        "amount_unrounded": "US$180",
+                        "amount_rounded": "US$180"
+                    },
+                    "benefits": [
+                        {
+                            "details": "You\u2019re getting a reduced rate compared to the rate available on a computer or laptop.",
+                            "identifier": "mobile-rate",
+                            "badge_variant": "constructive",
+                            "name": "Mobile-only price",
+                            "kind": "badge"
+                        }
+                    ],
+                    "has_long_stays_weekly_rate_price": 0,
+                    "excluded_amount": {
+                        "amount_unrounded": "US$320.63",
+                        "value": 320.635,
+                        "currency": "USD",
+                        "amount_rounded": "US$321"
+                    },
+                    "gross_amount_per_night": {
+                        "value": 149.04,
+                        "amount_unrounded": "US$149.04",
+                        "currency": "USD",
+                        "amount_rounded": "US$149"
+                    },
+                    "net_amount": {
+                        "amount_rounded": "US$298",
+                        "value": 298.08,
+                        "amount_unrounded": "US$298.08",
+                        "currency": "USD"
+                    },
+                    "price_display_config": [
+                        {
+                            "value": 0,
+                            "key": "use_nightly_prices"
+                        }
+                    ],
+                    "all_inclusive_amount": {
+                        "amount_rounded": "US$615",
+                        "currency": "USD",
+                        "value": 614.9566,
+                        "amount_unrounded": "US$614.96"
+                    },
+                    "client_translations": {
+                        "tooltip_total_text": "Total"
+                    }
+                },
+                "hotel_include_breakfast": 0,
+                "city": "Kissimmee",
+                "hotel_name_trans": "Terra Verde Vacation Rentals",
+                "genius_discount_percentage": 0,
+                "booking_home": {
+                    "is_single_unit_property": 1,
+                    "quality_class": 4,
+                    "is_booking_home": 1,
+                    "group": "house_like",
+                    "segment": 2
+                },
+                "id": "property_card_6333737",
+                "currencycode": "USD",
+                "has_free_parking": 1,
+                "hotel_name": "Terra Verde Vacation Rentals",
+                "review_nr": 19,
+                "accommodation_type": 213,
+                "block_ids": [
+                    "633373701_335097087_1_0_0"
+                ],
+                "class_is_estimated": 0,
+                "preferred_plus": 1,
+                "urgency_message": "Only 1 left at this price on Booking.com",
+                "unit_configuration_label": "<b>Entire villa \u2013 119\u00a0m\u00b2</b>: 5\u00a0beds \u2022 3\u00a0bedrooms \u2022 3\u00a0bathrooms",
+                "timezone": "America/New_York",
+                "is_tpi_exclusive_property": 0,
+                "is_smart_deal": 0,
+                "min_total_price": 298.08,
+                "city_in_trans": "in Kissimmee",
+                "checkout": {
+                    "until": "11:00",
+                    "from": "08:00"
+                },
+                "longitude": -81.470303,
+                "latitude": 28.292347,
+                "checkin": {
+                    "from": "17:00",
+                    "until": "00:00"
+                },
+                "extended": 0,
+                "last_reservation_data": {
+                    "last_reservation_ellapsed_months": 1
+                },
+                "badges": [
+                    {
+                        "badge_variant": "constructive",
+                        "id": "Mobile Rate",
+                        "text": "Mobile-only price"
+                    }
+                ],
+                "class": 0,
+                "review_score": 9.3,
+                "hotel_has_vb_boost": 0,
+                "soldout": 0
+            }
+        ],
+        "room_distribution": [
+            {
+                "adults": "1"
+            }
+        ],
+        "b_max_los_data": {
+            "has_extended_los": 1,
+            "extended_los": 90,
+            "is_fullon": 0,
+            "experiment": "long_stays_ios_extend_los_2",
+            "max_allowed_los": 90,
+            "default_los": 45
+        },
+        "unfiltered_count": 13077,
+        "unfiltered_primary_count": 13077
+    }
+}

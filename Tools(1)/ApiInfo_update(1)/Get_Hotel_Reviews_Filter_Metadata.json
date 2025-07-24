@@ -1,0 +1,500 @@
+{
+    "name": "Get_Hotel_Reviews_Filter_Metadata",
+    "docs_row": {
+        "name": "Get_Hotel_Reviews_Filter_Metadata",
+        "endpoint": "/api/v1/hotels/getHotelReviewsFilterMetadata",
+        "func_description": "",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "hotel_id": {
+                    "type": "String",
+                    "description": "hotel_id can be retrieved from api/v1/hotels/searchHotels(Search Hotels) or api/v1/hotels/searchHotelsByCoordinates(Search Hotels By Coordinates\n) endpoint in Hotels collection.",
+                    "example_value": "1377073",
+                    "required": true
+                },
+                "languagecode": {
+                    "type": "String",
+                    "description": "To obtain the response data in a specific language, enter the languagecode. languagecode can be retrieved from api/v1/meta/getLanguages(Get Languages\n) endpoint in Meta collection.",
+                    "example_value": "en-us",
+                    "required": false
+                }
+            },
+            "required": [
+                "hotel_id"
+            ]
+        }
+    },
+    "instance": [],
+    "category": null,
+    "tool": null,
+    "api_idx": 13,
+    "params": {
+        "type": "object",
+        "properties": {
+            "hotel_id": {
+                "type": "String",
+                "description": "hotel_id can be retrieved from api/v1/hotels/searchHotels(Search Hotels) or api/v1/hotels/searchHotelsByCoordinates(Search Hotels By Coordinates\n) endpoint in Hotels collection.",
+                "example_value": "1377073",
+                "required": true
+            },
+            "languagecode": {
+                "type": "String",
+                "description": "To obtain the response data in a specific language, enter the languagecode. languagecode can be retrieved from api/v1/meta/getLanguages(Get Languages\n) endpoint in Meta collection.",
+                "example_value": "en-us",
+                "required": false
+            }
+        },
+        "required": [
+            "hotel_id"
+        ]
+    },
+    "api_response_schema": null,
+    "responses": [
+        {
+            "function_name": "Get_Hotel_Reviews_Filter_Metadata",
+            "arguments": {
+                "hotel_id": "1377073"
+            },
+            "observation": {
+                "sort": {
+                    "id": "user_sort",
+                    "categories": [
+                        {
+                            "display_value": "Most relevant",
+                            "id": "sort_most_relevant"
+                        },
+                        {
+                            "display_value": "Newest first",
+                            "id": "sort_recent_desc"
+                        },
+                        {
+                            "display_value": "Oldest first",
+                            "id": "sort_recent_asc"
+                        }
+                    ],
+                    "title": "Sort by:"
+                },
+                "filters": [
+                    {
+                        "default_display_value_with_count": "All reviews (14183)",
+                        "default_display_value": "All reviews",
+                        "id": "filter_customer_type",
+                        "type": "radio_button",
+                        "categories": [
+                            {
+                                "display_value": "Couple",
+                                "display_value_with_count": "Couple (5798)",
+                                "count": 5798,
+                                "id": "couple"
+                            },
+                            {
+                                "id": "family_with_children",
+                                "count": 4824,
+                                "display_value_with_count": "Family (4824)",
+                                "display_value": "Family"
+                            },
+                            {
+                                "id": "review_category_group_of_friends",
+                                "count": 1934,
+                                "display_value_with_count": "Group of friends (1934)",
+                                "display_value": "Group of friends"
+                            }
+                        ],
+                        "title": "Filter by:"
+                    },
+                    {
+                        "default_display_value": "All languages",
+                        "default_display_value_with_count": "All languages (14167)",
+                        "categories": [
+                            {
+                                "display_value_with_count": "American English (384)",
+                                "display_value": "American English",
+                                "id": "xu",
+                                "count": 384
+                            },
+                            {
+                                "id": "de",
+                                "count": 7952,
+                                "display_value_with_count": "Deutsch (7952)",
+                                "display_value": "Deutsch"
+                            },
+                            {
+                                "display_value_with_count": "Eesti (21)",
+                                "display_value": "Eesti",
+                                "count": 21,
+                                "id": "et"
+                            }
+                        ],
+                        "title": "Show reviews in:",
+                        "id": "filter_language",
+                        "type": "checkbox"
+                    },
+                    {
+                        "default_display_value_with_count": "Time of year",
+                        "default_display_value": "Time of year",
+                        "id": "filter_time_of_year",
+                        "title": "Filter by:",
+                        "categories": [
+                            {
+                                "count": 0,
+                                "id": "03_06",
+                                "display_value": "Mar-May",
+                                "display_value_with_count": "Mar-May"
+                            },
+                            {
+                                "count": 0,
+                                "id": "06_09",
+                                "display_value": "Jun-Aug",
+                                "display_value_with_count": "Jun-Aug"
+                            },
+                            {
+                                "id": "09_12",
+                                "count": 0,
+                                "display_value_with_count": "Sep-Nov",
+                                "display_value": "Sep-Nov"
+                            }
+                        ],
+                        "type": "checkbox"
+                    }
+                ],
+                "total_reviews": 14183,
+                "hotel_id": "1377073"
+            }
+        },
+        {
+            "function_name": "Get_Hotel_Reviews_Filter_Metadata",
+            "arguments": {
+                "hotel_id": "1377073"
+            },
+            "observation": {
+                "total_reviews": 14183,
+                "sort": {
+                    "id": "user_sort",
+                    "categories": [
+                        {
+                            "display_value": "Most relevant",
+                            "id": "sort_most_relevant"
+                        },
+                        {
+                            "id": "sort_recent_desc",
+                            "display_value": "Newest first"
+                        },
+                        {
+                            "display_value": "Oldest first",
+                            "id": "sort_recent_asc"
+                        }
+                    ],
+                    "title": "Sort by:"
+                },
+                "hotel_id": "1377073",
+                "filters": [
+                    {
+                        "default_display_value_with_count": "All reviews (14183)",
+                        "id": "filter_customer_type",
+                        "categories": [
+                            {
+                                "display_value": "Couple",
+                                "id": "couple",
+                                "count": 5798,
+                                "display_value_with_count": "Couple (5798)"
+                            },
+                            {
+                                "display_value": "Family",
+                                "count": 4824,
+                                "id": "family_with_children",
+                                "display_value_with_count": "Family (4824)"
+                            },
+                            {
+                                "id": "review_category_group_of_friends",
+                                "count": 1934,
+                                "display_value_with_count": "Group of friends (1934)",
+                                "display_value": "Group of friends"
+                            }
+                        ],
+                        "type": "radio_button",
+                        "default_display_value": "All reviews",
+                        "title": "Filter by:"
+                    },
+                    {
+                        "default_display_value": "All languages",
+                        "title": "Show reviews in:",
+                        "id": "filter_language",
+                        "default_display_value_with_count": "All languages (14167)",
+                        "categories": [
+                            {
+                                "display_value": "American English",
+                                "count": 384,
+                                "id": "xu",
+                                "display_value_with_count": "American English (384)"
+                            },
+                            {
+                                "display_value_with_count": "Deutsch (7952)",
+                                "count": 7952,
+                                "id": "de",
+                                "display_value": "Deutsch"
+                            },
+                            {
+                                "id": "et",
+                                "count": 21,
+                                "display_value_with_count": "Eesti (21)",
+                                "display_value": "Eesti"
+                            }
+                        ],
+                        "type": "checkbox"
+                    },
+                    {
+                        "type": "checkbox",
+                        "title": "Filter by:",
+                        "default_display_value": "Time of year",
+                        "id": "filter_time_of_year",
+                        "default_display_value_with_count": "Time of year",
+                        "categories": [
+                            {
+                                "display_value": "Mar-May",
+                                "count": 0,
+                                "id": "03_06",
+                                "display_value_with_count": "Mar-May"
+                            },
+                            {
+                                "display_value": "Jun-Aug",
+                                "display_value_with_count": "Jun-Aug",
+                                "count": 0,
+                                "id": "06_09"
+                            },
+                            {
+                                "display_value": "Sep-Nov",
+                                "display_value_with_count": "Sep-Nov",
+                                "count": 0,
+                                "id": "09_12"
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+    ],
+    "response_summary": "The API response provides sorting and filtering options for reviews of a hotel with a total of 14,183 reviews. Users can sort the reviews by \"Most relevant,\" \"Newest first,\" or \"Oldest first.\" Additionally, there are several filters available to refine the reviews. \n\nFirst, reviews can be filtered by customer type, with options including \"Couple\" (5,798 reviews), \"Family\" (4,824 reviews), and \"Group of friends\" (1,934 reviews). \n\nSecond, users can filter reviews by language, with choices such as \"American English\" (384 reviews), \"Deutsch\" (7,952 reviews), and \"Eesti\" (21 reviews). \n\nLastly, there is a filter for the time of year, though currently, there are no reviews available for the specified periods: \"Mar-May,\" \"Jun-Aug,\" or \"Sep-Nov.\" \n\nThe hotel in question has the ID \"1377073,\" and these options allow users to navigate and explore the reviews more effectively.",
+    "enhance_func_desc": "This API is ideal for travelers researching hotel reviews. It retrieves sorting and filtering metadata for hotel reviews, enabling users to sort by relevance, date, or filter by customer type, language, and season. The response includes available filter options and review counts, helping users efficiently navigate large review datasets. The hotel ID must be obtained from the SearchHotels or SearchHotelsByCoordinates API.",
+    "enhance_params_desc": {
+        "enhanced_parameters": {
+            "hotel_id": "Unique identifier for the hotel, sourced from searchHotels or searchHotelsByCoordinates.",
+            "languagecode": "Language preference for the response metadata (e.g., filter labels)."
+        }
+    },
+    "enhance_resfield_desc": {
+        "response_fields": {
+            "sort": {
+                "type": "Object",
+                "description": "An object containing sorting options for hotel reviews.",
+                "ob_properties": {
+                    "id": {
+                        "type": "String",
+                        "description": "The identifier for the sorting section (e.g., 'user_sort')."
+                    },
+                    "categories": {
+                        "type": "Array",
+                        "description": "A list of available sorting options for reviews.",
+                        "ar_items": {
+                            "type": "Object",
+                            "description": "An object representing a single sorting option.",
+                            "ob_properties": {
+                                "display_value": {
+                                    "type": "String",
+                                    "description": "The display name of the sorting option (e.g., 'Most relevant')."
+                                },
+                                "id": {
+                                    "type": "String",
+                                    "description": "The identifier for the sorting option (e.g., 'sort_most_relevant')."
+                                }
+                            }
+                        }
+                    },
+                    "title": {
+                        "type": "String",
+                        "description": "The title of the sorting section (e.g., 'Sort by:')."
+                    }
+                }
+            },
+            "filters": {
+                "type": "Array",
+                "description": "A list of filter options for refining hotel reviews.",
+                "ar_items": {
+                    "type": "Object",
+                    "description": "An object representing a single filter category.",
+                    "ob_properties": {
+                        "default_display_value_with_count": {
+                            "type": "String",
+                            "description": "The default display value for the filter, including the total count (e.g., 'All reviews (14183)')."
+                        },
+                        "default_display_value": {
+                            "type": "String",
+                            "description": "The default display value for the filter (e.g., 'All reviews')."
+                        },
+                        "id": {
+                            "type": "String",
+                            "description": "The identifier for the filter category (e.g., 'filter_customer_type')."
+                        },
+                        "type": {
+                            "type": "String",
+                            "description": "The type of filter (e.g., 'radio_button' or 'checkbox')."
+                        },
+                        "categories": {
+                            "type": "Array",
+                            "description": "A list of available filter options within the category.",
+                            "ar_items": {
+                                "type": "Object",
+                                "description": "An object representing a single filter option.",
+                                "ob_properties": {
+                                    "display_value": {
+                                        "type": "String",
+                                        "description": "The display name of the filter option (e.g., 'Couple')."
+                                    },
+                                    "display_value_with_count": {
+                                        "type": "String",
+                                        "description": "The display name of the filter option, including the count (e.g., 'Couple (5798)')."
+                                    },
+                                    "count": {
+                                        "type": "Number",
+                                        "description": "The number of reviews matching this filter option."
+                                    },
+                                    "id": {
+                                        "type": "String",
+                                        "description": "The identifier for the filter option (e.g., 'couple')."
+                                    }
+                                }
+                            }
+                        },
+                        "title": {
+                            "type": "String",
+                            "description": "The title of the filter category (e.g., 'Filter by:')."
+                        }
+                    }
+                }
+            },
+            "total_reviews": {
+                "type": "Number",
+                "description": "The total number of reviews available for the hotel (e.g., 14183)."
+            },
+            "hotel_id": {
+                "type": "String",
+                "description": "The unique identifier for the hotel (e.g., '1377073')."
+            }
+        }
+    },
+    "params_desc_list": null,
+    "response_desc_list": [
+        {
+            "path_name": "$.sort",
+            "name": "sort",
+            "description": "An object containing sorting options for hotel reviews."
+        },
+        {
+            "path_name": "$.sort.id",
+            "name": "id",
+            "description": "The identifier for the sorting section (e.g., 'user_sort')."
+        },
+        {
+            "path_name": "$.sort.categories",
+            "name": "categories",
+            "description": "A list of available sorting options for reviews."
+        },
+        {
+            "path_name": "$.sort.categories[]",
+            "name": "categories[]",
+            "description": "An object representing a single sorting option."
+        },
+        {
+            "path_name": "$.sort.categories[].display_value",
+            "name": "display_value",
+            "description": "The display name of the sorting option (e.g., 'Most relevant')."
+        },
+        {
+            "path_name": "$.sort.categories[].id",
+            "name": "id",
+            "description": "The identifier for the sorting option (e.g., 'sort_most_relevant')."
+        },
+        {
+            "path_name": "$.sort.title",
+            "name": "title",
+            "description": "The title of the sorting section (e.g., 'Sort by:')."
+        },
+        {
+            "path_name": "$.filters",
+            "name": "filters",
+            "description": "A list of filter options for refining hotel reviews."
+        },
+        {
+            "path_name": "$.filters[]",
+            "name": "filters[]",
+            "description": "An object representing a single filter category."
+        },
+        {
+            "path_name": "$.filters[].default_display_value_with_count",
+            "name": "default_display_value_with_count",
+            "description": "The default display value for the filter, including the total count (e.g., 'All reviews (14183)')."
+        },
+        {
+            "path_name": "$.filters[].default_display_value",
+            "name": "default_display_value",
+            "description": "The default display value for the filter (e.g., 'All reviews')."
+        },
+        {
+            "path_name": "$.filters[].id",
+            "name": "id",
+            "description": "The identifier for the filter category (e.g., 'filter_customer_type')."
+        },
+        {
+            "path_name": "$.filters[].type",
+            "name": "type",
+            "description": "The type of filter (e.g., 'radio_button' or 'checkbox')."
+        },
+        {
+            "path_name": "$.filters[].categories",
+            "name": "categories",
+            "description": "A list of available filter options within the category."
+        },
+        {
+            "path_name": "$.filters[].categories[]",
+            "name": "categories[]",
+            "description": "An object representing a single filter option."
+        },
+        {
+            "path_name": "$.filters[].categories[].display_value",
+            "name": "display_value",
+            "description": "The display name of the filter option (e.g., 'Couple')."
+        },
+        {
+            "path_name": "$.filters[].categories[].display_value_with_count",
+            "name": "display_value_with_count",
+            "description": "The display name of the filter option, including the count (e.g., 'Couple (5798)')."
+        },
+        {
+            "path_name": "$.filters[].categories[].count",
+            "name": "count",
+            "description": "The number of reviews matching this filter option."
+        },
+        {
+            "path_name": "$.filters[].categories[].id",
+            "name": "id",
+            "description": "The identifier for the filter option (e.g., 'couple')."
+        },
+        {
+            "path_name": "$.filters[].title",
+            "name": "title",
+            "description": "The title of the filter category (e.g., 'Filter by:')."
+        },
+        {
+            "path_name": "$.total_reviews",
+            "name": "total_reviews",
+            "description": "The total number of reviews available for the hotel (e.g., 14183)."
+        },
+        {
+            "path_name": "$.hotel_id",
+            "name": "hotel_id",
+            "description": "The unique identifier for the hotel (e.g., '1377073')."
+        }
+    ],
+    "depends_on": null,
+    "verified": true
+}

@@ -1,0 +1,52 @@
+2025-07-24 05:53:25,240 - evaluation_logger_Cross-220 - INFO - Test Example Cross-220
+2025-07-24 05:53:25,240 - evaluation_logger_Cross-220 - INFO - Query: On December 1, 2024, I'll travel from Tokyo to Houston. Two days later, I'll fly from Houston to Toronto. I need to book the fastest flights for this multi-stop trip. I plan to stay at the Holiday Inn Houston Downtown in Houston, can you check whether the hotel is available on those dates? Don't forget to arrange for a taxi to pick me up from the hotel three hours before my flight and take me to the Houston airport on the 3rd.
+2025-07-24 05:56:49,604 - evaluation_logger_Cross-220 - INFO - Start compare_single_call: 
+{'name': 'Search_Flight_Location', 'arguments': {'query': 'Tokyo'}}
+{'name': 'Search_Flight_Location', 'arguments': {'query': 'Tokyo'}}
+2025-07-24 05:56:49,605 - evaluation_logger_Cross-220 - INFO - Rule-based compare success.
+2025-07-24 05:56:49,605 - evaluation_logger_Cross-220 - INFO - Success matched: [{'name': 'Search_Flight_Location', 'arguments': {'query': 'Tokyo'}}]
+2025-07-24 05:56:49,610 - evaluation_logger_Cross-220 - INFO - Start compare_single_call: 
+{'name': 'Search_Flight_Location', 'arguments': {'query': 'Houston'}}
+{'name': 'Search_Flight_Location', 'arguments': {'query': 'Houston'}}
+2025-07-24 05:56:49,611 - evaluation_logger_Cross-220 - INFO - Rule-based compare success.
+2025-07-24 05:56:49,611 - evaluation_logger_Cross-220 - INFO - Success matched: [{'name': 'Search_Flight_Location', 'arguments': {'query': 'Houston'}}]
+2025-07-24 05:56:49,611 - evaluation_logger_Cross-220 - INFO - Start compare_single_call: 
+{'name': 'Search_Flight_Location', 'arguments': {'query': 'Toronto'}}
+{'name': 'Search_Flight_Location', 'arguments': {'query': 'Toronto'}}
+2025-07-24 05:56:49,611 - evaluation_logger_Cross-220 - INFO - Rule-based compare success.
+2025-07-24 05:56:49,611 - evaluation_logger_Cross-220 - INFO - Success matched: [{'name': 'Search_Flight_Location', 'arguments': {'query': 'Toronto'}}]
+2025-07-24 05:56:49,612 - evaluation_logger_Cross-220 - INFO - Start compare_single_call: 
+{'name': 'Search_Flights_Multi_Stops', 'arguments': {'legs': [{'fromId': 'NRT.AIRPORT', 'toId': 'IAH.AIRPORT', 'date': '2024-12-01'}, {'fromId': 'IAH.AIRPORT', 'toId': 'YYZ.AIRPORT', 'date': '2024-12-03'}], 'sort': 'FASTEST'}}
+{'name': 'Search_Flights_Multi_Stops', 'arguments': {'legs': [{'fromId': 'NRT.AIRPORT', 'toId': 'IAH.AIRPORT', 'date': '2024-12-01'}, {'fromId': 'IAH.AIRPORT', 'toId': 'YYZ.AIRPORT', 'date': '2024-12-03'}], 'sort': 'FASTEST'}}
+2025-07-24 05:56:49,612 - evaluation_logger_Cross-220 - INFO - Rule-based compare success.
+2025-07-24 05:56:49,612 - evaluation_logger_Cross-220 - INFO - Success matched: [{'name': 'Search_Flights_Multi_Stops', 'arguments': {'legs': [{'fromId': 'NRT.AIRPORT', 'toId': 'IAH.AIRPORT', 'date': '2024-12-01'}, {'fromId': 'IAH.AIRPORT', 'toId': 'YYZ.AIRPORT', 'date': '2024-12-03'}], 'sort': 'FASTEST'}}]
+2025-07-24 05:56:50,345 - evaluation_logger_Cross-220 - INFO - Start compare_single_call: 
+{'name': 'Search_Hotel_Destination', 'arguments': {'query': 'Holiday Inn Houston Downtown'}}
+{'name': 'Search_Hotel_Destination', 'arguments': {'query': 'Holiday Inn Houston Downtow'}}
+2025-07-24 05:56:55,074 - evaluation_logger_Cross-220 - DEBUG - LLM-based comparison output: {'is_equal': False, 'reason': "The query parameters 'Holiday Inn Houston Downtown' and 'Holiday Inn Houston Downtow' are not equivalent due to a typographical difference in the second query."}
+2025-07-24 05:56:55,075 - evaluation_logger_Cross-220 - INFO - All compare method failed.
+2025-07-24 05:56:55,083 - evaluation_logger_Cross-220 - INFO - Success matched: []
+2025-07-24 05:58:21,927 - evaluation_logger_Cross-220 - INFO - Start compare_single_call: 
+{'name': 'Search_Hotel_Destination', 'arguments': {'query': 'Houston Downtown'}}
+{'name': 'Search_Hotel_Destination', 'arguments': {'query': 'Holiday Inn Houston Downtow'}}
+2025-07-24 05:58:27,785 - evaluation_logger_Cross-220 - DEBUG - LLM-based comparison output: {'is_equal': False, 'reason': "The queries 'Houston Downtown' and 'Holiday Inn Houston Downtow' are not equivalent as they refer to different locations or levels of specificity."}
+2025-07-24 05:58:27,785 - evaluation_logger_Cross-220 - INFO - All compare method failed.
+2025-07-24 05:58:27,785 - evaluation_logger_Cross-220 - INFO - Success matched: []
+2025-07-24 05:59:42,438 - evaluation_logger_Cross-220 - INFO - Start compare_single_call: 
+{'name': 'Search_Hotel_Destination', 'arguments': {'query': 'Holiday Inn Houston Downtown'}}
+{'name': 'Search_Hotel_Destination', 'arguments': {'query': 'Holiday Inn Houston Downtow'}}
+2025-07-24 05:59:48,133 - evaluation_logger_Cross-220 - DEBUG - LLM-based comparison output: {'is_equal': False, 'reason': "The query parameters 'Holiday Inn Houston Downtown' and 'Holiday Inn Houston Downtow' are not equivalent due to a typographical difference in the second query."}
+2025-07-24 05:59:48,134 - evaluation_logger_Cross-220 - INFO - All compare method failed.
+2025-07-24 05:59:48,134 - evaluation_logger_Cross-220 - INFO - Success matched: []
+2025-07-24 06:01:14,702 - evaluation_logger_Cross-220 - INFO - Start compare_single_call: 
+{'name': 'Search_Hotel_Destination', 'arguments': {'query': 'Holiday Inn Houston Downtown'}}
+{'name': 'Search_Hotel_Destination', 'arguments': {'query': 'Holiday Inn Houston Downtow'}}
+2025-07-24 06:01:20,571 - evaluation_logger_Cross-220 - DEBUG - LLM-based comparison output: {'is_equal': False, 'reason': "The query parameters 'Holiday Inn Houston Downtown' and 'Holiday Inn Houston Downtow' are not equivalent due to a typographical difference in the latter."}
+2025-07-24 06:01:20,571 - evaluation_logger_Cross-220 - INFO - All compare method failed.
+2025-07-24 06:01:20,571 - evaluation_logger_Cross-220 - INFO - Success matched: []
+2025-07-24 06:02:25,317 - evaluation_logger_Cross-220 - INFO - Start compare_single_call: 
+{'name': 'Search_Hotel_Destination', 'arguments': {'query': 'Holiday Inn Houston Downtown, Houston, TX'}}
+{'name': 'Search_Hotel_Destination', 'arguments': {'query': 'Holiday Inn Houston Downtow'}}
+2025-07-24 06:02:30,484 - evaluation_logger_Cross-220 - DEBUG - LLM-based comparison output: {'is_equal': False, 'reason': "The query parameters 'Holiday Inn Houston Downtown, Houston, TX' and 'Holiday Inn Houston Downtow' are not equivalent as they refer to different locations or have different spellings."}
+2025-07-24 06:02:30,484 - evaluation_logger_Cross-220 - INFO - All compare method failed.
+2025-07-24 06:02:30,484 - evaluation_logger_Cross-220 - INFO - Success matched: []

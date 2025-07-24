@@ -1,0 +1,283 @@
+{
+    "name": "Search_Car_Rentals",
+    "docs_row": {
+        "name": "Search_Car_Rentals",
+        "endpoint": "/api/v1/cars/searchCarRentals",
+        "func_description": "Search car rentals. ",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "pick_up_latitude": {
+                    "type": "Number",
+                    "description": "The pick up location's latitude. pick_up_latitude can be retrieved from api/v1/cars/searchDestination(Search Car Location) endpoint in Car Rental collection as latitude inside coordinates object.",
+                    "example_value": "40.6397018432617",
+                    "required": true
+                },
+                "pick_up_longitude": {
+                    "type": "Number",
+                    "description": "The pick up location's longitude. pick_up_longitude can be retrieved from api/v1/cars/searchDestination(Search Car Location) endpoint in Car Rental collection as longitude inside coordinates object.",
+                    "example_value": "-73.7791976928711",
+                    "required": true
+                },
+                "drop_off_latitude": {
+                    "type": "Number",
+                    "description": "The drop off location's latitude. drop_off_latitude can be retrieved from api/v1/cars/searchDestination(Search Car Location) endpoint in Car Rental collection as latitude inside coordinates object.",
+                    "example_value": "40.6397018432617",
+                    "required": true
+                },
+                "drop_off_longitude": {
+                    "type": "Number",
+                    "description": "The drop off location's longitude. drop_off_longitude can be retrieved from api/v1/cars/searchDestination(Search Car Location) endpoint in Car Rental collection as longitude inside coordinates object.",
+                    "example_value": "-73.7791976928711",
+                    "required": true
+                },
+                "pick_up_date": {
+                    "type": "Date (yyyy-mm-dd)",
+                    "description": "Pick up date\nFormat: YYYY-MM-DD",
+                    "example_value": "",
+                    "required": true
+                },
+                "drop_off_date": {
+                    "type": "Date (yyyy-mm-dd)",
+                    "description": "Drop off date\nFormat: YYYY-MM-DD",
+                    "example_value": "",
+                    "required": true
+                },
+                "pick_up_time": {
+                    "type": "Time (24-Hour Hh:Mm)",
+                    "description": "Pick up time\nFormat: HH:MM\nNote: The format of time is 24 hours.",
+                    "example_value": "10:00",
+                    "required": true
+                },
+                "drop_off_time": {
+                    "type": "Time (24-Hour Hh:Mm)",
+                    "description": "Drop off time\nFormat: HH:MM\nNote: The format of time is 24 hours.",
+                    "example_value": "10:00",
+                    "required": true
+                },
+                "driver_age": {
+                    "type": "Number",
+                    "description": "The driver's age. The default value is set to 30.\nNote: The driver age must be in the range of 20 to 65 years.",
+                    "example_value": "30",
+                    "required": false
+                },
+                "filters": {
+                    "type": "String",
+                    "description": "Used to refine search results based on specific suppliers, car categories, or other attributes. Multiple filters can be applied by passing them as a comma-separated list in the following format:\n::\nFor example:\nsupplier::Avis,supplier::Budget,carCategory::medium,carCategory::large\nThis will return results from Avis and Budget, and only cars in the medium and large categories.\nTo discover available filters, make a request to the /api/v1/cars/searchCarRentals endpoint and refer to the data \u2192 filter section in the response.",
+                    "example_value": "",
+                    "required": false
+                },
+                "languagecode": {
+                    "type": "String",
+                    "description": "To obtain the response data in a specific language, enter the languagecode. languagecode can be retrieved from api/v1/meta/getLanguages(Get Languages\n) endpoint in Meta collection.",
+                    "example_value": "",
+                    "required": false
+                },
+                "currency_code": {
+                    "type": "String",
+                    "description": "The currency code. currency_code can be retrieved from api/v1/meta/getCurrency(Get Currency) endpoint in Hotels collection.",
+                    "example_value": "USD",
+                    "required": false
+                },
+                "location": {
+                    "type": "String",
+                    "description": "location can be retrieved from api/v1/meta/getLocations(Get Location) endpoint in Meta collection.",
+                    "example_value": "US",
+                    "required": false
+                }
+            },
+            "required": [
+                "pick_up_latitude",
+                "pick_up_longitude",
+                "drop_off_latitude",
+                "drop_off_longitude",
+                "pick_up_date",
+                "drop_off_date",
+                "pick_up_time",
+                "drop_off_time"
+            ]
+        }
+    },
+    "api_response_schema": {
+        "filter": [
+            {
+                "id": "transmission",
+                "categories": [
+                    {
+                        "count": 2,
+                        "id": "transmission::MANUAL",
+                        "nameWithCount": "Manual (2)",
+                        "name": "Manual"
+                    }
+                ],
+                "type": "multiple_union",
+                "title": "Transmission",
+                "layout": {
+                    "layout_type": "list",
+                    "collapsed_count": 5,
+                    "is_collapsable": "true",
+                    "is_collapsed": "true"
+                }
+            }
+        ],
+        "is_genius_location": true,
+        "content": {
+            "items": [
+                {
+                    "positionInList": 3,
+                    "content": {
+                        "contentType": "carsSearchResultsSecondaryPromotional"
+                    },
+                    "type": "SHELL_REGION_VIEW"
+                }
+            ],
+            "filters": {
+                "countLabel": "478 results"
+            }
+        },
+        "search_results": [
+            {
+                "vehicle_id": "771397616",
+                "freebies": [
+                    "Amendments"
+                ],
+                "pricing_info": {
+                    "base_currency": "INR",
+                    "pay_when": "PAY_NOW",
+                    "deposit": 49.71,
+                    "currency": "USD",
+                    "price": 49.71,
+                    "fee_breakdown": {
+                        "known_fees": [
+                            {
+                                "type": "MILEAGE",
+                                "is_always_payable": 0,
+                                "distance_allowed": {
+                                    "is_km": 1,
+                                    "is_unlimited": 1
+                                }
+                            }
+                        ],
+                        "fuel_policy": {
+                            "amount": 0,
+                            "type": "RETURN_SAME"
+                        }
+                    },
+                    "drive_away_price": 49.71,
+                    "quote_allowed": 1,
+                    "base_deposit": 4180.94,
+                    "base_price": 4180.94,
+                    "discount": 0,
+                    "drive_away_price_is_approx": true
+                },
+                "supplier_info": {
+                    "may_require_credit_card_guarantee": false,
+                    "dropoff_instructions": "After collecting your luggage, please call our phone number to arrange your shuttle pick-up on on 07",
+                    "latitude": "-27.4174235",
+                    "name": "Goldcar",
+                    "location_type": "Shuttle Bus",
+                    "longitude": "153.10302682",
+                    "pickup_instructions": "After collecting your luggage, please call our phone number to arrange your shuttle pick-up on on 07",
+                    "address": "9 Boronia Road, Brisbane Airport, Brisbane, Australia, QLD 4008",
+                    "logo_url": "https://cdn.rcstatic.com/sp/images/suppliers/122_logo_200.png"
+                },
+                "accessibility": {
+                    "fuel_policy": "Fuel policy is: Like for like",
+                    "supplier_rating": "At this location, our customers have rated Goldcar as {rating_number} out of 10, {rating_name}.",
+                    "pick_up_location": "Pick-up information: Shuttle Bus",
+                    "transmission": "Automatic gearbox"
+                },
+                "content": {
+                    "badges": [
+                        {
+                            "text": "Free cancellation",
+                            "type": "CONSTRUCTIVE",
+                            "variation": "DEFAULT"
+                        }
+                    ],
+                    "supplier": {
+                        "name": "Goldcar"
+                    }
+                },
+                "route_info": {
+                    "dropoff": {
+                        "location_type": "SHUTTLE_BUS",
+                        "longitude": "153.10302682",
+                        "name": "Brisbane Airport",
+                        "latitude": "-27.4174235",
+                        "address": "9 Boronia Road, Brisbane Airport, Brisbane, Australia, QLD 4008",
+                        "country_code": "AU",
+                        "location_hash": "QnJpc2JhbmUgQWlycG9ydA==",
+                        "location_id": "4745289"
+                    },
+                    "pickup": {
+                        "address": "9 Boronia Road, Brisbane Airport, Brisbane, Australia, QLD 4008",
+                        "country_code": "AU",
+                        "location_hash": "QnJpc2JhbmUgQWlycG9ydA==",
+                        "location_id": "4745289",
+                        "name": "Brisbane Airport",
+                        "latitude": "-27.4174235",
+                        "location_type": "SHUTTLE_BUS",
+                        "longitude": "153.10302682"
+                    }
+                },
+                "fee_info": {
+                    "tax": 0,
+                    "fee": 0
+                },
+                "rating_info": {
+                    "no_of_ratings": 0,
+                    "dropoff_time": 0,
+                    "location": 0,
+                    "pickup_time": 0,
+                    "cleanliness": 0,
+                    "value_for_money": 0,
+                    "efficiency": 0,
+                    "average": 0,
+                    "condition": 0
+                },
+                "vehicle_info": {
+                    "suitcases": {
+                        "small": "3",
+                        "big": "0"
+                    },
+                    "v_id": "771397616",
+                    "label": "Standard car with:",
+                    "mileage": "Unlimited km",
+                    "v_name": "MG HS",
+                    "doors": "4",
+                    "transmission": "Automatic",
+                    "fuel_policy": "Like for like",
+                    "unlimited_mileage": 1,
+                    "seats": "5",
+                    "airbags": 1,
+                    "cma_compliant": -1,
+                    "aircon": 1,
+                    "fuel_type": "N/A",
+                    "free_cancellation": 1,
+                    "group": "Standard"
+                }
+            }
+        ],
+        "search_context": {
+            "searchKey": "eyJkcml2ZXJzQWdlIjozMCwiZHJvcE9mZkRhdGVUaW1lIjoiMjAyNC0xMS0yM1QxMDowMDowMCIsImRyb3BPZmZMb2NhdGlvbiI6",
+            "searchId": "25ebef8c-c399-47df-83d7-6070711436d3",
+            "recommendationsSearchUniqueId": "b775b973-b045-40e8-aa42-1a7b6de233da"
+        },
+        "count": 10,
+        "meta": {
+            "response_code": 200
+        },
+        "title": "Car rentals",
+        "type": "cars",
+        "sort": [
+            {
+                "name": "Review score - highest first",
+                "identifier": "review_score",
+                "title_tag": "tr.searchresults.sortBy.reviews.highLow"
+            }
+        ],
+        "search_key": "eyJkcml2ZXJzQWdlIjozMCwiZHJvcE9mZkRhdGVUaW1lIjoiMjAyNC0xMS0yM1QxMDowMDowMCIsImRyb3BPZmZMb2NhdGlvbiI6",
+        "provider": "rentalcars"
+    }
+}

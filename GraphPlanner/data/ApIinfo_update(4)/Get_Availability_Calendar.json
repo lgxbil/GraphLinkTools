@@ -1,0 +1,26 @@
+{
+    "name": "Get_Availability_Calendar",
+    "docs_row": {
+        "name": "Get_Availability_Calendar",
+        "description": "Search the availability calendar for a specific attraction. EndPoint: /api/v1/attraction/getAvailabilityCalendar",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": " `id` can be retrieved from `api/v1/attraction/searchLocation`**(Search Attraction Location)** endpoint in **Attraction** collection as `productId` inside `products` or `destinations`."
+                }
+            },
+            "required": [
+                "id"
+            ]
+        }
+    },
+    "api_response_schema": [
+        {
+            "__typename": "AttractionsCalendarItem",
+            "available": false,
+            "date": "2025-01-19"
+        }
+    ]
+}

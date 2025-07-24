@@ -1,0 +1,75 @@
+{
+    "name": "Get_Room_Availability",
+    "docs_row": {
+        "name": "Get_Room_Availability",
+        "endpoint": "/api/v1/hotels/getAvailability",
+        "func_description": "Search the room price and availability for future dates. ",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "hotel_id": {
+                    "type": "String",
+                    "description": "hotel_id can be retrieved from api/v1/hotels/searchHotels(Search Hotels) or api/v1/hotels/searchHotelsByCoordinates(Search Hotels By Coordinates\n) endpoint in Hotels collection.",
+                    "example_value": "5218600",
+                    "required": true
+                },
+                "min_date": {
+                    "type": "Date (yyyy-mm-dd)",
+                    "description": "The starting date range.",
+                    "example_value": "",
+                    "required": true
+                },
+                "max_date": {
+                    "type": "Date (yyyy-mm-dd)",
+                    "description": "The ending date range",
+                    "example_value": "",
+                    "required": true
+                },
+                "room_qty": {
+                    "type": "Number",
+                    "description": "The number of rooms that are required. The default value is set to 1.",
+                    "example_value": "",
+                    "required": false
+                },
+                "adults": {
+                    "type": "Number",
+                    "description": "The number of guests who are 18 years of age or older. The default value is set to 1.",
+                    "example_value": "",
+                    "required": false
+                },
+                "currency_code": {
+                    "type": "String",
+                    "description": "The currency code. currency_code can be retrieved from api/v1/meta/getCurrency(Get Currency) endpoint in Hotels collection.",
+                    "example_value": "USD",
+                    "required": false
+                },
+                "location": {
+                    "type": "String",
+                    "description": "location can be retrieved from api/v1/meta/getLocations(Get Location) endpoint in Meta collection.",
+                    "example_value": "US",
+                    "required": false
+                }
+            },
+            "required": [
+                "hotel_id",
+                "min_date",
+                "max_date"
+            ]
+        }
+    },
+    "api_response_schema": {
+        "currency": "USD",
+        "avDates": [
+            {
+                "date": "2024-11-05",
+                "price": 252
+            }
+        ],
+        "lengthsOfStay": [
+            {
+                "date": "2024-11-05",
+                "min_nights": 1
+            }
+        ]
+    }
+}

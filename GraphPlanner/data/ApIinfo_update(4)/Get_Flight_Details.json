@@ -1,0 +1,851 @@
+{
+    "name": "Get_Flight_Details",
+    "docs_row": {
+        "name": "Get_Flight_Details",
+        "description": "Search the detail information of flights, include: baggage allowances, airline meals, ticket price breakdown (taxes, discounts, baseFare) and insurance prices, etc. EndPoint: /api/v1/flights/getFlightDetails",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "token": {
+                    "type": "string",
+                    "description": "`token` can be retrieved from `api/v1/flights/searchFlights`**(Search Flights)** or `api/v1/flights/searchFlightsMultiStops`**(Search Flights Multi Stops)** endpoints in **Flights** collection as `token`."
+                }
+            },
+            "required": [
+                "token"
+            ]
+        }
+    },
+    "api_response_schema": {
+        "token": "d7699_H4sIAAAAAAAA_1WQf4-aMByHX43311Foi9Be0iwEcIcTGCdyc_80WBGZ7jC2N5mvfl9x2XJp0-_zfNLfe2NO-sm2d8eu3R",
+        "segments": [
+            {
+                "departureAirport": {
+                    "type": "AIRPORT",
+                    "code": "SYD",
+                    "name": "Sydney Kingsford Smith Airport",
+                    "city": "SYD",
+                    "cityName": "Sydney",
+                    "country": "AU",
+                    "countryName": "Australia"
+                },
+                "arrivalAirport": {
+                    "type": "AIRPORT",
+                    "code": "ORD",
+                    "name": "Chicago O'Hare International Airport",
+                    "city": "CHI",
+                    "cityName": "Chicago",
+                    "country": "US",
+                    "countryName": "United States"
+                },
+                "departureTime": "2024-12-20T11:15:00",
+                "arrivalTime": "2024-12-20T13:58:00",
+                "legs": [
+                    {
+                        "departureTime": "2024-12-20T07:45:00",
+                        "arrivalTime": "2024-12-20T13:58:00",
+                        "departureAirport": {
+                            "type": "AIRPORT",
+                            "code": "LAX",
+                            "name": "Los Angeles International Airport",
+                            "city": "LAX",
+                            "cityName": "Los Angeles",
+                            "country": "US",
+                            "countryName": "United States"
+                        },
+                        "arrivalAirport": {
+                            "type": "AIRPORT",
+                            "code": "ORD",
+                            "name": "Chicago O'Hare International Airport",
+                            "city": "CHI",
+                            "cityName": "Chicago",
+                            "country": "US",
+                            "countryName": "United States"
+                        },
+                        "cabinClass": "ECONOMY",
+                        "flightInfo": {
+                            "flightNumber": 1598,
+                            "planeType": "738",
+                            "carrierInfo": {
+                                "operatingCarrier": "AA",
+                                "marketingCarrier": "AA"
+                            }
+                        },
+                        "carriers": [
+                            "AA"
+                        ],
+                        "carriersData": [
+                            {
+                                "name": "American Airlines",
+                                "code": "AA"
+                            }
+                        ],
+                        "totalTime": 15180,
+                        "amenities": [
+                            {
+                                "category": "WIFI",
+                                "cost": "paid"
+                            }
+                        ],
+                        "departureTerminal": "0",
+                        "arrivalTerminal": "3"
+                    }
+                ],
+                "totalTime": 70980,
+                "travellerCheckedLuggage": [
+                    {
+                        "travellerReference": "4",
+                        "luggageAllowance": {
+                            "luggageType": "CHECKED_IN",
+                            "ruleType": "PIECE_BASED",
+                            "maxPiece": 1,
+                            "maxWeightPerPiece": 70.6,
+                            "massUnit": "LB"
+                        }
+                    }
+                ],
+                "travellerCabinLuggage": [
+                    {
+                        "travellerReference": "4",
+                        "luggageAllowance": {
+                            "luggageType": "HAND",
+                            "maxPiece": 1,
+                            "sizeRestrictions": {
+                                "maxLength": 22.1,
+                                "maxWidth": 14.2,
+                                "maxHeight": 9.1,
+                                "sizeUnit": "INCH"
+                            }
+                        },
+                        "personalItem": true
+                    }
+                ],
+                "isAtolProtected": false,
+                "showWarningDestinationAirport": false,
+                "showWarningOriginAirport": false
+            }
+        ],
+        "priceBreakdown": {
+            "total": {
+                "currencyCode": "USD",
+                "units": 8693,
+                "nanos": 670000000
+            },
+            "baseFare": {
+                "currencyCode": "USD",
+                "units": 7000,
+                "nanos": 0
+            },
+            "fee": {
+                "currencyCode": "USD",
+                "units": 9,
+                "nanos": 230000000
+            },
+            "tax": {
+                "currencyCode": "USD",
+                "units": 1684,
+                "nanos": 440000000
+            },
+            "totalRounded": {
+                "currencyCode": "USD",
+                "nanos": 0,
+                "units": 8694
+            },
+            "discount": {
+                "currencyCode": "USD",
+                "units": 0,
+                "nanos": 0
+            },
+            "totalWithoutDiscount": {
+                "currencyCode": "USD",
+                "units": 8693,
+                "nanos": 670000000
+            },
+            "totalWithoutDiscountRounded": {
+                "currencyCode": "USD",
+                "nanos": 0,
+                "units": 8694
+            },
+            "carrierTaxBreakdown": [
+                {
+                    "carrier": {
+                        "name": "American Airlines",
+                        "code": "AA"
+                    },
+                    "avgPerAdult": {
+                        "currencyCode": "USD",
+                        "units": 444,
+                        "nanos": 610000000
+                    },
+                    "avgPerChild": {
+                        "currencyCode": "USD",
+                        "units": 397,
+                        "nanos": 610000000
+                    }
+                }
+            ]
+        },
+        "travellerPrices": [
+            {
+                "travellerPriceBreakdown": {
+                    "total": {
+                        "currencyCode": "USD",
+                        "units": 2149,
+                        "nanos": 930000000
+                    },
+                    "baseFare": {
+                        "currencyCode": "USD",
+                        "units": 1750,
+                        "nanos": 0
+                    },
+                    "fee": {
+                        "currencyCode": "USD",
+                        "units": 2,
+                        "nanos": 320000000
+                    },
+                    "tax": {
+                        "currencyCode": "USD",
+                        "units": 397,
+                        "nanos": 610000000
+                    },
+                    "totalRounded": {
+                        "currencyCode": "USD",
+                        "nanos": 0,
+                        "units": 2150
+                    },
+                    "discount": {
+                        "currencyCode": "USD",
+                        "units": 0,
+                        "nanos": 0
+                    },
+                    "totalWithoutDiscount": {
+                        "currencyCode": "USD",
+                        "units": 2149,
+                        "nanos": 930000000
+                    },
+                    "totalWithoutDiscountRounded": {
+                        "currencyCode": "USD",
+                        "nanos": 0,
+                        "units": 2150
+                    }
+                },
+                "travellerReference": "4",
+                "travellerType": "KID"
+            }
+        ],
+        "priceDisplayRequirements": [
+            "AIR_PRICE_BREAKDOWN"
+        ],
+        "pointOfSale": "us",
+        "tripType": "ROUNDTRIP",
+        "offerReference": "d7699_1783487703",
+        "travellerDataRequirements": [
+            "DATE_OF_BIRTH"
+        ],
+        "bookerDataRequirement": [
+            "PHONE"
+        ],
+        "travellers": [
+            {
+                "travellerReference": "4",
+                "type": "KID",
+                "age": 3
+            }
+        ],
+        "posMismatch": {
+            "detectedPointOfSale": "us",
+            "isPOSMismatch": false,
+            "offerSalesCountry": "us"
+        },
+        "includedProductsBySegment": [
+            [
+                {
+                    "travellerReference": "4",
+                    "travellerProducts": [
+                        {
+                            "type": "personalItem"
+                        }
+                    ]
+                }
+            ]
+        ],
+        "includedProducts": {
+            "areAllSegmentsIdentical": true,
+            "segments": [
+                [
+                    {
+                        "luggageType": "CHECKED_IN",
+                        "ruleType": "PIECE_BASED",
+                        "maxPiece": 4,
+                        "maxWeightPerPiece": 70.6,
+                        "massUnit": "LB",
+                        "piecePerPax": 1
+                    }
+                ]
+            ]
+        },
+        "extraProducts": [
+            {
+                "type": "flexibleTicket",
+                "priceBreakdown": {
+                    "total": {
+                        "currencyCode": "USD",
+                        "units": 304,
+                        "nanos": 280000000
+                    },
+                    "baseFare": {
+                        "currencyCode": "USD",
+                        "units": 304,
+                        "nanos": 280000000
+                    },
+                    "fee": {
+                        "currencyCode": "USD",
+                        "units": 0,
+                        "nanos": 0
+                    },
+                    "tax": {
+                        "currencyCode": "USD",
+                        "units": 0,
+                        "nanos": 0
+                    },
+                    "discount": {
+                        "currencyCode": "USD",
+                        "units": 0,
+                        "nanos": 0
+                    },
+                    "totalWithoutDiscount": {
+                        "currencyCode": "USD",
+                        "units": 304,
+                        "nanos": 280000000
+                    }
+                }
+            }
+        ],
+        "offerExtras": {
+            "flexibleTicket": {
+                "airProductReference": "n/a",
+                "travellers": [
+                    "4"
+                ],
+                "recommendation": {
+                    "recommended": false,
+                    "confidence": "UNKNOWN_LEVEL"
+                },
+                "priceBreakdown": {
+                    "total": {
+                        "currencyCode": "USD",
+                        "units": 304,
+                        "nanos": 280000000
+                    },
+                    "baseFare": {
+                        "currencyCode": "USD",
+                        "units": 304,
+                        "nanos": 280000000
+                    },
+                    "fee": {
+                        "currencyCode": "USD",
+                        "units": 0,
+                        "nanos": 0
+                    },
+                    "tax": {
+                        "currencyCode": "USD",
+                        "units": 0,
+                        "nanos": 0
+                    },
+                    "totalRounded": {
+                        "currencyCode": "USD",
+                        "nanos": 0,
+                        "units": 305
+                    },
+                    "discount": {
+                        "currencyCode": "USD",
+                        "units": 0,
+                        "nanos": 0
+                    },
+                    "totalWithoutDiscount": {
+                        "currencyCode": "USD",
+                        "units": 304,
+                        "nanos": 280000000
+                    },
+                    "totalWithoutDiscountRounded": {
+                        "currencyCode": "USD",
+                        "nanos": 0,
+                        "units": 305
+                    }
+                },
+                "supplierInfo": {
+                    "name": "Gotogate, Inc."
+                }
+            },
+            "mobileTravelPlan": {
+                "priceBreakdown": {
+                    "total": {
+                        "currencyCode": "USD",
+                        "units": 0,
+                        "nanos": 0
+                    },
+                    "baseFare": {
+                        "currencyCode": "USD",
+                        "units": 0,
+                        "nanos": 0
+                    },
+                    "fee": {
+                        "currencyCode": "USD",
+                        "units": 0,
+                        "nanos": 0
+                    },
+                    "tax": {
+                        "currencyCode": "USD",
+                        "units": 0,
+                        "nanos": 0
+                    },
+                    "discount": {
+                        "currencyCode": "USD",
+                        "units": 0,
+                        "nanos": 0
+                    },
+                    "totalWithoutDiscount": {
+                        "currencyCode": "USD",
+                        "units": 0,
+                        "nanos": 0
+                    }
+                }
+            }
+        },
+        "ancillaries": {
+            "flexibleTicket": {
+                "airProductReference": "n/a",
+                "travellers": [
+                    "4"
+                ],
+                "priceBreakdown": {
+                    "total": {
+                        "currencyCode": "USD",
+                        "units": 304,
+                        "nanos": 280000000
+                    },
+                    "baseFare": {
+                        "currencyCode": "USD",
+                        "units": 304,
+                        "nanos": 280000000
+                    },
+                    "fee": {
+                        "currencyCode": "USD",
+                        "units": 0,
+                        "nanos": 0
+                    },
+                    "tax": {
+                        "currencyCode": "USD",
+                        "units": 0,
+                        "nanos": 0
+                    },
+                    "discount": {
+                        "currencyCode": "USD",
+                        "units": 0,
+                        "nanos": 0
+                    },
+                    "totalWithoutDiscount": {
+                        "currencyCode": "USD",
+                        "units": 304,
+                        "nanos": 280000000
+                    }
+                },
+                "preSelected": false,
+                "recommendation": {
+                    "recommended": false,
+                    "confidence": "UNKNOWN_LEVEL"
+                },
+                "supplierInfo": {
+                    "name": "Gotogate, Inc."
+                }
+            },
+            "mealPreference": {
+                "airProductReference": "n/a",
+                "travellers": [
+                    "4"
+                ],
+                "choices": [
+                    {
+                        "mealType": "KOSHER",
+                        "priceBreakdown": {
+                            "total": {
+                                "currencyCode": "USD",
+                                "units": 0,
+                                "nanos": 0
+                            },
+                            "baseFare": {
+                                "currencyCode": "USD",
+                                "units": 0,
+                                "nanos": 0
+                            },
+                            "fee": {
+                                "currencyCode": "USD",
+                                "units": 0,
+                                "nanos": 0
+                            },
+                            "tax": {
+                                "currencyCode": "USD",
+                                "units": 0,
+                                "nanos": 0
+                            },
+                            "discount": {
+                                "currencyCode": "USD",
+                                "units": 0,
+                                "nanos": 0
+                            },
+                            "totalWithoutDiscount": {
+                                "currencyCode": "USD",
+                                "units": 0,
+                                "nanos": 0
+                            }
+                        }
+                    }
+                ]
+            },
+            "mobileTravelPlan": {
+                "priceBreakdown": {
+                    "total": {
+                        "currencyCode": "USD",
+                        "units": 0,
+                        "nanos": 0
+                    },
+                    "baseFare": {
+                        "currencyCode": "USD",
+                        "units": 0,
+                        "nanos": 0
+                    },
+                    "fee": {
+                        "currencyCode": "USD",
+                        "units": 0,
+                        "nanos": 0
+                    },
+                    "tax": {
+                        "currencyCode": "USD",
+                        "units": 0,
+                        "nanos": 0
+                    },
+                    "discount": {
+                        "currencyCode": "USD",
+                        "units": 0,
+                        "nanos": 0
+                    },
+                    "totalWithoutDiscount": {
+                        "currencyCode": "USD",
+                        "units": 0,
+                        "nanos": 0
+                    }
+                }
+            },
+            "travelInsurance": {
+                "options": {
+                    "type": "COMPREHENSIVE_INSURANCE_COVER_GENIUS",
+                    "travellers": [
+                        "4"
+                    ],
+                    "priceBreakdown": {
+                        "total": {
+                            "currencyCode": "USD",
+                            "units": 132,
+                            "nanos": 530000000
+                        },
+                        "baseFare": {
+                            "currencyCode": "USD",
+                            "units": 132,
+                            "nanos": 530000000
+                        },
+                        "fee": {
+                            "currencyCode": "USD",
+                            "units": 0,
+                            "nanos": 0
+                        },
+                        "tax": {
+                            "currencyCode": "USD",
+                            "units": 0,
+                            "nanos": 0
+                        },
+                        "discount": {
+                            "currencyCode": "USD",
+                            "units": 0,
+                            "nanos": 0
+                        },
+                        "totalWithoutDiscount": {
+                            "currencyCode": "USD",
+                            "units": 132,
+                            "nanos": 530000000
+                        }
+                    },
+                    "disclaimer": "Plan is issued by Cover Genius Insurance Services, LLC, includes insurance by US Fire and non-ins. s"
+                },
+                "content": {
+                    "header": "Travel protection",
+                    "subheader": "Protect yourself from the unexpected. XCover's Travel Protection covers flight costs and more.",
+                    "optInTitle": "Travel protection",
+                    "optOutTitle": "No insurance",
+                    "exclusions": [
+                        "Terms and exclusions apply. Claims and losses due to pre-existing medical conditions are not covered"
+                    ],
+                    "coveredStatusLabel": "Insured",
+                    "notCoveredStatusLabel": "Not insured",
+                    "benefitsTitle": "What’s covered by your travel insurance",
+                    "closeA11y": "Close and go back to the travel insurance overview section.",
+                    "benefits": [
+                        "Medical and dental, emergency assistance and transportation while you’re abroad (international fligh"
+                    ],
+                    "finePrint": [
+                        "This plan is issued by Cover Genius Insurance Services, LLC, and includes insurance by US Fire and n"
+                    ]
+                },
+                "forceForAllTravellers": true,
+                "isPerTraveller": true,
+                "recommendation": {
+                    "recommended": false,
+                    "confidence": "UNKNOWN_LEVEL"
+                }
+            }
+        },
+        "brandedFareInfo": {
+            "fareName": "MAIN CABIN",
+            "cabinClass": "ECONOMY",
+            "features": [
+                {
+                    "featureName": "CHECK_BAGGAGE",
+                    "category": "BAGGAGE",
+                    "code": "BK01",
+                    "label": "4 checked bags (70.6 lbs each)",
+                    "availability": "INCLUDED"
+                }
+            ],
+            "nonIncludedFeaturesRequired": false
+        },
+        "brandedFareOffers": [
+            {
+                "brandedFareInfo": {
+                    "fareName": "PREMIUM ECONOMY FLEXIBLE",
+                    "cabinClass": "ECONOMY",
+                    "features": [
+                        {
+                            "featureName": "REFUNDABLE_TICKET",
+                            "availability": "INCLUDED",
+                            "category": "CANCEL",
+                            "code": "056",
+                            "label": "Possible to cancel flights, fees may apply"
+                        }
+                    ],
+                    "nonIncludedFeaturesRequired": false
+                },
+                "ancillaries": {
+                    "flexibleTicket": {
+                        "airProductReference": "n/a",
+                        "travellers": [
+                            "4"
+                        ],
+                        "priceBreakdown": {
+                            "total": {
+                                "currencyCode": "USD",
+                                "units": 1342,
+                                "nanos": 720000000
+                            },
+                            "baseFare": {
+                                "currencyCode": "USD",
+                                "units": 1342,
+                                "nanos": 720000000
+                            },
+                            "fee": {
+                                "currencyCode": "USD",
+                                "units": 0,
+                                "nanos": 0
+                            },
+                            "tax": {
+                                "currencyCode": "USD",
+                                "units": 0,
+                                "nanos": 0
+                            },
+                            "discount": {
+                                "currencyCode": "USD",
+                                "units": 0,
+                                "nanos": 0
+                            },
+                            "totalWithoutDiscount": {
+                                "currencyCode": "USD",
+                                "units": 1342,
+                                "nanos": 720000000
+                            }
+                        },
+                        "preSelected": false,
+                        "recommendation": {
+                            "recommended": false,
+                            "confidence": "UNKNOWN_LEVEL"
+                        },
+                        "supplierInfo": {
+                            "name": "Gotogate, Inc."
+                        }
+                    }
+                },
+                "token": "d7699_3904B@H4sIAAAAAAAA_12Q21LCMBCGnwavbNomPTqTcTJtFRRERMBykykhlCISbaJWnt6l9UZmM7vf_13ktDXmXV_Z9mZf",
+                "offerReference": "d7699_3904B@H4sIAAAAAAAA_12Q21LCMBCGnwavbNomPTqTcTJtFRRERMBykykhlCISbaJWnt6l9UZmM7vf_13ktDXmXV_Z9mZf",
+                "priceBreakdown": {
+                    "total": {
+                        "currencyCode": "USD",
+                        "units": 38363,
+                        "nanos": 390000000
+                    },
+                    "baseFare": {
+                        "currencyCode": "USD",
+                        "units": 36112,
+                        "nanos": 0
+                    },
+                    "fee": {
+                        "currencyCode": "USD",
+                        "units": 566,
+                        "nanos": 950000000
+                    },
+                    "tax": {
+                        "currencyCode": "USD",
+                        "units": 1684,
+                        "nanos": 440000000
+                    },
+                    "totalRounded": {
+                        "currencyCode": "USD",
+                        "nanos": 0,
+                        "units": 38364
+                    },
+                    "discount": {
+                        "currencyCode": "USD",
+                        "units": 0,
+                        "nanos": 0
+                    },
+                    "totalWithoutDiscount": {
+                        "currencyCode": "USD",
+                        "units": 38363,
+                        "nanos": 390000000
+                    },
+                    "totalWithoutDiscountRounded": {
+                        "currencyCode": "USD",
+                        "nanos": 0,
+                        "units": 38364
+                    },
+                    "carrierTaxBreakdown": [
+                        {
+                            "carrier": {
+                                "name": "American Airlines",
+                                "code": "AA"
+                            },
+                            "avgPerAdult": {
+                                "currencyCode": "USD",
+                                "units": 444,
+                                "nanos": 610000000
+                            },
+                            "avgPerChild": {
+                                "currencyCode": "USD",
+                                "units": 397,
+                                "nanos": 610000000
+                            }
+                        }
+                    ],
+                    "farePriceDifference": {
+                        "currencyCode": "USD",
+                        "units": 29669,
+                        "nanos": 720000000
+                    },
+                    "travellerFarePriceDifference": {
+                        "currencyCode": "USD",
+                        "units": 7417,
+                        "nanos": 430000000
+                    },
+                    "travellerPrice": {
+                        "currencyCode": "USD",
+                        "units": 2196,
+                        "nanos": 910000000
+                    }
+                },
+                "travellerPrices": [
+                    {
+                        "travellerPriceBreakdown": {
+                            "total": {
+                                "currencyCode": "USD",
+                                "units": 9567,
+                                "nanos": 350000000
+                            },
+                            "baseFare": {
+                                "currencyCode": "USD",
+                                "units": 9028,
+                                "nanos": 0
+                            },
+                            "fee": {
+                                "currencyCode": "USD",
+                                "units": 141,
+                                "nanos": 740000000
+                            },
+                            "tax": {
+                                "currencyCode": "USD",
+                                "units": 397,
+                                "nanos": 610000000
+                            },
+                            "totalRounded": {
+                                "currencyCode": "USD",
+                                "nanos": 0,
+                                "units": 9568
+                            },
+                            "discount": {
+                                "currencyCode": "USD",
+                                "units": 0,
+                                "nanos": 0
+                            },
+                            "totalWithoutDiscount": {
+                                "currencyCode": "USD",
+                                "units": 9567,
+                                "nanos": 350000000
+                            },
+                            "totalWithoutDiscountRounded": {
+                                "currencyCode": "USD",
+                                "nanos": 0,
+                                "units": 9568
+                            }
+                        },
+                        "travellerReference": "4",
+                        "travellerType": "KID"
+                    }
+                ],
+                "includedProductsBySegment": [
+                    [
+                        {
+                            "travellerReference": "4",
+                            "travellerProducts": [
+                                {
+                                    "type": "personalItem"
+                                }
+                            ]
+                        }
+                    ]
+                ],
+                "includedProducts": {
+                    "areAllSegmentsIdentical": true,
+                    "segments": [
+                        [
+                            {
+                                "luggageType": "CHECKED_IN",
+                                "ruleType": "PIECE_BASED",
+                                "maxPiece": 8,
+                                "maxWeightPerPiece": 50.7,
+                                "massUnit": "LB",
+                                "piecePerPax": 2
+                            }
+                        ]
+                    ]
+                }
+            }
+        ],
+        "carbonEmissions": {
+            "footprintForOffer": {
+                "quantity": 2712.53,
+                "unit": "KG",
+                "status": "HIGHER",
+                "average": 2330.55,
+                "percentageDifference": 16
+            }
+        },
+        "displayOptions": {
+            "skipExtrasPage": false
+        }
+    }
+}

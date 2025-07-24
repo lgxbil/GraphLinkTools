@@ -1,0 +1,451 @@
+{
+    "name": "Search_Flight_Location",
+    "docs_row": {
+        "name": "Search_Flight_Location",
+        "endpoint": "/api/v1/flights/searchDestination",
+        "func_description": "Find airports by their location, address, state, country, etc. ",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "query": {
+                    "type": "String",
+                    "description": "Names of airport, locations, cities, districts, places, countries, counties etc.",
+                    "example_value": "new",
+                    "required": true
+                },
+                "languagecode": {
+                    "type": "String",
+                    "description": "To obtain the response data in a specific language, enter the languagecode. languagecode can be retrieved from api/v1/meta/getLanguages(Get Languages\n) endpoint in Meta collection.",
+                    "example_value": "",
+                    "required": false
+                }
+            },
+            "required": [
+                "query"
+            ]
+        }
+    },
+    "instance": [],
+    "category": null,
+    "tool": null,
+    "api_idx": 24,
+    "params": {
+        "type": "object",
+        "properties": {
+            "query": {
+                "type": "String",
+                "description": "Names of airport, locations, cities, districts, places, countries, counties etc.",
+                "example_value": "new",
+                "required": true
+            },
+            "languagecode": {
+                "type": "String",
+                "description": "To obtain the response data in a specific language, enter the languagecode. languagecode can be retrieved from api/v1/meta/getLanguages(Get Languages\n) endpoint in Meta collection.",
+                "example_value": "",
+                "required": false
+            }
+        },
+        "required": [
+            "query"
+        ]
+    },
+    "responses": [
+        {
+            "function_name": "Search_Flight_Location",
+            "arguments": {
+                "query": "New York"
+            },
+            "observation": [
+                {
+                    "id": "NYC.CITY",
+                    "type": "CITY",
+                    "name": "New York",
+                    "code": "NYC",
+                    "regionName": "New York",
+                    "country": "US",
+                    "countryName": "United States",
+                    "photoUri": "https://q-xx.bstatic.com/xdata/images/city/square150/977436.jpg?k=ee0baaf82d482fae02bcb8dda25be1abff1da43d187bbb26ae6b2f3c9b5f4e61&o="
+                },
+                {
+                    "id": "JFK.AIRPORT",
+                    "type": "AIRPORT",
+                    "name": "John F. Kennedy International Airport",
+                    "code": "JFK",
+                    "city": "NYC",
+                    "cityName": "New York",
+                    "regionName": "New York",
+                    "country": "US",
+                    "countryName": "United States",
+                    "countryNameShort": "US",
+                    "photoUri": "https://q-xx.bstatic.com/xdata/images/city/square150/977436.jpg?k=ee0baaf82d482fae02bcb8dda25be1abff1da43d187bbb26ae6b2f3c9b5f4e61&o=",
+                    "distanceToCity": {
+                        "value": 21.381514773782005,
+                        "unit": "km"
+                    },
+                    "parent": "NYC"
+                },
+                {
+                    "id": "EWR.AIRPORT",
+                    "type": "AIRPORT",
+                    "name": "Newark Liberty International Airport",
+                    "code": "EWR",
+                    "city": "NYC",
+                    "cityName": "New York",
+                    "region": "NJ",
+                    "regionName": "New York",
+                    "country": "US",
+                    "countryName": "United States",
+                    "countryNameShort": "US",
+                    "photoUri": "https://q-xx.bstatic.com/xdata/images/city/square150/977436.jpg?k=ee0baaf82d482fae02bcb8dda25be1abff1da43d187bbb26ae6b2f3c9b5f4e61&o=",
+                    "distanceToCity": {
+                        "value": 18.736453932482238,
+                        "unit": "km"
+                    },
+                    "parent": "NYC"
+                }
+            ]
+        },
+        {
+            "function_name": "Search_Flight_Location",
+            "arguments": {
+                "query": "New York"
+            },
+            "observation": [
+                {
+                    "id": "NYC.CITY",
+                    "type": "CITY",
+                    "name": "New York",
+                    "code": "NYC",
+                    "regionName": "New York",
+                    "country": "US",
+                    "countryName": "United States",
+                    "photoUri": "https://q-xx.bstatic.com/xdata/images/city/square150/977436.jpg?k=ee0baaf82d482fae02bcb8dda25be1abff1da43d187bbb26ae6b2f3c9b5f4e61&o="
+                },
+                {
+                    "id": "JFK.AIRPORT",
+                    "type": "AIRPORT",
+                    "name": "John F. Kennedy International Airport",
+                    "code": "JFK",
+                    "city": "NYC",
+                    "cityName": "New York",
+                    "regionName": "New York",
+                    "country": "US",
+                    "countryName": "United States",
+                    "countryNameShort": "US",
+                    "photoUri": "https://q-xx.bstatic.com/xdata/images/city/square150/977436.jpg?k=ee0baaf82d482fae02bcb8dda25be1abff1da43d187bbb26ae6b2f3c9b5f4e61&o=",
+                    "distanceToCity": {
+                        "value": 21.381514773782005,
+                        "unit": "km"
+                    },
+                    "parent": "NYC"
+                },
+                {
+                    "id": "EWR.AIRPORT",
+                    "type": "AIRPORT",
+                    "name": "Newark Liberty International Airport",
+                    "code": "EWR",
+                    "city": "NYC",
+                    "cityName": "New York",
+                    "region": "NJ",
+                    "regionName": "New York",
+                    "country": "US",
+                    "countryName": "United States",
+                    "countryNameShort": "US",
+                    "photoUri": "https://q-xx.bstatic.com/xdata/images/city/square150/977436.jpg?k=ee0baaf82d482fae02bcb8dda25be1abff1da43d187bbb26ae6b2f3c9b5f4e61&o=",
+                    "distanceToCity": {
+                        "value": 18.736453932482238,
+                        "unit": "km"
+                    },
+                    "parent": "NYC"
+                }
+            ]
+        }
+    ],
+    "response_summary": "The API response provides information about New York and its major airports. New York City is listed with its code \"NYC\" and is located in the United States. The city is served by two primary airports: John F. Kennedy International Airport (JFK) and Newark Liberty International Airport (EWR). \n\nJFK Airport is situated approximately 21.38 kilometers from the city center, while Newark Airport is slightly closer at 18.74 kilometers. Both airports are associated with New York City and share the same country and region details. Each entry includes a photo link, though it appears to be the same image for all three locations. \n\nThis data is useful for travelers looking to identify key transportation hubs when visiting or departing from New York.",
+    "enhance_func_desc": "This API is ideal for travelers and booking platforms to search flight destinations. It retrieves airport and city information based on a query, including location codes, distances from city centers, and associated airports. The response provides essential details like airport names, codes, and geographical data, helping users identify transportation hubs for travel planning. The query can include cities, airports, or regions.",
+    "enhance_params_desc": {
+        "enhanced_parameters": {
+            "query": "Search term for airports, cities, or regions (e.g., 'new' for New York).",
+            "languagecode": "Language preference for the response data (e.g., 'en-us')."
+        }
+    },
+    "enhance_resfield_desc": {
+        "response_fields": [
+            {
+                "id": {
+                    "type": "String",
+                    "description": "A unique identifier for the location, combining the code and type (e.g., 'NYC.CITY')."
+                },
+                "type": {
+                    "type": "String",
+                    "description": "The type of location (e.g., 'CITY' or 'AIRPORT')."
+                },
+                "name": {
+                    "type": "String",
+                    "description": "The display name of the location (e.g., 'New York')."
+                },
+                "code": {
+                    "type": "String",
+                    "description": "The code representing the location (e.g., 'NYC')."
+                },
+                "regionName": {
+                    "type": "String",
+                    "description": "The name of the region where the location is situated (e.g., 'New York')."
+                },
+                "country": {
+                    "type": "String",
+                    "description": "The country code (ISO 3166-1 alpha-2) of the location (e.g., 'US')."
+                },
+                "countryName": {
+                    "type": "String",
+                    "description": "The full name of the country (e.g., 'United States')."
+                },
+                "photoUri": {
+                    "type": "String",
+                    "description": "A URL linking to a photo of the location."
+                }
+            },
+            {
+                "id": {
+                    "type": "String",
+                    "description": "A unique identifier for the airport, combining the code and type (e.g., 'JFK.AIRPORT')."
+                },
+                "type": {
+                    "type": "String",
+                    "description": "The type of location (e.g., 'AIRPORT')."
+                },
+                "name": {
+                    "type": "String",
+                    "description": "The display name of the airport (e.g., 'John F. Kennedy International Airport')."
+                },
+                "code": {
+                    "type": "String",
+                    "description": "The IATA airport code (e.g., 'JFK')."
+                },
+                "city": {
+                    "type": "String",
+                    "description": "The city code associated with the airport (e.g., 'NYC')."
+                },
+                "cityName": {
+                    "type": "String",
+                    "description": "The name of the city where the airport is located (e.g., 'New York')."
+                },
+                "regionName": {
+                    "type": "String",
+                    "description": "The name of the region where the airport is situated (e.g., 'New York')."
+                },
+                "country": {
+                    "type": "String",
+                    "description": "The country code (ISO 3166-1 alpha-2) of the airport (e.g., 'US')."
+                },
+                "countryName": {
+                    "type": "String",
+                    "description": "The full name of the country (e.g., 'United States')."
+                },
+                "countryNameShort": {
+                    "type": "String",
+                    "description": "The abbreviated country name (e.g., 'US')."
+                },
+                "photoUri": {
+                    "type": "String",
+                    "description": "A URL linking to a photo of the airport."
+                },
+                "distanceToCity": {
+                    "type": "Object",
+                    "description": "An object representing the distance from the airport to the city center.",
+                    "ob_properties": {
+                        "value": {
+                            "type": "Number",
+                            "description": "The numerical value of the distance (e.g., 21.381514773782005)."
+                        },
+                        "unit": {
+                            "type": "String",
+                            "description": "The unit of measurement for the distance (e.g., 'km')."
+                        }
+                    }
+                },
+                "parent": {
+                    "type": "String",
+                    "description": "The parent location code (e.g., 'NYC')."
+                }
+            }
+        ]
+    },
+    "params_desc_list": null,
+    "response_desc_list": [
+        {
+            "path_name": "$[].id",
+            "name": "id",
+            "description": "A unique identifier for the location, combining the code and type (e.g., 'NYC.CITY')."
+        },
+        {
+            "path_name": "$[].type",
+            "name": "type",
+            "description": "The type of location (e.g., 'CITY' or 'AIRPORT')."
+        },
+        {
+            "path_name": "$[].name",
+            "name": "name",
+            "description": "The display name of the location (e.g., 'New York')."
+        },
+        {
+            "path_name": "$[].code",
+            "name": "code",
+            "description": "The code representing the location (e.g., 'NYC')."
+        },
+        {
+            "path_name": "$[].regionName",
+            "name": "regionName",
+            "description": "The name of the region where the location is situated (e.g., 'New York')."
+        },
+        {
+            "path_name": "$[].country",
+            "name": "country",
+            "description": "The country code (ISO 3166-1 alpha-2) of the location (e.g., 'US')."
+        },
+        {
+            "path_name": "$[].countryName",
+            "name": "countryName",
+            "description": "The full name of the country (e.g., 'United States')."
+        },
+        {
+            "path_name": "$[].photoUri",
+            "name": "photoUri",
+            "description": "A URL linking to a photo of the location."
+        },
+        {
+            "path_name": "$[].id",
+            "name": "id",
+            "description": "A unique identifier for the airport, combining the code and type (e.g., 'JFK.AIRPORT')."
+        },
+        {
+            "path_name": "$[].type",
+            "name": "type",
+            "description": "The type of location (e.g., 'AIRPORT')."
+        },
+        {
+            "path_name": "$[].name",
+            "name": "name",
+            "description": "The display name of the airport (e.g., 'John F. Kennedy International Airport')."
+        },
+        {
+            "path_name": "$[].code",
+            "name": "code",
+            "description": "The IATA airport code (e.g., 'JFK')."
+        },
+        {
+            "path_name": "$[].city",
+            "name": "city",
+            "description": "The city code associated with the airport (e.g., 'NYC')."
+        },
+        {
+            "path_name": "$[].cityName",
+            "name": "cityName",
+            "description": "The name of the city where the airport is located (e.g., 'New York')."
+        },
+        {
+            "path_name": "$[].regionName",
+            "name": "regionName",
+            "description": "The name of the region where the airport is situated (e.g., 'New York')."
+        },
+        {
+            "path_name": "$[].country",
+            "name": "country",
+            "description": "The country code (ISO 3166-1 alpha-2) of the airport (e.g., 'US')."
+        },
+        {
+            "path_name": "$[].countryName",
+            "name": "countryName",
+            "description": "The full name of the country (e.g., 'United States')."
+        },
+        {
+            "path_name": "$[].countryNameShort",
+            "name": "countryNameShort",
+            "description": "The abbreviated country name (e.g., 'US')."
+        },
+        {
+            "path_name": "$[].photoUri",
+            "name": "photoUri",
+            "description": "A URL linking to a photo of the airport."
+        },
+        {
+            "path_name": "$[].distanceToCity",
+            "name": "distanceToCity",
+            "description": "An object representing the distance from the airport to the city center."
+        },
+        {
+            "path_name": "$[].distanceToCity.value",
+            "name": "value",
+            "description": "The numerical value of the distance (e.g., 21.381514773782005)."
+        },
+        {
+            "path_name": "$[].distanceToCity.unit",
+            "name": "unit",
+            "description": "The unit of measurement for the distance (e.g., 'km')."
+        },
+        {
+            "path_name": "$[].parent",
+            "name": "parent",
+            "description": "The parent location code (e.g., 'NYC')."
+        }
+    ],
+    "depends_on": [
+        {
+            "source_api_name": "Car_Auto-Complete",
+            "dependence_type": "Soft Dependency",
+            "depencend_field": "$[*].name",
+            "param_name": "query",
+            "reason": "There is a clear business association between the 'Car_Auto-Complete' API and the 'Search_Flight_Location' API as both serve to help users identify travel destinations. The 'name' field from 'Car_Auto-Complete' can logically serve as input for the 'query' parameter in 'Search_Flight_Location', as both deal with location names (cities, airports, etc.). The data type (String) matches perfectly, and the example values ('New York', 'John F. Kennedy International Airport') are exactly the type of inputs the flight location search would expect."
+        },
+        {
+            "source_api_name": "Search_Flight_Location",
+            "dependence_type": "Hard Dependency",
+            "depencend_field": "$[*].name",
+            "param_name": "query",
+            "reason": "The source API response field 'name' from 'Search_Flight_Location' can be used as input for the 'query' parameter of the same API. This represents a self-referential dependency where the output of one call can be used as input for subsequent calls to refine or expand search results. The data type (String) matches perfectly, and the example values ('New York', 'John F. Kennedy International Airport') are exactly the type of search terms the query parameter expects."
+        },
+        {
+            "source_api_name": "Search_Flight_Location",
+            "dependence_type": "Hard Dependency",
+            "depencend_field": "$[*].regionName",
+            "param_name": "query",
+            "reason": "The source API response field 'regionName' from 'Search_Flight_Location' can be used as input for the 'query' parameter in the same API. This represents a hard dependency as the response from one call to this API can directly feed into another call to the same API. The data type (String) matches perfectly, and the example values ('New York') are exactly the type of input expected for the query parameter."
+        },
+        {
+            "source_api_name": "Search_Attraction_Location",
+            "dependence_type": "Soft Dependency",
+            "depencend_field": "$.destinations[*].cityName",
+            "param_name": "query",
+            "reason": "There is a potential business association between searching for attraction locations and flight destinations, as travelers often look for flights to cities where they plan to visit attractions. The 'cityName' field from 'Search_Attraction_Location' could serve as a valid input for the 'query' parameter in 'Search_Flight_Location', as both deal with location names. The data type (String) matches, and the example values (e.g., 'New York') are appropriate for flight destination searches."
+        },
+        {
+            "source_api_name": "Search_Flights",
+            "dependence_type": "Soft Dependency",
+            "depencend_field": "$.flightOffers[*].segments[*].legs[*].arrivalAirport.cityName",
+            "param_name": "query",
+            "reason": "There is a business association between the 'Search_Flights' API and the 'Search_Flight_Location' API, as the city names from flight search results can logically be used as search terms for flight destinations. The 'arrivalAirport.cityName' field from 'Search_Flights' contains city names that match the string type required by the 'query' parameter in 'Search_Flight_Location'. This represents a soft dependency as the flight search API isn't strictly required for destination search but provides useful input for a common user workflow."
+        },
+        {
+            "source_api_name": "Search_Flights",
+            "dependence_type": "Soft Dependency",
+            "depencend_field": "$.flightOffers[*].segments[*].arrivalAirport.cityName",
+            "param_name": "query",
+            "reason": "There is a clear business relationship between the flight search results and the need to search for flight locations. The city names from flight segments could logically be used as search queries for the destination search API. The 'arrivalAirport.cityName' field provides city names that exactly match the string type required by the 'query' parameter. This represents a soft dependency as the flight search API isn't strictly required for destination search but provides useful input for refining location searches based on actual flight routes."
+        },
+        {
+            "source_api_name": "Search_Restaurants",
+            "dependence_type": "Soft Dependency",
+            "depencend_field": "$[*].name",
+            "param_name": "query",
+            "reason": "There is a potential business relationship between searching for restaurants in a location and searching for flight destinations to that same location. The 'name' field from the 'Search_Restaurants' API response could logically be used as input for the 'query' parameter in 'Search_Flight_Location', as both deal with location-based searches. The data types match (both are Strings), and the example values ('New York City', 'New York') are exactly the type of location queries that would be valid for flight destination searches."
+        },
+        {
+            "source_api_name": "Search_Flight_Location",
+            "dependence_type": "Hard Dependency",
+            "depencend_field": "$[*].name",
+            "param_name": "query",
+            "reason": "The source API response field contains names of locations and airports that could be used as search terms for the target API's query parameter. The business association is clear as both APIs are related to flight destination searches. The data type (String) matches perfectly, and the example values ('New York', 'John F. Kennedy International Airport') are exactly the type of input the target API expects for its query parameter."
+        }
+    ],
+    "verified": true
+}

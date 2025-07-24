@@ -1,0 +1,228 @@
+{
+    "name": "Get_Hotel_Policies",
+    "docs_row": {
+        "name": "Get_Hotel_Policies",
+        "endpoint": "/api/v1/hotels/getHotelPolicies",
+        "func_description": "Retrieve policies for a specific hotel. ",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "hotel_id": {
+                    "type": "String",
+                    "description": "hotel_id can be retrieved from api/v1/hotels/searchHotels(Search Hotels) or api/v1/hotels/searchHotelsByCoordinates(Search Hotels By Coordinates\n) endpoint in Hotels collection.",
+                    "example_value": "5955189",
+                    "required": true
+                },
+                "languagecode": {
+                    "type": "String",
+                    "description": "To obtain the response data in a specific language, enter the languagecode. languagecode can be retrieved from api/v1/meta/getLanguages(Get Languages\n) endpoint in Meta collection.",
+                    "example_value": "en-us",
+                    "required": false
+                }
+            },
+            "required": [
+                "hotel_id"
+            ]
+        }
+    },
+    "instance": [],
+    "category": null,
+    "tool": null,
+    "api_idx": 2,
+    "params": {
+        "type": "object",
+        "properties": {
+            "hotel_id": {
+                "type": "String",
+                "description": "hotel_id can be retrieved from api/v1/hotels/searchHotels(Search Hotels) or api/v1/hotels/searchHotelsByCoordinates(Search Hotels By Coordinates\n) endpoint in Hotels collection.",
+                "example_value": "5955189",
+                "required": true
+            },
+            "languagecode": {
+                "type": "String",
+                "description": "To obtain the response data in a specific language, enter the languagecode. languagecode can be retrieved from api/v1/meta/getLanguages(Get Languages\n) endpoint in Meta collection.",
+                "example_value": "en-us",
+                "required": false
+            }
+        },
+        "required": [
+            "hotel_id"
+        ]
+    },
+    "responses": [
+        {
+            "function_name": "Get_Hotel_Policies",
+            "arguments": {
+                "hotel_id": "5955189",
+                "languagecode": "en-us"
+            },
+            "observation": {
+                "hotel_id": 5955189,
+                "name": "Partially refundable",
+                "policygroup_type_id": 31,
+                "policy": [
+                    {
+                        "content": [
+                            {
+                                "languagecode": "en-us",
+                                "text": "Children of all ages are allowed.\n1 child (up to and including 7 years old) stays for free when using existing beds.\n1 child (up to and including 8 years old) stays for free when using available extra beds.\n1 person (9 years old and over) stays for Rs.\u00a0800 per child per night when using available extra beds.\nYou haven't added any cribs.\nThe maximum number of extra beds is 1.\nThe maximum number of guests is 3.\n"
+                            }
+                        ],
+                        "policy_id": 1234567891,
+                        "type": "POLICY_CHILDREN"
+                    },
+                    {
+                        "type": "POLICY_HOTEL_GROUPS",
+                        "content": [
+                            {
+                                "languagecode": "en-us",
+                                "text": "When booking more than 3 rooms, different policies and additional supplements may apply.\n"
+                            }
+                        ],
+                        "policy_id": 1234567891
+                    },
+                    {
+                        "policy_id": 1234567891,
+                        "content": [
+                            {
+                                "text": "WiFi is available in the hotel rooms and is free of charge.\n",
+                                "languagecode": "en-us"
+                            }
+                        ],
+                        "type": "POLICY_HOTEL_INTERNET"
+                    }
+                ],
+                "policygroup_id": 382591998
+            }
+        }
+    ],
+    "response_summary": "The hotel's policies are partially refundable and include several key details. Children of all ages are welcome, with specific conditions: one child up to 7 years old stays for free using existing beds, while one child up to 8 years old stays for free when using available extra beds. For children aged 9 and above, there is a charge of Rs. 800 per child per night for extra beds. No cribs have been added, and the maximum number of extra beds allowed is one, with a total guest limit of three per room.  \n\nFor group bookings, different policies and additional charges may apply if more than three rooms are reserved.  \n\nAdditionally, the hotel offers free WiFi in all rooms for guests' convenience. These policies ensure flexibility for families and groups while maintaining clear guidelines for accommodations and amenities.",
+    "enhance_func_desc": "This API is essential for travelers planning family or group stays. It retrieves detailed hotel policies, including refund rules, child accommodations (free stays or charges), extra bed limits, and WiFi availability. The response helps users understand booking conditions, ensuring informed decisions for family trips or group reservations. The hotel ID must be obtained from SearchHotels or SearchHotelsByCoordinates APIs.",
+    "enhance_params_desc": {
+        "enhanced_parameters": {
+            "hotel_id": "Unique identifier for the hotel, sourced from searchHotels or searchHotelsByCoordinates endpoints.",
+            "languagecode": "Language preference for the response data (e.g., 'en-us' for English)."
+        }
+    },
+    "enhance_resfield_desc": {
+        "response_fields": {
+            "hotel_id": {
+                "type": "Number",
+                "description": "Unique identifier for the hotel."
+            },
+            "name": {
+                "type": "String",
+                "description": "Name of the policy group, indicating the refundability of the booking."
+            },
+            "policygroup_type_id": {
+                "type": "Number",
+                "description": "Identifier for the type of policy group."
+            },
+            "policy": {
+                "type": "Array",
+                "description": "List of policies applicable to the hotel.",
+                "ar_items": {
+                    "type": "Object",
+                    "description": "Individual policy details.",
+                    "ob_properties": {
+                        "content": {
+                            "type": "Array",
+                            "description": "List of content items for the policy, typically containing text in different languages.",
+                            "ar_items": {
+                                "type": "Object",
+                                "description": "Content item with language and text.",
+                                "ob_properties": {
+                                    "languagecode": {
+                                        "type": "String",
+                                        "description": "Language code indicating the language of the text (e.g., 'en-us' for English)."
+                                    },
+                                    "text": {
+                                        "type": "String",
+                                        "description": "Text content of the policy in the specified language."
+                                    }
+                                }
+                            }
+                        },
+                        "policy_id": {
+                            "type": "Number",
+                            "description": "Unique identifier for the policy."
+                        },
+                        "type": {
+                            "type": "String",
+                            "description": "Type of policy (e.g., 'POLICY_CHILDREN', 'POLICY_HOTEL_GROUPS', 'POLICY_HOTEL_INTERNET')."
+                        }
+                    }
+                }
+            },
+            "policygroup_id": {
+                "type": "Number",
+                "description": "Unique identifier for the policy group."
+            }
+        }
+    },
+    "params_desc_list": null,
+    "response_desc_list": [
+        {
+            "path_name": "hotel_id",
+            "name": "hotel_id",
+            "description": "Unique identifier for the hotel."
+        },
+        {
+            "path_name": "name",
+            "name": "name",
+            "description": "Name of the policy group, indicating the refundability of the booking."
+        },
+        {
+            "path_name": "policygroup_type_id",
+            "name": "policygroup_type_id",
+            "description": "Identifier for the type of policy group."
+        },
+        {
+            "path_name": "policy",
+            "name": "policy",
+            "description": "List of policies applicable to the hotel."
+        },
+        {
+            "path_name": "policy[]",
+            "name": "policy[]",
+            "description": "Individual policy details."
+        },
+        {
+            "path_name": "policy[].content",
+            "name": "content",
+            "description": "List of content items for the policy, typically containing text in different languages."
+        },
+        {
+            "path_name": "policy[].content[]",
+            "name": "content[]",
+            "description": "Content item with language and text."
+        },
+        {
+            "path_name": "policy[].content[].languagecode",
+            "name": "languagecode",
+            "description": "Language code indicating the language of the text (e.g., 'en-us' for English)."
+        },
+        {
+            "path_name": "policy[].content[].text",
+            "name": "text",
+            "description": "Text content of the policy in the specified language."
+        },
+        {
+            "path_name": "policy[].policy_id",
+            "name": "policy_id",
+            "description": "Unique identifier for the policy."
+        },
+        {
+            "path_name": "policy[].type",
+            "name": "type",
+            "description": "Type of policy (e.g., 'POLICY_CHILDREN', 'POLICY_HOTEL_GROUPS', 'POLICY_HOTEL_INTERNET')."
+        },
+        {
+            "path_name": "policygroup_id",
+            "name": "policygroup_id",
+            "description": "Unique identifier for the policy group."
+        }
+    ],
+    "depends_on": null,
+    "verified": true
+}

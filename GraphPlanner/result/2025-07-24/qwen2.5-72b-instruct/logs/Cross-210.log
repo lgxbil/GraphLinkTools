@@ -1,0 +1,29 @@
+2025-07-24 05:46:12,447 - evaluation_logger_Cross-210 - INFO - Test Example Cross-210
+2025-07-24 05:46:12,448 - evaluation_logger_Cross-210 - INFO - Query: I want to find out about the cheapest connecting flight leaving from New York on November 15, 2024, going to Los Angeles and San Francisco, then returning to New York. I'm expecting to stay in each city for five days. My address is 300 Fifth Ave in New York. Can you book a taxi to take me to the airport three hours before the flight takes off and bring me home one hour after the returning flight lands?
+2025-07-24 05:49:21,938 - evaluation_logger_Cross-210 - INFO - Start compare_single_call: 
+{'name': 'Search_Flight_Location', 'arguments': {'query': 'New York'}}
+{'name': 'Search_Flight_Location', 'arguments': {'query': 'New York'}}
+2025-07-24 05:49:21,938 - evaluation_logger_Cross-210 - INFO - Rule-based compare success.
+2025-07-24 05:49:21,939 - evaluation_logger_Cross-210 - INFO - Success matched: [{'name': 'Search_Flight_Location', 'arguments': {'query': 'New York'}}]
+2025-07-24 05:49:21,939 - evaluation_logger_Cross-210 - INFO - Start compare_single_call: 
+{'name': 'Search_Flight_Location', 'arguments': {'query': 'Los Angeles'}}
+{'name': 'Search_Flight_Location', 'arguments': {'query': 'Los Angeles'}}
+2025-07-24 05:49:21,939 - evaluation_logger_Cross-210 - INFO - Rule-based compare success.
+2025-07-24 05:49:21,940 - evaluation_logger_Cross-210 - INFO - Success matched: [{'name': 'Search_Flight_Location', 'arguments': {'query': 'Los Angeles'}}]
+2025-07-24 05:49:21,941 - evaluation_logger_Cross-210 - INFO - Start compare_single_call: 
+{'name': 'Search_Flight_Location', 'arguments': {'query': 'San Francisco'}}
+{'name': 'Search_Flight_Location', 'arguments': {'query': 'San Francisco'}}
+2025-07-24 05:49:21,941 - evaluation_logger_Cross-210 - INFO - Rule-based compare success.
+2025-07-24 05:49:21,941 - evaluation_logger_Cross-210 - INFO - Success matched: [{'name': 'Search_Flight_Location', 'arguments': {'query': 'San Francisco'}}]
+2025-07-24 05:49:22,662 - evaluation_logger_Cross-210 - INFO - Start compare_single_call: 
+{'name': 'Search_Flights_Multi_Stops', 'arguments': {'adults': 1, 'legs': [{'fromId': 'NYC.CITY', 'toId': 'LAX.AIRPORT', 'date': '2024-11-15'}, {'fromId': 'LAX.AIRPORT', 'toId': 'SFO.AIRPORT', 'date': '2024-11-20'}, {'fromId': 'SFO.AIRPORT', 'toId': 'NYC.CITY', 'date': '2024-11-25'}], 'sort': 'CHEAPEST'}}
+{'name': 'Search_Flights_Multi_Stops', 'arguments': {'legs': [{'fromId': 'NYC.CITY', 'toId': 'LAX.AIRPORT', 'date': '2024-11-15'}, {'fromId': 'LAX.AIRPORT', 'toId': 'SFO.AIRPORT', 'date': '2024-11-20'}, {'fromId': 'SFO.AIRPORT', 'toId': 'NYC.CITY', 'date': '2024-11-25'}], 'sort': 'CHEAPEST'}}
+2025-07-24 05:49:28,139 - evaluation_logger_Cross-210 - DEBUG - LLM-based comparison output: {'is_equal': True, 'reason': "The parameter 'adults' in call 1 has a default value of 1, which is omitted in call 2, making the two calls equivalent."}
+2025-07-24 05:49:28,139 - evaluation_logger_Cross-210 - INFO - LLM-based compare success.
+2025-07-24 05:49:28,140 - evaluation_logger_Cross-210 - INFO - Success matched: [{'name': 'Search_Flights_Multi_Stops', 'arguments': {'legs': [{'fromId': 'NYC.CITY', 'toId': 'LAX.AIRPORT', 'date': '2024-11-15'}, {'fromId': 'LAX.AIRPORT', 'toId': 'SFO.AIRPORT', 'date': '2024-11-20'}, {'fromId': 'SFO.AIRPORT', 'toId': 'NYC.CITY', 'date': '2024-11-25'}], 'sort': 'CHEAPEST'}}]
+2025-07-24 05:53:08,110 - evaluation_logger_Cross-210 - INFO - Start compare_single_call: 
+{'name': 'Taxi_Search_Location', 'arguments': {'query': '300 Fifth Ave, New York'}}
+{'name': 'Taxi_Search_Location', 'arguments': {'query': '300 Fifth Ave'}}
+2025-07-24 05:53:13,240 - evaluation_logger_Cross-210 - DEBUG - LLM-based comparison output: {'is_equal': False, 'reason': "The query parameter in call 1 includes 'New York' which is not present in call 2, making the locations specified not equivalent."}
+2025-07-24 05:53:13,240 - evaluation_logger_Cross-210 - INFO - All compare method failed.
+2025-07-24 05:53:13,241 - evaluation_logger_Cross-210 - INFO - Success matched: []

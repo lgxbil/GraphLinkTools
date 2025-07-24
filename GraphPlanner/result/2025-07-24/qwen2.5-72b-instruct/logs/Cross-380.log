@@ -1,0 +1,65 @@
+2025-07-24 07:44:10,371 - evaluation_logger_Cross-380 - INFO - Test Example Cross-380
+2025-07-24 07:44:10,371 - evaluation_logger_Cross-380 - INFO - Query: I'm going to have a meeting at the American Airlines Center in Dallas on November 10, 2024. After the meeting ends at 2 PM, I will fly from Dallas to San Diego for a vacation. Could you help me find the earliest flight to San Diego after the meeting and call a taxi to take me to the airport right after the meeting? Don't forget to look up the hotel within 10 kilometers of the airport in San Diego and check what fun places there are around the hotel.
+2025-07-24 07:47:40,467 - evaluation_logger_Cross-380 - INFO - Start compare_single_call: 
+{'name': 'Search_Flight_Location', 'arguments': {'query': 'Dallas'}}
+{'name': 'Search_Flight_Location', 'arguments': {'query': 'Dallas'}}
+2025-07-24 07:47:40,467 - evaluation_logger_Cross-380 - INFO - Rule-based compare success.
+2025-07-24 07:47:40,467 - evaluation_logger_Cross-380 - INFO - Success matched: [{'name': 'Search_Flight_Location', 'arguments': {'query': 'Dallas'}}]
+2025-07-24 07:47:40,468 - evaluation_logger_Cross-380 - INFO - Start compare_single_call: 
+{'name': 'Search_Flight_Location', 'arguments': {'query': 'San Diego'}}
+{'name': 'Search_Flight_Location', 'arguments': {'query': 'San Diego'}}
+2025-07-24 07:47:40,468 - evaluation_logger_Cross-380 - INFO - Rule-based compare success.
+2025-07-24 07:47:40,468 - evaluation_logger_Cross-380 - INFO - Success matched: [{'name': 'Search_Flight_Location', 'arguments': {'query': 'San Diego'}}]
+2025-07-24 07:47:40,471 - evaluation_logger_Cross-380 - INFO - Start compare_single_call: 
+{'name': 'Taxi_Search_Location', 'arguments': {'query': 'American Airlines Center, Dallas'}}
+{'name': 'Taxi_Search_Location', 'arguments': {'query': 'American Airlines Center, Dallas'}}
+2025-07-24 07:47:40,471 - evaluation_logger_Cross-380 - INFO - Rule-based compare success.
+2025-07-24 07:47:40,471 - evaluation_logger_Cross-380 - INFO - Success matched: [{'name': 'Taxi_Search_Location', 'arguments': {'query': 'American Airlines Center, Dallas'}}]
+2025-07-24 07:47:41,248 - evaluation_logger_Cross-380 - INFO - Start compare_single_call: 
+{'name': 'Taxi_Search_Location', 'arguments': {'query': 'Dallas Airport'}}
+{'name': 'Taxi_Search_Location', 'arguments': {'query': 'Dallas-Fort Worth International Airport'}}
+2025-07-24 07:47:45,396 - evaluation_logger_Cross-380 - DEBUG - LLM-based comparison output: {'is_equal': False, 'reason': "The query parameters 'Dallas Airport' and 'Dallas-Fort Worth International Airport' refer to different locations."}
+2025-07-24 07:47:45,396 - evaluation_logger_Cross-380 - INFO - All compare method failed.
+2025-07-24 07:47:45,397 - evaluation_logger_Cross-380 - INFO - Success matched: []
+2025-07-24 07:49:03,781 - evaluation_logger_Cross-380 - INFO - Start compare_single_call: 
+{'name': 'Taxi_Search_Location', 'arguments': {'query': 'Dallas/Fort Worth International Airport'}}
+{'name': 'Taxi_Search_Location', 'arguments': {'query': 'Dallas-Fort Worth International Airport'}}
+2025-07-24 07:49:09,354 - evaluation_logger_Cross-380 - DEBUG - LLM-based comparison output: {'is_equal': True, 'reason': "Dallas/Fort Worth International Airport and Dallas-Fort Worth International Airport refer to the same location, with only a difference in the separator used between 'Dallas' and 'Fort Worth'."}
+2025-07-24 07:49:09,354 - evaluation_logger_Cross-380 - INFO - LLM-based compare success.
+2025-07-24 07:49:09,354 - evaluation_logger_Cross-380 - INFO - Success matched: [{'name': 'Taxi_Search_Location', 'arguments': {'query': 'Dallas-Fort Worth International Airport'}}]
+2025-07-24 07:49:09,919 - evaluation_logger_Cross-380 - INFO - Start compare_single_call: 
+{'name': 'Search_Flights', 'arguments': {'departDate': '2024-11-10', 'fromId': 'DFW.CITY', 'sort': 'EARLIEST', 'toId': 'SAN.CITY'}}
+{'name': 'Search_Flights', 'arguments': {'departDate': '2024-11-10', 'fromId': 'DFW.CITY', 'toId': 'SAN.CITY'}}
+2025-07-24 07:49:13,786 - evaluation_logger_Cross-380 - DEBUG - LLM-based comparison output: {'is_equal': False, 'reason': "The parameter 'sort' in call 1 is not present in call 2 and does not have a default value that can be omitted."}
+2025-07-24 07:49:13,787 - evaluation_logger_Cross-380 - INFO - All compare method failed.
+2025-07-24 07:49:13,787 - evaluation_logger_Cross-380 - INFO - Success matched: []
+2025-07-24 07:50:32,433 - evaluation_logger_Cross-380 - INFO - Start compare_single_call: 
+{'name': 'Search_Flights', 'arguments': {'departDate': '2024-11-10', 'fromId': 'DFW.CITY', 'sort': 'FASTEST', 'toId': 'SAN.CITY'}}
+{'name': 'Search_Flights', 'arguments': {'departDate': '2024-11-10', 'fromId': 'DFW.CITY', 'toId': 'SAN.CITY'}}
+2025-07-24 07:50:36,597 - evaluation_logger_Cross-380 - DEBUG - LLM-based comparison output: {'is_equal': False, 'reason': "The parameter 'sort' in call 1 is not present in call 2."}
+2025-07-24 07:50:36,597 - evaluation_logger_Cross-380 - INFO - All compare method failed.
+2025-07-24 07:50:36,597 - evaluation_logger_Cross-380 - INFO - Success matched: []
+2025-07-24 07:52:03,442 - evaluation_logger_Cross-380 - INFO - Start compare_single_call: 
+{'name': 'Search_Flights', 'arguments': {'departDate': '2024-11-10', 'fromId': 'DFW.CITY', 'sort': 'EARLIEST', 'toId': 'SAN.CITY'}}
+{'name': 'Search_Flights', 'arguments': {'departDate': '2024-11-10', 'fromId': 'DFW.CITY', 'toId': 'SAN.CITY'}}
+2025-07-24 07:52:08,831 - evaluation_logger_Cross-380 - DEBUG - LLM-based comparison output: {'is_equal': False, 'reason': "The parameter 'sort' in call 1 is not present in call 2 and does not have a default value that can be omitted."}
+2025-07-24 07:52:08,831 - evaluation_logger_Cross-380 - INFO - All compare method failed.
+2025-07-24 07:52:08,831 - evaluation_logger_Cross-380 - INFO - Success matched: []
+2025-07-24 07:53:31,388 - evaluation_logger_Cross-380 - INFO - Start compare_single_call: 
+{'name': 'Search_Flights', 'arguments': {'departDate': '2024-11-10', 'fromId': 'DFW.CITY', 'sort': 'EARLIEST', 'toId': 'SAN.CITY'}}
+{'name': 'Search_Flights', 'arguments': {'departDate': '2024-11-10', 'fromId': 'DFW.CITY', 'toId': 'SAN.CITY'}}
+2025-07-24 07:53:35,406 - evaluation_logger_Cross-380 - DEBUG - LLM-based comparison output: {'is_equal': False, 'reason': "The parameter 'sort' in call 1 is not present in call 2."}
+2025-07-24 07:53:35,406 - evaluation_logger_Cross-380 - INFO - All compare method failed.
+2025-07-24 07:53:35,407 - evaluation_logger_Cross-380 - INFO - Success matched: []
+2025-07-24 07:54:55,409 - evaluation_logger_Cross-380 - INFO - Start compare_single_call: 
+{'name': 'Search_Flights', 'arguments': {'departDate': '2024-11-10', 'fromId': 'DFW.CITY', 'sort': 'FASTEST', 'toId': 'SAN.CITY'}}
+{'name': 'Search_Flights', 'arguments': {'departDate': '2024-11-10', 'fromId': 'DFW.CITY', 'toId': 'SAN.CITY'}}
+2025-07-24 07:54:59,605 - evaluation_logger_Cross-380 - DEBUG - LLM-based comparison output: {'is_equal': False, 'reason': "The parameter 'sort' in call 1 is not present in call 2."}
+2025-07-24 07:54:59,605 - evaluation_logger_Cross-380 - INFO - All compare method failed.
+2025-07-24 07:54:59,605 - evaluation_logger_Cross-380 - INFO - Success matched: []
+2025-07-24 07:56:14,516 - evaluation_logger_Cross-380 - INFO - Start compare_single_call: 
+{'name': 'Search_Flights', 'arguments': {'departDate': '2024-11-10', 'fromId': 'DFW.CITY', 'sort': 'FASTEST', 'toId': 'SAN.CITY'}}
+{'name': 'Search_Flights', 'arguments': {'departDate': '2024-11-10', 'fromId': 'DFW.CITY', 'toId': 'SAN.CITY'}}
+2025-07-24 07:56:18,969 - evaluation_logger_Cross-380 - DEBUG - LLM-based comparison output: {'is_equal': False, 'reason': "The parameter 'sort' in call 1 is not present in call 2."}
+2025-07-24 07:56:18,969 - evaluation_logger_Cross-380 - INFO - All compare method failed.
+2025-07-24 07:56:18,977 - evaluation_logger_Cross-380 - INFO - Success matched: []

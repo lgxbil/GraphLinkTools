@@ -1,0 +1,364 @@
+{
+    "name": "Get_Sort_By",
+    "docs_row": {
+        "name": "Get_Sort_By",
+        "endpoint": "/api/v1/hotels/getSortBy",
+        "func_description": "Get sorted hotel listings based on filters and destination. ",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "dest_id": {
+                    "type": "String",
+                    "description": "dest_id can be retrieved from api/v1/hotels/searchDestination(Search Hotel Destination) endpoint in Hotels collection.",
+                    "example_value": "-2092174",
+                    "required": true
+                },
+                "search_type": {
+                    "type": "String",
+                    "description": "search_type can be retrieved from api/v1/hotels/searchDestination(Search Hotel Destination) endpoint in Hotels collection.",
+                    "example_value": "CITY",
+                    "required": true
+                },
+                "arrival_date": {
+                    "type": "Date (yyyy-mm-dd)",
+                    "description": "The date on which you will arrive or check-in",
+                    "example_value": "",
+                    "required": true
+                },
+                "departure_date": {
+                    "type": "Date (yyyy-mm-dd)",
+                    "description": "The date of departure or check-out.",
+                    "example_value": "",
+                    "required": true
+                },
+                "adults": {
+                    "type": "Number",
+                    "description": "The number of guests who are 18 years of age or older. The default value is set to 1.",
+                    "example_value": "1",
+                    "required": false
+                },
+                "children_age": {
+                    "type": "String",
+                    "description": "The number of children, including infants, who are under 18.\nExample:\nChild 1 Age = 8 months\nChild 2 Age = 1 year\nChild 3 Age = 17 years\nHere is what the request parameter would look like:\nchildren_age: 0,1,17",
+                    "example_value": "1,17",
+                    "required": false
+                },
+                "room_qty": {
+                    "type": "Number",
+                    "description": "The number of rooms that are required. The default value is set to 1.",
+                    "example_value": "1",
+                    "required": false
+                },
+                "categories_filter": {
+                    "type": "String",
+                    "description": "categories_filter can be retrieved from api/v1/hotels/getFilter(Get Filter) endpoint in Hotels collection.",
+                    "example_value": "",
+                    "required": false
+                },
+                "languagecode": {
+                    "type": "String",
+                    "description": "To obtain the response data in a specific language, enter the languagecode. languagecode can be retrieved from api/v1/meta/getLanguages(Get Languages\n) endpoint in Meta collection.",
+                    "example_value": "",
+                    "required": false
+                }
+            },
+            "required": [
+                "dest_id",
+                "search_type",
+                "arrival_date",
+                "departure_date"
+            ]
+        }
+    },
+    "instance": [],
+    "category": null,
+    "tool": null,
+    "api_idx": 31,
+    "params": {
+        "type": "object",
+        "properties": {
+            "dest_id": {
+                "type": "String",
+                "description": "dest_id can be retrieved from api/v1/hotels/searchDestination(Search Hotel Destination) endpoint in Hotels collection.",
+                "example_value": "-2092174",
+                "required": true
+            },
+            "search_type": {
+                "type": "String",
+                "description": "search_type can be retrieved from api/v1/hotels/searchDestination(Search Hotel Destination) endpoint in Hotels collection.",
+                "example_value": "CITY",
+                "required": true
+            },
+            "arrival_date": {
+                "type": "Date (yyyy-mm-dd)",
+                "description": "The date on which you will arrive or check-in",
+                "example_value": "",
+                "required": true
+            },
+            "departure_date": {
+                "type": "Date (yyyy-mm-dd)",
+                "description": "The date of departure or check-out.",
+                "example_value": "",
+                "required": true
+            },
+            "adults": {
+                "type": "Number",
+                "description": "The number of guests who are 18 years of age or older. The default value is set to 1.",
+                "example_value": "1",
+                "required": false
+            },
+            "children_age": {
+                "type": "String",
+                "description": "The number of children, including infants, who are under 18.\nExample:\nChild 1 Age = 8 months\nChild 2 Age = 1 year\nChild 3 Age = 17 years\nHere is what the request parameter would look like:\nchildren_age: 0,1,17",
+                "example_value": "1,17",
+                "required": false
+            },
+            "room_qty": {
+                "type": "Number",
+                "description": "The number of rooms that are required. The default value is set to 1.",
+                "example_value": "1",
+                "required": false
+            },
+            "categories_filter": {
+                "type": "String",
+                "description": "categories_filter can be retrieved from api/v1/hotels/getFilter(Get Filter) endpoint in Hotels collection.",
+                "example_value": "",
+                "required": false
+            },
+            "languagecode": {
+                "type": "String",
+                "description": "To obtain the response data in a specific language, enter the languagecode. languagecode can be retrieved from api/v1/meta/getLanguages(Get Languages\n) endpoint in Meta collection.",
+                "example_value": "",
+                "required": false
+            }
+        },
+        "required": [
+            "dest_id",
+            "search_type",
+            "arrival_date",
+            "departure_date"
+        ]
+    },
+    "responses": [
+        {
+            "function_name": "Get_Sort_By",
+            "arguments": {
+                "dest_id": "-2092174",
+                "search_type": "CITY",
+                "arrival_date": "2025-06-10",
+                "departure_date": "2025-06-15"
+            },
+            "observation": [
+                {
+                    "id": "upsort_bh",
+                    "title": "Entire homes & apartments first"
+                },
+                {
+                    "id": "popularity",
+                    "title": "Top picks for solo travellers"
+                },
+                {
+                    "id": "distance",
+                    "title": "Distance from city centre"
+                }
+            ]
+        },
+        {
+            "function_name": "Get_Sort_By",
+            "arguments": {
+                "dest_id": "-2092174",
+                "search_type": "CITY",
+                "arrival_date": "2025-06-10",
+                "departure_date": "2025-06-15",
+                "adults": 2,
+                "children_age": "5",
+                "room_qty": 1
+            },
+            "observation": [
+                {
+                    "id": "upsort_bh",
+                    "title": "Entire homes & apartments first"
+                },
+                {
+                    "id": "popularity",
+                    "title": "Our top picks"
+                },
+                {
+                    "id": "distance",
+                    "title": "Distance from city centre"
+                }
+            ]
+        }
+    ],
+    "response_summary": "The API response provides three sorting options for accommodations. The first option prioritizes entire homes and apartments, ensuring they appear at the top of search results. The second option highlights top recommendations specifically tailored for solo travelers, helping them find the most suitable stays. The third option sorts listings based on their proximity to the city center, allowing users to easily find accommodations closest to key locations. These sorting choices help users refine their search based on their preferences, whether they prioritize space, solo-friendly options, or convenience of location.",
+    "enhance_func_desc": "This API is ideal for travelers seeking personalized accommodation options. It provides sorting choices for hotel searches, prioritizing entire homes/apartments, solo traveler recommendations, or proximity to city center. Users input destination, dates, and guest details to receive tailored results. The response helps refine searches based on space, traveler type, or location convenience, enhancing the booking experience. Required parameters include destination ID, search type, and stay dates.",
+    "enhance_params_desc": {
+        "enhanced_parameters": {
+            "dest_id": "Unique destination identifier from searchDestination endpoint.",
+            "search_type": "Type of search (e.g., CITY, REGION).",
+            "arrival_date": "Check-in date for accommodation search.",
+            "departure_date": "Check-out date for accommodation search.",
+            "adults": "Number of adult guests (18+ years).",
+            "children_age": "Ages of children (comma-separated, under 18).",
+            "room_qty": "Number of rooms needed for booking.",
+            "categories_filter": "Filters accommodations by category (e.g., entire homes).",
+            "languagecode": "Language preference for response data."
+        }
+    },
+    "enhance_resfield_desc": {
+        "response_fields": [
+            {
+                "id": {
+                    "type": "String",
+                    "description": "The unique identifier for the sorting option (e.g., 'upsort_bh', 'popularity', 'distance')."
+                },
+                "title": {
+                    "type": "String",
+                    "description": "The display name of the sorting option (e.g., 'Entire homes & apartments first', 'Top picks for solo travellers', 'Distance from city centre')."
+                }
+            }
+        ]
+    },
+    "params_desc_list": null,
+    "response_desc_list": [
+        {
+            "path_name": "$[].id",
+            "name": "id",
+            "description": "The unique identifier for the sorting option (e.g., 'upsort_bh', 'popularity', 'distance')."
+        },
+        {
+            "path_name": "$[].title",
+            "name": "title",
+            "description": "The display name of the sorting option (e.g., 'Entire homes & apartments first', 'Top picks for solo travellers', 'Distance from city centre')."
+        }
+    ],
+    "depends_on": [
+        {
+            "source_api_name": "Get_Nearby_Cities",
+            "dependence_type": "Hard Dependency",
+            "depencend_field": "$[*].dest_id",
+            "param_name": "dest_id",
+            "reason": "The 'Get_Nearby_Cities' API provides destination IDs (dest_id) which are exactly what the 'Get_Sort_By' API requires as input. This establishes a hard dependency relationship as the destination IDs from 'Get_Nearby_Cities' are necessary prerequisites for calling the 'Get_Sort_By' API. The data types match (both are identifiers for destinations), and the field from the source API directly corresponds to the required parameter in the target API."
+        },
+        {
+            "source_api_name": "Search_Hotel_Destination",
+            "dependence_type": "Hard Dependency",
+            "depencend_field": "$[*].dest_id",
+            "param_name": "dest_id",
+            "reason": "There is a clear hard dependency relationship between the 'Search_Hotel_Destination' API and the 'Get_Sort_By' API, as the target API's documentation explicitly states that the 'dest_id' parameter must be retrieved from the 'searchDestination' endpoint (which corresponds to the 'Search_Hotel_Destination' API). The 'dest_id' field from the source API response matches exactly in both data type (String) and purpose (unique destination identifier) with the target parameter requirement."
+        },
+        {
+            "source_api_name": "Search_Hotels",
+            "dependence_type": "Hard Dependency",
+            "depencend_field": "$.hotels[*].property.ufi",
+            "param_name": "dest_id",
+            "reason": "The 'Search_Hotels' API response field '$.hotels[*].property.ufi' provides the destination identifier (dest_id) that matches exactly with the required parameter for the 'Get_Sort_By' API. This represents a hard dependency as the 'Search_Hotels' API is a necessary prerequisite for obtaining the destination ID needed to call the 'Get_Sort_By' API. The data types also match (String vs Number, but the example shows numeric values which can be converted to strings)."
+        },
+        {
+            "source_api_name": "Search_Attractions",
+            "dependence_type": "Soft Dependency",
+            "depencend_field": "$.products[*].ufiDetails.ufi",
+            "param_name": "dest_id",
+            "reason": "The 'Search_Attractions' API provides location IDs (ufi) that match the format and type required by the 'dest_id' parameter in the 'Get_Sort_By' API. This establishes a business association where travelers might first search for attractions in a destination and then use that same destination ID to sort hotel options. The data types match (both are String/Number identifiers for locations), and the example values demonstrate the same format (-2092174)."
+        },
+        {
+            "source_api_name": "Search_Hotel_Destination",
+            "dependence_type": "Hard Dependency",
+            "depencend_field": "$[*].search_type",
+            "param_name": "search_type",
+            "reason": "There is a clear business association between the 'Search_Hotel_Destination' API and the 'Get_Sort_By' API, as the former provides necessary destination information that is required to call the latter. The 'search_type' field from the source API response matches exactly with the 'search_type' parameter required by the target API, both in terms of data type (String) and the nature of the information (e.g., CITY, REGION). This represents a hard dependency as the destination search API must be called first to obtain valid search_type values for the sorting API."
+        },
+        {
+            "source_api_name": "Search_Hotel_Destination",
+            "dependence_type": "Hard Dependency",
+            "depencend_field": "$[*].dest_type",
+            "param_name": "search_type",
+            "reason": "There is a clear business association between the 'Search_Hotel_Destination' API and the 'Get_Sort_By' API, as the destination search is a prerequisite for sorting hotel options. The 'dest_type' field from the source API ('city', 'district', 'landmark') can be mapped to the 'search_type' parameter ('CITY', 'REGION', etc.) in the target API, as they represent similar classification of destination types. The data types also match (both are Strings)."
+        },
+        {
+            "source_api_name": "Get_Nearby_Cities",
+            "dependence_type": "Soft Dependency",
+            "depencend_field": "$[*].dest_type",
+            "param_name": "search_type",
+            "reason": "The 'dest_type' field from 'Get_Nearby_Cities' API can potentially serve as input for the 'search_type' parameter in 'Get_Sort_By' API, as both relate to destination types in hotel searches. However, the example values ('city') don't fully match the expected search_type values ('CITY', 'REGION') in terms of case sensitivity and possible variations. While there's a conceptual business relationship between identifying nearby cities and sorting hotel options, the data format mismatch and limited example values make this connection uncertain."
+        },
+        {
+            "source_api_name": "Search_Hotel_Destination",
+            "dependence_type": "Hard Dependency",
+            "depencend_field": "$[*].type",
+            "param_name": "search_type",
+            "reason": "The 'Search_Hotel_Destination' API is a necessary prerequisite for calling the 'Get_Sort_By' API as it provides the 'search_type' parameter required by the target API. The response field 'type' from 'Search_Hotel_Destination' can be mapped to the 'search_type' parameter in 'Get_Sort_By', although the values may need conversion (e.g., 'ci' to 'CITY', 'di' to 'DISTRICT', 'la' to 'LANDMARK'). This represents a hard dependency as the destination search is required to obtain the necessary parameters for the sorting API."
+        },
+        {
+            "source_api_name": "Get_Room_List",
+            "dependence_type": "Hard Dependency",
+            "depencend_field": "$.arrival_date",
+            "param_name": "arrival_date",
+            "reason": "There is a clear business association between the 'Get_Room_List' API and the 'Get_Sort_By' API, as both are part of the hotel booking workflow. The 'arrival_date' field from 'Get_Room_List' can be directly used as input for the 'arrival_date' parameter in 'Get_Sort_By', as they share the same data type (Date in yyyy-mm-dd format) and serve the same purpose in the booking process. This represents a hard dependency as the room list API provides necessary information for sorting hotel options."
+        },
+        {
+            "source_api_name": "Get_Room_List",
+            "dependence_type": "Hard Dependency",
+            "depencend_field": "$.departure_date",
+            "param_name": "arrival_date",
+            "reason": "The 'Get_Room_List' API provides room availability information which is directly related to the check-in/check-out dates required by the 'Get_Sort_By' API. While the example value shows 'departure_date' rather than 'arrival_date', this indicates that the API contains date information relevant to hotel stays. The data type (yyyy-mm-dd) matches exactly with the target parameter's requirement. This represents a hard dependency as the room availability dates are essential for sorting hotel options."
+        },
+        {
+            "source_api_name": "Get_Min_Price_Multi_Stops",
+            "dependence_type": "Soft Dependency",
+            "depencend_field": "$[*].searchDates",
+            "param_name": "arrival_date",
+            "reason": "There is a potential business relationship where travelers might use flight dates from multi-stop itineraries to determine their hotel check-in dates. The 'searchDates' field from 'Get_Min_Price_Multi_Stops' contains dates in the 'yyyy-mm-dd' format that matches the required format for 'arrival_date' in 'Get_Sort_By'. However, this represents a soft dependency as the flight API isn't strictly required for hotel sorting but could provide useful input for travelers coordinating flights and accommodations."
+        },
+        {
+            "source_api_name": "Search_Hotels",
+            "dependence_type": "Hard Dependency",
+            "depencend_field": "$.hotels[*].property.checkinDate",
+            "param_name": "arrival_date",
+            "reason": "The 'Search_Hotels' API response contains check-in dates for specific hotel properties, which can logically serve as input for the 'arrival_date' parameter in the 'Get_Sort_By' API. This represents a hard dependency as the check-in dates from hotel search results are directly relevant and necessary for sorting hotel options. The data types match perfectly (yyyy-mm-dd format), and the field provides exactly the information needed for the target parameter."
+        },
+        {
+            "source_api_name": "Get_Min_Price_Multi_Stops",
+            "dependence_type": "Soft Dependency",
+            "depencend_field": "$[*].departureDate",
+            "param_name": "arrival_date",
+            "reason": "There is a potential business association between flight departure dates and hotel check-in dates, as travelers often need to coordinate their flight arrivals with hotel check-ins. The 'departureDate' field from 'Get_Min_Price_Multi_Stops' matches the 'Date (yyyy-mm-dd)' format required by 'arrival_date' in 'Get_Sort_By'. This represents a soft dependency as the flight API isn't strictly required for hotel sorting but provides useful input for a common travel planning workflow."
+        },
+        {
+            "source_api_name": "Get_Room_List",
+            "dependence_type": "Hard Dependency",
+            "depencend_field": "$.departure_date",
+            "param_name": "departure_date",
+            "reason": "There is a clear business association between the 'Get_Room_List' API and the 'Get_Sort_By' API, as both are involved in the hotel booking workflow. The 'departure_date' field from 'Get_Room_List' directly matches the 'departure_date' parameter in 'Get_Sort_By' in both data type (Date yyyy-mm-dd) and purpose (check-out date for accommodation). This represents a hard dependency as the room list API provides essential information required for sorting hotel options."
+        },
+        {
+            "source_api_name": "Search_Hotels",
+            "dependence_type": "Hard Dependency",
+            "depencend_field": "$.hotels[*].property.checkoutDate",
+            "param_name": "departure_date",
+            "reason": "There is a clear business association between the 'Search_Hotels' API and the 'Get_Sort_By' API, as both are part of the hotel booking workflow. The 'checkoutDate' field from the 'Search_Hotels' response can logically serve as the 'departure_date' parameter for the 'Get_Sort_By' API, as they both represent the same concept of check-out dates in the hotel booking process. The data types match perfectly (yyyy-mm-dd format), and the example values demonstrate this compatibility."
+        },
+        {
+            "source_api_name": "Get_Min_Price",
+            "dependence_type": "Soft Dependency",
+            "depencend_field": "$[*].departureDate",
+            "param_name": "departure_date",
+            "reason": "While the APIs serve different functions (hotel sorting vs. flight pricing), there's a logical business relationship where travelers commonly use flight departure dates to determine their hotel check-out dates. The 'departureDate' field from 'Get_Min_Price' perfectly matches the 'Date (yyyy-mm-dd)' format required by 'departure_date' in 'Get_Sort_By'. This represents a soft dependency as the flight API isn't strictly required for hotel sorting but provides useful input for a common user workflow."
+        },
+        {
+            "source_api_name": "Get_Room_Availability",
+            "dependence_type": "Soft Dependency",
+            "depencend_field": "$.lengthsOfStay[*].date",
+            "param_name": "departure_date",
+            "reason": "There is a clear business relationship between checking room availability dates and determining departure dates for accommodation searches. The 'lengthsOfStay[].date' field from 'Get_Room_Availability' matches the 'Date (yyyy-mm-dd)' format required by 'departure_date' in 'Get_Sort_By'. This represents a soft dependency as the room availability API isn't strictly required for sorting hotels but provides useful input for determining potential departure dates based on available stay durations."
+        },
+        {
+            "source_api_name": "Get_Room_List",
+            "dependence_type": "Soft Dependency",
+            "depencend_field": "$.arrival_date",
+            "param_name": "departure_date",
+            "reason": "The 'Get_Room_List' API provides room availability information which logically relates to the 'Get_Sort_By' API's need for departure dates in hotel searches. The 'arrival_date' field from 'Get_Room_List' could be used to calculate or determine a corresponding 'departure_date' for sorting options. While the exact field names don't match, the date information from room listings is relevant for sorting hotel results. The data type (yyyy-mm-dd) matches perfectly, and this represents a soft dependency as the room list API isn't strictly required but provides useful input for the sorting functionality."
+        }
+    ],
+    "verified": true
+}

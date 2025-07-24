@@ -1,0 +1,47 @@
+{
+    "name": "Vehicle_Supplier_Ratings",
+    "docs_row": {
+        "name": "Vehicle_Supplier_Ratings",
+        "description": "Retrieve ratings for the supplier of a specific vehicle. EndPoint: /api/v1/cars/vehicleSupplierRatings",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "vehicle_id": {
+                    "type": "string",
+                    "description": "Vehicle ID. `vehicle_id` can be retrieved from `api/v1/cars/searchCarRentals`**(Search Car Rentals)** endpoint in **Car Rental** collection as `vehicle_id` inside `search_results` object."
+                },
+                "search_key": {
+                    "type": "string",
+                    "description": "`search_key` can be retrieved from `api/v1/cars/searchCarRentals`**(Search Car Rentals)** endpoint in **Car Rental** collection as `search_key`."
+                }
+            },
+            "required": [
+                "vehicle_id",
+                "search_key"
+            ]
+        }
+    },
+    "api_response_schema": {
+        "name": "Ace Rental Cars",
+        "title": "Rental company",
+        "rating": {
+            "average": "8.2",
+            "breakdown": [
+                {
+                    "title": "Car cleanliness",
+                    "score": "8.8",
+                    "localisedRating": {
+                        "rawValue": 8.8,
+                        "displayValue": "8.8"
+                    }
+                }
+            ],
+            "subtitle": "2,379 reviews",
+            "localisedRating": {
+                "displayValue": "8.2",
+                "rawValue": 8.2
+            },
+            "title": "Very good"
+        }
+    }
+}

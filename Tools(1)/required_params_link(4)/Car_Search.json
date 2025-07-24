@@ -1,0 +1,3368 @@
+{
+    "name": "Car_Search",
+    "docs_row": {
+        "name": "Car_Search",
+        "endpoint": "https://booking-com18.p.rapidapi.com/car/search",
+        "func_description": "",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "pickUpId": {
+                    "type": "String",
+                    "description": "Pick-up location\nRequired: true\npickUpId can be retrieved from /car/auto-complete endpoint(data->id)\nEx: eyJsYXRpdHVkZSI6IjQwLjc1OTU5IiwibG9uZ2l0dWRlIjoiLTczLjk4NDkxIn0=",
+                    "example_value": "eyJsYXRpdHVkZSI6IjQwLjc1OTU5IiwibG9uZ2l0dWRlIjoiLTczLjk4NDkxIn0=",
+                    "required": true
+                },
+                "pickUpDate": {
+                    "type": "Date (yyyy-mm-dd)",
+                    "description": "Pick-up date\nRequired: true\nFormat: YYYY-MM-DD\nEx: 2024-01-25",
+                    "example_value": "",
+                    "required": true
+                },
+                "pickUpTime": {
+                    "type": "Time (24-Hour Hh:Mm)",
+                    "description": "Pick-up time\nRequired: true\nFormat: HH:MM\nEx: 10:00",
+                    "example_value": "",
+                    "required": true
+                },
+                "dropOffDate": {
+                    "type": "Date (yyyy-mm-dd)",
+                    "description": "Drop-off date\nRequired: true\nFormat: YYYY-MM-DD\nEx: 2024-01-26",
+                    "example_value": "",
+                    "required": true
+                },
+                "dropOffTime": {
+                    "type": "Time (24-Hour Hh:Mm)",
+                    "description": "Drop-off time\nRequired: true\nFormat: HH:MM\nEx: 10:00",
+                    "example_value": "",
+                    "required": true
+                },
+                "dropOffId": {
+                    "type": "String",
+                    "description": "Drop-off location\ndroOffId can be retrieved from /car/auto-complete endpoint(data->id)\nEx: eyJsYXRpdHVkZSI6IjQwLjc1OTU5IiwibG9uZ2l0dWRlIjoiLTczLjk4NDkxIn0=",
+                    "example_value": "",
+                    "required": false
+                },
+                "sortBy": {
+                    "type": "String",
+                    "description": "Sort by\nsortBy can be retrieved from this endpoint(data->sort->identifier)\nEx: recommended\nDefault value: recommended\n\nrecommended: Recommended \u2013 best first\nprice_low_to_high: Price - lowest first",
+                    "example_value": "",
+                    "required": false
+                },
+                "driverAge": {
+                    "type": "Number",
+                    "description": "Driver's age: 30-65\nEx: 40",
+                    "example_value": "",
+                    "required": false
+                },
+                "carType": {
+                    "type": "String",
+                    "description": "Car Type\ncarType can be retrieved from this endpoint(data->filter(id=carCategory)->categories->id)\nIt can input multiple values, and the values should be separated by commas\nEx: carCategory::carriers,carCategory::suvs\nDefault value: recommended\n\ncarCategory::small: Small\ncarCategory::medium: Medium\ncarCategory::large: Large\ncarCategory::premium: Premium\ncarCategory::carriers: People carriers\ncarCategory::suvs: SUVs",
+                    "example_value": "",
+                    "required": false
+                },
+                "supplier": {
+                    "type": "String",
+                    "description": "Supplier\ncarType can be retrieved from this endpoint(data->filter(id=supplier)->categories->id)\nIt can input multiple values, and the values should be separated by commas\nEx: supplier::Alamo,supplier::Enterprise",
+                    "example_value": "",
+                    "required": false
+                },
+                "transmission": {
+                    "type": "String",
+                    "description": "Transmission\ntransmission can be retrieved from this endpoint(data->filter(id=transmission)->categories->id)\nIt can input multiple values, and the values should be separated by commas\nEx: transmission::AUTOMATIC",
+                    "example_value": "",
+                    "required": false
+                },
+                "hasAirConditioning": {
+                    "type": "Boolean",
+                    "description": "Air Conditioning\nDefault value: false",
+                    "example_value": "",
+                    "required": false
+                },
+                "units": {
+                    "type": "String",
+                    "description": "Units\nEx: metric\nDefault value: metric\nChoose one of the values below\nmetric: Metric (km, m2)\nimperial: Imperial (miles, ft2)",
+                    "example_value": "",
+                    "required": false
+                },
+                "languageCode": {
+                    "type": "String",
+                    "description": "Language\nlanguageCode can be retrieved from /languages endpoint(data->code)\nEx: en-us\nDefault value: en-us",
+                    "example_value": "",
+                    "required": false
+                },
+                "currencyCode": {
+                    "type": "String",
+                    "description": "Currency\ncurrencyCode can be retrieved from /currencies endpoint(data->code)\nEx: USD\nDefault value: HOTEL(Property's Currency)",
+                    "example_value": "",
+                    "required": false
+                },
+                "countryFlag": {
+                    "type": "String",
+                    "description": "Country\ncountryFlag can be retrieved from /languages endpoint(data->countryFlag)\nEx: us\nDefault value: us",
+                    "example_value": "",
+                    "required": false
+                }
+            },
+            "required": [
+                "pickUpId",
+                "pickUpDate",
+                "pickUpTime",
+                "dropOffDate",
+                "dropOffTime"
+            ]
+        }
+    },
+    "instance": [],
+    "category": null,
+    "tool": null,
+    "api_idx": 34,
+    "params": {
+        "type": "object",
+        "properties": {
+            "pickUpId": {
+                "type": "String",
+                "description": "Pick-up location\nRequired: true\npickUpId can be retrieved from /car/auto-complete endpoint(data->id)\nEx: eyJsYXRpdHVkZSI6IjQwLjc1OTU5IiwibG9uZ2l0dWRlIjoiLTczLjk4NDkxIn0=",
+                "example_value": "eyJsYXRpdHVkZSI6IjQwLjc1OTU5IiwibG9uZ2l0dWRlIjoiLTczLjk4NDkxIn0=",
+                "required": true
+            },
+            "pickUpDate": {
+                "type": "Date (yyyy-mm-dd)",
+                "description": "Pick-up date\nRequired: true\nFormat: YYYY-MM-DD\nEx: 2024-01-25",
+                "example_value": "",
+                "required": true
+            },
+            "pickUpTime": {
+                "type": "Time (24-Hour Hh:Mm)",
+                "description": "Pick-up time\nRequired: true\nFormat: HH:MM\nEx: 10:00",
+                "example_value": "",
+                "required": true
+            },
+            "dropOffDate": {
+                "type": "Date (yyyy-mm-dd)",
+                "description": "Drop-off date\nRequired: true\nFormat: YYYY-MM-DD\nEx: 2024-01-26",
+                "example_value": "",
+                "required": true
+            },
+            "dropOffTime": {
+                "type": "Time (24-Hour Hh:Mm)",
+                "description": "Drop-off time\nRequired: true\nFormat: HH:MM\nEx: 10:00",
+                "example_value": "",
+                "required": true
+            },
+            "dropOffId": {
+                "type": "String",
+                "description": "Drop-off location\ndroOffId can be retrieved from /car/auto-complete endpoint(data->id)\nEx: eyJsYXRpdHVkZSI6IjQwLjc1OTU5IiwibG9uZ2l0dWRlIjoiLTczLjk4NDkxIn0=",
+                "example_value": "",
+                "required": false
+            },
+            "sortBy": {
+                "type": "String",
+                "description": "Sort by\nsortBy can be retrieved from this endpoint(data->sort->identifier)\nEx: recommended\nDefault value: recommended\n\nrecommended: Recommended \u2013 best first\nprice_low_to_high: Price - lowest first",
+                "example_value": "",
+                "required": false
+            },
+            "driverAge": {
+                "type": "Number",
+                "description": "Driver's age: 30-65\nEx: 40",
+                "example_value": "",
+                "required": false
+            },
+            "carType": {
+                "type": "String",
+                "description": "Car Type\ncarType can be retrieved from this endpoint(data->filter(id=carCategory)->categories->id)\nIt can input multiple values, and the values should be separated by commas\nEx: carCategory::carriers,carCategory::suvs\nDefault value: recommended\n\ncarCategory::small: Small\ncarCategory::medium: Medium\ncarCategory::large: Large\ncarCategory::premium: Premium\ncarCategory::carriers: People carriers\ncarCategory::suvs: SUVs",
+                "example_value": "",
+                "required": false
+            },
+            "supplier": {
+                "type": "String",
+                "description": "Supplier\ncarType can be retrieved from this endpoint(data->filter(id=supplier)->categories->id)\nIt can input multiple values, and the values should be separated by commas\nEx: supplier::Alamo,supplier::Enterprise",
+                "example_value": "",
+                "required": false
+            },
+            "transmission": {
+                "type": "String",
+                "description": "Transmission\ntransmission can be retrieved from this endpoint(data->filter(id=transmission)->categories->id)\nIt can input multiple values, and the values should be separated by commas\nEx: transmission::AUTOMATIC",
+                "example_value": "",
+                "required": false
+            },
+            "hasAirConditioning": {
+                "type": "Boolean",
+                "description": "Air Conditioning\nDefault value: false",
+                "example_value": "",
+                "required": false
+            },
+            "units": {
+                "type": "String",
+                "description": "Units\nEx: metric\nDefault value: metric\nChoose one of the values below\nmetric: Metric (km, m2)\nimperial: Imperial (miles, ft2)",
+                "example_value": "",
+                "required": false
+            },
+            "languageCode": {
+                "type": "String",
+                "description": "Language\nlanguageCode can be retrieved from /languages endpoint(data->code)\nEx: en-us\nDefault value: en-us",
+                "example_value": "",
+                "required": false
+            },
+            "currencyCode": {
+                "type": "String",
+                "description": "Currency\ncurrencyCode can be retrieved from /currencies endpoint(data->code)\nEx: USD\nDefault value: HOTEL(Property's Currency)",
+                "example_value": "",
+                "required": false
+            },
+            "countryFlag": {
+                "type": "String",
+                "description": "Country\ncountryFlag can be retrieved from /languages endpoint(data->countryFlag)\nEx: us\nDefault value: us",
+                "example_value": "",
+                "required": false
+            }
+        },
+        "required": [
+            "pickUpId",
+            "pickUpDate",
+            "pickUpTime",
+            "dropOffDate",
+            "dropOffTime"
+        ]
+    },
+    "responses": [
+        {
+            "function_name": "Car_Search",
+            "arguments": {
+                "pickUpId": "eyJsYXRpdHVkZSI6IjQwLjc1OTU5IiwibG9uZ2l0dWRlIjoiLTczLjk4NDkxIn0=",
+                "pickUpDate": "2025-06-10",
+                "pickUpTime": "09:00",
+                "dropOffDate": "2025-06-15",
+                "dropOffTime": "17:00"
+            },
+            "observation": {
+                "search_results": [
+                    {
+                        "content": {
+                            "badges": [
+                                {
+                                    "type": "CONSTRUCTIVE",
+                                    "text": "Free cancellation",
+                                    "variation": "DEFAULT"
+                                }
+                            ],
+                            "supplier": {
+                                "name": "Ace",
+                                "imageUrl": "https://cdn.rcstatic.com/sp/images/suppliers/3278_logo_200.png",
+                                "rating": {
+                                    "average": "6.0",
+                                    "localisedRating": {
+                                        "rawValue": 6.0,
+                                        "displayValue": "6"
+                                    },
+                                    "title": "OK",
+                                    "subtitle": "164 reviews"
+                                }
+                            },
+                            "vehicleSpecs": [
+                                {
+                                    "text": "Unlimited mileage",
+                                    "icon": "MILEAGE",
+                                    "accessibility": null
+                                }
+                            ]
+                        },
+                        "vehicle_info": {
+                            "v_id": "695750676",
+                            "v_name": "Hyundai Elantra",
+                            "unlimited_mileage": 1,
+                            "transmission": "Automatic",
+                            "special_offer_text": null,
+                            "seats": "5",
+                            "suitcases": {
+                                "big": "0",
+                                "small": "4"
+                            },
+                            "label": "Standard car with:",
+                            "insurance_package": "",
+                            "image_url": "https://cdn.rcstatic.com/images/car_images/web/hyundai/elantra_lrg.png",
+                            "image_thumbnail_url": "https://cdn.rcstatic.com/images/car_images/web/hyundai/elantra_lrg.png",
+                            "group": "Standard",
+                            "group_or_similar": "or similar large car",
+                            "fuel_type": "N/A",
+                            "fuel_policy_description": "",
+                            "fuel_policy": "Like for like",
+                            "free_cancellation": 1,
+                            "doors": "4",
+                            "cma_compliant": -1,
+                            "aircon": 1,
+                            "airbags": 1,
+                            "mileage": "Unlimited mileage",
+                            "badges": {},
+                            "deposit": null
+                        },
+                        "supplier_info": {
+                            "name": "Ace",
+                            "logo_url": "https://cdn.rcstatic.com/sp/images/suppliers/3278_logo_200.png",
+                            "location_type": "Shuttle Bus",
+                            "address": "124-10 South Conduit Avenue, South Ozone Park, Jfk Airport (JFK), USA, 11420",
+                            "latitude": "40.663756",
+                            "longitude": "-73.818973",
+                            "pickup_instructions": "Shuttle pick up is available at the Federal Circle. From any terminals please take the Airtrain to Federal Circle. Once you are there please go downstairs to the street level and follow the signs to free shuttles. Once you reach the roundabout with a sign that says: \"\"Free Shuttles to Off-Airport Hotels and Rental Cars\"\" please call us at 855-550-0008 to request a pick up.",
+                            "dropoff_instructions": "Shuttle pick up is available at the Federal Circle. From any terminals please take the Airtrain to Federal Circle. Once you are there please go downstairs to the street level and follow the signs to free shuttles. Once you reach the roundabout with a sign that says: \"\"Free Shuttles to Off-Airport Hotels and Rental Cars\"\" please call us at\r\n855-550-0008 to request a pick up.",
+                            "may_require_credit_card_guarantee": false
+                        },
+                        "route_info": {
+                            "pickup": {
+                                "name": "John F Kennedy International Airport",
+                                "longitude": "-73.818973",
+                                "location_type": "SHUTTLE_BUS",
+                                "location_id": "41721",
+                                "latitude": "40.663756",
+                                "icon": "",
+                                "country_code": "US",
+                                "country": "",
+                                "address": "124-10 South Conduit Avenue, South Ozone Park, Jfk Airport (JFK), USA, 11420",
+                                "city": "",
+                                "location_hash": "Sm9obiBGIEtlbm5lZHkgSW50ZXJuYXRpb25hbCBBaXJwb3J0"
+                            },
+                            "dropoff": {
+                                "name": "John F Kennedy International Airport",
+                                "longitude": "-73.818973",
+                                "location_type": "SHUTTLE_BUS",
+                                "location_id": "41721",
+                                "latitude": "40.663756",
+                                "icon": "",
+                                "country_code": "US",
+                                "country": "",
+                                "address": "124-10 South Conduit Avenue, South Ozone Park, Jfk Airport (JFK), USA, 11420",
+                                "city": "",
+                                "location_hash": "Sm9obiBGIEtlbm5lZHkgSW50ZXJuYXRpb25hbCBBaXJwb3J0"
+                            }
+                        },
+                        "rating_info": {
+                            "average": 6.0,
+                            "average_text": "Good",
+                            "condition": 7.0,
+                            "location": 5.8,
+                            "cleanliness": 6.8,
+                            "efficiency": 5.4,
+                            "value_for_money": 5.5,
+                            "pickup_time": 5.2,
+                            "dropoff_time": 8.5,
+                            "no_of_ratings": 164
+                        },
+                        "fee_info": {
+                            "type": "",
+                            "tax": 0,
+                            "currency": "",
+                            "fee": 0.0
+                        },
+                        "freebies": [
+                            "Amendments"
+                        ],
+                        "pricing_info": {
+                            "base_price": 263.06,
+                            "drive_away_price": 263.06,
+                            "drive_away_price_before": null,
+                            "drive_away_price_is_approx": false,
+                            "deposit": 263.06,
+                            "discount": 0.0,
+                            "base_deposit": 263.06,
+                            "base_currency": "USD",
+                            "price": 263.06,
+                            "quote_allowed": 1,
+                            "currency": "USD",
+                            "fee_breakdown": {
+                                "fuel_policy": {
+                                    "type": "RETURN_SAME",
+                                    "amount": 0.0,
+                                    "currency": ""
+                                },
+                                "known_fees": [
+                                    {
+                                        "type": "VALET_FEE",
+                                        "distance_allowed": null,
+                                        "is_always_payable": 0,
+                                        "is_tax_included": 1,
+                                        "max_amount": 250.0,
+                                        "min_amount": 250.0,
+                                        "amount": 250.0,
+                                        "currency": "USD"
+                                    }
+                                ]
+                            },
+                            "pay_when": "PAY_NOW"
+                        },
+                        "accessibility": {
+                            "transmission": "Automatic gearbox",
+                            "fuel_policy": "Fuel policy is: Like for like",
+                            "supplier_rating": "At this location, our customers have rated Ace as 6.0 out of 10, OK.",
+                            "pick_up_location": "Pick-up information: Shuttle Bus"
+                        },
+                        "applied_discount_types": [],
+                        "pay_when_text": "Pay now",
+                        "forward_url": "https://cars.booking.com/DriverExtras.do?location=4421877&dropLocation=4421877&vehicleInfo.vehicle.id=695750676&serverName=cars.booking.com&gaCampInfo=true&adplat=connectApp&driversAge=30&puDay=10&puMonth=6&puYear=2025&puHour=9&puMinute=0&doDay=15&doMonth=6&doYear=2025&doHour=17&doMinute=0&affiliateCode=booking-cars&seed=01f6378b71071d489194007b3388b4a1ab&cor=us&preflang=us&prefcurrency=USD"
+                    }
+                ],
+                "discount_banner": null,
+                "content": {
+                    "discountBanner": null,
+                    "dsaBanner": null,
+                    "items": [
+                        {
+                            "type": "SHELL_REGION_VIEW",
+                            "positionInList": 4,
+                            "content": {
+                                "contentType": "carsSearchResultsSecondaryPromotional"
+                            }
+                        }
+                    ],
+                    "filters": {
+                        "countLabel": "1120 results"
+                    },
+                    "map": {
+                        "supplierLocations": [
+                            {
+                                "carouselContent": {
+                                    "title": "LaGuardia Airport",
+                                    "body": "2261 94th Street, La Guardia Airport, East Elmhurst, USA - New York, NY11369",
+                                    "label": "89 cars \u00b7 14 suppliers",
+                                    "footer": {
+                                        "label": "Price for 6 days: from $321",
+                                        "price": "$321"
+                                    }
+                                },
+                                "supplierPinContent": {
+                                    "label": "$321",
+                                    "latLong": {
+                                        "latitude": 40.76862737,
+                                        "longitude": -73.87581441
+                                    },
+                                    "accessibility": {
+                                        "label": "$321"
+                                    }
+                                },
+                                "metaData": {
+                                    "locationName": "LaGuardia Airport",
+                                    "locationHash": "TGFHdWFyZGlhIEFpcnBvcnQ="
+                                }
+                            }
+                        ]
+                    }
+                },
+                "filter": [
+                    {
+                        "title": "Car Type",
+                        "id": "carCategory",
+                        "type": "multiple_union",
+                        "layout": {
+                            "is_collapsable": "true",
+                            "is_collapsed": "true",
+                            "collapsed_count": 5,
+                            "layout_type": "list"
+                        },
+                        "categories": [
+                            {
+                                "id": "carCategory::medium",
+                                "name": "Medium",
+                                "nameWithCount": "Medium (317)",
+                                "count": 317
+                            }
+                        ]
+                    }
+                ],
+                "sort": [
+                    {
+                        "name": "Price - lowest first",
+                        "identifier": "price_low_to_high",
+                        "title_tag": "tr.searchresults.sortBy.price.lowHigh"
+                    }
+                ],
+                "search_key": "eyJkcml2ZXJzQWdlIjozMCwiZHJvcE9mZkRhdGVUaW1lIjoiMjAyNS0wNi0xNVQxNzowMDowMCIsInBpY2tVcERhdGVUaW1lIjoiMjAyNS0wNi0xMFQwOTowMDowMCIsInBpY2tVcExvY2F0aW9uIjoiNDAuNzU5NTksLTczLjk4NDkxIiwicGlja1VwTG9jYXRpb25UeXBlIjoiTEFUTE9ORyIsInJlbnRhbER1cmF0aW9uSW5EYXlzIjo2LCJzZXJ2aWNlRmVhdHVyZXMiOlsiTk9fT1BBUVVFUyIsIlNVUFJFU1NfRklYRURfUFJJQ0VfVkVISUNMRVMiLCJJTkNMVURFX1BST0RVQ1RfUkVMQVRJT05TSElQUyIsIklOQ0xVREVfRVhUUkFTX0NPTlRBSU5JTkdfRkVFUyIsIlNVUFBSRVNTX0RJUkVDVF9QQVlfTE9DQUxfVkVISUNMRVMiXX0=",
+                "search_context": {
+                    "searchKey": "eyJkcml2ZXJzQWdlIjozMCwiZHJvcE9mZkRhdGVUaW1lIjoiMjAyNS0wNi0xNVQxNzowMDowMCIsInBpY2tVcERhdGVUaW1lIjoiMjAyNS0wNi0xMFQwOTowMDowMCIsInBpY2tVcExvY2F0aW9uIjoiNDAuNzU5NTksLTczLjk4NDkxIiwicGlja1VwTG9jYXRpb25UeXBlIjoiTEFUTE9ORyIsInJlbnRhbER1cmF0aW9uSW5EYXlzIjo2LCJzZXJ2aWNlRmVhdHVyZXMiOlsiTk9fT1BBUVVFUyIsIlNVUFJFU1NfRklYRURfUFJJQ0VfVkVISUNMRVMiLCJJTkNMVURFX1BST0RVQ1RfUkVMQVRJT05TSElQUyIsIklOQ0xVREVfRVhUUkFTX0NPTlRBSU5JTkdfRkVFUyIsIlNVUFBSRVNTX0RJUkVDVF9QQVlfTE9DQUxfVkVISUNMRVMiXX0=",
+                    "searchId": "19557996-f56c-4b45-897b-53635422e6e1",
+                    "recommendationsSearchUniqueId": "d92bfe3d-5a50-4b64-9906-31b38f17adeb"
+                },
+                "count": 500,
+                "is_genius_location": false
+            }
+        },
+        {
+            "function_name": "Car_Search",
+            "arguments": {
+                "pickUpId": "eyJsYXRpdHVkZSI6IjQwLjc1OTU5IiwibG9uZ2l0dWRlIjoiLTczLjk4NDkxIn0=",
+                "pickUpDate": "2025-06-10",
+                "pickUpTime": "09:00",
+                "dropOffDate": "2025-06-15",
+                "dropOffTime": "17:00",
+                "sortBy": "price_low_to_high",
+                "driverAge": 35,
+                "carType": "carCategory::suvs",
+                "transmission": "transmission::AUTOMATIC",
+                "hasAirConditioning": true,
+                "languageCode": "en-us",
+                "currencyCode": "USD"
+            },
+            "observation": {
+                "search_results": [
+                    {
+                        "content": {
+                            "badges": [
+                                {
+                                    "type": "CONSTRUCTIVE",
+                                    "text": "Free cancellation",
+                                    "variation": "DEFAULT"
+                                }
+                            ],
+                            "supplier": {
+                                "name": "Hertz",
+                                "imageUrl": "https://cdn.rcstatic.com/sp/images/suppliers/4004_logo_200.png",
+                                "rating": {
+                                    "average": "7.5",
+                                    "localisedRating": {
+                                        "rawValue": 7.5,
+                                        "displayValue": "7.5"
+                                    },
+                                    "title": "Good",
+                                    "subtitle": "163 reviews"
+                                }
+                            },
+                            "vehicleSpecs": [
+                                {
+                                    "text": "Automatic",
+                                    "icon": "TRANSMISSION_AUTOMATIC",
+                                    "accessibility": "Automatic gearbox"
+                                },
+                                {
+                                    "text": "Unlimited mileage",
+                                    "icon": "MILEAGE",
+                                    "accessibility": null
+                                }
+                            ]
+                        },
+                        "vehicle_info": {
+                            "v_id": "792132731",
+                            "v_name": "Nissan Kicks",
+                            "unlimited_mileage": 1,
+                            "transmission": "Automatic",
+                            "special_offer_text": null,
+                            "seats": "5",
+                            "suitcases": {
+                                "big": "0",
+                                "small": "2"
+                            },
+                            "label": "Compact car with:",
+                            "insurance_package": "",
+                            "image_url": "https://cdn.rcstatic.com/images/car_images/web/nissan/kicks_lrg.png",
+                            "image_thumbnail_url": "https://cdn.rcstatic.com/images/car_images/web/nissan/kicks_lrg.png",
+                            "group": "Compact",
+                            "group_or_similar": "or similar SUV",
+                            "fuel_type": "N/A",
+                            "fuel_policy_description": "",
+                            "fuel_policy": "Like for like",
+                            "free_cancellation": 1,
+                            "doors": "4",
+                            "cma_compliant": -1,
+                            "aircon": 1,
+                            "airbags": 1,
+                            "mileage": "Unlimited mileage",
+                            "badges": {},
+                            "deposit": null
+                        },
+                        "supplier_info": {
+                            "name": "Hertz",
+                            "logo_url": "https://cdn.rcstatic.com/sp/images/suppliers/4004_logo_200.png",
+                            "location_type": "Shuttle Bus",
+                            "address": "318, John F. Kennedy Airport, Building 318, Jfk Airport (JFK), USA, 11430-9508",
+                            "latitude": "40.6397",
+                            "longitude": "-73.7792",
+                            "pickup_instructions": "",
+                            "dropoff_instructions": "",
+                            "may_require_credit_card_guarantee": false
+                        },
+                        "route_info": {
+                            "pickup": {
+                                "name": "John F Kennedy International Airport",
+                                "longitude": "-73.7792",
+                                "location_type": "SHUTTLE_BUS",
+                                "location_id": "41721",
+                                "latitude": "40.6397",
+                                "icon": "",
+                                "country_code": "US",
+                                "country": "",
+                                "address": "318, John F. Kennedy Airport, Building 318, Jfk Airport (JFK), USA, 11430-9508",
+                                "city": "",
+                                "location_hash": "Sm9obiBGIEtlbm5lZHkgSW50ZXJuYXRpb25hbCBBaXJwb3J0"
+                            },
+                            "dropoff": {
+                                "name": "John F Kennedy International Airport",
+                                "longitude": "-73.7792",
+                                "location_type": "SHUTTLE_BUS",
+                                "location_id": "41721",
+                                "latitude": "40.6397",
+                                "icon": "",
+                                "country_code": "US",
+                                "country": "",
+                                "address": "318, John F. Kennedy Airport, Building 318, Jfk Airport (JFK), USA, 11430-9508",
+                                "city": "",
+                                "location_hash": "Sm9obiBGIEtlbm5lZHkgSW50ZXJuYXRpb25hbCBBaXJwb3J0"
+                            }
+                        },
+                        "rating_info": {
+                            "average": 7.5,
+                            "average_text": "Very good",
+                            "condition": 7.9,
+                            "location": 8.3,
+                            "cleanliness": 8.2,
+                            "efficiency": 6.5,
+                            "value_for_money": 6.7,
+                            "pickup_time": 6.9,
+                            "dropoff_time": 8.9,
+                            "no_of_ratings": 163
+                        },
+                        "fee_info": {
+                            "type": "",
+                            "tax": 0,
+                            "currency": "",
+                            "fee": 0.0
+                        },
+                        "freebies": [
+                            "Amendments"
+                        ],
+                        "pricing_info": {
+                            "base_price": 288.99,
+                            "drive_away_price": 326.67,
+                            "drive_away_price_before": null,
+                            "drive_away_price_is_approx": false,
+                            "deposit": 288.99,
+                            "discount": 0.0,
+                            "base_deposit": 288.99,
+                            "base_currency": "USD",
+                            "price": 288.99,
+                            "quote_allowed": 1,
+                            "currency": "USD",
+                            "fee_breakdown": {
+                                "fuel_policy": {
+                                    "type": "RETURN_SAME",
+                                    "amount": 0.0,
+                                    "currency": ""
+                                },
+                                "known_fees": [
+                                    {
+                                        "type": "THEFT_EXCESS",
+                                        "distance_allowed": null,
+                                        "is_always_payable": 0,
+                                        "is_tax_included": 1,
+                                        "max_amount": null,
+                                        "min_amount": null,
+                                        "amount": null,
+                                        "currency": null
+                                    },
+                                    {
+                                        "type": "CONCESSION RECOVERY SURCHARGE FEE",
+                                        "distance_allowed": null,
+                                        "is_always_payable": 1,
+                                        "is_tax_included": 0,
+                                        "max_amount": 3.0,
+                                        "min_amount": 3.0,
+                                        "amount": 3.0,
+                                        "currency": "USD"
+                                    },
+                                    {
+                                        "type": "DEPOSIT",
+                                        "distance_allowed": null,
+                                        "is_always_payable": 0,
+                                        "is_tax_included": 1,
+                                        "max_amount": 200.0,
+                                        "min_amount": 200.0,
+                                        "amount": 200.0,
+                                        "currency": "USD"
+                                    }
+                                ]
+                            },
+                            "pay_when": "PART_PAY"
+                        },
+                        "accessibility": {
+                            "transmission": "Automatic gearbox",
+                            "fuel_policy": "Fuel policy is: Like for like",
+                            "supplier_rating": "At this location, our customers have rated Hertz as 7.5 out of 10, Good.",
+                            "pick_up_location": "Pick-up information: Shuttle Bus"
+                        },
+                        "applied_discount_types": [],
+                        "pay_when_text": "Pay part now",
+                        "forward_url": "https://cars.booking.com/DriverExtras.do?location=4601342&dropLocation=4601342&vehicleInfo.vehicle.id=792132731&serverName=cars.booking.com&gaCampInfo=true&adplat=connectApp&driversAge=35&puDay=10&puMonth=6&puYear=2025&puHour=9&puMinute=0&doDay=15&doMonth=6&doYear=2025&doHour=17&doMinute=0&affiliateCode=booking-cars&seed=011cd0b075c140449e921508d3a049a14c&cor=us&preflang=us&prefcurrency=USD"
+                    },
+                    {
+                        "content": {
+                            "badges": [
+                                {
+                                    "type": "CONSTRUCTIVE",
+                                    "text": "Free cancellation",
+                                    "variation": "DEFAULT"
+                                }
+                            ],
+                            "supplier": {
+                                "name": "Payless",
+                                "imageUrl": "https://cdn.rcstatic.com/sp/images/suppliers/1811_logo_200.png",
+                                "rating": {
+                                    "average": "8.0",
+                                    "localisedRating": {
+                                        "rawValue": 8.0,
+                                        "displayValue": "8"
+                                    },
+                                    "title": "Very good",
+                                    "subtitle": "116 reviews"
+                                }
+                            },
+                            "vehicleSpecs": [
+                                {
+                                    "text": "Automatic",
+                                    "icon": "TRANSMISSION_AUTOMATIC",
+                                    "accessibility": "Automatic gearbox"
+                                },
+                                {
+                                    "text": "Unlimited mileage",
+                                    "icon": "MILEAGE",
+                                    "accessibility": null
+                                }
+                            ]
+                        },
+                        "vehicle_info": {
+                            "v_id": "678149896",
+                            "v_name": "Jeep Cherokee  ",
+                            "unlimited_mileage": 1,
+                            "transmission": "Automatic",
+                            "special_offer_text": null,
+                            "seats": "5",
+                            "suitcases": {
+                                "big": "0",
+                                "small": "0"
+                            },
+                            "label": "Standard car with:",
+                            "insurance_package": "",
+                            "image_url": "https://cdn.rcstatic.com/images/car_images/web/jeep/cherokee_lrg.png",
+                            "image_thumbnail_url": "https://cdn.rcstatic.com/images/car_images/web/jeep/cherokee_lrg.png",
+                            "group": "Standard",
+                            "group_or_similar": "or similar SUV",
+                            "fuel_type": "N/A",
+                            "fuel_policy_description": "",
+                            "fuel_policy": "Like for like",
+                            "free_cancellation": 1,
+                            "doors": "4",
+                            "cma_compliant": -1,
+                            "aircon": 1,
+                            "airbags": 1,
+                            "mileage": "Unlimited mileage",
+                            "badges": {},
+                            "deposit": null
+                        },
+                        "supplier_info": {
+                            "name": "Payless",
+                            "logo_url": "https://cdn.rcstatic.com/sp/images/suppliers/1811_logo_200.png",
+                            "location_type": "In Terminal",
+                            "address": "John F. Kennedy Airport, Jfk Airport (JFK), USA, 11430",
+                            "latitude": "40.6397",
+                            "longitude": "-73.7792",
+                            "pickup_instructions": "",
+                            "dropoff_instructions": "",
+                            "may_require_credit_card_guarantee": false
+                        },
+                        "route_info": {
+                            "pickup": {
+                                "name": "John F Kennedy International Airport",
+                                "longitude": "-73.7792",
+                                "location_type": "IN_TERMINAL",
+                                "location_id": "41721",
+                                "latitude": "40.6397",
+                                "icon": "",
+                                "country_code": "US",
+                                "country": "",
+                                "address": "John F. Kennedy Airport, Jfk Airport (JFK), USA, 11430",
+                                "city": "",
+                                "location_hash": "Sm9obiBGIEtlbm5lZHkgSW50ZXJuYXRpb25hbCBBaXJwb3J0"
+                            },
+                            "dropoff": {
+                                "name": "John F Kennedy International Airport",
+                                "longitude": "-73.7792",
+                                "location_type": "IN_TERMINAL",
+                                "location_id": "41721",
+                                "latitude": "40.6397",
+                                "icon": "",
+                                "country_code": "US",
+                                "country": "",
+                                "address": "John F. Kennedy Airport, Jfk Airport (JFK), USA, 11430",
+                                "city": "",
+                                "location_hash": "Sm9obiBGIEtlbm5lZHkgSW50ZXJuYXRpb25hbCBBaXJwb3J0"
+                            }
+                        },
+                        "rating_info": {
+                            "average": 8.0,
+                            "average_text": "Excellent",
+                            "condition": 8.4,
+                            "location": 8.4,
+                            "cleanliness": 8.5,
+                            "efficiency": 8.1,
+                            "value_for_money": 7.7,
+                            "pickup_time": 6.0,
+                            "dropoff_time": 9.4,
+                            "no_of_ratings": 116
+                        },
+                        "fee_info": {
+                            "type": "",
+                            "tax": 0,
+                            "currency": "",
+                            "fee": 0.0
+                        },
+                        "freebies": [
+                            "Amendments"
+                        ],
+                        "pricing_info": {
+                            "base_price": 391.62,
+                            "drive_away_price": 391.62,
+                            "drive_away_price_before": null,
+                            "drive_away_price_is_approx": false,
+                            "deposit": 391.62,
+                            "discount": 0.0,
+                            "base_deposit": 391.62,
+                            "base_currency": "USD",
+                            "price": 391.62,
+                            "quote_allowed": 1,
+                            "currency": "USD",
+                            "fee_breakdown": {
+                                "fuel_policy": {
+                                    "type": "RETURN_SAME",
+                                    "amount": 0.0,
+                                    "currency": ""
+                                },
+                                "known_fees": [
+                                    {
+                                        "type": "THEFT_EXCESS",
+                                        "distance_allowed": null,
+                                        "is_always_payable": 0,
+                                        "is_tax_included": 1,
+                                        "max_amount": null,
+                                        "min_amount": null,
+                                        "amount": null,
+                                        "currency": null
+                                    },
+                                    {
+                                        "type": "DEPOSIT",
+                                        "distance_allowed": null,
+                                        "is_always_payable": 0,
+                                        "is_tax_included": 1,
+                                        "max_amount": 250.0,
+                                        "min_amount": 250.0,
+                                        "amount": 250.0,
+                                        "currency": "USD"
+                                    },
+                                    {
+                                        "type": "DAMAGE_EXCESS",
+                                        "distance_allowed": null,
+                                        "is_always_payable": 0,
+                                        "is_tax_included": 1,
+                                        "max_amount": null,
+                                        "min_amount": null,
+                                        "amount": null,
+                                        "currency": null
+                                    }
+                                ]
+                            },
+                            "pay_when": "PAY_NOW"
+                        },
+                        "accessibility": {
+                            "transmission": "Automatic gearbox",
+                            "fuel_policy": "Fuel policy is: Like for like",
+                            "supplier_rating": "At this location, our customers have rated Payless as 8.0 out of 10, Very good.",
+                            "pick_up_location": "Pick-up information: In Terminal"
+                        },
+                        "applied_discount_types": [],
+                        "pay_when_text": "Pay now",
+                        "forward_url": "https://cars.booking.com/DriverExtras.do?location=4247438&dropLocation=4247438&vehicleInfo.vehicle.id=678149896&serverName=cars.booking.com&gaCampInfo=true&adplat=connectApp&driversAge=35&puDay=10&puMonth=6&puYear=2025&puHour=9&puMinute=0&doDay=15&doMonth=6&doYear=2025&doHour=17&doMinute=0&affiliateCode=booking-cars&seed=011cd0b075c140449e921508d3a049a14c&cor=us&preflang=us&prefcurrency=USD"
+                    },
+                    {
+                        "content": {
+                            "badges": [
+                                {
+                                    "type": "CONSTRUCTIVE",
+                                    "text": "Free cancellation",
+                                    "variation": "DEFAULT"
+                                }
+                            ],
+                            "supplier": {
+                                "name": "RC - Payless",
+                                "imageUrl": "https://cdn.rcstatic.com/sp/images/suppliers/418_logo_200.png",
+                                "rating": {
+                                    "average": "8.3",
+                                    "localisedRating": {
+                                        "rawValue": 8.3,
+                                        "displayValue": "8.3"
+                                    },
+                                    "title": "Very good",
+                                    "subtitle": "247 reviews"
+                                }
+                            },
+                            "vehicleSpecs": [
+                                {
+                                    "text": "Automatic",
+                                    "icon": "TRANSMISSION_AUTOMATIC",
+                                    "accessibility": "Automatic gearbox"
+                                },
+                                {
+                                    "text": "Unlimited mileage",
+                                    "icon": "MILEAGE",
+                                    "accessibility": null
+                                }
+                            ]
+                        },
+                        "vehicle_info": {
+                            "v_id": "733466191",
+                            "v_name": "Toyota Tacoma",
+                            "unlimited_mileage": 1,
+                            "transmission": "Automatic",
+                            "special_offer_text": null,
+                            "seats": "5",
+                            "suitcases": {
+                                "big": "0",
+                                "small": "5"
+                            },
+                            "label": "Standard car with:",
+                            "insurance_package": "",
+                            "image_url": "https://cdn.rcstatic.com/images/car_images/web/toyota/tacoma_lrg.png",
+                            "image_thumbnail_url": "https://cdn.rcstatic.com/images/car_images/web/toyota/tacoma_lrg.png",
+                            "group": "Standard",
+                            "group_or_similar": "or similar SUV",
+                            "fuel_type": "N/A",
+                            "fuel_policy_description": "",
+                            "fuel_policy": "",
+                            "free_cancellation": 1,
+                            "doors": "4",
+                            "cma_compliant": -1,
+                            "aircon": 1,
+                            "airbags": 1,
+                            "mileage": "Unlimited mileage",
+                            "badges": {},
+                            "deposit": null
+                        },
+                        "supplier_info": {
+                            "name": "RC - Payless",
+                            "logo_url": "https://cdn.rcstatic.com/sp/images/suppliers/418_logo_200.png",
+                            "location_type": "Shuttle Bus",
+                            "address": "305 Federal Circle, Jamaica, US, 11430",
+                            "latitude": "40.660626",
+                            "longitude": "-73.804886",
+                            "pickup_instructions": "",
+                            "dropoff_instructions": "",
+                            "may_require_credit_card_guarantee": false
+                        },
+                        "route_info": {
+                            "pickup": {
+                                "name": "John F Kennedy International Airport",
+                                "longitude": "-73.804886",
+                                "location_type": "SHUTTLE_BUS",
+                                "location_id": "41721",
+                                "latitude": "40.660626",
+                                "icon": "",
+                                "country_code": "US",
+                                "country": "",
+                                "address": "305 Federal Circle, Jamaica, US, 11430",
+                                "city": "",
+                                "location_hash": "Sm9obiBGIEtlbm5lZHkgSW50ZXJuYXRpb25hbCBBaXJwb3J0"
+                            },
+                            "dropoff": {
+                                "name": "John F Kennedy International Airport",
+                                "longitude": "-73.804886",
+                                "location_type": "SHUTTLE_BUS",
+                                "location_id": "41721",
+                                "latitude": "40.660626",
+                                "icon": "",
+                                "country_code": "US",
+                                "country": "",
+                                "address": "305 Federal Circle, Jamaica, US, 11430",
+                                "city": "",
+                                "location_hash": "Sm9obiBGIEtlbm5lZHkgSW50ZXJuYXRpb25hbCBBaXJwb3J0"
+                            }
+                        },
+                        "rating_info": {
+                            "average": 8.3,
+                            "average_text": "Excellent",
+                            "condition": 8.3,
+                            "location": 8.5,
+                            "cleanliness": 8.1,
+                            "efficiency": 8.4,
+                            "value_for_money": 8.1,
+                            "pickup_time": 7.7,
+                            "dropoff_time": 9.4,
+                            "no_of_ratings": 247
+                        },
+                        "fee_info": {
+                            "type": "",
+                            "tax": 0,
+                            "currency": "",
+                            "fee": 0.0
+                        },
+                        "freebies": [
+                            "Amendments"
+                        ],
+                        "pricing_info": {
+                            "drive_away_price": 396.46,
+                            "drive_away_price_before": null,
+                            "drive_away_price_is_approx": false,
+                            "quote_allowed": 1,
+                            "currency": "USD",
+                            "fee_breakdown": {
+                                "fuel_policy": {
+                                    "type": null,
+                                    "amount": 0.0,
+                                    "currency": ""
+                                },
+                                "known_fees": []
+                            },
+                            "pay_when": "PAY_LOCAL"
+                        },
+                        "accessibility": {
+                            "transmission": "Automatic gearbox",
+                            "fuel_policy": "Fuel policy is: ",
+                            "supplier_rating": "At this location, our customers have rated RC - Payless as 8.3 out of 10, Very good.",
+                            "pick_up_location": "Pick-up information: Shuttle Bus"
+                        },
+                        "applied_discount_types": [],
+                        "pay_when_text": "Pay at pick-up",
+                        "forward_url": "https://cars.booking.com/Contract.do?vehicleInfo.supplier.locId=1203551&vehicleInfo.supplier.dropLocId=1203551&vehicleInfo.vehicle.rateReference=JFK~JFK~R~N~~19734f0c61d~~refCode-23-3f7e722a-1d03-4a4e-8349-940aaae30427~20250610T09%3A00~20250615T17%3A00~ZA~IPAR~USD~396.46~~~~~~~~~N~4f60292f-5992-423b-aa8c-38b8abf1f88d~~396.46~USD%2A__396.46_USD&vehicleInfo.vehicle.id=733466191&serverName=cars.booking.com&gaCampInfo=true&adplat=connectApp&driversAge=35&puDay=10&puMonth=6&puYear=2025&puHour=9&puMinute=0&doDay=15&doMonth=6&doYear=2025&doHour=17&doMinute=0&affiliateCode=booking-cars&seed=011cd0b075c140449e921508d3a049a14c&cor=us&preflang=us&prefcurrency=USD"
+                    }
+                ],
+                "discount_banner": null,
+                "content": {
+                    "discountBanner": null,
+                    "dsaBanner": null,
+                    "items": [
+                        {
+                            "type": "RESULTS_COUNT",
+                            "positionInList": 0,
+                            "content": {
+                                "label": "519 results"
+                            }
+                        },
+                        {
+                            "type": "SHELL_REGION_VIEW",
+                            "positionInList": 4,
+                            "content": {
+                                "contentType": "carsSearchResultsSecondaryPromotional"
+                            }
+                        }
+                    ],
+                    "filters": {
+                        "countLabel": "519 results"
+                    },
+                    "map": {
+                        "supplierLocations": [
+                            {
+                                "carouselContent": {
+                                    "title": "John F Kennedy International Airport",
+                                    "body": "318, John F. Kennedy Airport, Building 318, Jfk Airport (JFK), USA, 11430-9508",
+                                    "label": "116 cars \u00b7 13 suppliers",
+                                    "footer": {
+                                        "label": "Price for 6 days: from $327",
+                                        "price": "$327"
+                                    }
+                                },
+                                "supplierPinContent": {
+                                    "label": "$327",
+                                    "latLong": {
+                                        "latitude": 40.6397,
+                                        "longitude": -73.7792
+                                    },
+                                    "accessibility": {
+                                        "label": "$327"
+                                    }
+                                },
+                                "metaData": {
+                                    "locationName": "John F Kennedy International Airport",
+                                    "locationHash": "Sm9obiBGIEtlbm5lZHkgSW50ZXJuYXRpb25hbCBBaXJwb3J0"
+                                }
+                            },
+                            {
+                                "carouselContent": {
+                                    "title": "LaGuardia Airport",
+                                    "body": "22, Marine Air Terminal, Laguardia Airport (LGA), USA, 11371-1041",
+                                    "label": "103 cars \u00b7 13 suppliers",
+                                    "footer": {
+                                        "label": "Price for 6 days: from $429",
+                                        "price": "$429"
+                                    }
+                                },
+                                "supplierPinContent": {
+                                    "label": "$429",
+                                    "latLong": {
+                                        "latitude": 40.774583,
+                                        "longitude": -73.871834
+                                    },
+                                    "accessibility": {
+                                        "label": "$429"
+                                    }
+                                },
+                                "metaData": {
+                                    "locationName": "LaGuardia Airport",
+                                    "locationHash": "TGFHdWFyZGlhIEFpcnBvcnQ="
+                                }
+                            },
+                            {
+                                "carouselContent": {
+                                    "title": "New York - Manhattan",
+                                    "body": "304 W 49th St, (between 8th & 9th Ave), New York, US, 10019",
+                                    "label": "63 cars \u00b7 9 suppliers",
+                                    "footer": {
+                                        "label": "Price for 6 days: from $407",
+                                        "price": "$407"
+                                    }
+                                },
+                                "supplierPinContent": {
+                                    "label": "$407",
+                                    "latLong": {
+                                        "latitude": 40.761811,
+                                        "longitude": -73.987232
+                                    },
+                                    "accessibility": {
+                                        "label": "$407"
+                                    }
+                                },
+                                "metaData": {
+                                    "locationName": "New York - Manhattan",
+                                    "locationHash": "TmV3IFlvcmsgLSBNYW5oYXR0YW4="
+                                }
+                            }
+                        ]
+                    }
+                },
+                "filter": [
+                    {
+                        "title": "Location",
+                        "id": "depotLocationType",
+                        "type": "multiple_union",
+                        "layout": {
+                            "is_collapsable": "false",
+                            "is_collapsed": "false",
+                            "collapsed_count": 4,
+                            "layout_type": "list"
+                        },
+                        "categories": [
+                            {
+                                "id": "depotLocationType::DOWNTOWN",
+                                "name": "All other locations",
+                                "nameWithCount": "All other locations (298)",
+                                "count": 298
+                            },
+                            {
+                                "id": "depotLocationType::SHUTTLE_BUS",
+                                "name": "Airport (shuttle)",
+                                "nameWithCount": "Airport (shuttle) (210)",
+                                "count": 210
+                            },
+                            {
+                                "id": "depotLocationType::IN_TERMINAL",
+                                "name": "Airport (in terminal)",
+                                "nameWithCount": "Airport (in terminal) (2)",
+                                "count": 2
+                            }
+                        ]
+                    },
+                    {
+                        "title": "Car Type",
+                        "id": "carCategory",
+                        "type": "multiple_union",
+                        "layout": {
+                            "is_collapsable": "true",
+                            "is_collapsed": "true",
+                            "collapsed_count": 5,
+                            "layout_type": "list"
+                        },
+                        "categories": [
+                            {
+                                "id": "carCategory::small",
+                                "name": "Small",
+                                "nameWithCount": "Small (91)",
+                                "count": 91
+                            },
+                            {
+                                "id": "carCategory::medium",
+                                "name": "Medium",
+                                "nameWithCount": "Medium (313)",
+                                "count": 313
+                            },
+                            {
+                                "id": "carCategory::large",
+                                "name": "Large",
+                                "nameWithCount": "Large (798)",
+                                "count": 798
+                            }
+                        ]
+                    },
+                    {
+                        "title": "Supplier",
+                        "id": "supplier",
+                        "type": "multiple_union",
+                        "layout": {
+                            "is_collapsable": "true",
+                            "is_collapsed": "true",
+                            "collapsed_count": 5,
+                            "layout_type": "list"
+                        },
+                        "categories": [
+                            {
+                                "id": "supplier::Ace",
+                                "name": "Ace",
+                                "nameWithCount": "Ace (0)",
+                                "count": 0
+                            },
+                            {
+                                "id": "supplier::Alamo",
+                                "name": "Alamo",
+                                "nameWithCount": "Alamo (45)",
+                                "count": 45
+                            },
+                            {
+                                "id": "supplier::Avis",
+                                "name": "Avis",
+                                "nameWithCount": "Avis (103)",
+                                "count": 103
+                            }
+                        ]
+                    }
+                ],
+                "sort": [
+                    {
+                        "name": "Recommended \u2013 best first",
+                        "identifier": "recommended",
+                        "title_tag": "tr.searchresults.sortBy.recommended"
+                    },
+                    {
+                        "name": "Price - lowest first",
+                        "identifier": "price_low_to_high",
+                        "title_tag": "tr.searchresults.sortBy.price.lowHigh"
+                    },
+                    {
+                        "name": "Review score - highest first",
+                        "identifier": "review_score",
+                        "title_tag": "tr.searchresults.sortBy.reviews.highLow"
+                    }
+                ],
+                "search_key": "eyJkcml2ZXJzQWdlIjozNSwiZHJvcE9mZkRhdGVUaW1lIjoiMjAyNS0wNi0xNVQxNzowMDowMCIsInBpY2tVcERhdGVUaW1lIjoiMjAyNS0wNi0xMFQwOTowMDowMCIsInBpY2tVcExvY2F0aW9uIjoiNDAuNzU5NTksLTczLjk4NDkxIiwicGlja1VwTG9jYXRpb25UeXBlIjoiTEFUTE9ORyIsInJlbnRhbER1cmF0aW9uSW5EYXlzIjo2LCJzZXJ2aWNlRmVhdHVyZXMiOlsiTk9fT1BBUVVFUyIsIlNVUFJFU1NfRklYRURfUFJJQ0VfVkVISUNMRVMiLCJJTkNMVURFX1BST0RVQ1RfUkVMQVRJT05TSElQUyIsIklOQ0xVREVfRVhUUkFTX0NPTlRBSU5JTkdfRkVFUyIsIlNVUFBSRVNTX0RJUkVDVF9QQVlfTE9DQUxfVkVISUNMRVMiXX0=",
+                "search_context": {
+                    "searchKey": "eyJkcml2ZXJzQWdlIjozNSwiZHJvcE9mZkRhdGVUaW1lIjoiMjAyNS0wNi0xNVQxNzowMDowMCIsInBpY2tVcERhdGVUaW1lIjoiMjAyNS0wNi0xMFQwOTowMDowMCIsInBpY2tVcExvY2F0aW9uIjoiNDAuNzU5NTksLTczLjk4NDkxIiwicGlja1VwTG9jYXRpb25UeXBlIjoiTEFUTE9ORyIsInJlbnRhbER1cmF0aW9uSW5EYXlzIjo2LCJzZXJ2aWNlRmVhdHVyZXMiOlsiTk9fT1BBUVVFUyIsIlNVUFJFU1NfRklYRURfUFJJQ0VfVkVISUNMRVMiLCJJTkNMVURFX1BST0RVQ1RfUkVMQVRJT05TSElQUyIsIklOQ0xVREVfRVhUUkFTX0NPTlRBSU5JTkdfRkVFUyIsIlNVUFBSRVNTX0RJUkVDVF9QQVlfTE9DQUxfVkVISUNMRVMiXX0=",
+                    "searchId": "a72909b8-3e99-47dd-a8ba-2a01cdb32bf5",
+                    "recommendationsSearchUniqueId": "c16c84e8-7ee2-41e8-b28a-d492b96c6d2e"
+                },
+                "count": 394,
+                "is_genius_location": false
+            }
+        }
+    ],
+    "response_summary": "Here\u2019s a summary of the car rental options available at John F. Kennedy International Airport (JFK) in New York. There are 1,120 results in total, with prices starting from $253 for a 6-day rental. The supplier Ace offers three vehicles with free cancellation and unlimited mileage, all rated 6.0 out of 10 based on 164 reviews.  \n\nFirst, the **Volkswagen Jetta** is an intermediate car priced at $256.09, seating five passengers with space for three small suitcases. It features an automatic transmission, air conditioning, and a \"like for like\" fuel policy. The pickup and drop-off location is at JFK, accessible via a shuttle bus from Federal Circle.  \n\nNext, the **Hyundai Elantra** is a standard car costing $263.06, accommodating five people and four small suitcases. Like the Jetta, it has automatic transmission, unlimited mileage, and free cancellation.  \n\nLastly, the **Hyundai Accent**, an economy car, is available for $252.61. It seats five and fits three small suitcases, with similar features as the other options.  \n\nOther nearby locations include LaGuardia Airport (starting at $321 for 6 days) and Manhattan (from $383). Filters allow sorting by car type (small, medium, large), supplier (Ace, Alamo, Avis), and location type (airport shuttle, in-terminal, downtown). Results can also be sorted by price (lowest first) or review score (highest first).  \n\nFor pickup, travelers should take the Airtrain to Federal Circle and follow signs for free shuttles, then call Ace at 855-550-0008 for pickup. A deposit of up to $500 may be required, along with a potential valet fee of $250. All bookings are payable upfront.",
+    "enhance_func_desc": "This API is ideal for travelers seeking car rentals at specific locations and times. It searches available vehicles based on pickup/drop-off details, with options to filter by car type, supplier, transmission, and amenities like air conditioning. Users receive detailed rental info including pricing, capacity, features, and supplier ratings. Results can be sorted by recommendation or price, aiding in cost-effective travel planning.",
+    "enhance_params_desc": {
+        "enhanced_parameters": {
+            "pickUpId": "Unique identifier for the pickup location, sourced from auto-complete endpoint.",
+            "pickUpDate": "Date when the car rental begins (YYYY-MM-DD format).",
+            "pickUpTime": "Time when the car rental begins (24-hour HH:MM format).",
+            "dropOffDate": "Date when the car rental ends (YYYY-MM-DD format).",
+            "dropOffTime": "Time when the car rental ends (24-hour HH:MM format).",
+            "dropOffId": "Unique identifier for the drop-off location, if different from pickup.",
+            "sortBy": "Sorts results by recommendation or price (low to high).",
+            "driverAge": "Driver's age, must be between 30 and 65 years.",
+            "carType": "Filters by car category (e.g., small, SUV, premium).",
+            "supplier": "Filters by rental company (e.g., Alamo, Enterprise).",
+            "transmission": "Filters by transmission type (e.g., automatic).",
+            "hasAirConditioning": "Filters for cars with air conditioning (true/false).",
+            "units": "Sets measurement units (metric or imperial).",
+            "languageCode": "Language preference for the response data.",
+            "currencyCode": "Currency for displaying rental prices.",
+            "countryFlag": "Country code for localized results (e.g., 'us')."
+        }
+    },
+    "enhance_resfield_desc": {
+        "response_fields": {
+            "search_results": [
+                {
+                    "content": {
+                        "type": "Object",
+                        "description": "Contains badges, supplier information, and vehicle specifications.",
+                        "ob_properties": {
+                            "badges": {
+                                "type": "Array",
+                                "description": "List of badges associated with the vehicle (e.g., 'Free cancellation').",
+                                "ar_items": {
+                                    "type": "Object",
+                                    "description": "Badge details.",
+                                    "ob_properties": {
+                                        "type": {
+                                            "type": "String",
+                                            "description": "Type of badge (e.g., 'CONSTRUCTIVE')."
+                                        },
+                                        "text": {
+                                            "type": "String",
+                                            "description": "Text displayed on the badge (e.g., 'Free cancellation')."
+                                        },
+                                        "variation": {
+                                            "type": "String",
+                                            "description": "Variation of the badge (e.g., 'DEFAULT')."
+                                        }
+                                    }
+                                }
+                            },
+                            "supplier": {
+                                "type": "Object",
+                                "description": "Supplier details including name, logo, and rating.",
+                                "ob_properties": {
+                                    "name": {
+                                        "type": "String",
+                                        "description": "Name of the supplier (e.g., 'Ace')."
+                                    },
+                                    "imageUrl": {
+                                        "type": "String",
+                                        "description": "URL of the supplier's logo."
+                                    },
+                                    "rating": {
+                                        "type": "Object",
+                                        "description": "Supplier rating details.",
+                                        "ob_properties": {
+                                            "average": {
+                                                "type": "String",
+                                                "description": "Average rating (e.g., '6.0')."
+                                            },
+                                            "localisedRating": {
+                                                "type": "Object",
+                                                "description": "Localized rating details.",
+                                                "ob_properties": {
+                                                    "rawValue": {
+                                                        "type": "Number",
+                                                        "description": "Raw numerical rating value (e.g., 6.0)."
+                                                    },
+                                                    "displayValue": {
+                                                        "type": "String",
+                                                        "description": "Display value of the rating (e.g., '6')."
+                                                    }
+                                                }
+                                            },
+                                            "title": {
+                                                "type": "String",
+                                                "description": "Title of the rating (e.g., 'OK')."
+                                            },
+                                            "subtitle": {
+                                                "type": "String",
+                                                "description": "Subtitle of the rating (e.g., '164 reviews')."
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "vehicleSpecs": {
+                                "type": "Array",
+                                "description": "List of vehicle specifications (e.g., transmission type).",
+                                "ar_items": {
+                                    "type": "Object",
+                                    "description": "Specification details.",
+                                    "ob_properties": {
+                                        "text": {
+                                            "type": "String",
+                                            "description": "Text description of the specification (e.g., 'Automatic')."
+                                        },
+                                        "icon": {
+                                            "type": "String",
+                                            "description": "Icon representing the specification (e.g., 'TRANSMISSION_AUTOMATIC')."
+                                        },
+                                        "accessibility": {
+                                            "type": "String",
+                                            "description": "Accessibility description (e.g., 'Automatic gearbox')."
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "vehicle_info": {
+                        "type": "Object",
+                        "description": "Detailed information about the vehicle.",
+                        "ob_properties": {
+                            "v_id": {
+                                "type": "String",
+                                "description": "Unique identifier for the vehicle (e.g., '695750651')."
+                            },
+                            "v_name": {
+                                "type": "String",
+                                "description": "Name of the vehicle (e.g., 'Volkswagen Jetta')."
+                            },
+                            "unlimited_mileage": {
+                                "type": "Number",
+                                "description": "Indicates if the vehicle has unlimited mileage (1 for true, 0 for false)."
+                            },
+                            "transmission": {
+                                "type": "String",
+                                "description": "Type of transmission (e.g., 'Automatic')."
+                            },
+                            "special_offer_text": {
+                                "type": "null",
+                                "description": "Text for any special offers (null if none)."
+                            },
+                            "seats": {
+                                "type": "String",
+                                "description": "Number of seats in the vehicle (e.g., '5')."
+                            },
+                            "suitcases": {
+                                "type": "Object",
+                                "description": "Capacity for suitcases.",
+                                "ob_properties": {
+                                    "big": {
+                                        "type": "String",
+                                        "description": "Number of big suitcases the vehicle can hold (e.g., '0')."
+                                    },
+                                    "small": {
+                                        "type": "String",
+                                        "description": "Number of small suitcases the vehicle can hold (e.g., '3')."
+                                    }
+                                }
+                            },
+                            "label": {
+                                "type": "String",
+                                "description": "Label describing the vehicle type (e.g., 'Intermediate car with:')."
+                            },
+                            "insurance_package": {
+                                "type": "String",
+                                "description": "Insurance package details (empty if none)."
+                            },
+                            "image_url": {
+                                "type": "String",
+                                "description": "URL of the vehicle's image."
+                            },
+                            "image_thumbnail_url": {
+                                "type": "String",
+                                "description": "URL of the vehicle's thumbnail image."
+                            },
+                            "group": {
+                                "type": "String",
+                                "description": "Vehicle group (e.g., 'Intermediate')."
+                            },
+                            "group_or_similar": {
+                                "type": "String",
+                                "description": "Description of the vehicle group or similar (e.g., 'or similar large car')."
+                            },
+                            "fuel_type": {
+                                "type": "String",
+                                "description": "Type of fuel (e.g., 'N/A')."
+                            },
+                            "fuel_policy_description": {
+                                "type": "String",
+                                "description": "Description of the fuel policy (empty if none)."
+                            },
+                            "fuel_policy": {
+                                "type": "String",
+                                "description": "Fuel policy (e.g., 'Like for like')."
+                            },
+                            "free_cancellation": {
+                                "type": "Number",
+                                "description": "Indicates if free cancellation is available (1 for true, 0 for false)."
+                            },
+                            "doors": {
+                                "type": "String",
+                                "description": "Number of doors (e.g., '4')."
+                            },
+                            "cma_compliant": {
+                                "type": "Number",
+                                "description": "Indicates if the vehicle is CMA compliant (-1 for unknown)."
+                            },
+                            "aircon": {
+                                "type": "Number",
+                                "description": "Indicates if the vehicle has air conditioning (1 for true, 0 for false)."
+                            },
+                            "airbags": {
+                                "type": "Number",
+                                "description": "Indicates if the vehicle has airbags (1 for true, 0 for false)."
+                            },
+                            "mileage": {
+                                "type": "String",
+                                "description": "Mileage policy (e.g., 'Unlimited mileage')."
+                            },
+                            "badges": {
+                                "type": "Object",
+                                "description": "Badges associated with the vehicle (empty if none)."
+                            },
+                            "deposit": {
+                                "type": "null",
+                                "description": "Deposit amount (null if none)."
+                            }
+                        }
+                    },
+                    "supplier_info": {
+                        "type": "Object",
+                        "description": "Information about the supplier.",
+                        "ob_properties": {
+                            "name": {
+                                "type": "String",
+                                "description": "Name of the supplier (e.g., 'Ace')."
+                            },
+                            "logo_url": {
+                                "type": "String",
+                                "description": "URL of the supplier's logo."
+                            },
+                            "location_type": {
+                                "type": "String",
+                                "description": "Type of location (e.g., 'Shuttle Bus')."
+                            },
+                            "address": {
+                                "type": "String",
+                                "description": "Physical address of the supplier."
+                            },
+                            "latitude": {
+                                "type": "String",
+                                "description": "Latitude coordinate of the supplier's location."
+                            },
+                            "longitude": {
+                                "type": "String",
+                                "description": "Longitude coordinate of the supplier's location."
+                            },
+                            "pickup_instructions": {
+                                "type": "String",
+                                "description": "Instructions for vehicle pickup."
+                            },
+                            "dropoff_instructions": {
+                                "type": "String",
+                                "description": "Instructions for vehicle dropoff."
+                            },
+                            "may_require_credit_card_guarantee": {
+                                "type": "Boolean",
+                                "description": "Indicates if a credit card guarantee may be required (true/false)."
+                            }
+                        }
+                    },
+                    "route_info": {
+                        "type": "Object",
+                        "description": "Information about pickup and dropoff locations.",
+                        "ob_properties": {
+                            "pickup": {
+                                "type": "Object",
+                                "description": "Pickup location details.",
+                                "ob_properties": {
+                                    "name": {
+                                        "type": "String",
+                                        "description": "Name of the pickup location (e.g., 'John F Kennedy International Airport')."
+                                    },
+                                    "longitude": {
+                                        "type": "String",
+                                        "description": "Longitude coordinate of the pickup location."
+                                    },
+                                    "location_type": {
+                                        "type": "String",
+                                        "description": "Type of pickup location (e.g., 'SHUTTLE_BUS')."
+                                    },
+                                    "location_id": {
+                                        "type": "String",
+                                        "description": "Unique identifier for the pickup location (e.g., '41721')."
+                                    },
+                                    "latitude": {
+                                        "type": "String",
+                                        "description": "Latitude coordinate of the pickup location."
+                                    },
+                                    "icon": {
+                                        "type": "String",
+                                        "description": "Icon representing the pickup location (empty if none)."
+                                    },
+                                    "country_code": {
+                                        "type": "String",
+                                        "description": "Country code of the pickup location (e.g., 'US')."
+                                    },
+                                    "country": {
+                                        "type": "String",
+                                        "description": "Country name of the pickup location (empty if none)."
+                                    },
+                                    "address": {
+                                        "type": "String",
+                                        "description": "Physical address of the pickup location."
+                                    },
+                                    "city": {
+                                        "type": "String",
+                                        "description": "City of the pickup location (empty if none)."
+                                    },
+                                    "location_hash": {
+                                        "type": "String",
+                                        "description": "Hash representing the pickup location."
+                                    }
+                                }
+                            },
+                            "dropoff": {
+                                "type": "Object",
+                                "description": "Dropoff location details.",
+                                "ob_properties": {
+                                    "name": {
+                                        "type": "String",
+                                        "description": "Name of the dropoff location (e.g., 'John F Kennedy International Airport')."
+                                    },
+                                    "longitude": {
+                                        "type": "String",
+                                        "description": "Longitude coordinate of the dropoff location."
+                                    },
+                                    "location_type": {
+                                        "type": "String",
+                                        "description": "Type of dropoff location (e.g., 'SHUTTLE_BUS')."
+                                    },
+                                    "location_id": {
+                                        "type": "String",
+                                        "description": "Unique identifier for the dropoff location (e.g., '41721')."
+                                    },
+                                    "latitude": {
+                                        "type": "String",
+                                        "description": "Latitude coordinate of the dropoff location."
+                                    },
+                                    "icon": {
+                                        "type": "String",
+                                        "description": "Icon representing the dropoff location (empty if none)."
+                                    },
+                                    "country_code": {
+                                        "type": "String",
+                                        "description": "Country code of the dropoff location (e.g., 'US')."
+                                    },
+                                    "country": {
+                                        "type": "String",
+                                        "description": "Country name of the dropoff location (empty if none)."
+                                    },
+                                    "address": {
+                                        "type": "String",
+                                        "description": "Physical address of the dropoff location."
+                                    },
+                                    "city": {
+                                        "type": "String",
+                                        "description": "City of the dropoff location (empty if none)."
+                                    },
+                                    "location_hash": {
+                                        "type": "String",
+                                        "description": "Hash representing the dropoff location."
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "rating_info": {
+                        "type": "Object",
+                        "description": "Rating details for the vehicle and supplier.",
+                        "ob_properties": {
+                            "average": {
+                                "type": "Number",
+                                "description": "Average rating (e.g., 6.0)."
+                            },
+                            "average_text": {
+                                "type": "String",
+                                "description": "Text description of the average rating (e.g., 'Good')."
+                            },
+                            "condition": {
+                                "type": "Number",
+                                "description": "Rating for vehicle condition (e.g., 7.0)."
+                            },
+                            "location": {
+                                "type": "Number",
+                                "description": "Rating for location (e.g., 5.8)."
+                            },
+                            "cleanliness": {
+                                "type": "Number",
+                                "description": "Rating for cleanliness (e.g., 6.8)."
+                            },
+                            "efficiency": {
+                                "type": "Number",
+                                "description": "Rating for efficiency (e.g., 5.4)."
+                            },
+                            "value_for_money": {
+                                "type": "Number",
+                                "description": "Rating for value for money (e.g., 5.5)."
+                            },
+                            "pickup_time": {
+                                "type": "Number",
+                                "description": "Rating for pickup time (e.g., 5.2)."
+                            },
+                            "dropoff_time": {
+                                "type": "Number",
+                                "description": "Rating for dropoff time (e.g., 8.5)."
+                            },
+                            "no_of_ratings": {
+                                "type": "Number",
+                                "description": "Total number of ratings (e.g., 164)."
+                            }
+                        }
+                    },
+                    "fee_info": {
+                        "type": "Object",
+                        "description": "Fee details.",
+                        "ob_properties": {
+                            "type": {
+                                "type": "String",
+                                "description": "Type of fee (empty if none)."
+                            },
+                            "tax": {
+                                "type": "Number",
+                                "description": "Tax amount (e.g., 0)."
+                            },
+                            "currency": {
+                                "type": "String",
+                                "description": "Currency for the fee (empty if none)."
+                            },
+                            "fee": {
+                                "type": "Number",
+                                "description": "Fee amount (e.g., 0.0)."
+                            }
+                        }
+                    },
+                    "freebies": {
+                        "type": "Array",
+                        "description": "List of freebies (e.g., 'Amendments').",
+                        "ar_items": {
+                            "type": "String",
+                            "description": "Freebie description (e.g., 'Amendments')."
+                        }
+                    },
+                    "pricing_info": {
+                        "type": "Object",
+                        "description": "Pricing details for the vehicle.",
+                        "ob_properties": {
+                            "base_price": {
+                                "type": "Number",
+                                "description": "Base price of the rental (e.g., 256.09)."
+                            },
+                            "drive_away_price": {
+                                "type": "Number",
+                                "description": "Final price including all fees (e.g., 256.09)."
+                            },
+                            "drive_away_price_before": {
+                                "type": "null",
+                                "description": "Previous drive away price (null if none)."
+                            },
+                            "drive_away_price_is_approx": {
+                                "type": "Boolean",
+                                "description": "Indicates if the drive away price is approximate (true/false)."
+                            },
+                            "deposit": {
+                                "type": "Number",
+                                "description": "Deposit amount (e.g., 256.09)."
+                            },
+                            "discount": {
+                                "type": "Number",
+                                "description": "Discount amount (e.g., 0.0)."
+                            },
+                            "base_deposit": {
+                                "type": "Number",
+                                "description": "Base deposit amount (e.g., 256.09)."
+                            },
+                            "base_currency": {
+                                "type": "String",
+                                "description": "Base currency for pricing (e.g., 'USD')."
+                            },
+                            "price": {
+                                "type": "Number",
+                                "description": "Final price (e.g., 256.09)."
+                            },
+                            "quote_allowed": {
+                                "type": "Number",
+                                "description": "Indicates if a quote is allowed (1 for true, 0 for false)."
+                            },
+                            "currency": {
+                                "type": "String",
+                                "description": "Currency for pricing (e.g., 'USD')."
+                            },
+                            "fee_breakdown": {
+                                "type": "Object",
+                                "description": "Breakdown of fees.",
+                                "ob_properties": {
+                                    "fuel_policy": {
+                                        "type": "Object",
+                                        "description": "Fuel policy details.",
+                                        "ob_properties": {
+                                            "type": {
+                                                "type": "String",
+                                                "description": "Type of fuel policy (e.g., 'RETURN_SAME')."
+                                            },
+                                            "amount": {
+                                                "type": "Number",
+                                                "description": "Amount associated with the fuel policy (e.g., 0.0)."
+                                            },
+                                            "currency": {
+                                                "type": "String",
+                                                "description": "Currency for the fuel policy (empty if none)."
+                                            }
+                                        }
+                                    },
+                                    "known_fees": {
+                                        "type": "Array",
+                                        "description": "List of known fees.",
+                                        "ar_items": {
+                                            "type": "Object",
+                                            "description": "Fee details.",
+                                            "ob_properties": {
+                                                "type": {
+                                                    "type": "String",
+                                                    "description": "Type of fee (e.g., 'THEFT_EXCESS')."
+                                                },
+                                                "distance_allowed": {
+                                                    "type": "null",
+                                                    "description": "Allowed distance for the fee (null if none)."
+                                                },
+                                                "is_always_payable": {
+                                                    "type": "Number",
+                                                    "description": "Indicates if the fee is always payable (1 for true, 0 for false)."
+                                                },
+                                                "is_tax_included": {
+                                                    "type": "Number",
+                                                    "description": "Indicates if tax is included (1 for true, 0 for false)."
+                                                },
+                                                "max_amount": {
+                                                    "type": "null",
+                                                    "description": "Maximum fee amount (null if none)."
+                                                },
+                                                "min_amount": {
+                                                    "type": "null",
+                                                    "description": "Minimum fee amount (null if none)."
+                                                },
+                                                "amount": {
+                                                    "type": "null",
+                                                    "description": "Fee amount (null if none)."
+                                                },
+                                                "currency": {
+                                                    "type": "null",
+                                                    "description": "Currency for the fee (null if none)."
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "pay_when": {
+                                "type": "String",
+                                "description": "Payment timing (e.g., 'PAY_NOW')."
+                            }
+                        }
+                    },
+                    "accessibility": {
+                        "type": "Object",
+                        "description": "Accessibility information.",
+                        "ob_properties": {
+                            "transmission": {
+                                "type": "String",
+                                "description": "Transmission type (e.g., 'Automatic gearbox')."
+                            },
+                            "fuel_policy": {
+                                "type": "String",
+                                "description": "Fuel policy description (e.g., 'Fuel policy is: Like for like')."
+                            },
+                            "supplier_rating": {
+                                "type": "String",
+                                "description": "Supplier rating description (e.g., 'At this location, our customers have rated Ace as 6.0 out of 10, OK.')."
+                            },
+                            "pick_up_location": {
+                                "type": "String",
+                                "description": "Pickup location description (e.g., 'Pick-up information: Shuttle Bus')."
+                            }
+                        }
+                    },
+                    "applied_discount_types": {
+                        "type": "Array",
+                        "description": "List of applied discount types (empty if none).",
+                        "ar_items": {
+                            "type": "String",
+                            "description": "Discount type."
+                        }
+                    },
+                    "pay_when_text": {
+                        "type": "String",
+                        "description": "Text describing payment timing (e.g., 'Pay now')."
+                    },
+                    "forward_url": {
+                        "type": "String",
+                        "description": "URL for forwarding to booking details."
+                    }
+                }
+            ],
+            "content": {
+                "discountBanner": {
+                    "type": "null",
+                    "description": "Indicates that there is no discount banner currently active."
+                },
+                "dsaBanner": {
+                    "type": "null",
+                    "description": "Indicates that there is no DSA (Dynamic Search Ads) banner currently active."
+                },
+                "items": {
+                    "type": "Array",
+                    "description": "A list of items in the response, such as result counts or other metadata.",
+                    "ar_items": {
+                        "type": "Object",
+                        "description": "An object representing an item in the list.",
+                        "ob_properties": {
+                            "type": {
+                                "type": "String",
+                                "description": "The type of the item (e.g., 'RESULTS_COUNT')."
+                            },
+                            "positionInList": {
+                                "type": "Number",
+                                "description": "The position of the item in the list (e.g., 0 for the first item)."
+                            },
+                            "content": {
+                                "type": "Object",
+                                "description": "The content of the item.",
+                                "ob_properties": {
+                                    "label": {
+                                        "type": "String",
+                                        "description": "A label describing the content (e.g., '1120 results')."
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "filters": {
+                    "type": "Object",
+                    "description": "An object containing filter-related information.",
+                    "ob_properties": {
+                        "countLabel": {
+                            "type": "String",
+                            "description": "A label indicating the number of results (e.g., '1120 results')."
+                        }
+                    }
+                },
+                "map": {
+                    "type": "Object",
+                    "description": "An object containing map-related information, including supplier locations.",
+                    "ob_properties": {
+                        "supplierLocations": {
+                            "type": "Array",
+                            "description": "A list of supplier locations.",
+                            "ar_items": {
+                                "type": "Object",
+                                "description": "An object representing a supplier location.",
+                                "ob_properties": {
+                                    "carouselContent": {
+                                        "type": "Object",
+                                        "description": "Content displayed in a carousel for the location.",
+                                        "ob_properties": {
+                                            "title": {
+                                                "type": "String",
+                                                "description": "The title of the location (e.g., 'John F Kennedy International Airport')."
+                                            },
+                                            "body": {
+                                                "type": "String",
+                                                "description": "The address of the location (e.g., '124-10 South Conduit Avenue, South Ozone Park, Jfk Airport (JFK), USA, 11420')."
+                                            },
+                                            "label": {
+                                                "type": "String",
+                                                "description": "A label summarizing the location (e.g., '160 cars \u00b7 14 suppliers')."
+                                            },
+                                            "footer": {
+                                                "type": "Object",
+                                                "description": "Footer content for the location.",
+                                                "ob_properties": {
+                                                    "label": {
+                                                        "type": "String",
+                                                        "description": "A label indicating the price for a rental period (e.g., 'Price for 6 days: from $253')."
+                                                    },
+                                                    "price": {
+                                                        "type": "String",
+                                                        "description": "The price for the rental period (e.g., '$253')."
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "supplierPinContent": {
+                                        "type": "Object",
+                                        "description": "Content displayed on a map pin for the supplier location.",
+                                        "ob_properties": {
+                                            "label": {
+                                                "type": "String",
+                                                "description": "The price label for the location (e.g., '$253')."
+                                            },
+                                            "latLong": {
+                                                "type": "Object",
+                                                "description": "The latitude and longitude coordinates of the location.",
+                                                "ob_properties": {
+                                                    "latitude": {
+                                                        "type": "Number",
+                                                        "description": "The latitude coordinate (e.g., 40.663756)."
+                                                    },
+                                                    "longitude": {
+                                                        "type": "Number",
+                                                        "description": "The longitude coordinate (e.g., -73.818973)."
+                                                    }
+                                                }
+                                            },
+                                            "accessibility": {
+                                                "type": "Object",
+                                                "description": "Accessibility information for the location.",
+                                                "ob_properties": {
+                                                    "label": {
+                                                        "type": "String",
+                                                        "description": "A label for accessibility (e.g., '$253')."
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "metaData": {
+                                        "type": "Object",
+                                        "description": "Metadata for the location.",
+                                        "ob_properties": {
+                                            "locationName": {
+                                                "type": "String",
+                                                "description": "The name of the location (e.g., 'John F Kennedy International Airport')."
+                                            },
+                                            "locationHash": {
+                                                "type": "String",
+                                                "description": "A hash representing the location (e.g., 'Sm9obiBGIEtlbm5lZHkgSW50ZXJuYXRpb25hbCBBaXJwb3J0')."
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "filter": [
+                {
+                    "title": {
+                        "type": "String",
+                        "description": "The title of the filter category (e.g., 'Location')."
+                    },
+                    "id": {
+                        "type": "String",
+                        "description": "A unique identifier for the filter category (e.g., 'depotLocationType')."
+                    },
+                    "type": {
+                        "type": "String",
+                        "description": "The type of filter (e.g., 'multiple_union')."
+                    },
+                    "layout": {
+                        "type": "Object",
+                        "description": "Configuration details for the layout of the filter.",
+                        "ob_properties": {
+                            "is_collapsable": {
+                                "type": "String",
+                                "description": "Indicates whether the filter can be collapsed (e.g., 'false')."
+                            },
+                            "is_collapsed": {
+                                "type": "String",
+                                "description": "Indicates whether the filter is currently collapsed (e.g., 'false')."
+                            },
+                            "collapsed_count": {
+                                "type": "Number",
+                                "description": "The number of items that would be displayed if the filter were collapsed (e.g., 4)."
+                            },
+                            "layout_type": {
+                                "type": "String",
+                                "description": "The type of layout used for the filter (e.g., 'list')."
+                            }
+                        }
+                    },
+                    "categories": {
+                        "type": "Array",
+                        "description": "A list of filter categories available under this filter.",
+                        "ar_items": {
+                            "type": "Object",
+                            "description": "An object representing a filter category.",
+                            "ob_properties": {
+                                "id": {
+                                    "type": "String",
+                                    "description": "A unique identifier for the category (e.g., 'depotLocationType::DOWNTOWN')."
+                                },
+                                "name": {
+                                    "type": "String",
+                                    "description": "The display name of the category (e.g., 'All other locations')."
+                                },
+                                "nameWithCount": {
+                                    "type": "String",
+                                    "description": "The display name of the category along with the count of items (e.g., 'All other locations (662)')."
+                                },
+                                "count": {
+                                    "type": "Number",
+                                    "description": "The number of items available in this category (e.g., 662)."
+                                }
+                            }
+                        }
+                    }
+                }
+            ],
+            "sort": [
+                {
+                    "name": {
+                        "type": "String",
+                        "description": "The display name of the sorting option (e.g., 'Recommended \u2013 best first')."
+                    },
+                    "identifier": {
+                        "type": "String",
+                        "description": "A unique identifier for the sorting option (e.g., 'recommended')."
+                    },
+                    "title_tag": {
+                        "type": "String",
+                        "description": "A tag or label associated with the sorting option, possibly for localization or UI purposes (e.g., 'tr.searchresults.sortBy.recommended')."
+                    }
+                }
+            ],
+            "search_context": {
+                "searchKey": {
+                    "type": "String",
+                    "description": "A base64-encoded search key containing parameters like driver's age, pickup/drop-off dates, location coordinates, rental duration, and service features."
+                },
+                "searchId": {
+                    "type": "String",
+                    "description": "A unique identifier (UUID) for the search session, used to track or reference this specific search query."
+                },
+                "recommendationsSearchUniqueId": {
+                    "type": "String",
+                    "description": "A unique identifier (UUID) for the recommendations generated from this search, used to retrieve or update the recommendations."
+                }
+            },
+            "discount_banner": {
+                "type": "null",
+                "description": "Indicates that no discount banner is currently active or applicable for the car rental search."
+            },
+            "search_key": {
+                "type": "String",
+                "description": "A base64-encoded search key containing parameters such as driver's age, pickup and drop-off dates and times, location coordinates, rental duration, and service features."
+            },
+            "count": {
+                "type": "Number",
+                "description": "The number of car rental options available in the current search results (e.g., 500)."
+            },
+            "is_genius_location": {
+                "type": "Boolean",
+                "description": "Indicates whether the pickup location is part of the Genius loyalty program (false in this case)."
+            }
+        }
+    },
+    "params_desc_list": null,
+    "response_desc_list": [
+        {
+            "path_name": "$.search_results[].content",
+            "name": "content",
+            "description": "Contains badges, supplier information, and vehicle specifications."
+        },
+        {
+            "path_name": "$.search_results[].content.badges",
+            "name": "badges",
+            "description": "List of badges associated with the vehicle (e.g., 'Free cancellation')."
+        },
+        {
+            "path_name": "$.search_results[].content.badges[]",
+            "name": "badges[]",
+            "description": "Badge details."
+        },
+        {
+            "path_name": "$.search_results[].content.badges[].type",
+            "name": "type",
+            "description": "Type of badge (e.g., 'CONSTRUCTIVE')."
+        },
+        {
+            "path_name": "$.search_results[].content.badges[].text",
+            "name": "text",
+            "description": "Text displayed on the badge (e.g., 'Free cancellation')."
+        },
+        {
+            "path_name": "$.search_results[].content.badges[].variation",
+            "name": "variation",
+            "description": "Variation of the badge (e.g., 'DEFAULT')."
+        },
+        {
+            "path_name": "$.search_results[].content.supplier",
+            "name": "supplier",
+            "description": "Supplier details including name, logo, and rating."
+        },
+        {
+            "path_name": "$.search_results[].content.supplier.name",
+            "name": "name",
+            "description": "Name of the supplier (e.g., 'Ace')."
+        },
+        {
+            "path_name": "$.search_results[].content.supplier.imageUrl",
+            "name": "imageUrl",
+            "description": "URL of the supplier's logo."
+        },
+        {
+            "path_name": "$.search_results[].content.supplier.rating",
+            "name": "rating",
+            "description": "Supplier rating details."
+        },
+        {
+            "path_name": "$.search_results[].content.supplier.rating.average",
+            "name": "average",
+            "description": "Average rating (e.g., '6.0')."
+        },
+        {
+            "path_name": "$.search_results[].content.supplier.rating.localisedRating",
+            "name": "localisedRating",
+            "description": "Localized rating details."
+        },
+        {
+            "path_name": "$.search_results[].content.supplier.rating.localisedRating.rawValue",
+            "name": "rawValue",
+            "description": "Raw numerical rating value (e.g., 6.0)."
+        },
+        {
+            "path_name": "$.search_results[].content.supplier.rating.localisedRating.displayValue",
+            "name": "displayValue",
+            "description": "Display value of the rating (e.g., '6')."
+        },
+        {
+            "path_name": "$.search_results[].content.supplier.rating.title",
+            "name": "title",
+            "description": "Title of the rating (e.g., 'OK')."
+        },
+        {
+            "path_name": "$.search_results[].content.supplier.rating.subtitle",
+            "name": "subtitle",
+            "description": "Subtitle of the rating (e.g., '164 reviews')."
+        },
+        {
+            "path_name": "$.search_results[].content.vehicleSpecs",
+            "name": "vehicleSpecs",
+            "description": "List of vehicle specifications (e.g., transmission type)."
+        },
+        {
+            "path_name": "$.search_results[].content.vehicleSpecs[]",
+            "name": "vehicleSpecs[]",
+            "description": "Specification details."
+        },
+        {
+            "path_name": "$.search_results[].content.vehicleSpecs[].text",
+            "name": "text",
+            "description": "Text description of the specification (e.g., 'Automatic')."
+        },
+        {
+            "path_name": "$.search_results[].content.vehicleSpecs[].icon",
+            "name": "icon",
+            "description": "Icon representing the specification (e.g., 'TRANSMISSION_AUTOMATIC')."
+        },
+        {
+            "path_name": "$.search_results[].content.vehicleSpecs[].accessibility",
+            "name": "accessibility",
+            "description": "Accessibility description (e.g., 'Automatic gearbox')."
+        },
+        {
+            "path_name": "$.search_results[].vehicle_info",
+            "name": "vehicle_info",
+            "description": "Detailed information about the vehicle."
+        },
+        {
+            "path_name": "$.search_results[].vehicle_info.v_id",
+            "name": "v_id",
+            "description": "Unique identifier for the vehicle (e.g., '695750651')."
+        },
+        {
+            "path_name": "$.search_results[].vehicle_info.v_name",
+            "name": "v_name",
+            "description": "Name of the vehicle (e.g., 'Volkswagen Jetta')."
+        },
+        {
+            "path_name": "$.search_results[].vehicle_info.unlimited_mileage",
+            "name": "unlimited_mileage",
+            "description": "Indicates if the vehicle has unlimited mileage (1 for true, 0 for false)."
+        },
+        {
+            "path_name": "$.search_results[].vehicle_info.transmission",
+            "name": "transmission",
+            "description": "Type of transmission (e.g., 'Automatic')."
+        },
+        {
+            "path_name": "$.search_results[].vehicle_info.special_offer_text",
+            "name": "special_offer_text",
+            "description": "Text for any special offers (null if none)."
+        },
+        {
+            "path_name": "$.search_results[].vehicle_info.seats",
+            "name": "seats",
+            "description": "Number of seats in the vehicle (e.g., '5')."
+        },
+        {
+            "path_name": "$.search_results[].vehicle_info.suitcases",
+            "name": "suitcases",
+            "description": "Capacity for suitcases."
+        },
+        {
+            "path_name": "$.search_results[].vehicle_info.suitcases.big",
+            "name": "big",
+            "description": "Number of big suitcases the vehicle can hold (e.g., '0')."
+        },
+        {
+            "path_name": "$.search_results[].vehicle_info.suitcases.small",
+            "name": "small",
+            "description": "Number of small suitcases the vehicle can hold (e.g., '3')."
+        },
+        {
+            "path_name": "$.search_results[].vehicle_info.label",
+            "name": "label",
+            "description": "Label describing the vehicle type (e.g., 'Intermediate car with:')."
+        },
+        {
+            "path_name": "$.search_results[].vehicle_info.insurance_package",
+            "name": "insurance_package",
+            "description": "Insurance package details (empty if none)."
+        },
+        {
+            "path_name": "$.search_results[].vehicle_info.image_url",
+            "name": "image_url",
+            "description": "URL of the vehicle's image."
+        },
+        {
+            "path_name": "$.search_results[].vehicle_info.image_thumbnail_url",
+            "name": "image_thumbnail_url",
+            "description": "URL of the vehicle's thumbnail image."
+        },
+        {
+            "path_name": "$.search_results[].vehicle_info.group",
+            "name": "group",
+            "description": "Vehicle group (e.g., 'Intermediate')."
+        },
+        {
+            "path_name": "$.search_results[].vehicle_info.group_or_similar",
+            "name": "group_or_similar",
+            "description": "Description of the vehicle group or similar (e.g., 'or similar large car')."
+        },
+        {
+            "path_name": "$.search_results[].vehicle_info.fuel_type",
+            "name": "fuel_type",
+            "description": "Type of fuel (e.g., 'N/A')."
+        },
+        {
+            "path_name": "$.search_results[].vehicle_info.fuel_policy_description",
+            "name": "fuel_policy_description",
+            "description": "Description of the fuel policy (empty if none)."
+        },
+        {
+            "path_name": "$.search_results[].vehicle_info.fuel_policy",
+            "name": "fuel_policy",
+            "description": "Fuel policy (e.g., 'Like for like')."
+        },
+        {
+            "path_name": "$.search_results[].vehicle_info.free_cancellation",
+            "name": "free_cancellation",
+            "description": "Indicates if free cancellation is available (1 for true, 0 for false)."
+        },
+        {
+            "path_name": "$.search_results[].vehicle_info.doors",
+            "name": "doors",
+            "description": "Number of doors (e.g., '4')."
+        },
+        {
+            "path_name": "$.search_results[].vehicle_info.cma_compliant",
+            "name": "cma_compliant",
+            "description": "Indicates if the vehicle is CMA compliant (-1 for unknown)."
+        },
+        {
+            "path_name": "$.search_results[].vehicle_info.aircon",
+            "name": "aircon",
+            "description": "Indicates if the vehicle has air conditioning (1 for true, 0 for false)."
+        },
+        {
+            "path_name": "$.search_results[].vehicle_info.airbags",
+            "name": "airbags",
+            "description": "Indicates if the vehicle has airbags (1 for true, 0 for false)."
+        },
+        {
+            "path_name": "$.search_results[].vehicle_info.mileage",
+            "name": "mileage",
+            "description": "Mileage policy (e.g., 'Unlimited mileage')."
+        },
+        {
+            "path_name": "$.search_results[].vehicle_info.badges",
+            "name": "badges",
+            "description": "Badges associated with the vehicle (empty if none)."
+        },
+        {
+            "path_name": "$.search_results[].vehicle_info.deposit",
+            "name": "deposit",
+            "description": "Deposit amount (null if none)."
+        },
+        {
+            "path_name": "$.search_results[].supplier_info",
+            "name": "supplier_info",
+            "description": "Information about the supplier."
+        },
+        {
+            "path_name": "$.search_results[].supplier_info.name",
+            "name": "name",
+            "description": "Name of the supplier (e.g., 'Ace')."
+        },
+        {
+            "path_name": "$.search_results[].supplier_info.logo_url",
+            "name": "logo_url",
+            "description": "URL of the supplier's logo."
+        },
+        {
+            "path_name": "$.search_results[].supplier_info.location_type",
+            "name": "location_type",
+            "description": "Type of location (e.g., 'Shuttle Bus')."
+        },
+        {
+            "path_name": "$.search_results[].supplier_info.address",
+            "name": "address",
+            "description": "Physical address of the supplier."
+        },
+        {
+            "path_name": "$.search_results[].supplier_info.latitude",
+            "name": "latitude",
+            "description": "Latitude coordinate of the supplier's location."
+        },
+        {
+            "path_name": "$.search_results[].supplier_info.longitude",
+            "name": "longitude",
+            "description": "Longitude coordinate of the supplier's location."
+        },
+        {
+            "path_name": "$.search_results[].supplier_info.pickup_instructions",
+            "name": "pickup_instructions",
+            "description": "Instructions for vehicle pickup."
+        },
+        {
+            "path_name": "$.search_results[].supplier_info.dropoff_instructions",
+            "name": "dropoff_instructions",
+            "description": "Instructions for vehicle dropoff."
+        },
+        {
+            "path_name": "$.search_results[].supplier_info.may_require_credit_card_guarantee",
+            "name": "may_require_credit_card_guarantee",
+            "description": "Indicates if a credit card guarantee may be required (true/false)."
+        },
+        {
+            "path_name": "$.search_results[].route_info",
+            "name": "route_info",
+            "description": "Information about pickup and dropoff locations."
+        },
+        {
+            "path_name": "$.search_results[].route_info.pickup",
+            "name": "pickup",
+            "description": "Pickup location details."
+        },
+        {
+            "path_name": "$.search_results[].route_info.pickup.name",
+            "name": "name",
+            "description": "Name of the pickup location (e.g., 'John F Kennedy International Airport')."
+        },
+        {
+            "path_name": "$.search_results[].route_info.pickup.longitude",
+            "name": "longitude",
+            "description": "Longitude coordinate of the pickup location."
+        },
+        {
+            "path_name": "$.search_results[].route_info.pickup.location_type",
+            "name": "location_type",
+            "description": "Type of pickup location (e.g., 'SHUTTLE_BUS')."
+        },
+        {
+            "path_name": "$.search_results[].route_info.pickup.location_id",
+            "name": "location_id",
+            "description": "Unique identifier for the pickup location (e.g., '41721')."
+        },
+        {
+            "path_name": "$.search_results[].route_info.pickup.latitude",
+            "name": "latitude",
+            "description": "Latitude coordinate of the pickup location."
+        },
+        {
+            "path_name": "$.search_results[].route_info.pickup.icon",
+            "name": "icon",
+            "description": "Icon representing the pickup location (empty if none)."
+        },
+        {
+            "path_name": "$.search_results[].route_info.pickup.country_code",
+            "name": "country_code",
+            "description": "Country code of the pickup location (e.g., 'US')."
+        },
+        {
+            "path_name": "$.search_results[].route_info.pickup.country",
+            "name": "country",
+            "description": "Country name of the pickup location (empty if none)."
+        },
+        {
+            "path_name": "$.search_results[].route_info.pickup.address",
+            "name": "address",
+            "description": "Physical address of the pickup location."
+        },
+        {
+            "path_name": "$.search_results[].route_info.pickup.city",
+            "name": "city",
+            "description": "City of the pickup location (empty if none)."
+        },
+        {
+            "path_name": "$.search_results[].route_info.pickup.location_hash",
+            "name": "location_hash",
+            "description": "Hash representing the pickup location."
+        },
+        {
+            "path_name": "$.search_results[].route_info.dropoff",
+            "name": "dropoff",
+            "description": "Dropoff location details."
+        },
+        {
+            "path_name": "$.search_results[].route_info.dropoff.name",
+            "name": "name",
+            "description": "Name of the dropoff location (e.g., 'John F Kennedy International Airport')."
+        },
+        {
+            "path_name": "$.search_results[].route_info.dropoff.longitude",
+            "name": "longitude",
+            "description": "Longitude coordinate of the dropoff location."
+        },
+        {
+            "path_name": "$.search_results[].route_info.dropoff.location_type",
+            "name": "location_type",
+            "description": "Type of dropoff location (e.g., 'SHUTTLE_BUS')."
+        },
+        {
+            "path_name": "$.search_results[].route_info.dropoff.location_id",
+            "name": "location_id",
+            "description": "Unique identifier for the dropoff location (e.g., '41721')."
+        },
+        {
+            "path_name": "$.search_results[].route_info.dropoff.latitude",
+            "name": "latitude",
+            "description": "Latitude coordinate of the dropoff location."
+        },
+        {
+            "path_name": "$.search_results[].route_info.dropoff.icon",
+            "name": "icon",
+            "description": "Icon representing the dropoff location (empty if none)."
+        },
+        {
+            "path_name": "$.search_results[].route_info.dropoff.country_code",
+            "name": "country_code",
+            "description": "Country code of the dropoff location (e.g., 'US')."
+        },
+        {
+            "path_name": "$.search_results[].route_info.dropoff.country",
+            "name": "country",
+            "description": "Country name of the dropoff location (empty if none)."
+        },
+        {
+            "path_name": "$.search_results[].route_info.dropoff.address",
+            "name": "address",
+            "description": "Physical address of the dropoff location."
+        },
+        {
+            "path_name": "$.search_results[].route_info.dropoff.city",
+            "name": "city",
+            "description": "City of the dropoff location (empty if none)."
+        },
+        {
+            "path_name": "$.search_results[].route_info.dropoff.location_hash",
+            "name": "location_hash",
+            "description": "Hash representing the dropoff location."
+        },
+        {
+            "path_name": "$.search_results[].rating_info",
+            "name": "rating_info",
+            "description": "Rating details for the vehicle and supplier."
+        },
+        {
+            "path_name": "$.search_results[].rating_info.average",
+            "name": "average",
+            "description": "Average rating (e.g., 6.0)."
+        },
+        {
+            "path_name": "$.search_results[].rating_info.average_text",
+            "name": "average_text",
+            "description": "Text description of the average rating (e.g., 'Good')."
+        },
+        {
+            "path_name": "$.search_results[].rating_info.condition",
+            "name": "condition",
+            "description": "Rating for vehicle condition (e.g., 7.0)."
+        },
+        {
+            "path_name": "$.search_results[].rating_info.location",
+            "name": "location",
+            "description": "Rating for location (e.g., 5.8)."
+        },
+        {
+            "path_name": "$.search_results[].rating_info.cleanliness",
+            "name": "cleanliness",
+            "description": "Rating for cleanliness (e.g., 6.8)."
+        },
+        {
+            "path_name": "$.search_results[].rating_info.efficiency",
+            "name": "efficiency",
+            "description": "Rating for efficiency (e.g., 5.4)."
+        },
+        {
+            "path_name": "$.search_results[].rating_info.value_for_money",
+            "name": "value_for_money",
+            "description": "Rating for value for money (e.g., 5.5)."
+        },
+        {
+            "path_name": "$.search_results[].rating_info.pickup_time",
+            "name": "pickup_time",
+            "description": "Rating for pickup time (e.g., 5.2)."
+        },
+        {
+            "path_name": "$.search_results[].rating_info.dropoff_time",
+            "name": "dropoff_time",
+            "description": "Rating for dropoff time (e.g., 8.5)."
+        },
+        {
+            "path_name": "$.search_results[].rating_info.no_of_ratings",
+            "name": "no_of_ratings",
+            "description": "Total number of ratings (e.g., 164)."
+        },
+        {
+            "path_name": "$.search_results[].fee_info",
+            "name": "fee_info",
+            "description": "Fee details."
+        },
+        {
+            "path_name": "$.search_results[].fee_info.type",
+            "name": "type",
+            "description": "Type of fee (empty if none)."
+        },
+        {
+            "path_name": "$.search_results[].fee_info.tax",
+            "name": "tax",
+            "description": "Tax amount (e.g., 0)."
+        },
+        {
+            "path_name": "$.search_results[].fee_info.currency",
+            "name": "currency",
+            "description": "Currency for the fee (empty if none)."
+        },
+        {
+            "path_name": "$.search_results[].fee_info.fee",
+            "name": "fee",
+            "description": "Fee amount (e.g., 0.0)."
+        },
+        {
+            "path_name": "$.search_results[].freebies",
+            "name": "freebies",
+            "description": "List of freebies (e.g., 'Amendments')."
+        },
+        {
+            "path_name": "$.search_results[].freebies[]",
+            "name": "freebies[]",
+            "description": "Freebie description (e.g., 'Amendments')."
+        },
+        {
+            "path_name": "$.search_results[].pricing_info",
+            "name": "pricing_info",
+            "description": "Pricing details for the vehicle."
+        },
+        {
+            "path_name": "$.search_results[].pricing_info.base_price",
+            "name": "base_price",
+            "description": "Base price of the rental (e.g., 256.09)."
+        },
+        {
+            "path_name": "$.search_results[].pricing_info.drive_away_price",
+            "name": "drive_away_price",
+            "description": "Final price including all fees (e.g., 256.09)."
+        },
+        {
+            "path_name": "$.search_results[].pricing_info.drive_away_price_before",
+            "name": "drive_away_price_before",
+            "description": "Previous drive away price (null if none)."
+        },
+        {
+            "path_name": "$.search_results[].pricing_info.drive_away_price_is_approx",
+            "name": "drive_away_price_is_approx",
+            "description": "Indicates if the drive away price is approximate (true/false)."
+        },
+        {
+            "path_name": "$.search_results[].pricing_info.deposit",
+            "name": "deposit",
+            "description": "Deposit amount (e.g., 256.09)."
+        },
+        {
+            "path_name": "$.search_results[].pricing_info.discount",
+            "name": "discount",
+            "description": "Discount amount (e.g., 0.0)."
+        },
+        {
+            "path_name": "$.search_results[].pricing_info.base_deposit",
+            "name": "base_deposit",
+            "description": "Base deposit amount (e.g., 256.09)."
+        },
+        {
+            "path_name": "$.search_results[].pricing_info.base_currency",
+            "name": "base_currency",
+            "description": "Base currency for pricing (e.g., 'USD')."
+        },
+        {
+            "path_name": "$.search_results[].pricing_info.price",
+            "name": "price",
+            "description": "Final price (e.g., 256.09)."
+        },
+        {
+            "path_name": "$.search_results[].pricing_info.quote_allowed",
+            "name": "quote_allowed",
+            "description": "Indicates if a quote is allowed (1 for true, 0 for false)."
+        },
+        {
+            "path_name": "$.search_results[].pricing_info.currency",
+            "name": "currency",
+            "description": "Currency for pricing (e.g., 'USD')."
+        },
+        {
+            "path_name": "$.search_results[].pricing_info.fee_breakdown",
+            "name": "fee_breakdown",
+            "description": "Breakdown of fees."
+        },
+        {
+            "path_name": "$.search_results[].pricing_info.fee_breakdown.fuel_policy",
+            "name": "fuel_policy",
+            "description": "Fuel policy details."
+        },
+        {
+            "path_name": "$.search_results[].pricing_info.fee_breakdown.fuel_policy.type",
+            "name": "type",
+            "description": "Type of fuel policy (e.g., 'RETURN_SAME')."
+        },
+        {
+            "path_name": "$.search_results[].pricing_info.fee_breakdown.fuel_policy.amount",
+            "name": "amount",
+            "description": "Amount associated with the fuel policy (e.g., 0.0)."
+        },
+        {
+            "path_name": "$.search_results[].pricing_info.fee_breakdown.fuel_policy.currency",
+            "name": "currency",
+            "description": "Currency for the fuel policy (empty if none)."
+        },
+        {
+            "path_name": "$.search_results[].pricing_info.fee_breakdown.known_fees",
+            "name": "known_fees",
+            "description": "List of known fees."
+        },
+        {
+            "path_name": "$.search_results[].pricing_info.fee_breakdown.known_fees[]",
+            "name": "known_fees[]",
+            "description": "Fee details."
+        },
+        {
+            "path_name": "$.search_results[].pricing_info.fee_breakdown.known_fees[].type",
+            "name": "type",
+            "description": "Type of fee (e.g., 'THEFT_EXCESS')."
+        },
+        {
+            "path_name": "$.search_results[].pricing_info.fee_breakdown.known_fees[].distance_allowed",
+            "name": "distance_allowed",
+            "description": "Allowed distance for the fee (null if none)."
+        },
+        {
+            "path_name": "$.search_results[].pricing_info.fee_breakdown.known_fees[].is_always_payable",
+            "name": "is_always_payable",
+            "description": "Indicates if the fee is always payable (1 for true, 0 for false)."
+        },
+        {
+            "path_name": "$.search_results[].pricing_info.fee_breakdown.known_fees[].is_tax_included",
+            "name": "is_tax_included",
+            "description": "Indicates if tax is included (1 for true, 0 for false)."
+        },
+        {
+            "path_name": "$.search_results[].pricing_info.fee_breakdown.known_fees[].max_amount",
+            "name": "max_amount",
+            "description": "Maximum fee amount (null if none)."
+        },
+        {
+            "path_name": "$.search_results[].pricing_info.fee_breakdown.known_fees[].min_amount",
+            "name": "min_amount",
+            "description": "Minimum fee amount (null if none)."
+        },
+        {
+            "path_name": "$.search_results[].pricing_info.fee_breakdown.known_fees[].amount",
+            "name": "amount",
+            "description": "Fee amount (null if none)."
+        },
+        {
+            "path_name": "$.search_results[].pricing_info.fee_breakdown.known_fees[].currency",
+            "name": "currency",
+            "description": "Currency for the fee (null if none)."
+        },
+        {
+            "path_name": "$.search_results[].pricing_info.pay_when",
+            "name": "pay_when",
+            "description": "Payment timing (e.g., 'PAY_NOW')."
+        },
+        {
+            "path_name": "$.search_results[].accessibility",
+            "name": "accessibility",
+            "description": "Accessibility information."
+        },
+        {
+            "path_name": "$.search_results[].accessibility.transmission",
+            "name": "transmission",
+            "description": "Transmission type (e.g., 'Automatic gearbox')."
+        },
+        {
+            "path_name": "$.search_results[].accessibility.fuel_policy",
+            "name": "fuel_policy",
+            "description": "Fuel policy description (e.g., 'Fuel policy is: Like for like')."
+        },
+        {
+            "path_name": "$.search_results[].accessibility.supplier_rating",
+            "name": "supplier_rating",
+            "description": "Supplier rating description (e.g., 'At this location, our customers have rated Ace as 6.0 out of 10, OK.')."
+        },
+        {
+            "path_name": "$.search_results[].accessibility.pick_up_location",
+            "name": "pick_up_location",
+            "description": "Pickup location description (e.g., 'Pick-up information: Shuttle Bus')."
+        },
+        {
+            "path_name": "$.search_results[].applied_discount_types",
+            "name": "applied_discount_types",
+            "description": "List of applied discount types (empty if none)."
+        },
+        {
+            "path_name": "$.search_results[].applied_discount_types[]",
+            "name": "applied_discount_types[]",
+            "description": "Discount type."
+        },
+        {
+            "path_name": "$.search_results[].pay_when_text",
+            "name": "pay_when_text",
+            "description": "Text describing payment timing (e.g., 'Pay now')."
+        },
+        {
+            "path_name": "$.search_results[].forward_url",
+            "name": "forward_url",
+            "description": "URL for forwarding to booking details."
+        },
+        {
+            "path_name": "$.content.discountBanner",
+            "name": "discountBanner",
+            "description": "Indicates that there is no discount banner currently active."
+        },
+        {
+            "path_name": "$.content.dsaBanner",
+            "name": "dsaBanner",
+            "description": "Indicates that there is no DSA (Dynamic Search Ads) banner currently active."
+        },
+        {
+            "path_name": "$.content.items",
+            "name": "items",
+            "description": "A list of items in the response, such as result counts or other metadata."
+        },
+        {
+            "path_name": "$.content.items[]",
+            "name": "items[]",
+            "description": "An object representing an item in the list."
+        },
+        {
+            "path_name": "$.content.items[].type",
+            "name": "type",
+            "description": "The type of the item (e.g., 'RESULTS_COUNT')."
+        },
+        {
+            "path_name": "$.content.items[].positionInList",
+            "name": "positionInList",
+            "description": "The position of the item in the list (e.g., 0 for the first item)."
+        },
+        {
+            "path_name": "$.content.items[].content",
+            "name": "content",
+            "description": "The content of the item."
+        },
+        {
+            "path_name": "$.content.items[].content.label",
+            "name": "label",
+            "description": "A label describing the content (e.g., '1120 results')."
+        },
+        {
+            "path_name": "$.content.filters",
+            "name": "filters",
+            "description": "An object containing filter-related information."
+        },
+        {
+            "path_name": "$.content.filters.countLabel",
+            "name": "countLabel",
+            "description": "A label indicating the number of results (e.g., '1120 results')."
+        },
+        {
+            "path_name": "$.content.map",
+            "name": "map",
+            "description": "An object containing map-related information, including supplier locations."
+        },
+        {
+            "path_name": "$.content.map.supplierLocations",
+            "name": "supplierLocations",
+            "description": "A list of supplier locations."
+        },
+        {
+            "path_name": "$.content.map.supplierLocations[]",
+            "name": "supplierLocations[]",
+            "description": "An object representing a supplier location."
+        },
+        {
+            "path_name": "$.content.map.supplierLocations[].carouselContent",
+            "name": "carouselContent",
+            "description": "Content displayed in a carousel for the location."
+        },
+        {
+            "path_name": "$.content.map.supplierLocations[].carouselContent.title",
+            "name": "title",
+            "description": "The title of the location (e.g., 'John F Kennedy International Airport')."
+        },
+        {
+            "path_name": "$.content.map.supplierLocations[].carouselContent.body",
+            "name": "body",
+            "description": "The address of the location (e.g., '124-10 South Conduit Avenue, South Ozone Park, Jfk Airport (JFK), USA, 11420')."
+        },
+        {
+            "path_name": "$.content.map.supplierLocations[].carouselContent.label",
+            "name": "label",
+            "description": "A label summarizing the location (e.g., '160 cars \u00b7 14 suppliers')."
+        },
+        {
+            "path_name": "$.content.map.supplierLocations[].carouselContent.footer",
+            "name": "footer",
+            "description": "Footer content for the location."
+        },
+        {
+            "path_name": "$.content.map.supplierLocations[].carouselContent.footer.label",
+            "name": "label",
+            "description": "A label indicating the price for a rental period (e.g., 'Price for 6 days: from $253')."
+        },
+        {
+            "path_name": "$.content.map.supplierLocations[].carouselContent.footer.price",
+            "name": "price",
+            "description": "The price for the rental period (e.g., '$253')."
+        },
+        {
+            "path_name": "$.content.map.supplierLocations[].supplierPinContent",
+            "name": "supplierPinContent",
+            "description": "Content displayed on a map pin for the supplier location."
+        },
+        {
+            "path_name": "$.content.map.supplierLocations[].supplierPinContent.label",
+            "name": "label",
+            "description": "The price label for the location (e.g., '$253')."
+        },
+        {
+            "path_name": "$.content.map.supplierLocations[].supplierPinContent.latLong",
+            "name": "latLong",
+            "description": "The latitude and longitude coordinates of the location."
+        },
+        {
+            "path_name": "$.content.map.supplierLocations[].supplierPinContent.latLong.latitude",
+            "name": "latitude",
+            "description": "The latitude coordinate (e.g., 40.663756)."
+        },
+        {
+            "path_name": "$.content.map.supplierLocations[].supplierPinContent.latLong.longitude",
+            "name": "longitude",
+            "description": "The longitude coordinate (e.g., -73.818973)."
+        },
+        {
+            "path_name": "$.content.map.supplierLocations[].supplierPinContent.accessibility",
+            "name": "accessibility",
+            "description": "Accessibility information for the location."
+        },
+        {
+            "path_name": "$.content.map.supplierLocations[].supplierPinContent.accessibility.label",
+            "name": "label",
+            "description": "A label for accessibility (e.g., '$253')."
+        },
+        {
+            "path_name": "$.content.map.supplierLocations[].metaData",
+            "name": "metaData",
+            "description": "Metadata for the location."
+        },
+        {
+            "path_name": "$.content.map.supplierLocations[].metaData.locationName",
+            "name": "locationName",
+            "description": "The name of the location (e.g., 'John F Kennedy International Airport')."
+        },
+        {
+            "path_name": "$.content.map.supplierLocations[].metaData.locationHash",
+            "name": "locationHash",
+            "description": "A hash representing the location (e.g., 'Sm9obiBGIEtlbm5lZHkgSW50ZXJuYXRpb25hbCBBaXJwb3J0')."
+        },
+        {
+            "path_name": "$.filter[].title",
+            "name": "title",
+            "description": "The title of the filter category (e.g., 'Location')."
+        },
+        {
+            "path_name": "$.filter[].id",
+            "name": "id",
+            "description": "A unique identifier for the filter category (e.g., 'depotLocationType')."
+        },
+        {
+            "path_name": "$.filter[].type",
+            "name": "type",
+            "description": "The type of filter (e.g., 'multiple_union')."
+        },
+        {
+            "path_name": "$.filter[].layout",
+            "name": "layout",
+            "description": "Configuration details for the layout of the filter."
+        },
+        {
+            "path_name": "$.filter[].layout.is_collapsable",
+            "name": "is_collapsable",
+            "description": "Indicates whether the filter can be collapsed (e.g., 'false')."
+        },
+        {
+            "path_name": "$.filter[].layout.is_collapsed",
+            "name": "is_collapsed",
+            "description": "Indicates whether the filter is currently collapsed (e.g., 'false')."
+        },
+        {
+            "path_name": "$.filter[].layout.collapsed_count",
+            "name": "collapsed_count",
+            "description": "The number of items that would be displayed if the filter were collapsed (e.g., 4)."
+        },
+        {
+            "path_name": "$.filter[].layout.layout_type",
+            "name": "layout_type",
+            "description": "The type of layout used for the filter (e.g., 'list')."
+        },
+        {
+            "path_name": "$.filter[].categories",
+            "name": "categories",
+            "description": "A list of filter categories available under this filter."
+        },
+        {
+            "path_name": "$.filter[].categories[]",
+            "name": "categories[]",
+            "description": "An object representing a filter category."
+        },
+        {
+            "path_name": "$.filter[].categories[].id",
+            "name": "id",
+            "description": "A unique identifier for the category (e.g., 'depotLocationType::DOWNTOWN')."
+        },
+        {
+            "path_name": "$.filter[].categories[].name",
+            "name": "name",
+            "description": "The display name of the category (e.g., 'All other locations')."
+        },
+        {
+            "path_name": "$.filter[].categories[].nameWithCount",
+            "name": "nameWithCount",
+            "description": "The display name of the category along with the count of items (e.g., 'All other locations (662)')."
+        },
+        {
+            "path_name": "$.filter[].categories[].count",
+            "name": "count",
+            "description": "The number of items available in this category (e.g., 662)."
+        },
+        {
+            "path_name": "$.sort[].name",
+            "name": "name",
+            "description": "The display name of the sorting option (e.g., 'Recommended \u2013 best first')."
+        },
+        {
+            "path_name": "$.sort[].identifier",
+            "name": "identifier",
+            "description": "A unique identifier for the sorting option (e.g., 'recommended')."
+        },
+        {
+            "path_name": "$.sort[].title_tag",
+            "name": "title_tag",
+            "description": "A tag or label associated with the sorting option, possibly for localization or UI purposes (e.g., 'tr.searchresults.sortBy.recommended')."
+        },
+        {
+            "path_name": "$.search_context.searchKey",
+            "name": "searchKey",
+            "description": "A base64-encoded search key containing parameters like driver's age, pickup/drop-off dates, location coordinates, rental duration, and service features."
+        },
+        {
+            "path_name": "$.search_context.searchId",
+            "name": "searchId",
+            "description": "A unique identifier (UUID) for the search session, used to track or reference this specific search query."
+        },
+        {
+            "path_name": "$.search_context.recommendationsSearchUniqueId",
+            "name": "recommendationsSearchUniqueId",
+            "description": "A unique identifier (UUID) for the recommendations generated from this search, used to retrieve or update the recommendations."
+        },
+        {
+            "path_name": "$.discount_banner",
+            "name": "discount_banner",
+            "description": "Indicates that no discount banner is currently active or applicable for the car rental search."
+        },
+        {
+            "path_name": "$.search_key",
+            "name": "search_key",
+            "description": "A base64-encoded search key containing parameters such as driver's age, pickup and drop-off dates and times, location coordinates, rental duration, and service features."
+        },
+        {
+            "path_name": "$.count",
+            "name": "count",
+            "description": "The number of car rental options available in the current search results (e.g., 500)."
+        },
+        {
+            "path_name": "$.is_genius_location",
+            "name": "is_genius_location",
+            "description": "Indicates whether the pickup location is part of the Genius loyalty program (false in this case)."
+        }
+    ],
+    "depends_on": [
+        {
+            "target_api_params": "pickUpId",
+            "reason": "The 'pickUpId' parameter in the target API requires a location ID for car rental pick-up, which can be retrieved from the source API's response field 'id'. The source API provides detailed location information including coordinates and IATA codes, and the 'id' field matches the format required by the target API (e.g., 'eyJsYXRpdHVkZSI6IjQwLjc1OTU5MDE0ODkyNTgiLCJsb25naXR1ZGUiOiItNzMuOTg0OTA5MDU3NjE3MiJ9'). This is a direct match and a necessary prerequisite for calling the target API.",
+            "source_jsonpath": "$[*].id",
+            "confidence": 100,
+            "dependency_relationship": "Hard Dependency(Prerequisite API)",
+            "source_api": "Car_Auto-Complete"
+        },
+        {
+            "target_api_params": "pickUpId",
+            "reason": "The 'pickUpId' parameter in the target API requires a specific location ID for car rental pick-up. The source API's 'id' field in the destinations array provides unique identifiers for locations (e.g., 'eyJ1ZmkiOjIwMDg4MzI1fQ=='). The data types match (both are strings), and there is a potential business association where a traveler might want to rent a car near an attraction they are visiting.",
+            "source_jsonpath": "$.destinations[*].id",
+            "confidence": 85,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Search_Attraction_Location"
+        },
+        {
+            "target_api_params": "pickUpId",
+            "reason": "The 'pickUpId' parameter in the target API requires a specific location ID for car rental pickup. The source API's 'id' field in the response provides exact location IDs for airports (e.g., 'JFK.AIRPORT'). This creates a potential business association where a traveler wants to rent a car at the airport they are flying into. The data types match (both are strings), and the source field directly provides the required ID format.",
+            "source_jsonpath": "$[*].id",
+            "confidence": 95,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Search_Flight_Location"
+        },
+        {
+            "target_api_params": "pickUpDate",
+            "reason": "The 'pickUpDate' parameter in the target API requires a specific date in the format 'YYYY-MM-DD' for car rental pickup. The source API's 'departureDate' field provides the exact departure date of the flight in the same format (e.g., '2025-06-11'). This creates a potential business association where a traveler might want to rent a car on the same day as their flight departure.",
+            "source_jsonpath": "$[*].departureDate",
+            "confidence": 95,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Get_Min_Price"
+        },
+        {
+            "target_api_params": "pickUpDate",
+            "reason": "The 'pickUpDate' parameter in the target API requires a specific date in the format 'YYYY-MM-DD'. The source API's 'departureDate' field provides exactly this format (e.g., '2025-05-21'). This creates a potential business association where a traveler might want to rent a car on the same day as their flight departure.",
+            "source_jsonpath": "$[*].departureDate",
+            "confidence": 95,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Get_Min_Price_Multi_Stops"
+        },
+        {
+            "target_api_params": "pickUpDate",
+            "reason": "The 'pickUpDate' parameter in the target API requires a specific date for car rental pickup. The source API's 'checkinDate' field in hotel properties provides the exact check-in date (e.g., '2025-06-10'). The data types match (both are in 'yyyy-mm-dd' format), and there is a reasonable business scenario where a traveler would rent a car on the same day they check into a hotel.",
+            "source_jsonpath": "$.hotels[*].property.checkinDate",
+            "confidence": 95,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Search_Hotels"
+        },
+        {
+            "target_api_params": "pickUpDate",
+            "reason": "The 'pickUpDate' parameter in the target API requires a specific date in 'yyyy-mm-dd' format for car rental pickup. The source API's 'stayed_room_info.checkin' field provides a date in the same format (e.g., '2025-05-08'). This creates a potential business association where a traveler might want to rent a car on the same day they check into a hotel.",
+            "source_jsonpath": "$.result[*].stayed_room_info.checkin",
+            "confidence": 85,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Get_Hotel_Reviews(Tips)"
+        },
+        {
+            "target_api_params": "pickUpDate",
+            "reason": "The 'pickUpDate' parameter in the target API requires a date in the format 'YYYY-MM-DD' for car rental pickup. The source API's 'arrival_date' field provides the check-in date for a hotel stay, which is also in the 'YYYY-MM-DD' format. There is a potential business association where a traveler might want to rent a car on the same day they check into a hotel.",
+            "source_jsonpath": "$.arrival_date",
+            "confidence": 85,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Get_Room_List"
+        },
+        {
+            "target_api_params": "pickUpDate",
+            "reason": "The 'pickUpDate' parameter in the target API requires a specific date in the format 'YYYY-MM-DD'. The source API's 'requestedPickupDateTime' field in the taxi journey provides a timestamp (e.g., '2025-06-15T14:30:00') which includes the date portion. The date can be extracted from this timestamp to match the required format for the target API. This creates a potential business association where a traveler might want to rent a car on the same day they take a taxi.",
+            "source_jsonpath": "$.journeys[*].requestedPickupDateTime",
+            "confidence": 95,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Search_Taxi"
+        },
+        {
+            "target_api_params": "pickUpDate",
+            "reason": "The 'pickUpDate' parameter in the target API requires a specific date in 'yyyy-mm-dd' format for car rental pickup. The source API's 'date' field in the response provides exact dates (e.g., '2025-05-20') which match the required format. This creates a potential business association where a traveler might want to rent a car on the same date they check attraction availability.",
+            "source_jsonpath": "$[*].date",
+            "confidence": 85,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Get_Availability_Calendar"
+        },
+        {
+            "target_api_params": "pickUpDate",
+            "reason": "The 'pickUpDate' parameter in the target API requires a specific date in 'yyyy-mm-dd' format for car rental pickup. The source API's 'avDates[].date' field provides exact dates in the same format (e.g., '2025-06-10'). This creates a potential business association where a traveler might want to rent a car on the same date they check out of their hotel.",
+            "source_jsonpath": "$.avDates[].date",
+            "confidence": 85,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Get_Room_Availability"
+        },
+        {
+            "target_api_params": "pickUpDate",
+            "reason": "The 'pickUpDate' parameter in the target API requires a specific car rental pick-up date (YYYY-MM-DD format). The source API's 'arrival_date' field provides the hotel check-in date, which could be used as the car rental pick-up date if the traveler plans to rent a car upon arrival at the hotel. The data types match exactly (both are YYYY-MM-DD). This creates a potential business association where a traveler wants to rent a car on the same day they check into their hotel.",
+            "source_jsonpath": "$.arrival_date",
+            "confidence": 85,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Search_Hotels_By_Coordinates"
+        },
+        {
+            "target_api_params": "pickUpDate",
+            "reason": "The 'pickUpDate' parameter in the target API requires a specific date in 'YYYY-MM-DD' format for car rental pick-up. The source API's 'departureTime' field in flight segments provides exact departure timestamps (e.g., '2025-06-15T06:00:00'). The date portion can be extracted to match the required format. This creates a potential business association where a traveler wants to rent a car on the same day as their flight departure.",
+            "source_jsonpath": "$.flightOffers[*].segments[*].departureTime",
+            "confidence": 95,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Search_Flights"
+        },
+        {
+            "target_api_params": "pickUpDate",
+            "reason": "The 'pickUpDate' parameter in the target API requires a specific date in the format 'YYYY-MM-DD'. The source API's '$.legs[].date' field provides the departure date for each leg of the flight, which matches the required format. This creates a potential business association where a traveler might want to rent a car on the same day as their flight departure.",
+            "source_jsonpath": "$.legs[].date",
+            "confidence": 95,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Search_Flights_Multi_Stops"
+        },
+        {
+            "target_api_params": "pickUpTime",
+            "reason": "The 'pickUpTime' parameter in the target API requires a specific car rental pick-up time (24-hour format). The source API's 'requestedPickupDateTime' field in the taxi journey provides an exact pick-up timestamp (e.g., '2025-06-15T14:30:00'). While the data types differ (timestamp vs time), the time portion can be extracted. This creates a potential business association where a traveler might want to rent a car after taking a taxi to a location.",
+            "source_jsonpath": "$.journeys[].requestedPickupDateTime",
+            "confidence": 85,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Search_Taxi"
+        },
+        {
+            "target_api_params": "pickUpTime",
+            "reason": "The 'pickUpTime' parameter in the target API requires a specific car rental pick-up time (24-hour format). The source API's 'arrivalTime' field in flight segments provides exact arrival timestamps (e.g., '2025-06-15T07:55:00'). While the data types differ (timestamp vs time), the time portion can be extracted. This creates a potential business association where a traveler wants to rent a car shortly after the flight arrives.",
+            "source_jsonpath": "$.flightOffers[*].segments[*].arrivalTime",
+            "confidence": 90,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Search_Flights"
+        },
+        {
+            "target_api_params": "pickUpTime",
+            "reason": "The 'pickUpTime' parameter in the target API requires a specific car rental pick-up time (24-hour format). The source API's 'arrivalTime' field in flight segments provides exact arrival timestamps (e.g., '2025-05-25T02:20:00'). While the data types differ (timestamp vs time), the time portion can be extracted. This creates a potential business association where a traveler wants to rent a car shortly after the flight arrives.",
+            "source_jsonpath": "$.flightOffers[*].segments[*].arrivalTime",
+            "confidence": 90,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Search_Flights_Multi_Stops"
+        },
+        {
+            "target_api_params": "pickUpTime",
+            "reason": "The 'pickUpTime' parameter in the target API requires a specific car rental pick-up time (24-hour format). The source API's 'checkin' field in hotel responses provides check-in times (e.g., 'from': '12:00'). While the data types differ (object vs time), the time portion can be extracted. This creates a potential business association where a traveler wants to rent a car at the same time as their hotel check-in.",
+            "source_jsonpath": "$.result[*].checkin.from",
+            "confidence": 85,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Search_Hotels_By_Coordinates"
+        },
+        {
+            "target_api_params": "pickUpTime",
+            "reason": "The 'pickUpTime' parameter in the target API requires a specific car rental pick-up time (24-hour format). The source API's 'start' field in the attraction time slots provides exact start timestamps (e.g., '2025-05-25T19:00:00+05:30'). While the data types differ (timestamp vs time), the time portion can be extracted. This creates a potential business association where a traveler wants to rent a car before attending an event.",
+            "source_jsonpath": "$[*].start",
+            "confidence": 85,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Get_Availability"
+        },
+        {
+            "target_api_params": "dropOffDate",
+            "reason": "The 'dropOffDate' parameter in the target API requires a specific date for car rental drop-off (format: YYYY-MM-DD). The source API's 'checkoutDate' field in hotel properties provides the exact checkout date (e.g., '2025-06-15'). The data types match perfectly (both are in YYYY-MM-DD format), and there is a logical business association where a traveler might rent a car on the same day they check out from a hotel.",
+            "source_jsonpath": "$.hotels[*].property.checkoutDate",
+            "confidence": 95,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Search_Hotels"
+        },
+        {
+            "target_api_params": "dropOffDate",
+            "reason": "The 'dropOffDate' parameter in the target API requires a specific car rental drop-off date (yyyy-mm-dd format). The source API's 'departure_date' field provides the exact departure date from the hotel (e.g., '2025-06-15'), which matches the required format and can be directly used as the drop-off date for the car rental. This creates a potential business association where a traveler might need a car rental until their hotel check-out date.",
+            "source_jsonpath": "$.departure_date",
+            "confidence": 95,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Get_Room_List"
+        },
+        {
+            "target_api_params": "dropOffDate",
+            "reason": "The 'dropOffDate' parameter in the target API requires a specific car rental drop-off date (YYYY-MM-DD format). The source API's 'returnDate' field provides the return date of the flight (e.g., '2025-05-22'), which matches the required format and can be directly used as the drop-off date for the car rental. This creates a potential business association where a traveler wants to return the car on the same day they return from their flight.",
+            "source_jsonpath": "$[*].returnDate",
+            "confidence": 95,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Get_Min_Price_Multi_Stops"
+        },
+        {
+            "target_api_params": "dropOffDate",
+            "reason": "The 'dropOffDate' parameter in the target API requires a specific date in 'yyyy-mm-dd' format for car rental drop-off. The source API's 'date' field in the response provides exact dates (e.g., '2025-05-20') which match the required format. This creates a potential business association where a traveler might want to rent a car until the date they plan to visit an attraction.",
+            "source_jsonpath": "$[*].date",
+            "confidence": 85,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Get_Availability_Calendar"
+        },
+        {
+            "target_api_params": "dropOffDate",
+            "reason": "The 'dropOffDate' parameter in the target API requires a specific date in 'yyyy-mm-dd' format for car rental drop-off. The source API's 'checkout' field in the 'stayed_room_info' object provides exact checkout dates (e.g., '2025-05-09'). The data types match perfectly, and there is a logical business association where a traveler might want to rent a car until their hotel checkout date.",
+            "source_jsonpath": "$.result[*].stayed_room_info.checkout",
+            "confidence": 95,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Get_Hotel_Reviews(Tips)"
+        },
+        {
+            "target_api_params": "dropOffDate",
+            "reason": "The 'dropOffDate' parameter in the target API requires a specific date for car rental drop-off. The source API's 'requestedPickupDateTime' field in the taxi journey provides a timestamp (e.g., '2025-06-15T14:30:00'). While the data types differ (timestamp vs date), the date portion can be extracted. This creates a potential business association where a traveler might want to rent a car after their taxi ride.",
+            "source_jsonpath": "$.journeys[*].requestedPickupDateTime",
+            "confidence": 85,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Search_Taxi"
+        },
+        {
+            "target_api_params": "dropOffDate",
+            "reason": "The 'dropOffDate' parameter in the target API requires a specific car rental drop-off date (YYYY-MM-DD format). The source API's 'returnDate' field in flight search provides the return date of the flight, which could be used to determine the car rental drop-off date. This creates a potential business association where a traveler wants to return the car on the same day as their flight return.",
+            "source_jsonpath": "$.returnDate",
+            "confidence": 85,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Search_Flights"
+        },
+        {
+            "target_api_params": "dropOffDate",
+            "reason": "The 'dropOffDate' parameter in the target API requires a specific car rental drop-off date (YYYY-MM-DD format). The source API's 'departureTime' field in flight segments provides exact departure timestamps (e.g., '2025-05-25T01:00:00'). The date portion can be extracted from this timestamp to match the required format. This creates a potential business association where a traveler wants to rent a car until the day of their flight departure.",
+            "source_jsonpath": "$.flightOffers[*].segments[*].legs[*].departureTime",
+            "confidence": 90,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Search_Flights_Multi_Stops"
+        },
+        {
+            "target_api_params": "dropOffTime",
+            "reason": "The 'dropOffTime' parameter in the target API requires a specific car rental drop-off time (24-hour format). The source API's 'requestedPickupDateTime' field in the journeys array provides exact pickup timestamps (e.g., '2025-06-15T14:30:00'). While the data types differ (timestamp vs time), the time portion can be extracted. This creates a potential business association where a traveler might want to drop off a rental car at the same time they request a taxi pickup.",
+            "source_jsonpath": "$.journeys[*].requestedPickupDateTime",
+            "confidence": 85,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Search_Taxi"
+        },
+        {
+            "target_api_params": "dropOffTime",
+            "reason": "The 'dropOffTime' parameter in the target API requires a specific car rental drop-off time (24-hour format). The source API's 'departureTime' field in flight segments provides exact departure timestamps (e.g., '2025-05-25T01:00:00'). While the data types differ (timestamp vs time), the time portion can be extracted. This creates a potential business association where a traveler wants to drop off the car before the flight departs.",
+            "source_jsonpath": "$.flightOffers[*].segments[*].departureTime",
+            "confidence": 90,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Search_Flights_Multi_Stops"
+        },
+        {
+            "target_api_params": "dropOffTime",
+            "reason": "The 'dropOffTime' parameter in the target API requires a specific car rental return time (24-hour format). The source API's 'departureTime' field in flight segments provides exact departure timestamps (e.g., '2025-06-15T06:00:00'). While the data types differ (timestamp vs time), the time portion can be extracted. This creates a potential business association where a traveler wants to return the car before their flight departs.",
+            "source_jsonpath": "$.flightOffers[*].segments[*].departureTime",
+            "confidence": 90,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Search_Flights"
+        },
+        {
+            "target_api_params": "dropOffTime",
+            "reason": "The 'dropOffTime' parameter in the target API requires a specific car rental return time (24-hour format). The source API's 'start' field in the attraction time slot provides exact start timestamps (e.g., '2025-05-25T19:00:00+05:30'). While the data types differ (timestamp vs time), the time portion can be extracted. This creates a potential business association where a traveler might want to rent a car before attending an event.",
+            "source_jsonpath": "$[*].start",
+            "confidence": 85,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Get_Availability"
+        },
+        {
+            "target_api_params": "dropOffTime",
+            "reason": "The 'dropOffTime' parameter in the target API requires a specific car rental return time (24-hour format). The source API's 'checkout.untilTime' field in hotel properties provides the checkout time (e.g., '11:00'). The data types match (time in HH:MM format), and there is a reasonable business scenario where a traveler might want to return their rental car at the same time they check out from their hotel.",
+            "source_jsonpath": "$.hotels[*].property.checkout.untilTime",
+            "confidence": 95,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Search_Hotels"
+        },
+        {
+            "target_api_params": "dropOffTime",
+            "reason": "The 'dropOffTime' parameter in the target API requires a specific car rental drop-off time (24-hour format). The source API's 'checkout' field in hotel results provides checkout times (e.g., 'until': '11:00'). While the data types differ (object vs time), the time portion can be extracted. This creates a potential business association where a traveler might want to drop off their rental car around the same time they check out from their hotel.",
+            "source_jsonpath": "$.result[*].checkout.until",
+            "confidence": 85,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Search_Hotels_By_Coordinates"
+        },
+        {
+            "target_api_params": "dropOffTime",
+            "reason": "The 'dropOffTime' parameter in the target API requires a specific car rental return time (24-hour format). The source API's 'close' field in restaurant operating hours provides closing times (e.g., '23:00:00'). While the data types differ (timestamp vs time), the time portion can be extracted. This creates a potential business association where a traveler might want to return their rental car after dining at a restaurant.",
+            "source_jsonpath": "$.open_hours.*[*].close",
+            "confidence": 85,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Get_restaurant_details"
+        }
+    ],
+    "verified": true
+}

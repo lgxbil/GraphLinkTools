@@ -1,0 +1,40 @@
+{
+    "name": "Taxi_Search_Location",
+    "docs_row": {
+        "name": "Taxi_Search_Location",
+        "endpoint": "/api/v1/taxi/searchLocation",
+        "func_description": "Find the `googlePlaceId` of Pick-up/Drop-off Location for taxi. ",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "query": {
+                    "type": "String",
+                    "description": "Names of locations, cities, districts, places, countries, counties etc.",
+                    "example_value": "new",
+                    "required": true
+                },
+                "languagecode": {
+                    "type": "String",
+                    "description": "To obtain the response data in a specific language, enter the languagecode. languagecode can be retrieved from api/v1/meta/getLanguages(Get Languages\n) endpoint in Meta collection.",
+                    "example_value": "",
+                    "required": false
+                }
+            },
+            "required": [
+                "query"
+            ]
+        }
+    },
+    "api_response_schema": [
+        {
+            "latitude": 31.198027,
+            "name": "Shanghai Royal Garden Hotel-Disney/Pudong International Airport",
+            "types": "hotel",
+            "longitude": 121.67985,
+            "city": "Shanghai",
+            "country": "China",
+            "countryCode": "cn",
+            "googlePlaceId": "ChIJuRSjIQKJrTURCndXXyaW3Ec"
+        }
+    ]
+}

@@ -1,0 +1,199 @@
+{
+    "name": "Vehicle_Details",
+    "docs_row": {
+        "name": "Vehicle_Details",
+        "endpoint": "/api/v1/cars/vehicleDetails",
+        "func_description": "Search the detail information of a car using `vehicle id`. ",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "vehicle_id": {
+                    "type": "String",
+                    "description": "Vehicle ID. vehicle_id can be retrieved from api/v1/cars/searchCarRentals(Search Car Rentals) endpoint in Car Rental collection as vehicle_id inside search_results object.",
+                    "example_value": "373025711",
+                    "required": true
+                },
+                "search_key": {
+                    "type": "String",
+                    "description": "search_key can be retrieved from api/v1/cars/searchCarRentals(Search Car Rentals) endpoint in Car Rental collection as search_key.",
+                    "example_value": "eyJkcml2ZXJzQWdlIjozMCwiZHJvcE9mZkRhdGVUaW1lIjoiMjAyMy0xMS0xN1QxMDowMDowMCIsImRyb3BPZmZMb2NhdGlvbiI6IjQwLjYzOTcwMTg0MzI2MTcsLTczLjc3OTE5NzY5Mjg3MTEiLCJkcm9wT2ZmTG9jYXRpb25UeXBlIjoiTEFUTE9ORyIsInBpY2tVcERhdGVUaW1lIjoiMjAyMy0xMS0xNVQxMDowMDowMCIsInBpY2tVcExvY2F0aW9uIjoiNDAuNjM5NzAxODQzMjYxNywtNzMuNzc5MTk3NjkyODcxMSIsInBpY2tVcExvY2F0aW9uVHlwZSI6IkxBVExPTkciLCJyZW50YWxEdXJhdGlvbkluRGF5cyI6Miwic2VydmljZUZlYXR1cmVzIjpbIk5PX09QQVFVRVMiLCJTVVBSRVNTX0ZJWEVEX1BSSUNFX1ZFSElDTEVTIl19",
+                    "required": true
+                },
+                "units": {
+                    "type": "Enum",
+                    "description": "The measurement of distance in metric or imperial.",
+                    "example_value": "",
+                    "required": false
+                },
+                "currency_code": {
+                    "type": "String",
+                    "description": "The currency code. currency_code can be retrieved from api/v1/meta/getCurrency(Get Currency) endpoint in Hotels collection.",
+                    "example_value": "USD",
+                    "required": false
+                },
+                "languagecode": {
+                    "type": "String",
+                    "description": "To obtain the response data in a specific language, enter the languagecode. languagecode can be retrieved from api/v1/meta/getLanguages(Get Languages\n) endpoint in Meta collection.",
+                    "example_value": "en-us",
+                    "required": false
+                }
+            },
+            "required": [
+                "vehicle_id",
+                "search_key"
+            ]
+        }
+    },
+    "instance": [],
+    "category": null,
+    "tool": null,
+    "api_idx": 31,
+    "params": {
+        "type": "object",
+        "properties": {
+            "vehicle_id": {
+                "type": "String",
+                "description": "Vehicle ID. vehicle_id can be retrieved from api/v1/cars/searchCarRentals(Search Car Rentals) endpoint in Car Rental collection as vehicle_id inside search_results object.",
+                "example_value": "373025711",
+                "required": true
+            },
+            "search_key": {
+                "type": "String",
+                "description": "search_key can be retrieved from api/v1/cars/searchCarRentals(Search Car Rentals) endpoint in Car Rental collection as search_key.",
+                "example_value": "eyJkcml2ZXJzQWdlIjozMCwiZHJvcE9mZkRhdGVUaW1lIjoiMjAyMy0xMS0xN1QxMDowMDowMCIsImRyb3BPZmZMb2NhdGlvbiI6IjQwLjYzOTcwMTg0MzI2MTcsLTczLjc3OTE5NzY5Mjg3MTEiLCJkcm9wT2ZmTG9jYXRpb25UeXBlIjoiTEFUTE9ORyIsInBpY2tVcERhdGVUaW1lIjoiMjAyMy0xMS0xNVQxMDowMDowMCIsInBpY2tVcExvY2F0aW9uIjoiNDAuNjM5NzAxODQzMjYxNywtNzMuNzc5MTk3NjkyODcxMSIsInBpY2tVcExvY2F0aW9uVHlwZSI6IkxBVExPTkciLCJyZW50YWxEdXJhdGlvbkluRGF5cyI6Miwic2VydmljZUZlYXR1cmVzIjpbIk5PX09QQVFVRVMiLCJTVVBSRVNTX0ZJWEVEX1BSSUNFX1ZFSElDTEVTIl19",
+                "required": true
+            },
+            "units": {
+                "type": "Enum",
+                "description": "The measurement of distance in metric or imperial.",
+                "example_value": "",
+                "required": false
+            },
+            "currency_code": {
+                "type": "String",
+                "description": "The currency code. currency_code can be retrieved from api/v1/meta/getCurrency(Get Currency) endpoint in Hotels collection.",
+                "example_value": "USD",
+                "required": false
+            },
+            "languagecode": {
+                "type": "String",
+                "description": "To obtain the response data in a specific language, enter the languagecode. languagecode can be retrieved from api/v1/meta/getLanguages(Get Languages\n) endpoint in Meta collection.",
+                "example_value": "en-us",
+                "required": false
+            }
+        },
+        "required": [
+            "vehicle_id",
+            "search_key"
+        ]
+    },
+    "responses": [
+        {
+            "function_name": "Vehicle_Details",
+            "arguments": {
+                "vehicle_id": "373025711",
+                "search_key": "eyJkcml2ZXJzQWdlIjozMCwiZHJvcE9mZkRhdGVUaW1lIjoiMjAyMy0xMS0xN1QxMDowMDowMCIsImRyb3BPZmZMb2NhdGlvbiI6IjQwLjYzOTcwMTg0MzI2MTcsLTczLjc3OTE5NzY5Mjg3MTEi",
+                "units": "metric",
+                "currency_code": "USD"
+            },
+            "observation": {
+                "bgo_error": {
+                    "error": "Bad Request",
+                    "timestamp": 1747651811473,
+                    "status": 400,
+                    "path": "/api/search/vehicle/eyJkcml2ZXJzQWdlIjozMCwiZHJvcE9mZkRhdGVUaW1lIjoiMjAyMy0xMS0xN1QxMDowMDowMCIsImRyb3BPZmZMb2NhdGlvbiI6IjQwLjYzOTcwMTg0MzI2MTcsLTczLjc3OTE5NzY5Mjg3MTEi/373025711"
+                },
+                "meta": {
+                    "response_code": 400
+                }
+            }
+        }
+    ],
+    "response_summary": "The API encountered a \"Bad Request\" error with a status code of 400. This occurred when attempting to process a vehicle search request at the specified endpoint. The request included details such as the driver's age (30), a drop-off date and time (November 17, 2023, at 10:00 AM), and specific drop-off location coordinates (latitude 40.6397018432617, longitude -73.7791976928711). Unfortunately, the system was unable to fulfill this request due to invalid or improperly formatted parameters. The error was logged at the timestamp 1747651811473.",
+    "enhance_func_desc": "This API is suitable for retrieving detailed information about specific rental vehicles. It fetches vehicle details based on a vehicle ID and search key obtained from the Search Car Rentals API. Users can specify units (metric/imperial), currency, and language preferences. The response includes comprehensive vehicle data such as pricing, features, and rental terms, aiding in informed rental decisions.",
+    "enhance_params_desc": {
+        "enhanced_parameters": {
+            "vehicle_id": "Unique identifier for the rental vehicle, sourced from searchCarRentals endpoint.",
+            "search_key": "Encoded search parameters including driver age, rental dates, and location.",
+            "units": "Specifies measurement system for distance (metric or imperial).",
+            "currency_code": "Currency for displaying rental prices and fees.",
+            "languagecode": "Language preference for the response data."
+        }
+    },
+    "enhance_resfield_desc": {
+        "response_fields": {
+            "bgo_error": {
+                "type": "Object",
+                "description": "Contains detailed information about the error encountered during the API request.",
+                "ob_properties": {
+                    "error": {
+                        "type": "String",
+                        "description": "A human-readable description of the error that occurred, in this case, 'Bad Request'."
+                    },
+                    "timestamp": {
+                        "type": "Number",
+                        "description": "The Unix timestamp (in milliseconds) when the error was logged, indicating the exact time of occurrence."
+                    },
+                    "status": {
+                        "type": "Number",
+                        "description": "The HTTP status code associated with the error, here it is 400 indicating a Bad Request."
+                    },
+                    "path": {
+                        "type": "String",
+                        "description": "The endpoint path where the error occurred, including encoded request parameters."
+                    }
+                }
+            },
+            "meta": {
+                "type": "Object",
+                "description": "Contains metadata about the API response, specifically the response status code.",
+                "ob_properties": {
+                    "response_code": {
+                        "type": "Number",
+                        "description": "The HTTP status code returned by the API, mirroring the status in the error object."
+                    }
+                }
+            }
+        }
+    },
+    "params_desc_list": null,
+    "response_desc_list": [
+        {
+            "path_name": "bgo_error",
+            "name": "bgo_error",
+            "description": "Contains detailed information about the error encountered during the API request."
+        },
+        {
+            "path_name": "bgo_error.error",
+            "name": "error",
+            "description": "A human-readable description of the error that occurred, in this case, 'Bad Request'."
+        },
+        {
+            "path_name": "bgo_error.timestamp",
+            "name": "timestamp",
+            "description": "The Unix timestamp (in milliseconds) when the error was logged, indicating the exact time of occurrence."
+        },
+        {
+            "path_name": "bgo_error.status",
+            "name": "status",
+            "description": "The HTTP status code associated with the error, here it is 400 indicating a Bad Request."
+        },
+        {
+            "path_name": "bgo_error.path",
+            "name": "path",
+            "description": "The endpoint path where the error occurred, including encoded request parameters."
+        },
+        {
+            "path_name": "meta",
+            "name": "meta",
+            "description": "Contains metadata about the API response, specifically the response status code."
+        },
+        {
+            "path_name": "meta.response_code",
+            "name": "response_code",
+            "description": "The HTTP status code returned by the API, mirroring the status in the error object."
+        }
+    ],
+    "depends_on": null,
+    "verified": true
+}

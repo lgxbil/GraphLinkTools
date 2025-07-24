@@ -1,0 +1,30 @@
+2025-07-24 04:15:58,070 - evaluation_logger_Cross-100 - INFO - Test Example Cross-100
+2025-07-24 04:15:58,071 - evaluation_logger_Cross-100 - INFO - Query: My three friends and I are planning to have a party in Downtown, Seattle, on November 8, 2024. Recommend the most popular hotel there for us. For easy travel, we need to rent a car, hoping to pick it up at 12 pm on the 8th near the party hotel and return it at 2 pm the next day at the same location.
+2025-07-24 04:27:25,654 - evaluation_logger_Cross-100 - INFO - Start compare_single_call: 
+{'name': 'Search_Hotel_Destination', 'arguments': {'query': 'Downtown, Seattle'}}
+{'name': 'Search_Hotel_Destination', 'arguments': {'query': 'Downtown, Seattle'}}
+2025-07-24 04:27:25,655 - evaluation_logger_Cross-100 - INFO - Rule-based compare success.
+2025-07-24 04:27:25,655 - evaluation_logger_Cross-100 - INFO - Success matched: [{'name': 'Search_Hotel_Destination', 'arguments': {'query': 'Downtown, Seattle'}}]
+2025-07-24 04:27:26,301 - evaluation_logger_Cross-100 - INFO - Success matched: []
+2025-07-24 04:27:49,511 - evaluation_logger_Cross-100 - INFO - Start compare_single_call: 
+{'name': 'Search_Hotels', 'arguments': {'adults': 4, 'arrival_date': '2024-11-08', 'departure_date': '2024-11-09', 'dest_id': 1624, 'search_type': 'district'}}
+{'name': 'Search_Hotels', 'arguments': {'adults': 4, 'arrival_date': '2024-11-08', 'departure_date': '2024-11-09', 'dest_id': 1624, 'search_type': 'district', 'sort_by': 'popularity'}}
+2025-07-24 04:27:49,511 - evaluation_logger_Cross-100 - INFO - {'error_type': 'param_missing', 'content': 'Missing parameter sort_by in prediction.'}
+2025-07-24 04:27:49,511 - evaluation_logger_Cross-100 - INFO - Success matched: []
+2025-07-24 04:28:30,361 - evaluation_logger_Cross-100 - INFO - Start compare_single_call: 
+{'name': 'Search_Hotels', 'arguments': {'adults': 4, 'arrival_date': '2024-11-08', 'departure_date': '2024-11-09', 'dest_id': 1624, 'search_type': 'district', 'sort_by': 'POPULARITY'}}
+{'name': 'Search_Hotels', 'arguments': {'adults': 4, 'arrival_date': '2024-11-08', 'departure_date': '2024-11-09', 'dest_id': 1624, 'search_type': 'district', 'sort_by': 'popularity'}}
+2025-07-24 04:28:30,361 - evaluation_logger_Cross-100 - INFO - {'error_type': 'value_error', 'content': "Parameter sort_by value 'POPULARITY' is not correct in prediction."}
+2025-07-24 04:28:30,361 - evaluation_logger_Cross-100 - INFO - Success matched: []
+2025-07-24 04:29:29,826 - evaluation_logger_Cross-100 - INFO - Start compare_single_call: 
+{'name': 'Search_Hotels', 'arguments': {'adults': 4, 'arrival_date': '2024-11-08', 'departure_date': '2024-11-09', 'dest_id': 1624, 'search_type': 'district', 'sort_by': 'POPULARITY'}}
+{'name': 'Search_Hotels', 'arguments': {'adults': 4, 'arrival_date': '2024-11-08', 'departure_date': '2024-11-09', 'dest_id': 1624, 'search_type': 'district', 'sort_by': 'popularity'}}
+2025-07-24 04:29:29,826 - evaluation_logger_Cross-100 - INFO - {'error_type': 'value_error', 'content': "Parameter sort_by value 'POPULARITY' is not correct in prediction."}
+2025-07-24 04:29:29,826 - evaluation_logger_Cross-100 - INFO - Success matched: []
+2025-07-24 04:30:52,645 - evaluation_logger_Cross-100 - INFO - Success matched: []
+2025-07-24 04:32:02,238 - evaluation_logger_Cross-100 - INFO - Start compare_single_call: 
+{'name': 'Search_Hotels', 'arguments': {'adults': 4, 'arrival_date': '2024-11-08', 'departure_date': '2024-11-09', 'dest_id': 1624, 'search_type': 'district', 'sort_by': 'RELEVANCE'}}
+{'name': 'Search_Hotels', 'arguments': {'adults': 4, 'arrival_date': '2024-11-08', 'departure_date': '2024-11-09', 'dest_id': 1624, 'search_type': 'district', 'sort_by': 'popularity'}}
+2025-07-24 04:32:02,238 - evaluation_logger_Cross-100 - INFO - {'error_type': 'value_error', 'content': "Parameter sort_by value 'RELEVANCE' is not correct in prediction."}
+2025-07-24 04:32:02,238 - evaluation_logger_Cross-100 - INFO - Success matched: []
+2025-07-24 04:33:05,309 - evaluation_logger_Cross-100 - INFO - Success matched: []

@@ -1,0 +1,15 @@
+2025-07-22 07:26:34,269 - evaluation_logger_Attraction-120 - INFO - Test Example Attraction-120
+2025-07-22 07:26:34,269 - evaluation_logger_Attraction-120 - INFO - Query: My friend and I are playing a game. He says the highest-rated attraction in Glasgow is Glasgow University, while I say the highest-rated attraction in Edinburgh is Edinburgh Castle. Then he says the highest-rated attraction in Manchester is Etihad Stadium, and I respond that the highest-rated attraction in Rome is Fontana di Trevi. Check if either of our guesses is correct, starting with his guesses first. If one of us is correct, stop the search there. If both our guesses are incorrect, provide us with a summary. Be sure to check in sequence and not simultaneously.
+2025-07-22 07:28:14,680 - evaluation_logger_Attraction-120 - INFO - Success matched: []
+2025-07-22 07:29:38,219 - evaluation_logger_Attraction-120 - INFO - Start compare_single_call: 
+{'name': 'Search_Attraction_Location', 'arguments': {'query': 'Glasgow University, Glasgow'}}
+{'name': 'Search_Attraction_Location', 'arguments': {'query': 'Glasgow'}}
+2025-07-22 07:29:42,261 - evaluation_logger_Attraction-120 - DEBUG - LLM-based comparison output: {'is_equal': False, 'reason': "The query parameter in call 1 specifies 'Glasgow University, Glasgow' which is more specific than 'Glasgow' in call 2."}
+2025-07-22 07:29:42,262 - evaluation_logger_Attraction-120 - INFO - All compare method failed.
+2025-07-22 07:29:42,262 - evaluation_logger_Attraction-120 - INFO - Success matched: []
+2025-07-22 07:31:24,563 - evaluation_logger_Attraction-120 - INFO - Start compare_single_call: 
+{'name': 'Search_Attraction_Location', 'arguments': {'query': 'Glasgow'}}
+{'name': 'Search_Attraction_Location', 'arguments': {'query': 'Glasgow'}}
+2025-07-22 07:31:24,563 - evaluation_logger_Attraction-120 - INFO - Rule-based compare success.
+2025-07-22 07:31:24,563 - evaluation_logger_Attraction-120 - INFO - Success matched: [{'name': 'Search_Attraction_Location', 'arguments': {'query': 'Glasgow'}}]
+2025-07-22 07:31:37,550 - evaluation_logger_Attraction-120 - ERROR - 'questions'

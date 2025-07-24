@@ -1,0 +1,72 @@
+{
+    "name": "Get_Filter",
+    "docs_row": {
+        "name": "Get_Filter",
+        "description": "Get the `categories_filter` parameter value for `Search_Hotels` function. EndPoint: /api/v1/hotels/getFilter",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "categories_filter": {
+                    "type": "string",
+                    "description": "`categories_filter` can be retrieved from `api/v1/hotels/getFilter`**(Get Filter)** endpoint in **Hotels** collection.\n\n***Note: For the initial request, leave it blank.***"
+                },
+                "search_type": {
+                    "type": "string",
+                    "description": " `search_type` can be retrieved from `api/v1/hotels/searchDestination`**(Search Hotel Destination)** endpoint in **hotel** collection."
+                },
+                "children_age": {
+                    "type": "string",
+                    "description": "The number of **children**, including **infants**, who are **under 18**.\nExample:\nChild 1 Age = 8 months\nChild 2 Age = 1 year\nChild 3 Age = 17 years\nHere is what the request parameter would look like:\n`children_age: 0,1,17`"
+                },
+                "dest_id": {
+                    "type": "string",
+                    "description": " `dest_id` can be retrieved from `api/v1/hotels/searchDestination`**(Search Hotel Destination)** endpoint in **Hotels** collection."
+                },
+                "room_qty": {
+                    "type": "number",
+                    "description": "The **number** of **rooms** that are required. The **default** value is set to **1**."
+                },
+                "departure_date": {
+                    "type": "string",
+                    "description": "The date of departure or check-out. DATE (YYYY-MM-DD)"
+                },
+                "arrival_date": {
+                    "type": "string",
+                    "description": "The date on which you will arrive or check-in. DATE (YYYY-MM-DD)"
+                },
+                "adults": {
+                    "type": "number",
+                    "description": "The **number** of guests who are **18 years** of age or **older**. The **default** value is set to **1**."
+                }
+            },
+            "required": [
+                "search_type",
+                "dest_id",
+                "departure_date",
+                "arrival_date"
+            ]
+        }
+    },
+    "api_response_schema": {
+        "pagination": {
+            "nbResultsTotal": 7719
+        },
+        "availabilityInfo": {
+            "totalAvailableNotAutoextended": 3689
+        },
+        "filters": [
+            {
+                "title": "Meals",
+                "field": "mealplan",
+                "filterStyle": "CHECKBOX",
+                "options": [
+                    {
+                        "title": "Self catering",
+                        "genericId": "mealplan::999",
+                        "countNotAutoextended": 2354
+                    }
+                ]
+            }
+        ]
+    }
+}

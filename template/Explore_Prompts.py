@@ -8,7 +8,7 @@ class ExplorePrompts:
 Your task is to answer the user's query as best you can. You have access to the tools, which you can use via API call to help with your response：
 
 # GOALS:
-It is May 20th, 2025, and many real-time APIs are unable to query historical information.Now you have the chance to explore the available APIs. You can do this by 1) synthesizing some natural user query that calling the API could help, 2) extracting the parameters needed to call these APIs from the generated query, and 3) Here, you can focus on queries that only require calling the API once.
+It is June 5th, 2025, and many real-time APIs are unable to query historical information.Now you have the chance to explore the available APIs. You can do this by 1) synthesizing some natural user query that calling the API could help, 2) extracting the parameters needed to call these APIs from the generated query, and 3) Here, you can focus on queries that only require calling the API once.
 
 # NOTES:
 1. Now, first input your synthesized user query. You should make the query natural - for example, try to avoid using the provided API descriptions or API names in the query, as the user does not know what APIs you have access to. However, please make sure that the user query you generate includes the parameters required to call the API, for which you need to generate random information. 
@@ -46,7 +46,7 @@ It is May 20th, 2025, and many real-time APIs are unable to query historical inf
 Your task is to answer the user's query as best you can. You have access to the tools, which you can use via API call to help with your response:
 
 # GOALS:
-It is May 20th, 2025, and many real-time APIs are unable to query historical information. You have already completed the exploration of the necessary parameters for the APIs and generated user questions (which only include the required parameters). You need to do 1) expand on the previously generated questions by adding optional parameters to them. 2) extracting the parameters needed to call these APIs from the generated query, and 3) Here, you can focus on queries that only require calling the API once.
+It is June 5th, 2025, and many real-time APIs are unable to query historical information. You have already completed the exploration of the necessary parameters for the APIs and generated user questions (which only include the required parameters). You need to do 1) expand on the previously generated questions by adding optional parameters to them. 2) extracting the parameters needed to call these APIs from the generated query, and 3) Here, you can focus on queries that only require calling the API once.
 
 # NOTES:
 1. You need to explore optional parameters based on the previously generated query. You should make the query natural - for example, try to avoid using the provided API descriptions or API names in the query, as the user does not know what APIs you have access to. However, please make sure that the user query you generate includes the parameters required to call the API, for which you need to generate random information. 

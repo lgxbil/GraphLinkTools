@@ -1,0 +1,134 @@
+{
+    "name": "Get_Attraction_Details",
+    "docs_row": {
+        "name": "Get_Attraction_Details",
+        "endpoint": "/api/v1/attraction/getAttractionDetails",
+        "func_description": "Search the attraction detail information. ",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "slug": {
+                    "type": "String",
+                    "description": "slug can be retrieved from api/v1/attraction/searchLocation(Search Attraction Location) endpoint in Attraction collection as productSlug  inside products or destinations.",
+                    "example_value": "prugrdm0uamx-small-group-dharavi-slum-tour",
+                    "required": true
+                },
+                "languagecode": {
+                    "type": "String",
+                    "description": "To obtain the response data in a specific language, enter the languagecode. languagecode can be retrieved from api/v1/meta/getLanguages(Get Languages\n) endpoint in Meta collection.",
+                    "example_value": "",
+                    "required": false
+                },
+                "currency_code": {
+                    "type": "String",
+                    "description": "The currency code. currency_code can be retrieved from api/v1/meta/getCurrency(Get Currency) endpoint in Hotels collection.",
+                    "example_value": "USD",
+                    "required": false
+                }
+            },
+            "required": [
+                "slug"
+            ]
+        }
+    },
+    "api_response_schema": {
+        "__typename": "AttractionsProduct",
+        "additionalBookingInfo": {
+            "__typename": "AttractionsAdditionalBookingInfo",
+            "freeForChildren": {
+                "__typename": "AttractionsFreeForChildren",
+                "age": {
+                    "__typename": "MinMax",
+                    "label": "Children aged 0 to 3 years can participate for free. "
+                }
+            }
+        },
+        "additionalInfo": "Please note that food and drinks are strictly prohibited in the conservatories (Flower Dome and Cloud Forest). \r\n\r\nThe available ticket options are as follows: \r\n- Option 1: Flower Dome (including Impressions of Monet: The Experience) and Cloud Forest\r\n- Option 2: Floral Fantasy \r\n- Option 3: Cloud Forest, Supertree Observatory or OCBC Skyway and Floral Fantasy \r\n- Option 4: Flower Dome (including Impressions of Monet: The Experience), Cloud Forest and Floral Fantasy \r\n- Option 5: Cloud Forest, Floral Fantasy and Shuttle Service \r\n- Option 6: Cloud Forest and Supertree Observatory or OCBC Skyway \r\n\r\nPlease provide the email address of the participant redeeming and using the pass at check-out. This information is required to redeem your pass.\r\n\r\nPlease note that you\u2019ll receive an email at least 24 hours before the scheduled tour time with a PDF ticket. \r\n\r\nPlease present the ticket at the time of entry. \r\n\r\nPlease check your spam folder.\r\n\r\nPlease note that the operational hours of the Flower Dome are from 09:00\u201321:00, daily. The last admission is at 20:30.\r\n\r\nPlease note that the operational hours of the Cloud Forest are from 09:00\u201321:00, daily. The last admission is at 20:00.\r\n\r\nPlease note that the operational hours of the Supertree Observatory are from 09:00\u201321:00, daily. The last admission is at 20:30.\r\n\r\nPlease note that the operational hours of the Floral Fantasy are as follows:\r\n- Monday\u2013Friday: from 10:00\u201319:00, and the last admission is at 18:30\r\n- Saturdays, Sundays and public holidays: from 10:00\u201320:00, and the last admission is at 19:30\r\n\r\nPlease note that the conservatories will be closed on the following dates:\r\n- Flower Dome: 18 September 2024, 15 October 2024 and 19 November 2024\r\n- Cloud Forest: 9 September 2024, 14 October 2024 and 11 November 2024\r\n- Supertree Observatory: 11 September 2024, 23 October 2024 and 13 November 2024\r\n- Floral Fantasy: 27 August 2024, 24 September 2024, 8 October 2024, 5 November 2024 and 10 December 2024\r\n\r\nPlease refer to Gardens By The Bay\u2019s official website for the updated operational hours before your tour.\r\n\r\nPlease note that the operational hours of the OCBC Skyway are from 09:00\u201321:00, daily. The last admission is at 16:00.\r\n\r\nPlease note that the OCBC Skyway is closed on 28 August, 25 September, 9 October, 6 November and 11 December.\n\nPlease bring your ticket with you to the attraction.\n\nBe aware that operators may cancel for unforeseen reasons.\n\nYou need to be 18 years or older to book or be accompanied by an adult. ",
+        "applicableTerms": [
+            {
+                "__typename": "TermsConditions",
+                "policyProvider": "Musement"
+            }
+        ],
+        "cancellationPolicy": {
+            "__typename": "AttractionsCancellationPolicy",
+            "hasFreeCancellation": false
+        },
+        "description": "This admission ticket will gain you access to Gardens by the Bay, a Marina Bay waterfront attraction showcasing the best in horticulture and gardening. Here, you\u2019ll see plants native to Singapore as well as some rarely seen in this climate or part of the world. \r\n\r\nIn the Flower Dome \u2013 2015 Guinness Book World Record holder for largest glass greenhouse in the world \u2013 you\u2019ll enter an environment where it\u2019s always spring and something is always blooming. Here, you\u2019ll find flora from semi-arid regions and the Mediterranean. \r\n\r\nIn Cloud Forest, you\u2019ll encounter mountain vegetation and views and get an education on the unique plants that inhabit this type of area \u2013 and why it\u2019s beginning to dwindle. You\u2019ll spend quite a bit of time here as there are multiple levels and views to take in and explore. \r\n\r\nThis tour will also include a tour of Floral Fantasy which features flora displays with four different garden landscapes. You\u2019ll get to see hanging gardens and various floral designs along with light displays in the evening when you\u2019re at the venue. Additionally, you can climb up the Supertree Observatory that provides scenic views of the gardens and the city skyline from one of the Supertrees.",
+        "flags": [
+            {
+                "__typename": "AttractionsProductFlags",
+                "flag": "bestseller",
+                "value": true,
+                "rank": 2
+            }
+        ],
+        "id": "PRPSPHOxMKB1",
+        "isBookable": true,
+        "name": "Admission to Gardens by the Bay",
+        "offers": [
+            {
+                "__typename": "Offer",
+                "availabilityType": "date_time",
+                "id": "OFvB7YbmlQvy"
+            }
+        ],
+        "onSiteRequirements": {
+            "__typename": "OnSiteRequirements"
+        },
+        "operatedBy": "Globaltix Pte Ltd",
+        "representativePrice": {
+            "__typename": "AttractionsPrice",
+            "chargeAmount": 15.16,
+            "currency": "USD",
+            "publicAmount": 15.16
+        },
+        "reviews": {
+            "__typename": "AttractionsGetReviewsResponse",
+            "total": 218,
+            "reviews": [
+                {
+                    "__typename": "AttractionsReview",
+                    "id": "RSxd9p8EvWra",
+                    "epochMs": 1728811574000,
+                    "language": "zh-tw",
+                    "numericRating": 4,
+                    "user": {
+                        "__typename": "AttractionsReviewUser",
+                        "name": "\u5fd7\u9f8d",
+                        "cc1": "tw"
+                    }
+                }
+            ]
+        },
+        "reviewsStats": {
+            "__typename": "AttractionsProductReviewStats",
+            "allReviewsCount": 57,
+            "percentage": "81%",
+            "combinedNumericStats": {
+                "__typename": "AttractionsProductCombinedReviewStats",
+                "average": 4.3,
+                "total": 167
+            }
+        },
+        "shortDescription": "An exploration of the nature park's Flower Dome and Cloud Forest",
+        "slug": "prpsphoxmkb1-admission-to-gardens-by-the-bay",
+        "supportedFeatures": {
+            "__typename": "AttractionsProductSupportedFeatures",
+            "nativeApp": true,
+            "nativeAppBookProcess": true,
+            "liveAvailabilityCheckSupported": true
+        },
+        "uniqueSellingPoints": [
+            "Insights into horticulture and gardening within Singapore"
+        ],
+        "ufiDetails": {
+            "__typename": "AttractionLocationResponse",
+            "ufi": -73635,
+            "bCityName": "Singapore"
+        },
+        "whatsIncluded": [
+            "Admission tickets"
+        ]
+    }
+}

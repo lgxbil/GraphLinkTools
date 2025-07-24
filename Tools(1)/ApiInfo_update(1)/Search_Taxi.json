@@ -1,0 +1,939 @@
+{
+    "name": "Search_Taxi",
+    "docs_row": {
+        "name": "Search_Taxi",
+        "endpoint": "/api/v1/taxi/searchTaxi",
+        "func_description": "Search Taxi. ",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "pick_up_place_id": {
+                    "type": "String",
+                    "description": "The pick up location's place id. pick_up_place_id can be retrieved from api/v1/taxi/searchLocation(Taxi Search Location) endpoint in Taxi collection as googlePlaceId.",
+                    "example_value": "ChIJRym9mVDI5zsRrqh0xGAazB4",
+                    "required": true
+                },
+                "drop_off_place_id": {
+                    "type": "String",
+                    "description": "The drop off location's place id. drop_off_place_id can be retrieved from api/v1/taxi/searchLocation(Taxi Search Location) endpoint in Taxi collection as googlePlaceId.",
+                    "example_value": "ChIJ____b8DR5zsRVz_XpIUEKcA",
+                    "required": true
+                },
+                "pick_up_date": {
+                    "type": "Date (yyyy-mm-dd)",
+                    "description": "Pick up date\nFormat: YYYY-MM-DD",
+                    "example_value": "",
+                    "required": true
+                },
+                "pick_up_time": {
+                    "type": "Time (24-Hour Hh:Mm)",
+                    "description": "Pick up time\nFormat: HH:MM\nNote: The format of time is 24 hours.",
+                    "example_value": "",
+                    "required": true
+                },
+                "currency_code": {
+                    "type": "String",
+                    "description": "The currency code. currency_code can be retrieved from api/v1/meta/getCurrency(Get Currency) endpoint in Hotels collection.",
+                    "example_value": "EUR",
+                    "required": false
+                },
+                "languagecode": {
+                    "type": "String",
+                    "description": "To obtain the response data in a specific language, enter the languagecode. languagecode can be retrieved from api/v1/meta/getLanguages(Get Languages\n) endpoint in Meta collection.",
+                    "example_value": "",
+                    "required": false
+                }
+            },
+            "required": [
+                "pick_up_place_id",
+                "drop_off_place_id",
+                "pick_up_date",
+                "pick_up_time"
+            ]
+        }
+    },
+    "instance": [],
+    "category": null,
+    "tool": null,
+    "api_idx": 14,
+    "params": {
+        "type": "object",
+        "properties": {
+            "pick_up_place_id": {
+                "type": "String",
+                "description": "The pick up location's place id. pick_up_place_id can be retrieved from api/v1/taxi/searchLocation(Taxi Search Location) endpoint in Taxi collection as googlePlaceId.",
+                "example_value": "ChIJRym9mVDI5zsRrqh0xGAazB4",
+                "required": true
+            },
+            "drop_off_place_id": {
+                "type": "String",
+                "description": "The drop off location's place id. drop_off_place_id can be retrieved from api/v1/taxi/searchLocation(Taxi Search Location) endpoint in Taxi collection as googlePlaceId.",
+                "example_value": "ChIJ____b8DR5zsRVz_XpIUEKcA",
+                "required": true
+            },
+            "pick_up_date": {
+                "type": "Date (yyyy-mm-dd)",
+                "description": "Pick up date\nFormat: YYYY-MM-DD",
+                "example_value": "",
+                "required": true
+            },
+            "pick_up_time": {
+                "type": "Time (24-Hour Hh:Mm)",
+                "description": "Pick up time\nFormat: HH:MM\nNote: The format of time is 24 hours.",
+                "example_value": "",
+                "required": true
+            },
+            "currency_code": {
+                "type": "String",
+                "description": "The currency code. currency_code can be retrieved from api/v1/meta/getCurrency(Get Currency) endpoint in Hotels collection.",
+                "example_value": "EUR",
+                "required": false
+            },
+            "languagecode": {
+                "type": "String",
+                "description": "To obtain the response data in a specific language, enter the languagecode. languagecode can be retrieved from api/v1/meta/getLanguages(Get Languages\n) endpoint in Meta collection.",
+                "example_value": "",
+                "required": false
+            }
+        },
+        "required": [
+            "pick_up_place_id",
+            "drop_off_place_id",
+            "pick_up_date",
+            "pick_up_time"
+        ]
+    },
+    "api_response_schema": null,
+    "responses": [
+        {
+            "function_name": "Search_Taxi",
+            "arguments": {
+                "pick_up_place_id": "ChIJRym9mVDI5zsRrqh0xGAazB4",
+                "drop_off_place_id": "ChIJ____b8DR5zsRVz_XpIUEKcA",
+                "pick_up_date": "2025-06-15",
+                "pick_up_time": "14:30"
+            },
+            "observation": {
+                "journeys": [
+                    {
+                        "requestedPickupDateTime": "2025-06-15T14:30:00",
+                        "dropOffLocation": {
+                            "city": "Mumbai",
+                            "latLng": {
+                                "latitude": 18.9216631,
+                                "longitude": 72.8332028
+                            },
+                            "description": "Apollo Bandar, Colaba, Mumbai, Maharashtra 400001, India",
+                            "country": "IN",
+                            "isRideNowAvailable": false,
+                            "name": "The Taj Mahal Palace, Mumbai, Apollo Bandar, Colaba, Mumbai, Maharashtra 400001, India",
+                            "locationType": "GEO",
+                            "postcode": "400001",
+                            "airportCode": null,
+                            "establishment": "The Taj Mahal Palace, Mumbai",
+                            "locationId": "ChIJ____b8DR5zsRVz_XpIUEKcA"
+                        },
+                        "journeyDirection": "OUTBOUND",
+                        "janusSearchReference": "ddea7ea5-7456-4e71-b752-14226e0d6e2a",
+                        "pickupLocation": {
+                            "timezone": "Asia/Kolkata",
+                            "latLng": {
+                                "latitude": 19.090176,
+                                "longitude": 72.868696
+                            },
+                            "description": "Mumbai, Maharashtra 400099, India",
+                            "isRideNowAvailable": false,
+                            "name": "Chhatrapati Shivaji International Airport (BOM), Mumbai, Maharashtra 400099, India",
+                            "locationType": "AIRPORT",
+                            "postcode": "400099",
+                            "country": "IN",
+                            "city": "Mumbai",
+                            "establishment": "Chhatrapati Shivaji International Airport (BOM)",
+                            "locationId": "ChIJRym9mVDI5zsRrqh0xGAazB4",
+                            "airportCode": "BOM"
+                        }
+                    }
+                ],
+                "results": [
+                    {
+                        "bags": 3,
+                        "drivingDistance": 29.12,
+                        "descriptionLocalised": "Perfect for solo travellers, couples and small families.",
+                        "price": {
+                            "currencyCode": "USD",
+                            "amount": "19.58"
+                        },
+                        "supplierId": 668,
+                        "resultId": "c939cecb-59c2-42e6-a149-05797c761e2e",
+                        "nonRefundable": false,
+                        "duration": 51,
+                        "discountType": "NONE",
+                        "legPriceBreakdown": [
+                            {
+                                "supplierName": "E-Life Limo",
+                                "supplierLocationId": 6189,
+                                "price": {
+                                    "currencyCode": "USD",
+                                    "amount": "19.58"
+                                },
+                                "supplierId": 668,
+                                "journeyDirection": "OUTBOUND"
+                            }
+                        ],
+                        "vehicleType": "STANDARD",
+                        "janusResultReference": "1",
+                        "geniusDiscount": false,
+                        "categoryLocalised": "Standard",
+                        "description": "Standard",
+                        "imageUrl": "https://cdn.rideways.com/images/cars/standard.jpg",
+                        "category": "Standard",
+                        "priceRuleId": 18738,
+                        "meetGreet": true,
+                        "priceBreakdown": [],
+                        "cancellationLeadTimeMinutes": 1440,
+                        "passengerCapacity": 3,
+                        "supplierName": "E-Life Limo"
+                    },
+                    {
+                        "categoryLocalised": "People carrier",
+                        "description": "People Carrier",
+                        "imageUrl": "https://cdn.rideways.com/images/cars/people-carrier.jpg",
+                        "category": "People Carrier",
+                        "priceRuleId": 18742,
+                        "meetGreet": true,
+                        "priceBreakdown": [],
+                        "cancellationLeadTimeMinutes": 1440,
+                        "passengerCapacity": 4,
+                        "supplierName": "E-Life Limo",
+                        "bags": 4,
+                        "drivingDistance": 29.12,
+                        "descriptionLocalised": "Great choice for families.",
+                        "price": {
+                            "currencyCode": "USD",
+                            "amount": "24.17"
+                        },
+                        "supplierId": 668,
+                        "resultId": "e8af0dff-7b84-410c-a1a9-843050b5de73",
+                        "nonRefundable": false,
+                        "discountType": "NONE",
+                        "legPriceBreakdown": [
+                            {
+                                "supplierName": "E-Life Limo",
+                                "supplierLocationId": 6189,
+                                "supplierId": 668,
+                                "journeyDirection": "OUTBOUND",
+                                "price": {
+                                    "amount": "24.17",
+                                    "currencyCode": "USD"
+                                }
+                            }
+                        ],
+                        "vehicleType": "LARGE",
+                        "duration": 51,
+                        "geniusDiscount": false,
+                        "janusResultReference": "5"
+                    },
+                    {
+                        "description": "Executive",
+                        "categoryLocalised": "Executive",
+                        "passengerCapacity": 3,
+                        "supplierName": "E-Life Limo",
+                        "cancellationLeadTimeMinutes": 1440,
+                        "priceBreakdown": [],
+                        "category": "Executive",
+                        "priceRuleId": 18739,
+                        "meetGreet": true,
+                        "imageUrl": "https://cdn.rideways.com/images/cars/executive.jpg",
+                        "price": {
+                            "currencyCode": "USD",
+                            "amount": "27.50"
+                        },
+                        "drivingDistance": 29.12,
+                        "descriptionLocalised": "Plenty of space to travel in comfort.",
+                        "bags": 3,
+                        "nonRefundable": false,
+                        "duration": 51,
+                        "discountType": "NONE",
+                        "legPriceBreakdown": [
+                            {
+                                "supplierName": "E-Life Limo",
+                                "supplierLocationId": 6189,
+                                "price": {
+                                    "currencyCode": "USD",
+                                    "amount": "27.50"
+                                },
+                                "journeyDirection": "OUTBOUND",
+                                "supplierId": 668
+                            }
+                        ],
+                        "vehicleType": "EXECUTIVE",
+                        "janusResultReference": "2",
+                        "geniusDiscount": false,
+                        "supplierId": 668,
+                        "resultId": "782d9561-5a37-4d8d-bfc8-b0ea076273db"
+                    }
+                ]
+            }
+        }
+    ],
+    "response_summary": "The API response provides details about available transportation options from Chhatrapati Shivaji International Airport (BOM) in Mumbai to The Taj Mahal Palace, a journey covering approximately 29.12 kilometers and taking around 51 minutes. The pickup is scheduled for June 15, 2025, at 14:30.  \n\nThere are three vehicle options provided by E-Life Limo:  \n\n1. **Standard** \u2013 Priced at $19.58, this option is ideal for solo travelers, couples, or small families, accommodating up to 3 passengers and 3 bags. It includes a meet-and-greet service and allows cancellations up to 24 hours before the ride.  \n\n2. **People Carrier** \u2013 Costing $24.17, this larger vehicle can carry 4 passengers and 4 bags, making it a great choice for families. It also includes a meet-and-greet service and has the same 24-hour cancellation policy.  \n\n3. **Executive** \u2013 At $27.50, this premium option offers extra comfort and space for 3 passengers and 3 bags. Like the others, it includes a meet-and-greet and can be canceled up to 24 hours in advance.  \n\nAll options are refundable and do not currently have any discounts applied. The vehicles are categorized as Standard, People Carrier, and Executive, with corresponding images provided for reference.",
+    "enhance_func_desc": "This API is suitable for travelers needing airport transfers or point-to-point transportation. It searches available taxi options between specified pickup and drop-off locations, providing details like vehicle type, pricing, capacity, and cancellation policies. Users can filter by pickup date and time, and receive comprehensive ride information including passenger/bag limits and service inclusions. Location IDs must be obtained from the Taxi Search Location API.",
+    "enhance_params_desc": {
+        "enhanced_parameters": {
+            "pick_up_place_id": "Unique identifier for the pickup location, sourced from Taxi Search Location API.",
+            "drop_off_place_id": "Unique identifier for the drop-off location, sourced from Taxi Search Location API.",
+            "pick_up_date": "Date of pickup in YYYY-MM-DD format.",
+            "pick_up_time": "Time of pickup in 24-hour HH:MM format.",
+            "currency_code": "Currency for displaying taxi prices.",
+            "languagecode": "Language preference for the response data."
+        }
+    },
+    "enhance_resfield_desc": {
+        "response_fields": {
+            "journeys": {
+                "type": "Array",
+                "description": "A list of journey details including pickup and drop-off locations.",
+                "ar_items": {
+                    "type": "Object",
+                    "description": "An object representing the details of a single journey.",
+                    "ob_properties": {
+                        "requestedPickupDateTime": {
+                            "type": "Date",
+                            "description": "The scheduled pickup date and time for the journey, formatted as ISO 8601 (e.g., '2025-06-15T14:30:00')."
+                        },
+                        "dropOffLocation": {
+                            "type": "Object",
+                            "description": "Details about the drop-off location.",
+                            "ob_properties": {
+                                "city": {
+                                    "type": "String",
+                                    "description": "The city where the drop-off location is situated (e.g., 'Mumbai')."
+                                },
+                                "latLng": {
+                                    "type": "Object",
+                                    "description": "The geographical coordinates of the drop-off location.",
+                                    "ob_properties": {
+                                        "latitude": {
+                                            "type": "Number",
+                                            "description": "The latitude coordinate of the drop-off location (e.g., 18.9216631)."
+                                        },
+                                        "longitude": {
+                                            "type": "Number",
+                                            "description": "The longitude coordinate of the drop-off location (e.g., 72.8332028)."
+                                        }
+                                    }
+                                },
+                                "description": {
+                                    "type": "String",
+                                    "description": "A detailed description of the drop-off location (e.g., 'Apollo Bandar, Colaba, Mumbai, Maharashtra 400001, India')."
+                                },
+                                "country": {
+                                    "type": "String",
+                                    "description": "The country code of the drop-off location (e.g., 'IN')."
+                                },
+                                "isRideNowAvailable": {
+                                    "type": "Boolean",
+                                    "description": "Indicates whether an immediate ride is available at the drop-off location (e.g., false)."
+                                },
+                                "name": {
+                                    "type": "String",
+                                    "description": "The full name of the drop-off location (e.g., 'The Taj Mahal Palace, Mumbai, Apollo Bandar, Colaba, Mumbai, Maharashtra 400001, India')."
+                                },
+                                "locationType": {
+                                    "type": "String",
+                                    "description": "The type of the drop-off location (e.g., 'GEO')."
+                                },
+                                "postcode": {
+                                    "type": "String",
+                                    "description": "The postal code of the drop-off location (e.g., '400001')."
+                                },
+                                "airportCode": {
+                                    "type": "String",
+                                    "description": "The airport code if the drop-off location is an airport (e.g., null)."
+                                },
+                                "establishment": {
+                                    "type": "String",
+                                    "description": "The name of the establishment at the drop-off location (e.g., 'The Taj Mahal Palace, Mumbai')."
+                                },
+                                "locationId": {
+                                    "type": "String",
+                                    "description": "A unique identifier for the drop-off location (e.g., 'ChIJ____b8DR5zsRVz_XpIUEKcA')."
+                                }
+                            }
+                        },
+                        "journeyDirection": {
+                            "type": "String",
+                            "description": "The direction of the journey (e.g., 'OUTBOUND')."
+                        },
+                        "janusSearchReference": {
+                            "type": "String",
+                            "description": "A unique reference identifier for the journey search (e.g., 'ddea7ea5-7456-4e71-b752-14226e0d6e2a')."
+                        },
+                        "pickupLocation": {
+                            "type": "Object",
+                            "description": "Details about the pickup location.",
+                            "ob_properties": {
+                                "timezone": {
+                                    "type": "String",
+                                    "description": "The timezone of the pickup location (e.g., 'Asia/Kolkata')."
+                                },
+                                "latLng": {
+                                    "type": "Object",
+                                    "description": "The geographical coordinates of the pickup location.",
+                                    "ob_properties": {
+                                        "latitude": {
+                                            "type": "Number",
+                                            "description": "The latitude coordinate of the pickup location (e.g., 19.090176)."
+                                        },
+                                        "longitude": {
+                                            "type": "Number",
+                                            "description": "The longitude coordinate of the pickup location (e.g., 72.868696)."
+                                        }
+                                    }
+                                },
+                                "description": {
+                                    "type": "String",
+                                    "description": "A detailed description of the pickup location (e.g., 'Mumbai, Maharashtra 400099, India')."
+                                },
+                                "isRideNowAvailable": {
+                                    "type": "Boolean",
+                                    "description": "Indicates whether an immediate ride is available at the pickup location (e.g., false)."
+                                },
+                                "name": {
+                                    "type": "String",
+                                    "description": "The full name of the pickup location (e.g., 'Chhatrapati Shivaji International Airport (BOM), Mumbai, Maharashtra 400099, India')."
+                                },
+                                "locationType": {
+                                    "type": "String",
+                                    "description": "The type of the pickup location (e.g., 'AIRPORT')."
+                                },
+                                "postcode": {
+                                    "type": "String",
+                                    "description": "The postal code of the pickup location (e.g., '400099')."
+                                },
+                                "country": {
+                                    "type": "String",
+                                    "description": "The country code of the pickup location (e.g., 'IN')."
+                                },
+                                "city": {
+                                    "type": "String",
+                                    "description": "The city where the pickup location is situated (e.g., 'Mumbai')."
+                                },
+                                "establishment": {
+                                    "type": "String",
+                                    "description": "The name of the establishment at the pickup location (e.g., 'Chhatrapati Shivaji International Airport (BOM)')."
+                                },
+                                "locationId": {
+                                    "type": "String",
+                                    "description": "A unique identifier for the pickup location (e.g., 'ChIJRym9mVDI5zsRrqh0xGAazB4')."
+                                },
+                                "airportCode": {
+                                    "type": "String",
+                                    "description": "The airport code of the pickup location (e.g., 'BOM')."
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "results": {
+                "type": "Array",
+                "description": "A list of available transportation options for the journey.",
+                "ar_items": {
+                    "type": "Object",
+                    "description": "An object representing a single transportation option.",
+                    "ob_properties": {
+                        "bags": {
+                            "type": "Number",
+                            "description": "The number of bags the vehicle can accommodate (e.g., 3)."
+                        },
+                        "drivingDistance": {
+                            "type": "Number",
+                            "description": "The distance of the journey in kilometers (e.g., 29.12)."
+                        },
+                        "descriptionLocalised": {
+                            "type": "String",
+                            "description": "A localized description of the vehicle option (e.g., 'Perfect for solo travellers, couples and small families.')."
+                        },
+                        "price": {
+                            "type": "Object",
+                            "description": "The pricing details for the vehicle option.",
+                            "ob_properties": {
+                                "currencyCode": {
+                                    "type": "String",
+                                    "description": "The currency code for the price (e.g., 'USD')."
+                                },
+                                "amount": {
+                                    "type": "String",
+                                    "description": "The price amount as a string (e.g., '19.58')."
+                                }
+                            }
+                        },
+                        "supplierId": {
+                            "type": "Number",
+                            "description": "The unique identifier for the supplier (e.g., 668)."
+                        },
+                        "resultId": {
+                            "type": "String",
+                            "description": "A unique identifier for the transportation option (e.g., 'c939cecb-59c2-42e6-a149-05797c761e2e')."
+                        },
+                        "nonRefundable": {
+                            "type": "Boolean",
+                            "description": "Indicates whether the option is non-refundable (e.g., false)."
+                        },
+                        "duration": {
+                            "type": "Number",
+                            "description": "The estimated duration of the journey in minutes (e.g., 51)."
+                        },
+                        "discountType": {
+                            "type": "String",
+                            "description": "The type of discount applied (e.g., 'NONE')."
+                        },
+                        "legPriceBreakdown": {
+                            "type": "Array",
+                            "description": "A breakdown of the pricing for different legs of the journey.",
+                            "ar_items": {
+                                "type": "Object",
+                                "description": "An object representing the price breakdown for a single leg.",
+                                "ob_properties": {
+                                    "supplierName": {
+                                        "type": "String",
+                                        "description": "The name of the supplier for the leg (e.g., 'E-Life Limo')."
+                                    },
+                                    "supplierLocationId": {
+                                        "type": "Number",
+                                        "description": "The unique identifier for the supplier's location (e.g., 6189)."
+                                    },
+                                    "price": {
+                                        "type": "Object",
+                                        "description": "The pricing details for the leg.",
+                                        "ob_properties": {
+                                            "currencyCode": {
+                                                "type": "String",
+                                                "description": "The currency code for the price (e.g., 'USD')."
+                                            },
+                                            "amount": {
+                                                "type": "String",
+                                                "description": "The price amount as a string (e.g., '19.58')."
+                                            }
+                                        }
+                                    },
+                                    "supplierId": {
+                                        "type": "Number",
+                                        "description": "The unique identifier for the supplier (e.g., 668)."
+                                    },
+                                    "journeyDirection": {
+                                        "type": "String",
+                                        "description": "The direction of the journey leg (e.g., 'OUTBOUND')."
+                                    }
+                                }
+                            }
+                        },
+                        "vehicleType": {
+                            "type": "String",
+                            "description": "The type of vehicle (e.g., 'STANDARD')."
+                        },
+                        "janusResultReference": {
+                            "type": "String",
+                            "description": "A reference identifier for the result (e.g., '1')."
+                        },
+                        "geniusDiscount": {
+                            "type": "Boolean",
+                            "description": "Indicates whether a genius discount is applied (e.g., false)."
+                        },
+                        "categoryLocalised": {
+                            "type": "String",
+                            "description": "The localized category of the vehicle (e.g., 'Standard')."
+                        },
+                        "description": {
+                            "type": "String",
+                            "description": "The description of the vehicle option (e.g., 'Standard')."
+                        },
+                        "imageUrl": {
+                            "type": "String",
+                            "description": "The URL of the image representing the vehicle (e.g., 'https://cdn.rideways.com/images/cars/standard.jpg')."
+                        },
+                        "category": {
+                            "type": "String",
+                            "description": "The category of the vehicle (e.g., 'Standard')."
+                        },
+                        "priceRuleId": {
+                            "type": "Number",
+                            "description": "The unique identifier for the price rule (e.g., 18738)."
+                        },
+                        "meetGreet": {
+                            "type": "Boolean",
+                            "description": "Indicates whether a meet-and-greet service is included (e.g., true)."
+                        },
+                        "priceBreakdown": {
+                            "type": "Array",
+                            "description": "A breakdown of the pricing details (e.g., empty array)."
+                        },
+                        "cancellationLeadTimeMinutes": {
+                            "type": "Number",
+                            "description": "The lead time in minutes before the ride can be canceled (e.g., 1440)."
+                        },
+                        "passengerCapacity": {
+                            "type": "Number",
+                            "description": "The number of passengers the vehicle can accommodate (e.g., 3)."
+                        },
+                        "supplierName": {
+                            "type": "String",
+                            "description": "The name of the supplier (e.g., 'E-Life Limo')."
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "params_desc_list": null,
+    "response_desc_list": [
+        {
+            "path_name": "$.journeys",
+            "name": "journeys",
+            "description": "A list of journey details including pickup and drop-off locations."
+        },
+        {
+            "path_name": "$.journeys[]",
+            "name": "journeys[]",
+            "description": "An object representing the details of a single journey."
+        },
+        {
+            "path_name": "$.journeys[].requestedPickupDateTime",
+            "name": "requestedPickupDateTime",
+            "description": "The scheduled pickup date and time for the journey, formatted as ISO 8601 (e.g., '2025-06-15T14:30:00')."
+        },
+        {
+            "path_name": "$.journeys[].dropOffLocation",
+            "name": "dropOffLocation",
+            "description": "Details about the drop-off location."
+        },
+        {
+            "path_name": "$.journeys[].dropOffLocation.city",
+            "name": "city",
+            "description": "The city where the drop-off location is situated (e.g., 'Mumbai')."
+        },
+        {
+            "path_name": "$.journeys[].dropOffLocation.latLng",
+            "name": "latLng",
+            "description": "The geographical coordinates of the drop-off location."
+        },
+        {
+            "path_name": "$.journeys[].dropOffLocation.latLng.latitude",
+            "name": "latitude",
+            "description": "The latitude coordinate of the drop-off location (e.g., 18.9216631)."
+        },
+        {
+            "path_name": "$.journeys[].dropOffLocation.latLng.longitude",
+            "name": "longitude",
+            "description": "The longitude coordinate of the drop-off location (e.g., 72.8332028)."
+        },
+        {
+            "path_name": "$.journeys[].dropOffLocation.description",
+            "name": "description",
+            "description": "A detailed description of the drop-off location (e.g., 'Apollo Bandar, Colaba, Mumbai, Maharashtra 400001, India')."
+        },
+        {
+            "path_name": "$.journeys[].dropOffLocation.country",
+            "name": "country",
+            "description": "The country code of the drop-off location (e.g., 'IN')."
+        },
+        {
+            "path_name": "$.journeys[].dropOffLocation.isRideNowAvailable",
+            "name": "isRideNowAvailable",
+            "description": "Indicates whether an immediate ride is available at the drop-off location (e.g., false)."
+        },
+        {
+            "path_name": "$.journeys[].dropOffLocation.name",
+            "name": "name",
+            "description": "The full name of the drop-off location (e.g., 'The Taj Mahal Palace, Mumbai, Apollo Bandar, Colaba, Mumbai, Maharashtra 400001, India')."
+        },
+        {
+            "path_name": "$.journeys[].dropOffLocation.locationType",
+            "name": "locationType",
+            "description": "The type of the drop-off location (e.g., 'GEO')."
+        },
+        {
+            "path_name": "$.journeys[].dropOffLocation.postcode",
+            "name": "postcode",
+            "description": "The postal code of the drop-off location (e.g., '400001')."
+        },
+        {
+            "path_name": "$.journeys[].dropOffLocation.airportCode",
+            "name": "airportCode",
+            "description": "The airport code if the drop-off location is an airport (e.g., null)."
+        },
+        {
+            "path_name": "$.journeys[].dropOffLocation.establishment",
+            "name": "establishment",
+            "description": "The name of the establishment at the drop-off location (e.g., 'The Taj Mahal Palace, Mumbai')."
+        },
+        {
+            "path_name": "$.journeys[].dropOffLocation.locationId",
+            "name": "locationId",
+            "description": "A unique identifier for the drop-off location (e.g., 'ChIJ____b8DR5zsRVz_XpIUEKcA')."
+        },
+        {
+            "path_name": "$.journeys[].journeyDirection",
+            "name": "journeyDirection",
+            "description": "The direction of the journey (e.g., 'OUTBOUND')."
+        },
+        {
+            "path_name": "$.journeys[].janusSearchReference",
+            "name": "janusSearchReference",
+            "description": "A unique reference identifier for the journey search (e.g., 'ddea7ea5-7456-4e71-b752-14226e0d6e2a')."
+        },
+        {
+            "path_name": "$.journeys[].pickupLocation",
+            "name": "pickupLocation",
+            "description": "Details about the pickup location."
+        },
+        {
+            "path_name": "$.journeys[].pickupLocation.timezone",
+            "name": "timezone",
+            "description": "The timezone of the pickup location (e.g., 'Asia/Kolkata')."
+        },
+        {
+            "path_name": "$.journeys[].pickupLocation.latLng",
+            "name": "latLng",
+            "description": "The geographical coordinates of the pickup location."
+        },
+        {
+            "path_name": "$.journeys[].pickupLocation.latLng.latitude",
+            "name": "latitude",
+            "description": "The latitude coordinate of the pickup location (e.g., 19.090176)."
+        },
+        {
+            "path_name": "$.journeys[].pickupLocation.latLng.longitude",
+            "name": "longitude",
+            "description": "The longitude coordinate of the pickup location (e.g., 72.868696)."
+        },
+        {
+            "path_name": "$.journeys[].pickupLocation.description",
+            "name": "description",
+            "description": "A detailed description of the pickup location (e.g., 'Mumbai, Maharashtra 400099, India')."
+        },
+        {
+            "path_name": "$.journeys[].pickupLocation.isRideNowAvailable",
+            "name": "isRideNowAvailable",
+            "description": "Indicates whether an immediate ride is available at the pickup location (e.g., false)."
+        },
+        {
+            "path_name": "$.journeys[].pickupLocation.name",
+            "name": "name",
+            "description": "The full name of the pickup location (e.g., 'Chhatrapati Shivaji International Airport (BOM), Mumbai, Maharashtra 400099, India')."
+        },
+        {
+            "path_name": "$.journeys[].pickupLocation.locationType",
+            "name": "locationType",
+            "description": "The type of the pickup location (e.g., 'AIRPORT')."
+        },
+        {
+            "path_name": "$.journeys[].pickupLocation.postcode",
+            "name": "postcode",
+            "description": "The postal code of the pickup location (e.g., '400099')."
+        },
+        {
+            "path_name": "$.journeys[].pickupLocation.country",
+            "name": "country",
+            "description": "The country code of the pickup location (e.g., 'IN')."
+        },
+        {
+            "path_name": "$.journeys[].pickupLocation.city",
+            "name": "city",
+            "description": "The city where the pickup location is situated (e.g., 'Mumbai')."
+        },
+        {
+            "path_name": "$.journeys[].pickupLocation.establishment",
+            "name": "establishment",
+            "description": "The name of the establishment at the pickup location (e.g., 'Chhatrapati Shivaji International Airport (BOM)')."
+        },
+        {
+            "path_name": "$.journeys[].pickupLocation.locationId",
+            "name": "locationId",
+            "description": "A unique identifier for the pickup location (e.g., 'ChIJRym9mVDI5zsRrqh0xGAazB4')."
+        },
+        {
+            "path_name": "$.journeys[].pickupLocation.airportCode",
+            "name": "airportCode",
+            "description": "The airport code of the pickup location (e.g., 'BOM')."
+        },
+        {
+            "path_name": "$.results",
+            "name": "results",
+            "description": "A list of available transportation options for the journey."
+        },
+        {
+            "path_name": "$.results[]",
+            "name": "results[]",
+            "description": "An object representing a single transportation option."
+        },
+        {
+            "path_name": "$.results[].bags",
+            "name": "bags",
+            "description": "The number of bags the vehicle can accommodate (e.g., 3)."
+        },
+        {
+            "path_name": "$.results[].drivingDistance",
+            "name": "drivingDistance",
+            "description": "The distance of the journey in kilometers (e.g., 29.12)."
+        },
+        {
+            "path_name": "$.results[].descriptionLocalised",
+            "name": "descriptionLocalised",
+            "description": "A localized description of the vehicle option (e.g., 'Perfect for solo travellers, couples and small families.')."
+        },
+        {
+            "path_name": "$.results[].price",
+            "name": "price",
+            "description": "The pricing details for the vehicle option."
+        },
+        {
+            "path_name": "$.results[].price.currencyCode",
+            "name": "currencyCode",
+            "description": "The currency code for the price (e.g., 'USD')."
+        },
+        {
+            "path_name": "$.results[].price.amount",
+            "name": "amount",
+            "description": "The price amount as a string (e.g., '19.58')."
+        },
+        {
+            "path_name": "$.results[].supplierId",
+            "name": "supplierId",
+            "description": "The unique identifier for the supplier (e.g., 668)."
+        },
+        {
+            "path_name": "$.results[].resultId",
+            "name": "resultId",
+            "description": "A unique identifier for the transportation option (e.g., 'c939cecb-59c2-42e6-a149-05797c761e2e')."
+        },
+        {
+            "path_name": "$.results[].nonRefundable",
+            "name": "nonRefundable",
+            "description": "Indicates whether the option is non-refundable (e.g., false)."
+        },
+        {
+            "path_name": "$.results[].duration",
+            "name": "duration",
+            "description": "The estimated duration of the journey in minutes (e.g., 51)."
+        },
+        {
+            "path_name": "$.results[].discountType",
+            "name": "discountType",
+            "description": "The type of discount applied (e.g., 'NONE')."
+        },
+        {
+            "path_name": "$.results[].legPriceBreakdown",
+            "name": "legPriceBreakdown",
+            "description": "A breakdown of the pricing for different legs of the journey."
+        },
+        {
+            "path_name": "$.results[].legPriceBreakdown[]",
+            "name": "legPriceBreakdown[]",
+            "description": "An object representing the price breakdown for a single leg."
+        },
+        {
+            "path_name": "$.results[].legPriceBreakdown[].supplierName",
+            "name": "supplierName",
+            "description": "The name of the supplier for the leg (e.g., 'E-Life Limo')."
+        },
+        {
+            "path_name": "$.results[].legPriceBreakdown[].supplierLocationId",
+            "name": "supplierLocationId",
+            "description": "The unique identifier for the supplier's location (e.g., 6189)."
+        },
+        {
+            "path_name": "$.results[].legPriceBreakdown[].price",
+            "name": "price",
+            "description": "The pricing details for the leg."
+        },
+        {
+            "path_name": "$.results[].legPriceBreakdown[].price.currencyCode",
+            "name": "currencyCode",
+            "description": "The currency code for the price (e.g., 'USD')."
+        },
+        {
+            "path_name": "$.results[].legPriceBreakdown[].price.amount",
+            "name": "amount",
+            "description": "The price amount as a string (e.g., '19.58')."
+        },
+        {
+            "path_name": "$.results[].legPriceBreakdown[].supplierId",
+            "name": "supplierId",
+            "description": "The unique identifier for the supplier (e.g., 668)."
+        },
+        {
+            "path_name": "$.results[].legPriceBreakdown[].journeyDirection",
+            "name": "journeyDirection",
+            "description": "The direction of the journey leg (e.g., 'OUTBOUND')."
+        },
+        {
+            "path_name": "$.results[].vehicleType",
+            "name": "vehicleType",
+            "description": "The type of vehicle (e.g., 'STANDARD')."
+        },
+        {
+            "path_name": "$.results[].janusResultReference",
+            "name": "janusResultReference",
+            "description": "A reference identifier for the result (e.g., '1')."
+        },
+        {
+            "path_name": "$.results[].geniusDiscount",
+            "name": "geniusDiscount",
+            "description": "Indicates whether a genius discount is applied (e.g., false)."
+        },
+        {
+            "path_name": "$.results[].categoryLocalised",
+            "name": "categoryLocalised",
+            "description": "The localized category of the vehicle (e.g., 'Standard')."
+        },
+        {
+            "path_name": "$.results[].description",
+            "name": "description",
+            "description": "The description of the vehicle option (e.g., 'Standard')."
+        },
+        {
+            "path_name": "$.results[].imageUrl",
+            "name": "imageUrl",
+            "description": "The URL of the image representing the vehicle (e.g., 'https://cdn.rideways.com/images/cars/standard.jpg')."
+        },
+        {
+            "path_name": "$.results[].category",
+            "name": "category",
+            "description": "The category of the vehicle (e.g., 'Standard')."
+        },
+        {
+            "path_name": "$.results[].priceRuleId",
+            "name": "priceRuleId",
+            "description": "The unique identifier for the price rule (e.g., 18738)."
+        },
+        {
+            "path_name": "$.results[].meetGreet",
+            "name": "meetGreet",
+            "description": "Indicates whether a meet-and-greet service is included (e.g., true)."
+        },
+        {
+            "path_name": "$.results[].priceBreakdown",
+            "name": "priceBreakdown",
+            "description": "A breakdown of the pricing details (e.g., empty array)."
+        },
+        {
+            "path_name": "$.results[].cancellationLeadTimeMinutes",
+            "name": "cancellationLeadTimeMinutes",
+            "description": "The lead time in minutes before the ride can be canceled (e.g., 1440)."
+        },
+        {
+            "path_name": "$.results[].passengerCapacity",
+            "name": "passengerCapacity",
+            "description": "The number of passengers the vehicle can accommodate (e.g., 3)."
+        },
+        {
+            "path_name": "$.results[].supplierName",
+            "name": "supplierName",
+            "description": "The name of the supplier (e.g., 'E-Life Limo')."
+        }
+    ],
+    "depends_on": null,
+    "verified": true
+}

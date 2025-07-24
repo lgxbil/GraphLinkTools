@@ -1,0 +1,116 @@
+{
+    "name": "Get_Hotel_Photos",
+    "docs_row": {
+        "name": "Get_Hotel_Photos",
+        "endpoint": "/api/v1/hotels/getHotelPhotos",
+        "func_description": "Retrieves a collection of photos for a specified hotel. This enables users to visually explore the property before booking.",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "hotel_id": {
+                    "type": "String",
+                    "description": "hotel_id can be retrieved from api/v1/hotels/searchHotels(Search Hotels) or api/v1/hotels/searchHotelsByCoordinates(Search Hotels By Coordinates\n) endpoint in Hotels collection.",
+                    "example_value": "5955189",
+                    "required": true
+                }
+            },
+            "required": [
+                "hotel_id"
+            ]
+        }
+    },
+    "instance": [],
+    "category": null,
+    "tool": null,
+    "api_idx": 21,
+    "params": {
+        "type": "object",
+        "properties": {
+            "hotel_id": {
+                "type": "String",
+                "description": "hotel_id can be retrieved from api/v1/hotels/searchHotels(Search Hotels) or api/v1/hotels/searchHotelsByCoordinates(Search Hotels By Coordinates\n) endpoint in Hotels collection.",
+                "example_value": "5955189",
+                "required": true
+            }
+        },
+        "required": [
+            "hotel_id"
+        ]
+    },
+    "responses": [
+        {
+            "function_name": "Get_Hotel_Photos",
+            "arguments": {
+                "hotel_id": "5955189"
+            },
+            "observation": [
+                {
+                    "id": 613758026,
+                    "url": "https://cf.bstatic.com/xdata/images/hotel/square1024/613758026.jpg?k=248663299c505b8cdd98caa01e915fa2559e0013ce3fa70cde0f1ca9dad6e581&o="
+                },
+                {
+                    "id": 613758080,
+                    "url": "https://cf.bstatic.com/xdata/images/hotel/square1024/613758080.jpg?k=a5e48375f5f377df7813999021f662da2e8d67ce3bcd692f3032adb1524c4165&o="
+                },
+                {
+                    "id": 613758060,
+                    "url": "https://cf.bstatic.com/xdata/images/hotel/square1024/613758060.jpg?k=f9bc8735de5086e316bc0849872c2d638bce3106d26a97eb55ec01318755e65d&o="
+                }
+            ]
+        }
+    ],
+    "response_summary": "The API response includes three hotel images, each with a unique identifier and a direct URL link to the image. The first image (ID: 613758026) shows a square-format photo hosted on Booking.com's servers. The second image (ID: 613758080) is another square-format photo with a different composition. The third image (ID: 613758060) is similarly formatted and provides a visual representation of the hotel. All three images are high-resolution and can be accessed via their respective URLs for viewing or further use.",
+    "enhance_func_desc": "This API is ideal for hotel booking platforms and travel apps needing visual content. It retrieves high-resolution hotel images by hotel ID, providing direct URL links for each photo. The response includes multiple square-format images with unique identifiers, enabling users to view or integrate them into their applications. The hotel ID must be obtained from SearchHotels or SearchHotelsByCoordinates APIs.",
+    "enhance_params_desc": {
+        "enhanced_parameters": {
+            "hotel_id": "Unique identifier for the hotel, sourced from searchHotels or searchHotelsByCoordinates endpoints."
+        }
+    },
+    "enhance_resfield_desc": {
+        "response_fields": {
+            "root": {
+                "type": "Array",
+                "description": "A list of hotel images, each containing an identifier and a URL to the image.",
+                "ar_items": {
+                    "type": "Object",
+                    "description": "An object representing a single hotel image with its unique identifier and URL.",
+                    "ob_properties": {
+                        "id": {
+                            "type": "Number",
+                            "description": "A unique numeric identifier for the hotel image."
+                        },
+                        "url": {
+                            "type": "String",
+                            "description": "A direct URL link to the high-resolution square-format image hosted on Booking.com's servers."
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "params_desc_list": null,
+    "response_desc_list": [
+        {
+            "path_name": "root",
+            "name": "root",
+            "description": "A list of hotel images, each containing an identifier and a URL to the image."
+        },
+        {
+            "path_name": "root[]",
+            "name": "root[]",
+            "description": "An object representing a single hotel image with its unique identifier and URL."
+        },
+        {
+            "path_name": "root[].id",
+            "name": "id",
+            "description": "A unique numeric identifier for the hotel image."
+        },
+        {
+            "path_name": "root[].url",
+            "name": "url",
+            "description": "A direct URL link to the high-resolution square-format image hosted on Booking.com's servers."
+        }
+    ],
+    "depends_on": null,
+    "verified": true
+}

@@ -1,0 +1,44 @@
+2025-07-24 09:31:14,019 - evaluation_logger_Flights-140 - INFO - Test Example Flights-140
+2025-07-24 09:31:14,019 - evaluation_logger_Flights-140 - INFO - Query: I'm traveling from New York to Paris on April 10, 2025, and returning on April 17, 2025. Could you find the cheapest air tickets around those dates for me and provide detailed flight info and a seat map?
+2025-07-24 15:00:37,200 - evaluation_logger_Flights-140 - INFO - Test Example Flights-140
+2025-07-24 15:00:37,201 - evaluation_logger_Flights-140 - INFO - Query: I'm traveling from New York to Paris on April 10, 2025, and returning on April 17, 2025. Could you find the cheapest air tickets around those dates for me and provide detailed flight info and a seat map?
+2025-07-24 15:02:45,347 - evaluation_logger_Flights-140 - INFO - Start compare_single_call: 
+{'name': 'Search_Flight_Location', 'arguments': {'query': 'New York'}}
+{'name': 'Search_Flight_Location', 'arguments': {'query': 'New York'}}
+2025-07-24 15:02:45,347 - evaluation_logger_Flights-140 - INFO - Rule-based compare success.
+2025-07-24 15:02:45,347 - evaluation_logger_Flights-140 - INFO - Success matched: [{'name': 'Search_Flight_Location', 'arguments': {'query': 'New York'}}]
+2025-07-24 15:02:45,350 - evaluation_logger_Flights-140 - INFO - Start compare_single_call: 
+{'name': 'Search_Flight_Location', 'arguments': {'query': 'Paris'}}
+{'name': 'Search_Flight_Location', 'arguments': {'query': 'Paris'}}
+2025-07-24 15:02:45,350 - evaluation_logger_Flights-140 - INFO - Rule-based compare success.
+2025-07-24 15:02:45,350 - evaluation_logger_Flights-140 - INFO - Success matched: [{'name': 'Search_Flight_Location', 'arguments': {'query': 'Paris'}}]
+2025-07-24 15:02:46,043 - evaluation_logger_Flights-140 - INFO - Start compare_single_call: 
+{'name': 'Search_Flights', 'arguments': {'departDate': '2025-04-10', 'fromId': 'NYC.CITY', 'returnDate': '2025-04-17', 'sort': 'CHEAPEST', 'toId': 'PAR.CITY'}}
+{'name': 'Search_Flights', 'arguments': {'departDate': '2025-04-05', 'fromId': 'NYC.CITY', 'returnDate': '2025-04-12', 'sort': 'CHEAPEST', 'toId': 'PAR.CITY'}}
+2025-07-24 15:02:46,044 - evaluation_logger_Flights-140 - INFO - {'error_type': 'value_error', 'content': "Parameter departDate value '2025-04-10' is not correct in prediction."}
+2025-07-24 15:02:46,044 - evaluation_logger_Flights-140 - INFO - Success matched: []
+2025-07-24 15:03:45,996 - evaluation_logger_Flights-140 - INFO - Start compare_single_call: 
+{'name': 'Search_Flights', 'arguments': {'departDate': '2025-04-12', 'fromId': 'NYC.CITY', 'returnDate': '2025-04-19', 'sort': 'CHEAPEST', 'toId': 'PAR.CITY'}}
+{'name': 'Search_Flights', 'arguments': {'departDate': '2025-04-05', 'fromId': 'NYC.CITY', 'returnDate': '2025-04-12', 'sort': 'CHEAPEST', 'toId': 'PAR.CITY'}}
+2025-07-24 15:03:45,996 - evaluation_logger_Flights-140 - INFO - {'error_type': 'value_error', 'content': "Parameter departDate value '2025-04-12' is not correct in prediction."}
+2025-07-24 15:03:45,996 - evaluation_logger_Flights-140 - INFO - Success matched: []
+2025-07-24 15:05:22,297 - evaluation_logger_Flights-140 - INFO - Start compare_single_call: 
+{'name': 'Search_Flights', 'arguments': {'departDate': '2025-04-10', 'fromId': 'NYC.CITY', 'returnDate': '2025-04-17', 'sort': 'CHEAPEST', 'toId': 'PAR.CITY'}}
+{'name': 'Search_Flights', 'arguments': {'departDate': '2025-04-05', 'fromId': 'NYC.CITY', 'returnDate': '2025-04-12', 'sort': 'CHEAPEST', 'toId': 'PAR.CITY'}}
+2025-07-24 15:05:22,297 - evaluation_logger_Flights-140 - INFO - {'error_type': 'value_error', 'content': "Parameter departDate value '2025-04-10' is not correct in prediction."}
+2025-07-24 15:05:22,297 - evaluation_logger_Flights-140 - INFO - Success matched: []
+2025-07-24 15:06:37,134 - evaluation_logger_Flights-140 - INFO - Start compare_single_call: 
+{'name': 'Search_Flights', 'arguments': {'departDate': '2025-04-10', 'fromId': 'NYC.CITY', 'returnDate': '2025-04-17', 'sort': 'CHEAPEST', 'toId': 'PAR.CITY'}}
+{'name': 'Search_Flights', 'arguments': {'departDate': '2025-04-05', 'fromId': 'NYC.CITY', 'returnDate': '2025-04-12', 'sort': 'CHEAPEST', 'toId': 'PAR.CITY'}}
+2025-07-24 15:06:37,134 - evaluation_logger_Flights-140 - INFO - {'error_type': 'value_error', 'content': "Parameter departDate value '2025-04-10' is not correct in prediction."}
+2025-07-24 15:06:37,134 - evaluation_logger_Flights-140 - INFO - Success matched: []
+2025-07-24 15:08:00,010 - evaluation_logger_Flights-140 - INFO - Start compare_single_call: 
+{'name': 'Search_Flights', 'arguments': {'departDate': '2024-04-10', 'fromId': 'NYC.CITY', 'returnDate': '2024-04-17', 'sort': 'CHEAPEST', 'toId': 'PAR.CITY'}}
+{'name': 'Search_Flights', 'arguments': {'departDate': '2025-04-05', 'fromId': 'NYC.CITY', 'returnDate': '2025-04-12', 'sort': 'CHEAPEST', 'toId': 'PAR.CITY'}}
+2025-07-24 15:08:00,010 - evaluation_logger_Flights-140 - INFO - {'error_type': 'value_error', 'content': "Parameter departDate value '2024-04-10' is not correct in prediction."}
+2025-07-24 15:08:00,011 - evaluation_logger_Flights-140 - INFO - Success matched: []
+2025-07-24 15:11:11,126 - evaluation_logger_Flights-140 - INFO - Start compare_single_call: 
+{'name': 'Search_Flights', 'arguments': {'departDate': '2025-04-10', 'fromId': 'NYC.CITY', 'returnDate': '2025-04-17', 'sort': 'CHEAPEST', 'toId': 'PAR.CITY'}}
+{'name': 'Search_Flights', 'arguments': {'departDate': '2025-04-05', 'fromId': 'NYC.CITY', 'returnDate': '2025-04-12', 'sort': 'CHEAPEST', 'toId': 'PAR.CITY'}}
+2025-07-24 15:11:11,126 - evaluation_logger_Flights-140 - INFO - {'error_type': 'value_error', 'content': "Parameter departDate value '2025-04-10' is not correct in prediction."}
+2025-07-24 15:11:11,126 - evaluation_logger_Flights-140 - INFO - Success matched: []

@@ -1,0 +1,46 @@
+{
+    "name": "Get_Hotel_Policies",
+    "docs_row": {
+        "name": "Get_Hotel_Policies",
+        "endpoint": "/api/v1/hotels/getHotelPolicies",
+        "func_description": "Retrieve policies for a specific hotel. ",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "hotel_id": {
+                    "type": "String",
+                    "description": "hotel_id can be retrieved from api/v1/hotels/searchHotels(Search Hotels) or api/v1/hotels/searchHotelsByCoordinates(Search Hotels By Coordinates\n) endpoint in Hotels collection.",
+                    "example_value": "5955189",
+                    "required": true
+                },
+                "languagecode": {
+                    "type": "String",
+                    "description": "To obtain the response data in a specific language, enter the languagecode. languagecode can be retrieved from api/v1/meta/getLanguages(Get Languages\n) endpoint in Meta collection.",
+                    "example_value": "en-us",
+                    "required": false
+                }
+            },
+            "required": [
+                "hotel_id"
+            ]
+        }
+    },
+    "api_response_schema": {
+        "policy": [
+            {
+                "content": [
+                    {
+                        "languagecode": "en-gb",
+                        "text": "Pets are not allowed.\n"
+                    }
+                ],
+                "type": "POLICY_HOTEL_PETS",
+                "policy_id": 1234567891
+            }
+        ],
+        "hotel_id": 5028678,
+        "policygroup_type_id": 215,
+        "policygroup_id": 320149556,
+        "name": "Smart Flex Reservations policy - 21 days until checkin"
+    }
+}

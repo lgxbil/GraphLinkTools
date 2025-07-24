@@ -1,0 +1,90 @@
+{
+    "name": "Vehicle_Supplier_Review",
+    "docs_row": {
+        "name": "Vehicle_Supplier_Review",
+        "endpoint": "/api/v1/cars/vehicleSupplierReview",
+        "func_description": "Get the reviews for the supplier of a specific vehicle. ",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "vehicle_id": {
+                    "type": "String",
+                    "description": "Vehicle ID. vehicle_id can be retrieved from api/v1/cars/searchCarRentals(Search Car Rentals) endpoint in Car Rental collection as vehicle_id inside search_results object.",
+                    "example_value": "373025711",
+                    "required": true
+                },
+                "search_key": {
+                    "type": "String",
+                    "description": "search_key can be retrieved from api/v1/cars/searchCarRentals(Search Car Rentals) endpoint in Car Rental collection as search_key.",
+                    "example_value": "eyJkcml2ZXJzQWdlIjozMCwiZHJvcE9mZkRhdGVUaW1lIjoiMjAyMy0xMS0xN1QxMDowMDowMCIsImRyb3BPZmZMb2NhdGlvbiI6IjQwLjYzOTcwMTg0MzI2MTcsLTczLjc3OTE5NzY5Mjg3MTEiLCJkcm9wT2ZmTG9jYXRpb25UeXBlIjoiTEFUTE9ORyIsInBpY2tVcERhdGVUaW1lIjoiMjAyMy0xMS0xNVQxMDowMDowMCIsInBpY2tVcExvY2F0aW9uIjoiNDAuNjM5NzAxODQzMjYxNywtNzMuNzc5MTk3NjkyODcxMSIsInBpY2tVcExvY2F0aW9uVHlwZSI6IkxBVExPTkciLCJyZW50YWxEdXJhdGlvbkluRGF5cyI6Miwic2VydmljZUZlYXR1cmVzIjpbIk5PX09QQVFVRVMiLCJTVVBSRVNTX0ZJWEVEX1BSSUNFX1ZFSElDTEVTIl19",
+                    "required": true
+                },
+                "languagecode": {
+                    "type": "String",
+                    "description": "To obtain the response data in a specific language, enter the languagecode. languagecode can be retrieved from api/v1/meta/getLanguages(Get Languages\n) endpoint in Meta collection.",
+                    "example_value": "",
+                    "required": false
+                }
+            },
+            "required": [
+                "vehicle_id",
+                "search_key"
+            ]
+        }
+    },
+    "api_response_schema": {
+        "supplier": {
+            "name": "Sixt",
+            "rating": {
+                "subtitle": "996 reviews",
+                "average": "8.6",
+                "localisedRating": {
+                    "rawValue": 8.6,
+                    "displayValue": "8.6"
+                },
+                "breakdown": [
+                    {
+                        "localisedRating": {
+                            "displayValue": "9.4",
+                            "rawValue": 9.4
+                        },
+                        "title": "Car cleanliness",
+                        "score": "9.4"
+                    }
+                ],
+                "title": "Fabulous"
+            },
+            "title": "Rental company"
+        },
+        "customerReviews": {
+            "reviews": [
+                {
+                    "date": "Wed, Sept 25 2024",
+                    "type": "Couple",
+                    "localisedRating": {
+                        "rawValue": 9.1,
+                        "displayValue": "9.1"
+                    },
+                    "epochDay": 19991,
+                    "negative": "The cost of additional full protection of insurance is quite high",
+                    "rating": "9.1",
+                    "positive": "Sixt is my rental car choice "
+                }
+            ],
+            "title": "Customer reviews",
+            "sort": {
+                "ctaTitle": "Sort by",
+                "options": {
+                    "default": "score.descending",
+                    "items": [
+                        {
+                            "id": "date.ascending",
+                            "label": "Oldest first"
+                        }
+                    ]
+                },
+                "pageTitle": "Sort by"
+            }
+        }
+    }
+}

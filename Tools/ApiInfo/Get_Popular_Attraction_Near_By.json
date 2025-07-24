@@ -1,0 +1,259 @@
+{
+    "name": "Get_Popular_Attraction_Near_By",
+    "docs_row": {
+        "name": "Get_Popular_Attraction_Near_By",
+        "endpoint": "/api/v1/hotels/getPopularAttractionNearBy",
+        "func_description": "Search for popular attractions around a given hotel. ",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "hotel_id": {
+                    "type": "String",
+                    "description": "hotel_id can be retrieved from api/v1/hotels/searchHotels(Search Hotels) or api/v1/hotels/searchHotelsByCoordinates(Search Hotels By Coordinates\n) endpoint in Hotels collection.",
+                    "example_value": "5955189",
+                    "required": true
+                },
+                "languagecode": {
+                    "type": "String",
+                    "description": "To obtain the response data in a specific language, enter the languagecode. languagecode can be retrieved from api/v1/meta/getLanguages(Get Languages\n) endpoint in Meta collection.",
+                    "example_value": "en-us",
+                    "required": false
+                }
+            },
+            "required": [
+                "hotel_id"
+            ]
+        }
+    },
+    "instance": [],
+    "category": null,
+    "tool": null,
+    "api_idx": 9,
+    "params": {
+        "type": "object",
+        "properties": {
+            "hotel_id": {
+                "type": "String",
+                "description": "hotel_id can be retrieved from api/v1/hotels/searchHotels(Search Hotels) or api/v1/hotels/searchHotelsByCoordinates(Search Hotels By Coordinates\n) endpoint in Hotels collection.",
+                "example_value": "5955189",
+                "required": true
+            },
+            "languagecode": {
+                "type": "String",
+                "description": "To obtain the response data in a specific language, enter the languagecode. languagecode can be retrieved from api/v1/meta/getLanguages(Get Languages\n) endpoint in Meta collection.",
+                "example_value": "en-us",
+                "required": false
+            }
+        },
+        "required": [
+            "hotel_id"
+        ]
+    },
+    "responses": [
+        {
+            "function_name": "Get_Popular_Attraction_Near_By",
+            "arguments": {
+                "hotel_id": "5955189"
+            },
+            "observation": {
+                "closest_landmarks": [
+                    {
+                        "longitude": 72.8525733947754,
+                        "tag": "Mumbai Domestic Terminal 1",
+                        "latitude": 19.0915227852161,
+                        "distance": 2.98855388737106,
+                        "average_out_of_10": 8.4,
+                        "total_votes": 43
+                    },
+                    {
+                        "tag": "ISKCON",
+                        "latitude": 19.113262,
+                        "longitude": 72.826211,
+                        "average_out_of_10": 9.2,
+                        "distance": 4.28912195423714,
+                        "total_votes": 16
+                    },
+                    {
+                        "latitude": 19.1018369233517,
+                        "longitude": 72.8246784210205,
+                        "tag": "Juhu Beach",
+                        "distance": 4.46375117197715,
+                        "average_out_of_10": 8.6,
+                        "total_votes": 44
+                    }
+                ],
+                "popular_landmarks": [
+                    {
+                        "average_out_of_10": 8.4,
+                        "distance": 2.98855388737106,
+                        "longitude": 72.8525733947754,
+                        "tag": "Mumbai Domestic Terminal 1",
+                        "latitude": 19.0915227852161,
+                        "total_votes": 43
+                    },
+                    {
+                        "tag": "Vihar Lake",
+                        "longitude": 72.910269,
+                        "latitude": 19.154184,
+                        "total_votes": 10,
+                        "distance": 3.05151419162776,
+                        "average_out_of_10": 8.6
+                    },
+                    {
+                        "tag": "ISKCON",
+                        "latitude": 19.113262,
+                        "longitude": 72.826211,
+                        "total_votes": 16,
+                        "distance": 4.28912195423714,
+                        "average_out_of_10": 9.2
+                    }
+                ]
+            }
+        },
+        {
+            "function_name": "Get_Popular_Attraction_Near_By",
+            "arguments": {
+                "hotel_id": "5955189",
+                "languagecode": "en-us"
+            },
+            "observation": {
+                "popular_landmarks": [
+                    {
+                        "tag": "Mumbai Domestic Terminal 1",
+                        "distance": 4.80961126915433,
+                        "total_votes": 43,
+                        "longitude": 72.8525733947754,
+                        "average_out_of_10": 8.4,
+                        "latitude": 19.0915227852161
+                    },
+                    {
+                        "latitude": 19.154184,
+                        "average_out_of_10": 8.6,
+                        "longitude": 72.910269,
+                        "total_votes": 10,
+                        "distance": 4.91093605708673,
+                        "tag": "Vihar Lake"
+                    },
+                    {
+                        "latitude": 19.113262,
+                        "longitude": 72.826211,
+                        "average_out_of_10": 9.2,
+                        "tag": "ISKCON",
+                        "total_votes": 16,
+                        "distance": 6.90267268495631
+                    }
+                ],
+                "closest_landmarks": [
+                    {
+                        "latitude": 19.0915227852161,
+                        "average_out_of_10": 8.4,
+                        "longitude": 72.8525733947754,
+                        "distance": 4.80961126915433,
+                        "total_votes": 43,
+                        "tag": "Mumbai Domestic Terminal 1"
+                    },
+                    {
+                        "latitude": 19.113262,
+                        "average_out_of_10": 9.2,
+                        "longitude": 72.826211,
+                        "distance": 6.90267268495631,
+                        "total_votes": 16,
+                        "tag": "ISKCON"
+                    },
+                    {
+                        "latitude": 19.1018369233517,
+                        "average_out_of_10": 8.6,
+                        "longitude": 72.8246784210205,
+                        "total_votes": 44,
+                        "distance": 7.18371116885822,
+                        "tag": "Juhu Beach"
+                    }
+                ]
+            }
+        }
+    ],
+    "response_summary": "The response highlights several notable landmarks in Mumbai, categorized by proximity and popularity. The closest landmarks include Mumbai Domestic Terminal 1, which is approximately 2.99 kilometers away and has an average rating of 8.4 out of 10 based on 43 votes. ISKCON, a well-regarded spiritual center, is about 4.29 kilometers away with a high rating of 9.2 from 16 votes. Juhu Beach, a favorite among visitors, is roughly 4.46 kilometers away and holds an 8.6 rating from 44 votes.  \n\nAmong the popular landmarks, Mumbai Domestic Terminal 1 remains a top choice, followed by Vihar Lake, located around 3.05 kilometers away with an 8.6 rating from 10 votes. ISKCON also appears in this list, reinforcing its appeal. These landmarks offer a mix of convenience, scenic beauty, and cultural significance, making them key points of interest for visitors in the area.",
+    "enhance_func_desc": "This API is ideal for travelers looking to explore nearby attractions while staying at a specific hotel. It retrieves popular landmarks and points of interest near a given hotel, sorted by proximity and popularity. The response includes details like distance, average ratings, and vote counts, helping users plan their visits efficiently. The hotel ID must be obtained from the SearchHotels or SearchHotelsByCoordinates API.",
+    "enhance_params_desc": {
+        "enhanced_parameters": {
+            "hotel_id": "Unique identifier for the hotel, sourced from searchHotels or searchHotelsByCoordinates.",
+            "languagecode": "Language preference for the response data (e.g., 'en-us' for English)."
+        }
+    },
+    "enhance_resfield_desc": {
+        "response_fields": {
+            "closest_landmarks": {
+                "type": "Array",
+                "description": "A list of landmarks that are closest to a specified location, sorted by distance.",
+                "ar_items": {
+                    "type": "Object",
+                    "description": "Details of a single closest landmark.",
+                    "ob_properties": {
+                        "longitude": {
+                            "type": "Number",
+                            "description": "The longitude coordinate of the landmark's location."
+                        },
+                        "tag": {
+                            "type": "String",
+                            "description": "The name or identifier of the landmark."
+                        },
+                        "latitude": {
+                            "type": "Number",
+                            "description": "The latitude coordinate of the landmark's location."
+                        },
+                        "distance": {
+                            "type": "Number",
+                            "description": "The distance from the specified location to the landmark, in kilometers."
+                        },
+                        "average_out_of_10": {
+                            "type": "Number",
+                            "description": "The average rating of the landmark, scored out of 10."
+                        },
+                        "total_votes": {
+                            "type": "Number",
+                            "description": "The total number of votes or reviews contributing to the landmark's average rating."
+                        }
+                    }
+                }
+            },
+            "popular_landmarks": {
+                "type": "Array",
+                "description": "A list of landmarks that are popular among visitors, possibly sorted by rating or votes.",
+                "ar_items": {
+                    "type": "Object",
+                    "description": "Details of a single popular landmark.",
+                    "ob_properties": {
+                        "average_out_of_10": {
+                            "type": "Number",
+                            "description": "The average rating of the landmark, scored out of 10."
+                        },
+                        "distance": {
+                            "type": "Number",
+                            "description": "The distance from the specified location to the landmark, in kilometers."
+                        },
+                        "longitude": {
+                            "type": "Number",
+                            "description": "The longitude coordinate of the landmark's location."
+                        },
+                        "tag": {
+                            "type": "String",
+                            "description": "The name or identifier of the landmark."
+                        },
+                        "latitude": {
+                            "type": "Number",
+                            "description": "The latitude coordinate of the landmark's location."
+                        },
+                        "total_votes": {
+                            "type": "Number",
+                            "description": "The total number of votes or reviews contributing to the landmark's average rating."
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "params_desc_list": null,
+    "response_desc_list": null,
+    "depends_on": null,
+    "verified": true
+}

@@ -1,0 +1,142 @@
+{
+    "name": "Get_Currency",
+    "docs_row": {
+        "name": "Get_Currency",
+        "endpoint": "/api/v1/meta/getCurrency",
+        "func_description": "",
+        "parameters": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        }
+    },
+    "instance": [],
+    "category": null,
+    "tool": null,
+    "api_idx": 3,
+    "params": {
+        "type": "object",
+        "properties": {},
+        "required": []
+    },
+    "responses": [
+        {
+            "function_name": "Get_Currency",
+            "arguments": {},
+            "observation": [
+                {
+                    "name": "Property currency",
+                    "code": "hotel_currency",
+                    "encodedSymbol": "&#x20AC;&#163;US$",
+                    "symbol": "\u20ac$\u00a3"
+                },
+                {
+                    "name": "Argentine Peso",
+                    "code": "ARS",
+                    "encodedSymbol": "AR$",
+                    "symbol": "AR$"
+                },
+                {
+                    "name": "Australian Dollar",
+                    "code": "AUD",
+                    "encodedSymbol": "AUD",
+                    "symbol": "AUD"
+                }
+            ]
+        },
+        {
+            "function_name": "Get_Currency",
+            "arguments": {},
+            "observation": [
+                {
+                    "name": "Property currency",
+                    "code": "hotel_currency",
+                    "encodedSymbol": "&#x20AC;&#163;US$",
+                    "symbol": "\u20ac$\u00a3"
+                },
+                {
+                    "name": "Argentine Peso",
+                    "code": "ARS",
+                    "encodedSymbol": "AR$",
+                    "symbol": "AR$"
+                },
+                {
+                    "name": "Australian Dollar",
+                    "code": "AUD",
+                    "encodedSymbol": "AUD",
+                    "symbol": "AUD"
+                }
+            ]
+        }
+    ],
+    "response_summary": "The API response provides information about different currencies used in property transactions. The first entry is labeled as \"Property currency\" with the code \"hotel_currency,\" and it includes symbols like the euro (\u20ac), dollar ($), and pound (\u00a3). The second entry is the \"Argentine Peso,\" identified by the code \"ARS\" and represented by the symbol \"AR$.\" Lastly, the \"Australian Dollar\" is listed with the code \"AUD\" and uses the symbol \"AUD\" for representation. These details help in understanding the currency options available for transactions.",
+    "enhance_func_desc": "This API is essential for financial transactions and pricing displays in property bookings. It retrieves a list of supported currencies, including their codes and symbols, to facilitate accurate and localized pricing. The response includes details like \"Property currency\" and specific currencies such as the Argentine Peso (ARS) and Australian Dollar (AUD). This ensures users can view and select their preferred currency for seamless transactions.",
+    "enhance_params_desc": {
+        "enhanced_parameters": {}
+    },
+    "enhance_resfield_desc": {
+        "response_fields": {
+            "root": {
+                "type": "Array",
+                "description": "List of currencies used in property transactions",
+                "ar_items": {
+                    "type": "Object",
+                    "description": "Currency details",
+                    "ob_properties": {
+                        "name": {
+                            "type": "String",
+                            "description": "Human-readable name of the currency (e.g., 'Property currency', 'Argentine Peso', 'Australian Dollar')"
+                        },
+                        "code": {
+                            "type": "String",
+                            "description": "Currency code identifier (e.g., 'hotel_currency', 'ARS', 'AUD')"
+                        },
+                        "encodedSymbol": {
+                            "type": "String",
+                            "description": "HTML-encoded symbol representation of the currency (e.g., '&#x20AC;&#163;US$', 'AR$', 'AUD')"
+                        },
+                        "symbol": {
+                            "type": "String",
+                            "description": "Display symbol of the currency (e.g., '\u20ac$\u00a3', 'AR$', 'AUD')"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "params_desc_list": null,
+    "response_desc_list": [
+        {
+            "path_name": "root",
+            "name": "root",
+            "description": "List of currencies used in property transactions"
+        },
+        {
+            "path_name": "root[]",
+            "name": "root[]",
+            "description": "Currency details"
+        },
+        {
+            "path_name": "root[].name",
+            "name": "name",
+            "description": "Human-readable name of the currency (e.g., 'Property currency', 'Argentine Peso', 'Australian Dollar')"
+        },
+        {
+            "path_name": "root[].code",
+            "name": "code",
+            "description": "Currency code identifier (e.g., 'hotel_currency', 'ARS', 'AUD')"
+        },
+        {
+            "path_name": "root[].encodedSymbol",
+            "name": "encodedSymbol",
+            "description": "HTML-encoded symbol representation of the currency (e.g., '&#x20AC;&#163;US$', 'AR$', 'AUD')"
+        },
+        {
+            "path_name": "root[].symbol",
+            "name": "symbol",
+            "description": "Display symbol of the currency (e.g., '\u20ac$\u00a3', 'AR$', 'AUD')"
+        }
+    ],
+    "depends_on": null,
+    "verified": true
+}

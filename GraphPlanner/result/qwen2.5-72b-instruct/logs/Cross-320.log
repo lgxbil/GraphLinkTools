@@ -1,0 +1,39 @@
+2025-07-22 05:32:22,963 - evaluation_logger_Cross-320 - INFO - Test Example Cross-320
+2025-07-22 05:32:22,963 - evaluation_logger_Cross-320 - INFO - Query: I'm leaving San Francisco on November 1st, 2024, to give speeches at the University of Chicago and Boston University in sequence. I'll stay in each city for three days. Find the cheapest connecting flights for me. Additionally, I need to rent a car at each destination for convenience. I'll pick up the car at the airport one hour after my flight lands and return it two hours before my flight takes off.
+2025-07-22 05:35:45,933 - evaluation_logger_Cross-320 - INFO - Start compare_single_call: 
+{'name': 'Search_Flight_Location', 'arguments': {'query': 'San Francisco'}}
+{'name': 'Search_Flight_Location', 'arguments': {'query': 'San Francisco'}}
+2025-07-22 05:35:45,933 - evaluation_logger_Cross-320 - INFO - Rule-based compare success.
+2025-07-22 05:35:45,933 - evaluation_logger_Cross-320 - INFO - Success matched: [{'name': 'Search_Flight_Location', 'arguments': {'query': 'San Francisco'}}]
+2025-07-22 05:35:46,513 - evaluation_logger_Cross-320 - INFO - Start compare_single_call: 
+{'name': 'Search_Flight_Location', 'arguments': {'query': 'University of Chicago'}}
+{'name': 'Search_Flight_Location', 'arguments': {'query': 'Chicago'}}
+2025-07-22 05:35:51,652 - evaluation_logger_Cross-320 - DEBUG - LLM-based comparison output: {'is_equal': False, 'reason': "The query parameters 'University of Chicago' and 'Chicago' refer to different locations."}
+2025-07-22 05:35:51,653 - evaluation_logger_Cross-320 - INFO - All compare method failed.
+2025-07-22 05:35:51,653 - evaluation_logger_Cross-320 - INFO - Success matched: []
+2025-07-22 05:39:03,579 - evaluation_logger_Cross-320 - INFO - Start compare_single_call: 
+{'name': 'Search_Flight_Location', 'arguments': {'query': 'San Francisco'}}
+{'name': 'Search_Flight_Location', 'arguments': {'query': 'San Francisco'}}
+2025-07-22 05:39:03,580 - evaluation_logger_Cross-320 - INFO - Rule-based compare success.
+2025-07-22 05:39:03,580 - evaluation_logger_Cross-320 - INFO - Success matched: [{'name': 'Search_Flight_Location', 'arguments': {'query': 'San Francisco'}}]
+2025-07-22 05:39:03,583 - evaluation_logger_Cross-320 - INFO - Start compare_single_call: 
+{'name': 'Search_Flight_Location', 'arguments': {'query': 'Chicago'}}
+{'name': 'Search_Flight_Location', 'arguments': {'query': 'Chicago'}}
+2025-07-22 05:39:03,584 - evaluation_logger_Cross-320 - INFO - Rule-based compare success.
+2025-07-22 05:39:03,584 - evaluation_logger_Cross-320 - INFO - Success matched: [{'name': 'Search_Flight_Location', 'arguments': {'query': 'Chicago'}}]
+2025-07-22 05:39:03,584 - evaluation_logger_Cross-320 - INFO - Start compare_single_call: 
+{'name': 'Search_Flight_Location', 'arguments': {'query': 'Boston'}}
+{'name': 'Search_Flight_Location', 'arguments': {'query': 'Boston'}}
+2025-07-22 05:39:03,584 - evaluation_logger_Cross-320 - INFO - Rule-based compare success.
+2025-07-22 05:39:03,584 - evaluation_logger_Cross-320 - INFO - Success matched: [{'name': 'Search_Flight_Location', 'arguments': {'query': 'Boston'}}]
+2025-07-22 05:39:03,585 - evaluation_logger_Cross-320 - INFO - Start compare_single_call: 
+{'name': 'Search_Flights_Multi_Stops', 'arguments': {'legs': [{'fromId': 'SFO.AIRPORT', 'toId': 'CHI.CITY', 'date': '2024-11-01'}, {'fromId': 'CHI.CITY', 'toId': 'BOS.CITY', 'date': '2024-11-04'}, {'fromId': 'BOS.CITY', 'toId': 'SFO.AIRPORT', 'date': '2024-11-07'}], 'sort': 'CHEAPEST'}}
+{'name': 'Search_Flights_Multi_Stops', 'arguments': {'legs': [{'fromId': 'SFO.AIRPORT', 'toId': 'CHI.CITY', 'date': '2024-11-01'}, {'fromId': 'CHI.CITY', 'toId': 'BOS.CITY', 'date': '2024-11-04'}, {'fromId': 'BOS.CITY', 'toId': 'SFO.AIRPORT', 'date': '2024-11-07'}], 'sort': 'CHEAPEST'}}
+2025-07-22 05:39:03,585 - evaluation_logger_Cross-320 - INFO - Rule-based compare success.
+2025-07-22 05:39:03,585 - evaluation_logger_Cross-320 - INFO - Success matched: [{'name': 'Search_Flights_Multi_Stops', 'arguments': {'legs': [{'fromId': 'SFO.AIRPORT', 'toId': 'CHI.CITY', 'date': '2024-11-01'}, {'fromId': 'CHI.CITY', 'toId': 'BOS.CITY', 'date': '2024-11-04'}, {'fromId': 'BOS.CITY', 'toId': 'SFO.AIRPORT', 'date': '2024-11-07'}], 'sort': 'CHEAPEST'}}]
+2025-07-22 05:39:03,944 - evaluation_logger_Cross-320 - INFO - Start compare_single_call: 
+{'name': 'Search_Car_Location', 'arguments': {'query': 'Chicago'}}
+{'name': 'Search_Car_Location', 'arguments': {'query': "Chicago O'Hare International Airport"}}
+2025-07-22 05:39:08,634 - evaluation_logger_Cross-320 - DEBUG - LLM-based comparison output: {'is_equal': False, 'reason': "The query parameters 'Chicago' and 'Chicago O'Hare International Airport' refer to different locations."}
+2025-07-22 05:39:08,634 - evaluation_logger_Cross-320 - INFO - All compare method failed.
+2025-07-22 05:39:08,642 - evaluation_logger_Cross-320 - INFO - Success matched: []

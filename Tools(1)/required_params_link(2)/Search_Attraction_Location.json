@@ -1,0 +1,597 @@
+{
+    "name": "Search_Attraction_Location",
+    "docs_row": {
+        "name": "Search_Attraction_Location",
+        "endpoint": "/api/v1/attraction/searchLocation",
+        "func_description": "Find attractions by their location, address, state, country, etc. This API will return specific information like: `slug`, `productId`, `id`, etc.  ",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "query": {
+                    "type": "String",
+                    "description": "Names of locations, cities, districts, places, countries, counties etc.",
+                    "example_value": "new",
+                    "required": true
+                },
+                "languagecode": {
+                    "type": "String",
+                    "description": "To obtain the response data in a specific language, enter the languagecode. languagecode can be retrieved from api/v1/meta/getLanguages(Get Languages\n) endpoint in Meta collection.",
+                    "example_value": "en-us",
+                    "required": false
+                }
+            },
+            "required": [
+                "query"
+            ]
+        }
+    },
+    "instance": [],
+    "category": null,
+    "tool": null,
+    "api_idx": 15,
+    "params": {
+        "type": "object",
+        "properties": {
+            "query": {
+                "type": "String",
+                "description": "Names of locations, cities, districts, places, countries, counties etc.",
+                "example_value": "new",
+                "required": true
+            },
+            "languagecode": {
+                "type": "String",
+                "description": "To obtain the response data in a specific language, enter the languagecode. languagecode can be retrieved from api/v1/meta/getLanguages(Get Languages\n) endpoint in Meta collection.",
+                "example_value": "en-us",
+                "required": false
+            }
+        },
+        "required": [
+            "query"
+        ]
+    },
+    "responses": [
+        {
+            "function_name": "Search_Attraction_Location",
+            "arguments": {
+                "query": "New York"
+            },
+            "observation": {
+                "products": [
+                    {
+                        "id": "eyJwaW5uZWRQcm9kdWN0IjoiUFI0dVBJejM2NFZ1IiwidWZpIjoyMDA4ODMyNX0=",
+                        "__typename": "AttractionsSearchProductSuggestion",
+                        "title": "New York CityPASS",
+                        "productId": "PR4uPIz364Vu",
+                        "productSlug": "pr4upiz364vu-new-york-citypass",
+                        "taxonomySlug": "transfers-services",
+                        "cityUfi": 20088325,
+                        "cityName": "New York",
+                        "countryCode": "us"
+                    },
+                    {
+                        "id": "eyJwaW5uZWRQcm9kdWN0IjoiUFJWbHEwOWMwdHhDIiwidWZpIjoyMDA4ODMyNX0=",
+                        "__typename": "AttractionsSearchProductSuggestion",
+                        "title": "New York Tours and New York City Sightseeing Tours.Flexible Tours",
+                        "productId": "PRVlq09c0txC",
+                        "productSlug": "prvlq09c0txc-2-hours-nyc-personalized-tour-new-york-toursnew-york-sightseeing",
+                        "taxonomySlug": "tours",
+                        "cityUfi": 20088325,
+                        "cityName": "New York",
+                        "countryCode": "us"
+                    }
+                ],
+                "destinations": [
+                    {
+                        "id": "eyJ1ZmkiOjIwMDg4MzI1fQ==",
+                        "__typename": "AttractionsSearchDestinationSuggestion",
+                        "ufi": 20088325,
+                        "country": "United States",
+                        "cityName": "New York",
+                        "productCount": 1993,
+                        "cc1": "us"
+                    },
+                    {
+                        "id": "eyJ1ZmkiOjkwMDA0OTYxM30=",
+                        "__typename": "AttractionsSearchDestinationSuggestion",
+                        "ufi": 900049613,
+                        "country": "United States",
+                        "cityName": "York",
+                        "productCount": 11,
+                        "cc1": "us"
+                    }
+                ]
+            }
+        },
+        {
+            "function_name": "Search_Attraction_Location",
+            "arguments": {
+                "query": "New York",
+                "languagecode": "en-us"
+            },
+            "observation": {
+                "products": [
+                    {
+                        "id": "eyJwaW5uZWRQcm9kdWN0IjoiUFI0dVBJejM2NFZ1IiwidWZpIjoyMDA4ODMyNX0=",
+                        "__typename": "AttractionsSearchProductSuggestion",
+                        "title": "New York CityPASS",
+                        "productId": "PR4uPIz364Vu",
+                        "productSlug": "pr4upiz364vu-new-york-citypass",
+                        "taxonomySlug": "transfers-services",
+                        "cityUfi": 20088325,
+                        "cityName": "New York",
+                        "countryCode": "us"
+                    },
+                    {
+                        "id": "eyJwaW5uZWRQcm9kdWN0IjoiUFJWbHEwOWMwdHhDIiwidWZpIjoyMDA4ODMyNX0=",
+                        "__typename": "AttractionsSearchProductSuggestion",
+                        "title": "New York Tours and New York City Sightseeing Tours.Flexible Tours",
+                        "productId": "PRVlq09c0txC",
+                        "productSlug": "prvlq09c0txc-2-hours-nyc-personalized-tour-new-york-toursnew-york-sightseeing",
+                        "taxonomySlug": "tours",
+                        "cityUfi": 20088325,
+                        "cityName": "New York",
+                        "countryCode": "us"
+                    },
+                    {
+                        "id": "eyJwaW5uZWRQcm9kdWN0IjoiUFJncTVVM0xUU2phIiwidWZpIjoyMDA3OTExMH0=",
+                        "__typename": "AttractionsSearchProductSuggestion",
+                        "title": "The Big Apple Coaster at New York New York Hotel and Casino",
+                        "productId": "PRgq5U3LTSja",
+                        "productSlug": "prgq5u3ltsja-roller-coaster-ride-at-new-york-new-york-hotel",
+                        "taxonomySlug": "attractions",
+                        "cityUfi": 20079110,
+                        "cityName": "Las Vegas",
+                        "countryCode": "us"
+                    }
+                ],
+                "destinations": [
+                    {
+                        "id": "eyJ1ZmkiOjIwMDg4MzI1fQ==",
+                        "__typename": "AttractionsSearchDestinationSuggestion",
+                        "ufi": 20088325,
+                        "country": "United States",
+                        "cityName": "New York",
+                        "productCount": 1993,
+                        "cc1": "us"
+                    },
+                    {
+                        "id": "eyJ1ZmkiOjIwMDg1MjA3fQ==",
+                        "__typename": "AttractionsSearchDestinationSuggestion",
+                        "ufi": 20085207,
+                        "country": "United States",
+                        "cityName": "Brooklyn",
+                        "productCount": 1986,
+                        "cc1": "us"
+                    },
+                    {
+                        "id": "eyJ1ZmkiOjkwMDA0OTYxM30=",
+                        "__typename": "AttractionsSearchDestinationSuggestion",
+                        "ufi": 900049613,
+                        "country": "United States",
+                        "cityName": "York",
+                        "productCount": 11,
+                        "cc1": "us"
+                    }
+                ]
+            }
+        }
+    ],
+    "response_summary": "The API response lists several travel-related products and destinations. For New York, there are two notable options: the \"New York CityPASS,\" which provides access to multiple attractions, and a flexible sightseeing tour titled \"New York Tours and New York City Sightseeing Tours.\" Additionally, there's a roller coaster experience at the New York New York Hotel and Casino in Las Vegas. \n\nThe response also includes destination suggestions, with New York being the most prominent, offering 1,993 activities. Other smaller destinations like York and York Beach in the United States have 11 activities each. All these options cater to travelers looking for experiences in major cities across the U.S.",
+    "enhance_func_desc": "This API is ideal for travelers seeking attractions and activities in specific locations. It searches destinations, cities, or places based on a query string, returning relevant travel products and activities. Users receive a list of options, including popular attractions and tours, with details on available experiences. The response helps in planning trips by highlighting key destinations and their activity counts. The query parameter is mandatory for location-based searches.",
+    "enhance_params_desc": {
+        "enhanced_parameters": {
+            "query": "Search term for locations, cities, or attractions (e.g., 'new' for New York).",
+            "languagecode": "Language preference for the response data (e.g., 'en-us')."
+        }
+    },
+    "enhance_resfield_desc": {
+        "response_fields": {
+            "products": {
+                "type": "Array",
+                "description": "A list of travel-related products available in various destinations.",
+                "ar_items": {
+                    "type": "Object",
+                    "description": "An object representing a travel product with details such as title, ID, and location.",
+                    "ob_properties": {
+                        "id": {
+                            "type": "String",
+                            "description": "A unique identifier for the product, encoded in Base64 format."
+                        },
+                        "__typename": {
+                            "type": "String",
+                            "description": "The type of the product suggestion (e.g., 'AttractionsSearchProductSuggestion')."
+                        },
+                        "title": {
+                            "type": "String",
+                            "description": "The display name of the product (e.g., 'New York CityPASS')."
+                        },
+                        "productId": {
+                            "type": "String",
+                            "description": "A unique identifier for the product (e.g., 'PR4uPIz364Vu')."
+                        },
+                        "productSlug": {
+                            "type": "String",
+                            "description": "A URL-friendly identifier for the product (e.g., 'pr4upiz364vu-new-york-citypass')."
+                        },
+                        "taxonomySlug": {
+                            "type": "String",
+                            "description": "The category of the product (e.g., 'transfers-services', 'tours', 'attractions')."
+                        },
+                        "cityUfi": {
+                            "type": "Number",
+                            "description": "A unique identifier for the city where the product is available."
+                        },
+                        "cityName": {
+                            "type": "String",
+                            "description": "The name of the city where the product is available (e.g., 'New York', 'Las Vegas')."
+                        },
+                        "countryCode": {
+                            "type": "String",
+                            "description": "The ISO country code where the product is located (e.g., 'us')."
+                        }
+                    }
+                }
+            },
+            "destinations": {
+                "type": "Array",
+                "description": "A list of travel destinations with details such as city name, country, and activity count.",
+                "ar_items": {
+                    "type": "Object",
+                    "description": "An object representing a travel destination with activity information.",
+                    "ob_properties": {
+                        "id": {
+                            "type": "String",
+                            "description": "A unique identifier for the destination, encoded in Base64 format."
+                        },
+                        "__typename": {
+                            "type": "String",
+                            "description": "The type of the destination suggestion (e.g., 'AttractionsSearchDestinationSuggestion')."
+                        },
+                        "ufi": {
+                            "type": "Number",
+                            "description": "A unique identifier for the destination."
+                        },
+                        "country": {
+                            "type": "String",
+                            "description": "The name of the country where the destination is located (e.g., 'United States')."
+                        },
+                        "cityName": {
+                            "type": "String",
+                            "description": "The name of the city (e.g., 'New York', 'York', 'York Beach')."
+                        },
+                        "productCount": {
+                            "type": "Number",
+                            "description": "The number of activities or products available in the destination."
+                        },
+                        "cc1": {
+                            "type": "String",
+                            "description": "The ISO country code for the destination (e.g., 'us')."
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "params_desc_list": null,
+    "response_desc_list": [
+        {
+            "path_name": "$.products",
+            "name": "products",
+            "description": "A list of travel-related products available in various destinations."
+        },
+        {
+            "path_name": "$.products[]",
+            "name": "products[]",
+            "description": "An object representing a travel product with details such as title, ID, and location."
+        },
+        {
+            "path_name": "$.products[].id",
+            "name": "id",
+            "description": "A unique identifier for the product, encoded in Base64 format."
+        },
+        {
+            "path_name": "$.products[].__typename",
+            "name": "__typename",
+            "description": "The type of the product suggestion (e.g., 'AttractionsSearchProductSuggestion')."
+        },
+        {
+            "path_name": "$.products[].title",
+            "name": "title",
+            "description": "The display name of the product (e.g., 'New York CityPASS')."
+        },
+        {
+            "path_name": "$.products[].productId",
+            "name": "productId",
+            "description": "A unique identifier for the product (e.g., 'PR4uPIz364Vu')."
+        },
+        {
+            "path_name": "$.products[].productSlug",
+            "name": "productSlug",
+            "description": "A URL-friendly identifier for the product (e.g., 'pr4upiz364vu-new-york-citypass')."
+        },
+        {
+            "path_name": "$.products[].taxonomySlug",
+            "name": "taxonomySlug",
+            "description": "The category of the product (e.g., 'transfers-services', 'tours', 'attractions')."
+        },
+        {
+            "path_name": "$.products[].cityUfi",
+            "name": "cityUfi",
+            "description": "A unique identifier for the city where the product is available."
+        },
+        {
+            "path_name": "$.products[].cityName",
+            "name": "cityName",
+            "description": "The name of the city where the product is available (e.g., 'New York', 'Las Vegas')."
+        },
+        {
+            "path_name": "$.products[].countryCode",
+            "name": "countryCode",
+            "description": "The ISO country code where the product is located (e.g., 'us')."
+        },
+        {
+            "path_name": "$.destinations",
+            "name": "destinations",
+            "description": "A list of travel destinations with details such as city name, country, and activity count."
+        },
+        {
+            "path_name": "$.destinations[]",
+            "name": "destinations[]",
+            "description": "An object representing a travel destination with activity information."
+        },
+        {
+            "path_name": "$.destinations[].id",
+            "name": "id",
+            "description": "A unique identifier for the destination, encoded in Base64 format."
+        },
+        {
+            "path_name": "$.destinations[].__typename",
+            "name": "__typename",
+            "description": "The type of the destination suggestion (e.g., 'AttractionsSearchDestinationSuggestion')."
+        },
+        {
+            "path_name": "$.destinations[].ufi",
+            "name": "ufi",
+            "description": "A unique identifier for the destination."
+        },
+        {
+            "path_name": "$.destinations[].country",
+            "name": "country",
+            "description": "The name of the country where the destination is located (e.g., 'United States')."
+        },
+        {
+            "path_name": "$.destinations[].cityName",
+            "name": "cityName",
+            "description": "The name of the city (e.g., 'New York', 'York', 'York Beach')."
+        },
+        {
+            "path_name": "$.destinations[].productCount",
+            "name": "productCount",
+            "description": "The number of activities or products available in the destination."
+        },
+        {
+            "path_name": "$.destinations[].cc1",
+            "name": "cc1",
+            "description": "The ISO country code for the destination (e.g., 'us')."
+        }
+    ],
+    "depends_on": [
+        {
+            "target_api_params": "query",
+            "reason": "The 'query' parameter in the target API requires names of locations, cities, districts, etc., which matches the description of the 'formatted_address' field in the source API response. The 'formatted_address' provides detailed location information including city and country, which can be used as input for the target API's query parameter. This creates a potential business association where a traveler might want to search for attractions based on a location's formatted address.",
+            "source_jsonpath": "$[*].formatted_address",
+            "confidence": 95,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Location_to_Lat_Long"
+        },
+        {
+            "target_api_params": "query",
+            "reason": "The 'name' field in the source API response provides the name of a specific location (e.g., 'Empire State Building'), which can be directly used as input for the target API's query parameter. This is a direct match in terms of data type and purpose, as both are strings representing location names.",
+            "source_jsonpath": "$[*].name",
+            "confidence": 100,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Location_to_Lat_Long"
+        },
+        {
+            "target_api_params": "query",
+            "reason": "The 'query' parameter in the target API requires names of locations, cities, districts, places, etc. The source API's response fields include 'city_name' and 'name' which provide exactly this type of information (e.g., 'Paris', 'Paris City Centre'). The data types match (both are strings), and there's a clear business association where hotel destinations could also be potential attraction locations.",
+            "source_jsonpath": "$[*].city_name",
+            "confidence": 95,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Search_Hotel_Destination"
+        },
+        {
+            "target_api_params": "query",
+            "reason": "The 'name' field in the source API also provides location names (e.g., 'Paris City Centre'), which matches the requirement of the target API's 'query' parameter. This is another valid source for attraction location searches, with matching data types and a logical business association.",
+            "source_jsonpath": "$[*].name",
+            "confidence": 95,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Search_Hotel_Destination"
+        },
+        {
+            "target_api_params": "query",
+            "reason": "The 'label' field in the source API provides comprehensive location information (e.g., 'Paris, Ile de France, France'), which could be used as a query for attraction searches. While it contains more information than needed, it still satisfies the target API's requirements and maintains data type consistency.",
+            "source_jsonpath": "$[*].label",
+            "confidence": 85,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Search_Hotel_Destination"
+        },
+        {
+            "target_api_params": "query",
+            "reason": "The 'query' parameter in the target API requires names of locations, cities, districts, places, countries, etc. The source API's response fields include 'name' and 'cityName' which provide exact names of cities and airports (e.g., 'New York', 'John F. Kennedy International Airport'). These names can directly serve as input for the target API's query parameter, as they match the required data type (String) and context (location names).",
+            "source_jsonpath": "$[*].name",
+            "confidence": 95,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Search_Flight_Location"
+        },
+        {
+            "target_api_params": "query",
+            "reason": "The 'cityName' field in the source API provides the name of the city associated with the airport (e.g., 'New York'). This can also be used as input for the target API's query parameter, as it matches the required data type and context. However, it is slightly less direct than the 'name' field since it represents the city rather than the specific location.",
+            "source_jsonpath": "$[*].cityName",
+            "confidence": 85,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Search_Flight_Location"
+        },
+        {
+            "target_api_params": "query",
+            "reason": "The 'query' parameter in the target API requires names of locations, cities, districts, etc. The source API's 'name' field in the response provides exactly this information (e.g., 'New York', 'John F. Kennedy International Airport'). The data types match (both are strings), and the context is appropriate as both APIs are location-based. This creates a potential business association where a user might search for attractions in the same location they are searching for car rentals.",
+            "source_jsonpath": "$[*].name",
+            "confidence": 95,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Car_Auto-Complete"
+        },
+        {
+            "target_api_params": "query",
+            "reason": "The 'city' field in the source API response also provides location names (e.g., 'New York'), which matches the requirement of the target API's 'query' parameter. However, it is less specific than the 'name' field as it only provides city names and not detailed location names like airports or districts.",
+            "source_jsonpath": "$[*].city",
+            "confidence": 85,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Car_Auto-Complete"
+        },
+        {
+            "target_api_params": "query",
+            "reason": "The 'query' parameter in the target API requires names of locations, cities, districts, places, countries, etc. The source API's response includes fields like 'name' which provide exactly this type of information (e.g., 'New York City', 'New York'). The data types match (both are strings), and the context is appropriate as both APIs are location-based searches. This creates a potential business association where a traveler might first search for restaurants in a location and then look for attractions in the same location.",
+            "source_jsonpath": "$[*].name",
+            "confidence": 95,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Search_Restaurants"
+        },
+        {
+            "target_api_params": "query",
+            "reason": "The 'query' parameter in the target API requires names of locations, cities, districts, places, countries, etc. The source API's 'bCityName' field in 'ufiDetails' provides the city name (e.g., 'Mumbai'), which matches the requirement. This creates a potential business association where a traveler might search for attractions in the same city they are currently exploring.",
+            "source_jsonpath": "$.products[].ufiDetails.bCityName",
+            "confidence": 95,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Search_Attractions"
+        },
+        {
+            "target_api_params": "query",
+            "reason": "The 'query' parameter in the target API requires names of locations, cities, districts, etc. The source API's 'tag' field in both 'closest_landmarks' and 'popular_landmarks' provides names of nearby attractions (e.g., 'Mumbai Domestic Terminal 1', 'ISKCON', 'Vihar Lake'). These names can be directly used as input for the 'query' parameter, as they represent specific locations or attractions that a traveler might want to search for further details.",
+            "source_jsonpath": "$.closest_landmarks[].tag",
+            "confidence": 95,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Get_Popular_Attraction_Near_By"
+        },
+        {
+            "target_api_params": "query",
+            "reason": "The 'tag' field in 'popular_landmarks' also provides names of popular attractions, which can be used as input for the 'query' parameter. This creates a business association where a traveler might want to search for more details about popular attractions near their hotel.",
+            "source_jsonpath": "$.popular_landmarks[].tag",
+            "confidence": 95,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Get_Popular_Attraction_Near_By"
+        },
+        {
+            "target_api_params": "query",
+            "reason": "The 'query' parameter in the target API requires names of locations, cities, districts, etc. The source API's response includes 'city' and 'hotel_name' fields which contain location names (e.g., 'Nagaon', 'Cherryleen Resort Nagaon'). These fields can be used as input for the target API's query parameter, as they represent specific locations or attractions.",
+            "source_jsonpath": "$.result[].city",
+            "confidence": 85,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Search_Hotels_By_Coordinates"
+        },
+        {
+            "target_api_params": "query",
+            "reason": "The 'query' parameter in the target API requires names of locations, cities, districts, etc. The source API's response fields include 'name' which provides the names of locations (e.g., 'Riu Plaza New York Times Square', 'YOTEL New York Times Square'). This creates a potential business association where a traveler might search for attractions in the same location they are searching for taxi services.",
+            "source_jsonpath": "$[*].name",
+            "confidence": 95,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Taxi_Search_Location"
+        },
+        {
+            "target_api_params": "query",
+            "reason": "The 'city' field in the source API response provides the city name (e.g., 'New York'), which could be used as a query parameter for the target API. This is a direct match for the type of input required by the target API.",
+            "source_jsonpath": "$[*].city",
+            "confidence": 90,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Taxi_Search_Location"
+        },
+        {
+            "target_api_params": "query",
+            "reason": "The 'country' field in the source API response provides the country name (e.g., 'United States'), which could be used as a query parameter for the target API. This is a direct match for the type of input required by the target API.",
+            "source_jsonpath": "$[*].country",
+            "confidence": 90,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Taxi_Search_Location"
+        },
+        {
+            "target_api_params": "query",
+            "reason": "The 'query' parameter in the target API requires names of locations, cities, districts, etc. The source API's 'name' field in the 'route_info.dropoff' object provides specific location names (e.g., 'John F Kennedy International Airport'). This creates a potential business association where a traveler might want to search for attractions near their car rental drop-off location.",
+            "source_jsonpath": "$.search_results[*].route_info.dropoff.name",
+            "confidence": 85,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Car_Search"
+        },
+        {
+            "target_api_params": "query",
+            "reason": "The 'title' field in the 'carouselContent' object of the source API provides location names (e.g., 'John F Kennedy International Airport'). This could be used as input for the 'query' parameter in the target API, creating a business association where attractions are searched near car rental locations.",
+            "source_jsonpath": "$.content.map.supplierLocations[*].carouselContent.title",
+            "confidence": 80,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Car_Search"
+        },
+        {
+            "target_api_params": "query",
+            "reason": "The 'locationName' field in the 'metaData' object of the source API provides specific location names (e.g., 'John F Kennedy International Airport'). This could be used as input for the 'query' parameter in the target API, creating a business association where attractions are searched near car rental locations.",
+            "source_jsonpath": "$.content.map.supplierLocations[*].metaData.locationName",
+            "confidence": 80,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Car_Search"
+        },
+        {
+            "target_api_params": "query",
+            "reason": "The 'query' parameter in the target API requires names of locations, cities, districts, etc. The source API's 'arrivalAirport' and 'departureAirport' fields provide city names (e.g., 'Mumbai', 'Ahmedabad') which could be used as input for searching attractions in those cities. This creates a potential business association where a traveler might want to explore attractions in the cities they are flying to or from.",
+            "source_jsonpath": "$.flightOffers[*].segments[*].arrivalAirport.cityName",
+            "confidence": 85,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Search_Flights_Multi_Stops"
+        },
+        {
+            "target_api_params": "query",
+            "reason": "The 'query' parameter in the target API requires names of locations, cities, districts, etc. The source API's 'arrivalAirport' and 'departureAirport' fields provide airport names (e.g., 'Chhatrapati Shivaji International Airport Mumbai', 'Sardar Vallabhbhai Patel International Airport') which could be used as input for searching attractions near those airports. This creates a potential business association where a traveler might want to explore attractions near their arrival or departure airports.",
+            "source_jsonpath": "$.flightOffers[*].segments[*].arrivalAirport.name",
+            "confidence": 80,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Search_Flights_Multi_Stops"
+        },
+        {
+            "target_api_params": "query",
+            "reason": "The 'query' parameter in the target API requires names of locations, cities, districts, etc. The source API's 'arrivalAirport' and 'departureAirport' fields provide city names (e.g., 'Mumbai', 'New Delhi') which could be used as input for the query parameter. This creates a potential business association where a traveler might want to search for attractions in the city they are flying to or from.",
+            "source_jsonpath": "$.flightOffers[*].segments[*].arrivalAirport.cityName",
+            "confidence": 85,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Search_Flights"
+        },
+        {
+            "target_api_params": "query",
+            "reason": "The 'query' parameter in the target API requires names of locations, cities, districts, etc. The source API's 'arrivalAirport' and 'departureAirport' fields provide airport names (e.g., 'Chhatrapati Shivaji International Airport Mumbai', 'Delhi International Airport') which could be used as input for the query parameter. This creates a potential business association where a traveler might want to search for attractions near the airport they are flying to or from.",
+            "source_jsonpath": "$.flightOffers[*].segments[*].arrivalAirport.name",
+            "confidence": 80,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Search_Flights"
+        },
+        {
+            "target_api_params": "query",
+            "reason": "The 'query' parameter in the target API requires names of locations, cities, districts, etc. The source API's 'name' field provides the names of nearby cities (e.g., 'Chinatown', 'Brooklyn'), which can be directly used as input for the target API's query parameter. The data types match (both are strings), and the context is appropriate as users might want to search for attractions in nearby cities after finding accommodation options.",
+            "source_jsonpath": "$[*].name",
+            "confidence": 95,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Get_Nearby_Cities"
+        },
+        {
+            "target_api_params": "query",
+            "reason": "The 'query' parameter in the target API requires a location name to search for attractions, which is similar to the 'query' parameter in the source API used to search for restaurants in a specific location. Both parameters expect a string input representing a location name, making the source API's 'query' parameter a potential match for the target API's 'query' parameter.",
+            "source_jsonpath": "$.query",
+            "confidence": 95,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "List_Restaurants_By_Search_Query"
+        },
+        {
+            "target_api_params": "query",
+            "reason": "The 'query' parameter in the target API requires names of locations, cities, districts, etc. The source API's 'dropOffLocation' field contains detailed location information including city, establishment name, and description (e.g., 'The Taj Mahal Palace, Mumbai'). This creates a potential business association where a traveler might search for attractions near their taxi drop-off location. The data type matches (String), and the content is relevant for attraction searches.",
+            "source_jsonpath": "$.journeys[].dropOffLocation.name",
+            "confidence": 85,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Search_Taxi"
+        }
+    ],
+    "verified": true
+}

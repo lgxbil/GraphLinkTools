@@ -1,0 +1,525 @@
+{
+    "name": "Property_Children_Policies",
+    "docs_row": {
+        "name": "Property_Children_Policies",
+        "endpoint": "/api/v1/hotels/propertyChildrenPolicies",
+        "func_description": "Retrieve the policies related to children for a specific hotel. ",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "hotel_id": {
+                    "type": "String",
+                    "description": "hotel_id can be retrieved from api/v1/hotels/searchHotels(Search Hotels) or api/v1/hotels/searchHotelsByCoordinates(Search Hotels By Coordinates\n) endpoint in Hotels collection.",
+                    "example_value": "1377073",
+                    "required": true
+                },
+                "languagecode": {
+                    "type": "String",
+                    "description": "To obtain the response data in a specific language, enter the languagecode. languagecode can be retrieved from api/v1/meta/getLanguages(Get Languages\n) endpoint in Meta collection.",
+                    "example_value": "en-us",
+                    "required": false
+                }
+            },
+            "required": [
+                "hotel_id"
+            ]
+        }
+    },
+    "instance": [],
+    "category": null,
+    "tool": null,
+    "api_idx": 25,
+    "params": {
+        "type": "object",
+        "properties": {
+            "hotel_id": {
+                "type": "String",
+                "description": "hotel_id can be retrieved from api/v1/hotels/searchHotels(Search Hotels) or api/v1/hotels/searchHotelsByCoordinates(Search Hotels By Coordinates\n) endpoint in Hotels collection.",
+                "example_value": "1377073",
+                "required": true
+            },
+            "languagecode": {
+                "type": "String",
+                "description": "To obtain the response data in a specific language, enter the languagecode. languagecode can be retrieved from api/v1/meta/getLanguages(Get Languages\n) endpoint in Meta collection.",
+                "example_value": "en-us",
+                "required": false
+            }
+        },
+        "required": [
+            "hotel_id"
+        ]
+    },
+    "responses": [
+        {
+            "function_name": "Property_Children_Policies",
+            "arguments": {
+                "hotel_id": "1377073"
+            },
+            "observation": {
+                "clientVersion": 68,
+                "mfeId": "b-saba-child-policies-mfe/saba",
+                "trackedExperiments": [
+                    {
+                        "shouldTrack": false,
+                        "uviType": "device_id",
+                        "variant": 1,
+                        "name": "ios_sega_guaranteed_cots",
+                        "uvi": "57d11ec8bad14e119e4c15a86202c23f",
+                        "id": "2269860"
+                    }
+                ],
+                "root": {
+                    "type": "core.layout.Column",
+                    "props": {
+                        "items": [
+                            {
+                                "props": {
+                                    "margin": {
+                                        "bottom": "spacing_1x"
+                                    },
+                                    "component": {
+                                        "props": {
+                                            "text": "Child policies",
+                                            "font": "strong_2"
+                                        },
+                                        "type": "bui.Label"
+                                    }
+                                },
+                                "type": "core.Margin"
+                            },
+                            {
+                                "props": {
+                                    "items": [
+                                        {
+                                            "props": {
+                                                "margin": {
+                                                    "top": "spacing_1x"
+                                                },
+                                                "component": {
+                                                    "type": "bui.Label",
+                                                    "props": {
+                                                        "text": "Children of any age are welcome."
+                                                    }
+                                                }
+                                            },
+                                            "type": "core.Margin"
+                                        },
+                                        {
+                                            "props": {
+                                                "margin": {
+                                                    "top": "spacing_1x"
+                                                },
+                                                "component": {
+                                                    "props": {
+                                                        "font": "emphasized_2",
+                                                        "text": "To see correct prices and occupancy information, please add the number of children in your group and their ages to your search."
+                                                    },
+                                                    "type": "bui.Label"
+                                                }
+                                            },
+                                            "type": "core.Margin"
+                                        }
+                                    ]
+                                },
+                                "type": "core.layout.Column"
+                            },
+                            {
+                                "props": {
+                                    "component": {
+                                        "type": "bui.Label",
+                                        "props": {
+                                            "font": "strong_2",
+                                            "text": "Cot and extra bed policies"
+                                        }
+                                    },
+                                    "margin": {
+                                        "top": "spacing_4x",
+                                        "bottom": "spacing_2x"
+                                    }
+                                },
+                                "type": "core.Margin"
+                            }
+                        ]
+                    }
+                },
+                "serverVersion": 131
+            }
+        }
+    ],
+    "response_summary": "The API response outlines the child and cot policies for a booking service. It states that children of any age are welcome, but to get accurate pricing and occupancy details, users should specify the number of children and their ages when making a search. Additionally, there is a section dedicated to cot and extra bed policies, though the specific details for these are not provided in this response. The information is structured with clear headings and instructions to ensure users understand the requirements for booking with children. The response also includes technical details about the client and server versions, as well as some experiment tracking data, but the main focus is on the child-friendly policies.",
+    "enhance_func_desc": "This API is essential for families planning hotel stays. It retrieves child and cot policies for a specific hotel, helping users understand age restrictions, pricing, and occupancy rules for children. The response includes clear guidelines on specifying children's ages for accurate booking details. Users must provide the hotel ID obtained from search APIs to access these policies. The information ensures smooth family travel planning.",
+    "enhance_params_desc": {
+        "enhanced_parameters": {
+            "hotel_id": "Unique identifier for the hotel, obtained from search APIs.",
+            "languagecode": "Specifies the language for the policy response."
+        }
+    },
+    "enhance_resfield_desc": {
+        "response_fields": {
+            "clientVersion": {
+                "type": "Number",
+                "description": "The version number of the client application making the API request."
+            },
+            "mfeId": {
+                "type": "String",
+                "description": "The identifier for the micro frontend (MFE) handling child policies, formatted as 'b-saba-child-policies-mfe/saba'."
+            },
+            "trackedExperiments": {
+                "type": "Array",
+                "description": "A list of experiments being tracked, including their tracking status and variant details.",
+                "ar_items": {
+                    "type": "Object",
+                    "description": "An object representing details of a tracked experiment.",
+                    "ob_properties": {
+                        "shouldTrack": {
+                            "type": "Boolean",
+                            "description": "Indicates whether the experiment should be tracked (e.g., false)."
+                        },
+                        "uviType": {
+                            "type": "String",
+                            "description": "The type of unique visitor identifier (e.g., 'device_id')."
+                        },
+                        "variant": {
+                            "type": "Number",
+                            "description": "The variant number of the experiment (e.g., 1)."
+                        },
+                        "name": {
+                            "type": "String",
+                            "description": "The name of the experiment (e.g., 'ios_sega_guaranteed_cots')."
+                        },
+                        "uvi": {
+                            "type": "String",
+                            "description": "The unique visitor identifier (e.g., '57d11ec8bad14e119e4c15a86202c23f')."
+                        },
+                        "id": {
+                            "type": "String",
+                            "description": "The unique identifier for the experiment (e.g., '2269860')."
+                        }
+                    }
+                }
+            },
+            "root": {
+                "type": "Object",
+                "description": "The root object containing the layout and content for child policies.",
+                "ob_properties": {
+                    "type": {
+                        "type": "String",
+                        "description": "The type of layout component (e.g., 'core.layout.Column')."
+                    },
+                    "props": {
+                        "type": "Object",
+                        "description": "Properties defining the layout and content structure.",
+                        "ob_properties": {
+                            "items": {
+                                "type": "Array",
+                                "description": "A list of layout items representing sections of the child policies content.",
+                                "ar_items": {
+                                    "type": "Object",
+                                    "description": "An object representing a layout item (e.g., a label or column).",
+                                    "ob_properties": {
+                                        "props": {
+                                            "type": "Object",
+                                            "description": "Properties of the layout item, such as margins or nested components.",
+                                            "ob_properties": {
+                                                "margin": {
+                                                    "type": "Object",
+                                                    "description": "Margin settings for the layout item (e.g., 'bottom: spacing_1x').",
+                                                    "ob_properties": {
+                                                        "bottom": {
+                                                            "type": "String",
+                                                            "description": "Bottom margin value (e.g., 'spacing_1x')."
+                                                        },
+                                                        "top": {
+                                                            "type": "String",
+                                                            "description": "Top margin value (e.g., 'spacing_1x')."
+                                                        }
+                                                    }
+                                                },
+                                                "component": {
+                                                    "type": "Object",
+                                                    "description": "The nested component (e.g., a label) within the layout item.",
+                                                    "ob_properties": {
+                                                        "type": {
+                                                            "type": "String",
+                                                            "description": "The type of the nested component (e.g., 'bui.Label')."
+                                                        },
+                                                        "props": {
+                                                            "type": "Object",
+                                                            "description": "Properties of the nested component, such as text and font styling.",
+                                                            "ob_properties": {
+                                                                "text": {
+                                                                    "type": "String",
+                                                                    "description": "The text content of the label (e.g., 'Child policies')."
+                                                                },
+                                                                "font": {
+                                                                    "type": "String",
+                                                                    "description": "The font style applied to the label (e.g., 'strong_2')."
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                },
+                                                "items": {
+                                                    "type": "Array",
+                                                    "description": "A list of nested layout items within a column.",
+                                                    "ar_items": {
+                                                        "type": "Object",
+                                                        "description": "An object representing a nested layout item.",
+                                                        "ob_properties": {
+                                                            "props": {
+                                                                "type": "Object",
+                                                                "description": "Properties of the nested layout item, similar to the parent item structure."
+                                                            },
+                                                            "type": {
+                                                                "type": "String",
+                                                                "description": "The type of the nested layout item (e.g., 'core.Margin')."
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "type": {
+                                            "type": "String",
+                                            "description": "The type of the layout item (e.g., 'core.Margin')."
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "serverVersion": {
+                "type": "Number",
+                "description": "The version number of the server responding to the API request."
+            }
+        }
+    },
+    "params_desc_list": null,
+    "response_desc_list": [
+        {
+            "path_name": "$.clientVersion",
+            "name": "clientVersion",
+            "description": "The version number of the client application making the API request."
+        },
+        {
+            "path_name": "$.mfeId",
+            "name": "mfeId",
+            "description": "The identifier for the micro frontend (MFE) handling child policies, formatted as 'b-saba-child-policies-mfe/saba'."
+        },
+        {
+            "path_name": "$.trackedExperiments",
+            "name": "trackedExperiments",
+            "description": "A list of experiments being tracked, including their tracking status and variant details."
+        },
+        {
+            "path_name": "$.trackedExperiments[]",
+            "name": "trackedExperiments[]",
+            "description": "An object representing details of a tracked experiment."
+        },
+        {
+            "path_name": "$.trackedExperiments[].shouldTrack",
+            "name": "shouldTrack",
+            "description": "Indicates whether the experiment should be tracked (e.g., false)."
+        },
+        {
+            "path_name": "$.trackedExperiments[].uviType",
+            "name": "uviType",
+            "description": "The type of unique visitor identifier (e.g., 'device_id')."
+        },
+        {
+            "path_name": "$.trackedExperiments[].variant",
+            "name": "variant",
+            "description": "The variant number of the experiment (e.g., 1)."
+        },
+        {
+            "path_name": "$.trackedExperiments[].name",
+            "name": "name",
+            "description": "The name of the experiment (e.g., 'ios_sega_guaranteed_cots')."
+        },
+        {
+            "path_name": "$.trackedExperiments[].uvi",
+            "name": "uvi",
+            "description": "The unique visitor identifier (e.g., '57d11ec8bad14e119e4c15a86202c23f')."
+        },
+        {
+            "path_name": "$.trackedExperiments[].id",
+            "name": "id",
+            "description": "The unique identifier for the experiment (e.g., '2269860')."
+        },
+        {
+            "path_name": "$.root",
+            "name": "root",
+            "description": "The root object containing the layout and content for child policies."
+        },
+        {
+            "path_name": "$.root.type",
+            "name": "type",
+            "description": "The type of layout component (e.g., 'core.layout.Column')."
+        },
+        {
+            "path_name": "$.root.props",
+            "name": "props",
+            "description": "Properties defining the layout and content structure."
+        },
+        {
+            "path_name": "$.root.props.items",
+            "name": "items",
+            "description": "A list of layout items representing sections of the child policies content."
+        },
+        {
+            "path_name": "$.root.props.items[]",
+            "name": "items[]",
+            "description": "An object representing a layout item (e.g., a label or column)."
+        },
+        {
+            "path_name": "$.root.props.items[].props",
+            "name": "props",
+            "description": "Properties of the layout item, such as margins or nested components."
+        },
+        {
+            "path_name": "$.root.props.items[].props.margin",
+            "name": "margin",
+            "description": "Margin settings for the layout item (e.g., 'bottom: spacing_1x')."
+        },
+        {
+            "path_name": "$.root.props.items[].props.margin.bottom",
+            "name": "bottom",
+            "description": "Bottom margin value (e.g., 'spacing_1x')."
+        },
+        {
+            "path_name": "$.root.props.items[].props.margin.top",
+            "name": "top",
+            "description": "Top margin value (e.g., 'spacing_1x')."
+        },
+        {
+            "path_name": "$.root.props.items[].props.component",
+            "name": "component",
+            "description": "The nested component (e.g., a label) within the layout item."
+        },
+        {
+            "path_name": "$.root.props.items[].props.component.type",
+            "name": "type",
+            "description": "The type of the nested component (e.g., 'bui.Label')."
+        },
+        {
+            "path_name": "$.root.props.items[].props.component.props",
+            "name": "props",
+            "description": "Properties of the nested component, such as text and font styling."
+        },
+        {
+            "path_name": "$.root.props.items[].props.component.props.text",
+            "name": "text",
+            "description": "The text content of the label (e.g., 'Child policies')."
+        },
+        {
+            "path_name": "$.root.props.items[].props.component.props.font",
+            "name": "font",
+            "description": "The font style applied to the label (e.g., 'strong_2')."
+        },
+        {
+            "path_name": "$.root.props.items[].props.items",
+            "name": "items",
+            "description": "A list of nested layout items within a column."
+        },
+        {
+            "path_name": "$.root.props.items[].props.items[]",
+            "name": "items[]",
+            "description": "An object representing a nested layout item."
+        },
+        {
+            "path_name": "$.root.props.items[].props.items[].props",
+            "name": "props",
+            "description": "Properties of the nested layout item, similar to the parent item structure."
+        },
+        {
+            "path_name": "$.root.props.items[].props.items[].type",
+            "name": "type",
+            "description": "The type of the nested layout item (e.g., 'core.Margin')."
+        },
+        {
+            "path_name": "$.root.props.items[].type",
+            "name": "type",
+            "description": "The type of the layout item (e.g., 'core.Margin')."
+        },
+        {
+            "path_name": "$.serverVersion",
+            "name": "serverVersion",
+            "description": "The version number of the server responding to the API request."
+        }
+    ],
+    "depends_on": [
+        {
+            "source_api_name": "Search_Hotels",
+            "dependence_type": "Hard Dependency",
+            "depencend_field": "$.hotels[*].hotel_id",
+            "param_name": "hotel_id",
+            "reason": "The 'Search_Hotels' API is a necessary prerequisite for calling the 'Property_Children_Policies' API, as it provides the 'hotel_id' required by the target API. The 'hotels[].hotel_id' field from the 'Search_Hotels' response matches the data type and purpose of the 'hotel_id' parameter in the target API. This represents a hard dependency, as the 'Search_Hotels' API must be called first to obtain the hotel_id before the 'Property_Children_Policies' API can be used."
+        },
+        {
+            "source_api_name": "Get_Question_And_Answer",
+            "dependence_type": "Hard Dependency",
+            "depencend_field": "$.hotel_id",
+            "param_name": "hotel_id",
+            "reason": "The 'Get_Question_And_Answer' API provides a 'hotel_id' field that matches exactly with the 'hotel_id' parameter required by the 'Property_Children_Policies' API. This represents a hard dependency as the target API explicitly states that the hotel_id must be obtained from search APIs, and the source API's response field fulfills this requirement perfectly. The data types match (both are Strings), and the example value demonstrates the correct format."
+        },
+        {
+            "source_api_name": "Get_Question_And_Answer",
+            "dependence_type": "Hard Dependency",
+            "depencend_field": "$.q_and_a_pairs[*].hotel_id",
+            "param_name": "hotel_id",
+            "reason": "The 'Get_Question_And_Answer' API provides hotel IDs in its response fields, which are directly required by the 'Property_Children_Policies' API's 'hotel_id' parameter. This establishes a hard dependency as the source API's response field contains the exact information needed by the target API parameter. The data type from the source API (integer) can be easily converted to the string type required by the target API."
+        },
+        {
+            "source_api_name": "Get_Hotel_Reviews(Tips)",
+            "dependence_type": "Hard Dependency",
+            "depencend_field": "$.result[*].hotel_id",
+            "param_name": "hotel_id",
+            "reason": "The 'Get_Hotel_Reviews(Tips)' API provides the 'hotel_id' field in its response, which is exactly what the 'Property_Children_Policies' API requires as input. This establishes a clear business association where hotel reviews are typically accessed after identifying a hotel through search, and the same hotel ID can be used to check children policies. The data types match (String vs. Number in examples, but IDs are typically interchangeable in this context), and the source field directly provides the required parameter value."
+        },
+        {
+            "source_api_name": "Get_Hotel_Policies",
+            "dependence_type": "Hard Dependency",
+            "depencend_field": "$.hotel_id",
+            "param_name": "hotel_id",
+            "reason": "The 'Get_Hotel_Policies' API and the 'Property_Children_Policies' API share a direct business relationship as both require the hotel_id parameter to retrieve specific hotel information. The 'hotel_id' field from the 'Get_Hotel_Policies' API response matches exactly with the 'hotel_id' parameter required by the 'Property_Children_Policies' API in terms of data type and purpose. This represents a hard dependency as the hotel_id from the source API is essential for calling the target API."
+        },
+        {
+            "source_api_name": "Get_Room_List",
+            "dependence_type": "Hard Dependency",
+            "depencend_field": "$.hotel_id",
+            "param_name": "hotel_id",
+            "reason": "The 'Get_Room_List' API response field 'hotel_id' directly provides the unique identifier needed for the 'Property_Children_Policies' API's 'hotel_id' parameter. This represents a hard dependency as the target API documentation explicitly states that the hotel_id must be obtained from search APIs (which includes 'Get_Room_List'). The data types match (both expect a hotel identifier), and the source API's response field contains exactly the information required by the target API parameter."
+        },
+        {
+            "source_api_name": "Get_Hotel_Review_Scores",
+            "dependence_type": "Hard Dependency",
+            "depencend_field": "$[*].hotel_id",
+            "param_name": "hotel_id",
+            "reason": "The 'Get_Hotel_Review_Scores' API provides the 'hotel_id' field which is explicitly required by the 'Property_Children_Policies' API as a parameter. This establishes a hard dependency, as the target API cannot be called without this identifier. The data type matches (String vs. Number in the example, but numeric strings are commonly accepted as valid hotel IDs), and the source API's documentation confirms the hotel ID comes from the same search APIs mentioned in the target API's parameter description."
+        },
+        {
+            "source_api_name": "Get_Hotel_Reviews_Filter_Metadata",
+            "dependence_type": "Hard Dependency",
+            "depencend_field": "$.hotel_id",
+            "param_name": "hotel_id",
+            "reason": "The 'Get_Hotel_Reviews_Filter_Metadata' API provides the 'hotel_id' field which is explicitly required by the 'Property_Children_Policies' API. This represents a hard dependency as the source API's response field directly provides the necessary input parameter for the target API. The data types match (both are Strings), and the example value format is identical. The source API even mentions that the hotel ID must be obtained from search APIs, which aligns with the target API's parameter description."
+        },
+        {
+            "source_api_name": "Get_Description_And_Info",
+            "dependence_type": "Hard Dependency",
+            "depencend_field": "$[*].hotel_id",
+            "param_name": "hotel_id",
+            "reason": "There is a clear business association between the 'Get_Description_And_Info' API and the 'Property_Children_Policies' API, as both require the same hotel_id parameter to retrieve specific information about a hotel. The 'hotel_id' field from the 'Get_Description_And_Info' API response matches exactly with the 'hotel_id' parameter required by the 'Property_Children_Policies' API in both data type (String) and purpose (unique hotel identifier). This represents a hard dependency as the hotel_id is a mandatory parameter for both APIs."
+        },
+        {
+            "source_api_name": "Payment_features_of_the_Hotel",
+            "dependence_type": "Hard Dependency",
+            "depencend_field": "$[*].hotel_id",
+            "param_name": "hotel_id",
+            "reason": "The 'Payment_features_of_the_Hotel' API provides the 'hotel_id' field which is explicitly required by the 'Property_Children_Policies' API. This represents a hard dependency as the target API documentation states that the hotel_id must be obtained from search APIs, and the source API's response field matches exactly in both data type (String) and purpose (unique hotel identifier). The source API serves as a necessary prerequisite for calling the target API."
+        }
+    ],
+    "verified": true
+}

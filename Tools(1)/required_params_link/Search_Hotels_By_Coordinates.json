@@ -1,0 +1,2480 @@
+{
+    "name": "Search_Hotels_By_Coordinates",
+    "docs_row": {
+        "name": "Search_Hotels_By_Coordinates",
+        "endpoint": "/api/v1/hotels/searchHotelsByCoordinates",
+        "func_description": "Search for hotels around a given geographical coordinates. ",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "latitude": {
+                    "type": "String",
+                    "description": "Latitude of the searched location. latitude can be retrieved from api/v1/meta/locationToLatLong(Location to Lat Long) endpoint in Meta collection.",
+                    "example_value": "19.24232736426361",
+                    "required": true
+                },
+                "longitude": {
+                    "type": "String",
+                    "description": "Longitude of the searched location. longitude can be retrieved from api/v1/meta/locationToLatLong(Location to Lat Long) endpoint in Meta collection.",
+                    "example_value": "72.85841985686734",
+                    "required": true
+                },
+                "arrival_date": {
+                    "type": "Date (yyyy-mm-dd)",
+                    "description": "The date on which you will arrive or check-in",
+                    "example_value": "",
+                    "required": true
+                },
+                "departure_date": {
+                    "type": "Date (yyyy-mm-dd)",
+                    "description": "The date of departure or check-out.",
+                    "example_value": "",
+                    "required": true
+                },
+                "radius": {
+                    "type": "Number",
+                    "description": "The hotels that are within the radius. The radius is measured in kilometers.\nDefault is set to 100.\nRange is between 10 to 500.",
+                    "example_value": "",
+                    "required": false
+                },
+                "adults": {
+                    "type": "Number",
+                    "description": "The number of guests who are 18 years of age or older. The default value is set to 1.",
+                    "example_value": "1",
+                    "required": false
+                },
+                "children_age": {
+                    "type": "String",
+                    "description": "The number of children, including infants, who are under 18.\nExample:\nChild 1 Age = 8 months\nChild 2 Age = 1 year\nChild 3 Age = 17 years\nHere is what the request parameter would look like:\nchildren_age: 0,1,17",
+                    "example_value": "0,17",
+                    "required": false
+                },
+                "room_qty": {
+                    "type": "Number",
+                    "description": "The number of rooms that are required. The default value is set to 1.",
+                    "example_value": "1",
+                    "required": false
+                },
+                "price_min": {
+                    "type": "Number",
+                    "description": "Minimum Price filter for search.",
+                    "example_value": "",
+                    "required": false
+                },
+                "price_max": {
+                    "type": "Number",
+                    "description": "Maximum Price filter for search.",
+                    "example_value": "",
+                    "required": false
+                },
+                "units": {
+                    "type": "Enum",
+                    "description": "The measurement of distance in metric or imperial.",
+                    "example_value": "",
+                    "required": false
+                },
+                "page_number": {
+                    "type": "String",
+                    "description": "",
+                    "example_value": "1",
+                    "required": false
+                },
+                "temperature_unit": {
+                    "type": "Enum",
+                    "description": "The temperature unit in Fahrenheit or Celsius.\nc = Celsius\nf = Fahrenheit",
+                    "example_value": "",
+                    "required": false
+                },
+                "languagecode": {
+                    "type": "String",
+                    "description": "To obtain the response data in a specific language, enter the languagecode. languagecode can be retrieved from api/v1/meta/getLanguages(Get Languages\n) endpoint in Meta collection.",
+                    "example_value": "en-us",
+                    "required": false
+                },
+                "currency_code": {
+                    "type": "String",
+                    "description": "The currency code. currency_code can be retrieved from api/v1/meta/getCurrency(Get Currency) endpoint in Hotels collection.",
+                    "example_value": "EUR",
+                    "required": false
+                },
+                "location": {
+                    "type": "String",
+                    "description": "location can be retrieved from api/v1/meta/getLocations(Get Location) endpoint in Meta collection.",
+                    "example_value": "US",
+                    "required": false
+                }
+            },
+            "required": [
+                "latitude",
+                "longitude",
+                "arrival_date",
+                "departure_date"
+            ]
+        }
+    },
+    "instance": [],
+    "category": null,
+    "tool": null,
+    "api_idx": 11,
+    "params": {
+        "type": "object",
+        "properties": {
+            "latitude": {
+                "type": "String",
+                "description": "Latitude of the searched location. latitude can be retrieved from api/v1/meta/locationToLatLong(Location to Lat Long) endpoint in Meta collection.",
+                "example_value": "19.24232736426361",
+                "required": true
+            },
+            "longitude": {
+                "type": "String",
+                "description": "Longitude of the searched location. longitude can be retrieved from api/v1/meta/locationToLatLong(Location to Lat Long) endpoint in Meta collection.",
+                "example_value": "72.85841985686734",
+                "required": true
+            },
+            "arrival_date": {
+                "type": "Date (yyyy-mm-dd)",
+                "description": "The date on which you will arrive or check-in",
+                "example_value": "",
+                "required": true
+            },
+            "departure_date": {
+                "type": "Date (yyyy-mm-dd)",
+                "description": "The date of departure or check-out.",
+                "example_value": "",
+                "required": true
+            },
+            "radius": {
+                "type": "Number",
+                "description": "The hotels that are within the radius. The radius is measured in kilometers.\nDefault is set to 100.\nRange is between 10 to 500.",
+                "example_value": "",
+                "required": false
+            },
+            "adults": {
+                "type": "Number",
+                "description": "The number of guests who are 18 years of age or older. The default value is set to 1.",
+                "example_value": "1",
+                "required": false
+            },
+            "children_age": {
+                "type": "String",
+                "description": "The number of children, including infants, who are under 18.\nExample:\nChild 1 Age = 8 months\nChild 2 Age = 1 year\nChild 3 Age = 17 years\nHere is what the request parameter would look like:\nchildren_age: 0,1,17",
+                "example_value": "0,17",
+                "required": false
+            },
+            "room_qty": {
+                "type": "Number",
+                "description": "The number of rooms that are required. The default value is set to 1.",
+                "example_value": "1",
+                "required": false
+            },
+            "price_min": {
+                "type": "Number",
+                "description": "Minimum Price filter for search.",
+                "example_value": "",
+                "required": false
+            },
+            "price_max": {
+                "type": "Number",
+                "description": "Maximum Price filter for search.",
+                "example_value": "",
+                "required": false
+            },
+            "units": {
+                "type": "Enum",
+                "description": "The measurement of distance in metric or imperial.",
+                "example_value": "",
+                "required": false
+            },
+            "page_number": {
+                "type": "String",
+                "description": "",
+                "example_value": "1",
+                "required": false
+            },
+            "temperature_unit": {
+                "type": "Enum",
+                "description": "The temperature unit in Fahrenheit or Celsius.\nc = Celsius\nf = Fahrenheit",
+                "example_value": "",
+                "required": false
+            },
+            "languagecode": {
+                "type": "String",
+                "description": "To obtain the response data in a specific language, enter the languagecode. languagecode can be retrieved from api/v1/meta/getLanguages(Get Languages\n) endpoint in Meta collection.",
+                "example_value": "en-us",
+                "required": false
+            },
+            "currency_code": {
+                "type": "String",
+                "description": "The currency code. currency_code can be retrieved from api/v1/meta/getCurrency(Get Currency) endpoint in Hotels collection.",
+                "example_value": "EUR",
+                "required": false
+            },
+            "location": {
+                "type": "String",
+                "description": "location can be retrieved from api/v1/meta/getLocations(Get Location) endpoint in Meta collection.",
+                "example_value": "US",
+                "required": false
+            }
+        },
+        "required": [
+            "latitude",
+            "longitude",
+            "arrival_date",
+            "departure_date"
+        ]
+    },
+    "responses": [
+        {
+            "function_name": "Search_Hotels_By_Coordinates",
+            "arguments": {
+                "latitude": "19.24232736426361",
+                "longitude": "72.85841985686734",
+                "arrival_date": "2025-06-15",
+                "departure_date": "2025-06-20"
+            },
+            "observation": {
+                "primary_count": 4270,
+                "count": 4270,
+                "filters": [
+                    {
+                        "field": "price",
+                        "title": "Your budget (for 5 nights)"
+                    },
+                    {
+                        "field": "tdb",
+                        "title": "Bed preference"
+                    },
+                    {
+                        "field": "roomfacility",
+                        "title": "Room facilities"
+                    }
+                ],
+                "page_loading_threshold": 10,
+                "applied_filters": [],
+                "b_max_los_data": {
+                    "default_los": 45,
+                    "has_extended_los": 1,
+                    "extended_los": 90,
+                    "experiment": "long_stays_ios_extend_los_2",
+                    "max_allowed_los": 90,
+                    "is_fullon": 0
+                },
+                "extended_count": 0,
+                "has_low_availability": "",
+                "room_distribution": [
+                    {
+                        "children": [],
+                        "adults": "1"
+                    }
+                ],
+                "unfiltered_count": 5033,
+                "unfiltered_primary_count": 5033,
+                "result": [
+                    {
+                        "hotel_id": 11361227,
+                        "default_wishlist_name": "Nagaon",
+                        "id": "property_card_11361227",
+                        "extended": 0,
+                        "review_score_word": "Fabulous",
+                        "is_genius_deal": 0,
+                        "default_language": "xu",
+                        "hotel_name_trans": "Cherryleen Resort Nagaon",
+                        "updated_checkout": null,
+                        "soldout": 0,
+                        "unit_configuration_label": "<b>Hotel room</b>: 1\u00a0bed",
+                        "preferred": 1,
+                        "class": 3,
+                        "ufi": -2105314,
+                        "review_score": 8.7,
+                        "genius_discount_percentage": 0,
+                        "children_not_allowed": null,
+                        "preferred_plus": 1,
+                        "city_in_trans": "in Nagaon",
+                        "min_total_price": 19440,
+                        "main_photo_url": "https://cf.bstatic.com/xdata/images/hotel/square60/519387542.jpg?k=debdc82f3c9ea38a27673c73ce4b97f556292b67d062fa902ecd61618d299a85&o=",
+                        "type": "property_card",
+                        "class_is_estimated": 0,
+                        "block_ids": [
+                            "1136122701_406827253_1_42_0"
+                        ],
+                        "checkin": {
+                            "until": "17:30",
+                            "from": "12:00"
+                        },
+                        "is_tpi_exclusive_property": 0,
+                        "bwallet": {
+                            "hotel_eligibility": 0
+                        },
+                        "has_free_parking": 1,
+                        "updated_checkin": null,
+                        "latitude": 18.619497213225,
+                        "accommodation_type": 204,
+                        "has_swimming_pool": 1,
+                        "currencycode": "INR",
+                        "is_smart_deal": 0,
+                        "urgency_message": "Only 1 left at this price on Booking.com",
+                        "cant_book": null,
+                        "longitude": 72.899979171893,
+                        "countrycode": "in",
+                        "hotel_name": "Cherryleen Resort Nagaon",
+                        "hotel_include_breakfast": 0,
+                        "is_geo_rate": "",
+                        "is_no_prepayment_block": 0,
+                        "hotel_has_vb_boost": 0,
+                        "badges": [],
+                        "timezone": "Asia/Kolkata",
+                        "review_nr": 44,
+                        "main_photo_id": 519387542,
+                        "is_free_cancellable": 1,
+                        "composite_price_breakdown": {
+                            "gross_amount_per_night": {
+                                "amount_unrounded": "US$45.46",
+                                "value": 45.4617110946166,
+                                "currency": "USD",
+                                "amount_rounded": "US$45"
+                            },
+                            "gross_amount": {
+                                "amount_rounded": "US$227",
+                                "value": 227.308555473083,
+                                "currency": "USD",
+                                "amount_unrounded": "US$227.31"
+                            },
+                            "all_inclusive_amount_hotel_currency": {
+                                "amount_unrounded": "Rs.\u00a021,772.80",
+                                "amount_rounded": "Rs.\u00a021,773",
+                                "value": 21772.7999478579,
+                                "currency": "INR"
+                            },
+                            "items": [
+                                {
+                                    "base": {
+                                        "base_amount": 0,
+                                        "kind": "variable_amount"
+                                    },
+                                    "kind": "charge",
+                                    "inclusion_type": "excluded",
+                                    "name": "Goods & services tax",
+                                    "details": null,
+                                    "item_amount": {
+                                        "amount_unrounded": "US$27.28",
+                                        "amount_rounded": "US$27",
+                                        "currency": "USD",
+                                        "value": 27.27702665677
+                                    }
+                                }
+                            ],
+                            "benefits": [],
+                            "charges_details": {
+                                "amount": {
+                                    "value": 27,
+                                    "currency": "USD"
+                                },
+                                "mode": "extra_charges",
+                                "translated_copy": ""
+                            },
+                            "price_display_config": [
+                                {
+                                    "key": "use_nightly_prices",
+                                    "value": 0
+                                },
+                                {
+                                    "key": "use_nightly_as_dominant",
+                                    "value": 0
+                                },
+                                {
+                                    "key": "use_js_tracking",
+                                    "value": 1
+                                }
+                            ],
+                            "included_taxes_and_charges_amount": {
+                                "amount_unrounded": "US$0",
+                                "value": 0,
+                                "currency": "USD",
+                                "amount_rounded": "US$0"
+                            },
+                            "has_long_stays_monthly_rate_price": 0,
+                            "has_long_stays_weekly_rate_price": 0,
+                            "all_inclusive_amount": {
+                                "amount_unrounded": "US$254.59",
+                                "currency": "USD",
+                                "value": 254.585581520164,
+                                "amount_rounded": "US$255"
+                            },
+                            "net_amount": {
+                                "amount_unrounded": "US$227.31",
+                                "amount_rounded": "US$227",
+                                "value": 227.308555473083,
+                                "currency": "USD"
+                            },
+                            "gross_amount_hotel_currency": {
+                                "amount_unrounded": "Rs.\u00a019,440",
+                                "value": 19440,
+                                "currency": "INR",
+                                "amount_rounded": "Rs.\u00a019,440"
+                            },
+                            "excluded_amount": {
+                                "amount_rounded": "US$27",
+                                "currency": "USD",
+                                "value": 27.27702665677,
+                                "amount_unrounded": "US$27.28"
+                            }
+                        },
+                        "checkout": {
+                            "from": "10:00",
+                            "until": "11:00"
+                        },
+                        "city": "Nagaon",
+                        "last_reservation_data": {
+                            "last_reservation_ellapsed_months": 1
+                        },
+                        "distances": []
+                    },
+                    {
+                        "hotel_id": 12192643,
+                        "review_nr": 26,
+                        "timezone": "Asia/Kolkata",
+                        "main_photo_id": 683744600,
+                        "is_free_cancellable": 1,
+                        "hotel_has_vb_boost": 0,
+                        "badges": [],
+                        "city": "Mumbai",
+                        "distances": [],
+                        "last_reservation_data": {
+                            "last_reservation_ellapsed_months": 1
+                        },
+                        "composite_price_breakdown": {
+                            "all_inclusive_amount": {
+                                "amount_unrounded": "US$197.56",
+                                "currency": "USD",
+                                "value": 197.558186759751,
+                                "amount_rounded": "US$198"
+                            },
+                            "excluded_amount": {
+                                "amount_unrounded": "US$21.06",
+                                "value": 21.0604603866043,
+                                "currency": "USD",
+                                "amount_rounded": "US$21"
+                            },
+                            "strikethrough_amount_per_night": {
+                                "amount_unrounded": "US$64.02",
+                                "value": 64.0183443570311,
+                                "currency": "USD",
+                                "amount_rounded": "US$64"
+                            },
+                            "strikethrough_amount": {
+                                "value": 320.091721785155,
+                                "currency": "USD",
+                                "amount_rounded": "US$320",
+                                "amount_unrounded": "US$320.09"
+                            },
+                            "gross_amount_hotel_currency": {
+                                "amount_unrounded": "Rs.\u00a015,094.53",
+                                "amount_rounded": "Rs.\u00a015,095",
+                                "currency": "INR",
+                                "value": 15094.53
+                            },
+                            "net_amount": {
+                                "amount_rounded": "US$176",
+                                "currency": "USD",
+                                "value": 175.503836555036,
+                                "amount_unrounded": "US$175.50"
+                            },
+                            "discounted_amount": {
+                                "amount_unrounded": "US$143.59",
+                                "amount_rounded": "US$144",
+                                "value": 143.593994941271,
+                                "currency": "USD"
+                            },
+                            "charges_details": {
+                                "amount": {
+                                    "value": 21,
+                                    "currency": "USD"
+                                },
+                                "mode": "extra_charges",
+                                "translated_copy": ""
+                            },
+                            "benefits": [],
+                            "items": [
+                                {
+                                    "base": {
+                                        "base_amount": 17,
+                                        "kind": "per_person_per_night"
+                                    },
+                                    "inclusion_type": "included",
+                                    "kind": "charge",
+                                    "name": "Service charge",
+                                    "details": null,
+                                    "item_amount": {
+                                        "amount_unrounded": "US$0.99",
+                                        "amount_rounded": "US$1",
+                                        "currency": "USD",
+                                        "value": 0.993890288848357
+                                    }
+                                },
+                                {
+                                    "base": {
+                                        "base_amount": 0,
+                                        "kind": "variable_amount"
+                                    },
+                                    "kind": "charge",
+                                    "inclusion_type": "excluded",
+                                    "details": null,
+                                    "name": "Goods & services tax",
+                                    "item_amount": {
+                                        "amount_rounded": "US$21",
+                                        "currency": "USD",
+                                        "value": 21.0604603866043,
+                                        "amount_unrounded": "US$21.06"
+                                    }
+                                },
+                                {
+                                    "kind": "discount",
+                                    "identifier": "basic-deal",
+                                    "details": "You\u2019re getting a reduced rate because this property is offering a discount.",
+                                    "name": "Bonus savings",
+                                    "item_amount": {
+                                        "amount_unrounded": "US$143.59",
+                                        "currency": "USD",
+                                        "value": 143.593994941271,
+                                        "amount_rounded": "US$144"
+                                    },
+                                    "base": {
+                                        "kind": "rate"
+                                    }
+                                }
+                            ],
+                            "all_inclusive_amount_hotel_currency": {
+                                "amount_rounded": "Rs.\u00a016,896",
+                                "value": 16895.6735597413,
+                                "currency": "INR",
+                                "amount_unrounded": "Rs.\u00a016,895.67"
+                            },
+                            "gross_amount": {
+                                "amount_unrounded": "US$176.50",
+                                "amount_rounded": "US$176",
+                                "value": 176.497726843885,
+                                "currency": "USD"
+                            },
+                            "gross_amount_per_night": {
+                                "amount_unrounded": "US$35.30",
+                                "amount_rounded": "US$35",
+                                "value": 35.2995453687769,
+                                "currency": "USD"
+                            },
+                            "has_long_stays_weekly_rate_price": 0,
+                            "has_long_stays_monthly_rate_price": 0,
+                            "included_taxes_and_charges_amount": {
+                                "value": 0.993890288848357,
+                                "currency": "USD",
+                                "amount_rounded": "US$1",
+                                "amount_unrounded": "US$0.99"
+                            },
+                            "price_display_config": [
+                                {
+                                    "key": "use_nightly_prices",
+                                    "value": 0
+                                },
+                                {
+                                    "key": "use_nightly_as_dominant",
+                                    "value": 0
+                                },
+                                {
+                                    "value": 1,
+                                    "key": "use_js_tracking"
+                                }
+                            ]
+                        },
+                        "checkout": {
+                            "from": "",
+                            "until": "11:00"
+                        },
+                        "currencycode": "INR",
+                        "accommodation_type": 204,
+                        "is_smart_deal": 0,
+                        "bwallet": {
+                            "hotel_eligibility": 0
+                        },
+                        "is_tpi_exclusive_property": 0,
+                        "updated_checkin": null,
+                        "latitude": 20.022918,
+                        "is_geo_rate": 1,
+                        "is_no_prepayment_block": 1,
+                        "cant_book": null,
+                        "countrycode": "in",
+                        "longitude": 72.944342,
+                        "hotel_name": "Palette Palghar Irayos Resort Lifestyle Retreat",
+                        "hotel_include_breakfast": 0,
+                        "children_not_allowed": null,
+                        "preferred_plus": 1,
+                        "class": 5,
+                        "review_score": 9.1,
+                        "genius_discount_percentage": 0,
+                        "ufi": -2112453,
+                        "type": "property_card",
+                        "block_ids": [
+                            "1219264302_394220458_1_42_0"
+                        ],
+                        "class_is_estimated": 0,
+                        "checkin": {
+                            "until": "",
+                            "from": "12:00"
+                        },
+                        "city_in_trans": "in Tal\u0101sri",
+                        "min_total_price": 15094.53,
+                        "main_photo_url": "https://cf.bstatic.com/xdata/images/hotel/square60/683744600.jpg?k=b1be5f1e6710550962a3ee0e88a605c0a581f49a1c9720e351a7067095c3ff5b&o=",
+                        "extended": 0,
+                        "is_genius_deal": 0,
+                        "hotel_name_trans": "Palette Palghar Irayos Resort Lifestyle Retreat",
+                        "default_language": "xu",
+                        "updated_checkout": null,
+                        "review_score_word": "Superb",
+                        "default_wishlist_name": "Tal\u0101sri",
+                        "id": "property_card_12192643",
+                        "unit_configuration_label": "<b>Hotel room</b>: 1\u00a0bed",
+                        "preferred": 1,
+                        "soldout": 0
+                    },
+                    {
+                        "hotel_id": 11021233,
+                        "is_free_cancellable": 1,
+                        "main_photo_id": 550266263,
+                        "timezone": "Asia/Kolkata",
+                        "review_nr": 48,
+                        "badges": [
+                            {
+                                "text": "Mobile-only price",
+                                "badge_variant": "constructive",
+                                "id": "Mobile Rate"
+                            }
+                        ],
+                        "hotel_has_vb_boost": 0,
+                        "distances": [],
+                        "last_reservation_data": {
+                            "last_reservation_ellapsed_months": 1
+                        },
+                        "city": "Igatpuri Nashik",
+                        "checkout": {
+                            "from": "10:30",
+                            "until": "11:00"
+                        },
+                        "composite_price_breakdown": {
+                            "gross_amount_hotel_currency": {
+                                "amount_unrounded": "Rs.\u00a034,560",
+                                "value": 34560,
+                                "currency": "INR",
+                                "amount_rounded": "Rs.\u00a034,560"
+                            },
+                            "net_amount": {
+                                "currency": "USD",
+                                "value": 404.104098618814,
+                                "amount_rounded": "US$404",
+                                "amount_unrounded": "US$404.10"
+                            },
+                            "strikethrough_amount_per_night": {
+                                "amount_unrounded": "US$89.80",
+                                "amount_rounded": "US$90",
+                                "currency": "USD",
+                                "value": 89.8009108041809
+                            },
+                            "strikethrough_amount": {
+                                "amount_rounded": "US$449",
+                                "value": 449.004554020905,
+                                "currency": "USD",
+                                "amount_unrounded": "US$449"
+                            },
+                            "excluded_amount": {
+                                "currency": "USD",
+                                "value": 48.492490664975,
+                                "amount_rounded": "US$48",
+                                "amount_unrounded": "US$48.49"
+                            },
+                            "all_inclusive_amount": {
+                                "amount_unrounded": "US$452.60",
+                                "value": 452.59658936918,
+                                "currency": "USD",
+                                "amount_rounded": "US$453"
+                            },
+                            "price_display_config": [
+                                {
+                                    "value": 0,
+                                    "key": "use_nightly_prices"
+                                },
+                                {
+                                    "value": 0,
+                                    "key": "use_nightly_as_dominant"
+                                },
+                                {
+                                    "value": 1,
+                                    "key": "use_js_tracking"
+                                }
+                            ],
+                            "has_long_stays_monthly_rate_price": 0,
+                            "included_taxes_and_charges_amount": {
+                                "amount_unrounded": "US$0",
+                                "amount_rounded": "US$0",
+                                "value": 0,
+                                "currency": "USD"
+                            },
+                            "has_long_stays_weekly_rate_price": 0,
+                            "gross_amount": {
+                                "amount_unrounded": "US$404.10",
+                                "amount_rounded": "US$404",
+                                "currency": "USD",
+                                "value": 404.104098618814
+                            },
+                            "gross_amount_per_night": {
+                                "amount_unrounded": "US$80.82",
+                                "currency": "USD",
+                                "value": 80.8208197237628,
+                                "amount_rounded": "US$81"
+                            },
+                            "all_inclusive_amount_hotel_currency": {
+                                "currency": "INR",
+                                "value": 38707.1999073029,
+                                "amount_rounded": "Rs.\u00a038,707",
+                                "amount_unrounded": "Rs.\u00a038,707.20"
+                            },
+                            "benefits": [
+                                {
+                                    "icon": null,
+                                    "details": "You\u2019re getting a reduced rate compared to the rate available on a computer or laptop.",
+                                    "badge_variant": "constructive",
+                                    "identifier": "mobile-rate",
+                                    "name": "Mobile-only price",
+                                    "kind": "badge"
+                                }
+                            ],
+                            "items": [
+                                {
+                                    "base": {
+                                        "kind": "variable_amount",
+                                        "base_amount": 0
+                                    },
+                                    "item_amount": {
+                                        "amount_rounded": "US$48",
+                                        "currency": "USD",
+                                        "value": 48.492490664975,
+                                        "amount_unrounded": "US$48.49"
+                                    },
+                                    "details": null,
+                                    "name": "Goods & services tax",
+                                    "kind": "charge",
+                                    "inclusion_type": "excluded"
+                                },
+                                {
+                                    "kind": "discount",
+                                    "identifier": "mobile-discount",
+                                    "details": "You\u2019re getting a reduced rate compared to the rate available on a computer or laptop.",
+                                    "name": "Mobile-only price",
+                                    "item_amount": {
+                                        "currency": "USD",
+                                        "value": 44.9004554020905,
+                                        "amount_rounded": "US$45",
+                                        "amount_unrounded": "US$44.90"
+                                    },
+                                    "base": {
+                                        "kind": "rate"
+                                    }
+                                }
+                            ],
+                            "discounted_amount": {
+                                "amount_unrounded": "US$44.90",
+                                "amount_rounded": "US$45",
+                                "value": 44.9004554020904,
+                                "currency": "USD"
+                            },
+                            "charges_details": {
+                                "amount": {
+                                    "currency": "USD",
+                                    "value": 48
+                                },
+                                "mode": "extra_charges",
+                                "translated_copy": ""
+                            }
+                        },
+                        "is_smart_deal": 0,
+                        "has_swimming_pool": 1,
+                        "currencycode": "INR",
+                        "accommodation_type": 204,
+                        "updated_checkin": null,
+                        "latitude": 19.8519869451162,
+                        "has_free_parking": 1,
+                        "bwallet": {
+                            "hotel_eligibility": 0
+                        },
+                        "is_tpi_exclusive_property": 0,
+                        "is_geo_rate": "",
+                        "is_no_prepayment_block": 1,
+                        "hotel_include_breakfast": 0,
+                        "longitude": 73.6384198039551,
+                        "hotel_name": "Wabi Sabi Resort, Igatpuri",
+                        "countrycode": "in",
+                        "cant_book": null,
+                        "preferred_plus": 1,
+                        "children_not_allowed": null,
+                        "genius_discount_percentage": 0,
+                        "review_score": 7.6,
+                        "ufi": -2097735,
+                        "class": 4,
+                        "checkin": {
+                            "from": "14:00",
+                            "until": "18:00"
+                        },
+                        "block_ids": [
+                            "1102123308_403256363_2_1_0"
+                        ],
+                        "type": "property_card",
+                        "class_is_estimated": 0,
+                        "main_photo_url": "https://cf.bstatic.com/xdata/images/hotel/square60/550266263.jpg?k=4fc9ad468063783d6e3b2c681c5bb75e5355e4e8840fb0587ea7360e44293fb1&o=",
+                        "min_total_price": 34560,
+                        "city_in_trans": "in Igatpuri",
+                        "updated_checkout": null,
+                        "hotel_name_trans": "Wabi Sabi Resort, Igatpuri",
+                        "is_genius_deal": 0,
+                        "default_language": "en",
+                        "review_score_word": "Good",
+                        "extended": 0,
+                        "id": "property_card_11021233",
+                        "default_wishlist_name": "Igatpuri",
+                        "preferred": 1,
+                        "unit_configuration_label": "<b>Hotel room</b>: 1\u00a0bed",
+                        "soldout": 0
+                    }
+                ]
+            }
+        }
+    ],
+    "response_summary": "Here\u2019s a summary of the hotel search results for your trip:  \n\nThere are 4,270 available properties matching your criteria, with three standout options highlighted.  \n\nFirst, the **Cherryleen Resort Nagaon** is a 3-star hotel priced at **\u20b919,440 (approx. $227)** for five nights. Rated **8.7 (\"Fabulous\")** from 44 reviews, it offers free cancellation, a swimming pool, and free parking. Check-in is from 12:00 PM to 5:30 PM, and check-out is by 11:00 AM.  \n\nNext, the **Palette Palghar Irayos Resort Lifestyle Retreat** in Mumbai is a **5-star** property with a **9.1 (\"Superb\")** rating from 26 reviews. The discounted rate is **\u20b915,095 (approx. $176)** for five nights, down from the original **\u20b916,896 (approx. $320)**. It also allows free cancellation and has flexible check-in times.  \n\nLastly, the **Wabi Sabi Resort in Igatpuri** is a **4-star** retreat with a **7.6 (\"Good\")** rating from 48 reviews. It offers a **mobile-exclusive discount**, bringing the price down to **\u20b934,560 (approx. $404)** from **\u20b938,707 (approx. $449)**. This resort includes a swimming pool and free parking, with check-in between 2:00 PM and 6:00 PM.  \n\nYou can filter results by **budget, bed preference, and room facilities**, and all three properties listed support free cancellation. If you're looking for luxury, the **Palette Palghar** stands out, while the **Cherryleen Resort** offers great value for a mid-range stay.",
+    "enhance_func_desc": "This API is ideal for travelers looking for hotel accommodations near specific geographic coordinates. It searches hotels based on latitude and longitude, with filters for price range, room quantity, and guest details (adults/children). The response includes hotel ratings, pricing, amenities, and cancellation policies. Users can refine results by distance (radius) and sort by budget or preferences. Coordinates must be obtained from the LocationToLatLong API.",
+    "enhance_params_desc": {
+        "enhanced_parameters": {
+            "latitude": "Latitude coordinate for hotel search location.",
+            "longitude": "Longitude coordinate for hotel search location.",
+            "arrival_date": "Check-in date for hotel booking.",
+            "departure_date": "Check-out date for hotel booking.",
+            "radius": "Search radius in kilometers (10-500km) from coordinates.",
+            "adults": "Number of adult guests (18+ years).",
+            "children_age": "Ages of child guests (comma-separated, under 18).",
+            "room_qty": "Number of rooms required for booking.",
+            "price_min": "Minimum price filter for hotel results.",
+            "price_max": "Maximum price filter for hotel results.",
+            "units": "Distance measurement unit (metric/imperial).",
+            "page_number": "Pagination number for search results.",
+            "temperature_unit": "Temperature display preference (Celsius/Fahrenheit).",
+            "languagecode": "Language preference for response data.",
+            "currency_code": "Currency for displaying hotel prices.",
+            "location": "Location identifier for regional filtering."
+        }
+    },
+    "enhance_resfield_desc": {
+        "response_fields": {
+            "primary_count": {
+                "type": "Number",
+                "description": "The total number of primary hotel search results available (e.g., 4270)."
+            },
+            "count": {
+                "type": "Number",
+                "description": "The total number of hotel search results available (e.g., 4270)."
+            },
+            "filters": {
+                "type": "Array",
+                "description": "A list of available filters for refining the hotel search results.",
+                "ar_items": {
+                    "type": "Object",
+                    "description": "An object representing a filter option.",
+                    "ob_properties": {
+                        "field": {
+                            "type": "String",
+                            "description": "The field identifier for the filter (e.g., 'price', 'tdb', 'roomfacility')."
+                        },
+                        "title": {
+                            "type": "String",
+                            "description": "The display title of the filter (e.g., 'Your budget (for 5 nights)')."
+                        }
+                    }
+                }
+            },
+            "page_loading_threshold": {
+                "type": "Number",
+                "description": "The threshold for loading additional results (e.g., 10)."
+            },
+            "applied_filters": {
+                "type": "Array",
+                "description": "A list of filters currently applied to the search results."
+            },
+            "b_max_los_data": {
+                "type": "Object",
+                "description": "Data related to the maximum length of stay (LOS) for bookings.",
+                "ob_properties": {
+                    "default_los": {
+                        "type": "Number",
+                        "description": "The default maximum length of stay in days (e.g., 45)."
+                    },
+                    "has_extended_los": {
+                        "type": "Number",
+                        "description": "Indicates if extended length of stay is available (1 for yes, 0 for no)."
+                    },
+                    "extended_los": {
+                        "type": "Number",
+                        "description": "The extended maximum length of stay in days (e.g., 90)."
+                    },
+                    "experiment": {
+                        "type": "String",
+                        "description": "The experiment identifier related to extended stays (e.g., 'long_stays_ios_extend_los_2')."
+                    },
+                    "max_allowed_los": {
+                        "type": "Number",
+                        "description": "The absolute maximum allowed length of stay in days (e.g., 90)."
+                    },
+                    "is_fullon": {
+                        "type": "Number",
+                        "description": "Indicates if the property is fully booked (1 for yes, 0 for no)."
+                    }
+                }
+            },
+            "extended_count": {
+                "type": "Number",
+                "description": "The count of extended stay options available (e.g., 0)."
+            },
+            "has_low_availability": {
+                "type": "String",
+                "description": "Indicates if the property has low availability (empty if not applicable)."
+            },
+            "room_distribution": {
+                "type": "Array",
+                "description": "A list of room distribution configurations.",
+                "ar_items": {
+                    "type": "Object",
+                    "description": "An object representing room distribution details.",
+                    "ob_properties": {
+                        "children": {
+                            "type": "Array",
+                            "description": "A list of children configurations (empty if none)."
+                        },
+                        "adults": {
+                            "type": "String",
+                            "description": "The number of adults (e.g., '1')."
+                        }
+                    }
+                }
+            },
+            "unfiltered_count": {
+                "type": "Number",
+                "description": "The total number of unfiltered hotel search results (e.g., 5033)."
+            },
+            "unfiltered_primary_count": {
+                "type": "Number",
+                "description": "The total number of unfiltered primary hotel search results (e.g., 5033)."
+            },
+            "result": {
+                "type": "Array",
+                "description": "A list of hotel search results.",
+                "ar_items": {
+                    "type": "Object",
+                    "description": "An object representing a hotel search result.",
+                    "ob_properties": {
+                        "hotel_id": {
+                            "type": "Number",
+                            "description": "The unique identifier for the hotel (e.g., 11361227)."
+                        },
+                        "default_wishlist_name": {
+                            "type": "String",
+                            "description": "The default name for the wishlist where the hotel can be saved (e.g., 'Nagaon')."
+                        },
+                        "id": {
+                            "type": "String",
+                            "description": "The unique identifier for the property card (e.g., 'property_card_11361227')."
+                        },
+                        "extended": {
+                            "type": "Number",
+                            "description": "Indicates if the stay is extended (1 for yes, 0 for no)."
+                        },
+                        "review_score_word": {
+                            "type": "String",
+                            "description": "The textual representation of the review score (e.g., 'Fabulous')."
+                        },
+                        "is_genius_deal": {
+                            "type": "Number",
+                            "description": "Indicates if the deal is a Genius deal (1 for yes, 0 for no)."
+                        },
+                        "default_language": {
+                            "type": "String",
+                            "description": "The default language for the hotel (e.g., 'xu')."
+                        },
+                        "hotel_name_trans": {
+                            "type": "String",
+                            "description": "The translated name of the hotel (e.g., 'Cherryleen Resort Nagaon')."
+                        },
+                        "updated_checkout": {
+                            "type": "null",
+                            "description": "Indicates if the checkout time has been updated (null if not)."
+                        },
+                        "soldout": {
+                            "type": "Number",
+                            "description": "Indicates if the hotel is sold out (1 for yes, 0 for no)."
+                        },
+                        "unit_configuration_label": {
+                            "type": "String",
+                            "description": "The label describing the unit configuration (e.g., '<b>Hotel room</b>: 1 bed')."
+                        },
+                        "preferred": {
+                            "type": "Number",
+                            "description": "Indicates if the hotel is a preferred option (1 for yes, 0 for no)."
+                        },
+                        "class": {
+                            "type": "Number",
+                            "description": "The star rating of the hotel (e.g., 3)."
+                        },
+                        "ufi": {
+                            "type": "Number",
+                            "description": "A unique identifier for the hotel location (e.g., -2105314)."
+                        },
+                        "review_score": {
+                            "type": "Number",
+                            "description": "The numerical review score of the hotel (e.g., 8.7)."
+                        },
+                        "genius_discount_percentage": {
+                            "type": "Number",
+                            "description": "The percentage discount for Genius deals (e.g., 0)."
+                        },
+                        "children_not_allowed": {
+                            "type": "null",
+                            "description": "Indicates if children are not allowed (null if not specified)."
+                        },
+                        "preferred_plus": {
+                            "type": "Number",
+                            "description": "Indicates if the hotel is a preferred plus option (1 for yes, 0 for no)."
+                        },
+                        "city_in_trans": {
+                            "type": "String",
+                            "description": "The translated city name where the hotel is located (e.g., 'in Nagaon')."
+                        },
+                        "min_total_price": {
+                            "type": "Number",
+                            "description": "The minimum total price for the stay in the hotel's currency (e.g., 19440)."
+                        },
+                        "main_photo_url": {
+                            "type": "String",
+                            "description": "The URL of the main photo of the hotel."
+                        },
+                        "type": {
+                            "type": "String",
+                            "description": "The type of the result (e.g., 'property_card')."
+                        },
+                        "class_is_estimated": {
+                            "type": "Number",
+                            "description": "Indicates if the star rating is estimated (1 for yes, 0 for no)."
+                        },
+                        "block_ids": {
+                            "type": "Array",
+                            "description": "A list of block identifiers for the hotel."
+                        },
+                        "checkin": {
+                            "type": "Object",
+                            "description": "The check-in time details.",
+                            "ob_properties": {
+                                "until": {
+                                    "type": "String",
+                                    "description": "The latest check-in time (e.g., '17:30')."
+                                },
+                                "from": {
+                                    "type": "String",
+                                    "description": "The earliest check-in time (e.g., '12:00')."
+                                }
+                            }
+                        },
+                        "is_tpi_exclusive_property": {
+                            "type": "Number",
+                            "description": "Indicates if the property is exclusive to TPI (1 for yes, 0 for no)."
+                        },
+                        "bwallet": {
+                            "type": "Object",
+                            "description": "Details about the hotel's eligibility for B-Wallet.",
+                            "ob_properties": {
+                                "hotel_eligibility": {
+                                    "type": "Number",
+                                    "description": "Indicates if the hotel is eligible for B-Wallet (1 for yes, 0 for no)."
+                                }
+                            }
+                        },
+                        "has_free_parking": {
+                            "type": "Number",
+                            "description": "Indicates if the hotel offers free parking (1 for yes, 0 for no)."
+                        },
+                        "updated_checkin": {
+                            "type": "null",
+                            "description": "Indicates if the check-in time has been updated (null if not)."
+                        },
+                        "latitude": {
+                            "type": "Number",
+                            "description": "The latitude coordinate of the hotel's location (e.g., 18.619497213225)."
+                        },
+                        "accommodation_type": {
+                            "type": "Number",
+                            "description": "The type of accommodation (e.g., 204)."
+                        },
+                        "has_swimming_pool": {
+                            "type": "Number",
+                            "description": "Indicates if the hotel has a swimming pool (1 for yes, 0 for no)."
+                        },
+                        "currencycode": {
+                            "type": "String",
+                            "description": "The currency code for the hotel's pricing (e.g., 'INR')."
+                        },
+                        "is_smart_deal": {
+                            "type": "Number",
+                            "description": "Indicates if the deal is a Smart deal (1 for yes, 0 for no)."
+                        },
+                        "urgency_message": {
+                            "type": "String",
+                            "description": "A message indicating urgency (e.g., 'Only 1 left at this price on Booking.com')."
+                        },
+                        "cant_book": {
+                            "type": "null",
+                            "description": "Indicates if the hotel cannot be booked (null if not specified)."
+                        },
+                        "longitude": {
+                            "type": "Number",
+                            "description": "The longitude coordinate of the hotel's location (e.g., 72.899979171893)."
+                        },
+                        "countrycode": {
+                            "type": "String",
+                            "description": "The country code where the hotel is located (e.g., 'in')."
+                        },
+                        "hotel_name": {
+                            "type": "String",
+                            "description": "The name of the hotel (e.g., 'Cherryleen Resort Nagaon')."
+                        },
+                        "hotel_include_breakfast": {
+                            "type": "Number",
+                            "description": "Indicates if breakfast is included (1 for yes, 0 for no)."
+                        },
+                        "is_geo_rate": {
+                            "type": "String",
+                            "description": "Indicates if the rate is geo-specific (empty if not applicable)."
+                        },
+                        "is_no_prepayment_block": {
+                            "type": "Number",
+                            "description": "Indicates if no prepayment is required (1 for yes, 0 for no)."
+                        },
+                        "hotel_has_vb_boost": {
+                            "type": "Number",
+                            "description": "Indicates if the hotel has VB boost (1 for yes, 0 for no)."
+                        },
+                        "badges": {
+                            "type": "Array",
+                            "description": "A list of badges associated with the hotel."
+                        },
+                        "timezone": {
+                            "type": "String",
+                            "description": "The timezone of the hotel's location (e.g., 'Asia/Kolkata')."
+                        },
+                        "review_nr": {
+                            "type": "Number",
+                            "description": "The number of reviews for the hotel (e.g., 44)."
+                        },
+                        "main_photo_id": {
+                            "type": "Number",
+                            "description": "The unique identifier for the main photo of the hotel (e.g., 519387542)."
+                        },
+                        "is_free_cancellable": {
+                            "type": "Number",
+                            "description": "Indicates if the booking is free cancellable (1 for yes, 0 for no)."
+                        },
+                        "composite_price_breakdown": {
+                            "type": "Object",
+                            "description": "A detailed breakdown of the pricing for the stay.",
+                            "ob_properties": {
+                                "gross_amount_per_night": {
+                                    "type": "Object",
+                                    "description": "The gross amount per night.",
+                                    "ob_properties": {
+                                        "amount_unrounded": {
+                                            "type": "String",
+                                            "description": "The unrounded amount per night (e.g., 'US$45.46')."
+                                        },
+                                        "value": {
+                                            "type": "Number",
+                                            "description": "The numerical value of the amount per night (e.g., 45.4617110946166)."
+                                        },
+                                        "currency": {
+                                            "type": "String",
+                                            "description": "The currency of the amount (e.g., 'USD')."
+                                        },
+                                        "amount_rounded": {
+                                            "type": "String",
+                                            "description": "The rounded amount per night (e.g., 'US$45')."
+                                        }
+                                    }
+                                },
+                                "gross_amount": {
+                                    "type": "Object",
+                                    "description": "The gross total amount for the stay.",
+                                    "ob_properties": {
+                                        "amount_rounded": {
+                                            "type": "String",
+                                            "description": "The rounded total amount (e.g., 'US$227')."
+                                        },
+                                        "value": {
+                                            "type": "Number",
+                                            "description": "The numerical value of the total amount (e.g., 227.308555473083)."
+                                        },
+                                        "currency": {
+                                            "type": "String",
+                                            "description": "The currency of the total amount (e.g., 'USD')."
+                                        },
+                                        "amount_unrounded": {
+                                            "type": "String",
+                                            "description": "The unrounded total amount (e.g., 'US$227.31')."
+                                        }
+                                    }
+                                },
+                                "all_inclusive_amount_hotel_currency": {
+                                    "type": "Object",
+                                    "description": "The all-inclusive amount in the hotel's currency.",
+                                    "ob_properties": {
+                                        "amount_unrounded": {
+                                            "type": "String",
+                                            "description": "The unrounded all-inclusive amount (e.g., 'Rs. 21,772.80')."
+                                        },
+                                        "amount_rounded": {
+                                            "type": "String",
+                                            "description": "The rounded all-inclusive amount (e.g., 'Rs. 21,773')."
+                                        },
+                                        "value": {
+                                            "type": "Number",
+                                            "description": "The numerical value of the all-inclusive amount (e.g., 21772.7999478579)."
+                                        },
+                                        "currency": {
+                                            "type": "String",
+                                            "description": "The currency of the all-inclusive amount (e.g., 'INR')."
+                                        }
+                                    }
+                                },
+                                "items": {
+                                    "type": "Array",
+                                    "description": "A list of items included in the price breakdown.",
+                                    "ar_items": {
+                                        "type": "Object",
+                                        "description": "An object representing an item in the price breakdown.",
+                                        "ob_properties": {
+                                            "base": {
+                                                "type": "Object",
+                                                "description": "The base details of the item.",
+                                                "ob_properties": {
+                                                    "base_amount": {
+                                                        "type": "Number",
+                                                        "description": "The base amount for the item (e.g., 0)."
+                                                    },
+                                                    "kind": {
+                                                        "type": "String",
+                                                        "description": "The kind of base amount (e.g., 'variable_amount')."
+                                                    }
+                                                }
+                                            },
+                                            "kind": {
+                                                "type": "String",
+                                                "description": "The kind of item (e.g., 'charge', 'discount')."
+                                            },
+                                            "inclusion_type": {
+                                                "type": "String",
+                                                "description": "The inclusion type of the item (e.g., 'excluded', 'included')."
+                                            },
+                                            "name": {
+                                                "type": "String",
+                                                "description": "The name of the item (e.g., 'Goods & services tax')."
+                                            },
+                                            "details": {
+                                                "type": "null",
+                                                "description": "Additional details about the item (null if none)."
+                                            },
+                                            "item_amount": {
+                                                "type": "Object",
+                                                "description": "The amount details for the item.",
+                                                "ob_properties": {
+                                                    "amount_unrounded": {
+                                                        "type": "String",
+                                                        "description": "The unrounded item amount (e.g., 'US$27.28')."
+                                                    },
+                                                    "amount_rounded": {
+                                                        "type": "String",
+                                                        "description": "The rounded item amount (e.g., 'US$27')."
+                                                    },
+                                                    "currency": {
+                                                        "type": "String",
+                                                        "description": "The currency of the item amount (e.g., 'USD')."
+                                                    },
+                                                    "value": {
+                                                        "type": "Number",
+                                                        "description": "The numerical value of the item amount (e.g., 27.27702665677)."
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                "benefits": {
+                                    "type": "Array",
+                                    "description": "A list of benefits included in the price."
+                                },
+                                "charges_details": {
+                                    "type": "Object",
+                                    "description": "Details about additional charges.",
+                                    "ob_properties": {
+                                        "amount": {
+                                            "type": "Object",
+                                            "description": "The amount of the additional charge.",
+                                            "ob_properties": {
+                                                "value": {
+                                                    "type": "Number",
+                                                    "description": "The numerical value of the charge (e.g., 27)."
+                                                },
+                                                "currency": {
+                                                    "type": "String",
+                                                    "description": "The currency of the charge (e.g., 'USD')."
+                                                }
+                                            }
+                                        },
+                                        "mode": {
+                                            "type": "String",
+                                            "description": "The mode of the charge (e.g., 'extra_charges')."
+                                        },
+                                        "translated_copy": {
+                                            "type": "String",
+                                            "description": "The translated copy of the charge details (empty if none)."
+                                        }
+                                    }
+                                },
+                                "price_display_config": {
+                                    "type": "Array",
+                                    "description": "Configuration for displaying the price.",
+                                    "ar_items": {
+                                        "type": "Object",
+                                        "description": "An object representing a price display configuration.",
+                                        "ob_properties": {
+                                            "key": {
+                                                "type": "String",
+                                                "description": "The configuration key (e.g., 'use_nightly_prices')."
+                                            },
+                                            "value": {
+                                                "type": "Number",
+                                                "description": "The configuration value (e.g., 0)."
+                                            }
+                                        }
+                                    }
+                                },
+                                "included_taxes_and_charges_amount": {
+                                    "type": "Object",
+                                    "description": "The amount of included taxes and charges.",
+                                    "ob_properties": {
+                                        "amount_unrounded": {
+                                            "type": "String",
+                                            "description": "The unrounded amount of included taxes and charges (e.g., 'US$0')."
+                                        },
+                                        "value": {
+                                            "type": "Number",
+                                            "description": "The numerical value of the included taxes and charges (e.g., 0)."
+                                        },
+                                        "currency": {
+                                            "type": "String",
+                                            "description": "The currency of the included taxes and charges (e.g., 'USD')."
+                                        },
+                                        "amount_rounded": {
+                                            "type": "String",
+                                            "description": "The rounded amount of included taxes and charges (e.g., 'US$0')."
+                                        }
+                                    }
+                                },
+                                "has_long_stays_monthly_rate_price": {
+                                    "type": "Number",
+                                    "description": "Indicates if there is a monthly rate price for long stays (1 for yes, 0 for no)."
+                                },
+                                "has_long_stays_weekly_rate_price": {
+                                    "type": "Number",
+                                    "description": "Indicates if there is a weekly rate price for long stays (1 for yes, 0 for no)."
+                                },
+                                "all_inclusive_amount": {
+                                    "type": "Object",
+                                    "description": "The all-inclusive amount for the stay.",
+                                    "ob_properties": {
+                                        "amount_unrounded": {
+                                            "type": "String",
+                                            "description": "The unrounded all-inclusive amount (e.g., 'US$254.59')."
+                                        },
+                                        "currency": {
+                                            "type": "String",
+                                            "description": "The currency of the all-inclusive amount (e.g., 'USD')."
+                                        },
+                                        "value": {
+                                            "type": "Number",
+                                            "description": "The numerical value of the all-inclusive amount (e.g., 254.585581520164)."
+                                        },
+                                        "amount_rounded": {
+                                            "type": "String",
+                                            "description": "The rounded all-inclusive amount (e.g., 'US$255')."
+                                        }
+                                    }
+                                },
+                                "net_amount": {
+                                    "type": "Object",
+                                    "description": "The net amount for the stay.",
+                                    "ob_properties": {
+                                        "amount_unrounded": {
+                                            "type": "String",
+                                            "description": "The unrounded net amount (e.g., 'US$227.31')."
+                                        },
+                                        "amount_rounded": {
+                                            "type": "String",
+                                            "description": "The rounded net amount (e.g., 'US$227')."
+                                        },
+                                        "value": {
+                                            "type": "Number",
+                                            "description": "The numerical value of the net amount (e.g., 227.308555473083)."
+                                        },
+                                        "currency": {
+                                            "type": "String",
+                                            "description": "The currency of the net amount (e.g., 'USD')."
+                                        }
+                                    }
+                                },
+                                "gross_amount_hotel_currency": {
+                                    "type": "Object",
+                                    "description": "The gross amount in the hotel's currency.",
+                                    "ob_properties": {
+                                        "amount_unrounded": {
+                                            "type": "String",
+                                            "description": "The unrounded gross amount (e.g., 'Rs. 19,440')."
+                                        },
+                                        "value": {
+                                            "type": "Number",
+                                            "description": "The numerical value of the gross amount (e.g., 19440)."
+                                        },
+                                        "currency": {
+                                            "type": "String",
+                                            "description": "The currency of the gross amount (e.g., 'INR')."
+                                        },
+                                        "amount_rounded": {
+                                            "type": "String",
+                                            "description": "The rounded gross amount (e.g., 'Rs. 19,440')."
+                                        }
+                                    }
+                                },
+                                "excluded_amount": {
+                                    "type": "Object",
+                                    "description": "The amount excluded from the total price.",
+                                    "ob_properties": {
+                                        "amount_rounded": {
+                                            "type": "String",
+                                            "description": "The rounded excluded amount (e.g., 'US$27')."
+                                        },
+                                        "currency": {
+                                            "type": "String",
+                                            "description": "The currency of the excluded amount (e.g., 'USD')."
+                                        },
+                                        "value": {
+                                            "type": "Number",
+                                            "description": "The numerical value of the excluded amount (e.g., 27.27702665677)."
+                                        },
+                                        "amount_unrounded": {
+                                            "type": "String",
+                                            "description": "The unrounded excluded amount (e.g., 'US$27.28')."
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "checkout": {
+                            "type": "Object",
+                            "description": "The checkout time details.",
+                            "ob_properties": {
+                                "from": {
+                                    "type": "String",
+                                    "description": "The earliest checkout time (e.g., '10:00')."
+                                },
+                                "until": {
+                                    "type": "String",
+                                    "description": "The latest checkout time (e.g., '11:00')."
+                                }
+                            }
+                        },
+                        "city": {
+                            "type": "String",
+                            "description": "The city where the hotel is located (e.g., 'Nagaon')."
+                        },
+                        "last_reservation_data": {
+                            "type": "Object",
+                            "description": "Data about the last reservation for the hotel.",
+                            "ob_properties": {
+                                "last_reservation_ellapsed_months": {
+                                    "type": "Number",
+                                    "description": "The number of months since the last reservation (e.g., 1)."
+                                }
+                            }
+                        },
+                        "distances": {
+                            "type": "Array",
+                            "description": "A list of distances to nearby points of interest."
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "params_desc_list": null,
+    "response_desc_list": [
+        {
+            "path_name": "$.primary_count",
+            "name": "primary_count",
+            "description": "The total number of primary hotel search results available (e.g., 4270)."
+        },
+        {
+            "path_name": "$.count",
+            "name": "count",
+            "description": "The total number of hotel search results available (e.g., 4270)."
+        },
+        {
+            "path_name": "$.filters",
+            "name": "filters",
+            "description": "A list of available filters for refining the hotel search results."
+        },
+        {
+            "path_name": "$.filters[]",
+            "name": "filters[]",
+            "description": "An object representing a filter option."
+        },
+        {
+            "path_name": "$.filters[].field",
+            "name": "field",
+            "description": "The field identifier for the filter (e.g., 'price', 'tdb', 'roomfacility')."
+        },
+        {
+            "path_name": "$.filters[].title",
+            "name": "title",
+            "description": "The display title of the filter (e.g., 'Your budget (for 5 nights)')."
+        },
+        {
+            "path_name": "$.page_loading_threshold",
+            "name": "page_loading_threshold",
+            "description": "The threshold for loading additional results (e.g., 10)."
+        },
+        {
+            "path_name": "$.applied_filters",
+            "name": "applied_filters",
+            "description": "A list of filters currently applied to the search results."
+        },
+        {
+            "path_name": "$.b_max_los_data",
+            "name": "b_max_los_data",
+            "description": "Data related to the maximum length of stay (LOS) for bookings."
+        },
+        {
+            "path_name": "$.b_max_los_data.default_los",
+            "name": "default_los",
+            "description": "The default maximum length of stay in days (e.g., 45)."
+        },
+        {
+            "path_name": "$.b_max_los_data.has_extended_los",
+            "name": "has_extended_los",
+            "description": "Indicates if extended length of stay is available (1 for yes, 0 for no)."
+        },
+        {
+            "path_name": "$.b_max_los_data.extended_los",
+            "name": "extended_los",
+            "description": "The extended maximum length of stay in days (e.g., 90)."
+        },
+        {
+            "path_name": "$.b_max_los_data.experiment",
+            "name": "experiment",
+            "description": "The experiment identifier related to extended stays (e.g., 'long_stays_ios_extend_los_2')."
+        },
+        {
+            "path_name": "$.b_max_los_data.max_allowed_los",
+            "name": "max_allowed_los",
+            "description": "The absolute maximum allowed length of stay in days (e.g., 90)."
+        },
+        {
+            "path_name": "$.b_max_los_data.is_fullon",
+            "name": "is_fullon",
+            "description": "Indicates if the property is fully booked (1 for yes, 0 for no)."
+        },
+        {
+            "path_name": "$.extended_count",
+            "name": "extended_count",
+            "description": "The count of extended stay options available (e.g., 0)."
+        },
+        {
+            "path_name": "$.has_low_availability",
+            "name": "has_low_availability",
+            "description": "Indicates if the property has low availability (empty if not applicable)."
+        },
+        {
+            "path_name": "$.room_distribution",
+            "name": "room_distribution",
+            "description": "A list of room distribution configurations."
+        },
+        {
+            "path_name": "$.room_distribution[]",
+            "name": "room_distribution[]",
+            "description": "An object representing room distribution details."
+        },
+        {
+            "path_name": "$.room_distribution[].children",
+            "name": "children",
+            "description": "A list of children configurations (empty if none)."
+        },
+        {
+            "path_name": "$.room_distribution[].adults",
+            "name": "adults",
+            "description": "The number of adults (e.g., '1')."
+        },
+        {
+            "path_name": "$.unfiltered_count",
+            "name": "unfiltered_count",
+            "description": "The total number of unfiltered hotel search results (e.g., 5033)."
+        },
+        {
+            "path_name": "$.unfiltered_primary_count",
+            "name": "unfiltered_primary_count",
+            "description": "The total number of unfiltered primary hotel search results (e.g., 5033)."
+        },
+        {
+            "path_name": "$.result",
+            "name": "result",
+            "description": "A list of hotel search results."
+        },
+        {
+            "path_name": "$.result[]",
+            "name": "result[]",
+            "description": "An object representing a hotel search result."
+        },
+        {
+            "path_name": "$.result[].hotel_id",
+            "name": "hotel_id",
+            "description": "The unique identifier for the hotel (e.g., 11361227)."
+        },
+        {
+            "path_name": "$.result[].default_wishlist_name",
+            "name": "default_wishlist_name",
+            "description": "The default name for the wishlist where the hotel can be saved (e.g., 'Nagaon')."
+        },
+        {
+            "path_name": "$.result[].id",
+            "name": "id",
+            "description": "The unique identifier for the property card (e.g., 'property_card_11361227')."
+        },
+        {
+            "path_name": "$.result[].extended",
+            "name": "extended",
+            "description": "Indicates if the stay is extended (1 for yes, 0 for no)."
+        },
+        {
+            "path_name": "$.result[].review_score_word",
+            "name": "review_score_word",
+            "description": "The textual representation of the review score (e.g., 'Fabulous')."
+        },
+        {
+            "path_name": "$.result[].is_genius_deal",
+            "name": "is_genius_deal",
+            "description": "Indicates if the deal is a Genius deal (1 for yes, 0 for no)."
+        },
+        {
+            "path_name": "$.result[].default_language",
+            "name": "default_language",
+            "description": "The default language for the hotel (e.g., 'xu')."
+        },
+        {
+            "path_name": "$.result[].hotel_name_trans",
+            "name": "hotel_name_trans",
+            "description": "The translated name of the hotel (e.g., 'Cherryleen Resort Nagaon')."
+        },
+        {
+            "path_name": "$.result[].updated_checkout",
+            "name": "updated_checkout",
+            "description": "Indicates if the checkout time has been updated (null if not)."
+        },
+        {
+            "path_name": "$.result[].soldout",
+            "name": "soldout",
+            "description": "Indicates if the hotel is sold out (1 for yes, 0 for no)."
+        },
+        {
+            "path_name": "$.result[].unit_configuration_label",
+            "name": "unit_configuration_label",
+            "description": "The label describing the unit configuration (e.g., '<b>Hotel room</b>: 1 bed')."
+        },
+        {
+            "path_name": "$.result[].preferred",
+            "name": "preferred",
+            "description": "Indicates if the hotel is a preferred option (1 for yes, 0 for no)."
+        },
+        {
+            "path_name": "$.result[].class",
+            "name": "class",
+            "description": "The star rating of the hotel (e.g., 3)."
+        },
+        {
+            "path_name": "$.result[].ufi",
+            "name": "ufi",
+            "description": "A unique identifier for the hotel location (e.g., -2105314)."
+        },
+        {
+            "path_name": "$.result[].review_score",
+            "name": "review_score",
+            "description": "The numerical review score of the hotel (e.g., 8.7)."
+        },
+        {
+            "path_name": "$.result[].genius_discount_percentage",
+            "name": "genius_discount_percentage",
+            "description": "The percentage discount for Genius deals (e.g., 0)."
+        },
+        {
+            "path_name": "$.result[].children_not_allowed",
+            "name": "children_not_allowed",
+            "description": "Indicates if children are not allowed (null if not specified)."
+        },
+        {
+            "path_name": "$.result[].preferred_plus",
+            "name": "preferred_plus",
+            "description": "Indicates if the hotel is a preferred plus option (1 for yes, 0 for no)."
+        },
+        {
+            "path_name": "$.result[].city_in_trans",
+            "name": "city_in_trans",
+            "description": "The translated city name where the hotel is located (e.g., 'in Nagaon')."
+        },
+        {
+            "path_name": "$.result[].min_total_price",
+            "name": "min_total_price",
+            "description": "The minimum total price for the stay in the hotel's currency (e.g., 19440)."
+        },
+        {
+            "path_name": "$.result[].main_photo_url",
+            "name": "main_photo_url",
+            "description": "The URL of the main photo of the hotel."
+        },
+        {
+            "path_name": "$.result[].type",
+            "name": "type",
+            "description": "The type of the result (e.g., 'property_card')."
+        },
+        {
+            "path_name": "$.result[].class_is_estimated",
+            "name": "class_is_estimated",
+            "description": "Indicates if the star rating is estimated (1 for yes, 0 for no)."
+        },
+        {
+            "path_name": "$.result[].block_ids",
+            "name": "block_ids",
+            "description": "A list of block identifiers for the hotel."
+        },
+        {
+            "path_name": "$.result[].checkin",
+            "name": "checkin",
+            "description": "The check-in time details."
+        },
+        {
+            "path_name": "$.result[].checkin.until",
+            "name": "until",
+            "description": "The latest check-in time (e.g., '17:30')."
+        },
+        {
+            "path_name": "$.result[].checkin.from",
+            "name": "from",
+            "description": "The earliest check-in time (e.g., '12:00')."
+        },
+        {
+            "path_name": "$.result[].is_tpi_exclusive_property",
+            "name": "is_tpi_exclusive_property",
+            "description": "Indicates if the property is exclusive to TPI (1 for yes, 0 for no)."
+        },
+        {
+            "path_name": "$.result[].bwallet",
+            "name": "bwallet",
+            "description": "Details about the hotel's eligibility for B-Wallet."
+        },
+        {
+            "path_name": "$.result[].bwallet.hotel_eligibility",
+            "name": "hotel_eligibility",
+            "description": "Indicates if the hotel is eligible for B-Wallet (1 for yes, 0 for no)."
+        },
+        {
+            "path_name": "$.result[].has_free_parking",
+            "name": "has_free_parking",
+            "description": "Indicates if the hotel offers free parking (1 for yes, 0 for no)."
+        },
+        {
+            "path_name": "$.result[].updated_checkin",
+            "name": "updated_checkin",
+            "description": "Indicates if the check-in time has been updated (null if not)."
+        },
+        {
+            "path_name": "$.result[].latitude",
+            "name": "latitude",
+            "description": "The latitude coordinate of the hotel's location (e.g., 18.619497213225)."
+        },
+        {
+            "path_name": "$.result[].accommodation_type",
+            "name": "accommodation_type",
+            "description": "The type of accommodation (e.g., 204)."
+        },
+        {
+            "path_name": "$.result[].has_swimming_pool",
+            "name": "has_swimming_pool",
+            "description": "Indicates if the hotel has a swimming pool (1 for yes, 0 for no)."
+        },
+        {
+            "path_name": "$.result[].currencycode",
+            "name": "currencycode",
+            "description": "The currency code for the hotel's pricing (e.g., 'INR')."
+        },
+        {
+            "path_name": "$.result[].is_smart_deal",
+            "name": "is_smart_deal",
+            "description": "Indicates if the deal is a Smart deal (1 for yes, 0 for no)."
+        },
+        {
+            "path_name": "$.result[].urgency_message",
+            "name": "urgency_message",
+            "description": "A message indicating urgency (e.g., 'Only 1 left at this price on Booking.com')."
+        },
+        {
+            "path_name": "$.result[].cant_book",
+            "name": "cant_book",
+            "description": "Indicates if the hotel cannot be booked (null if not specified)."
+        },
+        {
+            "path_name": "$.result[].longitude",
+            "name": "longitude",
+            "description": "The longitude coordinate of the hotel's location (e.g., 72.899979171893)."
+        },
+        {
+            "path_name": "$.result[].countrycode",
+            "name": "countrycode",
+            "description": "The country code where the hotel is located (e.g., 'in')."
+        },
+        {
+            "path_name": "$.result[].hotel_name",
+            "name": "hotel_name",
+            "description": "The name of the hotel (e.g., 'Cherryleen Resort Nagaon')."
+        },
+        {
+            "path_name": "$.result[].hotel_include_breakfast",
+            "name": "hotel_include_breakfast",
+            "description": "Indicates if breakfast is included (1 for yes, 0 for no)."
+        },
+        {
+            "path_name": "$.result[].is_geo_rate",
+            "name": "is_geo_rate",
+            "description": "Indicates if the rate is geo-specific (empty if not applicable)."
+        },
+        {
+            "path_name": "$.result[].is_no_prepayment_block",
+            "name": "is_no_prepayment_block",
+            "description": "Indicates if no prepayment is required (1 for yes, 0 for no)."
+        },
+        {
+            "path_name": "$.result[].hotel_has_vb_boost",
+            "name": "hotel_has_vb_boost",
+            "description": "Indicates if the hotel has VB boost (1 for yes, 0 for no)."
+        },
+        {
+            "path_name": "$.result[].badges",
+            "name": "badges",
+            "description": "A list of badges associated with the hotel."
+        },
+        {
+            "path_name": "$.result[].timezone",
+            "name": "timezone",
+            "description": "The timezone of the hotel's location (e.g., 'Asia/Kolkata')."
+        },
+        {
+            "path_name": "$.result[].review_nr",
+            "name": "review_nr",
+            "description": "The number of reviews for the hotel (e.g., 44)."
+        },
+        {
+            "path_name": "$.result[].main_photo_id",
+            "name": "main_photo_id",
+            "description": "The unique identifier for the main photo of the hotel (e.g., 519387542)."
+        },
+        {
+            "path_name": "$.result[].is_free_cancellable",
+            "name": "is_free_cancellable",
+            "description": "Indicates if the booking is free cancellable (1 for yes, 0 for no)."
+        },
+        {
+            "path_name": "$.result[].composite_price_breakdown",
+            "name": "composite_price_breakdown",
+            "description": "A detailed breakdown of the pricing for the stay."
+        },
+        {
+            "path_name": "$.result[].composite_price_breakdown.gross_amount_per_night",
+            "name": "gross_amount_per_night",
+            "description": "The gross amount per night."
+        },
+        {
+            "path_name": "$.result[].composite_price_breakdown.gross_amount_per_night.amount_unrounded",
+            "name": "amount_unrounded",
+            "description": "The unrounded amount per night (e.g., 'US$45.46')."
+        },
+        {
+            "path_name": "$.result[].composite_price_breakdown.gross_amount_per_night.value",
+            "name": "value",
+            "description": "The numerical value of the amount per night (e.g., 45.4617110946166)."
+        },
+        {
+            "path_name": "$.result[].composite_price_breakdown.gross_amount_per_night.currency",
+            "name": "currency",
+            "description": "The currency of the amount (e.g., 'USD')."
+        },
+        {
+            "path_name": "$.result[].composite_price_breakdown.gross_amount_per_night.amount_rounded",
+            "name": "amount_rounded",
+            "description": "The rounded amount per night (e.g., 'US$45')."
+        },
+        {
+            "path_name": "$.result[].composite_price_breakdown.gross_amount",
+            "name": "gross_amount",
+            "description": "The gross total amount for the stay."
+        },
+        {
+            "path_name": "$.result[].composite_price_breakdown.gross_amount.amount_rounded",
+            "name": "amount_rounded",
+            "description": "The rounded total amount (e.g., 'US$227')."
+        },
+        {
+            "path_name": "$.result[].composite_price_breakdown.gross_amount.value",
+            "name": "value",
+            "description": "The numerical value of the total amount (e.g., 227.308555473083)."
+        },
+        {
+            "path_name": "$.result[].composite_price_breakdown.gross_amount.currency",
+            "name": "currency",
+            "description": "The currency of the total amount (e.g., 'USD')."
+        },
+        {
+            "path_name": "$.result[].composite_price_breakdown.gross_amount.amount_unrounded",
+            "name": "amount_unrounded",
+            "description": "The unrounded total amount (e.g., 'US$227.31')."
+        },
+        {
+            "path_name": "$.result[].composite_price_breakdown.all_inclusive_amount_hotel_currency",
+            "name": "all_inclusive_amount_hotel_currency",
+            "description": "The all-inclusive amount in the hotel's currency."
+        },
+        {
+            "path_name": "$.result[].composite_price_breakdown.all_inclusive_amount_hotel_currency.amount_unrounded",
+            "name": "amount_unrounded",
+            "description": "The unrounded all-inclusive amount (e.g., 'Rs. 21,772.80')."
+        },
+        {
+            "path_name": "$.result[].composite_price_breakdown.all_inclusive_amount_hotel_currency.amount_rounded",
+            "name": "amount_rounded",
+            "description": "The rounded all-inclusive amount (e.g., 'Rs. 21,773')."
+        },
+        {
+            "path_name": "$.result[].composite_price_breakdown.all_inclusive_amount_hotel_currency.value",
+            "name": "value",
+            "description": "The numerical value of the all-inclusive amount (e.g., 21772.7999478579)."
+        },
+        {
+            "path_name": "$.result[].composite_price_breakdown.all_inclusive_amount_hotel_currency.currency",
+            "name": "currency",
+            "description": "The currency of the all-inclusive amount (e.g., 'INR')."
+        },
+        {
+            "path_name": "$.result[].composite_price_breakdown.items",
+            "name": "items",
+            "description": "A list of items included in the price breakdown."
+        },
+        {
+            "path_name": "$.result[].composite_price_breakdown.items[]",
+            "name": "items[]",
+            "description": "An object representing an item in the price breakdown."
+        },
+        {
+            "path_name": "$.result[].composite_price_breakdown.items[].base",
+            "name": "base",
+            "description": "The base details of the item."
+        },
+        {
+            "path_name": "$.result[].composite_price_breakdown.items[].base.base_amount",
+            "name": "base_amount",
+            "description": "The base amount for the item (e.g., 0)."
+        },
+        {
+            "path_name": "$.result[].composite_price_breakdown.items[].base.kind",
+            "name": "kind",
+            "description": "The kind of base amount (e.g., 'variable_amount')."
+        },
+        {
+            "path_name": "$.result[].composite_price_breakdown.items[].kind",
+            "name": "kind",
+            "description": "The kind of item (e.g., 'charge', 'discount')."
+        },
+        {
+            "path_name": "$.result[].composite_price_breakdown.items[].inclusion_type",
+            "name": "inclusion_type",
+            "description": "The inclusion type of the item (e.g., 'excluded', 'included')."
+        },
+        {
+            "path_name": "$.result[].composite_price_breakdown.items[].name",
+            "name": "name",
+            "description": "The name of the item (e.g., 'Goods & services tax')."
+        },
+        {
+            "path_name": "$.result[].composite_price_breakdown.items[].details",
+            "name": "details",
+            "description": "Additional details about the item (null if none)."
+        },
+        {
+            "path_name": "$.result[].composite_price_breakdown.items[].item_amount",
+            "name": "item_amount",
+            "description": "The amount details for the item."
+        },
+        {
+            "path_name": "$.result[].composite_price_breakdown.items[].item_amount.amount_unrounded",
+            "name": "amount_unrounded",
+            "description": "The unrounded item amount (e.g., 'US$27.28')."
+        },
+        {
+            "path_name": "$.result[].composite_price_breakdown.items[].item_amount.amount_rounded",
+            "name": "amount_rounded",
+            "description": "The rounded item amount (e.g., 'US$27')."
+        },
+        {
+            "path_name": "$.result[].composite_price_breakdown.items[].item_amount.currency",
+            "name": "currency",
+            "description": "The currency of the item amount (e.g., 'USD')."
+        },
+        {
+            "path_name": "$.result[].composite_price_breakdown.items[].item_amount.value",
+            "name": "value",
+            "description": "The numerical value of the item amount (e.g., 27.27702665677)."
+        },
+        {
+            "path_name": "$.result[].composite_price_breakdown.benefits",
+            "name": "benefits",
+            "description": "A list of benefits included in the price."
+        },
+        {
+            "path_name": "$.result[].composite_price_breakdown.charges_details",
+            "name": "charges_details",
+            "description": "Details about additional charges."
+        },
+        {
+            "path_name": "$.result[].composite_price_breakdown.charges_details.amount",
+            "name": "amount",
+            "description": "The amount of the additional charge."
+        },
+        {
+            "path_name": "$.result[].composite_price_breakdown.charges_details.amount.value",
+            "name": "value",
+            "description": "The numerical value of the charge (e.g., 27)."
+        },
+        {
+            "path_name": "$.result[].composite_price_breakdown.charges_details.amount.currency",
+            "name": "currency",
+            "description": "The currency of the charge (e.g., 'USD')."
+        },
+        {
+            "path_name": "$.result[].composite_price_breakdown.charges_details.mode",
+            "name": "mode",
+            "description": "The mode of the charge (e.g., 'extra_charges')."
+        },
+        {
+            "path_name": "$.result[].composite_price_breakdown.charges_details.translated_copy",
+            "name": "translated_copy",
+            "description": "The translated copy of the charge details (empty if none)."
+        },
+        {
+            "path_name": "$.result[].composite_price_breakdown.price_display_config",
+            "name": "price_display_config",
+            "description": "Configuration for displaying the price."
+        },
+        {
+            "path_name": "$.result[].composite_price_breakdown.price_display_config[]",
+            "name": "price_display_config[]",
+            "description": "An object representing a price display configuration."
+        },
+        {
+            "path_name": "$.result[].composite_price_breakdown.price_display_config[].key",
+            "name": "key",
+            "description": "The configuration key (e.g., 'use_nightly_prices')."
+        },
+        {
+            "path_name": "$.result[].composite_price_breakdown.price_display_config[].value",
+            "name": "value",
+            "description": "The configuration value (e.g., 0)."
+        },
+        {
+            "path_name": "$.result[].composite_price_breakdown.included_taxes_and_charges_amount",
+            "name": "included_taxes_and_charges_amount",
+            "description": "The amount of included taxes and charges."
+        },
+        {
+            "path_name": "$.result[].composite_price_breakdown.included_taxes_and_charges_amount.amount_unrounded",
+            "name": "amount_unrounded",
+            "description": "The unrounded amount of included taxes and charges (e.g., 'US$0')."
+        },
+        {
+            "path_name": "$.result[].composite_price_breakdown.included_taxes_and_charges_amount.value",
+            "name": "value",
+            "description": "The numerical value of the included taxes and charges (e.g., 0)."
+        },
+        {
+            "path_name": "$.result[].composite_price_breakdown.included_taxes_and_charges_amount.currency",
+            "name": "currency",
+            "description": "The currency of the included taxes and charges (e.g., 'USD')."
+        },
+        {
+            "path_name": "$.result[].composite_price_breakdown.included_taxes_and_charges_amount.amount_rounded",
+            "name": "amount_rounded",
+            "description": "The rounded amount of included taxes and charges (e.g., 'US$0')."
+        },
+        {
+            "path_name": "$.result[].composite_price_breakdown.has_long_stays_monthly_rate_price",
+            "name": "has_long_stays_monthly_rate_price",
+            "description": "Indicates if there is a monthly rate price for long stays (1 for yes, 0 for no)."
+        },
+        {
+            "path_name": "$.result[].composite_price_breakdown.has_long_stays_weekly_rate_price",
+            "name": "has_long_stays_weekly_rate_price",
+            "description": "Indicates if there is a weekly rate price for long stays (1 for yes, 0 for no)."
+        },
+        {
+            "path_name": "$.result[].composite_price_breakdown.all_inclusive_amount",
+            "name": "all_inclusive_amount",
+            "description": "The all-inclusive amount for the stay."
+        },
+        {
+            "path_name": "$.result[].composite_price_breakdown.all_inclusive_amount.amount_unrounded",
+            "name": "amount_unrounded",
+            "description": "The unrounded all-inclusive amount (e.g., 'US$254.59')."
+        },
+        {
+            "path_name": "$.result[].composite_price_breakdown.all_inclusive_amount.currency",
+            "name": "currency",
+            "description": "The currency of the all-inclusive amount (e.g., 'USD')."
+        },
+        {
+            "path_name": "$.result[].composite_price_breakdown.all_inclusive_amount.value",
+            "name": "value",
+            "description": "The numerical value of the all-inclusive amount (e.g., 254.585581520164)."
+        },
+        {
+            "path_name": "$.result[].composite_price_breakdown.all_inclusive_amount.amount_rounded",
+            "name": "amount_rounded",
+            "description": "The rounded all-inclusive amount (e.g., 'US$255')."
+        },
+        {
+            "path_name": "$.result[].composite_price_breakdown.net_amount",
+            "name": "net_amount",
+            "description": "The net amount for the stay."
+        },
+        {
+            "path_name": "$.result[].composite_price_breakdown.net_amount.amount_unrounded",
+            "name": "amount_unrounded",
+            "description": "The unrounded net amount (e.g., 'US$227.31')."
+        },
+        {
+            "path_name": "$.result[].composite_price_breakdown.net_amount.amount_rounded",
+            "name": "amount_rounded",
+            "description": "The rounded net amount (e.g., 'US$227')."
+        },
+        {
+            "path_name": "$.result[].composite_price_breakdown.net_amount.value",
+            "name": "value",
+            "description": "The numerical value of the net amount (e.g., 227.308555473083)."
+        },
+        {
+            "path_name": "$.result[].composite_price_breakdown.net_amount.currency",
+            "name": "currency",
+            "description": "The currency of the net amount (e.g., 'USD')."
+        },
+        {
+            "path_name": "$.result[].composite_price_breakdown.gross_amount_hotel_currency",
+            "name": "gross_amount_hotel_currency",
+            "description": "The gross amount in the hotel's currency."
+        },
+        {
+            "path_name": "$.result[].composite_price_breakdown.gross_amount_hotel_currency.amount_unrounded",
+            "name": "amount_unrounded",
+            "description": "The unrounded gross amount (e.g., 'Rs. 19,440')."
+        },
+        {
+            "path_name": "$.result[].composite_price_breakdown.gross_amount_hotel_currency.value",
+            "name": "value",
+            "description": "The numerical value of the gross amount (e.g., 19440)."
+        },
+        {
+            "path_name": "$.result[].composite_price_breakdown.gross_amount_hotel_currency.currency",
+            "name": "currency",
+            "description": "The currency of the gross amount (e.g., 'INR')."
+        },
+        {
+            "path_name": "$.result[].composite_price_breakdown.gross_amount_hotel_currency.amount_rounded",
+            "name": "amount_rounded",
+            "description": "The rounded gross amount (e.g., 'Rs. 19,440')."
+        },
+        {
+            "path_name": "$.result[].composite_price_breakdown.excluded_amount",
+            "name": "excluded_amount",
+            "description": "The amount excluded from the total price."
+        },
+        {
+            "path_name": "$.result[].composite_price_breakdown.excluded_amount.amount_rounded",
+            "name": "amount_rounded",
+            "description": "The rounded excluded amount (e.g., 'US$27')."
+        },
+        {
+            "path_name": "$.result[].composite_price_breakdown.excluded_amount.currency",
+            "name": "currency",
+            "description": "The currency of the excluded amount (e.g., 'USD')."
+        },
+        {
+            "path_name": "$.result[].composite_price_breakdown.excluded_amount.value",
+            "name": "value",
+            "description": "The numerical value of the excluded amount (e.g., 27.27702665677)."
+        },
+        {
+            "path_name": "$.result[].composite_price_breakdown.excluded_amount.amount_unrounded",
+            "name": "amount_unrounded",
+            "description": "The unrounded excluded amount (e.g., 'US$27.28')."
+        },
+        {
+            "path_name": "$.result[].checkout",
+            "name": "checkout",
+            "description": "The checkout time details."
+        },
+        {
+            "path_name": "$.result[].checkout.from",
+            "name": "from",
+            "description": "The earliest checkout time (e.g., '10:00')."
+        },
+        {
+            "path_name": "$.result[].checkout.until",
+            "name": "until",
+            "description": "The latest checkout time (e.g., '11:00')."
+        },
+        {
+            "path_name": "$.result[].city",
+            "name": "city",
+            "description": "The city where the hotel is located (e.g., 'Nagaon')."
+        },
+        {
+            "path_name": "$.result[].last_reservation_data",
+            "name": "last_reservation_data",
+            "description": "Data about the last reservation for the hotel."
+        },
+        {
+            "path_name": "$.result[].last_reservation_data.last_reservation_ellapsed_months",
+            "name": "last_reservation_ellapsed_months",
+            "description": "The number of months since the last reservation (e.g., 1)."
+        },
+        {
+            "path_name": "$.result[].distances",
+            "name": "distances",
+            "description": "A list of distances to nearby points of interest."
+        }
+    ],
+    "depends_on": [
+        {
+            "source_api_name": "Search_Hotels",
+            "dependence_type": "Soft Dependency",
+            "depencend_field": "$.hotels[*].property.latitude",
+            "param_name": "latitude",
+            "reason": "The 'Search_Hotels' API provides latitude coordinates of hotels, which can be used as input for the 'latitude' parameter in the 'Search_Hotels_By_Coordinates' API. This forms a business association where users might want to search for hotels near previously found hotel locations. The data type (String vs. Number) doesn't match exactly, but the numeric latitude values from the source can be easily converted to strings. This represents a soft dependency as the source API isn't strictly required but provides useful input for a common user workflow."
+        },
+        {
+            "source_api_name": "Taxi_Search_Location",
+            "dependence_type": "Hard Dependency",
+            "depencend_field": "$[*].latitude",
+            "param_name": "latitude",
+            "reason": "The 'Taxi_Search_Location' API provides latitude coordinates which are essential for the 'Search_Hotels_By_Coordinates' API's 'latitude' parameter. This forms a business association as travelers often need to find hotels near taxi pickup locations. The data type (String vs. Number) differs slightly, but the numeric values can be easily converted to strings. The example values demonstrate that the source API provides the exact type of geographic coordinate data required by the target API."
+        },
+        {
+            "source_api_name": "Search_Restaurants",
+            "dependence_type": "Soft Dependency",
+            "depencend_field": "$[*].latitude",
+            "param_name": "latitude",
+            "reason": "There is a business association between the 'Search_Restaurants' API and the 'Search_Hotels_By_Coordinates' API as both are related to travel and accommodation services. The 'latitude' field from the 'Search_Restaurants' API response can serve as a valid input for the 'latitude' parameter in the 'Search_Hotels_By_Coordinates' API. The data types match (both are strings representing latitude coordinates), and the example values demonstrate compatibility."
+        },
+        {
+            "source_api_name": "List_Restaurants_By_Search_Query",
+            "dependence_type": "Soft Dependency",
+            "depencend_field": "$.results[*].latitude",
+            "param_name": "latitude",
+            "reason": "The 'List_Restaurants_By_Search_Query' API provides latitude coordinates for restaurants, which can logically be used to search for nearby hotels through the 'Search_Hotels_By_Coordinates' API. This forms a business association where travelers might want to find hotels near popular restaurants. The data type (numeric latitude values) matches the target API's requirement for latitude parameters, and the example values demonstrate valid geographic coordinates suitable for hotel searches."
+        },
+        {
+            "source_api_name": "Location_to_Lat_Long",
+            "dependence_type": "Hard Dependency",
+            "depencend_field": "$[*].geometry.location.lat",
+            "param_name": "latitude",
+            "reason": "The 'Location_to_Lat_Long' API is explicitly mentioned in the target API's documentation as the source for obtaining latitude coordinates. This establishes a hard dependency relationship. The 'geometry.location.lat' field from the source API response provides the exact latitude value needed by the 'latitude' parameter in the target API, with matching data types (String vs Number, but numeric values can be easily converted to strings)."
+        },
+        {
+            "source_api_name": "Get_Popular_Attraction_Near_By",
+            "dependence_type": "Soft Dependency",
+            "depencend_field": "$.popular_landmarks[*].latitude",
+            "param_name": "latitude",
+            "reason": "There is a business association between the 'Get_Popular_Attraction_Near_By' API and the 'Search_Hotels_By_Coordinates' API, as travelers often search for hotels near popular attractions. The 'latitude' field from the 'popular_landmarks' in the response of 'Get_Popular_Attraction_Near_By' can serve as a valid input for the 'latitude' parameter in 'Search_Hotels_By_Coordinates'. The data types match (both are strings representing latitude coordinates), and the example values demonstrate compatibility."
+        },
+        {
+            "source_api_name": "Car_Auto-Complete",
+            "dependence_type": "Soft Dependency",
+            "depencend_field": "$[*].coordinates.latitude",
+            "param_name": "latitude",
+            "reason": "The 'Car_Auto-Complete' API provides latitude coordinates that can be used as input for the 'latitude' parameter in the 'Search_Hotels_By_Coordinates' API. This forms a business association where users might search for car rental locations first and then look for nearby hotels. The data type (String) matches the required type for the target API parameter, and the example values demonstrate valid latitude coordinates that could be used directly."
+        },
+        {
+            "source_api_name": "Car_Search",
+            "dependence_type": "Soft Dependency",
+            "depencend_field": "$.content.map.supplierLocations[*].supplierPinContent.latLong.latitude",
+            "param_name": "latitude",
+            "reason": "The 'Car_Search' API provides latitude coordinates for car rental locations, which could potentially be used to search for nearby hotels through the 'Search_Hotels_By_Coordinates' API. This represents a logical business relationship where travelers might want to find hotels near their car rental locations. The data type (numeric coordinate) matches the requirement for the 'latitude' parameter in the target API. However, this is a soft dependency as the car rental locations are not strictly required for hotel search but could provide useful input for a common travel planning scenario."
+        },
+        {
+            "source_api_name": "Search_Hotels",
+            "dependence_type": "Hard Dependency",
+            "depencend_field": "$.hotels[*].property.longitude",
+            "param_name": "longitude",
+            "reason": "There is a clear business relationship between the longitude values returned by the 'Search_Hotels' API and the longitude parameter required by the 'Search_Hotels_By_Coordinates' API. The longitude field from the source API matches exactly in data type (String vs. Number can be easily converted) and represents the same geographic coordinate information needed for the target API. This establishes a hard dependency as the source API provides essential location data required for the target API's functionality."
+        },
+        {
+            "source_api_name": "Taxi_Search_Location",
+            "dependence_type": "Soft Dependency",
+            "depencend_field": "$[*].longitude",
+            "param_name": "longitude",
+            "reason": "The 'Taxi_Search_Location' API provides longitude coordinates that can be directly used as input for the 'longitude' parameter in the 'Search_Hotels_By_Coordinates' API. There is a clear business relationship as both APIs deal with geographic locations, and the data types match perfectly (both are String representations of longitude coordinates). The source API's response field '$[*].longitude' contains the exact information needed by the target API parameter."
+        },
+        {
+            "source_api_name": "List_Restaurants_By_Search_Query",
+            "dependence_type": "Soft Dependency",
+            "depencend_field": "$.results[*].longitude",
+            "param_name": "longitude",
+            "reason": "There is a business association between the 'List_Restaurants_By_Search_Query' API and the 'Search_Hotels_By_Coordinates' API as both are related to location-based searches for travel and accommodation services. The 'longitude' field from the restaurant API's response matches the data type and purpose of the 'longitude' parameter in the hotel search API. This represents a soft dependency as the restaurant API isn't strictly required for hotel search but provides useful location data that could be used in a travel planning workflow."
+        },
+        {
+            "source_api_name": "Get_restaurant_details",
+            "dependence_type": "Soft Dependency",
+            "depencend_field": "$.longitude",
+            "param_name": "longitude",
+            "reason": "The 'Get_restaurant_details' API provides longitude coordinates for restaurants, which could potentially be used for hotel searches in the same geographic area. While the APIs serve different purposes (restaurants vs. hotels), there's a logical business relationship where travelers often look for accommodations near dining options. The data type (String) and format of the longitude value match the requirements of the 'Search_Hotels_By_Coordinates' API."
+        },
+        {
+            "source_api_name": "Search_Restaurants",
+            "dependence_type": "Soft Dependency",
+            "depencend_field": "$[*].longitude",
+            "param_name": "longitude",
+            "reason": "There is a clear business relationship between searching for restaurants and searching for hotels, as travelers often need both services in the same location. The 'longitude' field from 'Search_Restaurants' matches exactly with the 'longitude' parameter required by 'Search_Hotels_By_Coordinates' in terms of data type and purpose. This represents a soft dependency as the restaurant API isn't strictly required for hotel search but provides useful input for a common user workflow."
+        },
+        {
+            "source_api_name": "Get_Popular_Attraction_Near_By",
+            "dependence_type": "Soft Dependency",
+            "depencend_field": "$.popular_landmarks[*].longitude",
+            "param_name": "longitude",
+            "reason": "The 'Get_Popular_Attraction_Near_By' API provides longitude coordinates of popular landmarks near a hotel, which can be used to search for hotels in the vicinity of those attractions. This establishes a business relationship where travelers might want to stay near popular attractions. The longitude field from the source API matches the data type (String) and purpose (geographic coordinates) required by the 'longitude' parameter in the 'Search_Hotels_By_Coordinates' API."
+        },
+        {
+            "source_api_name": "Get_Popular_Attraction_Near_By",
+            "dependence_type": "Soft Dependency",
+            "depencend_field": "$.closest_landmarks[*].longitude",
+            "param_name": "longitude",
+            "reason": "There is a business association between the 'Get_Popular_Attraction_Near_By' API and the 'Search_Hotels_By_Coordinates' API, as travelers often look for hotels near popular attractions. The 'closest_landmarks[*].longitude' field from the source API matches the data type and purpose of the 'longitude' parameter in the target API, which is used to search for hotels near specific coordinates. This represents a soft dependency as the attractions API isn't strictly required for hotel search but provides useful input for a common user workflow."
+        },
+        {
+            "source_api_name": "Car_Auto-Complete",
+            "dependence_type": "Soft Dependency",
+            "depencend_field": "$[*].coordinates.longitude",
+            "param_name": "longitude",
+            "reason": "The 'Car_Auto-Complete' API provides longitude coordinates that can be used as input for the 'longitude' parameter in the 'Search_Hotels_By_Coordinates' API. This establishes a business-association where travelers might first search for car rental locations and then look for nearby hotels. The data type (String) and the format of the longitude values match perfectly, making the response field from the source API a valid input for the target API parameter."
+        },
+        {
+            "source_api_name": "Get_Nearby_Cities",
+            "dependence_type": "Hard Dependency",
+            "depencend_field": "$[*].longitude",
+            "param_name": "longitude",
+            "reason": "The 'Get_Nearby_Cities' API provides longitude coordinates that can be directly used as input for the 'longitude' parameter in the 'Search_Hotels_By_Coordinates' API. This establishes a hard dependency as the target API explicitly requires longitude coordinates for hotel searches, and the source API provides exactly this geographic data. The data types match (both are String representations of longitude coordinates), and the example values demonstrate compatible coordinate formats."
+        },
+        {
+            "source_api_name": "Get_Room_List",
+            "dependence_type": "Hard Dependency",
+            "depencend_field": "$.arrival_date",
+            "param_name": "arrival_date",
+            "reason": "The 'Get_Room_List' API provides room availability information for specific dates, which directly relates to the check-in date required by the 'Search_Hotels_By_Coordinates' API. The 'arrival_date' field from the source API matches exactly in format (yyyy-mm-dd) and purpose (hotel booking check-in date) with the target API's parameter. This represents a hard dependency as the room list API provides essential date information that would logically precede a hotel search by coordinates."
+        },
+        {
+            "source_api_name": "Search_Hotels",
+            "dependence_type": "Soft Dependency",
+            "depencend_field": "$.hotels[*].property.checkinDate",
+            "param_name": "arrival_date",
+            "reason": "The 'Search_Hotels' API's response field 'hotels[*].property.checkinDate' provides check-in dates that can be directly used as the 'arrival_date' parameter for 'Search_Hotels_By_Coordinates'. The data types match perfectly (yyyy-mm-dd format), and there's a logical business relationship where users might want to search for hotels by coordinates after seeing available check-in dates from a general hotel search. This represents a soft dependency as the general hotel search isn't strictly required but provides useful input for a common user workflow."
+        },
+        {
+            "source_api_name": "Get_Min_Price",
+            "dependence_type": "Soft Dependency",
+            "depencend_field": "$[*].departureDate",
+            "param_name": "arrival_date",
+            "reason": "While the APIs serve different functions (flight pricing vs. hotel booking), there's a logical business relationship where travelers commonly use flight departure dates to determine their hotel check-in dates. The 'departureDate' field from 'Get_Min_Price' perfectly matches the 'Date (yyyy-mm-dd)' format required by 'arrival_date' in 'Search_Hotels_By_Coordinates'. This represents a soft dependency as the flight API isn't strictly required for hotel search but provides useful input for a common user workflow."
+        },
+        {
+            "source_api_name": "Get_Min_Price_Multi_Stops",
+            "dependence_type": "Soft Dependency",
+            "depencend_field": "$[*].departureDate",
+            "param_name": "arrival_date",
+            "reason": "There is a logical business relationship where travelers commonly use flight departure dates to determine their hotel check-in dates. The 'departureDate' field from 'Get_Min_Price_Multi_Stops' matches the 'Date (yyyy-mm-dd)' format required by 'arrival_date' in 'Search_Hotels_By_Coordinates'. This represents a soft dependency as the flight API isn't strictly required for hotel search but provides useful input for a common user workflow."
+        },
+        {
+            "source_api_name": "Get_Min_Price_Multi_Stops",
+            "dependence_type": "Soft Dependency",
+            "depencend_field": "$[*].searchDates",
+            "param_name": "arrival_date",
+            "reason": "While the APIs serve different functions (flight pricing vs. hotel booking), there's a logical business relationship where travelers commonly use flight dates to determine their hotel booking dates. The 'searchDates' field from 'Get_Min_Price_Multi_Stops' contains dates in the 'yyyy-mm-dd' format required by 'arrival_date' in 'Search_Hotels_By_Coordinates'. This represents a soft dependency as the flight API isn't strictly required for hotel search but provides useful input for a common user workflow of planning trips where flight dates often determine hotel stay dates."
+        },
+        {
+            "source_api_name": "Get_Room_Availability",
+            "dependence_type": "Soft Dependency",
+            "depencend_field": "$.lengthsOfStay[*].date",
+            "param_name": "arrival_date",
+            "reason": "There is a clear business association between checking room availability dates and selecting an arrival date for hotel booking. The 'lengthsOfStay[*].date' field from 'Get_Room_Availability' matches exactly with the 'Date (yyyy-mm-dd)' format required by 'arrival_date' in 'Search_Hotels_By_Coordinates'. This represents a soft dependency as the room availability API isn't strictly required for hotel search but provides useful input for determining available check-in dates."
+        },
+        {
+            "source_api_name": "Get_Room_List",
+            "dependence_type": "Hard Dependency",
+            "depencend_field": "$.departure_date",
+            "param_name": "departure_date",
+            "reason": "The 'Get_Room_List' API provides room availability information including departure dates, which directly corresponds to the 'departure_date' parameter required by the 'Search_Hotels_By_Coordinates' API. This establishes a hard dependency as the departure date from room listings is essential for searching hotels by coordinates. The data types match perfectly (yyyy-mm-dd format), and the example value demonstrates the exact format needed by the target API."
+        },
+        {
+            "source_api_name": "Get_Min_Price_Multi_Stops",
+            "dependence_type": "Soft Dependency",
+            "depencend_field": "$[*].departureDate",
+            "param_name": "departure_date",
+            "reason": "While the APIs serve different functions (flight pricing vs. hotel booking), there's a logical business relationship where travelers often coordinate flight departure dates with hotel check-out dates. The 'departureDate' field from 'Get_Min_Price_Multi_Stops' perfectly matches the 'Date (yyyy-mm-dd)' format required by 'departure_date' in 'Search_Hotels_By_Coordinates'. This represents a soft dependency as the flight API isn't strictly required for hotel search but provides useful input for a common travel planning workflow."
+        },
+        {
+            "source_api_name": "Get_Min_Price",
+            "dependence_type": "Soft Dependency",
+            "depencend_field": "$[*].departureDate",
+            "param_name": "departure_date",
+            "reason": "While the APIs serve different functions (hotel booking vs flight pricing), there's a logical business relationship where travelers commonly use flight departure dates to determine their hotel check-out dates. The 'departureDate' field from 'Get_Min_Price' perfectly matches the 'Date (yyyy-mm-dd)' format required by 'departure_date' in 'Search_Hotels_By_Coordinates'. This represents a soft dependency as the flight API isn't strictly required for hotel search but provides useful input for a common user workflow of coordinating travel plans."
+        },
+        {
+            "source_api_name": "Search_Hotels",
+            "dependence_type": "Soft Dependency",
+            "depencend_field": "$.hotels[*].property.checkoutDate",
+            "param_name": "departure_date",
+            "reason": "The 'Search_Hotels' API provides checkout dates from hotel properties, which can logically serve as departure dates for the 'Search_Hotels_By_Coordinates' API. This represents a business association where users might want to search for hotels in different locations based on their existing hotel bookings. The data type (yyyy-mm-dd) matches exactly, and the example values demonstrate the correct format for the target API's departure_date parameter."
+        },
+        {
+            "source_api_name": "Get_Room_List",
+            "dependence_type": "Soft Dependency",
+            "depencend_field": "$.block[*].paymentterms.cancellation.info.date_before_raw",
+            "param_name": "departure_date",
+            "reason": "The 'Get_Room_List' API provides detailed cancellation policies including refundable dates, which could be used to determine potential check-out dates for hotel bookings. The 'date_before_raw' field in the cancellation info matches the 'Date (yyyy-mm-dd)' format required by 'departure_date' in 'Search_Hotels_By_Coordinates'. This represents a soft dependency as the room list API isn't strictly required for hotel search but provides useful input for determining cancellation deadlines that could influence departure dates."
+        }
+    ],
+    "verified": true
+}

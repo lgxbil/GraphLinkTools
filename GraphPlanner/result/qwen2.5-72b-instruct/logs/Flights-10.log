@@ -1,0 +1,34 @@
+2025-07-22 07:41:33,659 - evaluation_logger_Flights-10 - INFO - Test Example Flights-10
+2025-07-22 07:41:33,660 - evaluation_logger_Flights-10 - INFO - Query: Arrange the best first class flight for four members of our team from Berlin to Vancouver on December 10, 2024. The other team will meet us at Vancouver International Airport.
+2025-07-22 07:42:07,667 - evaluation_logger_Flights-10 - INFO - Start compare_single_call: 
+{'name': 'Search_Flight_Location', 'arguments': {'query': 'Berlin'}}
+{'name': 'Search_Flight_Location', 'arguments': {'query': 'Berlin'}}
+2025-07-22 07:42:07,667 - evaluation_logger_Flights-10 - INFO - Rule-based compare success.
+2025-07-22 07:42:07,668 - evaluation_logger_Flights-10 - INFO - Success matched: [{'name': 'Search_Flight_Location', 'arguments': {'query': 'Berlin'}}]
+2025-07-22 07:42:08,266 - evaluation_logger_Flights-10 - INFO - Start compare_single_call: 
+{'name': 'Search_Flight_Location', 'arguments': {'query': 'Vancouver'}}
+{'name': 'Search_Flight_Location', 'arguments': {'query': 'Vancouver International Airport'}}
+2025-07-22 07:42:12,949 - evaluation_logger_Flights-10 - DEBUG - LLM-based comparison output: {'is_equal': False, 'reason': "The query parameters 'Vancouver' and 'Vancouver International Airport' refer to different levels of specificity in location."}
+2025-07-22 07:42:12,949 - evaluation_logger_Flights-10 - INFO - All compare method failed.
+2025-07-22 07:42:12,958 - evaluation_logger_Flights-10 - INFO - Success matched: []
+2025-07-22 07:42:40,943 - evaluation_logger_Flights-10 - INFO - Start compare_single_call: 
+{'name': 'Search_Flight_Location', 'arguments': {'query': 'Vancouver International Airport'}}
+{'name': 'Search_Flight_Location', 'arguments': {'query': 'Vancouver International Airport'}}
+2025-07-22 07:42:40,944 - evaluation_logger_Flights-10 - INFO - Rule-based compare success.
+2025-07-22 07:42:40,944 - evaluation_logger_Flights-10 - INFO - Success matched: [{'name': 'Search_Flight_Location', 'arguments': {'query': 'Vancouver International Airport'}}]
+2025-07-22 07:42:41,330 - evaluation_logger_Flights-10 - INFO - Start compare_single_call: 
+{'name': 'Search_Flights', 'arguments': {'adults': 4, 'cabinClass': 'FIRST', 'departDate': '2024-12-10', 'fromId': 'BER.AIRPORT', 'toId': 'YVR.AIRPORT'}}
+{'name': 'Search_Flights', 'arguments': {'adults': 4, 'cabinClass': 'FIRST', 'departDate': '2024-12-10', 'fromId': 'BER.AIRPORT', 'sort': 'BEST', 'toId': 'YVR.AIRPORT'}}
+2025-07-22 07:42:41,330 - evaluation_logger_Flights-10 - INFO - {'error_type': 'param_missing', 'content': 'Missing parameter sort in prediction.'}
+2025-07-22 07:42:41,330 - evaluation_logger_Flights-10 - INFO - Success matched: []
+2025-07-22 07:43:18,247 - evaluation_logger_Flights-10 - INFO - Start compare_single_call: 
+{'name': 'Search_Flight_Location', 'arguments': {'query': 'Vancouver International Airport'}}
+{'name': 'Search_Flight_Location', 'arguments': {'query': 'Vancouver International Airport'}}
+2025-07-22 07:43:18,247 - evaluation_logger_Flights-10 - INFO - Rule-based compare success.
+2025-07-22 07:43:18,247 - evaluation_logger_Flights-10 - INFO - Success matched: [{'name': 'Search_Flight_Location', 'arguments': {'query': 'Vancouver International Airport'}}]
+2025-07-22 07:43:18,248 - evaluation_logger_Flights-10 - INFO - Start compare_single_call: 
+{'name': 'Search_Flights', 'arguments': {'adults': 4, 'cabinClass': 'FIRST', 'departDate': '2024-12-10', 'fromId': 'BER.AIRPORT', 'sort': 'BEST', 'toId': 'YVR.AIRPORT'}}
+{'name': 'Search_Flights', 'arguments': {'adults': 4, 'cabinClass': 'FIRST', 'departDate': '2024-12-10', 'fromId': 'BER.AIRPORT', 'sort': 'BEST', 'toId': 'YVR.AIRPORT'}}
+2025-07-22 07:43:18,248 - evaluation_logger_Flights-10 - INFO - Rule-based compare success.
+2025-07-22 07:43:18,248 - evaluation_logger_Flights-10 - INFO - Success matched: [{'name': 'Search_Flights', 'arguments': {'adults': 4, 'cabinClass': 'FIRST', 'departDate': '2024-12-10', 'fromId': 'BER.AIRPORT', 'sort': 'BEST', 'toId': 'YVR.AIRPORT'}}]
+2025-07-22 07:43:28,125 - evaluation_logger_Flights-10 - ERROR - 'questions'

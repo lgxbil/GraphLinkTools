@@ -1,0 +1,47 @@
+{
+    "name": "Search_Flight_Location",
+    "docs_row": {
+        "name": "Search_Flight_Location",
+        "endpoint": "/api/v1/flights/searchDestination",
+        "func_description": "Find airports by their location, address, state, country, etc. ",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "query": {
+                    "type": "String",
+                    "description": "Names of airport, locations, cities, districts, places, countries, counties etc.",
+                    "example_value": "new",
+                    "required": true
+                },
+                "languagecode": {
+                    "type": "String",
+                    "description": "To obtain the response data in a specific language, enter the languagecode. languagecode can be retrieved from api/v1/meta/getLanguages(Get Languages\n) endpoint in Meta collection.",
+                    "example_value": "",
+                    "required": false
+                }
+            },
+            "required": [
+                "query"
+            ]
+        }
+    },
+    "api_response_schema": [
+        {
+            "id": "MTY.AIRPORT",
+            "type": "AIRPORT",
+            "name": "Monterrey International Airport",
+            "code": "MTY",
+            "city": "MTY",
+            "cityName": "Monterrey",
+            "regionName": "Nuevo Le\u00f3n",
+            "country": "MX",
+            "countryName": "Mexico",
+            "countryNameShort": "Mexico",
+            "distanceToCity": {
+                "value": 22.164948415034125,
+                "unit": "km"
+            },
+            "parent": "MTY"
+        }
+    ]
+}

@@ -1,0 +1,157 @@
+{
+    "name": "Payment_features_of_the_Hotel",
+    "docs_row": {
+        "name": "Payment_features_of_the_Hotel",
+        "endpoint": "/api/v1/hotels/getPaymentFeatures",
+        "func_description": "Retrieve information about the payment features and options available at a specific hotel. ",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "hotel_id": {
+                    "type": "String",
+                    "description": "hotel_id can be retrieved from api/v1/hotels/searchHotels(Search Hotels) or api/v1/hotels/searchHotelsByCoordinates(Search Hotels By Coordinates\n) endpoint in Hotels collection.",
+                    "example_value": "5955189",
+                    "required": true
+                },
+                "languagecode": {
+                    "type": "String",
+                    "description": "To obtain the response data in a specific language, enter the languagecode. languagecode can be retrieved from api/v1/meta/getLanguages(Get Languages\n) endpoint in Meta collection.",
+                    "example_value": "en-us",
+                    "required": false
+                }
+            },
+            "required": [
+                "hotel_id"
+            ]
+        }
+    },
+    "instance": [],
+    "category": null,
+    "tool": null,
+    "api_idx": 5,
+    "params": {
+        "type": "object",
+        "properties": {
+            "hotel_id": {
+                "type": "String",
+                "description": "hotel_id can be retrieved from api/v1/hotels/searchHotels(Search Hotels) or api/v1/hotels/searchHotelsByCoordinates(Search Hotels By Coordinates\n) endpoint in Hotels collection.",
+                "example_value": "5955189",
+                "required": true
+            },
+            "languagecode": {
+                "type": "String",
+                "description": "To obtain the response data in a specific language, enter the languagecode. languagecode can be retrieved from api/v1/meta/getLanguages(Get Languages\n) endpoint in Meta collection.",
+                "example_value": "en-us",
+                "required": false
+            }
+        },
+        "required": [
+            "hotel_id"
+        ]
+    },
+    "responses": [
+        {
+            "function_name": "Payment_features_of_the_Hotel",
+            "arguments": {
+                "hotel_id": "5955189"
+            },
+            "observation": [
+                {
+                    "creditcard_id": 2,
+                    "is_direct_payment": 0,
+                    "bookable": 1,
+                    "hotel_id": "5955189",
+                    "cvc_required": 0,
+                    "payable": 1
+                },
+                {
+                    "cvc_required": 0,
+                    "payable": 1,
+                    "is_direct_payment": 0,
+                    "bookable": 1,
+                    "creditcard_id": 11,
+                    "hotel_id": "5955189"
+                },
+                {
+                    "bookable": 1,
+                    "is_direct_payment": 0,
+                    "creditcard_id": 1,
+                    "hotel_id": "5955189",
+                    "cvc_required": 0,
+                    "payable": 1
+                }
+            ]
+        }
+    ],
+    "response_summary": "The API response provides details about three different credit card payment options available for booking a hotel with the ID \"5955189.\" All three options allow booking and payment without requiring a CVC code, and none of them involve direct payment. The first option uses credit card ID 2, the second uses credit card ID 11, and the third uses credit card ID 1. Each of these payment methods is both bookable and payable, ensuring flexibility for users when making reservations.",
+    "enhance_func_desc": "This API is ideal for users looking to understand payment options for hotel bookings. It retrieves available credit card payment methods for a specific hotel, highlighting features like no CVC requirement and direct payment avoidance. The response includes details on bookable and payable options, ensuring flexibility. Users must provide a valid hotel ID obtained from search APIs to access this information.",
+    "enhance_params_desc": {
+        "enhanced_parameters": {
+            "hotel_id": "Unique identifier for the hotel, sourced from searchHotels or searchHotelsByCoordinates endpoints.",
+            "languagecode": "Language preference for the response data, retrieved from getLanguages endpoint."
+        }
+    },
+    "enhance_resfield_desc": {
+        "response_fields": {
+            "creditcard_id": {
+                "type": "Number",
+                "description": "Unique identifier for the credit card payment option."
+            },
+            "is_direct_payment": {
+                "type": "Number",
+                "description": "Indicates whether the payment is direct (0 means not direct, 1 means direct)."
+            },
+            "bookable": {
+                "type": "Number",
+                "description": "Indicates whether the booking option is available (1 means bookable, 0 means not bookable)."
+            },
+            "hotel_id": {
+                "type": "String",
+                "description": "Unique identifier for the hotel associated with the payment options."
+            },
+            "cvc_required": {
+                "type": "Number",
+                "description": "Indicates whether a CVC code is required for the payment (0 means not required, 1 means required)."
+            },
+            "payable": {
+                "type": "Number",
+                "description": "Indicates whether the payment option is payable (1 means payable, 0 means not payable)."
+            }
+        }
+    },
+    "params_desc_list": null,
+    "response_desc_list": [
+        {
+            "path_name": "creditcard_id",
+            "name": "creditcard_id",
+            "description": "Unique identifier for the credit card payment option."
+        },
+        {
+            "path_name": "is_direct_payment",
+            "name": "is_direct_payment",
+            "description": "Indicates whether the payment is direct (0 means not direct, 1 means direct)."
+        },
+        {
+            "path_name": "bookable",
+            "name": "bookable",
+            "description": "Indicates whether the booking option is available (1 means bookable, 0 means not bookable)."
+        },
+        {
+            "path_name": "hotel_id",
+            "name": "hotel_id",
+            "description": "Unique identifier for the hotel associated with the payment options."
+        },
+        {
+            "path_name": "cvc_required",
+            "name": "cvc_required",
+            "description": "Indicates whether a CVC code is required for the payment (0 means not required, 1 means required)."
+        },
+        {
+            "path_name": "payable",
+            "name": "payable",
+            "description": "Indicates whether the payment option is payable (1 means payable, 0 means not payable)."
+        }
+    ],
+    "depends_on": null,
+    "verified": true
+}

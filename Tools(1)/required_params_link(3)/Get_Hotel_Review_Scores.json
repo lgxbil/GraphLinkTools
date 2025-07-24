@@ -1,0 +1,629 @@
+{
+    "name": "Get_Hotel_Review_Scores",
+    "docs_row": {
+        "name": "Get_Hotel_Review_Scores",
+        "endpoint": "/api/v1/hotels/getHotelReviewScores",
+        "func_description": "Retrieve the review scores for a specific hotel. ",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "hotel_id": {
+                    "type": "String",
+                    "description": "hotel_id can be retrieved from api/v1/hotels/searchHotels(Search Hotels) or api/v1/hotels/searchHotelsByCoordinates(Search Hotels By Coordinates\n) endpoint in Hotels collection.",
+                    "example_value": "5955189",
+                    "required": true
+                },
+                "languagecode": {
+                    "type": "String",
+                    "description": "To obtain the response data in a specific language, enter the languagecode. languagecode can be retrieved from api/v1/meta/getLanguages(Get Languages\n) endpoint in Meta collection.",
+                    "example_value": "en-us",
+                    "required": false
+                }
+            },
+            "required": [
+                "hotel_id"
+            ]
+        }
+    },
+    "instance": [],
+    "category": null,
+    "tool": null,
+    "api_idx": 33,
+    "params": {
+        "type": "object",
+        "properties": {
+            "hotel_id": {
+                "type": "String",
+                "description": "hotel_id can be retrieved from api/v1/hotels/searchHotels(Search Hotels) or api/v1/hotels/searchHotelsByCoordinates(Search Hotels By Coordinates\n) endpoint in Hotels collection.",
+                "example_value": "5955189",
+                "required": true
+            },
+            "languagecode": {
+                "type": "String",
+                "description": "To obtain the response data in a specific language, enter the languagecode. languagecode can be retrieved from api/v1/meta/getLanguages(Get Languages\n) endpoint in Meta collection.",
+                "example_value": "en-us",
+                "required": false
+            }
+        },
+        "required": [
+            "hotel_id"
+        ]
+    },
+    "responses": [
+        {
+            "function_name": "Get_Hotel_Review_Scores",
+            "arguments": {
+                "hotel_id": "5955189"
+            },
+            "observation": [
+                {
+                    "score_distribution": [
+                        {
+                            "count": 7,
+                            "percent": 8.24,
+                            "score": 1
+                        },
+                        {
+                            "percent": 3.53,
+                            "count": 3,
+                            "score": 2
+                        }
+                    ],
+                    "score_breakdown": [
+                        {
+                            "average_score": "6.1",
+                            "customer_type": "solo_traveller",
+                            "question": [
+                                {
+                                    "score": 6.3,
+                                    "score_comparison_to_ufi_average": 0,
+                                    "localized_question": "Cleanliness",
+                                    "question": "hotel_clean",
+                                    "count": 35
+                                },
+                                {
+                                    "score": 6.4,
+                                    "score_comparison_to_ufi_average": 0,
+                                    "localized_question": "Comfort",
+                                    "question": "hotel_comfort",
+                                    "count": 34
+                                }
+                            ],
+                            "count": 35,
+                            "from_year": 2024
+                        },
+                        {
+                            "average_score": "7.1",
+                            "from_year": 2024,
+                            "count": 84,
+                            "question": [
+                                {
+                                    "question": "hotel_clean",
+                                    "count": 83,
+                                    "score_comparison_to_ufi_average": 0,
+                                    "score": 7.2,
+                                    "localized_question": "Cleanliness"
+                                },
+                                {
+                                    "count": 82,
+                                    "question": "hotel_comfort",
+                                    "localized_question": "Comfort",
+                                    "score_comparison_to_ufi_average": 0,
+                                    "score": 7.4
+                                }
+                            ],
+                            "customer_type": "total"
+                        }
+                    ],
+                    "hotel_id": 5955189,
+                    "score_percentage": [
+                        {
+                            "score_start": 9,
+                            "score_end": 10.1,
+                            "percent": 35,
+                            "count": 30,
+                            "score_word": "Superb"
+                        },
+                        {
+                            "score_start": 7,
+                            "score_end": 9,
+                            "percent": 25,
+                            "score_word": "Good",
+                            "count": 21
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "function_name": "Get_Hotel_Review_Scores",
+            "arguments": {
+                "hotel_id": "5955189"
+            },
+            "observation": [
+                {
+                    "score_breakdown": [
+                        {
+                            "customer_type": "with_friends",
+                            "count": 5,
+                            "from_year": 2024,
+                            "question": [
+                                {
+                                    "localized_question": "Cleanliness",
+                                    "score": "8.0",
+                                    "question": "hotel_clean",
+                                    "score_comparison_to_ufi_average": 0,
+                                    "count": 5
+                                },
+                                {
+                                    "localized_question": "Comfort",
+                                    "score": "8.0",
+                                    "question": "hotel_comfort",
+                                    "score_comparison_to_ufi_average": 0,
+                                    "count": 5
+                                },
+                                {
+                                    "count": 5,
+                                    "question": "hotel_services",
+                                    "score_comparison_to_ufi_average": 0,
+                                    "score": "8.0",
+                                    "localized_question": "Facilities"
+                                }
+                            ],
+                            "average_score": "8.1"
+                        },
+                        {
+                            "customer_type": "group",
+                            "count": 17,
+                            "from_year": 2024,
+                            "question": [
+                                {
+                                    "score_comparison_to_ufi_average": 1,
+                                    "question": "hotel_clean",
+                                    "count": 16,
+                                    "localized_question": "Cleanliness",
+                                    "score": 8.6
+                                },
+                                {
+                                    "question": "hotel_comfort",
+                                    "score_comparison_to_ufi_average": 1,
+                                    "count": 16,
+                                    "localized_question": "Comfort",
+                                    "score": 8.6
+                                },
+                                {
+                                    "score_comparison_to_ufi_average": 1,
+                                    "question": "hotel_services",
+                                    "count": 17,
+                                    "localized_question": "Facilities",
+                                    "score": 8.7
+                                }
+                            ],
+                            "average_score": "8.7"
+                        },
+                        {
+                            "customer_type": "family",
+                            "question": [
+                                {
+                                    "question": "hotel_clean",
+                                    "score_comparison_to_ufi_average": 0,
+                                    "count": 19,
+                                    "localized_question": "Cleanliness",
+                                    "score": 7.1
+                                },
+                                {
+                                    "count": 19,
+                                    "question": "hotel_comfort",
+                                    "score_comparison_to_ufi_average": 0,
+                                    "score": 7.3,
+                                    "localized_question": "Comfort"
+                                },
+                                {
+                                    "question": "hotel_services",
+                                    "score_comparison_to_ufi_average": 0,
+                                    "count": 19,
+                                    "localized_question": "Facilities",
+                                    "score": "7.0"
+                                }
+                            ],
+                            "from_year": 2024,
+                            "average_score": "7.5",
+                            "count": 19
+                        }
+                    ],
+                    "score_distribution": [
+                        {
+                            "percent": 8.24,
+                            "count": 7,
+                            "score": 1
+                        },
+                        {
+                            "percent": 3.53,
+                            "count": 3,
+                            "score": 2
+                        },
+                        {
+                            "percent": 2.35,
+                            "count": 2,
+                            "score": 3
+                        }
+                    ],
+                    "score_percentage": [
+                        {
+                            "score_word": "Superb",
+                            "score_start": 9,
+                            "count": 30,
+                            "score_end": 10.1,
+                            "percent": 35
+                        },
+                        {
+                            "count": 21,
+                            "score_start": 7,
+                            "score_word": "Good",
+                            "percent": 25,
+                            "score_end": 9
+                        },
+                        {
+                            "score_end": 7,
+                            "percent": 21,
+                            "score_word": "Okay",
+                            "score_start": 5,
+                            "count": 18
+                        }
+                    ],
+                    "hotel_id": 5955189
+                }
+            ]
+        }
+    ],
+    "response_summary": "The hotel with ID 5955189 has received a variety of reviews from guests in 2024, with an overall average score of 7.1 out of 10. The majority of guests (35%) rated their stay as \"Superb\" (scores between 9 and 10.1), while 25% found it \"Good\" (7 to 9) and 21% considered it \"Okay\" (5 to 7). A small percentage of guests gave lower ratings, with 8.24% scoring it 1 out of 10, 3.53% scoring it 2, and 2.35% scoring it 3.  \n\nBreaking down the scores by traveler type, solo travelers gave an average rating of 6.1, with cleanliness scoring 6.3, comfort at 6.4, and facilities at 5.8. Young couples were more satisfied, giving an average score of 8.1, with comfort receiving the highest rating at 8.8 (slightly above the average for similar hotels), cleanliness at 8.4, and facilities at 7.8.  \n\nOverall, the hotel performs well in comfort and cleanliness but has room for improvement in facilities, particularly for solo travelers. The distribution of ratings suggests that while many guests had an excellent experience, a notable minority were less satisfied.",
+    "enhance_func_desc": "This API is ideal for travelers and hotel managers assessing guest satisfaction. It retrieves detailed review scores for a specific hotel, including overall ratings, breakdowns by traveler type (e.g., solo travelers, young couples), and scores for key aspects like cleanliness, comfort, and facilities. The response helps identify strengths and areas needing improvement, aiding in decision-making for bookings or service enhancements. The hotel ID must be obtained from SearchHotels APIs.",
+    "enhance_params_desc": {
+        "enhanced_parameters": {
+            "hotel_id": "Unique identifier for the hotel, sourced from searchHotels or searchHotelsByCoordinates endpoints.",
+            "languagecode": "Language preference for the response data, e.g., 'en-us' for English."
+        }
+    },
+    "enhance_resfield_desc": {
+        "response_fields": [
+            {
+                "score_distribution": {
+                    "type": "Array",
+                    "description": "A list of score distributions showing the count and percentage of each score given by guests.",
+                    "ar_items": {
+                        "type": "Object",
+                        "description": "An object representing the distribution details for a specific score.",
+                        "ob_properties": {
+                            "count": {
+                                "type": "Number",
+                                "description": "The number of reviews that received this score."
+                            },
+                            "percent": {
+                                "type": "Number",
+                                "description": "The percentage of reviews that received this score."
+                            },
+                            "score": {
+                                "type": "Number",
+                                "description": "The score value (e.g., 1, 2, 3)."
+                            }
+                        }
+                    }
+                },
+                "score_breakdown": {
+                    "type": "Array",
+                    "description": "A breakdown of scores by customer type, including average scores and detailed question-wise ratings.",
+                    "ar_items": {
+                        "type": "Object",
+                        "description": "An object representing the score breakdown for a specific customer type.",
+                        "ob_properties": {
+                            "average_score": {
+                                "type": "String",
+                                "description": "The average score given by this customer type (e.g., '6.1')."
+                            },
+                            "customer_type": {
+                                "type": "String",
+                                "description": "The type of customer (e.g., 'solo_traveller', 'young_couple', 'total')."
+                            },
+                            "question": {
+                                "type": "Array",
+                                "description": "A list of questions and their respective scores for this customer type.",
+                                "ar_items": {
+                                    "type": "Object",
+                                    "description": "An object representing the score details for a specific question.",
+                                    "ob_properties": {
+                                        "score": {
+                                            "type": "Number",
+                                            "description": "The average score for this question."
+                                        },
+                                        "score_comparison_to_ufi_average": {
+                                            "type": "Number",
+                                            "description": "The difference between this score and the average score for similar hotels (0 means no difference, 1 means higher)."
+                                        },
+                                        "localized_question": {
+                                            "type": "String",
+                                            "description": "The localized name of the question (e.g., 'Cleanliness')."
+                                        },
+                                        "question": {
+                                            "type": "String",
+                                            "description": "The internal identifier for the question (e.g., 'hotel_clean')."
+                                        },
+                                        "count": {
+                                            "type": "Number",
+                                            "description": "The number of responses for this question."
+                                        }
+                                    }
+                                }
+                            },
+                            "count": {
+                                "type": "Number",
+                                "description": "The total number of reviews for this customer type."
+                            },
+                            "from_year": {
+                                "type": "Number",
+                                "description": "The year from which the reviews are considered (e.g., 2024)."
+                            }
+                        }
+                    }
+                },
+                "hotel_id": {
+                    "type": "Number",
+                    "description": "The unique identifier for the hotel (e.g., 5955189)."
+                },
+                "score_percentage": {
+                    "type": "Array",
+                    "description": "A list of score ranges with their respective percentages and counts.",
+                    "ar_items": {
+                        "type": "Object",
+                        "description": "An object representing the percentage distribution for a specific score range.",
+                        "ob_properties": {
+                            "score_start": {
+                                "type": "Number",
+                                "description": "The start of the score range (e.g., 9)."
+                            },
+                            "score_end": {
+                                "type": "Number",
+                                "description": "The end of the score range (e.g., 10.1)."
+                            },
+                            "percent": {
+                                "type": "Number",
+                                "description": "The percentage of reviews within this score range."
+                            },
+                            "count": {
+                                "type": "Number",
+                                "description": "The number of reviews within this score range."
+                            },
+                            "score_word": {
+                                "type": "String",
+                                "description": "The descriptive word for this score range (e.g., 'Superb', 'Good', 'Okay')."
+                            }
+                        }
+                    }
+                }
+            }
+        ]
+    },
+    "params_desc_list": null,
+    "response_desc_list": [
+        {
+            "path_name": "$[].score_distribution",
+            "name": "score_distribution",
+            "description": "A list of score distributions showing the count and percentage of each score given by guests."
+        },
+        {
+            "path_name": "$[].score_distribution[]",
+            "name": "score_distribution[]",
+            "description": "An object representing the distribution details for a specific score."
+        },
+        {
+            "path_name": "$[].score_distribution[].count",
+            "name": "count",
+            "description": "The number of reviews that received this score."
+        },
+        {
+            "path_name": "$[].score_distribution[].percent",
+            "name": "percent",
+            "description": "The percentage of reviews that received this score."
+        },
+        {
+            "path_name": "$[].score_distribution[].score",
+            "name": "score",
+            "description": "The score value (e.g., 1, 2, 3)."
+        },
+        {
+            "path_name": "$[].score_breakdown",
+            "name": "score_breakdown",
+            "description": "A breakdown of scores by customer type, including average scores and detailed question-wise ratings."
+        },
+        {
+            "path_name": "$[].score_breakdown[]",
+            "name": "score_breakdown[]",
+            "description": "An object representing the score breakdown for a specific customer type."
+        },
+        {
+            "path_name": "$[].score_breakdown[].average_score",
+            "name": "average_score",
+            "description": "The average score given by this customer type (e.g., '6.1')."
+        },
+        {
+            "path_name": "$[].score_breakdown[].customer_type",
+            "name": "customer_type",
+            "description": "The type of customer (e.g., 'solo_traveller', 'young_couple', 'total')."
+        },
+        {
+            "path_name": "$[].score_breakdown[].question",
+            "name": "question",
+            "description": "A list of questions and their respective scores for this customer type."
+        },
+        {
+            "path_name": "$[].score_breakdown[].question[]",
+            "name": "question[]",
+            "description": "An object representing the score details for a specific question."
+        },
+        {
+            "path_name": "$[].score_breakdown[].question[].score",
+            "name": "score",
+            "description": "The average score for this question."
+        },
+        {
+            "path_name": "$[].score_breakdown[].question[].score_comparison_to_ufi_average",
+            "name": "score_comparison_to_ufi_average",
+            "description": "The difference between this score and the average score for similar hotels (0 means no difference, 1 means higher)."
+        },
+        {
+            "path_name": "$[].score_breakdown[].question[].localized_question",
+            "name": "localized_question",
+            "description": "The localized name of the question (e.g., 'Cleanliness')."
+        },
+        {
+            "path_name": "$[].score_breakdown[].question[].question",
+            "name": "question",
+            "description": "The internal identifier for the question (e.g., 'hotel_clean')."
+        },
+        {
+            "path_name": "$[].score_breakdown[].question[].count",
+            "name": "count",
+            "description": "The number of responses for this question."
+        },
+        {
+            "path_name": "$[].score_breakdown[].count",
+            "name": "count",
+            "description": "The total number of reviews for this customer type."
+        },
+        {
+            "path_name": "$[].score_breakdown[].from_year",
+            "name": "from_year",
+            "description": "The year from which the reviews are considered (e.g., 2024)."
+        },
+        {
+            "path_name": "$[].hotel_id",
+            "name": "hotel_id",
+            "description": "The unique identifier for the hotel (e.g., 5955189)."
+        },
+        {
+            "path_name": "$[].score_percentage",
+            "name": "score_percentage",
+            "description": "A list of score ranges with their respective percentages and counts."
+        },
+        {
+            "path_name": "$[].score_percentage[]",
+            "name": "score_percentage[]",
+            "description": "An object representing the percentage distribution for a specific score range."
+        },
+        {
+            "path_name": "$[].score_percentage[].score_start",
+            "name": "score_start",
+            "description": "The start of the score range (e.g., 9)."
+        },
+        {
+            "path_name": "$[].score_percentage[].score_end",
+            "name": "score_end",
+            "description": "The end of the score range (e.g., 10.1)."
+        },
+        {
+            "path_name": "$[].score_percentage[].percent",
+            "name": "percent",
+            "description": "The percentage of reviews within this score range."
+        },
+        {
+            "path_name": "$[].score_percentage[].count",
+            "name": "count",
+            "description": "The number of reviews within this score range."
+        },
+        {
+            "path_name": "$[].score_percentage[].score_word",
+            "name": "score_word",
+            "description": "The descriptive word for this score range (e.g., 'Superb', 'Good', 'Okay')."
+        }
+    ],
+    "depends_on": [
+        {
+            "target_api_params": "hotel_id",
+            "reason": "The 'hotel_id' parameter in the target API is explicitly mentioned to be retrievable from the 'Search_Hotels' API, which is the source API in this case. The source API's response includes a 'hotel_id' field within the 'hotels' array, matching the required data type (String/Number) and providing the exact identifier needed for the target API. This is a clear prerequisite for calling the target API.",
+            "source_jsonpath": "$.hotels[].hotel_id",
+            "confidence": 100,
+            "dependency_relationship": "Hard Dependency(Prerequisite API)",
+            "source_api": "Search_Hotels"
+        },
+        {
+            "target_api_params": "hotel_id",
+            "reason": "The 'hotel_id' parameter in the target API is explicitly mentioned to be retrievable from the same source APIs as the source API's 'hotel_id'. The source API's response includes the 'hotel_id' field, which matches exactly in type and purpose with the target API's requirement. This establishes a hard dependency as the source API's response directly provides the necessary input for the target API.",
+            "source_jsonpath": "$.hotel_id",
+            "confidence": 100,
+            "dependency_relationship": "Hard Dependency(Prerequisite API)",
+            "source_api": "Get_Question_And_Answer"
+        },
+        {
+            "target_api_params": "hotel_id",
+            "reason": "The 'hotel_id' parameter in the target API is explicitly mentioned to be retrievable from the same source as the source API's 'hotel_id' parameter. Both APIs require the hotel_id to be obtained from the SearchHotels or SearchHotelsByCoordinates endpoints, indicating a direct prerequisite relationship. The data types and descriptions match perfectly.",
+            "source_jsonpath": "$.result[*].hotel_id",
+            "confidence": 100,
+            "dependency_relationship": "Hard Dependency(Prerequisite API)",
+            "source_api": "Get_Hotel_Reviews(Tips)"
+        },
+        {
+            "target_api_params": "hotel_id",
+            "reason": "The 'hotel_id' parameter in the target API is explicitly stated to be retrievable from the same source APIs as the source API's 'hotel_id'. The source API's response includes the exact same 'hotel_id' field that matches the required parameter for the target API. This is a clear case where the source API's response field is a direct prerequisite for calling the target API.",
+            "source_jsonpath": "$.hotel_id",
+            "confidence": 100,
+            "dependency_relationship": "Hard Dependency(Prerequisite API)",
+            "source_api": "Get_Hotel_Policies"
+        },
+        {
+            "target_api_params": "hotel_id",
+            "reason": "The 'hotel_id' parameter in the target API is required to retrieve review scores for a specific hotel. The source API's 'hotel_id' field in the response provides the exact identifier needed (e.g., '74717'). The data types match (both are strings), and the source API explicitly states that the hotel_id can be retrieved from the SearchHotels API, which aligns with the target API's requirement.",
+            "source_jsonpath": "$.hotel_id",
+            "confidence": 100,
+            "dependency_relationship": "Hard Dependency(Prerequisite API)",
+            "source_api": "Get_Room_List"
+        },
+        {
+            "target_api_params": "hotel_id",
+            "reason": "The 'hotel_id' parameter in the target API is explicitly mentioned to be retrievable from the 'Search_Hotels_By_Coordinates' source API. The source API's response includes a 'hotel_id' field (e.g., '11361227') which matches the required data type (String) and serves as a direct input for the target API. This is a clear prerequisite for calling the target API.",
+            "source_jsonpath": "$.result[].hotel_id",
+            "confidence": 100,
+            "dependency_relationship": "Hard Dependency(Prerequisite API)",
+            "source_api": "Search_Hotels_By_Coordinates"
+        },
+        {
+            "target_api_params": "hotel_id",
+            "reason": "The 'hotel_id' parameter in the target API is explicitly stated to be retrievable from the same source as the source API's 'hotel_id' parameter. Both APIs require the hotel_id to be obtained from either 'api/v1/hotels/searchHotels' or 'api/v1/hotels/searchHotelsByCoordinates' endpoints. The source API's response includes the 'hotel_id' field, which matches exactly in type and purpose with the target API's requirement.",
+            "source_jsonpath": "$.hotel_id",
+            "confidence": 100,
+            "dependency_relationship": "Hard Dependency(Prerequisite API)",
+            "source_api": "Get_Hotel_Reviews_Filter_Metadata"
+        },
+        {
+            "target_api_params": "hotel_id",
+            "reason": "The 'hotel_id' parameter in the target API is explicitly mentioned to be retrievable from the same source APIs (SearchHotels or SearchHotelsByCoordinates) as the source API's 'hotel_id' parameter. This indicates a direct prerequisite relationship where the same identifier is used across both APIs to reference the same hotel entity.",
+            "source_jsonpath": "$.hotel_id",
+            "confidence": 100,
+            "dependency_relationship": "Hard Dependency(Prerequisite API)",
+            "source_api": "Get_Hotel_Photos"
+        },
+        {
+            "target_api_params": "hotel_id",
+            "reason": "The 'hotel_id' parameter in the target API requires a specific hotel identifier, which is the same as the 'hotel_id' field in the source API's response. Both APIs expect the hotel_id to be obtained from the same endpoints (SearchHotels or SearchHotelsByCoordinates), indicating a direct and necessary prerequisite relationship.",
+            "source_jsonpath": "$[*].hotel_id",
+            "confidence": 100,
+            "dependency_relationship": "Hard Dependency(Prerequisite API)",
+            "source_api": "Get_Description_And_Info"
+        },
+        {
+            "target_api_params": "hotel_id",
+            "reason": "The 'hotel_id' parameter in the target API requires a specific hotel ID to retrieve review scores. The source API's response includes the 'hotel_id' field, which matches exactly in data type and purpose. This creates a hard dependency as the source API must be called first to obtain the hotel ID before the target API can be used.",
+            "source_jsonpath": "$[*].hotel_id",
+            "confidence": 100,
+            "dependency_relationship": "Hard Dependency(Prerequisite API)",
+            "source_api": "Payment_features_of_the_Hotel"
+        },
+        {
+            "target_api_params": "hotel_id",
+            "reason": "The 'hotel_id' parameter in the target API is explicitly stated to be retrievable from the same source as the source API's 'hotel_id' parameter. Both APIs require the hotel_id to be obtained from the SearchHotels or SearchHotelsByCoordinates endpoints, indicating a direct prerequisite relationship.",
+            "source_jsonpath": "$.hotel_id",
+            "confidence": 100,
+            "dependency_relationship": "Hard Dependency(Prerequisite API)",
+            "source_api": "Get_Hotel_Facilities"
+        }
+    ],
+    "verified": true
+}

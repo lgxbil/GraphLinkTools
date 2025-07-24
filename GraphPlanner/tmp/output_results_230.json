@@ -1,0 +1,510 @@
+{
+
+    "sub_tasks": {
+        "questions":" Please help me book the cheapest flight from Beijing to London for 2024-12-05. Additionally, arrange a taxi to pick me up two hours after my flight lands and take me to the British Museum.",
+        "subtask_1": {
+            "description": "This subtask focuses on finding the cheapest flight from Beijing to London on 2024-12-05. It involves searching for the airport IDs of Beijing and London and using them to find the cheapest flight. The arrival time of the flight will be used in the next subtask to arrange a taxi.",
+            "Nodes": [
+                "Search_Flight_Location(query = \"Beijing\")",
+                "Search_Flight_Location(query = \"London\")",
+                "Search_Flights(fromId = \"unknown(don\\'t know Beijing airport fromId)\", toId = \"unknown(don\\'t know London airport toId)\", departDate = \"2024-12-05\", sort = \"CHEAPEST\")"
+            ],
+            "Edges": [
+                {
+                    "from_api": "Search_Flight_Location",
+                    "response_path": "$[].id",
+                    "target_param": "fromId",
+                    "to_api": "Search_Flights"
+                },
+                {
+                    "from_api": "Search_Flight_Location",
+                    "response_path": "$[].id",
+                    "target_param": "toId",
+                    "to_api": "Search_Flights"
+                }
+            ]
+        },
+        "subtask_2": {
+            "description": "This subtask focuses on arranging a taxi to pick up the user from the airport two hours after their landing time and take them to the British Museum. It involves searching for the location IDs of the airport and the British Museum and using the flight arrival time to set the pick-up date and time for the taxi.",
+            "Nodes": [
+                "Taxi_Search_Location(query = \"unknown(airport name for the arrival airport in London)\")",
+                "Taxi_Search_Location(query = \"British Museum\")",
+                "Search_Taxi(pick_up_place_id = \"unknown(don\\'t know the pick-up place id for the airport)\", drop_off_place_id = \"unknown(don\\'t know the drop-off place id for the British Museum)\", pick_up_date = \"unknown(need to determine the landing date based on flight information)\", pick_up_time = \"unknown(need to determine the landing time based on flight information and add 2 hours)\")"
+            ],
+            "Edges": [
+                {
+                    "from_api": "Taxi_Search_Location",
+                    "response_path": "$[].googlePlaceId",
+                    "target_param": "drop_off_place_id",
+                    "to_api": "Search_Taxi"
+                },
+                {
+                    "from_api": "Taxi_Search_Location",
+                    "response_path": "$[].googlePlaceId",
+                    "target_param": "pick_up_place_id",
+                    "to_api": "Search_Taxi"
+                },
+                {
+                    "from_api": "Search_Flights",
+                    "response_path": "$.flightOffers[].segments[].arrivalTime",
+                    "target_param": "pick_up_date",
+                    "to_api": "Search_Taxi"
+                },
+                {
+                    "from_api": "Search_Flights",
+                    "response_path": "$.flightOffers[].segments[].arrivalTime",
+                    "target_param": "pick_up_time",
+                    "to_api": "Search_Taxi"
+                },
+                {
+                    "from_api": "Search_Flight_Location",
+                    "response_path": "$[].name",
+                    "target_param": "query",
+                    "to_api": "Taxi_Search_Location"
+                }
+            ]
+        }
+    },
+    "tools": [
+        {
+            "name": "Search_Flight_Location",
+            "endpoint": "/api/v1/flights/searchDestination",
+            "func_description": "Find airports by their location, address, state, country, etc. ",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "query": {
+                        "type": "String",
+                        "description": "Names of airport, locations, cities, districts, places, countries, counties etc.",
+                        "example_value": "new",
+                        "required": true
+                    },
+                    "languagecode": {
+                        "type": "String",
+                        "description": "To obtain the response data in a specific language, enter the languagecode. languagecode can be retrieved from api/v1/meta/getLanguages(Get Languages\n) endpoint in Meta collection.",
+                        "example_value": "",
+                        "required": false
+                    }
+                },
+                "required": [
+                    "query"
+                ]
+            },
+            "response_schema": [
+                {
+                    "id": "MTY.AIRPORT",
+                    "type": "AIRPORT",
+                    "name": "Monterrey International Airport",
+                    "code": "MTY",
+                    "city": "MTY",
+                    "cityName": "Monterrey",
+                    "regionName": "Nuevo León",
+                    "country": "MX",
+                    "countryName": "Mexico",
+                    "countryNameShort": "Mexico",
+                    "distanceToCity": {
+                        "value": 22.164948415034125,
+                        "unit": "km"
+                    },
+                    "parent": "MTY"
+                }
+            ]
+        },
+        {
+            "name": "Search_Flights",
+            "endpoint": "/api/v1/flights/searchFlights",
+            "func_description": "Search Flights. ",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "fromId": {
+                        "type": "String",
+                        "description": "From/Departure location Id. fromId can be retrieved from api/v1/flights/searchDestination(Search Flight Location) endpoint in Flights collection as id.",
+                        "example_value": "BOM.AIRPORT",
+                        "required": true
+                    },
+                    "toId": {
+                        "type": "String",
+                        "description": "To/Arrival location Id. toId can be retrieved from api/v1/flights/searchDestination(Search Flight Location) endpoint in Flights collection as id.",
+                        "example_value": "DEL.AIRPORT",
+                        "required": true
+                    },
+                    "departDate": {
+                        "type": "Date (yyyy-mm-dd)",
+                        "description": "Departure or travel date.\nFormat: YYYY-MM-DD",
+                        "example_value": "",
+                        "required": true
+                    },
+                    "returnDate": {
+                        "type": "Date (yyyy-mm-dd)",
+                        "description": "Return date.\nFormat: YYYY-MM-DD",
+                        "example_value": "",
+                        "required": false
+                    },
+                    "stops": {
+                        "type": "Enum",
+                        "description": "Filters flights based on the number of stops. Accepted values are:\nnone for no preference (returns flights with any number of stops)\n0 for non-stop flights\n1 for one-stop flights\n2 for two-stop flights\nIf provided, the value must be either none, 0, 1, or 2.",
+                        "example_value": "",
+                        "required": false
+                    },
+                    "pageNo": {
+                        "type": "Number",
+                        "description": "The page number.",
+                        "example_value": "1",
+                        "required": false
+                    },
+                    "adults": {
+                        "type": "Number",
+                        "description": "The number of guests who are 18 years of age or older. The default value is set to 1.",
+                        "example_value": "1",
+                        "required": false
+                    },
+                    "children": {
+                        "type": "String",
+                        "description": "The number of children, including infants, who are under 18.\nExample:\nChild 1 Age = 8 months\nChild 2 Age = 1 year\nChild 3 Age = 17 years\nHere is what the request parameter would look like:\nchildren_age: 0,1,17",
+                        "example_value": "0,17",
+                        "required": false
+                    },
+                    "sort": {
+                        "type": "Enum",
+                        "description": "This parameter orders result by BEST, CHEAPEST or FASTEST flights.",
+                        "example_value": "",
+                        "required": false
+                    },
+                    "cabinClass": {
+                        "type": "Enum",
+                        "description": "Search for flights that match the cabin class specified. Cabin call can be either ECONOMY, PREMIUM_ECONOMY, BUSINESS or FIRST.",
+                        "example_value": "",
+                        "required": false
+                    },
+                    "currency_code": {
+                        "type": "String",
+                        "description": "The currency code. currency_code can be retrieved from api/v1/meta/getCurrency(Get Currency) endpoint in Hotels collection.",
+                        "example_value": "AED",
+                        "required": false
+                    }
+                },
+                "required": [
+                    "fromId",
+                    "toId",
+                    "departDate"
+                ]
+            },
+            "response_schema": {
+                "flightOffers": [
+                    {
+                        "token": "d7699_H4sIAAAAAAAA_1WQW0_jMBCFfw28xamdO5KFAi1QNheWJIX2xUpdNw0FDLEhaX_9Drgqi8aac74jzciajdZv6sy2189ts9HK-lCokVo2tRaIyxd73UFbSrltXxu7bjs7LpN0koyiLJ9hAs3GtgXFz-bnYtCW6jg9bZcC1dSKoshYxWl4cB31kTuJFou8MBGXmrrIw16Q31SPF4kJO3p9e3NxbeZXNL3s-2Qcq7Toh2Q8CY5sNEjHasj381G-r4asXN0VVxW53zZBWmazdNcP2dNVBnMkrfogL6dfc8P3asE5xQi5QYS_WdaKOsZxTcnI2JWmRXKbLWYGNcWBG_nm_wPFjhN6p0o8C65b-fpH7GgVE8ez4Ejyk7hWyaoYO374K4h-o48tOOcRCQHzf4ADHP4EJ-QS75qX916BO3FieA0boWMBbw6Mvwq4ZvchenhEGGcoydF0jqoC4iUL_4JwFpYgK4br2hM1WME490HXzIXeMnzY-8SmDyB7JqQin9t_gUS23EACAAA.",
+                        "segments": [
+                            {
+                                "departureAirport": {
+                                    "type": "AIRPORT",
+                                    "code": "MEL",
+                                    "name": "Melbourne Airport",
+                                    "city": "MEL",
+                                    "cityName": "Melbourne",
+                                    "country": "AU",
+                                    "countryName": "Australia"
+                                },
+                                "arrivalAirport": {
+                                    "type": "AIRPORT",
+                                    "code": "ATL",
+                                    "name": "Hartsfield–Jackson Atlanta International Airport",
+                                    "city": "ATL",
+                                    "cityName": "Atlanta",
+                                    "country": "US",
+                                    "countryName": "United States"
+                                },
+                                "departureTime": "2024-11-12T13:00:00",
+                                "arrivalTime": "2024-11-12T21:30:00",
+                                "legs": [
+                                    {
+                                        "departureTime": "2024-11-12T18:28:00",
+                                        "arrivalTime": "2024-11-12T21:30:00",
+                                        "departureAirport": {
+                                            "type": "AIRPORT",
+                                            "code": "IAH",
+                                            "name": "George Bush Intercontinental Airport",
+                                            "city": "HOU",
+                                            "cityName": "Houston",
+                                            "country": "US",
+                                            "countryName": "United States"
+                                        },
+                                        "arrivalAirport": {
+                                            "type": "AIRPORT",
+                                            "code": "ATL",
+                                            "name": "Hartsfield–Jackson Atlanta International Airport",
+                                            "city": "ATL",
+                                            "cityName": "Atlanta",
+                                            "country": "US",
+                                            "countryName": "United States"
+                                        },
+                                        "cabinClass": "ECONOMY",
+                                        "flightInfo": {
+                                            "flightNumber": 1718,
+                                            "planeType": "738",
+                                            "carrierInfo": {
+                                                "operatingCarrier": "UA",
+                                                "marketingCarrier": "UA"
+                                            }
+                                        },
+                                        "carriers": [
+                                            "UA"
+                                        ],
+                                        "carriersData": [
+                                            {
+                                                "name": "United Airlines",
+                                                "code": "UA"
+                                            }
+                                        ],
+                                        "totalTime": 7320,
+                                        "amenities": [
+                                            {
+                                                "category": "WIFI",
+                                                "cost": "paid"
+                                            }
+                                        ],
+                                        "departureTerminal": "C",
+                                        "arrivalTerminal": "N"
+                                    }
+                                ],
+                                "totalTime": 88200,
+                                "isAtolProtected": false,
+                                "showWarningDestinationAirport": false,
+                                "showWarningOriginAirport": false
+                            }
+                        ]
+                    }
+                ],
+                "flightDeals": [
+                    {
+                        "key": "BEST",
+                        "offerToken": "d7699_H4sIAAAAAAAA_1WQ3U7jMBCFnwbu4nTcpE6QrFW2LVA2P0CSQntjpa6bhnbxKjYk7dNjcNUFjTXnfEeakTVbrf-pK9fd7Jt6q5XzplAttawrLRCXf91Na9pKyl3zWrtV07pRESfTeBCm2RywaS64jil-tfgleu2oltPLZiVQRZ0wDK1VnAYn19IR8qbhcpnlNuJSUw_54JPstnweRzZs6c3d7e8bO7-mybjr4kmkkrzr48mUnNkqSSaqz46LQXYs-7RY3-fXJX7c1SQp0nly6Pr05To1czgpO5IVs8-5_mu14JwCQh4J4YtlpejQOq4pHli71jSP79Ll3KKmQLxwZP_fUxgOA_9Sib3gupGvf8SBlhEOiGOOJN-x5xSsjADwzyAMfuAIHHPOM2JszPcACAT_gws8hsPel4obdzGMzKvZAJ3L8PbE8FmGK1ZE6BkjgBTFGZotUJmbeMWCByOcBYWRNYOq8kVlrGCcj4xumGd6w-C094XNnowcmZAKv-8-AHm1qHxAAgAA",
+                        "price": {
+                            "currencyCode": "USD",
+                            "units": 1749,
+                            "nanos": 680000000
+                        },
+                        "travellerPrices": [
+                            {
+                                "travellerPriceBreakdown": {
+                                    "total": {
+                                        "currencyCode": "USD",
+                                        "units": 1749,
+                                        "nanos": 680000000
+                                    },
+                                    "baseFare": {
+                                        "currencyCode": "USD",
+                                        "units": 1299,
+                                        "nanos": 0
+                                    },
+                                    "fee": {
+                                        "currencyCode": "USD",
+                                        "units": 3,
+                                        "nanos": 270000000
+                                    },
+                                    "tax": {
+                                        "currencyCode": "USD",
+                                        "units": 447,
+                                        "nanos": 410000000
+                                    },
+                                    "totalRounded": {
+                                        "currencyCode": "USD",
+                                        "nanos": 0,
+                                        "units": 1750
+                                    },
+                                    "discount": {
+                                        "currencyCode": "USD",
+                                        "units": 0,
+                                        "nanos": 0
+                                    },
+                                    "totalWithoutDiscount": {
+                                        "currencyCode": "USD",
+                                        "units": 1749,
+                                        "nanos": 680000000
+                                    },
+                                    "totalWithoutDiscountRounded": {
+                                        "currencyCode": "USD",
+                                        "nanos": 0,
+                                        "units": 1750
+                                    }
+                                },
+                                "travellerReference": "1",
+                                "travellerType": "ADULT"
+                            }
+                        ]
+                    }
+                ],
+                "atolProtectedStatus": "NONE",
+                "searchId": "3D53AE3CA336C40AAF9D1239776581F8",
+                "displayOptions": {
+                    "brandedFaresShownByDefault": false,
+                    "directFlightsOnlyFilterIgnored": false,
+                    "hideFlexiblePricesBanner": false
+                },
+                "isOffersCabinClassExtended": false,
+                "searchCriteria": {
+                    "cabinClass": "ECONOMY"
+                }
+            }
+        },
+        {
+            "name": "Taxi_Search_Location",
+            "endpoint": "/api/v1/taxi/searchLocation",
+            "func_description": "Find the `googlePlaceId` of Pick-up/Drop-off Location for taxi. ",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "query": {
+                        "type": "String",
+                        "description": "Names of locations, cities, districts, places, countries, counties etc.",
+                        "example_value": "new",
+                        "required": true
+                    },
+                    "languagecode": {
+                        "type": "String",
+                        "description": "To obtain the response data in a specific language, enter the languagecode. languagecode can be retrieved from api/v1/meta/getLanguages(Get Languages\n) endpoint in Meta collection.",
+                        "example_value": "",
+                        "required": false
+                    }
+                },
+                "required": [
+                    "query"
+                ]
+            },
+            "response_schema": [
+                {
+                    "latitude": 31.198027,
+                    "name": "Shanghai Royal Garden Hotel-Disney/Pudong International Airport",
+                    "types": "hotel",
+                    "longitude": 121.67985,
+                    "city": "Shanghai",
+                    "country": "China",
+                    "countryCode": "cn",
+                    "googlePlaceId": "ChIJuRSjIQKJrTURCndXXyaW3Ec"
+                }
+            ]
+        },
+        {
+            "name": "Search_Taxi",
+            "endpoint": "/api/v1/taxi/searchTaxi",
+            "func_description": "Search Taxi. ",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "pick_up_place_id": {
+                        "type": "String",
+                        "description": "The pick up location's place id. pick_up_place_id can be retrieved from api/v1/taxi/searchLocation(Taxi Search Location) endpoint in Taxi collection as googlePlaceId.",
+                        "example_value": "ChIJRym9mVDI5zsRrqh0xGAazB4",
+                        "required": true
+                    },
+                    "drop_off_place_id": {
+                        "type": "String",
+                        "description": "The drop off location's place id. drop_off_place_id can be retrieved from api/v1/taxi/searchLocation(Taxi Search Location) endpoint in Taxi collection as googlePlaceId.",
+                        "example_value": "ChIJ____b8DR5zsRVz_XpIUEKcA",
+                        "required": true
+                    },
+                    "pick_up_date": {
+                        "type": "Date (yyyy-mm-dd)",
+                        "description": "Pick up date\nFormat: YYYY-MM-DD",
+                        "example_value": "",
+                        "required": true
+                    },
+                    "pick_up_time": {
+                        "type": "Time (24-Hour Hh:Mm)",
+                        "description": "Pick up time\nFormat: HH:MM\nNote: The format of time is 24 hours.",
+                        "example_value": "",
+                        "required": true
+                    },
+                    "currency_code": {
+                        "type": "String",
+                        "description": "The currency code. currency_code can be retrieved from api/v1/meta/getCurrency(Get Currency) endpoint in Hotels collection.",
+                        "example_value": "EUR",
+                        "required": false
+                    },
+                    "languagecode": {
+                        "type": "String",
+                        "description": "To obtain the response data in a specific language, enter the languagecode. languagecode can be retrieved from api/v1/meta/getLanguages(Get Languages\n) endpoint in Meta collection.",
+                        "example_value": "",
+                        "required": false
+                    }
+                },
+                "required": [
+                    "pick_up_place_id",
+                    "drop_off_place_id",
+                    "pick_up_date",
+                    "pick_up_time"
+                ]
+            },
+            "response_schema": {
+                "journeys": [
+                    {
+                        "journeyDirection": "OUTBOUND",
+                        "janusSearchReference": "1c84df9e-9651-49c7-a552-28a955e96478",
+                        "pickupLocation": {
+                            "country": "IT",
+                            "description": "via dell'Airport di Fiumicino 320, 00054 Fiumicino RM, Italy",
+                            "timezone": "Europe/Rome",
+                            "airportCode": "FCO",
+                            "locationType": "AIRPORT",
+                            "locationId": "ChIJHxSYOHnwJRMRbzFY47QT5a8",
+                            "postcode": "00054",
+                            "establishment": "Fiumicino - Leonardo da Vinci International Airport (FCO)",
+                            "city": "Fiumicino",
+                            "name": "Fiumicino - Leonardo da Vinci International Airport (FCO), via dell'Airport di Fiumicino 320, 00054 Fiumicino RM, Italy"
+                        },
+                        "requestedPickupDateTime": "2024-11-15T08:25:00",
+                        "dropOffLocation": {
+                            "postcode": "415400",
+                            "country": "RO",
+                            "locationId": "ChIJMwefjprOSEcRl4OsYmSdwi8",
+                            "name": "Hotel Four Seasons, Sat de vacanta Vartop DN 75, Km 28, DN75 nr. 30, Vârtop 415400, Romania",
+                            "locationType": "GEO",
+                            "description": "Sat de vacanta Vartop DN 75, Km 28, DN75 nr. 30, Vârtop 415400, Romania",
+                            "city": "Vârtop",
+                            "establishment": "Hotel Four Seasons"
+                        }
+                    }
+                ],
+                "results": [
+                    {
+                        "description": "Luxury",
+                        "categoryLocalised": "Luxury",
+                        "supplierId": 1213,
+                        "category": "Luxury",
+                        "passengerCapacity": 2,
+                        "price": {
+                            "amount": "4751.90",
+                            "currencyCode": "USD"
+                        },
+                        "resultId": "4182918a-80af-4a9c-8a02-595405b2e039",
+                        "vehicleType": "EXECUTIVE",
+                        "priceRuleId": 18769,
+                        "janusResultReference": "4",
+                        "geniusDiscount": false,
+                        "legPriceBreakdown": [
+                            {
+                                "price": {
+                                    "amount": "4751.90",
+                                    "currencyCode": "USD"
+                                },
+                                "supplierLocationId": 5413,
+                                "supplierId": 1213,
+                                "journeyDirection": "OUTBOUND",
+                                "supplierName": "World Transfer (acting as agent for local supplier)"
+                            }
+                        ],
+                        "duration": 1025,
+                        "nonRefundable": false,
+                        "discountType": "NONE",
+                        "supplierName": "World Transfer (acting as agent for local supplier)",
+                        "drivingDistance": 1604.73,
+                        "descriptionLocalised": "Offers more room to arrive in style.",
+                        "bags": 2,
+                        "cancellationLeadTimeMinutes": 1440,
+                        "meetGreet": true
+                    }
+                ]
+            }
+        }
+    ]
+}

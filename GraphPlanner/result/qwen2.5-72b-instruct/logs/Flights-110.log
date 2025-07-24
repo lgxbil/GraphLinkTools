@@ -1,0 +1,61 @@
+2025-07-22 08:17:24,797 - evaluation_logger_Flights-110 - INFO - Test Example Flights-110
+2025-07-22 08:17:24,797 - evaluation_logger_Flights-110 - INFO - Query: My friend plans to depart from Guangzhou to Chicago around November 20, 2024, with a layover in Amsterdam. Look for the departure dates of the cheapest multi-stop flight and get the seat map for the flight. Please note, she doesn't accept flights with overnight layovers.
+2025-07-22 08:20:24,413 - evaluation_logger_Flights-110 - INFO - Start compare_single_call: 
+{'name': 'Search_Flight_Location', 'arguments': {'query': 'Guangzhou'}}
+{'name': 'Search_Flight_Location', 'arguments': {'query': 'Guangzhou'}}
+2025-07-22 08:20:24,414 - evaluation_logger_Flights-110 - INFO - Rule-based compare success.
+2025-07-22 08:20:24,414 - evaluation_logger_Flights-110 - INFO - Success matched: [{'name': 'Search_Flight_Location', 'arguments': {'query': 'Guangzhou'}}]
+2025-07-22 08:20:24,418 - evaluation_logger_Flights-110 - INFO - Start compare_single_call: 
+{'name': 'Search_Flight_Location', 'arguments': {'query': 'Amsterdam'}}
+{'name': 'Search_Flight_Location', 'arguments': {'query': 'Amsterdam'}}
+2025-07-22 08:20:24,418 - evaluation_logger_Flights-110 - INFO - Rule-based compare success.
+2025-07-22 08:20:24,418 - evaluation_logger_Flights-110 - INFO - Success matched: [{'name': 'Search_Flight_Location', 'arguments': {'query': 'Amsterdam'}}]
+2025-07-22 08:20:24,419 - evaluation_logger_Flights-110 - INFO - Start compare_single_call: 
+{'name': 'Search_Flight_Location', 'arguments': {'query': 'Chicago'}}
+{'name': 'Search_Flight_Location', 'arguments': {'query': 'Chicago'}}
+2025-07-22 08:20:24,420 - evaluation_logger_Flights-110 - INFO - Rule-based compare success.
+2025-07-22 08:20:24,420 - evaluation_logger_Flights-110 - INFO - Success matched: [{'name': 'Search_Flight_Location', 'arguments': {'query': 'Chicago'}}]
+2025-07-22 08:20:25,042 - evaluation_logger_Flights-110 - INFO - Start compare_single_call: 
+{'name': 'Search_Flights_Multi_Stops', 'arguments': {'legs': [{'fromId': 'CAN.AIRPORT', 'toId': 'AMS.AIRPORT', 'date': '2024-11-20'}, {'fromId': 'AMS.AIRPORT', 'toId': 'CHI.CITY', 'date': '2024-11-21'}], 'sort': 'CHEAPEST'}}
+{'name': 'Search_Flights_Multi_Stops', 'arguments': {'legs': [{'fromId': 'CAN.AIRPORT', 'toId': 'AMS.AIRPORT', 'date': '2024-11-18'}, {'fromId': 'AMS.AIRPORT', 'toId': 'CHI.CITY', 'date': '2024-11-18'}], 'sort': 'CHEAPEST'}}
+2025-07-22 08:20:30,033 - evaluation_logger_Flights-110 - DEBUG - LLM-based comparison output: {'is_equal': False, 'reason': 'The dates in the legs parameters are different between the two function calls.'}
+2025-07-22 08:20:30,033 - evaluation_logger_Flights-110 - INFO - All compare method failed.
+2025-07-22 08:20:30,042 - evaluation_logger_Flights-110 - INFO - Success matched: []
+2025-07-22 08:21:32,860 - evaluation_logger_Flights-110 - INFO - Start compare_single_call: 
+{'name': 'Search_Flight_Location', 'arguments': {'query': 'Guangzhou'}}
+{'name': 'Search_Flight_Location', 'arguments': {'query': 'Guangzhou'}}
+2025-07-22 08:21:32,861 - evaluation_logger_Flights-110 - INFO - Rule-based compare success.
+2025-07-22 08:21:32,861 - evaluation_logger_Flights-110 - INFO - Success matched: [{'name': 'Search_Flight_Location', 'arguments': {'query': 'Guangzhou'}}]
+2025-07-22 08:21:32,861 - evaluation_logger_Flights-110 - INFO - Start compare_single_call: 
+{'name': 'Search_Flight_Location', 'arguments': {'query': 'Amsterdam'}}
+{'name': 'Search_Flight_Location', 'arguments': {'query': 'Amsterdam'}}
+2025-07-22 08:21:32,862 - evaluation_logger_Flights-110 - INFO - Rule-based compare success.
+2025-07-22 08:21:32,862 - evaluation_logger_Flights-110 - INFO - Success matched: [{'name': 'Search_Flight_Location', 'arguments': {'query': 'Amsterdam'}}]
+2025-07-22 08:21:32,862 - evaluation_logger_Flights-110 - INFO - Start compare_single_call: 
+{'name': 'Search_Flight_Location', 'arguments': {'query': 'Chicago'}}
+{'name': 'Search_Flight_Location', 'arguments': {'query': 'Chicago'}}
+2025-07-22 08:21:32,862 - evaluation_logger_Flights-110 - INFO - Rule-based compare success.
+2025-07-22 08:21:32,863 - evaluation_logger_Flights-110 - INFO - Success matched: [{'name': 'Search_Flight_Location', 'arguments': {'query': 'Chicago'}}]
+2025-07-22 08:21:33,256 - evaluation_logger_Flights-110 - INFO - Success matched: []
+2025-07-22 08:23:00,834 - evaluation_logger_Flights-110 - INFO - Start compare_single_call: 
+{'name': 'Search_Flight_Location', 'arguments': {'query': 'Guangzhou'}}
+{'name': 'Search_Flight_Location', 'arguments': {'query': 'Guangzhou'}}
+2025-07-22 08:23:00,834 - evaluation_logger_Flights-110 - INFO - Rule-based compare success.
+2025-07-22 08:23:00,835 - evaluation_logger_Flights-110 - INFO - Success matched: [{'name': 'Search_Flight_Location', 'arguments': {'query': 'Guangzhou'}}]
+2025-07-22 08:23:00,835 - evaluation_logger_Flights-110 - INFO - Start compare_single_call: 
+{'name': 'Search_Flight_Location', 'arguments': {'query': 'Amsterdam'}}
+{'name': 'Search_Flight_Location', 'arguments': {'query': 'Amsterdam'}}
+2025-07-22 08:23:00,835 - evaluation_logger_Flights-110 - INFO - Rule-based compare success.
+2025-07-22 08:23:00,835 - evaluation_logger_Flights-110 - INFO - Success matched: [{'name': 'Search_Flight_Location', 'arguments': {'query': 'Amsterdam'}}]
+2025-07-22 08:23:00,836 - evaluation_logger_Flights-110 - INFO - Start compare_single_call: 
+{'name': 'Search_Flight_Location', 'arguments': {'query': 'Chicago'}}
+{'name': 'Search_Flight_Location', 'arguments': {'query': 'Chicago'}}
+2025-07-22 08:23:00,836 - evaluation_logger_Flights-110 - INFO - Rule-based compare success.
+2025-07-22 08:23:00,836 - evaluation_logger_Flights-110 - INFO - Success matched: [{'name': 'Search_Flight_Location', 'arguments': {'query': 'Chicago'}}]
+2025-07-22 08:23:01,239 - evaluation_logger_Flights-110 - INFO - Start compare_single_call: 
+{'name': 'Get_Min_Price_Multi_Stops', 'arguments': {'legs': [{'fromId': 'CAN.AIRPORT', 'toId': 'AMS.AIRPORT', 'date': '2024-11-20'}, {'fromId': 'AMS.AIRPORT', 'toId': 'CHI.CITY', 'date': '2024-11-21'}]}}
+{'name': 'Get_Min_Price_Multi_Stops', 'arguments': {'legs': [{'fromId': 'CAN.AIRPORT', 'toId': 'AMS.AIRPORT', 'date': '2024-11-20'}, {'fromId': 'AMS.AIRPORT', 'toId': 'CHI.CITY', 'date': '2024-11-20'}]}}
+2025-07-22 08:23:08,675 - evaluation_logger_Flights-110 - DEBUG - LLM-based comparison output: {'is_equal': False, 'reason': "The date in the second leg of the function calls differs; '2024-11-21' in call 1 vs '2024-11-20' in call 2."}
+2025-07-22 08:23:08,675 - evaluation_logger_Flights-110 - INFO - All compare method failed.
+2025-07-22 08:23:08,675 - evaluation_logger_Flights-110 - INFO - Success matched: []
+2025-07-22 08:23:38,626 - evaluation_logger_Flights-110 - ERROR - 'questions'

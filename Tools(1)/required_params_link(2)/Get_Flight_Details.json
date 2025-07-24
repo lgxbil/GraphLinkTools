@@ -1,0 +1,83 @@
+{
+    "name": "Get_Flight_Details",
+    "docs_row": {
+        "name": "Get_Flight_Details",
+        "endpoint": "/api/v1/flights/getFlightDetails",
+        "func_description": "Search the detail information of flights, include: baggage allowances, airline meals, ticket price breakdown (taxes, discounts, baseFare) and insurance prices, etc. ",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "token": {
+                    "type": "String",
+                    "description": "token can be retrieved from api/v1/flights/searchFlights(Search Flights) or api/v1/flights/searchFlightsMultiStops(Search Flights Multi Stops) endpoints in Flights collection as token.",
+                    "example_value": "",
+                    "required": true
+                },
+                "currency_code": {
+                    "type": "String",
+                    "description": "The currency code. currency_code can be retrieved from api/v1/meta/getCurrency(Get Currency) endpoint in Hotels collection.",
+                    "example_value": "AED",
+                    "required": false
+                }
+            },
+            "required": [
+                "token"
+            ]
+        }
+    },
+    "instance": [],
+    "category": null,
+    "tool": null,
+    "api_idx": 6,
+    "params": {
+        "type": "object",
+        "properties": {
+            "token": {
+                "type": "String",
+                "description": "token can be retrieved from api/v1/flights/searchFlights(Search Flights) or api/v1/flights/searchFlightsMultiStops(Search Flights Multi Stops) endpoints in Flights collection as token.",
+                "example_value": "",
+                "required": true
+            },
+            "currency_code": {
+                "type": "String",
+                "description": "The currency code. currency_code can be retrieved from api/v1/meta/getCurrency(Get Currency) endpoint in Hotels collection.",
+                "example_value": "AED",
+                "required": false
+            }
+        },
+        "required": [
+            "token"
+        ]
+    },
+    "responses": [],
+    "response_summary": null,
+    "enhance_func_desc": null,
+    "enhance_params_desc": {
+        "enhanced_parameters": {
+            "token": "Unique session token for retrieving flight details from search results.",
+            "currency_code": "Currency for displaying flight prices and fees."
+        }
+    },
+    "enhance_resfield_desc": null,
+    "params_desc_list": null,
+    "response_desc_list": null,
+    "depends_on": [
+        {
+            "target_api_params": "token",
+            "reason": "The 'token' parameter in the target API is explicitly mentioned to be retrievable from the source API's response. The source API's response includes a 'token' field in the 'flightOffers' array, which matches the required parameter type (String) and is directly referenced in the target API's documentation as a source for this parameter.",
+            "source_jsonpath": "$.flightOffers[*].token",
+            "confidence": 100,
+            "dependency_relationship": "Hard Dependency(Prerequisite API)",
+            "source_api": "Search_Flights_Multi_Stops"
+        },
+        {
+            "target_api_params": "token",
+            "reason": "The 'token' parameter in the target API is explicitly mentioned to be retrievable from the 'api/v1/flights/searchFlights' endpoint, which is the source API in this context. The source API's response includes a 'token' field within the 'flightOffers' array, which matches the required data type (String) and serves as a direct input for the target API's token parameter. This is a clear prerequisite for calling the target API.",
+            "source_jsonpath": "$.flightOffers[*].token",
+            "confidence": 100,
+            "dependency_relationship": "Hard Dependency(Prerequisite API)",
+            "source_api": "Search_Flights"
+        }
+    ],
+    "verified": false
+}

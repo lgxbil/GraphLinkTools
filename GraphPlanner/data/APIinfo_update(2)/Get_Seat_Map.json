@@ -1,0 +1,296 @@
+{
+    "name": "Get_Seat_Map",
+    "docs_row": {
+        "name": "Get_Seat_Map",
+        "endpoint": "/api/v1/flights/getSeatMap",
+        "func_description": "Get the seat map for a specific flight. ",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "offerToken": {
+                    "type": "String",
+                    "description": "offerToken can be retrieved from api/v1/flights/searchFlights(Search Flights) or api/v1/flights/searchFlightsMultiStops(Search Flights Multi Stops) endpoints in Flights collection as offerToken.",
+                    "example_value": "",
+                    "required": true
+                },
+                "currency_code": {
+                    "type": "String",
+                    "description": "The currency code. currency_code can be retrieved from api/v1/meta/getCurrency(Get Currency) endpoint in Hotels collection.",
+                    "example_value": "AED",
+                    "required": false
+                }
+            },
+            "required": [
+                "offerToken"
+            ]
+        }
+    },
+    "api_response_schema": {
+        "checkedInBaggage": {
+            "airProductReference": "n/a",
+            "options": [
+                {
+                    "luggageAllowance": {
+                        "luggageType": "CHECKED_IN",
+                        "ruleType": "PIECE_BASED",
+                        "maxPiece": 1,
+                        "maxWeightPerPiece": 50.7,
+                        "massUnit": "LB"
+                    },
+                    "priceBreakdown": {
+                        "total": {
+                            "currencyCode": "USD",
+                            "units": 162,
+                            "nanos": 620000000
+                        },
+                        "baseFare": {
+                            "currencyCode": "USD",
+                            "units": 162,
+                            "nanos": 620000000
+                        },
+                        "fee": {
+                            "currencyCode": "USD",
+                            "units": 0,
+                            "nanos": 0
+                        },
+                        "tax": {
+                            "currencyCode": "USD",
+                            "units": 0,
+                            "nanos": 0
+                        },
+                        "discount": {
+                            "currencyCode": "USD",
+                            "units": 0,
+                            "nanos": 0
+                        },
+                        "totalWithoutDiscount": {
+                            "currencyCode": "USD",
+                            "units": 162,
+                            "nanos": 620000000
+                        }
+                    },
+                    "travellers": [
+                        "1"
+                    ],
+                    "preSelected": false
+                }
+            ]
+        },
+        "flexibleTicket": {
+            "airProductReference": "n/a",
+            "travellers": [
+                "1"
+            ],
+            "priceBreakdown": {
+                "total": {
+                    "currencyCode": "USD",
+                    "units": 69,
+                    "nanos": 650000000
+                },
+                "baseFare": {
+                    "currencyCode": "USD",
+                    "units": 69,
+                    "nanos": 650000000
+                },
+                "fee": {
+                    "currencyCode": "USD",
+                    "units": 0,
+                    "nanos": 0
+                },
+                "tax": {
+                    "currencyCode": "USD",
+                    "units": 0,
+                    "nanos": 0
+                },
+                "discount": {
+                    "currencyCode": "USD",
+                    "units": 0,
+                    "nanos": 0
+                },
+                "totalWithoutDiscount": {
+                    "currencyCode": "USD",
+                    "units": 69,
+                    "nanos": 650000000
+                }
+            },
+            "preSelected": false,
+            "recommendation": {
+                "recommended": false,
+                "confidence": "UNKNOWN_LEVEL"
+            },
+            "supplierInfo": {
+                "name": "Gotogate, Inc."
+            }
+        },
+        "mobileTravelPlan": {
+            "priceBreakdown": {
+                "total": {
+                    "currencyCode": "USD",
+                    "units": 0,
+                    "nanos": 0
+                },
+                "baseFare": {
+                    "currencyCode": "USD",
+                    "units": 0,
+                    "nanos": 0
+                },
+                "fee": {
+                    "currencyCode": "USD",
+                    "units": 0,
+                    "nanos": 0
+                },
+                "tax": {
+                    "currencyCode": "USD",
+                    "units": 0,
+                    "nanos": 0
+                },
+                "discount": {
+                    "currencyCode": "USD",
+                    "units": 0,
+                    "nanos": 0
+                },
+                "totalWithoutDiscount": {
+                    "currencyCode": "USD",
+                    "units": 0,
+                    "nanos": 0
+                }
+            }
+        },
+        "seatMap": {
+            "airProductReference": "n/a",
+            "seatMapOption": [
+                {
+                    "cabins": [
+                        {
+                            "class": "ECONOMY",
+                            "deck": "MAIN",
+                            "columns": [
+                                {
+                                    "id": "E",
+                                    "description": [
+                                        "BETWEEN"
+                                    ]
+                                }
+                            ],
+                            "rows": [
+                                {
+                                    "id": 54,
+                                    "seats": [
+                                        {
+                                            "colId": "E",
+                                            "description": "NORMAL",
+                                            "priceBreakdown": {
+                                                "total": {
+                                                    "currencyCode": "USD",
+                                                    "units": 20,
+                                                    "nanos": 600000000
+                                                },
+                                                "baseFare": {
+                                                    "currencyCode": "USD",
+                                                    "units": 20,
+                                                    "nanos": 600000000
+                                                },
+                                                "fee": {
+                                                    "currencyCode": "USD",
+                                                    "units": 0,
+                                                    "nanos": 0
+                                                },
+                                                "tax": {
+                                                    "currencyCode": "USD",
+                                                    "units": 0,
+                                                    "nanos": 0
+                                                },
+                                                "discount": {
+                                                    "currencyCode": "USD",
+                                                    "units": 0,
+                                                    "nanos": 0
+                                                },
+                                                "totalWithoutDiscount": {
+                                                    "currencyCode": "USD",
+                                                    "units": 20,
+                                                    "nanos": 600000000
+                                                }
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "segmentIndex": 1,
+                    "legIndex": 1,
+                    "travellers": [
+                        "1"
+                    ]
+                }
+            ]
+        },
+        "travelInsurance": {
+            "options": {
+                "type": "COMPREHENSIVE_INSURANCE_COVER_GENIUS",
+                "travellers": [
+                    "1"
+                ],
+                "priceBreakdown": {
+                    "total": {
+                        "currencyCode": "USD",
+                        "units": 36,
+                        "nanos": 560000000
+                    },
+                    "baseFare": {
+                        "currencyCode": "USD",
+                        "units": 36,
+                        "nanos": 560000000
+                    },
+                    "fee": {
+                        "currencyCode": "USD",
+                        "units": 0,
+                        "nanos": 0
+                    },
+                    "tax": {
+                        "currencyCode": "USD",
+                        "units": 0,
+                        "nanos": 0
+                    },
+                    "discount": {
+                        "currencyCode": "USD",
+                        "units": 0,
+                        "nanos": 0
+                    },
+                    "totalWithoutDiscount": {
+                        "currencyCode": "USD",
+                        "units": 36,
+                        "nanos": 560000000
+                    }
+                },
+                "disclaimer": "Plan is issued by Cover Genius Insurance Services, LLC, includes insurance by US Fire and non-ins. services by On Call International. By clicking the button to select this coverage, I agree that I have read and agree to the Plan Terms."
+            },
+            "content": {
+                "header": "Travel protection",
+                "subheader": "Protect yourself from the unexpected. XCover's Travel Protection covers flight costs and more.",
+                "optInTitle": "Travel protection",
+                "optOutTitle": "No insurance",
+                "exclusions": [
+                    "Terms and exclusions apply. Claims and losses due to pre-existing medical conditions are not covered."
+                ],
+                "coveredStatusLabel": "Insured",
+                "notCoveredStatusLabel": "Not insured",
+                "benefitsTitle": "What\u2019s covered by your travel insurance",
+                "closeA11y": "Close and go back to the travel insurance overview section.",
+                "benefits": [
+                    "Medical and dental, emergency assistance and transportation while you\u2019re abroad (international flight bookings only)"
+                ],
+                "finePrint": [
+                    "This plan is issued by Cover Genius Insurance Services, LLC, and includes insurance by US Fire and non-insurance services by On Call International. By selecting this coverage, I agree that I have read and agree to the <a href='https://www.xcover.com/en-us/pds/YV7Z7-KE68J-INS' id='insurance_terms_link' target='_blank' rel='noopener noreferrer' >Plan Terms & Disclosures</a>. Coverage is not available for travellers residing in Hawaii, Kansas, New York, or Wyoming."
+                ]
+            },
+            "forceForAllTravellers": true,
+            "isPerTraveller": true,
+            "version": 0,
+            "recommendation": {
+                "recommended": false,
+                "confidence": "UNKNOWN_LEVEL"
+            }
+        }
+    }
+}

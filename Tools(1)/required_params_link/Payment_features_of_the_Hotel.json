@@ -1,0 +1,230 @@
+{
+    "name": "Payment_features_of_the_Hotel",
+    "docs_row": {
+        "name": "Payment_features_of_the_Hotel",
+        "endpoint": "/api/v1/hotels/getPaymentFeatures",
+        "func_description": "Retrieve information about the payment features and options available at a specific hotel. ",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "hotel_id": {
+                    "type": "String",
+                    "description": "hotel_id can be retrieved from api/v1/hotels/searchHotels(Search Hotels) or api/v1/hotels/searchHotelsByCoordinates(Search Hotels By Coordinates\n) endpoint in Hotels collection.",
+                    "example_value": "5955189",
+                    "required": true
+                },
+                "languagecode": {
+                    "type": "String",
+                    "description": "To obtain the response data in a specific language, enter the languagecode. languagecode can be retrieved from api/v1/meta/getLanguages(Get Languages\n) endpoint in Meta collection.",
+                    "example_value": "en-us",
+                    "required": false
+                }
+            },
+            "required": [
+                "hotel_id"
+            ]
+        }
+    },
+    "instance": [],
+    "category": null,
+    "tool": null,
+    "api_idx": 4,
+    "params": {
+        "type": "object",
+        "properties": {
+            "hotel_id": {
+                "type": "String",
+                "description": "hotel_id can be retrieved from api/v1/hotels/searchHotels(Search Hotels) or api/v1/hotels/searchHotelsByCoordinates(Search Hotels By Coordinates\n) endpoint in Hotels collection.",
+                "example_value": "5955189",
+                "required": true
+            },
+            "languagecode": {
+                "type": "String",
+                "description": "To obtain the response data in a specific language, enter the languagecode. languagecode can be retrieved from api/v1/meta/getLanguages(Get Languages\n) endpoint in Meta collection.",
+                "example_value": "en-us",
+                "required": false
+            }
+        },
+        "required": [
+            "hotel_id"
+        ]
+    },
+    "responses": [
+        {
+            "function_name": "Payment_features_of_the_Hotel",
+            "arguments": {
+                "hotel_id": "5955189"
+            },
+            "observation": [
+                {
+                    "creditcard_id": 2,
+                    "is_direct_payment": 0,
+                    "bookable": 1,
+                    "hotel_id": "5955189",
+                    "cvc_required": 0,
+                    "payable": 1
+                },
+                {
+                    "cvc_required": 0,
+                    "payable": 1,
+                    "is_direct_payment": 0,
+                    "bookable": 1,
+                    "creditcard_id": 11,
+                    "hotel_id": "5955189"
+                },
+                {
+                    "bookable": 1,
+                    "is_direct_payment": 0,
+                    "creditcard_id": 1,
+                    "hotel_id": "5955189",
+                    "cvc_required": 0,
+                    "payable": 1
+                }
+            ]
+        }
+    ],
+    "response_summary": "The API response provides details about three different credit card payment options available for booking a hotel with the ID \"5955189.\" All three credit cards (with IDs 2, 11, and 1) allow bookings and payments without requiring direct payment or a CVC code. Each option is marked as both bookable and payable, meaning they can be used to reserve and pay for the hotel stay without any additional verification steps. This indicates a smooth and straightforward payment process for customers using these cards.",
+    "enhance_func_desc": "This API is suitable for hotel booking and payment processing. It retrieves payment features for a specific hotel, including supported credit card options and their booking/payment capabilities. Users can check if direct payment or CVC verification is required, ensuring a seamless booking experience. The response details which cards are bookable and payable, streamlining the reservation process. The hotel ID must be obtained from the SearchHotels API.",
+    "enhance_params_desc": {
+        "enhanced_parameters": {
+            "hotel_id": "Unique identifier for the hotel, sourced from searchHotels or searchHotelsByCoordinates endpoints.",
+            "languagecode": "Language preference for the response data, retrieved from getLanguages endpoint."
+        }
+    },
+    "enhance_resfield_desc": {
+        "response_fields": [
+            {
+                "creditcard_id": {
+                    "type": "Number",
+                    "description": "The unique identifier for the credit card payment option (e.g., 2, 11, 1)."
+                },
+                "is_direct_payment": {
+                    "type": "Number",
+                    "description": "Indicates whether direct payment is required (0 = not required, 1 = required)."
+                },
+                "bookable": {
+                    "type": "Number",
+                    "description": "Indicates whether the credit card can be used to book the hotel (1 = bookable, 0 = not bookable)."
+                },
+                "hotel_id": {
+                    "type": "String",
+                    "description": "The unique identifier for the hotel (e.g., '5955189')."
+                },
+                "cvc_required": {
+                    "type": "Number",
+                    "description": "Indicates whether a CVC code is required for payment (0 = not required, 1 = required)."
+                },
+                "payable": {
+                    "type": "Number",
+                    "description": "Indicates whether the credit card can be used to pay for the booking (1 = payable, 0 = not payable)."
+                }
+            }
+        ]
+    },
+    "params_desc_list": null,
+    "response_desc_list": [
+        {
+            "path_name": "$[].creditcard_id",
+            "name": "creditcard_id",
+            "description": "The unique identifier for the credit card payment option (e.g., 2, 11, 1)."
+        },
+        {
+            "path_name": "$[].is_direct_payment",
+            "name": "is_direct_payment",
+            "description": "Indicates whether direct payment is required (0 = not required, 1 = required)."
+        },
+        {
+            "path_name": "$[].bookable",
+            "name": "bookable",
+            "description": "Indicates whether the credit card can be used to book the hotel (1 = bookable, 0 = not bookable)."
+        },
+        {
+            "path_name": "$[].hotel_id",
+            "name": "hotel_id",
+            "description": "The unique identifier for the hotel (e.g., '5955189')."
+        },
+        {
+            "path_name": "$[].cvc_required",
+            "name": "cvc_required",
+            "description": "Indicates whether a CVC code is required for payment (0 = not required, 1 = required)."
+        },
+        {
+            "path_name": "$[].payable",
+            "name": "payable",
+            "description": "Indicates whether the credit card can be used to pay for the booking (1 = payable, 0 = not payable)."
+        }
+    ],
+    "depends_on": [
+        {
+            "source_api_name": "Search_Hotels",
+            "dependence_type": "Hard Dependency",
+            "depencend_field": "$.hotels[*].hotel_id",
+            "param_name": "hotel_id",
+            "reason": "The 'Search_Hotels' API is a necessary prerequisite for the 'Payment_features_of_the_Hotel' API as it provides the 'hotel_id' required by the target API. The response field 'hotels[].hotel_id' from 'Search_Hotels' matches the data type and description of the 'hotel_id' parameter in the target API. This represents a hard dependency as the target API cannot be called without first obtaining the hotel ID from the 'Search_Hotels' API."
+        },
+        {
+            "source_api_name": "Get_Question_And_Answer",
+            "dependence_type": "Hard Dependency",
+            "depencend_field": "$.hotel_id",
+            "param_name": "hotel_id",
+            "reason": "The 'Get_Question_And_Answer' API provides a 'hotel_id' field in its response, which matches exactly with the 'hotel_id' parameter required by the 'Payment_features_of_the_Hotel' API. This establishes a hard dependency as the 'Get_Question_And_Answer' API explicitly states that the hotel ID must be obtained from SearchHotels or SearchHotelsByCoordinates APIs, which is the same requirement for the target API. The data types match (both are Strings), and the example value demonstrates the correct format."
+        },
+        {
+            "source_api_name": "Get_Question_And_Answer",
+            "dependence_type": "Hard Dependency",
+            "depencend_field": "$.q_and_a_pairs[*].hotel_id",
+            "param_name": "hotel_id",
+            "reason": "The 'Get_Question_And_Answer' API provides hotel_id fields in its response, which directly corresponds to the hotel_id parameter required by the 'Payment_features_of_the_Hotel' API. This establishes a hard dependency as the hotel_id from the Q&A API is necessary to call the payment features API. The data types match (both expect a hotel identifier), and the source API explicitly states that its hotel_id comes from the same endpoints (SearchHotels or SearchHotelsByCoordinates) as required by the target API."
+        },
+        {
+            "source_api_name": "Get_Hotel_Reviews(Tips)",
+            "dependence_type": "Hard Dependency",
+            "depencend_field": "$.result[*].hotel_id",
+            "param_name": "hotel_id",
+            "reason": "The 'Get_Hotel_Reviews(Tips)' API provides hotel_id values in its response, which matches exactly with the hotel_id parameter required by the 'Payment_features_of_the_Hotel' API. This establishes a hard dependency as the hotel_id from the reviews API can directly serve as input for the payment features API. The data types also match (String vs Number in examples, but typically these are interchangeable for ID fields)."
+        },
+        {
+            "source_api_name": "Get_Hotel_Policies",
+            "dependence_type": "Hard Dependency",
+            "depencend_field": "$.hotel_id",
+            "param_name": "hotel_id",
+            "reason": "The 'Get_Hotel_Policies' API and the 'Payment_features_of_the_Hotel' API share a direct business relationship as they both operate on the same hotel entity, identified by the hotel_id. The 'hotel_id' field from the 'Get_Hotel_Policies' response matches exactly with the 'hotel_id' parameter required by the 'Payment_features_of_the_Hotel' API in both data type (String vs. Number, but the example shows they can be compatible) and purpose. This represents a hard dependency as the hotel_id is a mandatory parameter for both APIs and must be obtained from a search API first."
+        },
+        {
+            "source_api_name": "Get_Room_List",
+            "dependence_type": "Hard Dependency",
+            "depencend_field": "$.hotel_id",
+            "param_name": "hotel_id",
+            "reason": "The 'Get_Room_List' API provides the 'hotel_id' field which is a direct match for the 'hotel_id' parameter required by the 'Payment_features_of_the_Hotel' API. This represents a hard dependency as the hotel ID from the source API is explicitly required to call the target API. The data types also match (String in target API and Number in source API, but numeric IDs can typically be converted to strings without issue)."
+        },
+        {
+            "source_api_name": "Get_Hotel_Review_Scores",
+            "dependence_type": "Hard Dependency",
+            "depencend_field": "$[*].hotel_id",
+            "param_name": "hotel_id",
+            "reason": "The 'Get_Hotel_Review_Scores' API provides review scores for specific hotels, and the 'hotel_id' in its response is the same unique identifier required by the 'Payment_features_of_the_Hotel' API. This establishes a hard dependency as the hotel_id from the review scores API can directly serve as input for the payment features API. The data types match (String vs. Number in examples, but both represent the same identifier), and the business relationship is clear as both APIs operate on the same hotel entities."
+        },
+        {
+            "source_api_name": "Search_Hotels_By_Coordinates",
+            "dependence_type": "Hard Dependency",
+            "depencend_field": "$.result[*].hotel_id",
+            "param_name": "hotel_id",
+            "reason": "The 'Search_Hotels_By_Coordinates' API is explicitly mentioned in the target parameter's description as a valid source for the 'hotel_id' parameter. The response field '$.result[*].hotel_id' from this API provides the exact identifier needed by the 'Payment_features_of_the_Hotel' API. This represents a hard dependency as the source API is specifically required to obtain the necessary input parameter for the target API."
+        },
+        {
+            "source_api_name": "Get_Hotel_Reviews_Filter_Metadata",
+            "dependence_type": "Hard Dependency",
+            "depencend_field": "$.hotel_id",
+            "param_name": "hotel_id",
+            "reason": "The 'Get_Hotel_Reviews_Filter_Metadata' API provides a 'hotel_id' field that matches exactly with the 'hotel_id' parameter required by the 'Payment_features_of_the_Hotel' API. This establishes a hard dependency as the hotel ID from the reviews API is necessary to make a payment feature request. The data types match (both are Strings), and the example value confirms the field can be directly used as input for the target API parameter."
+        },
+        {
+            "source_api_name": "Get_Description_And_Info",
+            "dependence_type": "Hard Dependency",
+            "depencend_field": "$[*].hotel_id",
+            "param_name": "hotel_id",
+            "reason": "The 'Get_Description_And_Info' API provides the 'hotel_id' field which is a direct match for the 'hotel_id' parameter required by the 'Payment_features_of_the_Hotel' API. This establishes a hard dependency as the hotel ID from the source API is a necessary prerequisite for calling the target API. The data types match perfectly (both are Strings), and the example values confirm the compatibility."
+        }
+    ],
+    "verified": true
+}

@@ -1,0 +1,23 @@
+2025-07-24 03:40:52,522 - evaluation_logger_Cross-30 - INFO - Test Example Cross-30
+2025-07-24 03:40:52,522 - evaluation_logger_Cross-30 - INFO - Query: I'm planning to rent a car at Sydney Kingsford Smith Airport at 9 AM on November 3, 2024, and return it at 3 PM on November 10 in Sydney City Centre. I need to rest for one night in a hotel near by after returning the car until November 11. Could you help me look up the related car rental info and all the available rooms in hotels within 50 kilometers of Sydney City Centre for the night of November 10?
+2025-07-24 03:43:20,771 - evaluation_logger_Cross-30 - INFO - Start compare_single_call: 
+{'name': 'Search_Car_Location', 'arguments': {'query': 'Sydney Kingsford Smith Airport'}}
+{'name': 'Search_Car_Location', 'arguments': {'query': 'Sydney Kingsford Smith Airport'}}
+2025-07-24 03:43:20,771 - evaluation_logger_Cross-30 - INFO - Rule-based compare success.
+2025-07-24 03:43:20,771 - evaluation_logger_Cross-30 - INFO - Success matched: [{'name': 'Search_Car_Location', 'arguments': {'query': 'Sydney Kingsford Smith Airport'}}]
+2025-07-24 03:43:20,781 - evaluation_logger_Cross-30 - INFO - Start compare_single_call: 
+{'name': 'Search_Car_Location', 'arguments': {'query': 'Sydney City Centre'}}
+{'name': 'Search_Car_Location', 'arguments': {'query': 'Sydney City Centre'}}
+2025-07-24 03:43:20,781 - evaluation_logger_Cross-30 - INFO - Rule-based compare success.
+2025-07-24 03:43:20,781 - evaluation_logger_Cross-30 - INFO - Success matched: [{'name': 'Search_Car_Location', 'arguments': {'query': 'Sydney City Centre'}}]
+2025-07-24 03:43:20,781 - evaluation_logger_Cross-30 - INFO - Start compare_single_call: 
+{'name': 'Search_Car_Rentals', 'arguments': {'drop_off_date': '2024-11-10', 'drop_off_latitude': -33.864773, 'drop_off_longitude': 151.20544, 'drop_off_time': '15:00', 'pick_up_date': '2024-11-03', 'pick_up_latitude': -33.9342994689941, 'pick_up_longitude': 151.173004150391, 'pick_up_time': '09:00'}}
+{'name': 'Search_Car_Rentals', 'arguments': {'drop_off_date': '2024-11-10', 'drop_off_latitude': -33.864773, 'drop_off_longitude': 151.20544, 'drop_off_time': '15:00', 'pick_up_date': '2024-11-03', 'pick_up_latitude': -33.9342994689941, 'pick_up_longitude': 151.173004150391, 'pick_up_time': '09:00'}}
+2025-07-24 03:43:20,782 - evaluation_logger_Cross-30 - INFO - Rule-based compare success.
+2025-07-24 03:43:20,782 - evaluation_logger_Cross-30 - INFO - Success matched: [{'name': 'Search_Car_Rentals', 'arguments': {'drop_off_date': '2024-11-10', 'drop_off_latitude': -33.864773, 'drop_off_longitude': 151.20544, 'drop_off_time': '15:00', 'pick_up_date': '2024-11-03', 'pick_up_latitude': -33.9342994689941, 'pick_up_longitude': 151.173004150391, 'pick_up_time': '09:00'}}]
+2025-07-24 03:43:21,388 - evaluation_logger_Cross-30 - INFO - Success matched: []
+2025-07-24 03:44:00,466 - evaluation_logger_Cross-30 - INFO - Start compare_single_call: 
+{'name': 'Search_Hotels_By_Coordinates', 'arguments': {'arrival_date': '2024-11-10', 'departure_date': '2024-11-11', 'latitude': '-33.864773', 'longitude': '151.20544', 'radius': 50}}
+{'name': 'Search_Hotels_By_Coordinates', 'arguments': {'arrival_date': '2024-11-10', 'departure_date': '2024-11-11', 'latitude': '-33.864773', 'longitude': '151.20544', 'radius': 50}}
+2025-07-24 03:44:00,467 - evaluation_logger_Cross-30 - INFO - Rule-based compare success.
+2025-07-24 03:44:00,467 - evaluation_logger_Cross-30 - INFO - Success matched: [{'name': 'Search_Hotels_By_Coordinates', 'arguments': {'arrival_date': '2024-11-10', 'departure_date': '2024-11-11', 'latitude': '-33.864773', 'longitude': '151.20544', 'radius': 50}}]

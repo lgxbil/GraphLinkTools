@@ -1,0 +1,27 @@
+2025-07-22 06:52:48,028 - evaluation_logger_Hotels-130 - INFO - Test Example Hotels-130
+2025-07-22 06:52:48,028 - evaluation_logger_Hotels-130 - INFO - Query: Our family is planning a trip to Chicago from November 25th to November 30th, 2024. There will be two adults and an eight-year-old child. We hope to find the two cheapest hotels that provide airport shuttle services and to learn about their child policies.
+2025-07-22 06:54:16,657 - evaluation_logger_Hotels-130 - INFO - Start compare_single_call: 
+{'name': 'Search_Hotel_Destination', 'arguments': {'query': 'Chicago'}}
+{'name': 'Search_Hotel_Destination', 'arguments': {'query': 'Chicago, US'}}
+2025-07-22 06:54:21,945 - evaluation_logger_Hotels-130 - DEBUG - LLM-based comparison output: {'is_equal': True, 'reason': "The parameter 'query' in both function calls refers to the same location, 'Chicago', with or without the country suffix 'US', which are considered equivalent."}
+2025-07-22 06:54:21,945 - evaluation_logger_Hotels-130 - INFO - LLM-based compare success.
+2025-07-22 06:54:21,945 - evaluation_logger_Hotels-130 - INFO - Success matched: [{'name': 'Search_Hotel_Destination', 'arguments': {'query': 'Chicago, US'}}]
+2025-07-22 06:55:31,412 - evaluation_logger_Hotels-130 - INFO - Start compare_single_call: 
+{'name': 'Search_Hotel_Destination', 'arguments': {'query': 'Chicago'}}
+{'name': 'Search_Hotel_Destination', 'arguments': {'query': 'Chicago, US'}}
+2025-07-22 06:55:37,543 - evaluation_logger_Hotels-130 - DEBUG - LLM-based comparison output: {'is_equal': True, 'reason': "The parameter 'query' in both function calls refers to the same location, 'Chicago', with or without the country suffix 'US', which are considered equivalent."}
+2025-07-22 06:55:37,543 - evaluation_logger_Hotels-130 - INFO - LLM-based compare success.
+2025-07-22 06:55:37,543 - evaluation_logger_Hotels-130 - INFO - Success matched: [{'name': 'Search_Hotel_Destination', 'arguments': {'query': 'Chicago, US'}}]
+2025-07-22 06:56:37,100 - evaluation_logger_Hotels-130 - INFO - Start compare_single_call: 
+{'name': 'Search_Hotel_Destination', 'arguments': {'query': 'Chicago'}}
+{'name': 'Search_Hotel_Destination', 'arguments': {'query': 'Chicago, US'}}
+2025-07-22 06:56:42,444 - evaluation_logger_Hotels-130 - DEBUG - LLM-based comparison output: {'is_equal': True, 'reason': "The parameter 'query' in both function calls refers to the same location, 'Chicago', with or without the country suffix 'US', which are considered equivalent."}
+2025-07-22 06:56:42,445 - evaluation_logger_Hotels-130 - INFO - LLM-based compare success.
+2025-07-22 06:56:42,445 - evaluation_logger_Hotels-130 - INFO - Success matched: [{'name': 'Search_Hotel_Destination', 'arguments': {'query': 'Chicago, US'}}]
+2025-07-22 06:56:42,811 - evaluation_logger_Hotels-130 - INFO - Start compare_single_call: 
+{'name': 'Get_Filter', 'arguments': {'adults': 2, 'arrival_date': '2024-11-25', 'children_age': '8', 'departure_date': '2024-11-30', 'dest_id': '20033173', 'room_qty': 1, 'search_type': 'city'}}
+{'name': 'Get_Filter', 'arguments': {'adults': 2, 'arrival_date': '2024-11-25', 'children_age': '8', 'departure_date': '2024-11-30', 'dest_id': '20033173', 'search_type': 'city'}}
+2025-07-22 06:56:49,639 - evaluation_logger_Hotels-130 - DEBUG - LLM-based comparison output: {'is_equal': True, 'reason': "The parameter 'room_qty' in call 1 has a default value of 1, which is the same as the value provided. Since call 2 omits this parameter, it is equivalent to call 1 where the parameter is explicitly set to its default value."}
+2025-07-22 06:56:49,639 - evaluation_logger_Hotels-130 - INFO - LLM-based compare success.
+2025-07-22 06:56:49,639 - evaluation_logger_Hotels-130 - INFO - Success matched: [{'name': 'Get_Filter', 'arguments': {'adults': 2, 'arrival_date': '2024-11-25', 'children_age': '8', 'departure_date': '2024-11-30', 'dest_id': '20033173', 'search_type': 'city'}}]
+2025-07-22 06:57:04,235 - evaluation_logger_Hotels-130 - ERROR - 'questions'

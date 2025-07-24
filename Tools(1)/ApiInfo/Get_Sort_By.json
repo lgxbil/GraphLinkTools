@@ -1,0 +1,234 @@
+{
+    "name": "Get_Sort_By",
+    "docs_row": {
+        "name": "Get_Sort_By",
+        "endpoint": "/api/v1/hotels/getSortBy",
+        "func_description": "Get sorted hotel listings based on filters and destination. ",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "dest_id": {
+                    "type": "String",
+                    "description": "dest_id can be retrieved from api/v1/hotels/searchDestination(Search Hotel Destination) endpoint in Hotels collection.",
+                    "example_value": "-2092174",
+                    "required": true
+                },
+                "search_type": {
+                    "type": "String",
+                    "description": "search_type can be retrieved from api/v1/hotels/searchDestination(Search Hotel Destination) endpoint in Hotels collection.",
+                    "example_value": "CITY",
+                    "required": true
+                },
+                "arrival_date": {
+                    "type": "Date (yyyy-mm-dd)",
+                    "description": "The date on which you will arrive or check-in",
+                    "example_value": "",
+                    "required": true
+                },
+                "departure_date": {
+                    "type": "Date (yyyy-mm-dd)",
+                    "description": "The date of departure or check-out.",
+                    "example_value": "",
+                    "required": true
+                },
+                "adults": {
+                    "type": "Number",
+                    "description": "The number of guests who are 18 years of age or older. The default value is set to 1.",
+                    "example_value": "1",
+                    "required": false
+                },
+                "children_age": {
+                    "type": "String",
+                    "description": "The number of children, including infants, who are under 18.\nExample:\nChild 1 Age = 8 months\nChild 2 Age = 1 year\nChild 3 Age = 17 years\nHere is what the request parameter would look like:\nchildren_age: 0,1,17",
+                    "example_value": "1,17",
+                    "required": false
+                },
+                "room_qty": {
+                    "type": "Number",
+                    "description": "The number of rooms that are required. The default value is set to 1.",
+                    "example_value": "1",
+                    "required": false
+                },
+                "categories_filter": {
+                    "type": "String",
+                    "description": "categories_filter can be retrieved from api/v1/hotels/getFilter(Get Filter) endpoint in Hotels collection.",
+                    "example_value": "",
+                    "required": false
+                },
+                "languagecode": {
+                    "type": "String",
+                    "description": "To obtain the response data in a specific language, enter the languagecode. languagecode can be retrieved from api/v1/meta/getLanguages(Get Languages\n) endpoint in Meta collection.",
+                    "example_value": "",
+                    "required": false
+                }
+            },
+            "required": [
+                "dest_id",
+                "search_type",
+                "arrival_date",
+                "departure_date"
+            ]
+        }
+    },
+    "instance": [],
+    "category": null,
+    "tool": null,
+    "api_idx": 31,
+    "params": {
+        "type": "object",
+        "properties": {
+            "dest_id": {
+                "type": "String",
+                "description": "dest_id can be retrieved from api/v1/hotels/searchDestination(Search Hotel Destination) endpoint in Hotels collection.",
+                "example_value": "-2092174",
+                "required": true
+            },
+            "search_type": {
+                "type": "String",
+                "description": "search_type can be retrieved from api/v1/hotels/searchDestination(Search Hotel Destination) endpoint in Hotels collection.",
+                "example_value": "CITY",
+                "required": true
+            },
+            "arrival_date": {
+                "type": "Date (yyyy-mm-dd)",
+                "description": "The date on which you will arrive or check-in",
+                "example_value": "",
+                "required": true
+            },
+            "departure_date": {
+                "type": "Date (yyyy-mm-dd)",
+                "description": "The date of departure or check-out.",
+                "example_value": "",
+                "required": true
+            },
+            "adults": {
+                "type": "Number",
+                "description": "The number of guests who are 18 years of age or older. The default value is set to 1.",
+                "example_value": "1",
+                "required": false
+            },
+            "children_age": {
+                "type": "String",
+                "description": "The number of children, including infants, who are under 18.\nExample:\nChild 1 Age = 8 months\nChild 2 Age = 1 year\nChild 3 Age = 17 years\nHere is what the request parameter would look like:\nchildren_age: 0,1,17",
+                "example_value": "1,17",
+                "required": false
+            },
+            "room_qty": {
+                "type": "Number",
+                "description": "The number of rooms that are required. The default value is set to 1.",
+                "example_value": "1",
+                "required": false
+            },
+            "categories_filter": {
+                "type": "String",
+                "description": "categories_filter can be retrieved from api/v1/hotels/getFilter(Get Filter) endpoint in Hotels collection.",
+                "example_value": "",
+                "required": false
+            },
+            "languagecode": {
+                "type": "String",
+                "description": "To obtain the response data in a specific language, enter the languagecode. languagecode can be retrieved from api/v1/meta/getLanguages(Get Languages\n) endpoint in Meta collection.",
+                "example_value": "",
+                "required": false
+            }
+        },
+        "required": [
+            "dest_id",
+            "search_type",
+            "arrival_date",
+            "departure_date"
+        ]
+    },
+    "responses": [
+        {
+            "function_name": "Get_Sort_By",
+            "arguments": {
+                "dest_id": "-2092174",
+                "search_type": "CITY",
+                "arrival_date": "2025-06-10",
+                "departure_date": "2025-06-15"
+            },
+            "observation": [
+                {
+                    "id": "upsort_bh",
+                    "title": "Entire homes & apartments first"
+                },
+                {
+                    "id": "popularity",
+                    "title": "Top picks for solo travellers"
+                },
+                {
+                    "id": "distance",
+                    "title": "Distance from city centre"
+                }
+            ]
+        },
+        {
+            "function_name": "Get_Sort_By",
+            "arguments": {
+                "dest_id": "-2092174",
+                "search_type": "CITY",
+                "arrival_date": "2025-06-10",
+                "departure_date": "2025-06-15",
+                "adults": 2,
+                "children_age": "5",
+                "room_qty": 1
+            },
+            "observation": [
+                {
+                    "id": "upsort_bh",
+                    "title": "Entire homes & apartments first"
+                },
+                {
+                    "id": "popularity",
+                    "title": "Our top picks"
+                },
+                {
+                    "id": "distance",
+                    "title": "Distance from city centre"
+                }
+            ]
+        }
+    ],
+    "response_summary": "The API response provides three sorting options for accommodations. The first option prioritizes entire homes and apartments, making them appear at the top of search results. The second option highlights top recommendations specifically tailored for solo travelers, ensuring they find the most suitable stays. The third option organizes listings based on their proximity to the city center, helping users find conveniently located accommodations. These sorting choices allow users to easily filter and prioritize their preferences when searching for places to stay.",
+    "enhance_func_desc": "This API is ideal for travelers seeking personalized accommodation options. It retrieves sorting preferences for hotel searches, allowing users to prioritize entire homes, solo traveler recommendations, or proximity to city center. The response helps users filter stays based on their needs, with input parameters like destination ID, dates, and guest details ensuring tailored results. Output includes sorting options to enhance search efficiency.",
+    "enhance_params_desc": {
+        "enhanced_parameters": {
+            "dest_id": "Unique destination identifier from hotel search results.",
+            "search_type": "Specifies the type of destination (e.g., CITY).",
+            "arrival_date": "Check-in date for accommodation search.",
+            "departure_date": "Check-out date for accommodation search.",
+            "adults": "Number of adult guests (18+ years).",
+            "children_age": "Ages of child guests (comma-separated).",
+            "room_qty": "Number of rooms needed for booking.",
+            "categories_filter": "Filters accommodations by category types.",
+            "languagecode": "Preferred language for response data."
+        }
+    },
+    "enhance_resfield_desc": {
+        "response_fields": {
+            "root": {
+                "type": "Array",
+                "description": "An array of sorting options for accommodations",
+                "ar_items": {
+                    "type": "Object",
+                    "description": "A sorting option with its identifier and display title",
+                    "ob_properties": {
+                        "id": {
+                            "type": "String",
+                            "description": "A unique identifier for the sorting option"
+                        },
+                        "title": {
+                            "type": "String",
+                            "description": "The display title of the sorting option, describing its purpose"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "params_desc_list": null,
+    "response_desc_list": null,
+    "depends_on": null,
+    "verified": true
+}

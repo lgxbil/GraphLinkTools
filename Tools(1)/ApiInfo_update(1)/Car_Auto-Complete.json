@@ -1,0 +1,290 @@
+{
+    "name": "Car_Auto-Complete",
+    "docs_row": {
+        "name": "Car_Auto-Complete",
+        "endpoint": "https://booking-com18.p.rapidapi.com/car/auto-complete",
+        "func_description": "",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "query": {
+                    "type": "String",
+                    "description": "Enter at least 2 characters to search\nRequired: true\nEx: New York",
+                    "example_value": "New York",
+                    "required": true
+                },
+                "languageCode": {
+                    "type": "String",
+                    "description": "Language\nlanguageCode can be retrieved from /languages endpoint(data->code)\nEx:  en-us\nDefault value: en-us",
+                    "example_value": "",
+                    "required": false
+                },
+                "countryFlag": {
+                    "type": "String",
+                    "description": "Country\ncountryFlag can be retrieved from /languages endpoint(data->countryFlag)\nEx: us\nDefault value: us",
+                    "example_value": "",
+                    "required": false
+                }
+            },
+            "required": [
+                "query"
+            ]
+        }
+    },
+    "instance": [],
+    "category": null,
+    "tool": null,
+    "api_idx": 27,
+    "params": {
+        "type": "object",
+        "properties": {
+            "query": {
+                "type": "String",
+                "description": "Enter at least 2 characters to search\nRequired: true\nEx: New York",
+                "example_value": "New York",
+                "required": true
+            },
+            "languageCode": {
+                "type": "String",
+                "description": "Language\nlanguageCode can be retrieved from /languages endpoint(data->code)\nEx:  en-us\nDefault value: en-us",
+                "example_value": "",
+                "required": false
+            },
+            "countryFlag": {
+                "type": "String",
+                "description": "Country\ncountryFlag can be retrieved from /languages endpoint(data->countryFlag)\nEx: us\nDefault value: us",
+                "example_value": "",
+                "required": false
+            }
+        },
+        "required": [
+            "query"
+        ]
+    },
+    "api_response_schema": null,
+    "responses": [
+        {
+            "function_name": "Car_Auto-Complete",
+            "arguments": {
+                "query": "New York"
+            },
+            "observation": [
+                {
+                    "iata_code": null,
+                    "coordinates": {
+                        "longitude": -73.9818954467773,
+                        "latitude": 40.7680740356445
+                    },
+                    "location_id": null,
+                    "city": "New York",
+                    "city_id": null,
+                    "name": "New York",
+                    "country": "United States",
+                    "type": "city",
+                    "id": "eyJsYXRpdHVkZSI6IjQwLjc2ODA3NDAzNTY0NDUiLCJsb25naXR1ZGUiOiItNzMuOTgxODk1NDQ2Nzc3MyJ9"
+                },
+                {
+                    "name": "John F. Kennedy International Airport",
+                    "city_id": null,
+                    "city": "New York",
+                    "coordinates": {
+                        "longitude": -73.7870025634766,
+                        "latitude": 40.6450004577637
+                    },
+                    "iata_code": "JFK",
+                    "location_id": null,
+                    "type": "airport",
+                    "country": "United States",
+                    "id": "eyJsYXRpdHVkZSI6IjQwLjY0NTAwMDQ1Nzc2MzciLCJsb25naXR1ZGUiOiItNzMuNzg3MDAyNTYzNDc2NiJ9"
+                },
+                {
+                    "city": "New York",
+                    "iata_code": null,
+                    "location_id": null,
+                    "coordinates": {
+                        "longitude": -73.9849090576172,
+                        "latitude": 40.7595901489258
+                    },
+                    "name": "Central New York City",
+                    "city_id": null,
+                    "country": "United States",
+                    "type": "district",
+                    "id": "eyJsYXRpdHVkZSI6IjQwLjc1OTU5MDE0ODkyNTgiLCJsb25naXR1ZGUiOiItNzMuOTg0OTA5MDU3NjE3MiJ9"
+                }
+            ]
+        },
+        {
+            "function_name": "Car_Auto-Complete",
+            "arguments": {
+                "query": "New York",
+                "languageCode": "en-us",
+                "countryFlag": "us"
+            },
+            "observation": [
+                {
+                    "city": "New York",
+                    "name": "New York",
+                    "coordinates": {
+                        "longitude": -73.9818954467773,
+                        "latitude": 40.7680740356445
+                    },
+                    "location_id": null,
+                    "city_id": null,
+                    "iata_code": null,
+                    "country": "United States",
+                    "type": "city",
+                    "id": "eyJsYXRpdHVkZSI6IjQwLjc2ODA3NDAzNTY0NDUiLCJsb25naXR1ZGUiOiItNzMuOTgxODk1NDQ2Nzc3MyJ9"
+                },
+                {
+                    "iata_code": "JFK",
+                    "city_id": null,
+                    "location_id": null,
+                    "type": "airport",
+                    "country": "United States",
+                    "name": "John F. Kennedy International Airport",
+                    "city": "New York",
+                    "coordinates": {
+                        "latitude": 40.6450004577637,
+                        "longitude": -73.7870025634766
+                    },
+                    "id": "eyJsYXRpdHVkZSI6IjQwLjY0NTAwMDQ1Nzc2MzciLCJsb25naXR1ZGUiOiItNzMuNzg3MDAyNTYzNDc2NiJ9"
+                },
+                {
+                    "type": "district",
+                    "country": "United States",
+                    "city_id": null,
+                    "iata_code": null,
+                    "location_id": null,
+                    "coordinates": {
+                        "latitude": 40.7595901489258,
+                        "longitude": -73.9849090576172
+                    },
+                    "name": "Central New York City",
+                    "city": "New York",
+                    "id": "eyJsYXRpdHVkZSI6IjQwLjc1OTU5MDE0ODkyNTgiLCJsb25naXR1ZGUiOiItNzMuOTg0OTA5MDU3NjE3MiJ9"
+                }
+            ]
+        }
+    ],
+    "response_summary": "The response provides information about three locations in New York, United States. First, there's the city of New York itself, located at coordinates 40.7681\u00b0 N, -73.9819\u00b0 W. Second, the John F. Kennedy International Airport (JFK) is situated at 40.6450\u00b0 N, -73.7870\u00b0 W and serves as a major airport for the area. Lastly, Central New York City is identified as a district within the city, positioned at 40.7596\u00b0 N, -73.9849\u00b0 W. While the city and district entries don't have IATA codes, JFK Airport is properly coded as \"JFK\" for airline and travel reference. All three locations share New York as their parent city and are part of the United States.",
+    "enhance_func_desc": "This API is ideal for location-based car rental searches and travel planning. It provides auto-complete suggestions for locations when users search with at least 2 characters, returning detailed information including coordinates and IATA codes where applicable. The response helps identify cities, districts, and airports, with options to filter by language and country for international users.",
+    "enhance_params_desc": {
+        "enhanced_parameters": {
+            "query": "Search term for locations (minimum 2 characters required).",
+            "languageCode": "Language preference for the response (e.g., 'en-us').",
+            "countryFlag": "Country code to filter results (e.g., 'us')."
+        }
+    },
+    "enhance_resfield_desc": {
+        "response_fields": [
+            {
+                "iata_code": {
+                    "type": "String",
+                    "description": "The IATA (International Air Transport Association) code for the location, if applicable (e.g., 'JFK' for John F. Kennedy International Airport). Null if not applicable."
+                },
+                "coordinates": {
+                    "type": "Object",
+                    "description": "The geographical coordinates of the location.",
+                    "ob_properties": {
+                        "longitude": {
+                            "type": "Number",
+                            "description": "The longitude coordinate of the location in decimal degrees (e.g., -73.9818954467773)."
+                        },
+                        "latitude": {
+                            "type": "Number",
+                            "description": "The latitude coordinate of the location in decimal degrees (e.g., 40.7680740356445)."
+                        }
+                    }
+                },
+                "location_id": {
+                    "type": "String",
+                    "description": "An identifier for the location. Null in the provided examples."
+                },
+                "city": {
+                    "type": "String",
+                    "description": "The name of the city where the location is situated (e.g., 'New York')."
+                },
+                "city_id": {
+                    "type": "String",
+                    "description": "An identifier for the city. Null in the provided examples."
+                },
+                "name": {
+                    "type": "String",
+                    "description": "The name of the location (e.g., 'New York', 'John F. Kennedy International Airport', 'Central New York City')."
+                },
+                "country": {
+                    "type": "String",
+                    "description": "The country where the location is situated (e.g., 'United States')."
+                },
+                "type": {
+                    "type": "String",
+                    "description": "The type of location (e.g., 'city', 'airport', 'district')."
+                },
+                "id": {
+                    "type": "String",
+                    "description": "A unique identifier for the location, possibly encoded (e.g., 'eyJsYXRpdHVkZSI6IjQwLjc2ODA3NDAzNTY0NDUiLCJsb25naXR1ZGUiOiItNzMuOTgxODk1NDQ2Nzc3MyJ9')."
+                }
+            }
+        ]
+    },
+    "params_desc_list": null,
+    "response_desc_list": [
+        {
+            "path_name": "$[].iata_code",
+            "name": "iata_code",
+            "description": "The IATA (International Air Transport Association) code for the location, if applicable (e.g., 'JFK' for John F. Kennedy International Airport). Null if not applicable."
+        },
+        {
+            "path_name": "$[].coordinates",
+            "name": "coordinates",
+            "description": "The geographical coordinates of the location."
+        },
+        {
+            "path_name": "$[].coordinates.longitude",
+            "name": "longitude",
+            "description": "The longitude coordinate of the location in decimal degrees (e.g., -73.9818954467773)."
+        },
+        {
+            "path_name": "$[].coordinates.latitude",
+            "name": "latitude",
+            "description": "The latitude coordinate of the location in decimal degrees (e.g., 40.7680740356445)."
+        },
+        {
+            "path_name": "$[].location_id",
+            "name": "location_id",
+            "description": "An identifier for the location. Null in the provided examples."
+        },
+        {
+            "path_name": "$[].city",
+            "name": "city",
+            "description": "The name of the city where the location is situated (e.g., 'New York')."
+        },
+        {
+            "path_name": "$[].city_id",
+            "name": "city_id",
+            "description": "An identifier for the city. Null in the provided examples."
+        },
+        {
+            "path_name": "$[].name",
+            "name": "name",
+            "description": "The name of the location (e.g., 'New York', 'John F. Kennedy International Airport', 'Central New York City')."
+        },
+        {
+            "path_name": "$[].country",
+            "name": "country",
+            "description": "The country where the location is situated (e.g., 'United States')."
+        },
+        {
+            "path_name": "$[].type",
+            "name": "type",
+            "description": "The type of location (e.g., 'city', 'airport', 'district')."
+        },
+        {
+            "path_name": "$[].id",
+            "name": "id",
+            "description": "A unique identifier for the location, possibly encoded (e.g., 'eyJsYXRpdHVkZSI6IjQwLjc2ODA3NDAzNTY0NDUiLCJsb25naXR1ZGUiOiItNzMuOTgxODk1NDQ2Nzc3MyJ9')."
+        }
+    ],
+    "depends_on": null,
+    "verified": true
+}

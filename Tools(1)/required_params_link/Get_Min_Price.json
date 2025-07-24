@@ -1,0 +1,550 @@
+{
+    "name": "Get_Min_Price",
+    "docs_row": {
+        "name": "Get_Min_Price",
+        "endpoint": "/api/v1/flights/getMinPrice",
+        "func_description": "Get the minimum price for flights. This API will return the lowest priced flights within 5 days before and after the query date. ",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "fromId": {
+                    "type": "String",
+                    "description": "From/Departure location Id. fromId can be retrieved from api/v1/flights/searchDestination(Search Flight Location) endpoint in Flights collection as id.",
+                    "example_value": "BOM.AIRPORT",
+                    "required": true
+                },
+                "toId": {
+                    "type": "String",
+                    "description": "To/Arrival location Id. toId can be retrieved from api/v1/flights/searchDestination(Search Flight Location) endpoint in Flights collection as id.",
+                    "example_value": "DEL.AIRPORT",
+                    "required": true
+                },
+                "departDate": {
+                    "type": "Date (yyyy-mm-dd)",
+                    "description": "Departure or travel date.\nFormat: YYYY-MM-DD",
+                    "example_value": "",
+                    "required": true
+                },
+                "returnDate": {
+                    "type": "Date (yyyy-mm-dd)",
+                    "description": "Return date.\nFormat: YYYY-MM-DD",
+                    "example_value": "",
+                    "required": false
+                },
+                "cabinClass": {
+                    "type": "Enum",
+                    "description": "Search for flights that match the cabin class specified. Cabin call can be either ECONOMY, PREMIUM_ECONOMY, BUSINESS or FIRST.",
+                    "example_value": "",
+                    "required": false
+                },
+                "currency_code": {
+                    "type": "String",
+                    "description": "The currency code. currency_code can be retrieved from api/v1/meta/getCurrency(Get Currency) endpoint in Hotels collection.",
+                    "example_value": "AED",
+                    "required": false
+                }
+            },
+            "required": [
+                "fromId",
+                "toId",
+                "departDate"
+            ]
+        }
+    },
+    "instance": [],
+    "category": null,
+    "tool": null,
+    "api_idx": 36,
+    "params": {
+        "type": "object",
+        "properties": {
+            "fromId": {
+                "type": "String",
+                "description": "From/Departure location Id. fromId can be retrieved from api/v1/flights/searchDestination(Search Flight Location) endpoint in Flights collection as id.",
+                "example_value": "BOM.AIRPORT",
+                "required": true
+            },
+            "toId": {
+                "type": "String",
+                "description": "To/Arrival location Id. toId can be retrieved from api/v1/flights/searchDestination(Search Flight Location) endpoint in Flights collection as id.",
+                "example_value": "DEL.AIRPORT",
+                "required": true
+            },
+            "departDate": {
+                "type": "Date (yyyy-mm-dd)",
+                "description": "Departure or travel date.\nFormat: YYYY-MM-DD",
+                "example_value": "",
+                "required": true
+            },
+            "returnDate": {
+                "type": "Date (yyyy-mm-dd)",
+                "description": "Return date.\nFormat: YYYY-MM-DD",
+                "example_value": "",
+                "required": false
+            },
+            "cabinClass": {
+                "type": "Enum",
+                "description": "Search for flights that match the cabin class specified. Cabin call can be either ECONOMY, PREMIUM_ECONOMY, BUSINESS or FIRST.",
+                "example_value": "",
+                "required": false
+            },
+            "currency_code": {
+                "type": "String",
+                "description": "The currency code. currency_code can be retrieved from api/v1/meta/getCurrency(Get Currency) endpoint in Hotels collection.",
+                "example_value": "AED",
+                "required": false
+            }
+        },
+        "required": [
+            "fromId",
+            "toId",
+            "departDate"
+        ]
+    },
+    "responses": [
+        {
+            "function_name": "Get_Min_Price",
+            "arguments": {
+                "fromId": "BOM.AIRPORT",
+                "toId": "DEL.AIRPORT",
+                "departDate": "2025-06-15"
+            },
+            "observation": [
+                {
+                    "departureDate": "2025-06-10",
+                    "searchDates": [
+                        "2025-06-10"
+                    ],
+                    "offsetDays": -5,
+                    "accuracyTrackerId": "01kp0_kh0lPPIRVopJAx0O_YlYXDsel5E41QYsK-dW6uY4SiY3adyjQnJkK8uoJe",
+                    "isCheapest": false,
+                    "price": {
+                        "currencyCode": "USD",
+                        "units": 65,
+                        "nanos": 180000000
+                    },
+                    "priceRounded": {
+                        "currencyCode": "USD",
+                        "units": 66,
+                        "nanos": 0
+                    }
+                },
+                {
+                    "departureDate": "2025-06-11",
+                    "searchDates": [
+                        "2025-06-11"
+                    ],
+                    "offsetDays": -4,
+                    "accuracyTrackerId": "01kp0_kh0lPPIRVopJAx0LTl6AUql_syfcTAMjzHiKKuY4SiY3adyjQnJkK8uoJe",
+                    "isCheapest": true,
+                    "price": {
+                        "currencyCode": "USD",
+                        "units": 64,
+                        "nanos": 390000000
+                    },
+                    "priceRounded": {
+                        "currencyCode": "USD",
+                        "units": 65,
+                        "nanos": 0
+                    }
+                },
+                {
+                    "departureDate": "2025-06-12",
+                    "searchDates": [
+                        "2025-06-12"
+                    ],
+                    "offsetDays": -3,
+                    "accuracyTrackerId": "01kp0_kh0lPPIRVopJAx0EMXeqW1d8gR7JSJVlu2TZKuY4SiY3adyjQnJkK8uoJe",
+                    "isCheapest": false,
+                    "price": {
+                        "currencyCode": "USD",
+                        "units": 66,
+                        "nanos": 540000000
+                    },
+                    "priceRounded": {
+                        "currencyCode": "USD",
+                        "units": 67,
+                        "nanos": 0
+                    }
+                }
+            ]
+        },
+        {
+            "function_name": "Get_Min_Price",
+            "arguments": {
+                "fromId": "BOM.AIRPORT",
+                "toId": "DEL.AIRPORT",
+                "departDate": "2025-06-15",
+                "cabinClass": "ECONOMY",
+                "currency_code": "AED"
+            },
+            "observation": [
+                {
+                    "departureDate": "2025-06-10",
+                    "searchDates": [
+                        "2025-06-10"
+                    ],
+                    "offsetDays": -5,
+                    "accuracyTrackerId": "01kp0_kh0lPPIRVopJAx0O_YlYXDsel5E41QYsK-dW6uY4SiY3adyjQnJkK8uoJe",
+                    "isCheapest": false,
+                    "price": {
+                        "currencyCode": "AED",
+                        "units": 239,
+                        "nanos": 410000000
+                    },
+                    "priceRounded": {
+                        "currencyCode": "AED",
+                        "units": 242,
+                        "nanos": 420000000
+                    }
+                },
+                {
+                    "departureDate": "2025-06-11",
+                    "searchDates": [
+                        "2025-06-11"
+                    ],
+                    "offsetDays": -4,
+                    "accuracyTrackerId": "01kp0_kh0lPPIRVopJAx0LTl6AUql_syfcTAMjzHiKKuY4SiY3adyjQnJkK8uoJe",
+                    "isCheapest": true,
+                    "price": {
+                        "currencyCode": "AED",
+                        "units": 236,
+                        "nanos": 500000000
+                    },
+                    "priceRounded": {
+                        "currencyCode": "AED",
+                        "units": 238,
+                        "nanos": 750000000
+                    }
+                },
+                {
+                    "departureDate": "2025-06-12",
+                    "searchDates": [
+                        "2025-06-12"
+                    ],
+                    "offsetDays": -3,
+                    "accuracyTrackerId": "01kp0_kh0lPPIRVopJAx0EMXeqW1d8gR7JSJVlu2TZKuY4SiY3adyjQnJkK8uoJe",
+                    "isCheapest": false,
+                    "price": {
+                        "currencyCode": "AED",
+                        "units": 244,
+                        "nanos": 400000000
+                    },
+                    "priceRounded": {
+                        "currencyCode": "AED",
+                        "units": 246,
+                        "nanos": 90000000
+                    }
+                }
+            ]
+        }
+    ],
+    "response_summary": "The API response provides flight pricing information for three different departure dates in June 2025. The cheapest option is available on June 11th, priced at $64.39 (rounded to $65). On June 10th, the flight costs $65.18 (rounded to $66), while June 12th is slightly more expensive at $66.54 (rounded to $67). Each date includes a unique tracking identifier for accuracy and shows how many days the search was conducted in advance of the departure date (ranging from 3 to 5 days prior). If you're looking for the best deal, June 11th stands out as the most economical choice.",
+    "enhance_func_desc": "This API is ideal for travelers comparing flight prices for budget planning. It retrieves the minimum flight price between specified departure and arrival locations for given dates, with optional cabin class filtering. The response includes detailed pricing information, rounded costs, and tracking identifiers. Users can identify the most economical travel dates and plan accordingly. Location IDs must be obtained from the SearchDestination API.",
+    "enhance_params_desc": {
+        "enhanced_parameters": {
+            "fromId": "Unique identifier for the departure airport/location.",
+            "toId": "Unique identifier for the arrival airport/location.",
+            "departDate": "Date of departure for the flight (YYYY-MM-DD format).",
+            "returnDate": "Optional return date for round-trip flights (YYYY-MM-DD format).",
+            "cabinClass": "Preferred flight class (ECONOMY, PREMIUM_ECONOMY, BUSINESS, FIRST).",
+            "currency_code": "Currency for displaying flight prices (e.g., AED, USD)."
+        }
+    },
+    "enhance_resfield_desc": {
+        "response_fields": [
+            {
+                "departureDate": {
+                    "type": "Date",
+                    "description": "The date of the flight departure in YYYY-MM-DD format."
+                },
+                "searchDates": {
+                    "type": "Array",
+                    "description": "A list of dates when the search was conducted, formatted as YYYY-MM-DD.",
+                    "ar_items": {
+                        "type": "Date",
+                        "description": "A specific search date."
+                    }
+                },
+                "offsetDays": {
+                    "type": "Number",
+                    "description": "The number of days prior to the departure date when the search was conducted (e.g., -5 means 5 days before departure)."
+                },
+                "accuracyTrackerId": {
+                    "type": "String",
+                    "description": "A unique identifier used for tracking the accuracy of the flight pricing information."
+                },
+                "isCheapest": {
+                    "type": "Boolean",
+                    "description": "Indicates whether this flight option is the cheapest among the provided options."
+                },
+                "price": {
+                    "type": "Object",
+                    "description": "The exact price of the flight, including currency and breakdown into units and nanos.",
+                    "ob_properties": {
+                        "currencyCode": {
+                            "type": "String",
+                            "description": "The currency code for the price (e.g., 'USD')."
+                        },
+                        "units": {
+                            "type": "Number",
+                            "description": "The whole number part of the price (e.g., 65)."
+                        },
+                        "nanos": {
+                            "type": "Number",
+                            "description": "The fractional part of the price represented in nanoseconds (e.g., 180000000 for $0.18)."
+                        }
+                    }
+                },
+                "priceRounded": {
+                    "type": "Object",
+                    "description": "The rounded price of the flight, including currency and breakdown into units and nanos.",
+                    "ob_properties": {
+                        "currencyCode": {
+                            "type": "String",
+                            "description": "The currency code for the rounded price (e.g., 'USD')."
+                        },
+                        "units": {
+                            "type": "Number",
+                            "description": "The whole number part of the rounded price (e.g., 66)."
+                        },
+                        "nanos": {
+                            "type": "Number",
+                            "description": "The fractional part of the rounded price, typically 0 since it's rounded."
+                        }
+                    }
+                }
+            }
+        ]
+    },
+    "params_desc_list": null,
+    "response_desc_list": [
+        {
+            "path_name": "$[].departureDate",
+            "name": "departureDate",
+            "description": "The date of the flight departure in YYYY-MM-DD format."
+        },
+        {
+            "path_name": "$[].searchDates",
+            "name": "searchDates",
+            "description": "A list of dates when the search was conducted, formatted as YYYY-MM-DD."
+        },
+        {
+            "path_name": "$[].searchDates[]",
+            "name": "searchDates[]",
+            "description": "A specific search date."
+        },
+        {
+            "path_name": "$[].offsetDays",
+            "name": "offsetDays",
+            "description": "The number of days prior to the departure date when the search was conducted (e.g., -5 means 5 days before departure)."
+        },
+        {
+            "path_name": "$[].accuracyTrackerId",
+            "name": "accuracyTrackerId",
+            "description": "A unique identifier used for tracking the accuracy of the flight pricing information."
+        },
+        {
+            "path_name": "$[].isCheapest",
+            "name": "isCheapest",
+            "description": "Indicates whether this flight option is the cheapest among the provided options."
+        },
+        {
+            "path_name": "$[].price",
+            "name": "price",
+            "description": "The exact price of the flight, including currency and breakdown into units and nanos."
+        },
+        {
+            "path_name": "$[].price.currencyCode",
+            "name": "currencyCode",
+            "description": "The currency code for the price (e.g., 'USD')."
+        },
+        {
+            "path_name": "$[].price.units",
+            "name": "units",
+            "description": "The whole number part of the price (e.g., 65)."
+        },
+        {
+            "path_name": "$[].price.nanos",
+            "name": "nanos",
+            "description": "The fractional part of the price represented in nanoseconds (e.g., 180000000 for $0.18)."
+        },
+        {
+            "path_name": "$[].priceRounded",
+            "name": "priceRounded",
+            "description": "The rounded price of the flight, including currency and breakdown into units and nanos."
+        },
+        {
+            "path_name": "$[].priceRounded.currencyCode",
+            "name": "currencyCode",
+            "description": "The currency code for the rounded price (e.g., 'USD')."
+        },
+        {
+            "path_name": "$[].priceRounded.units",
+            "name": "units",
+            "description": "The whole number part of the rounded price (e.g., 66)."
+        },
+        {
+            "path_name": "$[].priceRounded.nanos",
+            "name": "nanos",
+            "description": "The fractional part of the rounded price, typically 0 since it's rounded."
+        }
+    ],
+    "depends_on": [
+        {
+            "source_api_name": "Search_Flight_Location",
+            "dependence_type": "Hard Dependency",
+            "depencend_field": "$[*].id",
+            "param_name": "fromId",
+            "reason": "The 'Search_Flight_Location' API is a necessary prerequisite for obtaining the 'fromId' parameter required by the 'Get_Min_Price' API. The 'id' field from the response of 'Search_Flight_Location' matches exactly with the 'fromId' parameter in terms of data type (String) and format (e.g., 'NYC.CITY', 'JFK.AIRPORT'). This represents a hard dependency as the location IDs must be obtained from the SearchDestination API before they can be used in the Get_Min_Price API."
+        },
+        {
+            "source_api_name": "Search_Flight_Location",
+            "dependence_type": "Hard Dependency",
+            "depencend_field": "$[*].id",
+            "param_name": "fromId",
+            "reason": "The 'Search_Flight_Location' API is a necessary prerequisite for the 'Get_Min_Price' API as it provides the unique identifiers (fromId) required for flight price comparison. The 'id' field from the response of 'Search_Flight_Location' matches exactly with the 'fromId' parameter's data type (String) and serves the same purpose of identifying departure locations. This represents a hard dependency as the location IDs must be obtained before making a price comparison request."
+        },
+        {
+            "source_api_name": "Search_Flight_Location",
+            "dependence_type": "Hard Dependency",
+            "depencend_field": "$[*].code",
+            "param_name": "fromId",
+            "reason": "The 'Search_Flight_Location' API is a necessary prerequisite for the 'Get_Min_Price' API as it provides the unique identifiers (fromId and toId) required for flight searches. The 'code' field from the 'Search_Flight_Location' API response can be used as the 'fromId' parameter in the 'Get_Min_Price' API. The data types match (both are strings), and the example values demonstrate that the 'code' field contains airport codes which are exactly what the 'fromId' parameter expects."
+        },
+        {
+            "source_api_name": "Search_Flights",
+            "dependence_type": "Hard Dependency",
+            "depencend_field": "$.flightOffers[*].segments[*].departureAirport.code",
+            "param_name": "fromId",
+            "reason": "The 'Search_Flights' API provides flight information including departure airport codes, which can be used as input for the 'fromId' parameter in the 'Get_Min_Price' API. The 'departureAirport.code' field from the response matches the required 'String' type for 'fromId'. However, it's important to note that the example value 'BOM' might need to be formatted as 'BOM.AIRPORT' to fully match the expected format of the 'fromId' parameter. This represents a hard dependency as the flight search results are directly used to determine minimum prices for specific routes."
+        },
+        {
+            "source_api_name": "Search_Flights",
+            "dependence_type": "Hard Dependency",
+            "depencend_field": "$.flightOffers[*].segments[*].legs[*].departureAirport.code",
+            "param_name": "fromId",
+            "reason": "The 'Search_Flights' API provides departure airport codes in its response, which can be used as 'fromId' in the 'Get_Min_Price' API. The business association is clear as both APIs are part of the flight booking workflow. The data type matches (String), and the example values ('BOM') align with the expected format for 'fromId' (e.g., 'BOM.AIRPORT'). While the exact format might need slight adjustment (adding '.AIRPORT'), the core identifier matches, making this a valid dependency."
+        },
+        {
+            "source_api_name": "Search_Taxi",
+            "dependence_type": "Soft Dependency",
+            "depencend_field": "$.journeys[*].pickupLocation.airportCode",
+            "param_name": "fromId",
+            "reason": "The 'Search_Taxi' API provides airport codes for pickup locations, which can be used as departure location identifiers in the 'Get_Min_Price' API. The 'pickupLocation.airportCode' field from the taxi API can serve as the 'fromId' parameter for flight searches, as airport codes are commonly used as identifiers in flight-related APIs. This represents a soft dependency as the taxi API isn't strictly required for flight price checking but provides useful input for travelers who might be considering airport transfers as part of their journey planning."
+        },
+        {
+            "source_api_name": "Search_Flight_Location",
+            "dependence_type": "Hard Dependency",
+            "depencend_field": "$[*].id",
+            "param_name": "toId",
+            "reason": "The 'Search_Flight_Location' API is explicitly mentioned as the source for obtaining location IDs in the 'Get_Min_Price' API documentation. The 'id' field from the response of 'Search_Flight_Location' matches exactly with the 'toId' parameter's requirements in terms of both data type (String) and format (location identifiers like 'NYC.CITY' or 'JFK.AIRPORT'). This represents a hard dependency as the location IDs are necessary prerequisites for calling the flight pricing API."
+        },
+        {
+            "source_api_name": "Search_Flight_Location",
+            "dependence_type": "Hard Dependency",
+            "depencend_field": "$[*].id",
+            "param_name": "toId",
+            "reason": "The 'Search_Flight_Location' API is a necessary prerequisite for the 'Get_Min_Price' API as it provides the 'toId' parameter required for flight price comparison. The 'id' field from the response of 'Search_Flight_Location' matches exactly with the 'toId' parameter's requirements in terms of data type and format, as evidenced by the example values provided. This represents a hard dependency since the target API explicitly states that the location IDs must be obtained from the SearchDestination API."
+        },
+        {
+            "source_api_name": "Search_Flights_Multi_Stops",
+            "dependence_type": "Hard Dependency",
+            "depencend_field": "$.flightOffers[*].segments[*].arrivalAirport.code",
+            "param_name": "toId",
+            "reason": "The 'Search_Flights_Multi_Stops' API provides arrival airport information which can be used to determine the 'toId' parameter for the 'Get_Min_Price' API. The 'code' field in the arrivalAirport object matches the format expected by 'toId' (e.g., 'BOM.AIRPORT' vs 'BOM'). This represents a hard dependency as the flight search API provides the necessary location identifiers required by the price checking API."
+        },
+        {
+            "source_api_name": "Search_Flights",
+            "dependence_type": "Hard Dependency",
+            "depencend_field": "$.flightOffers[*].segments[*].arrivalAirport.code",
+            "param_name": "toId",
+            "reason": "The 'Search_Flights' API provides arrival airport information which can be used to determine the 'toId' parameter for the 'Get_Min_Price' API. The 'arrivalAirport.code' field from the 'Search_Flights' response matches the expected format for 'toId' (a string identifier for the arrival location). This represents a hard dependency as the 'Search_Flights' API is a necessary prerequisite for obtaining the 'toId' parameter for the 'Get_Min_Price' API."
+        },
+        {
+            "source_api_name": "Search_Flights_Multi_Stops",
+            "dependence_type": "Hard Dependency",
+            "depencend_field": "$.flightOffers[*].segments[*].legs[*].arrivalAirport.code",
+            "param_name": "toId",
+            "reason": "The 'Search_Flights_Multi_Stops' API provides arrival airport codes in its response, which can be used as the 'toId' parameter for the 'Get_Min_Price' API. The 'code' field in the 'arrivalAirport' object matches the required format for 'toId' (e.g., 'BOM' for Mumbai). This represents a hard dependency as the flight search API provides the necessary location identifiers required by the price comparison API."
+        },
+        {
+            "source_api_name": "Search_Flights",
+            "dependence_type": "Soft Dependency",
+            "depencend_field": "$.flightOffers[*].segments[*].legs[*].arrivalAirport.code",
+            "param_name": "toId",
+            "reason": "The 'Search_Flights' API provides arrival airport information which can be used to determine the 'toId' parameter for the 'Get_Min_Price' API. The 'arrivalAirport.code' field from the 'Search_Flights' response matches the format expected by 'toId' in the 'Get_Min_Price' API, which requires a unique identifier for the arrival location. This establishes a business association where flight search results can inform minimum price queries."
+        },
+        {
+            "source_api_name": "Search_Flights",
+            "dependence_type": "Soft Dependency",
+            "depencend_field": "$.flightOffers[*].segments[*].arrivalAirport.code",
+            "param_name": "toId",
+            "reason": "The 'Search_Flights' API provides arrival airport codes in its response, which can logically serve as the 'toId' parameter for the 'Get_Min_Price' API. This establishes a business association where flight search results naturally contain the destination information needed for price comparison. The data type (String) matches exactly, and the airport codes from the response can directly serve as valid input for the target API parameter."
+        },
+        {
+            "source_api_name": "Search_Flights_Multi_Stops",
+            "dependence_type": "Soft Dependency",
+            "depencend_field": "$.flightOffers[*].segments[*].arrivalAirport.code",
+            "param_name": "toId",
+            "reason": "There is a business association between the 'Search_Flights_Multi_Stops' API and the 'Get_Min_Price' API as they both deal with flight information. The 'arrivalAirport.code' field from the 'Search_Flights_Multi_Stops' API can potentially serve as the 'toId' parameter for the 'Get_Min_Price' API, as both represent arrival location identifiers. However, we need to confirm if the format matches exactly (e.g., whether 'AMD' would be accepted where 'BOM.AIRPORT' is expected)."
+        },
+        {
+            "source_api_name": "Search_Flights",
+            "dependence_type": "Hard Dependency",
+            "depencend_field": "$.flightOffers[*].segments[*].legs[*].arrivalAirport.code",
+            "param_name": "toId",
+            "reason": "The 'Search_Flights' API provides arrival airport codes which can be used as input for the 'toId' parameter in the 'Get_Min_Price' API. There is a clear business association as both APIs are part of the flight booking process. The data type from the source API ('DEL') matches the expected format for the target API parameter (String). However, it's important to note that the target API expects a location ID format like 'DEL.AIRPORT' while the source provides just the airport code 'DEL'. This might require minor transformation to match the exact format expected by the target API."
+        },
+        {
+            "source_api_name": "Search_Flights_Multi_Stops",
+            "dependence_type": "Soft Dependency",
+            "depencend_field": "$.flightOffers[*].segments[*].legs[*].arrivalAirport.code",
+            "param_name": "toId",
+            "reason": "The 'Search_Flights_Multi_Stops' API provides arrival airport codes in its response, which can be used as the 'toId' parameter for the 'Get_Min_Price' API. There is a clear business association as both APIs deal with flight information and airport codes. The data type (String) matches exactly, and the airport codes from the source API can directly serve as input for the target API's 'toId' parameter."
+        },
+        {
+            "source_api_name": "Get_Min_Price_Multi_Stops",
+            "dependence_type": "Hard Dependency",
+            "depencend_field": "$[*].departureDate",
+            "param_name": "departDate",
+            "reason": "There is a strong business relationship between the 'Get_Min_Price_Multi_Stops' API and the 'Get_Min_Price' API as both are related to flight pricing information. The 'departureDate' field from the multi-stop API response matches exactly with the 'departDate' parameter required by the target API in both data type (yyyy-mm-dd) and purpose (flight departure date). This represents a hard dependency as the multi-stop API provides direct input for the target API's parameter."
+        },
+        {
+            "source_api_name": "Get_Room_List",
+            "dependence_type": "Soft Dependency",
+            "depencend_field": "$.departure_date",
+            "param_name": "departDate",
+            "reason": "While the APIs serve different functions (hotel vs. flight), there's a logical business relationship where travelers commonly use hotel departure dates to determine their flight booking dates. The 'departure_date' field from 'Get_Room_List' perfectly matches the 'Date (yyyy-mm-dd)' format required by 'departDate' in 'Get_Min_Price'. This represents a soft dependency as the hotel API isn't strictly required for flight price checking but provides useful input for a common user workflow where travelers coordinate hotel stays with flight bookings."
+        },
+        {
+            "source_api_name": "Get_Min_Price_Multi_Stops",
+            "dependence_type": "Soft Dependency",
+            "depencend_field": "$[*].searchDates",
+            "param_name": "departDate",
+            "reason": "The 'Get_Min_Price_Multi_Stops' API provides potential travel dates in its 'searchDates' field, which can logically be used as input for the 'departDate' parameter in the 'Get_Min_Price' API. This represents a business association where users might want to compare prices for different dates returned from a multi-stop search. The data format (YYYY-MM-DD) matches exactly, and the example values demonstrate valid departure dates that could be used for price comparison."
+        },
+        {
+            "source_api_name": "Get_Room_List",
+            "dependence_type": "Soft Dependency",
+            "depencend_field": "$.arrival_date",
+            "param_name": "departDate",
+            "reason": "While the APIs serve different functions (hotel vs. flight), there's a logical business relationship where travelers often coordinate their flight departure dates with hotel check-in dates. The 'arrival_date' field from 'Get_Room_List' perfectly matches the 'Date (yyyy-mm-dd)' format required by 'departDate' in 'Get_Min_Price'. This represents a soft dependency as the hotel API isn't strictly required for flight price checking but provides useful input for a common travel planning workflow."
+        },
+        {
+            "source_api_name": "Get_Availability_Calendar",
+            "dependence_type": "Soft Dependency",
+            "depencend_field": "$[*].date",
+            "param_name": "departDate",
+            "reason": "While the APIs serve different functions (flight pricing vs. attraction availability), there's a logical business relationship where travelers commonly check attraction availability dates to determine their flight booking dates. The 'date' field from 'Get_Availability_Calendar' perfectly matches the 'Date (yyyy-mm-dd)' format required by 'departDate' in 'Get_Min_Price'. This represents a soft dependency as the attraction availability API isn't strictly required for flight price checking but provides useful input for a common user workflow."
+        },
+        {
+            "source_api_name": "Search_Hotels",
+            "dependence_type": "Soft Dependency",
+            "depencend_field": "$.hotels[*].property.checkinDate",
+            "param_name": "departDate",
+            "reason": "While the APIs serve different functions (hotel search vs flight price comparison), there's a logical business relationship where travelers often coordinate their flight dates with their hotel check-in dates. The 'property.checkinDate' field from 'Search_Hotels' matches the 'Date (yyyy-mm-dd)' format required by 'departDate' in 'Get_Min_Price'. This represents a soft dependency as the hotel API isn't strictly required for flight price checking but provides useful input for a common travel planning workflow."
+        }
+    ],
+    "verified": true
+}

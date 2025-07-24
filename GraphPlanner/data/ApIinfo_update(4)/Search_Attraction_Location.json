@@ -1,0 +1,45 @@
+{
+    "name": "Search_Attraction_Location",
+    "docs_row": {
+        "name": "Search_Attraction_Location",
+        "description": "Find attractions by their location, address, state, country, etc. This API will return specific information like: `slug`, `productId`, `id`, etc.  EndPoint: /api/v1/attraction/searchLocation",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "query": {
+                    "type": "string",
+                    "description": "Names of locations, cities, districts, places, countries, counties etc."
+                }
+            },
+            "required": [
+                "query"
+            ]
+        }
+    },
+    "api_response_schema": {
+        "products": [
+            {
+                "id": "eyJwaW5uZWRQcm9kdWN0IjoiUFJoTThsdkI0MnBSIiwidWZpIjotODUwNTUzfQ==",
+                "__typename": "AttractionsSearchProductSuggestion",
+                "title": "Hiking in Budapest",
+                "productId": "PRhM8lvB42pR",
+                "productSlug": "prhm8lvb42pr-hiking-tour-in-budapest",
+                "taxonomySlug": "tours",
+                "cityUfi": -850553,
+                "cityName": "Budapest",
+                "countryCode": "hu"
+            }
+        ],
+        "destinations": [
+            {
+                "id": "eyJ1ZmkiOi0xMTUzOTUxfQ==",
+                "__typename": "AttractionsSearchDestinationSuggestion",
+                "ufi": -1153951,
+                "country": "Romania",
+                "cityName": "Bucarest",
+                "productCount": 825,
+                "cc1": "ro"
+            }
+        ]
+    }
+}

@@ -1,0 +1,35 @@
+2025-07-24 06:40:03,055 - evaluation_logger_Cross-300 - INFO - Test Example Cross-300
+2025-07-24 06:40:03,055 - evaluation_logger_Cross-300 - INFO - Query: I want to spend the Spring Festival of 2025 in Paris. Could you book a hotel within 10 kilometers of the Eiffel Tower for me? I'll check in on New Year's Eve (January 28th) and check out on the Lantern Festival (February 12th). Additionally, book a taxi for me from the hotel to Gare du Nord at 10 o'clock in the morning on the Lantern Festival.
+2025-07-24 06:41:32,968 - evaluation_logger_Cross-300 - INFO - Start compare_single_call: 
+{'name': 'Location_to_Lat_Long', 'arguments': {'query': 'Eiffel Tower'}}
+{'name': 'Location_to_Lat_Long', 'arguments': {'query': 'Eiffel Tower'}}
+2025-07-24 06:41:32,969 - evaluation_logger_Cross-300 - INFO - Rule-based compare success.
+2025-07-24 06:41:32,969 - evaluation_logger_Cross-300 - INFO - Success matched: [{'name': 'Location_to_Lat_Long', 'arguments': {'query': 'Eiffel Tower'}}]
+2025-07-24 06:41:33,714 - evaluation_logger_Cross-300 - INFO - Success matched: []
+2025-07-24 06:42:38,217 - evaluation_logger_Cross-300 - INFO - Success matched: []
+2025-07-24 06:43:15,254 - evaluation_logger_Cross-300 - INFO - Start compare_single_call: 
+{'name': 'Search_Hotels_By_Coordinates', 'arguments': {'arrival_date': '2025-01-28', 'departure_date': '2025-02-12', 'latitude': '48.858353', 'longitude': '2.294515', 'radius': 10}}
+{'name': 'Search_Hotels_By_Coordinates', 'arguments': {'arrival_date': '2025-01-28', 'departure_date': '2025-02-12', 'latitude': '48.858353', 'longitude': '2.294515', 'radius': 10}}
+2025-07-24 06:43:15,254 - evaluation_logger_Cross-300 - INFO - Rule-based compare success.
+2025-07-24 06:43:15,254 - evaluation_logger_Cross-300 - INFO - Success matched: [{'name': 'Search_Hotels_By_Coordinates', 'arguments': {'arrival_date': '2025-01-28', 'departure_date': '2025-02-12', 'latitude': '48.858353', 'longitude': '2.294515', 'radius': 10}}]
+2025-07-24 06:44:11,849 - evaluation_logger_Cross-300 - INFO - Start compare_single_call: 
+{'name': 'Search_Hotels_By_Coordinates', 'arguments': {'arrival_date': '2025-01-28', 'departure_date': '2025-02-12', 'latitude': '48.858353', 'longitude': '2.294515', 'radius': 10}}
+{'name': 'Search_Hotels_By_Coordinates', 'arguments': {'arrival_date': '2025-01-28', 'departure_date': '2025-02-12', 'latitude': '48.858353', 'longitude': '2.294515', 'radius': 10}}
+2025-07-24 06:44:11,849 - evaluation_logger_Cross-300 - INFO - Rule-based compare success.
+2025-07-24 06:44:11,849 - evaluation_logger_Cross-300 - INFO - Success matched: [{'name': 'Search_Hotels_By_Coordinates', 'arguments': {'arrival_date': '2025-01-28', 'departure_date': '2025-02-12', 'latitude': '48.858353', 'longitude': '2.294515', 'radius': 10}}]
+2025-07-24 06:45:11,337 - evaluation_logger_Cross-300 - INFO - Start compare_single_call: 
+{'name': 'Taxi_Search_Location', 'arguments': {'query': 'Gare du Nord'}}
+{'name': 'Taxi_Search_Location', 'arguments': {'query': 'Gare du Nord'}}
+2025-07-24 06:45:11,338 - evaluation_logger_Cross-300 - INFO - Rule-based compare success.
+2025-07-24 06:45:11,338 - evaluation_logger_Cross-300 - INFO - Success matched: [{'name': 'Taxi_Search_Location', 'arguments': {'query': 'Gare du Nord'}}]
+2025-07-24 06:45:11,882 - evaluation_logger_Cross-300 - INFO - Success matched: []
+2025-07-24 06:46:06,125 - evaluation_logger_Cross-300 - INFO - Start compare_single_call: 
+{'name': 'Taxi_Search_Location', 'arguments': {'query': 'Gare du Nord'}}
+{'name': 'Taxi_Search_Location', 'arguments': {'query': 'Gare du Nord'}}
+2025-07-24 06:46:06,126 - evaluation_logger_Cross-300 - INFO - Rule-based compare success.
+2025-07-24 06:46:06,126 - evaluation_logger_Cross-300 - INFO - Success matched: [{'name': 'Taxi_Search_Location', 'arguments': {'query': 'Gare du Nord'}}]
+2025-07-24 06:46:06,673 - evaluation_logger_Cross-300 - INFO - Start compare_single_call: 
+{'name': 'Search_Taxi', 'arguments': {'drop_off_place_id': 'ChIJf6NY_Gtu5kcRDHnd0mg3tk8', 'pick_up_date': '2025-02-12', 'pick_up_place_id': '4193670', 'pick_up_time': '10:00'}}
+{'name': 'Search_Taxi', 'arguments': {'drop_off_place_id': 'ChIJf6NY_Gtu5kcRDHnd0mg3tk8', 'pick_up_date': '2025-02-12', 'pick_up_place_id': 'ChIJRSMdl7Ft5kcRP65ZCklJ55s', 'pick_up_time': '10:00'}}
+2025-07-24 06:46:06,674 - evaluation_logger_Cross-300 - INFO - {'error_type': 'value_error', 'content': "Parameter pick_up_place_id value '4193670' is not correct in prediction."}
+2025-07-24 06:46:06,674 - evaluation_logger_Cross-300 - INFO - Success matched: []

@@ -1,0 +1,54 @@
+2025-07-24 05:23:31,282 - evaluation_logger_Cross-200 - INFO - Test Example Cross-200
+2025-07-24 05:23:31,282 - evaluation_logger_Cross-200 - INFO - Query: I'm flying to London for a three-day business trip on November 18, 2024. After my work is done, I'll travel to a nearby city for two days of fun. When the vacation is over, I'll fly back to Berlin directly from there. Could you look up multi-stop flights that fit my needs?
+2025-07-24 05:25:25,581 - evaluation_logger_Cross-200 - INFO - Start compare_single_call: 
+{'name': 'Search_Flight_Location', 'arguments': {'query': 'Berlin'}}
+{'name': 'Search_Flight_Location', 'arguments': {'query': 'Berlin'}}
+2025-07-24 05:25:25,581 - evaluation_logger_Cross-200 - INFO - Rule-based compare success.
+2025-07-24 05:25:25,581 - evaluation_logger_Cross-200 - INFO - Success matched: [{'name': 'Search_Flight_Location', 'arguments': {'query': 'Berlin'}}]
+2025-07-24 05:25:25,582 - evaluation_logger_Cross-200 - INFO - Start compare_single_call: 
+{'name': 'Search_Flight_Location', 'arguments': {'query': 'London'}}
+{'name': 'Search_Flight_Location', 'arguments': {'query': 'London'}}
+2025-07-24 05:25:25,582 - evaluation_logger_Cross-200 - INFO - Rule-based compare success.
+2025-07-24 05:25:25,582 - evaluation_logger_Cross-200 - INFO - Success matched: [{'name': 'Search_Flight_Location', 'arguments': {'query': 'London'}}]
+2025-07-24 05:25:26,294 - evaluation_logger_Cross-200 - INFO - Start compare_single_call: 
+{'name': 'Search_Flights_Multi_Stops', 'arguments': {'legs': [{'fromId': 'BER.AIRPORT', 'toId': 'LON.CITY', 'date': '2024-11-18'}]}}
+{'name': 'Search_Flights_Multi_Stops', 'arguments': {'legs': [{'fromId': 'BER.AIRPORT', 'toId': 'LON.CITY', 'date': '2024-11-18'}, {'fromId': 'BHX.AIRPORT', 'toId': 'BER.AIRPORT', 'date': '2024-11-23'}]}}
+2025-07-24 05:25:31,223 - evaluation_logger_Cross-200 - DEBUG - LLM-based comparison output: {'is_equal': False, 'reason': 'The legs parameter in call 1 contains only one leg object, while call 2 contains two leg objects, making them not equivalent.'}
+2025-07-24 05:25:31,224 - evaluation_logger_Cross-200 - INFO - All compare method failed.
+2025-07-24 05:25:31,224 - evaluation_logger_Cross-200 - INFO - Success matched: []
+2025-07-24 05:26:35,271 - evaluation_logger_Cross-200 - INFO - Start compare_single_call: 
+{'name': 'Search_Flights_Multi_Stops', 'arguments': {'legs': [{'fromId': 'BER.AIRPORT', 'toId': 'LON.CITY', 'date': '2024-11-18'}]}}
+{'name': 'Search_Flights_Multi_Stops', 'arguments': {'legs': [{'fromId': 'BER.AIRPORT', 'toId': 'LON.CITY', 'date': '2024-11-18'}, {'fromId': 'BHX.AIRPORT', 'toId': 'BER.AIRPORT', 'date': '2024-11-23'}]}}
+2025-07-24 05:26:40,362 - evaluation_logger_Cross-200 - DEBUG - LLM-based comparison output: {'is_equal': False, 'reason': 'The legs parameter in Function call 2 contains an additional leg object compared to Function call 1.'}
+2025-07-24 05:26:40,363 - evaluation_logger_Cross-200 - INFO - All compare method failed.
+2025-07-24 05:26:40,363 - evaluation_logger_Cross-200 - INFO - Success matched: []
+2025-07-24 05:28:06,192 - evaluation_logger_Cross-200 - INFO - Start compare_single_call: 
+{'name': 'Search_Flights_Multi_Stops', 'arguments': {'legs': [{'fromId': 'BER.AIRPORT', 'toId': 'LON.CITY', 'date': '2024-11-18'}]}}
+{'name': 'Search_Flights_Multi_Stops', 'arguments': {'legs': [{'fromId': 'BER.AIRPORT', 'toId': 'LON.CITY', 'date': '2024-11-18'}, {'fromId': 'BHX.AIRPORT', 'toId': 'BER.AIRPORT', 'date': '2024-11-23'}]}}
+2025-07-24 05:28:11,053 - evaluation_logger_Cross-200 - DEBUG - LLM-based comparison output: {'is_equal': False, 'reason': 'The legs parameter in call 1 contains only one leg object, while call 2 contains two leg objects, making them not equivalent.'}
+2025-07-24 05:28:11,053 - evaluation_logger_Cross-200 - INFO - All compare method failed.
+2025-07-24 05:28:11,061 - evaluation_logger_Cross-200 - INFO - Success matched: []
+2025-07-24 05:39:51,740 - evaluation_logger_Cross-200 - INFO - Start compare_single_call: 
+{'name': 'Search_Flights_Multi_Stops', 'arguments': {'legs': [{'fromId': 'BER.AIRPORT', 'toId': 'LON.CITY', 'date': '2024-11-18'}]}}
+{'name': 'Search_Flights_Multi_Stops', 'arguments': {'legs': [{'fromId': 'BER.AIRPORT', 'toId': 'LON.CITY', 'date': '2024-11-18'}, {'fromId': 'BHX.AIRPORT', 'toId': 'BER.AIRPORT', 'date': '2024-11-23'}]}}
+2025-07-24 05:39:56,668 - evaluation_logger_Cross-200 - DEBUG - LLM-based comparison output: {'is_equal': False, 'reason': 'The legs parameter in Function call 1 contains only one leg object, while Function call 2 contains two leg objects, making them not equivalent.'}
+2025-07-24 05:39:56,669 - evaluation_logger_Cross-200 - INFO - All compare method failed.
+2025-07-24 05:39:56,677 - evaluation_logger_Cross-200 - INFO - Success matched: []
+2025-07-24 05:40:44,414 - evaluation_logger_Cross-200 - INFO - Start compare_single_call: 
+{'name': 'Search_Flights_Multi_Stops', 'arguments': {'legs': [{'fromId': 'BER.AIRPORT', 'toId': 'LON.CITY', 'date': '2024-11-18'}]}}
+{'name': 'Search_Flights_Multi_Stops', 'arguments': {'legs': [{'fromId': 'BER.AIRPORT', 'toId': 'LON.CITY', 'date': '2024-11-18'}, {'fromId': 'BHX.AIRPORT', 'toId': 'BER.AIRPORT', 'date': '2024-11-23'}]}}
+2025-07-24 05:40:48,229 - evaluation_logger_Cross-200 - DEBUG - LLM-based comparison output: {'is_equal': False, 'reason': 'The legs parameter in call 2 contains an additional leg object not present in call 1.'}
+2025-07-24 05:40:48,230 - evaluation_logger_Cross-200 - INFO - All compare method failed.
+2025-07-24 05:40:48,230 - evaluation_logger_Cross-200 - INFO - Success matched: []
+2025-07-24 05:42:34,775 - evaluation_logger_Cross-200 - INFO - Start compare_single_call: 
+{'name': 'Search_Flights_Multi_Stops', 'arguments': {'legs': [{'fromId': 'BER.AIRPORT', 'toId': 'LHR.AIRPORT', 'date': '2024-11-18'}]}}
+{'name': 'Search_Flights_Multi_Stops', 'arguments': {'legs': [{'fromId': 'BER.AIRPORT', 'toId': 'LON.CITY', 'date': '2024-11-18'}, {'fromId': 'BHX.AIRPORT', 'toId': 'BER.AIRPORT', 'date': '2024-11-23'}]}}
+2025-07-24 05:42:40,723 - evaluation_logger_Cross-200 - DEBUG - LLM-based comparison output: {'is_equal': False, 'reason': 'The legs parameters in the two function calls are different. Function call 1 has one leg from BER.AIRPORT to LHR.AIRPORT, while function call 2 has two legs: one from BER.AIRPORT to LON.CITY and another from BHX.AIRPORT to BER.AIRPORT.'}
+2025-07-24 05:42:40,723 - evaluation_logger_Cross-200 - INFO - All compare method failed.
+2025-07-24 05:42:40,723 - evaluation_logger_Cross-200 - INFO - Success matched: []
+2025-07-24 05:44:23,939 - evaluation_logger_Cross-200 - INFO - Start compare_single_call: 
+{'name': 'Search_Flights_Multi_Stops', 'arguments': {'legs': [{'fromId': 'BER.AIRPORT', 'toId': 'LON.CITY', 'date': '2024-11-18'}]}}
+{'name': 'Search_Flights_Multi_Stops', 'arguments': {'legs': [{'fromId': 'BER.AIRPORT', 'toId': 'LON.CITY', 'date': '2024-11-18'}, {'fromId': 'BHX.AIRPORT', 'toId': 'BER.AIRPORT', 'date': '2024-11-23'}]}}
+2025-07-24 05:44:29,096 - evaluation_logger_Cross-200 - DEBUG - LLM-based comparison output: {'is_equal': False, 'reason': 'The legs parameter in Function call 2 contains an additional leg object compared to Function call 1.'}
+2025-07-24 05:44:29,096 - evaluation_logger_Cross-200 - INFO - All compare method failed.
+2025-07-24 05:44:29,096 - evaluation_logger_Cross-200 - INFO - Success matched: []

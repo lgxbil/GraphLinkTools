@@ -1,0 +1,492 @@
+{
+    "name": "Taxi_Search_Location",
+    "docs_row": {
+        "name": "Taxi_Search_Location",
+        "endpoint": "/api/v1/taxi/searchLocation",
+        "func_description": "Find the `googlePlaceId` of Pick-up/Drop-off Location for taxi. ",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "query": {
+                    "type": "String",
+                    "description": "Names of locations, cities, districts, places, countries, counties etc.",
+                    "example_value": "new",
+                    "required": true
+                },
+                "languagecode": {
+                    "type": "String",
+                    "description": "To obtain the response data in a specific language, enter the languagecode. languagecode can be retrieved from api/v1/meta/getLanguages(Get Languages\n) endpoint in Meta collection.",
+                    "example_value": "",
+                    "required": false
+                }
+            },
+            "required": [
+                "query"
+            ]
+        }
+    },
+    "instance": [],
+    "category": null,
+    "tool": null,
+    "api_idx": 47,
+    "params": {
+        "type": "object",
+        "properties": {
+            "query": {
+                "type": "String",
+                "description": "Names of locations, cities, districts, places, countries, counties etc.",
+                "example_value": "new",
+                "required": true
+            },
+            "languagecode": {
+                "type": "String",
+                "description": "To obtain the response data in a specific language, enter the languagecode. languagecode can be retrieved from api/v1/meta/getLanguages(Get Languages\n) endpoint in Meta collection.",
+                "example_value": "",
+                "required": false
+            }
+        },
+        "required": [
+            "query"
+        ]
+    },
+    "responses": [
+        {
+            "function_name": "Taxi_Search_Location",
+            "arguments": {
+                "query": "Times Square, New York City"
+            },
+            "observation": [
+                {
+                    "description": null,
+                    "countryCode": "us",
+                    "latitude": 40.760246,
+                    "longitude": -73.98844,
+                    "iata": null,
+                    "name": "Riu Plaza New York Times Square",
+                    "country": "United States",
+                    "city": "New York",
+                    "types": "hotel",
+                    "googlePlaceId": "ChIJDwzsBVRYwokRvSHYftloJ1I"
+                },
+                {
+                    "name": "YOTEL New York Times Square",
+                    "iata": null,
+                    "googlePlaceId": "ChIJpY9Tg01YwokRCr_aQpDrqgk",
+                    "country": "United States",
+                    "types": "hotel",
+                    "city": "New York",
+                    "description": null,
+                    "longitude": -73.99545,
+                    "countryCode": "us",
+                    "latitude": 40.759155
+                },
+                {
+                    "iata": null,
+                    "name": "Hyatt Place New York City - Times Square",
+                    "country": "United States",
+                    "city": "New York",
+                    "types": "hotel",
+                    "googlePlaceId": "ChIJM_my671ZwokRyGPQqhdoTys",
+                    "description": null,
+                    "countryCode": "us",
+                    "latitude": 40.755966,
+                    "longitude": -73.993706
+                }
+            ]
+        },
+        {
+            "function_name": "Taxi_Search_Location",
+            "arguments": {
+                "query": "Times Square, New York City"
+            },
+            "observation": [
+                {
+                    "latitude": 40.760246,
+                    "city": "New York",
+                    "googlePlaceId": "ChIJDwzsBVRYwokRvSHYftloJ1I",
+                    "countryCode": "us",
+                    "name": "Riu Plaza New York Times Square",
+                    "types": "hotel",
+                    "longitude": -73.98844,
+                    "description": null,
+                    "country": "United States",
+                    "iata": null
+                },
+                {
+                    "longitude": -73.99545,
+                    "types": "hotel",
+                    "country": "United States",
+                    "description": null,
+                    "iata": null,
+                    "latitude": 40.759155,
+                    "city": "New York",
+                    "googlePlaceId": "ChIJpY9Tg01YwokRCr_aQpDrqgk",
+                    "countryCode": "us",
+                    "name": "YOTEL New York Times Square"
+                },
+                {
+                    "name": "Hyatt Place New York City - Times Square",
+                    "countryCode": "us",
+                    "city": "New York",
+                    "googlePlaceId": "ChIJM_my671ZwokRyGPQqhdoTys",
+                    "latitude": 40.755966,
+                    "iata": null,
+                    "longitude": -73.993706,
+                    "types": "hotel",
+                    "description": null,
+                    "country": "United States"
+                }
+            ]
+        }
+    ],
+    "response_summary": "The API response lists three hotels located in New York City, United States. The first is the **Riu Plaza New York Times Square**, situated at coordinates 40.760246 latitude and -73.98844 longitude. The second is **YOTEL New York Times Square**, positioned at 40.759155 latitude and -73.99545 longitude. Lastly, the **Hyatt Place New York City - Times Square** is located at 40.755966 latitude and -73.993706 longitude. All three hotels are in the heart of New York City, specifically near Times Square, and none of them have an associated IATA code. Each hotel is identified by a unique Google Place ID, confirming their presence on Google Maps. No additional descriptions are provided for these accommodations.",
+    "enhance_func_desc": "This API is ideal for travelers and taxi services looking for location details. It searches for specific locations, cities, or places based on a query, providing coordinates and Google Place IDs for accurate mapping. The response includes precise geographic data, such as latitude and longitude, to facilitate navigation and taxi pickups. Users can also specify the response language for better accessibility.",
+    "enhance_params_desc": {
+        "enhanced_parameters": {
+            "query": "Search term for locations, cities, districts, or places.",
+            "languagecode": "Specifies the language for the response data."
+        }
+    },
+    "enhance_resfield_desc": {
+        "response_fields": [
+            {
+                "description": {
+                    "type": "String",
+                    "description": "A description of the hotel. In this case, it is null, indicating no description is provided."
+                },
+                "countryCode": {
+                    "type": "String",
+                    "description": "The ISO country code where the hotel is located (e.g., 'us' for United States)."
+                },
+                "latitude": {
+                    "type": "Number",
+                    "description": "The geographic latitude coordinate of the hotel's location (e.g., 40.760246)."
+                },
+                "longitude": {
+                    "type": "Number",
+                    "description": "The geographic longitude coordinate of the hotel's location (e.g., -73.98844)."
+                },
+                "iata": {
+                    "type": "String",
+                    "description": "The IATA code associated with the hotel. In this case, it is null, indicating no IATA code is provided."
+                },
+                "name": {
+                    "type": "String",
+                    "description": "The name of the hotel (e.g., 'Riu Plaza New York Times Square')."
+                },
+                "country": {
+                    "type": "String",
+                    "description": "The full name of the country where the hotel is located (e.g., 'United States')."
+                },
+                "city": {
+                    "type": "String",
+                    "description": "The city where the hotel is located (e.g., 'New York')."
+                },
+                "types": {
+                    "type": "String",
+                    "description": "The type of establishment (e.g., 'hotel')."
+                },
+                "googlePlaceId": {
+                    "type": "String",
+                    "description": "The unique identifier for the hotel on Google Maps (e.g., 'ChIJDwzsBVRYwokRvSHYftloJ1I')."
+                }
+            }
+        ]
+    },
+    "params_desc_list": null,
+    "response_desc_list": [
+        {
+            "path_name": "$[].description",
+            "name": "description",
+            "description": "A description of the hotel. In this case, it is null, indicating no description is provided."
+        },
+        {
+            "path_name": "$[].countryCode",
+            "name": "countryCode",
+            "description": "The ISO country code where the hotel is located (e.g., 'us' for United States)."
+        },
+        {
+            "path_name": "$[].latitude",
+            "name": "latitude",
+            "description": "The geographic latitude coordinate of the hotel's location (e.g., 40.760246)."
+        },
+        {
+            "path_name": "$[].longitude",
+            "name": "longitude",
+            "description": "The geographic longitude coordinate of the hotel's location (e.g., -73.98844)."
+        },
+        {
+            "path_name": "$[].iata",
+            "name": "iata",
+            "description": "The IATA code associated with the hotel. In this case, it is null, indicating no IATA code is provided."
+        },
+        {
+            "path_name": "$[].name",
+            "name": "name",
+            "description": "The name of the hotel (e.g., 'Riu Plaza New York Times Square')."
+        },
+        {
+            "path_name": "$[].country",
+            "name": "country",
+            "description": "The full name of the country where the hotel is located (e.g., 'United States')."
+        },
+        {
+            "path_name": "$[].city",
+            "name": "city",
+            "description": "The city where the hotel is located (e.g., 'New York')."
+        },
+        {
+            "path_name": "$[].types",
+            "name": "types",
+            "description": "The type of establishment (e.g., 'hotel')."
+        },
+        {
+            "path_name": "$[].googlePlaceId",
+            "name": "googlePlaceId",
+            "description": "The unique identifier for the hotel on Google Maps (e.g., 'ChIJDwzsBVRYwokRvSHYftloJ1I')."
+        }
+    ],
+    "depends_on": [
+        {
+            "target_api_params": "query",
+            "reason": "The 'query' parameter in the target API requires names of locations, cities, districts, places, etc. The source API's 'name' field in the response provides exact names of locations (e.g., 'New York', 'John F. Kennedy International Airport'). The data types match (both are strings), and the source API's response fields directly provide the information needed for the target API's query parameter. This creates a potential business association where a traveler might search for a taxi location based on the same location they searched for car rentals.",
+            "source_jsonpath": "$[*].name",
+            "confidence": 95,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Car_Auto-Complete"
+        },
+        {
+            "target_api_params": "query",
+            "reason": "The 'city' field in the source API response also provides names of cities, which matches the requirement of the target API's 'query' parameter. However, it is less specific than the 'name' field, which can include more detailed location names. The data types match, and the information is relevant for the target API's purpose.",
+            "source_jsonpath": "$[*].city",
+            "confidence": 85,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Car_Auto-Complete"
+        },
+        {
+            "target_api_params": "query",
+            "reason": "The 'query' parameter in the target API requires names of locations, cities, districts, places, etc. The source API's response fields include 'city_name' and 'name' which provide exactly this type of information (e.g., 'Paris', 'Paris City Centre'). The data types match (both are Strings), and there's a clear business association where hotel search results could be used to initiate taxi location searches.",
+            "source_jsonpath": "$[*].city_name",
+            "confidence": 95,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Search_Hotel_Destination"
+        },
+        {
+            "target_api_params": "query",
+            "reason": "The 'name' field in the source API response also provides location names (e.g., 'Paris City Centre'), which matches the target API's 'query' parameter requirements. This is another valid field that could be used as input for taxi location searches, with matching data types and logical business association.",
+            "source_jsonpath": "$[*].name",
+            "confidence": 95,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Search_Hotel_Destination"
+        },
+        {
+            "target_api_params": "query",
+            "reason": "The 'query' parameter in the target API requires names of locations, cities, districts, places, etc. The source API's 'name' field in the response provides exact names of cities and airports (e.g., 'New York', 'John F. Kennedy International Airport'). This creates a potential business association where a traveler might search for a taxi location based on the flight destination they have selected.",
+            "source_jsonpath": "$[*].name",
+            "confidence": 95,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Search_Flight_Location"
+        },
+        {
+            "target_api_params": "query",
+            "reason": "The 'query' parameter in the target API requires names of locations, cities, districts, etc. The source API's 'bCityName' field in the 'ufiDetails' provides the city name (e.g., 'Mumbai'), which matches the requirement. This creates a potential business association where a traveler might search for taxi services in the same city as the attraction they are visiting.",
+            "source_jsonpath": "$.products[].ufiDetails.bCityName",
+            "confidence": 85,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Search_Attractions"
+        },
+        {
+            "target_api_params": "query",
+            "reason": "The 'name' field in the source API provides the name of the attraction (e.g., 'Dharavi, Dhobighat, and Mumbai Dabbawallas'), which could be used as a query for taxi services to that specific attraction. This creates a direct business association.",
+            "source_jsonpath": "$.products[].name",
+            "confidence": 80,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Search_Attractions"
+        },
+        {
+            "target_api_params": "query",
+            "reason": "The 'query' parameter in the target API requires names of locations, cities, districts, etc., which is exactly what the source API's 'query' parameter also requires. The source API's response includes 'formatted_address' and 'name' fields that contain location names and addresses, which can be used as input for the target API's 'query' parameter. This creates a potential business association where a user might want to search for taxi locations based on the results from a location-to-coordinates conversion.",
+            "source_jsonpath": "$[*].formatted_address",
+            "confidence": 95,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Location_to_Lat_Long"
+        },
+        {
+            "target_api_params": "query",
+            "reason": "The 'name' field in the source API's response contains the name of the location (e.g., 'Empire State Building'), which matches the requirement of the target API's 'query' parameter. This is a direct match in terms of data type and context, making it a suitable candidate for the target API's input.",
+            "source_jsonpath": "$[*].name",
+            "confidence": 100,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Location_to_Lat_Long"
+        },
+        {
+            "target_api_params": "query",
+            "reason": "The 'query' parameter in the target API requires names of locations, cities, districts, etc. The source API's 'arrivalAirport' and 'departureAirport' fields provide detailed airport information including city names (e.g., 'Ahmedabad', 'Mumbai'). These city names can be used as input for the 'query' parameter to search for taxi locations in those cities. The data type matches (String) and there is a logical business association where travelers arriving at or departing from airports would need taxi services in those cities.",
+            "source_jsonpath": "$.flightOffers[*].segments[*].legs[*].arrivalAirport.cityName",
+            "confidence": 95,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Search_Flights_Multi_Stops"
+        },
+        {
+            "target_api_params": "query",
+            "reason": "The 'query' parameter in the target API requires names of locations, cities, districts, etc. The source API's 'departureAirport' field provides detailed airport information including city names (e.g., 'Ahmedabad', 'Mumbai'). These city names can be used as input for the 'query' parameter to search for taxi locations in those cities. The data type matches (String) and there is a logical business association where travelers departing from airports would need taxi services in those cities.",
+            "source_jsonpath": "$.flightOffers[*].segments[*].legs[*].departureAirport.cityName",
+            "confidence": 95,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Search_Flights_Multi_Stops"
+        },
+        {
+            "target_api_params": "query",
+            "reason": "The 'query' parameter in the target API requires names of locations, cities, districts, etc. The source API's 'arrivalAirport' field provides detailed airport information including city names (e.g., 'Ahmedabad', 'Mumbai'). These city names can be used as input for the 'query' parameter to search for taxi locations in those cities. The data type matches (String) and there is a logical business association where travelers arriving at airports would need taxi services in those cities.",
+            "source_jsonpath": "$.flightOffers[*].segments[*].arrivalAirport.cityName",
+            "confidence": 95,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Search_Flights_Multi_Stops"
+        },
+        {
+            "target_api_params": "query",
+            "reason": "The 'query' parameter in the target API requires names of locations, cities, districts, etc. The source API's 'departureAirport' field provides detailed airport information including city names (e.g., 'Ahmedabad', 'Mumbai'). These city names can be used as input for the 'query' parameter to search for taxi locations in those cities. The data type matches (String) and there is a logical business association where travelers departing from airports would need taxi services in those cities.",
+            "source_jsonpath": "$.flightOffers[*].segments[*].departureAirport.cityName",
+            "confidence": 95,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Search_Flights_Multi_Stops"
+        },
+        {
+            "target_api_params": "query",
+            "reason": "The 'query' parameter in the target API requires names of locations, cities, districts, places, countries, counties etc. The source API's response fields include 'name' fields such as 'New York City' and 'New York', which are valid location names that match the description of the target API's query parameter. This creates a potential business association where a traveler might search for restaurants in a location and then want to search for taxi services in the same location.",
+            "source_jsonpath": "$[*].name",
+            "confidence": 95,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Search_Restaurants"
+        },
+        {
+            "target_api_params": "query",
+            "reason": "The 'query' parameter in the target API requires names of locations, cities, districts, etc. The source API's 'locationName' field in the supplierLocations metadata provides exact location names (e.g., 'John F Kennedy International Airport'). The data types match (both are strings), and there is a clear business association where a traveler might search for taxi services at the same location where they rented a car.",
+            "source_jsonpath": "$.content.map.supplierLocations[*].metaData.locationName",
+            "confidence": 95,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Car_Search"
+        },
+        {
+            "target_api_params": "query",
+            "reason": "The 'name' field in the pickup route_info provides location names (e.g., 'John F Kennedy International Airport'). The data types match (both are strings), and there is a potential business association where a traveler might need a taxi at the car rental pickup location.",
+            "source_jsonpath": "$.search_results[*].route_info.pickup.name",
+            "confidence": 90,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Car_Search"
+        },
+        {
+            "target_api_params": "query",
+            "reason": "The 'name' field in the dropoff route_info provides location names (e.g., 'John F Kennedy International Airport'). The data types match (both are strings), and there is a potential business association where a traveler might need a taxi at the car rental drop-off location.",
+            "source_jsonpath": "$.search_results[*].route_info.dropoff.name",
+            "confidence": 90,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Car_Search"
+        },
+        {
+            "target_api_params": "query",
+            "reason": "The 'query' parameter in the target API requires names of locations, cities, districts, etc. The source API's 'arrivalAirport' and 'departureAirport' fields provide detailed airport names and city names (e.g., 'Delhi International Airport', 'New Delhi'). These names can be used as queries to search for taxi locations, creating a business association where travelers might need a taxi from or to the airport.",
+            "source_jsonpath": "$.flightOffers[*].segments[*].legs[*].arrivalAirport.name",
+            "confidence": 85,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Search_Flights"
+        },
+        {
+            "target_api_params": "query",
+            "reason": "The 'query' parameter in the target API requires names of locations, cities, districts, etc. The source API's 'departureAirport' field provides detailed airport names and city names (e.g., 'Chhatrapati Shivaji International Airport Mumbai', 'Mumbai'). These names can be used as queries to search for taxi locations, creating a business association where travelers might need a taxi from or to the airport.",
+            "source_jsonpath": "$.flightOffers[*].segments[*].legs[*].departureAirport.name",
+            "confidence": 85,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Search_Flights"
+        },
+        {
+            "target_api_params": "query",
+            "reason": "The 'query' parameter in the target API requires names of locations, cities, districts, etc. The source API's 'arrivalAirport' field provides detailed airport names and city names (e.g., 'Delhi International Airport', 'New Delhi'). These names can be used as queries to search for taxi locations, creating a business association where travelers might need a taxi from or to the airport.",
+            "source_jsonpath": "$.flightOffers[*].segments[*].arrivalAirport.name",
+            "confidence": 85,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Search_Flights"
+        },
+        {
+            "target_api_params": "query",
+            "reason": "The 'query' parameter in the target API requires names of locations, cities, districts, etc. The source API's 'departureAirport' field provides detailed airport names and city names (e.g., 'Chhatrapati Shivaji International Airport Mumbai', 'Mumbai'). These names can be used as queries to search for taxi locations, creating a business association where travelers might need a taxi from or to the airport.",
+            "source_jsonpath": "$.flightOffers[*].segments[*].departureAirport.name",
+            "confidence": 85,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Search_Flights"
+        },
+        {
+            "target_api_params": "query",
+            "reason": "The 'query' parameter in the target API requires names of locations, cities, districts, etc., which is the same as the 'query' parameter in the source API. The source API's response includes 'cityName' fields (e.g., 'New York') which can directly serve as input for the target API's 'query' parameter. The data types match (both are strings), and the context is appropriate as both APIs deal with location-based searches.",
+            "source_jsonpath": "$.products[].cityName",
+            "confidence": 95,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Search_Attraction_Location"
+        },
+        {
+            "target_api_params": "query",
+            "reason": "The 'query' parameter in the target API requires names of locations, cities, districts, etc. The source API's 'tag' field in both 'closest_landmarks' and 'popular_landmarks' provides names of popular attractions (e.g., 'Mumbai Domestic Terminal 1', 'ISKCON', 'Vihar Lake'). These names can be used as queries for the taxi search location API, creating a business association where travelers might want to find taxi services to popular attractions near their hotel.",
+            "source_jsonpath": "$.closest_landmarks[].tag",
+            "confidence": 95,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Get_Popular_Attraction_Near_By"
+        },
+        {
+            "target_api_params": "query",
+            "reason": "The 'query' parameter in the target API requires names of locations, cities, districts, etc. The source API's 'tag' field in 'popular_landmarks' provides names of popular attractions (e.g., 'Mumbai Domestic Terminal 1', 'Vihar Lake'). These names can be used as queries for the taxi search location API, creating a business association where travelers might want to find taxi services to popular attractions near their hotel.",
+            "source_jsonpath": "$.popular_landmarks[].tag",
+            "confidence": 95,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Get_Popular_Attraction_Near_By"
+        },
+        {
+            "target_api_params": "query",
+            "reason": "The 'query' parameter in the target API requires names of locations, cities, districts, etc. The source API's 'pickupLocation' and 'dropOffLocation' fields provide detailed location descriptions (e.g., 'Chhatrapati Shivaji International Airport (BOM), Mumbai, Maharashtra 400099, India'). These descriptions can be used as input for the 'query' parameter to search for location details. The data type matches (String), and the context is appropriate for location-based queries.",
+            "source_jsonpath": "$.journeys[*].pickupLocation.description",
+            "confidence": 95,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Search_Taxi"
+        },
+        {
+            "target_api_params": "query",
+            "reason": "The 'dropOffLocation' field in the source API also provides detailed location descriptions (e.g., 'The Taj Mahal Palace, Mumbai, Apollo Bandar, Colaba, Mumbai, Maharashtra 400001, India'). This can be used as input for the 'query' parameter in the target API. The data type matches (String), and the context is suitable for location-based queries.",
+            "source_jsonpath": "$.journeys[*].dropOffLocation.description",
+            "confidence": 95,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Search_Taxi"
+        },
+        {
+            "target_api_params": "query",
+            "reason": "The 'name' field in the 'pickupLocation' provides a concise name of the location (e.g., 'Chhatrapati Shivaji International Airport (BOM), Mumbai, Maharashtra 400099, India'). This can be used as input for the 'query' parameter. The data type matches (String), and the context is appropriate for location-based queries.",
+            "source_jsonpath": "$.journeys[*].pickupLocation.name",
+            "confidence": 90,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Search_Taxi"
+        },
+        {
+            "target_api_params": "query",
+            "reason": "The 'name' field in the 'dropOffLocation' provides a concise name of the location (e.g., 'The Taj Mahal Palace, Mumbai, Apollo Bandar, Colaba, Mumbai, Maharashtra 400001, India'). This can be used as input for the 'query' parameter. The data type matches (String), and the context is suitable for location-based queries.",
+            "source_jsonpath": "$.journeys[*].dropOffLocation.name",
+            "confidence": 90,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Search_Taxi"
+        },
+        {
+            "target_api_params": "query",
+            "reason": "The 'query' parameter in the target API requires names of locations, cities, districts, etc. The source API's 'name' field provides city names (e.g., 'Chinatown', 'Brooklyn'), which can be directly used as input for the query parameter. The data types match (both are strings), and there is a clear business association where a traveler might want to search for taxi services in nearby cities identified by the source API.",
+            "source_jsonpath": "$[*].name",
+            "confidence": 95,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Get_Nearby_Cities"
+        },
+        {
+            "target_api_params": "query",
+            "reason": "The 'query' parameter in the target API is used to search for location details, which can include cities, districts, or places. The source API's 'query' parameter is used to search for restaurants in a specific location, which inherently includes the location name (e.g., 'new york'). This creates a potential business association where a traveler might first search for restaurants in a location and then use the same location name to search for taxi services.",
+            "source_jsonpath": "$.query",
+            "confidence": 85,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "List_Restaurants_By_Search_Query"
+        }
+    ],
+    "verified": true
+}

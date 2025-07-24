@@ -1,0 +1,624 @@
+{
+    "function": [
+        {
+            "name": "Car_Auto-Complete",
+            "endpoint": "https://booking-com18.p.rapidapi.com/car/auto-complete",
+            "func_description": "",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "query": {
+                        "type": "String",
+                        "description": "Enter at least 2 characters to search\nRequired: true\nEx: New York",
+                        "example_value": "New York",
+                        "required": true
+                    },
+                    "languageCode": {
+                        "type": "String",
+                        "description": "Language\nlanguageCode can be retrieved from /languages endpoint(data->code)\nEx:  en-us\nDefault value: en-us",
+                        "example_value": "",
+                        "required": false
+                    },
+                    "countryFlag": {
+                        "type": "String",
+                        "description": "Country\ncountryFlag can be retrieved from /languages endpoint(data->countryFlag)\nEx: us\nDefault value: us",
+                        "example_value": "",
+                        "required": false
+                    }
+                },
+                "required": [
+                    "query"
+                ]
+            }
+        },
+        {
+            "name": "Car_Search",
+            "endpoint": "https://booking-com18.p.rapidapi.com/car/search",
+            "func_description": "",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "pickUpId": {
+                        "type": "String",
+                        "description": "Pick-up location\nRequired: true\npickUpId can be retrieved from /car/auto-complete endpoint(data->id)\nEx: eyJsYXRpdHVkZSI6IjQwLjc1OTU5IiwibG9uZ2l0dWRlIjoiLTczLjk4NDkxIn0=",
+                        "example_value": "eyJsYXRpdHVkZSI6IjQwLjc1OTU5IiwibG9uZ2l0dWRlIjoiLTczLjk4NDkxIn0=",
+                        "required": true
+                    },
+                    "pickUpDate": {
+                        "type": "Date (yyyy-mm-dd)",
+                        "description": "Pick-up date\nRequired: true\nFormat: YYYY-MM-DD\nEx: 2024-01-25",
+                        "example_value": "",
+                        "required": true
+                    },
+                    "pickUpTime": {
+                        "type": "Time (24-Hour Hh:Mm)",
+                        "description": "Pick-up time\nRequired: true\nFormat: HH:MM\nEx: 10:00",
+                        "example_value": "",
+                        "required": true
+                    },
+                    "dropOffDate": {
+                        "type": "Date (yyyy-mm-dd)",
+                        "description": "Drop-off date\nRequired: true\nFormat: YYYY-MM-DD\nEx: 2024-01-26",
+                        "example_value": "",
+                        "required": true
+                    },
+                    "dropOffTime": {
+                        "type": "Time (24-Hour Hh:Mm)",
+                        "description": "Drop-off time\nRequired: true\nFormat: HH:MM\nEx: 10:00",
+                        "example_value": "",
+                        "required": true
+                    },
+                    "dropOffId": {
+                        "type": "String",
+                        "description": "Drop-off location\ndroOffId can be retrieved from /car/auto-complete endpoint(data->id)\nEx: eyJsYXRpdHVkZSI6IjQwLjc1OTU5IiwibG9uZ2l0dWRlIjoiLTczLjk4NDkxIn0=",
+                        "example_value": "",
+                        "required": false
+                    },
+                    "sortBy": {
+                        "type": "String",
+                        "description": "Sort by\nsortBy can be retrieved from this endpoint(data->sort->identifier)\nEx: recommended\nDefault value: recommended\n\nrecommended: Recommended – best first\nprice_low_to_high: Price - lowest first",
+                        "example_value": "",
+                        "required": false
+                    },
+                    "driverAge": {
+                        "type": "Number",
+                        "description": "Driver's age: 30-65\nEx: 40",
+                        "example_value": "",
+                        "required": false
+                    },
+                    "carType": {
+                        "type": "String",
+                        "description": "Car Type\ncarType can be retrieved from this endpoint(data->filter(id=carCategory)->categories->id)\nIt can input multiple values, and the values should be separated by commas\nEx: carCategory::carriers,carCategory::suvs\nDefault value: recommended\n\ncarCategory::small: Small\ncarCategory::medium: Medium\ncarCategory::large: Large\ncarCategory::premium: Premium\ncarCategory::carriers: People carriers\ncarCategory::suvs: SUVs",
+                        "example_value": "",
+                        "required": false
+                    },
+                    "supplier": {
+                        "type": "String",
+                        "description": "Supplier\ncarType can be retrieved from this endpoint(data->filter(id=supplier)->categories->id)\nIt can input multiple values, and the values should be separated by commas\nEx: supplier::Alamo,supplier::Enterprise",
+                        "example_value": "",
+                        "required": false
+                    },
+                    "transmission": {
+                        "type": "String",
+                        "description": "Transmission\ntransmission can be retrieved from this endpoint(data->filter(id=transmission)->categories->id)\nIt can input multiple values, and the values should be separated by commas\nEx: transmission::AUTOMATIC",
+                        "example_value": "",
+                        "required": false
+                    },
+                    "hasAirConditioning (optional)": {
+                        "type": "Boolean",
+                        "description": "Air Conditioning\nDefault value: false",
+                        "example_value": "",
+                        "required": false
+                    },
+                    "units": {
+                        "type": "String",
+                        "description": "Units\nEx: metric\nDefault value: metric\nChoose one of the values below\nmetric: Metric (km, m2)\nimperial: Imperial (miles, ft2)",
+                        "example_value": "",
+                        "required": false
+                    },
+                    "languageCode": {
+                        "type": "String",
+                        "description": "Language\nlanguageCode can be retrieved from /languages endpoint(data->code)\nEx: en-us\nDefault value: en-us",
+                        "example_value": "",
+                        "required": false
+                    },
+                    "currencyCode": {
+                        "type": "String",
+                        "description": "Currency\ncurrencyCode can be retrieved from /currencies endpoint(data->code)\nEx: USD\nDefault value: HOTEL(Property's Currency)",
+                        "example_value": "",
+                        "required": false
+                    },
+                    "countryFlag": {
+                        "type": "String",
+                        "description": "Country\ncountryFlag can be retrieved from /languages endpoint(data->countryFlag)\nEx: us\nDefault value: us",
+                        "example_value": "",
+                        "required": false
+                    }
+                },
+                "required": [
+                    "pickUpId",
+                    "pickUpDate",
+                    "pickUpTime",
+                    "dropOffDate",
+                    "dropOffTime"
+                ]
+            }
+        },
+        {
+            "name": "Car_Search_Coordinates",
+            "endpoint": "https://booking-com18.p.rapidapi.com/car/search-coordinates",
+            "func_description": "",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "pickUpCoord": {
+                        "type": "String",
+                        "description": "Pick-up coordinates\nRequired: true\npickUpCoord can be retrieved from /car/auto-complete endpoint(data->coordinates)\nFormat: latitude,longitude\nEx: 40.768074,-73.981895",
+                        "example_value": "40.768074,-73.981895",
+                        "required": true
+                    },
+                    "pickUpDate": {
+                        "type": "Date (yyyy-mm-dd)",
+                        "description": "Pick-up date\nRequired: true\nFormat: YYYY-MM-DD\nEx: 2024-01-25",
+                        "example_value": "",
+                        "required": true
+                    },
+                    "pickUpTime": {
+                        "type": "Time (24-Hour Hh:Mm)",
+                        "description": "Pick-up time\nRequired: true\nFormat: HH:MM\nEx: 10:00",
+                        "example_value": "",
+                        "required": true
+                    },
+                    "dropOffDate": {
+                        "type": "Date (yyyy-mm-dd)",
+                        "description": "Drop-off date\nRequired: true\nFormat: YYYY-MM-DD\nEx: 2024-01-26",
+                        "example_value": "",
+                        "required": true
+                    },
+                    "dropOffTime": {
+                        "type": "Time (24-Hour Hh:Mm)",
+                        "description": "Drop-off time\nRequired: true\nFormat: HH:MM\nEx: 10:00",
+                        "example_value": "",
+                        "required": true
+                    },
+                    "dropOffCoord": {
+                        "type": "String",
+                        "description": "Drop-off coordinates\ndropOffCoord can be retrieved from /car/auto-complete endpoint(data->coordinates)\nFormat: latitude,longitude\nEx: 40.768074,-73.981895",
+                        "example_value": "",
+                        "required": false
+                    },
+                    "sortBy": {
+                        "type": "String",
+                        "description": "Sort by\nsortBy can be retrieved from this endpoint(data->sort->identifier)\nEx: recommended\nDefault value: recommended\n\nrecommended: Recommended – best first\nprice_low_to_high: Price - lowest first",
+                        "example_value": "",
+                        "required": false
+                    },
+                    "driverAge": {
+                        "type": "Number",
+                        "description": "Driver's age: 30-65\nEx: 40",
+                        "example_value": "",
+                        "required": false
+                    },
+                    "carType": {
+                        "type": "String",
+                        "description": "Car Type\ncarType can be retrieved from this endpoint(data->filter(id=carCategory)->categories->id)\nIt can input multiple values, and the values should be separated by commas\nEx: carCategory::carriers,carCategory::suvs\nDefault value: recommended\n\ncarCategory::small: Small\ncarCategory::medium: Medium\ncarCategory::large: Large\ncarCategory::premium: Premium\ncarCategory::carriers: People carriers\ncarCategory::suvs: SUVs",
+                        "example_value": "",
+                        "required": false
+                    },
+                    "supplier": {
+                        "type": "String",
+                        "description": "Supplier\ncarType can be retrieved from this endpoint(data->filter(id=supplier)->categories->id)\nIt can input multiple values, and the values should be separated by commas\nEx: supplier::Alamo,supplier::Enterprise",
+                        "example_value": "",
+                        "required": false
+                    },
+                    "transmission": {
+                        "type": "String",
+                        "description": "Transmission\ntransmission can be retrieved from this endpoint(data->filter(id=transmission)->categories->id)\nIt can input multiple values, and the values should be separated by commas\nEx: transmission::AUTOMATIC",
+                        "example_value": "",
+                        "required": false
+                    },
+                    "hasAirConditioning (optional)": {
+                        "type": "Boolean",
+                        "description": "Air Conditioning\nDefault value: false",
+                        "example_value": "",
+                        "required": false
+                    },
+                    "units": {
+                        "type": "String",
+                        "description": "Units\nEx: metric\nDefault value: metric\nChoose one of the values below\nmetric: Metric (km, m2)\nimperial: Imperial (miles, ft2)",
+                        "example_value": "",
+                        "required": false
+                    },
+                    "languageCode": {
+                        "type": "String",
+                        "description": "Language\nlanguageCode can be retrieved from /languages endpoint(data->code)\nEx: en-us\nDefault value: en-us",
+                        "example_value": "",
+                        "required": false
+                    },
+                    "currencyCode": {
+                        "type": "String",
+                        "description": "Currency\ncurrencyCode can be retrieved from /currencies endpoint(data->code)\nEx: USD\nDefault value: HOTEL(Property's Currency)",
+                        "example_value": "",
+                        "required": false
+                    },
+                    "countryFlag": {
+                        "type": "String",
+                        "description": "Country\ncountryFlag can be retrieved from /languages endpoint(data->countryFlag)\nEx: us\nDefault value: us",
+                        "example_value": "",
+                        "required": false
+                    }
+                },
+                "required": [
+                    "pickUpCoord",
+                    "pickUpDate",
+                    "pickUpTime",
+                    "dropOffDate",
+                    "dropOffTime"
+                ]
+            }
+        },
+        {
+            "name": "Car_Details",
+            "endpoint": "https://booking-com18.p.rapidapi.com/car/detail",
+            "func_description": "",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "vehicleId": {
+                        "type": "String",
+                        "description": "Vehicle Id\nRequired: true\nvehicleId can be retrieved from /car/search endpoint(data->search_results->vehicle_info->v_id)\nEx: 678151356",
+                        "example_value": "678151356",
+                        "required": true
+                    },
+                    "searchKey": {
+                        "type": "String",
+                        "description": "Search key\nRequired: true\nsearchKey can be retrieved from /car/search endpoint(data->search_key)\nEx:\neyJkcml2ZXJzQWdlIjozNSwiZHJvcE9mZkRhdGVUaW1lIjoiMjAyNC0wMS0yOFQxMDowMDowMCIsImRyb3BPZmZMb2NhdGlvbiI6IjQwLjc1OTU5LC03My45ODQ5MSIsImRyb3BPZmZMb2NhdGlvblR5cGUiOiJMQVRMT05HIiwicGlja1VwRGF0ZVRpbWUiOiIyMDI0LTAxLTI3VDEwOjAwOjAwIiwicGlja1VwTG9jYXRpb24iOiI0MC43NTk1OSwtNzMuOTg0OTEiLCJwaWNrVXBMb2NhdGlvblR5cGUiOiJMQVRMT05HIiwicmVudGFsRHVyYXRpb25JbkRheXMiOjEsInNlcnZpY2VGZWF0dXJlcyI6WyJOT19PUEFRVUVTIiwiU1VQUkVTU19GSVhFRF9QUklDRV9WRUhJQ0xFUyIsIklOQ0xVREVfUFJPRFVDVF9SRUxBVElPTlNISVBTIl19",
+                        "example_value": "eyJkcml2ZXJzQWdlIjozNSwiZHJvcE9mZkRhdGVUaW1lIjoiMjAyNC0wMS0yOFQxMDowMDowMCIsImRyb3BPZmZMb2NhdGlvbiI6IjQwLjc1OTU5LC03My45ODQ5MSIsImRyb3BPZmZMb2NhdGlvblR5cGUiOiJMQVRMT05HIiwicGlja1VwRGF0ZVRpbWUiOiIyMDI0LTAxLTI3VDEwOjAwOjAwIiwicGlja1VwTG9jYXRpb24iOiI0MC43NTk1OSwtNzMuOTg0OTEiLCJwaWNrVXBMb2NhdGlvblR5cGUiOiJMQVRMT05HIiwicmVudGFsRHVyYXRpb25JbkRheXMiOjEsInNlcnZpY2VGZWF0dXJlcyI6WyJOT19PUEFRVUVTIiwiU1VQUkVTU19GSVhFRF9QUklDRV9WRUhJQ0xFUyIsIklOQ0xVREVfUFJPRFVDVF9SRUxBVElPTlNISVBTIl19",
+                        "required": true
+                    },
+                    "units": {
+                        "type": "Enum",
+                        "description": "Units\nEx: metric\nDefault value: metric\n\nmetric: Metric (km, m2)\nimperial: Imperial (miles, ft2)",
+                        "example_value": "",
+                        "required": false
+                    },
+                    "languageCode": {
+                        "type": "String",
+                        "description": "Language\nlanguageCode can be retrieved from /languages endpoint(data->code)\nEx: en-us\nDefault value: en-us",
+                        "example_value": "",
+                        "required": false
+                    },
+                    "currencyCode": {
+                        "type": "String",
+                        "description": "Currency\ncurrencyCode can be retrieved from /currencies endpoint(data->code)\nEx: USD\nDefault value: HOTEL(Property's Currency)",
+                        "example_value": "",
+                        "required": false
+                    },
+                    "countryFlag": {
+                        "type": "String",
+                        "description": "Country\ncountryFlag can be retrieved from /languages endpoint(data->countryFlag)\nEx: us\nDefault value: us",
+                        "example_value": "",
+                        "required": false
+                    }
+                },
+                "required": [
+                    "vehicleId",
+                    "searchKey"
+                ]
+            }
+        },
+        {
+            "name": "Car_Packages",
+            "endpoint": "https://booking-com18.p.rapidapi.com/car/packages",
+            "func_description": "",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "vehicleId": {
+                        "type": "String",
+                        "description": "Vehicle Id\nRequired: true\nvehicleId can be retrieved from /car/search endpoint(data->search_results->vehicle_info->v_id)\nEx: 678151356",
+                        "example_value": "678151356",
+                        "required": true
+                    },
+                    "searchKey": {
+                        "type": "String",
+                        "description": "Search key\nRequired: true\nsearchKey can be retrieved from /car/search endpoint(data->search_key)\nEx:\neyJkcml2ZXJzQWdlIjozNSwiZHJvcE9mZkRhdGVUaW1lIjoiMjAyNC0wMS0yOFQxMDowMDowMCIsImRyb3BPZmZMb2NhdGlvbiI6IjQwLjc1OTU5LC03My45ODQ5MSIsImRyb3BPZmZMb2NhdGlvblR5cGUiOiJMQVRMT05HIiwicGlja1VwRGF0ZVRpbWUiOiIyMDI0LTAxLTI3VDEwOjAwOjAwIiwicGlja1VwTG9jYXRpb24iOiI0MC43NTk1OSwtNzMuOTg0OTEiLCJwaWNrVXBMb2NhdGlvblR5cGUiOiJMQVRMT05HIiwicmVudGFsRHVyYXRpb25JbkRheXMiOjEsInNlcnZpY2VGZWF0dXJlcyI6WyJOT19PUEFRVUVTIiwiU1VQUkVTU19GSVhFRF9QUklDRV9WRUhJQ0xFUyIsIklOQ0xVREVfUFJPRFVDVF9SRUxBVElPTlNISVBTIl19",
+                        "example_value": "eyJkcml2ZXJzQWdlIjozNSwiZHJvcE9mZkRhdGVUaW1lIjoiMjAyNC0wMS0yOFQxMDowMDowMCIsImRyb3BPZmZMb2NhdGlvbiI6IjQwLjc1OTU5LC03My45ODQ5MSIsImRyb3BPZmZMb2NhdGlvblR5cGUiOiJMQVRMT05HIiwicGlja1VwRGF0ZVRpbWUiOiIyMDI0LTAxLTI3VDEwOjAwOjAwIiwicGlja1VwTG9jYXRpb24iOiI0MC43NTk1OSwtNzMuOTg0OTEiLCJwaWNrVXBMb2NhdGlvblR5cGUiOiJMQVRMT05HIiwicmVudGFsRHVyYXRpb25JbkRheXMiOjEsInNlcnZpY2VGZWF0dXJlcyI6WyJOT19PUEFRVUVTIiwiU1VQUkVTU19GSVhFRF9QUklDRV9WRUhJQ0xFUyIsIklOQ0xVREVfUFJPRFVDVF9SRUxBVElPTlNISVBTIl19",
+                        "required": true
+                    },
+                    "units": {
+                        "type": "Enum",
+                        "description": "Units\nEx: metric\nDefault value: metric\n\nmetric: Metric (km, m2)\nimperial: Imperial (miles, ft2)",
+                        "example_value": "",
+                        "required": false
+                    },
+                    "languageCode": {
+                        "type": "String",
+                        "description": "Language\nlanguageCode can be retrieved from /languages endpoint(data->code)\nEx: en-us\nDefault value: en-us",
+                        "example_value": "",
+                        "required": false
+                    },
+                    "currencyCode": {
+                        "type": "String",
+                        "description": "Currency\ncurrencyCode can be retrieved from /currencies endpoint(data->code)\nEx: USD\nDefault value: HOTEL(Property's Currency)",
+                        "example_value": "",
+                        "required": false
+                    },
+                    "countryFlag": {
+                        "type": "String",
+                        "description": "Country\ncountryFlag can be retrieved from /languages endpoint(data->countryFlag)\nEx: us\nDefault value: us",
+                        "example_value": "",
+                        "required": false
+                    }
+                },
+                "required": [
+                    "vehicleId",
+                    "searchKey"
+                ]
+            }
+        },
+        {
+            "name": "Car_Booking_Summary",
+            "endpoint": "https://booking-com18.p.rapidapi.com/car/booking-summary",
+            "func_description": "",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "vehicleId": {
+                        "type": "String",
+                        "description": "Vehicle Id\nRequired: true\nvehicleId can be retrieved from /car/search endpoint(data->search_results->vehicle_info->v_id)\nEx: 678151356",
+                        "example_value": "678151356",
+                        "required": true
+                    },
+                    "searchKey": {
+                        "type": "String",
+                        "description": "Search key\nRequired: true\nsearchKey can be retrieved from /car/search endpoint(data->search_key)\nEx:\neyJkcml2ZXJzQWdlIjozNSwiZHJvcE9mZkRhdGVUaW1lIjoiMjAyNC0wMS0yOFQxMDowMDowMCIsImRyb3BPZmZMb2NhdGlvbiI6IjQwLjc1OTU5LC03My45ODQ5MSIsImRyb3BPZmZMb2NhdGlvblR5cGUiOiJMQVRMT05HIiwicGlja1VwRGF0ZVRpbWUiOiIyMDI0LTAxLTI3VDEwOjAwOjAwIiwicGlja1VwTG9jYXRpb24iOiI0MC43NTk1OSwtNzMuOTg0OTEiLCJwaWNrVXBMb2NhdGlvblR5cGUiOiJMQVRMT05HIiwicmVudGFsRHVyYXRpb25JbkRheXMiOjEsInNlcnZpY2VGZWF0dXJlcyI6WyJOT19PUEFRVUVTIiwiU1VQUkVTU19GSVhFRF9QUklDRV9WRUhJQ0xFUyIsIklOQ0xVREVfUFJPRFVDVF9SRUxBVElPTlNISVBTIl19",
+                        "example_value": "eyJkcml2ZXJzQWdlIjozNSwiZHJvcE9mZkRhdGVUaW1lIjoiMjAyNC0wMS0yOFQxMDowMDowMCIsImRyb3BPZmZMb2NhdGlvbiI6IjQwLjc1OTU5LC03My45ODQ5MSIsImRyb3BPZmZMb2NhdGlvblR5cGUiOiJMQVRMT05HIiwicGlja1VwRGF0ZVRpbWUiOiIyMDI0LTAxLTI3VDEwOjAwOjAwIiwicGlja1VwTG9jYXRpb24iOiI0MC43NTk1OSwtNzMuOTg0OTEiLCJwaWNrVXBMb2NhdGlvblR5cGUiOiJMQVRMT05HIiwicmVudGFsRHVyYXRpb25JbkRheXMiOjEsInNlcnZpY2VGZWF0dXJlcyI6WyJOT19PUEFRVUVTIiwiU1VQUkVTU19GSVhFRF9QUklDRV9WRUhJQ0xFUyIsIklOQ0xVREVfUFJPRFVDVF9SRUxBVElPTlNISVBTIl19",
+                        "required": true
+                    },
+                    "units": {
+                        "type": "Enum",
+                        "description": "Units\nEx: metric\nDefault value: metric\n\nmetric: Metric (km, m2)\nimperial: Imperial (miles, ft2)",
+                        "example_value": "",
+                        "required": false
+                    },
+                    "languageCode": {
+                        "type": "String",
+                        "description": "Language\nlanguageCode can be retrieved from /languages endpoint(data->code)\nEx: en-us\nDefault value: en-us",
+                        "example_value": "",
+                        "required": false
+                    },
+                    "currencyCode": {
+                        "type": "String",
+                        "description": "Currency\ncurrencyCode can be retrieved from /currencies endpoint(data->code)\nEx: USD\nDefault value: HOTEL(Property's Currency)",
+                        "example_value": "",
+                        "required": false
+                    },
+                    "countryFlag": {
+                        "type": "String",
+                        "description": "Country\ncountryFlag can be retrieved from /languages endpoint(data->countryFlag)\nEx: us\nDefault value: us",
+                        "example_value": "",
+                        "required": false
+                    }
+                },
+                "required": [
+                    "vehicleId",
+                    "searchKey"
+                ]
+            }
+        },
+        {
+            "name": "Car_Supplier_Details",
+            "endpoint": "https://booking-com18.p.rapidapi.com/car/supplier-detail",
+            "func_description": "",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "vehicleId": {
+                        "type": "String",
+                        "description": "Vehicle Id\nRequired: true\nvehicleId can be retrieved from /car/search endpoint(data->search_results->vehicle_info->v_id)\nEx: 678151356",
+                        "example_value": "678151356",
+                        "required": true
+                    },
+                    "searchKey": {
+                        "type": "String",
+                        "description": "Search key\nRequired: true\nsearchKey can be retrieved from /car/search endpoint(data->search_key)\nEx:\neyJkcml2ZXJzQWdlIjozNSwiZHJvcE9mZkRhdGVUaW1lIjoiMjAyNC0wMS0yOFQxMDowMDowMCIsImRyb3BPZmZMb2NhdGlvbiI6IjQwLjc1OTU5LC03My45ODQ5MSIsImRyb3BPZmZMb2NhdGlvblR5cGUiOiJMQVRMT05HIiwicGlja1VwRGF0ZVRpbWUiOiIyMDI0LTAxLTI3VDEwOjAwOjAwIiwicGlja1VwTG9jYXRpb24iOiI0MC43NTk1OSwtNzMuOTg0OTEiLCJwaWNrVXBMb2NhdGlvblR5cGUiOiJMQVRMT05HIiwicmVudGFsRHVyYXRpb25JbkRheXMiOjEsInNlcnZpY2VGZWF0dXJlcyI6WyJOT19PUEFRVUVTIiwiU1VQUkVTU19GSVhFRF9QUklDRV9WRUhJQ0xFUyIsIklOQ0xVREVfUFJPRFVDVF9SRUxBVElPTlNISVBTIl19",
+                        "example_value": "eyJkcml2ZXJzQWdlIjozNSwiZHJvcE9mZkRhdGVUaW1lIjoiMjAyNC0wMS0yOFQxMDowMDowMCIsImRyb3BPZmZMb2NhdGlvbiI6IjQwLjc1OTU5LC03My45ODQ5MSIsImRyb3BPZmZMb2NhdGlvblR5cGUiOiJMQVRMT05HIiwicGlja1VwRGF0ZVRpbWUiOiIyMDI0LTAxLTI3VDEwOjAwOjAwIiwicGlja1VwTG9jYXRpb24iOiI0MC43NTk1OSwtNzMuOTg0OTEiLCJwaWNrVXBMb2NhdGlvblR5cGUiOiJMQVRMT05HIiwicmVudGFsRHVyYXRpb25JbkRheXMiOjEsInNlcnZpY2VGZWF0dXJlcyI6WyJOT19PUEFRVUVTIiwiU1VQUkVTU19GSVhFRF9QUklDRV9WRUhJQ0xFUyIsIklOQ0xVREVfUFJPRFVDVF9SRUxBVElPTlNISVBTIl19",
+                        "required": true
+                    },
+                    "units": {
+                        "type": "Enum",
+                        "description": "Units\nEx: metric\nDefault value: metric\n\nmetric: Metric (km, m2)\nimperial: Imperial (miles, ft2)",
+                        "example_value": "",
+                        "required": false
+                    },
+                    "languageCode": {
+                        "type": "String",
+                        "description": "Language\nlanguageCode can be retrieved from /languages endpoint(data->code)\nEx: en-us\nDefault value: en-us",
+                        "example_value": "",
+                        "required": false
+                    },
+                    "currencyCode": {
+                        "type": "String",
+                        "description": "Currency\ncurrencyCode can be retrieved from /currencies endpoint(data->code)\nEx: USD\nDefault value: HOTEL(Property's Currency)",
+                        "example_value": "",
+                        "required": false
+                    },
+                    "countryFlag": {
+                        "type": "String",
+                        "description": "Country\ncountryFlag can be retrieved from /languages endpoint(data->countryFlag)\nEx: us\nDefault value: us",
+                        "example_value": "",
+                        "required": false
+                    }
+                },
+                "required": [
+                    "vehicleId",
+                    "searchKey"
+                ]
+            }
+        },
+        {
+            "name": "Car_Supplier_Reviews_and_Ratings",
+            "endpoint": "https://booking-com18.p.rapidapi.com/car/supplier-reviews-and-rating",
+            "func_description": "",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "vehicleId": {
+                        "type": "String",
+                        "description": "Vehicle Id\nRequired: true\nvehicleId can be retrieved from /car/search endpoint(data->search_results->vehicle_info->v_id)\nEx: 678151356",
+                        "example_value": "678151356",
+                        "required": true
+                    },
+                    "searchKey": {
+                        "type": "String",
+                        "description": "Search key\nRequired: true\nsearchKey can be retrieved from /car/search endpoint(data->search_key)\nEx:\neyJkcml2ZXJzQWdlIjozNSwiZHJvcE9mZkRhdGVUaW1lIjoiMjAyNC0wMS0yOFQxMDowMDowMCIsImRyb3BPZmZMb2NhdGlvbiI6IjQwLjc1OTU5LC03My45ODQ5MSIsImRyb3BPZmZMb2NhdGlvblR5cGUiOiJMQVRMT05HIiwicGlja1VwRGF0ZVRpbWUiOiIyMDI0LTAxLTI3VDEwOjAwOjAwIiwicGlja1VwTG9jYXRpb24iOiI0MC43NTk1OSwtNzMuOTg0OTEiLCJwaWNrVXBMb2NhdGlvblR5cGUiOiJMQVRMT05HIiwicmVudGFsRHVyYXRpb25JbkRheXMiOjEsInNlcnZpY2VGZWF0dXJlcyI6WyJOT19PUEFRVUVTIiwiU1VQUkVTU19GSVhFRF9QUklDRV9WRUhJQ0xFUyIsIklOQ0xVREVfUFJPRFVDVF9SRUxBVElPTlNISVBTIl19",
+                        "example_value": "eyJkcml2ZXJzQWdlIjozNSwiZHJvcE9mZkRhdGVUaW1lIjoiMjAyNC0wMS0yOFQxMDowMDowMCIsImRyb3BPZmZMb2NhdGlvbiI6IjQwLjc1OTU5LC03My45ODQ5MSIsImRyb3BPZmZMb2NhdGlvblR5cGUiOiJMQVRMT05HIiwicGlja1VwRGF0ZVRpbWUiOiIyMDI0LTAxLTI3VDEwOjAwOjAwIiwicGlja1VwTG9jYXRpb24iOiI0MC43NTk1OSwtNzMuOTg0OTEiLCJwaWNrVXBMb2NhdGlvblR5cGUiOiJMQVRMT05HIiwicmVudGFsRHVyYXRpb25JbkRheXMiOjEsInNlcnZpY2VGZWF0dXJlcyI6WyJOT19PUEFRVUVTIiwiU1VQUkVTU19GSVhFRF9QUklDRV9WRUhJQ0xFUyIsIklOQ0xVREVfUFJPRFVDVF9SRUxBVElPTlNISVBTIl19",
+                        "required": true
+                    },
+                    "units": {
+                        "type": "Enum",
+                        "description": "Units\nEx: metric\nDefault value: metric\n\nmetric: Metric (km, m2)\nimperial: Imperial (miles, ft2)",
+                        "example_value": "",
+                        "required": false
+                    },
+                    "languageCode": {
+                        "type": "String",
+                        "description": "Language\nlanguageCode can be retrieved from /languages endpoint(data->code)\nEx: en-us\nDefault value: en-us",
+                        "example_value": "",
+                        "required": false
+                    },
+                    "currencyCode": {
+                        "type": "String",
+                        "description": "Currency\ncurrencyCode can be retrieved from /currencies endpoint(data->code)\nEx: USD\nDefault value: HOTEL(Property's Currency)",
+                        "example_value": "",
+                        "required": false
+                    },
+                    "countryFlag": {
+                        "type": "String",
+                        "description": "Country\ncountryFlag can be retrieved from /languages endpoint(data->countryFlag)\nEx: us\nDefault value: us",
+                        "example_value": "",
+                        "required": false
+                    }
+                },
+                "required": [
+                    "vehicleId",
+                    "searchKey"
+                ]
+            }
+        },
+        {
+            "name": "Car_Supplier_Location",
+            "endpoint": "https://booking-com18.p.rapidapi.com/car/supplier-location",
+            "func_description": "",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "vehicleId": {
+                        "type": "String",
+                        "description": "Vehicle Id\nRequired: true\nvehicleId can be retrieved from /car/search endpoint(data->search_results->vehicle_info->v_id)\nEx: 678151356",
+                        "example_value": "678151356",
+                        "required": true
+                    },
+                    "searchKey": {
+                        "type": "String",
+                        "description": "Search key\nRequired: true\nsearchKey can be retrieved from /car/search endpoint(data->search_key)\nEx:\neyJkcml2ZXJzQWdlIjozNSwiZHJvcE9mZkRhdGVUaW1lIjoiMjAyNC0wMS0yOFQxMDowMDowMCIsImRyb3BPZmZMb2NhdGlvbiI6IjQwLjc1OTU5LC03My45ODQ5MSIsImRyb3BPZmZMb2NhdGlvblR5cGUiOiJMQVRMT05HIiwicGlja1VwRGF0ZVRpbWUiOiIyMDI0LTAxLTI3VDEwOjAwOjAwIiwicGlja1VwTG9jYXRpb24iOiI0MC43NTk1OSwtNzMuOTg0OTEiLCJwaWNrVXBMb2NhdGlvblR5cGUiOiJMQVRMT05HIiwicmVudGFsRHVyYXRpb25JbkRheXMiOjEsInNlcnZpY2VGZWF0dXJlcyI6WyJOT19PUEFRVUVTIiwiU1VQUkVTU19GSVhFRF9QUklDRV9WRUhJQ0xFUyIsIklOQ0xVREVfUFJPRFVDVF9SRUxBVElPTlNISVBTIl19",
+                        "example_value": "eyJkcml2ZXJzQWdlIjozNSwiZHJvcE9mZkRhdGVUaW1lIjoiMjAyNC0wMS0yOFQxMDowMDowMCIsImRyb3BPZmZMb2NhdGlvbiI6IjQwLjc1OTU5LC03My45ODQ5MSIsImRyb3BPZmZMb2NhdGlvblR5cGUiOiJMQVRMT05HIiwicGlja1VwRGF0ZVRpbWUiOiIyMDI0LTAxLTI3VDEwOjAwOjAwIiwicGlja1VwTG9jYXRpb24iOiI0MC43NTk1OSwtNzMuOTg0OTEiLCJwaWNrVXBMb2NhdGlvblR5cGUiOiJMQVRMT05HIiwicmVudGFsRHVyYXRpb25JbkRheXMiOjEsInNlcnZpY2VGZWF0dXJlcyI6WyJOT19PUEFRVUVTIiwiU1VQUkVTU19GSVhFRF9QUklDRV9WRUhJQ0xFUyIsIklOQ0xVREVfUFJPRFVDVF9SRUxBVElPTlNISVBTIl19",
+                        "required": true
+                    },
+                    "units": {
+                        "type": "Enum",
+                        "description": "Units\nEx: metric\nDefault value: metric\n\nmetric: Metric (km, m2)\nimperial: Imperial (miles, ft2)",
+                        "example_value": "",
+                        "required": false
+                    },
+                    "languageCode": {
+                        "type": "String",
+                        "description": "Language\nlanguageCode can be retrieved from /languages endpoint(data->code)\nEx: en-us\nDefault value: en-us",
+                        "example_value": "",
+                        "required": false
+                    },
+                    "currencyCode": {
+                        "type": "String",
+                        "description": "Currency\ncurrencyCode can be retrieved from /currencies endpoint(data->code)\nEx: USD\nDefault value: HOTEL(Property's Currency)",
+                        "example_value": "",
+                        "required": false
+                    },
+                    "countryFlag": {
+                        "type": "String",
+                        "description": "Country\ncountryFlag can be retrieved from /languages endpoint(data->countryFlag)\nEx: us\nDefault value: us",
+                        "example_value": "",
+                        "required": false
+                    }
+                },
+                "required": [
+                    "vehicleId",
+                    "searchKey"
+                ]
+            }
+        },
+        {
+            "name": "Search_Restaurants",
+            "endpoint": "https://tripadvisor-scraper.p.rapidapi.com/restaurants/search",
+            "func_description": "",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "query": {
+                        "type": "String",
+                        "description": "",
+                        "example_value": "new york",
+                        "required": true
+                    }
+                },
+                "required": [
+                    "query"
+                ]
+            }
+        },
+        {
+            "name": "List_Restaurants_By_Search_Query",
+            "endpoint": "https://tripadvisor-scraper.p.rapidapi.com/restaurants/list",
+            "func_description": "",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "query": {
+                        "type": "String",
+                        "description": "",
+                        "example_value": "new york",
+                        "required": true
+                    },
+                    "page": {
+                        "type": "Number",
+                        "description": "",
+                        "example_value": "1",
+                        "required": false
+                    }
+                },
+                "required": [
+                    "query"
+                ]
+            }
+        },
+        {
+            "name": "Get_restaurant_details",
+            "endpoint": "https://tripadvisor-scraper.p.rapidapi.com/restaurants/detail",
+            "func_description": "",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "Number",
+                        "description": "",
+                        "example_value": "12425739",
+                        "required": true
+                    }
+                },
+                "required": [
+                    "id"
+                ]
+            }
+        }
+    ]
+}

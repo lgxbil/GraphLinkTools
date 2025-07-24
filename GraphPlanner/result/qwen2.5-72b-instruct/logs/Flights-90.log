@@ -1,0 +1,34 @@
+2025-07-22 08:07:51,575 - evaluation_logger_Flights-90 - INFO - Test Example Flights-90
+2025-07-22 08:07:51,575 - evaluation_logger_Flights-90 - INFO - Query: Our company is planning to set off from Chicago on December 10, 2024, and transfer in Frankfurt to get to Sydney for business talks. Check the price of the fastest economy class ticket for this journey. If the fastest connecting flight takes off before 3 pm the next day, then check the price of the fastest business class ticket for a direct flight from Chicago to Sydney. Provide detailed flight information and the seat map.
+2025-07-22 08:11:44,134 - evaluation_logger_Flights-90 - INFO - Start compare_single_call: 
+{'name': 'Search_Flight_Location', 'arguments': {'query': 'Chicago'}}
+{'name': 'Search_Flight_Location', 'arguments': {'query': 'Chicago'}}
+2025-07-22 08:11:44,134 - evaluation_logger_Flights-90 - INFO - Rule-based compare success.
+2025-07-22 08:11:44,135 - evaluation_logger_Flights-90 - INFO - Success matched: [{'name': 'Search_Flight_Location', 'arguments': {'query': 'Chicago'}}]
+2025-07-22 08:13:49,256 - evaluation_logger_Flights-90 - INFO - Start compare_single_call: 
+{'name': 'Search_Flight_Location', 'arguments': {'query': 'Chicago'}}
+{'name': 'Search_Flight_Location', 'arguments': {'query': 'Chicago'}}
+2025-07-22 08:13:49,256 - evaluation_logger_Flights-90 - INFO - Rule-based compare success.
+2025-07-22 08:13:49,256 - evaluation_logger_Flights-90 - INFO - Success matched: [{'name': 'Search_Flight_Location', 'arguments': {'query': 'Chicago'}}]
+2025-07-22 08:13:49,260 - evaluation_logger_Flights-90 - INFO - Start compare_single_call: 
+{'name': 'Search_Flight_Location', 'arguments': {'query': 'Frankfurt'}}
+{'name': 'Search_Flight_Location', 'arguments': {'query': 'Frankfurt'}}
+2025-07-22 08:13:49,260 - evaluation_logger_Flights-90 - INFO - Rule-based compare success.
+2025-07-22 08:13:49,260 - evaluation_logger_Flights-90 - INFO - Success matched: [{'name': 'Search_Flight_Location', 'arguments': {'query': 'Frankfurt'}}]
+2025-07-22 08:13:49,261 - evaluation_logger_Flights-90 - INFO - Start compare_single_call: 
+{'name': 'Search_Flight_Location', 'arguments': {'query': 'Sydney'}}
+{'name': 'Search_Flight_Location', 'arguments': {'query': 'Sydney'}}
+2025-07-22 08:13:49,261 - evaluation_logger_Flights-90 - INFO - Rule-based compare success.
+2025-07-22 08:13:49,261 - evaluation_logger_Flights-90 - INFO - Success matched: [{'name': 'Search_Flight_Location', 'arguments': {'query': 'Sydney'}}]
+2025-07-22 08:13:49,888 - evaluation_logger_Flights-90 - INFO - Start compare_single_call: 
+{'name': 'Search_Flights_Multi_Stops', 'arguments': {'cabinClass': 'ECONOMY', 'legs': [{'fromId': 'CHI.CITY', 'toId': 'FRA.CITY', 'date': '2024-12-10'}, {'fromId': 'FRA.CITY', 'toId': 'SYD.AIRPORT', 'date': '2024-12-11'}], 'sort': 'FASTEST'}}
+{'name': 'Search_Flights_Multi_Stops', 'arguments': {'cabinClass': 'ECONOMY', 'legs': [{'fromId': 'CHI.CITY', 'toId': 'FRA.CITY', 'date': '2024-12-10'}, {'fromId': 'FRA.CITY', 'toId': 'SYD.CITY', 'date': '2024-12-10'}], 'sort': 'FASTEST'}}
+2025-07-22 08:13:57,027 - evaluation_logger_Flights-90 - DEBUG - LLM-based comparison output: {'is_equal': False, 'reason': "The date in the second leg of Function call 1 is '2024-12-11', while in Function call 2 it is '2024-12-10', and the toId in the second leg of Function call 1 is 'SYD.AIRPORT', while in Function call 2 it is 'SYD.CITY'."}
+2025-07-22 08:13:57,027 - evaluation_logger_Flights-90 - INFO - All compare method failed.
+2025-07-22 08:13:57,027 - evaluation_logger_Flights-90 - INFO - Success matched: []
+2025-07-22 08:15:39,740 - evaluation_logger_Flights-90 - INFO - Start compare_single_call: 
+{'name': 'Search_Flight_Location', 'arguments': {'query': 'Chicago'}}
+{'name': 'Search_Flight_Location', 'arguments': {'query': 'Chicago'}}
+2025-07-22 08:15:39,740 - evaluation_logger_Flights-90 - INFO - Rule-based compare success.
+2025-07-22 08:15:39,740 - evaluation_logger_Flights-90 - INFO - Success matched: [{'name': 'Search_Flight_Location', 'arguments': {'query': 'Chicago'}}]
+2025-07-22 08:16:14,540 - evaluation_logger_Flights-90 - ERROR - 'questions'

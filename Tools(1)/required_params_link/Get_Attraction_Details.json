@@ -1,0 +1,108 @@
+{
+    "name": "Get_Attraction_Details",
+    "docs_row": {
+        "name": "Get_Attraction_Details",
+        "endpoint": "/api/v1/attraction/getAttractionDetails",
+        "func_description": "Search the attraction detail information. ",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "slug": {
+                    "type": "String",
+                    "description": "slug can be retrieved from api/v1/attraction/searchLocation(Search Attraction Location) endpoint in Attraction collection as productSlug  inside products or destinations.",
+                    "example_value": "prugrdm0uamx-small-group-dharavi-slum-tour",
+                    "required": true
+                },
+                "languagecode": {
+                    "type": "String",
+                    "description": "To obtain the response data in a specific language, enter the languagecode. languagecode can be retrieved from api/v1/meta/getLanguages(Get Languages\n) endpoint in Meta collection.",
+                    "example_value": "",
+                    "required": false
+                },
+                "currency_code": {
+                    "type": "String",
+                    "description": "The currency code. currency_code can be retrieved from api/v1/meta/getCurrency(Get Currency) endpoint in Hotels collection.",
+                    "example_value": "USD",
+                    "required": false
+                }
+            },
+            "required": [
+                "slug"
+            ]
+        }
+    },
+    "instance": [],
+    "category": null,
+    "tool": null,
+    "api_idx": 12,
+    "params": {
+        "type": "object",
+        "properties": {
+            "slug": {
+                "type": "String",
+                "description": "slug can be retrieved from api/v1/attraction/searchLocation(Search Attraction Location) endpoint in Attraction collection as productSlug  inside products or destinations.",
+                "example_value": "prugrdm0uamx-small-group-dharavi-slum-tour",
+                "required": true
+            },
+            "languagecode": {
+                "type": "String",
+                "description": "To obtain the response data in a specific language, enter the languagecode. languagecode can be retrieved from api/v1/meta/getLanguages(Get Languages\n) endpoint in Meta collection.",
+                "example_value": "",
+                "required": false
+            },
+            "currency_code": {
+                "type": "String",
+                "description": "The currency code. currency_code can be retrieved from api/v1/meta/getCurrency(Get Currency) endpoint in Hotels collection.",
+                "example_value": "USD",
+                "required": false
+            }
+        },
+        "required": [
+            "slug"
+        ]
+    },
+    "responses": [],
+    "response_summary": null,
+    "enhance_func_desc": null,
+    "enhance_params_desc": {
+        "enhanced_parameters": {
+            "slug": "Unique URL-friendly identifier for the attraction, sourced from searchLocation endpoint.",
+            "languagecode": "Language preference for the attraction details response.",
+            "currency_code": "Currency for displaying attraction pricing information."
+        }
+    },
+    "enhance_resfield_desc": null,
+    "params_desc_list": null,
+    "response_desc_list": null,
+    "depends_on": [
+        {
+            "source_api_name": "Search_Attractions",
+            "dependence_type": "Hard Dependency",
+            "depencend_field": "$.products[*].slug",
+            "param_name": "slug",
+            "reason": "The 'Search_Attractions' API is a necessary prerequisite for the 'Get_Attraction_Details' API as it provides the 'slug' parameter required by the target API. The 'products[].slug' field from the 'Search_Attractions' API response matches exactly with the 'slug' parameter's requirements in the 'Get_Attraction_Details' API, both in terms of data type (String) and the nature of the identifier (URL-friendly). This represents a hard dependency as the 'Search_Attractions' API must be called first to obtain the necessary 'slug' value for the target API."
+        },
+        {
+            "source_api_name": "Search_Attraction_Location",
+            "dependence_type": "Hard Dependency",
+            "depencend_field": "$.products[*].productSlug",
+            "param_name": "slug",
+            "reason": "There is a clear business association between the 'Search_Attraction_Location' API and the 'Get_Attraction_Details' API, as the former provides the necessary 'productSlug' values that serve as input for the 'slug' parameter of the latter. The data types match (both are Strings), and the example values demonstrate that the 'productSlug' field from the source API exactly matches the format expected by the target API's 'slug' parameter. This represents a hard dependency as the search API is explicitly required to obtain the slug needed for the details API."
+        },
+        {
+            "source_api_name": "Search_Attraction_Location",
+            "dependence_type": "Hard Dependency",
+            "depencend_field": "$.destinations[*].id",
+            "param_name": "slug",
+            "reason": "The 'Search_Attraction_Location' API is a necessary prerequisite for calling the 'Get_Attraction_Details' API as it provides the 'slug' parameter required by the target API. The 'destinations[].id' field from the source API can serve as the 'slug' parameter for the target API, as indicated by the description that the slug can be retrieved from the searchLocation endpoint. The data type (String) matches the requirement of the target API parameter."
+        },
+        {
+            "source_api_name": "Search_Attractions",
+            "dependence_type": "Hard Dependency",
+            "depencend_field": "$.products[*].slug",
+            "param_name": "slug",
+            "reason": "The 'Search_Attractions' API is a necessary prerequisite for the 'Get_Attraction_Details' API as it provides the 'slug' parameter required by the target API. The 'slug' field in the response from 'Search_Attractions' matches exactly with the 'slug' parameter needed by 'Get_Attraction_Details', both in terms of data type (String) and the business context (unique URL-friendly identifier for attractions). This represents a hard dependency as the 'Search_Attractions' API must be called first to obtain the 'slug' before calling 'Get_Attraction_Details'."
+        }
+    ],
+    "verified": false
+}

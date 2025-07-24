@@ -1,0 +1,30 @@
+2025-07-24 03:32:32,506 - evaluation_logger_Cross-20 - INFO - Test Example Cross-20
+2025-07-24 03:32:32,507 - evaluation_logger_Cross-20 - INFO - Query: My family and I are planning to go to Paris, from January 20th to 25th, 2025, and visit the world-famous Eiffel Tower. To make our journey more comfortable and convenient, we hope to find a hotel that's nearest to the Eiffel Tower. Besides that, arrange a taxi for us at 3 p.m. on the 20th to take us from Gare de Lyon in Paris to the Eiffel Tower.
+2025-07-24 03:33:51,256 - evaluation_logger_Cross-20 - INFO - Start compare_single_call: 
+{'name': 'Search_Hotel_Destination', 'arguments': {'query': 'Eiffel Tower'}}
+{'name': 'Search_Hotel_Destination', 'arguments': {'query': 'Eiffel Tower'}}
+2025-07-24 03:33:51,257 - evaluation_logger_Cross-20 - INFO - Rule-based compare success.
+2025-07-24 03:33:51,257 - evaluation_logger_Cross-20 - INFO - Success matched: [{'name': 'Search_Hotel_Destination', 'arguments': {'query': 'Eiffel Tower'}}]
+2025-07-24 03:33:51,875 - evaluation_logger_Cross-20 - INFO - Success matched: []
+2025-07-24 03:34:36,713 - evaluation_logger_Cross-20 - INFO - Start compare_single_call: 
+{'name': 'Search_Hotels', 'arguments': {'arrival_date': '2025-01-20', 'departure_date': '2025-01-25', 'dest_id': 735, 'search_type': 'landmark'}}
+{'name': 'Search_Hotels', 'arguments': {'arrival_date': '2025-01-20', 'departure_date': '2025-01-25', 'dest_id': 735, 'search_type': 'landmark', 'sort_by': 'distance'}}
+2025-07-24 03:34:36,713 - evaluation_logger_Cross-20 - INFO - {'error_type': 'param_missing', 'content': 'Missing parameter sort_by in prediction.'}
+2025-07-24 03:34:36,713 - evaluation_logger_Cross-20 - INFO - Success matched: []
+2025-07-24 03:35:30,158 - evaluation_logger_Cross-20 - INFO - Start compare_single_call: 
+{'name': 'Search_Hotels', 'arguments': {'arrival_date': '2025-01-20', 'departure_date': '2025-01-25', 'dest_id': 735, 'search_type': 'landmark', 'sort_by': 'DISTANCE'}}
+{'name': 'Search_Hotels', 'arguments': {'arrival_date': '2025-01-20', 'departure_date': '2025-01-25', 'dest_id': 735, 'search_type': 'landmark', 'sort_by': 'distance'}}
+2025-07-24 03:35:30,158 - evaluation_logger_Cross-20 - INFO - {'error_type': 'value_error', 'content': "Parameter sort_by value 'DISTANCE' is not correct in prediction."}
+2025-07-24 03:35:30,158 - evaluation_logger_Cross-20 - INFO - Success matched: []
+2025-07-24 03:36:33,641 - evaluation_logger_Cross-20 - INFO - Start compare_single_call: 
+{'name': 'Search_Hotels', 'arguments': {'arrival_date': '2025-01-20', 'departure_date': '2025-01-25', 'dest_id': 735, 'search_type': 'landmark', 'sort_by': 'DISTANCE'}}
+{'name': 'Search_Hotels', 'arguments': {'arrival_date': '2025-01-20', 'departure_date': '2025-01-25', 'dest_id': 735, 'search_type': 'landmark', 'sort_by': 'distance'}}
+2025-07-24 03:36:33,641 - evaluation_logger_Cross-20 - INFO - {'error_type': 'value_error', 'content': "Parameter sort_by value 'DISTANCE' is not correct in prediction."}
+2025-07-24 03:36:33,641 - evaluation_logger_Cross-20 - INFO - Success matched: []
+2025-07-24 03:37:57,953 - evaluation_logger_Cross-20 - INFO - Success matched: []
+2025-07-24 03:38:57,609 - evaluation_logger_Cross-20 - INFO - Success matched: []
+2025-07-24 03:40:18,640 - evaluation_logger_Cross-20 - INFO - Start compare_single_call: 
+{'name': 'Search_Hotels', 'arguments': {'arrival_date': '2025-01-20', 'departure_date': '2025-01-25', 'dest_id': 735, 'search_type': 'landmark', 'sort_by': 'DISTANCE_FROM_LANDMARK'}}
+{'name': 'Search_Hotels', 'arguments': {'arrival_date': '2025-01-20', 'departure_date': '2025-01-25', 'dest_id': 735, 'search_type': 'landmark', 'sort_by': 'distance'}}
+2025-07-24 03:40:18,640 - evaluation_logger_Cross-20 - INFO - {'error_type': 'value_error', 'content': "Parameter sort_by value 'DISTANCE_FROM_LANDMARK' is not correct in prediction."}
+2025-07-24 03:40:18,640 - evaluation_logger_Cross-20 - INFO - Success matched: []

@@ -1,0 +1,188 @@
+{
+    "name": "Get_Exchange_Rates",
+    "docs_row": {
+        "name": "Get_Exchange_Rates",
+        "endpoint": "/api/v1/meta/getExchangeRates",
+        "func_description": "",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "base_currency": {
+                    "type": "String",
+                    "description": "Base currency.",
+                    "example_value": "USD",
+                    "required": true
+                }
+            },
+            "required": [
+                "base_currency"
+            ]
+        }
+    },
+    "instance": [],
+    "category": null,
+    "tool": null,
+    "api_idx": 49,
+    "params": {
+        "type": "object",
+        "properties": {
+            "base_currency": {
+                "type": "String",
+                "description": "Base currency.",
+                "example_value": "USD",
+                "required": true
+            }
+        },
+        "required": [
+            "base_currency"
+        ]
+    },
+    "responses": [
+        {
+            "function_name": "Get_Exchange_Rates",
+            "arguments": {
+                "base_currency": "USD"
+            },
+            "observation": {
+                "base_currency": "USD",
+                "base_currency_date": "2025-05-18",
+                "exchange_rates": [
+                    {
+                        "currency": "ATS",
+                        "exchange_rate_buy": "12.33502980"
+                    },
+                    {
+                        "currency": "ROL",
+                        "exchange_rate_buy": "44333.27448071"
+                    },
+                    {
+                        "currency": "MVR",
+                        "exchange_rate_buy": "15.41000003"
+                    }
+                ]
+            }
+        }
+    ],
+    "response_summary": "The exchange rates provided are based on the US dollar (USD) as of May 18, 2025. According to the data, one US dollar can be exchanged for approximately 12.34 Austrian schillings (ATS), 44,333.27 Romanian lei (ROL), or 15.41 Maldivian rufiyaa (MVR). These rates represent the buying prices for the respective currencies against the USD on the specified date.",
+    "enhance_func_desc": "This API is essential for financial transactions and travel planning involving currency conversion. It retrieves real-time exchange rates for various currencies against a specified base currency (default USD). The response provides buying rates, enabling users to compare currency values for budgeting, trading, or travel expenses. The base currency parameter allows flexibility for different market needs.",
+    "enhance_params_desc": {
+        "enhanced_parameters": {
+            "base_currency": "The reference currency against which exchange rates are calculated (default: USD)."
+        }
+    },
+    "enhance_resfield_desc": {
+        "response_fields": {
+            "base_currency": {
+                "type": "String",
+                "description": "The base currency code (ISO 4217) against which exchange rates are provided. In this case, it is USD (US Dollar)."
+            },
+            "base_currency_date": {
+                "type": "Date",
+                "description": "The date for which the exchange rates are provided, formatted as YYYY-MM-DD."
+            },
+            "exchange_rates": {
+                "type": "Array",
+                "description": "A list of exchange rates for various currencies against the base currency (USD).",
+                "ar_items": {
+                    "type": "Object",
+                    "description": "An object representing the exchange rate details for a specific currency.",
+                    "ob_properties": {
+                        "currency": {
+                            "type": "String",
+                            "description": "The target currency code (ISO 4217) for which the exchange rate is provided (e.g., ATS, ROL, MVR)."
+                        },
+                        "exchange_rate_buy": {
+                            "type": "String",
+                            "description": "The buying exchange rate from the base currency (USD) to the target currency. Represented as a string to preserve precision."
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "params_desc_list": null,
+    "response_desc_list": [
+        {
+            "path_name": "$.base_currency",
+            "name": "base_currency",
+            "description": "The base currency code (ISO 4217) against which exchange rates are provided. In this case, it is USD (US Dollar)."
+        },
+        {
+            "path_name": "$.base_currency_date",
+            "name": "base_currency_date",
+            "description": "The date for which the exchange rates are provided, formatted as YYYY-MM-DD."
+        },
+        {
+            "path_name": "$.exchange_rates",
+            "name": "exchange_rates",
+            "description": "A list of exchange rates for various currencies against the base currency (USD)."
+        },
+        {
+            "path_name": "$.exchange_rates[]",
+            "name": "exchange_rates[]",
+            "description": "An object representing the exchange rate details for a specific currency."
+        },
+        {
+            "path_name": "$.exchange_rates[].currency",
+            "name": "currency",
+            "description": "The target currency code (ISO 4217) for which the exchange rate is provided (e.g., ATS, ROL, MVR)."
+        },
+        {
+            "path_name": "$.exchange_rates[].exchange_rate_buy",
+            "name": "exchange_rate_buy",
+            "description": "The buying exchange rate from the base currency (USD) to the target currency. Represented as a string to preserve precision."
+        }
+    ],
+    "depends_on": [
+        {
+            "source_api_name": "Get_Exchange_Rates",
+            "dependence_type": "Hard Dependency",
+            "depencend_field": "$.base_currency",
+            "param_name": "base_currency",
+            "reason": "The source API response field '$.base_currency' directly matches the target parameter 'base_currency' in both name and data type (String). This represents a hard dependency as the same API is being referenced, and the field is essential for the operation of the target API. The example value 'USD' also matches the expected format for the base_currency parameter."
+        },
+        {
+            "source_api_name": "Car_Search",
+            "dependence_type": "Soft Dependency",
+            "depencend_field": "$.search_results[*].pricing_info.base_currency",
+            "param_name": "base_currency",
+            "reason": "There is a business association between the 'Car_Search' API and the 'Get_Exchange_Rates' API, as travelers often need to understand currency conversion rates when comparing car rental prices in different currencies. The 'base_currency' field from the 'Car_Search' API response matches exactly with the 'base_currency' parameter required by the 'Get_Exchange_Rates' API in terms of data type (String) and purpose (currency code). This represents a soft dependency as the car search API isn't strictly required for getting exchange rates but provides useful context for currency conversion needs in travel planning."
+        },
+        {
+            "source_api_name": "Search_Flights",
+            "dependence_type": "Soft Dependency",
+            "depencend_field": "$.flightOffers[*].travellerPrices[*].travellerPriceBreakdown.baseFare.currencyCode",
+            "param_name": "base_currency",
+            "reason": "There is a potential business relationship between flight pricing information and currency exchange rates, as travelers often need to understand the exchange rates for the currency in which their flight is priced. The 'currencyCode' field from 'Search_Flights' matches the data type (String) required by 'base_currency' in 'Get_Exchange_Rates'. This represents a soft dependency as the flight API isn't strictly required for getting exchange rates but provides useful context for currency conversion needs related to flight bookings."
+        },
+        {
+            "source_api_name": "Search_Flights",
+            "dependence_type": "Soft Dependency",
+            "depencend_field": "$.flightOffers[*].ancillaries.flexibleTicket.priceBreakdown.baseFare.currencyCode",
+            "param_name": "base_currency",
+            "reason": "There is a potential business relationship where flight pricing information could be used to determine the base currency for exchange rate calculations. The 'currencyCode' field from 'Search_Flights' matches the 'base_currency' parameter's data type (String) and contains currency codes that could be used as input. However, this represents a soft dependency as the flight API isn't strictly required for exchange rate lookup but could provide relevant currency information for a user's specific context."
+        },
+        {
+            "source_api_name": "Search_Flights",
+            "dependence_type": "Soft Dependency",
+            "depencend_field": "$.flightOffers[*].offerExtras.flexibleTicket.priceBreakdown.baseFare.currencyCode",
+            "param_name": "base_currency",
+            "reason": "There is a potential business relationship where flight pricing information could be used to determine the base currency for exchange rate calculations, especially for travelers needing to convert flight costs to other currencies. The 'currencyCode' field from 'Search_Flights' matches the 'String' type required by 'base_currency' in 'Get_Exchange_Rates'. However, this represents a soft dependency as the flight API isn't strictly required for exchange rate retrieval but could provide useful context for currency conversion decisions."
+        },
+        {
+            "source_api_name": "Search_Flights",
+            "dependence_type": "Soft Dependency",
+            "depencend_field": "$.flightOffers[*].extraProducts[*].priceBreakdown.baseFare.currencyCode",
+            "param_name": "base_currency",
+            "reason": "There is a logical business relationship between flight pricing information and currency exchange rates, as travelers often need to understand the currency conversion for flight prices. The 'currencyCode' field from 'Search_Flights' matches the 'base_currency' parameter type (String) in 'Get_Exchange_Rates'. This represents a soft dependency as the flight API isn't strictly required for getting exchange rates but provides useful context for currency conversion needs related to flight bookings."
+        },
+        {
+            "source_api_name": "Search_Flights",
+            "dependence_type": "Soft Dependency",
+            "depencend_field": "$.flightOffers[*].priceBreakdown.baseFare.currencyCode",
+            "param_name": "base_currency",
+            "reason": "There is a business association between the 'Search_Flights' API and the 'Get_Exchange_Rates' API, as travelers often need to check exchange rates for the currency in which their flight is priced. The 'currencyCode' field from the flight offers matches the 'base_currency' parameter's data type (String) and can be used to determine the appropriate base currency for exchange rate calculations. This represents a soft dependency as the flight API isn't strictly required for getting exchange rates but provides useful context for a common travel planning scenario."
+        }
+    ],
+    "verified": true
+}

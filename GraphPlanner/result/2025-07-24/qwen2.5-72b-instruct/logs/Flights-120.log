@@ -1,0 +1,59 @@
+2025-07-24 09:31:12,566 - evaluation_logger_Flights-120 - INFO - Test Example Flights-120
+2025-07-24 09:31:12,566 - evaluation_logger_Flights-120 - INFO - Query: I plan to go to Austin and San Antonio, staying 4 days in each place, and then return to Houston. I haven't decided whether to go to Austin first or San Antonio first. Please help me find the departure date of the cheapest flight around November 10th, 2024, and provide the detailed information for that flight.
+2025-07-24 14:45:37,545 - evaluation_logger_Flights-120 - INFO - Test Example Flights-120
+2025-07-24 14:45:37,545 - evaluation_logger_Flights-120 - INFO - Query: I plan to go to Austin and San Antonio, staying 4 days in each place, and then return to Houston. I haven't decided whether to go to Austin first or San Antonio first. Please help me find the departure date of the cheapest flight around November 10th, 2024, and provide the detailed information for that flight.
+2025-07-24 14:49:12,956 - evaluation_logger_Flights-120 - INFO - Start compare_single_call: 
+{'name': 'Search_Flight_Location', 'arguments': {'query': 'Houston'}}
+{'name': 'Search_Flight_Location', 'arguments': {'query': 'Houston'}}
+2025-07-24 14:49:12,956 - evaluation_logger_Flights-120 - INFO - Rule-based compare success.
+2025-07-24 14:49:12,956 - evaluation_logger_Flights-120 - INFO - Success matched: [{'name': 'Search_Flight_Location', 'arguments': {'query': 'Houston'}}]
+2025-07-24 14:49:12,962 - evaluation_logger_Flights-120 - INFO - Start compare_single_call: 
+{'name': 'Search_Flight_Location', 'arguments': {'query': 'Austin'}}
+{'name': 'Search_Flight_Location', 'arguments': {'query': 'Austin'}}
+2025-07-24 14:49:12,962 - evaluation_logger_Flights-120 - INFO - Rule-based compare success.
+2025-07-24 14:49:12,962 - evaluation_logger_Flights-120 - INFO - Success matched: [{'name': 'Search_Flight_Location', 'arguments': {'query': 'Austin'}}]
+2025-07-24 14:49:12,965 - evaluation_logger_Flights-120 - INFO - Start compare_single_call: 
+{'name': 'Search_Flight_Location', 'arguments': {'query': 'San Antonio'}}
+{'name': 'Search_Flight_Location', 'arguments': {'query': 'San Antonio'}}
+2025-07-24 14:49:12,965 - evaluation_logger_Flights-120 - INFO - Rule-based compare success.
+2025-07-24 14:49:12,965 - evaluation_logger_Flights-120 - INFO - Success matched: [{'name': 'Search_Flight_Location', 'arguments': {'query': 'San Antonio'}}]
+2025-07-24 14:49:12,965 - evaluation_logger_Flights-120 - INFO - Start compare_single_call: 
+{'name': 'Get_Min_Price_Multi_Stops', 'arguments': {'legs': [{'fromId': 'HOU.CITY', 'toId': 'AUS.AIRPORT', 'date': '2024-11-10'}, {'fromId': 'AUS.AIRPORT', 'toId': 'SAT.AIRPORT', 'date': '2024-11-14'}, {'fromId': 'SAT.AIRPORT', 'toId': 'HOU.CITY', 'date': '2024-11-18'}]}}
+{'name': 'Get_Min_Price_Multi_Stops', 'arguments': {'legs': [{'fromId': 'HOU.CITY', 'toId': 'AUS.AIRPORT', 'date': '2024-11-10'}, {'fromId': 'AUS.AIRPORT', 'toId': 'SAT.AIRPORT', 'date': '2024-11-14'}, {'fromId': 'SAT.AIRPORT', 'toId': 'HOU.CITY', 'date': '2024-11-18'}]}}
+2025-07-24 14:49:12,965 - evaluation_logger_Flights-120 - INFO - Rule-based compare success.
+2025-07-24 14:49:12,965 - evaluation_logger_Flights-120 - INFO - Success matched: [{'name': 'Get_Min_Price_Multi_Stops', 'arguments': {'legs': [{'fromId': 'HOU.CITY', 'toId': 'AUS.AIRPORT', 'date': '2024-11-10'}, {'fromId': 'AUS.AIRPORT', 'toId': 'SAT.AIRPORT', 'date': '2024-11-14'}, {'fromId': 'SAT.AIRPORT', 'toId': 'HOU.CITY', 'date': '2024-11-18'}]}}]
+2025-07-24 14:49:12,966 - evaluation_logger_Flights-120 - INFO - Start compare_single_call: 
+{'name': 'Get_Min_Price_Multi_Stops', 'arguments': {'legs': [{'fromId': 'HOU.CITY', 'toId': 'SAT.AIRPORT', 'date': '2024-11-10'}, {'fromId': 'SAT.AIRPORT', 'toId': 'AUS.AIRPORT', 'date': '2024-11-14'}, {'fromId': 'AUS.AIRPORT', 'toId': 'HOU.CITY', 'date': '2024-11-18'}]}}
+{'name': 'Get_Min_Price_Multi_Stops', 'arguments': {'legs': [{'fromId': 'HOU.CITY', 'toId': 'SAT.AIRPORT', 'date': '2024-11-10'}, {'fromId': 'SAT.AIRPORT', 'toId': 'AUS.AIRPORT', 'date': '2024-11-14'}, {'fromId': 'AUS.AIRPORT', 'toId': 'HOU.CITY', 'date': '2024-11-18'}]}}
+2025-07-24 14:49:12,966 - evaluation_logger_Flights-120 - INFO - Rule-based compare success.
+2025-07-24 14:49:12,966 - evaluation_logger_Flights-120 - INFO - Success matched: [{'name': 'Get_Min_Price_Multi_Stops', 'arguments': {'legs': [{'fromId': 'HOU.CITY', 'toId': 'SAT.AIRPORT', 'date': '2024-11-10'}, {'fromId': 'SAT.AIRPORT', 'toId': 'AUS.AIRPORT', 'date': '2024-11-14'}, {'fromId': 'AUS.AIRPORT', 'toId': 'HOU.CITY', 'date': '2024-11-18'}]}}]
+2025-07-24 14:49:13,639 - evaluation_logger_Flights-120 - INFO - Start compare_single_call: 
+{'name': 'Search_Flights_Multi_Stops', 'arguments': {'legs': [{'fromId': 'HOU.CITY', 'toId': 'SAT.AIRPORT', 'date': '2024-11-10'}, {'fromId': 'SAT.AIRPORT', 'toId': 'AUS.AIRPORT', 'date': '2024-11-14'}, {'fromId': 'AUS.AIRPORT', 'toId': 'HOU.CITY', 'date': '2024-11-18'}], 'sort': 'CHEAPEST'}}
+{'name': 'Search_Flights_Multi_Stops', 'arguments': {'legs': [{'fromId': 'HOU.CITY', 'toId': 'AUS.AIRPORT', 'date': '2024-11-11'}, {'fromId': 'AUS.AIRPORT', 'toId': 'SAT.AIRPORT', 'date': '2024-11-15'}, {'fromId': 'SAT.AIRPORT', 'toId': 'HOU.CITY', 'date': '2024-11-19'}], 'sort': 'CHEAPEST'}}
+2025-07-24 14:49:19,335 - evaluation_logger_Flights-120 - DEBUG - LLM-based comparison output: {'is_equal': False, 'reason': 'The legs parameters in the two function calls have different fromId, toId, and date values, which represent different flight routes and dates.'}
+2025-07-24 14:49:19,336 - evaluation_logger_Flights-120 - INFO - All compare method failed.
+2025-07-24 14:49:19,336 - evaluation_logger_Flights-120 - INFO - Success matched: []
+2025-07-24 14:51:03,591 - evaluation_logger_Flights-120 - INFO - Start compare_single_call: 
+{'name': 'Get_Min_Price_Multi_Stops', 'arguments': {'legs': [{'fromId': 'HOU.AIRPORT', 'toId': 'AUS.AIRPORT', 'date': '2024-11-10'}, {'fromId': 'AUS.AIRPORT', 'toId': 'SAT.AIRPORT', 'date': '2024-11-14'}, {'fromId': 'SAT.AIRPORT', 'toId': 'HOU.AIRPORT', 'date': '2024-11-18'}]}}
+{'name': 'Get_Min_Price_Multi_Stops', 'arguments': {'legs': [{'fromId': 'HOU.CITY', 'toId': 'AUS.AIRPORT', 'date': '2024-11-10'}, {'fromId': 'AUS.AIRPORT', 'toId': 'SAT.AIRPORT', 'date': '2024-11-14'}, {'fromId': 'SAT.AIRPORT', 'toId': 'HOU.CITY', 'date': '2024-11-18'}]}}
+2025-07-24 14:51:10,059 - evaluation_logger_Flights-120 - DEBUG - LLM-based comparison output: {'is_equal': False, 'reason': "The 'fromId' in the first leg and the 'toId' in the third leg of the function calls are different ('HOU.AIRPORT' vs 'HOU.CITY')."}
+2025-07-24 14:51:10,059 - evaluation_logger_Flights-120 - INFO - All compare method failed.
+2025-07-24 14:51:10,059 - evaluation_logger_Flights-120 - INFO - Success matched: []
+2025-07-24 14:53:04,195 - evaluation_logger_Flights-120 - INFO - Start compare_single_call: 
+{'name': 'Get_Min_Price_Multi_Stops', 'arguments': {'legs': [{'fromId': 'HOU.AIRPORT', 'toId': 'AUS.AIRPORT', 'date': '2024-11-10'}, {'fromId': 'AUS.AIRPORT', 'toId': 'SAT.AIRPORT', 'date': '2024-11-14'}, {'fromId': 'SAT.AIRPORT', 'toId': 'HOU.AIRPORT', 'date': '2024-11-18'}]}}
+{'name': 'Get_Min_Price_Multi_Stops', 'arguments': {'legs': [{'fromId': 'HOU.CITY', 'toId': 'AUS.AIRPORT', 'date': '2024-11-10'}, {'fromId': 'AUS.AIRPORT', 'toId': 'SAT.AIRPORT', 'date': '2024-11-14'}, {'fromId': 'SAT.AIRPORT', 'toId': 'HOU.CITY', 'date': '2024-11-18'}]}}
+2025-07-24 14:53:12,436 - evaluation_logger_Flights-120 - DEBUG - LLM-based comparison output: {'is_equal': False, 'reason': "The 'fromId' in the first leg of Function call 1 is 'HOU.AIRPORT' while in Function call 2 it is 'HOU.CITY', and the 'toId' in the third leg of Function call 1 is 'HOU.AIRPORT' while in Function call 2 it is 'HOU.CITY'. These differences in location identifiers make the function calls not equivalent."}
+2025-07-24 14:53:12,436 - evaluation_logger_Flights-120 - INFO - All compare method failed.
+2025-07-24 14:53:12,436 - evaluation_logger_Flights-120 - INFO - Success matched: []
+2025-07-24 14:54:40,238 - evaluation_logger_Flights-120 - INFO - Start compare_single_call: 
+{'name': 'Search_Flights_Multi_Stops', 'arguments': {'legs': [{'fromId': 'HOU.CITY', 'toId': 'SAT.AIRPORT', 'date': '2024-11-10'}, {'fromId': 'SAT.AIRPORT', 'toId': 'AUS.AIRPORT', 'date': '2024-11-14'}, {'fromId': 'AUS.AIRPORT', 'toId': 'HOU.CITY', 'date': '2024-11-18'}], 'sort': 'CHEAPEST'}}
+{'name': 'Search_Flights_Multi_Stops', 'arguments': {'legs': [{'fromId': 'HOU.CITY', 'toId': 'AUS.AIRPORT', 'date': '2024-11-11'}, {'fromId': 'AUS.AIRPORT', 'toId': 'SAT.AIRPORT', 'date': '2024-11-15'}, {'fromId': 'SAT.AIRPORT', 'toId': 'HOU.CITY', 'date': '2024-11-19'}], 'sort': 'CHEAPEST'}}
+2025-07-24 14:54:45,638 - evaluation_logger_Flights-120 - DEBUG - LLM-based comparison output: {'is_equal': False, 'reason': 'The legs parameters in the two function calls have different fromId, toId, and date values, which represent different flight routes and dates.'}
+2025-07-24 14:54:45,639 - evaluation_logger_Flights-120 - INFO - All compare method failed.
+2025-07-24 14:54:45,639 - evaluation_logger_Flights-120 - INFO - Success matched: []
+2025-07-24 14:56:41,139 - evaluation_logger_Flights-120 - INFO - Start compare_single_call: 
+{'name': 'Get_Min_Price_Multi_Stops', 'arguments': {'legs': [{'fromId': 'HOU.AIRPORT', 'toId': 'AUS.AIRPORT', 'date': '2024-11-10'}, {'fromId': 'AUS.AIRPORT', 'toId': 'SAT.AIRPORT', 'date': '2024-11-14'}, {'fromId': 'SAT.AIRPORT', 'toId': 'HOU.AIRPORT', 'date': '2024-11-18'}]}}
+{'name': 'Get_Min_Price_Multi_Stops', 'arguments': {'legs': [{'fromId': 'HOU.CITY', 'toId': 'AUS.AIRPORT', 'date': '2024-11-10'}, {'fromId': 'AUS.AIRPORT', 'toId': 'SAT.AIRPORT', 'date': '2024-11-14'}, {'fromId': 'SAT.AIRPORT', 'toId': 'HOU.CITY', 'date': '2024-11-18'}]}}
+2025-07-24 14:56:48,608 - evaluation_logger_Flights-120 - DEBUG - LLM-based comparison output: {'is_equal': False, 'reason': "The 'fromId' in the first leg and 'toId' in the third leg of call 1 ('HOU.AIRPORT') is not equivalent to 'HOU.CITY' in call 2."}
+2025-07-24 14:56:48,608 - evaluation_logger_Flights-120 - INFO - All compare method failed.
+2025-07-24 14:56:48,608 - evaluation_logger_Flights-120 - INFO - Success matched: []

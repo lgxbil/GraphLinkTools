@@ -1,0 +1,553 @@
+{
+    "name": "Car_Search_Coordinates",
+    "docs_row": {
+        "name": "Car_Search_Coordinates",
+        "endpoint": "https://booking-com18.p.rapidapi.com/car/search-coordinates",
+        "func_description": "",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "pickUpCoord": {
+                    "type": "String",
+                    "description": "Pick-up coordinates\nRequired: true\npickUpCoord can be retrieved from /car/auto-complete endpoint(data->coordinates)\nFormat: latitude,longitude\nEx: 40.768074,-73.981895",
+                    "example_value": "40.768074,-73.981895",
+                    "required": true
+                },
+                "pickUpDate": {
+                    "type": "Date (yyyy-mm-dd)",
+                    "description": "Pick-up date\nRequired: true\nFormat: YYYY-MM-DD\nEx: 2024-01-25",
+                    "example_value": "",
+                    "required": true
+                },
+                "pickUpTime": {
+                    "type": "Time (24-Hour Hh:Mm)",
+                    "description": "Pick-up time\nRequired: true\nFormat: HH:MM\nEx: 10:00",
+                    "example_value": "",
+                    "required": true
+                },
+                "dropOffDate": {
+                    "type": "Date (yyyy-mm-dd)",
+                    "description": "Drop-off date\nRequired: true\nFormat: YYYY-MM-DD\nEx: 2024-01-26",
+                    "example_value": "",
+                    "required": true
+                },
+                "dropOffTime": {
+                    "type": "Time (24-Hour Hh:Mm)",
+                    "description": "Drop-off time\nRequired: true\nFormat: HH:MM\nEx: 10:00",
+                    "example_value": "",
+                    "required": true
+                },
+                "dropOffCoord": {
+                    "type": "String",
+                    "description": "Drop-off coordinates\ndropOffCoord can be retrieved from /car/auto-complete endpoint(data->coordinates)\nFormat: latitude,longitude\nEx: 40.768074,-73.981895",
+                    "example_value": "",
+                    "required": false
+                },
+                "sortBy": {
+                    "type": "String",
+                    "description": "Sort by\nsortBy can be retrieved from this endpoint(data->sort->identifier)\nEx: recommended\nDefault value: recommended\n\nrecommended: Recommended \u2013 best first\nprice_low_to_high: Price - lowest first",
+                    "example_value": "",
+                    "required": false
+                },
+                "driverAge": {
+                    "type": "Number",
+                    "description": "Driver's age: 30-65\nEx: 40",
+                    "example_value": "",
+                    "required": false
+                },
+                "carType": {
+                    "type": "String",
+                    "description": "Car Type\ncarType can be retrieved from this endpoint(data->filter(id=carCategory)->categories->id)\nIt can input multiple values, and the values should be separated by commas\nEx: carCategory::carriers,carCategory::suvs\nDefault value: recommended\n\ncarCategory::small: Small\ncarCategory::medium: Medium\ncarCategory::large: Large\ncarCategory::premium: Premium\ncarCategory::carriers: People carriers\ncarCategory::suvs: SUVs",
+                    "example_value": "",
+                    "required": false
+                },
+                "supplier": {
+                    "type": "String",
+                    "description": "Supplier\ncarType can be retrieved from this endpoint(data->filter(id=supplier)->categories->id)\nIt can input multiple values, and the values should be separated by commas\nEx: supplier::Alamo,supplier::Enterprise",
+                    "example_value": "",
+                    "required": false
+                },
+                "transmission": {
+                    "type": "String",
+                    "description": "Transmission\ntransmission can be retrieved from this endpoint(data->filter(id=transmission)->categories->id)\nIt can input multiple values, and the values should be separated by commas\nEx: transmission::AUTOMATIC",
+                    "example_value": "",
+                    "required": false
+                },
+                "hasAirConditioning": {
+                    "type": "Boolean",
+                    "description": "Air Conditioning\nDefault value: false",
+                    "example_value": "",
+                    "required": false
+                },
+                "units": {
+                    "type": "String",
+                    "description": "Units\nEx: metric\nDefault value: metric\nChoose one of the values below\nmetric: Metric (km, m2)\nimperial: Imperial (miles, ft2)",
+                    "example_value": "",
+                    "required": false
+                },
+                "languageCode": {
+                    "type": "String",
+                    "description": "Language\nlanguageCode can be retrieved from /languages endpoint(data->code)\nEx: en-us\nDefault value: en-us",
+                    "example_value": "",
+                    "required": false
+                },
+                "currencyCode": {
+                    "type": "String",
+                    "description": "Currency\ncurrencyCode can be retrieved from /currencies endpoint(data->code)\nEx: USD\nDefault value: HOTEL(Property's Currency)",
+                    "example_value": "",
+                    "required": false
+                },
+                "countryFlag": {
+                    "type": "String",
+                    "description": "Country\ncountryFlag can be retrieved from /languages endpoint(data->countryFlag)\nEx: us\nDefault value: us",
+                    "example_value": "",
+                    "required": false
+                }
+            },
+            "required": [
+                "pickUpCoord",
+                "pickUpDate",
+                "pickUpTime",
+                "dropOffDate",
+                "dropOffTime"
+            ]
+        }
+    },
+    "instance": [],
+    "category": null,
+    "tool": null,
+    "api_idx": 8,
+    "params": {
+        "type": "object",
+        "properties": {
+            "pickUpCoord": {
+                "type": "String",
+                "description": "Pick-up coordinates\nRequired: true\npickUpCoord can be retrieved from /car/auto-complete endpoint(data->coordinates)\nFormat: latitude,longitude\nEx: 40.768074,-73.981895",
+                "example_value": "40.768074,-73.981895",
+                "required": true
+            },
+            "pickUpDate": {
+                "type": "Date (yyyy-mm-dd)",
+                "description": "Pick-up date\nRequired: true\nFormat: YYYY-MM-DD\nEx: 2024-01-25",
+                "example_value": "",
+                "required": true
+            },
+            "pickUpTime": {
+                "type": "Time (24-Hour Hh:Mm)",
+                "description": "Pick-up time\nRequired: true\nFormat: HH:MM\nEx: 10:00",
+                "example_value": "",
+                "required": true
+            },
+            "dropOffDate": {
+                "type": "Date (yyyy-mm-dd)",
+                "description": "Drop-off date\nRequired: true\nFormat: YYYY-MM-DD\nEx: 2024-01-26",
+                "example_value": "",
+                "required": true
+            },
+            "dropOffTime": {
+                "type": "Time (24-Hour Hh:Mm)",
+                "description": "Drop-off time\nRequired: true\nFormat: HH:MM\nEx: 10:00",
+                "example_value": "",
+                "required": true
+            },
+            "dropOffCoord": {
+                "type": "String",
+                "description": "Drop-off coordinates\ndropOffCoord can be retrieved from /car/auto-complete endpoint(data->coordinates)\nFormat: latitude,longitude\nEx: 40.768074,-73.981895",
+                "example_value": "",
+                "required": false
+            },
+            "sortBy": {
+                "type": "String",
+                "description": "Sort by\nsortBy can be retrieved from this endpoint(data->sort->identifier)\nEx: recommended\nDefault value: recommended\n\nrecommended: Recommended \u2013 best first\nprice_low_to_high: Price - lowest first",
+                "example_value": "",
+                "required": false
+            },
+            "driverAge": {
+                "type": "Number",
+                "description": "Driver's age: 30-65\nEx: 40",
+                "example_value": "",
+                "required": false
+            },
+            "carType": {
+                "type": "String",
+                "description": "Car Type\ncarType can be retrieved from this endpoint(data->filter(id=carCategory)->categories->id)\nIt can input multiple values, and the values should be separated by commas\nEx: carCategory::carriers,carCategory::suvs\nDefault value: recommended\n\ncarCategory::small: Small\ncarCategory::medium: Medium\ncarCategory::large: Large\ncarCategory::premium: Premium\ncarCategory::carriers: People carriers\ncarCategory::suvs: SUVs",
+                "example_value": "",
+                "required": false
+            },
+            "supplier": {
+                "type": "String",
+                "description": "Supplier\ncarType can be retrieved from this endpoint(data->filter(id=supplier)->categories->id)\nIt can input multiple values, and the values should be separated by commas\nEx: supplier::Alamo,supplier::Enterprise",
+                "example_value": "",
+                "required": false
+            },
+            "transmission": {
+                "type": "String",
+                "description": "Transmission\ntransmission can be retrieved from this endpoint(data->filter(id=transmission)->categories->id)\nIt can input multiple values, and the values should be separated by commas\nEx: transmission::AUTOMATIC",
+                "example_value": "",
+                "required": false
+            },
+            "hasAirConditioning": {
+                "type": "Boolean",
+                "description": "Air Conditioning\nDefault value: false",
+                "example_value": "",
+                "required": false
+            },
+            "units": {
+                "type": "String",
+                "description": "Units\nEx: metric\nDefault value: metric\nChoose one of the values below\nmetric: Metric (km, m2)\nimperial: Imperial (miles, ft2)",
+                "example_value": "",
+                "required": false
+            },
+            "languageCode": {
+                "type": "String",
+                "description": "Language\nlanguageCode can be retrieved from /languages endpoint(data->code)\nEx: en-us\nDefault value: en-us",
+                "example_value": "",
+                "required": false
+            },
+            "currencyCode": {
+                "type": "String",
+                "description": "Currency\ncurrencyCode can be retrieved from /currencies endpoint(data->code)\nEx: USD\nDefault value: HOTEL(Property's Currency)",
+                "example_value": "",
+                "required": false
+            },
+            "countryFlag": {
+                "type": "String",
+                "description": "Country\ncountryFlag can be retrieved from /languages endpoint(data->countryFlag)\nEx: us\nDefault value: us",
+                "example_value": "",
+                "required": false
+            }
+        },
+        "required": [
+            "pickUpCoord",
+            "pickUpDate",
+            "pickUpTime",
+            "dropOffDate",
+            "dropOffTime"
+        ]
+    },
+    "responses": [],
+    "response_summary": null,
+    "enhance_func_desc": null,
+    "enhance_params_desc": {
+        "enhanced_parameters": {
+            "pickUpCoord": "Latitude and longitude for car pick-up location.",
+            "pickUpDate": "Date when the car rental begins.",
+            "pickUpTime": "Time when the car rental begins (24-hour format).",
+            "dropOffDate": "Date when the car rental ends.",
+            "dropOffTime": "Time when the car rental ends (24-hour format).",
+            "dropOffCoord": "Latitude and longitude for car drop-off location.",
+            "sortBy": "Sorts results by recommendation or price (low to high).",
+            "driverAge": "Age of the driver (must be between 30-65).",
+            "carType": "Filters cars by type (e.g., small, SUV, premium).",
+            "supplier": "Filters cars by rental company (e.g., Alamo, Enterprise).",
+            "transmission": "Filters cars by transmission type (e.g., automatic).",
+            "hasAirConditioning": "Filters cars with air conditioning.",
+            "units": "Measurement units for distance (metric or imperial).",
+            "languageCode": "Language preference for the response data.",
+            "currencyCode": "Currency for displaying rental prices.",
+            "countryFlag": "Country code for localized results."
+        }
+    },
+    "enhance_resfield_desc": null,
+    "params_desc_list": null,
+    "response_desc_list": null,
+    "depends_on": [
+        {
+            "target_api_params": "pickUpCoord",
+            "reason": "The 'pickUpCoord' parameter in the target API requires coordinates in the format 'latitude,longitude'. The source API's 'supplier_info' field provides 'latitude' and 'longitude' values separately, which can be combined to match the required format. This creates a potential business association where the same location coordinates from a car search can be used for another car search with coordinates.",
+            "source_jsonpath": "$.search_results[*].supplier_info.latitude and $.search_results[*].supplier_info.longitude",
+            "confidence": 95,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Car_Search"
+        },
+        {
+            "target_api_params": "pickUpCoord",
+            "reason": "The 'supplierLocations[*].supplierPinContent.latLong' field in the source API provides coordinates in the required 'latitude,longitude' format. This directly matches the target API's 'pickUpCoord' parameter requirements, making it a suitable source for the coordinates.",
+            "source_jsonpath": "$.content.map.supplierLocations[*].supplierPinContent.latLong",
+            "confidence": 100,
+            "dependency_relationship": "Hard Dependency(Prerequisite API)",
+            "source_api": "Car_Search"
+        },
+        {
+            "target_api_params": "pickUpCoord",
+            "reason": "The 'pickUpCoord' parameter in the target API requires coordinates in 'latitude,longitude' format. The source API's 'pickupLocation.latLng' field provides the exact coordinates needed (e.g., 'latitude': 19.090176, 'longitude': 72.868696). The data types match perfectly, and there's a clear business association where a traveler might want to rent a car at the same location they were dropped off by a taxi.",
+            "source_jsonpath": "$.journeys[].pickupLocation.latLng",
+            "confidence": 95,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Search_Taxi"
+        },
+        {
+            "target_api_params": "pickUpCoord",
+            "reason": "The 'pickUpCoord' parameter in the target API requires coordinates in the format 'latitude,longitude'. The source API's 'geometry.location' field provides exactly this information (e.g., 'lat': 40.7484405, 'lng': -73.98566439999999). The data types match perfectly (both are strings when formatted), and this is a clear case where the source API's output can directly serve as input for the target API's parameter.",
+            "source_jsonpath": "$[*].geometry.location",
+            "confidence": 100,
+            "dependency_relationship": "Hard Dependency(Prerequisite API)",
+            "source_api": "Location_to_Lat_Long"
+        },
+        {
+            "target_api_params": "pickUpCoord",
+            "reason": "The 'pickUpCoord' parameter in the target API requires coordinates in the format 'latitude,longitude'. The source API's response fields include 'coordinates' with 'latitude' and 'longitude' values that can be concatenated to match the required format. This is a direct match and a necessary prerequisite for calling the target API.",
+            "source_jsonpath": "$[*].coordinates",
+            "confidence": 100,
+            "dependency_relationship": "Hard Dependency(Prerequisite API)",
+            "source_api": "Car_Auto-Complete"
+        },
+        {
+            "target_api_params": "pickUpCoord",
+            "reason": "The 'pickUpCoord' parameter in the target API requires coordinates in the format 'latitude,longitude'. The source API's response fields include 'latitude' and 'longitude' for each restaurant, which can be combined to match the required format. This creates a potential business association where a traveler might want to rent a car near a specific restaurant.",
+            "source_jsonpath": "$.results[*].latitude, $.results[*].longitude",
+            "confidence": 85,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "List_Restaurants_By_Search_Query"
+        },
+        {
+            "target_api_params": "pickUpCoord",
+            "reason": "The 'pickUpCoord' parameter in the target API requires coordinates in the format 'latitude,longitude'. The source API's response includes 'latitude' and 'longitude' fields which can be combined to match the required format. This creates a potential business association where a traveler might want to rent a car near a restaurant they are visiting.",
+            "source_jsonpath": "$.latitude, $.longitude",
+            "confidence": 95,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Get_restaurant_details"
+        },
+        {
+            "target_api_params": "pickUpCoord",
+            "reason": "The 'pickUpCoord' parameter in the target API requires coordinates in the format 'latitude,longitude'. The source API's response fields 'latitude' and 'longitude' provide exact geographic coordinates for nearby cities. The data types match (String), and the format can be easily concatenated to meet the target API's requirement. This creates a potential business association where a traveler might want to rent a car in a nearby city based on hotel availability.",
+            "source_jsonpath": "$[*].latitude, $[*].longitude",
+            "confidence": 95,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Get_Nearby_Cities"
+        },
+        {
+            "target_api_params": "pickUpCoord",
+            "reason": "The 'pickUpCoord' parameter in the target API requires coordinates in the format 'latitude,longitude'. The source API's response fields include 'latitude' and 'longitude' for each restaurant or location. These fields can be combined to match the required format of the target API parameter. This creates a potential business association where a traveler might want to rent a car near a specific restaurant or location.",
+            "source_jsonpath": "$[*].latitude, $[*].longitude",
+            "confidence": 95,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Search_Restaurants"
+        },
+        {
+            "target_api_params": "pickUpCoord",
+            "reason": "The 'pickUpCoord' parameter in the target API requires latitude and longitude coordinates in a specific format. The source API's response fields include 'latitude' and 'longitude' for each hotel property, which can be combined to match the required format. This creates a potential business association where a traveler might want to rent a car near their hotel.",
+            "source_jsonpath": "$.hotels[*].property.latitude, $.hotels[*].property.longitude",
+            "confidence": 95,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Search_Hotels"
+        },
+        {
+            "target_api_params": "pickUpCoord",
+            "reason": "The 'pickUpCoord' parameter in the target API requires coordinates in 'latitude,longitude' format. The source API's response fields include 'latitude' and 'longitude' values (e.g., 48.85807, 2.330132) which can be concatenated to match the required format. This creates a potential business association where a traveler might want to rent a car near their hotel destination.",
+            "source_jsonpath": "$[*].latitude, $[*].longitude",
+            "confidence": 95,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Search_Hotel_Destination"
+        },
+        {
+            "target_api_params": "pickUpCoord",
+            "reason": "The 'pickUpCoord' parameter in the target API requires coordinates in the format 'latitude,longitude'. The source API's response includes 'latitude' and 'longitude' fields for each landmark, which can be combined to match the required format. This creates a potential business association where a traveler might want to pick up a car near a popular attraction.",
+            "source_jsonpath": "$.closest_landmarks[*].latitude, $.closest_landmarks[*].longitude",
+            "confidence": 95,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Get_Popular_Attraction_Near_By"
+        },
+        {
+            "target_api_params": "pickUpCoord",
+            "reason": "The 'pickUpCoord' parameter in the target API requires coordinates in the format 'latitude,longitude'. The source API's response fields include 'latitude' and 'longitude' as separate fields, which can be combined to match the required format. This creates a potential business association where a traveler might want to rent a car at the same location they are searching for a taxi.",
+            "source_jsonpath": "$[*].latitude, $[*].longitude",
+            "confidence": 95,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Taxi_Search_Location"
+        },
+        {
+            "target_api_params": "pickUpDate",
+            "reason": "The 'pickUpDate' parameter in the target API requires a specific date in the format 'YYYY-MM-DD'. The source API's 'pickUpDate' parameter is identical in format and purpose, making it a perfect match for the target API's requirement. This is a direct dependency where the source API's parameter can be used as-is for the target API.",
+            "source_jsonpath": "$.pickUpDate",
+            "confidence": 100,
+            "dependency_relationship": "Hard Dependency(Prerequisite API)",
+            "source_api": "Car_Search"
+        },
+        {
+            "target_api_params": "pickUpDate",
+            "reason": "The 'pickUpDate' parameter in the target API requires a specific date in 'YYYY-MM-DD' format for car rental pickup. The source API's 'requestedPickupDateTime' field in the taxi journey provides an exact timestamp (e.g., '2025-06-15T14:30:00') which includes the date portion. The date portion can be extracted to match the required format. This creates a potential business association where a traveler might want to rent a car on the same day they take a taxi.",
+            "source_jsonpath": "$.journeys[].requestedPickupDateTime",
+            "confidence": 95,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Search_Taxi"
+        },
+        {
+            "target_api_params": "pickUpDate",
+            "reason": "The 'pickUpDate' parameter in the target API requires a specific date in 'YYYY-MM-DD' format for car rental pickup. The source API's 'avDates[].date' field provides exact dates in the same format (e.g., '2025-06-10'). This creates a potential business association where a traveler might want to rent a car on the same date they check out of their hotel.",
+            "source_jsonpath": "$.avDates[].date",
+            "confidence": 85,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Get_Room_Availability"
+        },
+        {
+            "target_api_params": "pickUpDate",
+            "reason": "The 'pickUpDate' parameter in the target API requires a specific car rental pick-up date (yyyy-mm-dd format). The source API's 'arrival_date' field provides the exact check-in date for a hotel stay (e.g., '2025-06-10'). This creates a potential business association where a traveler might want to rent a car on the same day they check into their hotel. The data types match perfectly (both are yyyy-mm-dd dates).",
+            "source_jsonpath": "$.arrival_date",
+            "confidence": 95,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Get_Room_List"
+        },
+        {
+            "target_api_params": "pickUpDate",
+            "reason": "The 'pickUpDate' parameter in the target API requires a specific date for car rental pick-up. The source API's 'checkinDate' field in hotel properties provides the exact check-in date (e.g., '2025-06-10'). The data types match (both are in 'yyyy-mm-dd' format), and there is a reasonable business association where a traveler might want to rent a car on the same day they check into a hotel.",
+            "source_jsonpath": "$.hotels[*].property.checkinDate",
+            "confidence": 95,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Search_Hotels"
+        },
+        {
+            "target_api_params": "pickUpDate",
+            "reason": "The 'pickUpDate' parameter in the target API requires a specific car rental pick-up date (YYYY-MM-DD format). The source API's 'departureDate' field provides exact departure dates (e.g., '2025-05-21'). The data types match perfectly, and there is a logical business association where a traveler might want to rent a car on the same day as their flight departure.",
+            "source_jsonpath": "$[*].departureDate",
+            "confidence": 95,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Get_Min_Price_Multi_Stops"
+        },
+        {
+            "target_api_params": "pickUpDate",
+            "reason": "The 'pickUpDate' parameter in the target API requires a specific date in 'yyyy-mm-dd' format for car rental pickup. The source API's 'arrival_date' field provides the check-in date for hotels, which could logically be the same date a traveler would pick up a rental car. The data types match exactly (both are 'yyyy-mm-dd'), and the scenario where a traveler arrives at a hotel and picks up a car on the same date is reasonable.",
+            "source_jsonpath": "$.arrival_date",
+            "confidence": 95,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Search_Hotels_By_Coordinates"
+        },
+        {
+            "target_api_params": "pickUpDate",
+            "reason": "The 'pickUpDate' parameter in the target API requires a specific car rental pick-up date (YYYY-MM-DD format). The source API's 'departureDate' field provides exact departure dates (e.g., '2025-06-11'). The data types match perfectly (both are YYYY-MM-DD dates). This creates a potential business association where a traveler might want to rent a car on the same day as their flight departure.",
+            "source_jsonpath": "$[*].departureDate",
+            "confidence": 95,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Get_Min_Price"
+        },
+        {
+            "target_api_params": "pickUpTime",
+            "reason": "The 'pickUpTime' parameter in the target API requires a specific car rental pick-up time in 24-hour format. The source API's 'requestedPickupDateTime' field in the taxi journey provides an exact pick-up timestamp (e.g., '2025-06-15T14:30:00'). While the data types differ (timestamp vs time), the time portion can be extracted to match the required format. This creates a potential business association where a traveler might want to rent a car at the same time they have booked a taxi.",
+            "source_jsonpath": "$.journeys[].requestedPickupDateTime",
+            "confidence": 85,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Search_Taxi"
+        },
+        {
+            "target_api_params": "pickUpTime",
+            "reason": "The 'pickUpTime' parameter in the target API requires a specific car rental pick-up time (24-hour format). The source API's 'arrivalTime' field in flight segments provides exact arrival timestamps (e.g., '2025-05-25T02:20:00'). While the data types differ (timestamp vs time), the time portion can be extracted. This creates a potential business association where a traveler wants to rent a car shortly after the flight arrives.",
+            "source_jsonpath": "$.flightOffers[*].segments[*].legs[*].arrivalTime",
+            "confidence": 90,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Search_Flights_Multi_Stops"
+        },
+        {
+            "target_api_params": "pickUpTime",
+            "reason": "The 'pickUpTime' parameter in the target API requires a specific car rental pick-up time (24-hour format). The source API's 'start' field in the time slot provides exact start timestamps (e.g., '2025-05-25T19:00:00+05:30'). While the data types differ (timestamp vs time), the time portion can be extracted. This creates a potential business association where a traveler wants to rent a car before attending an event.",
+            "source_jsonpath": "$[*].start",
+            "confidence": 85,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Get_Availability"
+        },
+        {
+            "target_api_params": "dropOffDate",
+            "reason": "The 'dropOffDate' parameter in the target API requires a specific car rental drop-off date (yyyy-mm-dd format). The source API's 'departure_date' field provides the exact departure date from the hotel (e.g., '2025-06-15'). The data types match exactly (both are yyyy-mm-dd), and there is a logical business association where a traveler might rent a car until their hotel departure date.",
+            "source_jsonpath": "$.departure_date",
+            "confidence": 95,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Get_Room_List"
+        },
+        {
+            "target_api_params": "dropOffDate",
+            "reason": "The 'dropOffDate' parameter in the target API requires a specific car rental drop-off date (YYYY-MM-DD format). The source API's 'requestedPickupDateTime' field in the taxi journey provides a timestamp (e.g., '2025-06-15T14:30:00'). While the data types differ (timestamp vs date), the date portion can be extracted. This creates a potential business association where a traveler might want to rent a car for the same day as their taxi ride.",
+            "source_jsonpath": "$.journeys[*].requestedPickupDateTime",
+            "confidence": 85,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Search_Taxi"
+        },
+        {
+            "target_api_params": "dropOffDate",
+            "reason": "The 'dropOffDate' parameter in the target API requires a specific date in 'yyyy-mm-dd' format for car rental drop-off. The source API's 'date' field in the availability calendar provides exact dates (e.g., '2025-05-20') which match the required format. This creates a potential business association where a traveler might want to drop off their rental car on a date when an attraction is available.",
+            "source_jsonpath": "$[*].date",
+            "confidence": 85,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Get_Availability_Calendar"
+        },
+        {
+            "target_api_params": "dropOffDate",
+            "reason": "The 'dropOffDate' parameter in the target API requires a specific date in 'yyyy-mm-dd' format for car rental drop-off. The source API's 'returnDate' field provides exactly this format (e.g., '2025-05-22'), matching both the data type and business context where a traveler would typically return a rental car on their flight return date.",
+            "source_jsonpath": "$[*].returnDate",
+            "confidence": 95,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Get_Min_Price_Multi_Stops"
+        },
+        {
+            "target_api_params": "dropOffDate",
+            "reason": "The 'dropOffDate' parameter in the target API requires a specific car rental drop-off date (YYYY-MM-DD format). The source API's 'checkoutDate' field in hotel properties provides the exact check-out date (e.g., '2025-06-15'). The data types match exactly (both are YYYY-MM-DD), and there is a logical business association where a traveler might rent a car until their hotel check-out date.",
+            "source_jsonpath": "$.hotels[*].property.checkoutDate",
+            "confidence": 95,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Search_Hotels"
+        },
+        {
+            "target_api_params": "dropOffDate",
+            "reason": "The 'departure_date' parameter in the source API is the hotel check-out date, which matches the 'dropOffDate' parameter's data type and format. This creates a direct business association where the car rental drop-off date aligns with the hotel check-out date.",
+            "source_jsonpath": "$.departure_date",
+            "confidence": 90,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Search_Hotels"
+        },
+        {
+            "target_api_params": "dropOffDate",
+            "reason": "The 'dropOffDate' parameter in the target API requires a specific car rental drop-off date (YYYY-MM-DD format). The source API's 'departure_date' field provides the exact date when the user checks out from the hotel, which is a logical date to use for car rental drop-off. The data types match perfectly (both are YYYY-MM-DD dates), and the business scenario makes sense as travelers often return rental cars when checking out of their hotels.",
+            "source_jsonpath": "$.departure_date",
+            "confidence": 95,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Search_Hotels_By_Coordinates"
+        },
+        {
+            "target_api_params": "dropOffTime",
+            "reason": "The 'forward_url' field in the source API contains query parameters that include 'doHour' and 'doMinute' which represent the drop-off time (e.g., 'doHour=17&doMinute=0'). This matches the required format (24-hour Hh:Mm) for the target API's 'dropOffTime' parameter. This creates a potential business association where the same drop-off time from a previous car search can be reused.",
+            "source_jsonpath": "$.search_results[*].forward_url",
+            "confidence": 90,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Car_Search"
+        },
+        {
+            "target_api_params": "dropOffTime",
+            "reason": "The 'dropOffTime' parameter in the target API requires a specific car rental drop-off time (24-hour format). The source API's 'requestedPickupDateTime' field in taxi journeys provides exact pickup timestamps (e.g., '2025-06-15T14:30:00'). While the data types differ (timestamp vs time), the time portion can be extracted. This creates a potential business association where a traveler might want to drop off a rental car at the same time they request a taxi pickup.",
+            "source_jsonpath": "$.journeys[].requestedPickupDateTime",
+            "confidence": 85,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Search_Taxi"
+        },
+        {
+            "target_api_params": "dropOffTime",
+            "reason": "The 'dropOffTime' parameter in the target API requires a specific car rental return time (24-hour format). The source API's 'start' field in the time slot provides an exact start timestamp (e.g., '2025-05-25T19:00:00+05:30'). While the data types differ (timestamp vs time), the time portion can be extracted. This creates a potential business association where a traveler might want to rent a car before attending an event.",
+            "source_jsonpath": "$[*].start",
+            "confidence": 85,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Get_Availability"
+        },
+        {
+            "target_api_params": "dropOffTime",
+            "reason": "The 'dropOffTime' parameter in the target API requires a specific car rental return time (24-hour format). The source API's 'departureTime' field in flight segments provides exact departure timestamps (e.g., '2025-05-25T01:00:00'). While the data types differ (timestamp vs time), the time portion can be extracted. This creates a potential business association where a traveler wants to return the car before the flight departs.",
+            "source_jsonpath": "$.flightOffers[*].segments[*].legs[*].departureTime",
+            "confidence": 90,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Search_Flights_Multi_Stops"
+        },
+        {
+            "target_api_params": "dropOffTime",
+            "reason": "The 'dropOffTime' parameter in the target API requires a specific car rental return time (24-hour format). The source API's 'close' field in restaurant operating hours provides a closing time (e.g., '23:00:00'). While the data types differ (timestamp vs time), the time portion can be extracted. This creates a potential business association where a traveler wants to return their rental car after dining at a restaurant.",
+            "source_jsonpath": "$.open_hours.wed[*].close",
+            "confidence": 85,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Get_restaurant_details"
+        },
+        {
+            "target_api_params": "dropOffTime",
+            "reason": "The 'dropOffTime' parameter in the target API requires a specific car rental drop-off time (24-hour format). The source API's 'checkout' field in hotel results provides checkout times (e.g., 'from': '10:00', 'until': '11:00'). While the data types differ (object vs time), the 'until' time can be extracted. This creates a potential business association where a traveler might want to drop off their rental car around the hotel checkout time.",
+            "source_jsonpath": "$.result[*].checkout.until",
+            "confidence": 85,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Search_Hotels_By_Coordinates"
+        }
+    ],
+    "verified": false
+}

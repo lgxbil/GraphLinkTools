@@ -1,0 +1,39 @@
+{
+    "name": "Search_Car_Location",
+    "docs_row": {
+        "name": "Search_Car_Location",
+        "endpoint": "/api/v1/cars/searchDestination",
+        "func_description": "Find car rental location by searching for their name, address, city, state, country, etc.. ",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "query": {
+                    "type": "String",
+                    "description": "Names of locations, cities, districts, places, countries, counties etc.",
+                    "example_value": "new",
+                    "required": true
+                },
+                "languagecode": {
+                    "type": "String",
+                    "description": "To obtain the response data in a specific language, enter the languagecode. languagecode can be retrieved from api/v1/meta/getLanguages(Get Languages\n) endpoint in Meta collection.",
+                    "example_value": "",
+                    "required": false
+                }
+            },
+            "required": [
+                "query"
+            ]
+        }
+    },
+    "api_response_schema": [
+        {
+            "country": "United States",
+            "name": "Country Inn & Suites by Radisson, San Jose International Airport, CA",
+            "coordinates": {
+                "latitude": 37.362491607666,
+                "longitude": -121.905342102051
+            },
+            "city": "San Jose"
+        }
+    ]
+}

@@ -1,0 +1,2894 @@
+{
+    "name": "Search_Car_Rentals",
+    "docs_row": {
+        "name": "Search_Car_Rentals",
+        "endpoint": "/api/v1/cars/searchCarRentals",
+        "func_description": "Search car rentals. ",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "pick_up_latitude": {
+                    "type": "Number",
+                    "description": "The pick up location's latitude. pick_up_latitude can be retrieved from api/v1/cars/searchDestination(Search Car Location) endpoint in Car Rental collection as latitude inside coordinates object.",
+                    "example_value": "40.6397018432617",
+                    "required": true
+                },
+                "pick_up_longitude": {
+                    "type": "Number",
+                    "description": "The pick up location's longitude. pick_up_longitude can be retrieved from api/v1/cars/searchDestination(Search Car Location) endpoint in Car Rental collection as longitude inside coordinates object.",
+                    "example_value": "-73.7791976928711",
+                    "required": true
+                },
+                "drop_off_latitude": {
+                    "type": "Number",
+                    "description": "The drop off location's latitude. drop_off_latitude can be retrieved from api/v1/cars/searchDestination(Search Car Location) endpoint in Car Rental collection as latitude inside coordinates object.",
+                    "example_value": "40.6397018432617",
+                    "required": true
+                },
+                "drop_off_longitude": {
+                    "type": "Number",
+                    "description": "The drop off location's longitude. drop_off_longitude can be retrieved from api/v1/cars/searchDestination(Search Car Location) endpoint in Car Rental collection as longitude inside coordinates object.",
+                    "example_value": "-73.7791976928711",
+                    "required": true
+                },
+                "pick_up_date": {
+                    "type": "Date (yyyy-mm-dd)",
+                    "description": "Pick up date\nFormat: YYYY-MM-DD",
+                    "example_value": "",
+                    "required": true
+                },
+                "drop_off_date": {
+                    "type": "Date (yyyy-mm-dd)",
+                    "description": "Drop off date\nFormat: YYYY-MM-DD",
+                    "example_value": "",
+                    "required": true
+                },
+                "pick_up_time": {
+                    "type": "Time (24-Hour Hh:Mm)",
+                    "description": "Pick up time\nFormat: HH:MM\nNote: The format of time is 24 hours.",
+                    "example_value": "10:00",
+                    "required": true
+                },
+                "drop_off_time": {
+                    "type": "Time (24-Hour Hh:Mm)",
+                    "description": "Drop off time\nFormat: HH:MM\nNote: The format of time is 24 hours.",
+                    "example_value": "10:00",
+                    "required": true
+                },
+                "driver_age": {
+                    "type": "Number",
+                    "description": "The driver's age. The default value is set to 30.\nNote: The driver age must be in the range of 20 to 65 years.",
+                    "example_value": "30",
+                    "required": false
+                },
+                "filters": {
+                    "type": "String",
+                    "description": "Used to refine search results based on specific suppliers, car categories, or other attributes. Multiple filters can be applied by passing them as a comma-separated list in the following format:\n::\nFor example:\nsupplier::Avis,supplier::Budget,carCategory::medium,carCategory::large\nThis will return results from Avis and Budget, and only cars in the medium and large categories.\nTo discover available filters, make a request to the /api/v1/cars/searchCarRentals endpoint and refer to the data \u2192 filter section in the response.",
+                    "example_value": "",
+                    "required": false
+                },
+                "languagecode": {
+                    "type": "String",
+                    "description": "To obtain the response data in a specific language, enter the languagecode. languagecode can be retrieved from api/v1/meta/getLanguages(Get Languages\n) endpoint in Meta collection.",
+                    "example_value": "",
+                    "required": false
+                },
+                "currency_code": {
+                    "type": "String",
+                    "description": "The currency code. currency_code can be retrieved from api/v1/meta/getCurrency(Get Currency) endpoint in Hotels collection.",
+                    "example_value": "USD",
+                    "required": false
+                },
+                "location": {
+                    "type": "String",
+                    "description": "location can be retrieved from api/v1/meta/getLocations(Get Location) endpoint in Meta collection.",
+                    "example_value": "US",
+                    "required": false
+                }
+            },
+            "required": [
+                "pick_up_latitude",
+                "pick_up_longitude",
+                "drop_off_latitude",
+                "drop_off_longitude",
+                "pick_up_date",
+                "drop_off_date",
+                "pick_up_time",
+                "drop_off_time"
+            ]
+        }
+    },
+    "instance": [],
+    "category": null,
+    "tool": null,
+    "api_idx": 0,
+    "params": {
+        "type": "object",
+        "properties": {
+            "pick_up_latitude": {
+                "type": "Number",
+                "description": "The pick up location's latitude. pick_up_latitude can be retrieved from api/v1/cars/searchDestination(Search Car Location) endpoint in Car Rental collection as latitude inside coordinates object.",
+                "example_value": "40.6397018432617",
+                "required": true
+            },
+            "pick_up_longitude": {
+                "type": "Number",
+                "description": "The pick up location's longitude. pick_up_longitude can be retrieved from api/v1/cars/searchDestination(Search Car Location) endpoint in Car Rental collection as longitude inside coordinates object.",
+                "example_value": "-73.7791976928711",
+                "required": true
+            },
+            "drop_off_latitude": {
+                "type": "Number",
+                "description": "The drop off location's latitude. drop_off_latitude can be retrieved from api/v1/cars/searchDestination(Search Car Location) endpoint in Car Rental collection as latitude inside coordinates object.",
+                "example_value": "40.6397018432617",
+                "required": true
+            },
+            "drop_off_longitude": {
+                "type": "Number",
+                "description": "The drop off location's longitude. drop_off_longitude can be retrieved from api/v1/cars/searchDestination(Search Car Location) endpoint in Car Rental collection as longitude inside coordinates object.",
+                "example_value": "-73.7791976928711",
+                "required": true
+            },
+            "pick_up_date": {
+                "type": "Date (yyyy-mm-dd)",
+                "description": "Pick up date\nFormat: YYYY-MM-DD",
+                "example_value": "",
+                "required": true
+            },
+            "drop_off_date": {
+                "type": "Date (yyyy-mm-dd)",
+                "description": "Drop off date\nFormat: YYYY-MM-DD",
+                "example_value": "",
+                "required": true
+            },
+            "pick_up_time": {
+                "type": "Time (24-Hour Hh:Mm)",
+                "description": "Pick up time\nFormat: HH:MM\nNote: The format of time is 24 hours.",
+                "example_value": "10:00",
+                "required": true
+            },
+            "drop_off_time": {
+                "type": "Time (24-Hour Hh:Mm)",
+                "description": "Drop off time\nFormat: HH:MM\nNote: The format of time is 24 hours.",
+                "example_value": "10:00",
+                "required": true
+            },
+            "driver_age": {
+                "type": "Number",
+                "description": "The driver's age. The default value is set to 30.\nNote: The driver age must be in the range of 20 to 65 years.",
+                "example_value": "30",
+                "required": false
+            },
+            "filters": {
+                "type": "String",
+                "description": "Used to refine search results based on specific suppliers, car categories, or other attributes. Multiple filters can be applied by passing them as a comma-separated list in the following format:\n::\nFor example:\nsupplier::Avis,supplier::Budget,carCategory::medium,carCategory::large\nThis will return results from Avis and Budget, and only cars in the medium and large categories.\nTo discover available filters, make a request to the /api/v1/cars/searchCarRentals endpoint and refer to the data \u2192 filter section in the response.",
+                "example_value": "",
+                "required": false
+            },
+            "languagecode": {
+                "type": "String",
+                "description": "To obtain the response data in a specific language, enter the languagecode. languagecode can be retrieved from api/v1/meta/getLanguages(Get Languages\n) endpoint in Meta collection.",
+                "example_value": "",
+                "required": false
+            },
+            "currency_code": {
+                "type": "String",
+                "description": "The currency code. currency_code can be retrieved from api/v1/meta/getCurrency(Get Currency) endpoint in Hotels collection.",
+                "example_value": "USD",
+                "required": false
+            },
+            "location": {
+                "type": "String",
+                "description": "location can be retrieved from api/v1/meta/getLocations(Get Location) endpoint in Meta collection.",
+                "example_value": "US",
+                "required": false
+            }
+        },
+        "required": [
+            "pick_up_latitude",
+            "pick_up_longitude",
+            "drop_off_latitude",
+            "drop_off_longitude",
+            "pick_up_date",
+            "drop_off_date",
+            "pick_up_time",
+            "drop_off_time"
+        ]
+    },
+    "responses": [
+        {
+            "function_name": "Search_Car_Rentals",
+            "arguments": {
+                "pick_up_latitude": "40.6397018432617",
+                "pick_up_longitude": "-73.7791976928711",
+                "drop_off_latitude": "42.365556",
+                "drop_off_longitude": "-71.009722",
+                "pick_up_date": "2025-06-10",
+                "drop_off_date": "2025-06-15",
+                "pick_up_time": "09:00",
+                "drop_off_time": "17:00"
+            },
+            "observation": {
+                "search_results": [
+                    {
+                        "vehicle_id": "778663841",
+                        "content": {
+                            "badges": [
+                                {
+                                    "type": "CONSTRUCTIVE",
+                                    "text": "Free cancellation",
+                                    "variation": "DEFAULT"
+                                }
+                            ],
+                            "supplier": {
+                                "name": "Avis",
+                                "imageUrl": "https://cdn.rcstatic.com/sp/images/suppliers/47_logo_200.png",
+                                "rating": {
+                                    "average": "7.6",
+                                    "localisedRating": {
+                                        "rawValue": 7.6,
+                                        "displayValue": "7.6"
+                                    },
+                                    "title": "Good",
+                                    "subtitle": "33 reviews"
+                                }
+                            },
+                            "vehicleSpecs": [
+                                {
+                                    "text": "Automatic",
+                                    "icon": "TRANSMISSION_AUTOMATIC",
+                                    "accessibility": "Automatic gearbox"
+                                },
+                                {
+                                    "text": "Unlimited mileage",
+                                    "icon": "MILEAGE",
+                                    "accessibility": null
+                                }
+                            ]
+                        },
+                        "vehicle_info": {
+                            "v_id": "778663841",
+                            "v_name": "Chrysler Pacifica",
+                            "unlimited_mileage": 1,
+                            "transmission": "Automatic",
+                            "special_offer_text": null,
+                            "seats": "7",
+                            "suitcases": {
+                                "big": "0",
+                                "small": "0"
+                            },
+                            "label": "Mini car with:",
+                            "insurance_package": "",
+                            "image_url": "https://cdn.rcstatic.com/images/car_images/new_images/chrysler/pacifica_lrg.png",
+                            "image_thumbnail_url": "https://cdn.rcstatic.com/images/car_images/new_images/chrysler/pacifica_lrg.png",
+                            "group": "Mini",
+                            "group_or_similar": "or similar people carrier",
+                            "fuel_type": "N/A",
+                            "fuel_policy_description": "",
+                            "fuel_policy": "Like for like",
+                            "free_cancellation": 1,
+                            "doors": "4",
+                            "cma_compliant": -1,
+                            "aircon": 1,
+                            "airbags": 1,
+                            "mileage": "Unlimited mileage",
+                            "badges": {},
+                            "deposit": null
+                        },
+                        "supplier_info": {
+                            "name": "Avis",
+                            "logo_url": "https://cdn.rcstatic.com/sp/images/suppliers/47_logo_200.png",
+                            "location_type": "Downtown",
+                            "address": "220, West 31st Street, Manhattan, USA, 10001",
+                            "latitude": "40.749401",
+                            "longitude": "-73.993224",
+                            "pickup_instructions": "",
+                            "dropoff_instructions": "",
+                            "may_require_credit_card_guarantee": false
+                        },
+                        "route_info": {
+                            "pickup": {
+                                "name": "Manhattan - West 31st Street",
+                                "longitude": "-73.993224",
+                                "location_type": "DOWNTOWN",
+                                "location_id": "1705951",
+                                "latitude": "40.749401",
+                                "icon": "",
+                                "country_code": "US",
+                                "country": "",
+                                "address": "220, West 31st Street, Manhattan, USA, 10001",
+                                "city": "",
+                                "location_hash": "TWFuaGF0dGFuIC0gV2VzdCAzMXN0IFN0cmVldA=="
+                            },
+                            "dropoff": {
+                                "name": "Logan International Airport",
+                                "longitude": "-71.03025807",
+                                "location_type": "CAR_RENTAL_CENTRE",
+                                "location_id": "4748716",
+                                "latitude": "42.36807937",
+                                "icon": "",
+                                "country_code": "US",
+                                "country": "",
+                                "address": "Boston Logan Intl Airport, 15 Transportation Way, Boston (BOS), USA - Other, 02128",
+                                "city": "",
+                                "location_hash": null
+                            }
+                        },
+                        "rating_info": {
+                            "average": 7.6,
+                            "average_text": "Very good",
+                            "condition": 6.9,
+                            "location": 9,
+                            "cleanliness": 6.9,
+                            "efficiency": 7.5,
+                            "value_for_money": 7.5,
+                            "pickup_time": 7.3,
+                            "dropoff_time": 9,
+                            "no_of_ratings": 33
+                        },
+                        "fee_info": {
+                            "type": "",
+                            "tax": 0,
+                            "currency": "",
+                            "fee": 0
+                        },
+                        "freebies": [
+                            "Amendments"
+                        ],
+                        "pricing_info": {
+                            "base_price": 75074.07,
+                            "drive_away_price": 75074.07,
+                            "drive_away_price_before": null,
+                            "drive_away_price_is_approx": false,
+                            "deposit": 75074.07,
+                            "discount": 0,
+                            "base_deposit": 75074.07,
+                            "base_currency": "INR",
+                            "price": 75074.07,
+                            "quote_allowed": 1,
+                            "currency": "INR",
+                            "fee_breakdown": {
+                                "fuel_policy": {
+                                    "type": "RETURN_SAME",
+                                    "amount": 0,
+                                    "currency": ""
+                                },
+                                "known_fees": [
+                                    {
+                                        "type": "THEFT_EXCESS",
+                                        "distance_allowed": null,
+                                        "is_always_payable": 0,
+                                        "is_tax_included": 1,
+                                        "max_amount": 0,
+                                        "min_amount": 0,
+                                        "amount": 0,
+                                        "currency": "USD"
+                                    },
+                                    {
+                                        "type": "DEPOSIT",
+                                        "distance_allowed": null,
+                                        "is_always_payable": 0,
+                                        "is_tax_included": 1,
+                                        "max_amount": 250,
+                                        "min_amount": 250,
+                                        "amount": 250,
+                                        "currency": "USD"
+                                    },
+                                    {
+                                        "type": "DAMAGE_EXCESS",
+                                        "distance_allowed": null,
+                                        "is_always_payable": 0,
+                                        "is_tax_included": 1,
+                                        "max_amount": 0,
+                                        "min_amount": 0,
+                                        "amount": 0,
+                                        "currency": "USD"
+                                    }
+                                ]
+                            },
+                            "pay_when": "PAY_NOW"
+                        },
+                        "accessibility": {
+                            "transmission": "Automatic gearbox",
+                            "fuel_policy": "Fuel policy is: Like for like",
+                            "supplier_rating": "At this location, our customers have rated Avis as 7.6 out of 10, Good.",
+                            "pick_up_location": "Pick-up information: Downtown"
+                        },
+                        "applied_discount_types": []
+                    },
+                    {
+                        "vehicle_id": "782539046",
+                        "content": {
+                            "badges": [
+                                {
+                                    "type": "CONSTRUCTIVE",
+                                    "text": "Free cancellation",
+                                    "variation": "DEFAULT"
+                                }
+                            ],
+                            "supplier": {
+                                "name": "Budget",
+                                "imageUrl": "https://cdn.rcstatic.com/sp/images/suppliers/62_logo_200.png",
+                                "rating": {
+                                    "average": "7.6",
+                                    "localisedRating": {
+                                        "rawValue": 7.6,
+                                        "displayValue": "7.6"
+                                    },
+                                    "title": "Good",
+                                    "subtitle": "27 reviews"
+                                }
+                            },
+                            "vehicleSpecs": [
+                                {
+                                    "text": "Automatic",
+                                    "icon": "TRANSMISSION_AUTOMATIC",
+                                    "accessibility": "Automatic gearbox"
+                                },
+                                {
+                                    "text": "Unlimited mileage",
+                                    "icon": "MILEAGE",
+                                    "accessibility": null
+                                }
+                            ]
+                        },
+                        "vehicle_info": {
+                            "v_id": "782539046",
+                            "v_name": "Toyota Corolla",
+                            "unlimited_mileage": 1,
+                            "transmission": "Automatic",
+                            "special_offer_text": "Premium Package: price includes 1 additional driver and the first tank of fuel free",
+                            "seats": "5",
+                            "suitcases": {
+                                "big": "0",
+                                "small": "0"
+                            },
+                            "label": "Intermediate car with:",
+                            "insurance_package": "",
+                            "image_url": "https://cdn.rcstatic.com/images/car_images/web/toyota/corolla_lrg.png",
+                            "image_thumbnail_url": "https://cdn.rcstatic.com/images/car_images/web/toyota/corolla_lrg.png",
+                            "group": "Intermediate",
+                            "group_or_similar": "or similar large car",
+                            "fuel_type": "N/A",
+                            "fuel_policy_description": "",
+                            "fuel_policy": "Free Tank",
+                            "free_cancellation": 1,
+                            "doors": "4",
+                            "cma_compliant": -1,
+                            "aircon": 1,
+                            "airbags": 1,
+                            "mileage": "Unlimited mileage",
+                            "badges": {},
+                            "deposit": null
+                        },
+                        "supplier_info": {
+                            "name": "Budget",
+                            "logo_url": "https://cdn.rcstatic.com/sp/images/suppliers/62_logo_200.png",
+                            "location_type": "Downtown",
+                            "address": "2121, Lemoine Ave, Fort Lee, USA, 07024",
+                            "latitude": "40.856684",
+                            "longitude": "-73.96662",
+                            "pickup_instructions": "-",
+                            "dropoff_instructions": "",
+                            "may_require_credit_card_guarantee": false
+                        },
+                        "route_info": {
+                            "pickup": {
+                                "name": "Fort Lee - Lemoine Ave",
+                                "longitude": "-73.96662",
+                                "location_type": "DOWNTOWN",
+                                "location_id": "1766438",
+                                "latitude": "40.856684",
+                                "icon": "",
+                                "country_code": "US",
+                                "country": "",
+                                "address": "2121, Lemoine Ave, Fort Lee, USA, 07024",
+                                "city": "",
+                                "location_hash": "Rm9ydCBMZWUgLSBMZW1vaW5lIEF2ZQ=="
+                            },
+                            "dropoff": {
+                                "name": "Logan International Airport",
+                                "longitude": "-71.0173",
+                                "location_type": "CAR_RENTAL_CENTRE",
+                                "location_id": "1767718",
+                                "latitude": "42.3666",
+                                "icon": "",
+                                "country_code": "US",
+                                "country": "",
+                                "address": "15, Transportation Way Logan International Airport East, Boston, MA, USA, 02128",
+                                "city": "",
+                                "location_hash": null
+                            }
+                        },
+                        "rating_info": {
+                            "average": 7.6,
+                            "average_text": "Very good",
+                            "condition": 8.8,
+                            "location": 6.7,
+                            "cleanliness": 8.1,
+                            "efficiency": 7.4,
+                            "value_for_money": 7.7,
+                            "pickup_time": 8.1,
+                            "dropoff_time": 8,
+                            "no_of_ratings": 27
+                        },
+                        "fee_info": {
+                            "type": "",
+                            "tax": 0,
+                            "currency": "",
+                            "fee": 0
+                        },
+                        "freebies": [
+                            "Amendments"
+                        ],
+                        "pricing_info": {
+                            "base_price": 54612.87,
+                            "drive_away_price": 54612.87,
+                            "drive_away_price_before": null,
+                            "drive_away_price_is_approx": false,
+                            "deposit": 54612.87,
+                            "discount": 0,
+                            "base_deposit": 54612.87,
+                            "base_currency": "INR",
+                            "price": 54612.87,
+                            "quote_allowed": 1,
+                            "currency": "INR",
+                            "fee_breakdown": {
+                                "fuel_policy": {
+                                    "type": "FREE_TANK",
+                                    "amount": 0,
+                                    "currency": ""
+                                },
+                                "known_fees": [
+                                    {
+                                        "type": "THEFT_EXCESS",
+                                        "distance_allowed": null,
+                                        "is_always_payable": 0,
+                                        "is_tax_included": 1,
+                                        "max_amount": 0,
+                                        "min_amount": 0,
+                                        "amount": 0,
+                                        "currency": "USD"
+                                    },
+                                    {
+                                        "type": "DEPOSIT",
+                                        "distance_allowed": null,
+                                        "is_always_payable": 0,
+                                        "is_tax_included": 1,
+                                        "max_amount": 300,
+                                        "min_amount": 300,
+                                        "amount": 300,
+                                        "currency": "USD"
+                                    },
+                                    {
+                                        "type": "DAMAGE_EXCESS",
+                                        "distance_allowed": null,
+                                        "is_always_payable": 0,
+                                        "is_tax_included": 1,
+                                        "max_amount": 0,
+                                        "min_amount": 0,
+                                        "amount": 0,
+                                        "currency": "USD"
+                                    }
+                                ]
+                            },
+                            "pay_when": "PAY_NOW"
+                        },
+                        "accessibility": {
+                            "transmission": "Automatic gearbox",
+                            "fuel_policy": "Fuel policy is: Free Tank",
+                            "supplier_rating": "At this location, our customers have rated Budget as 7.6 out of 10, Good.",
+                            "pick_up_location": "Pick-up information: Downtown"
+                        },
+                        "applied_discount_types": []
+                    },
+                    {
+                        "vehicle_id": "781975716",
+                        "content": {
+                            "badges": [
+                                {
+                                    "type": "CONSTRUCTIVE",
+                                    "text": "Free cancellation",
+                                    "variation": "DEFAULT"
+                                }
+                            ],
+                            "supplier": {
+                                "name": "Budget",
+                                "imageUrl": "https://cdn.rcstatic.com/sp/images/suppliers/62_logo_200.png",
+                                "rating": {
+                                    "average": "7.6",
+                                    "localisedRating": {
+                                        "rawValue": 7.6,
+                                        "displayValue": "7.6"
+                                    },
+                                    "title": "Good",
+                                    "subtitle": "27 reviews"
+                                }
+                            },
+                            "vehicleSpecs": [
+                                {
+                                    "text": "Automatic",
+                                    "icon": "TRANSMISSION_AUTOMATIC",
+                                    "accessibility": "Automatic gearbox"
+                                },
+                                {
+                                    "text": "Unlimited mileage",
+                                    "icon": "MILEAGE",
+                                    "accessibility": null
+                                }
+                            ]
+                        },
+                        "vehicle_info": {
+                            "v_id": "781975716",
+                            "v_name": "Kia Soul",
+                            "unlimited_mileage": 1,
+                            "transmission": "Automatic",
+                            "special_offer_text": "Premium Package: price includes 1 additional driver and the first tank of fuel free",
+                            "seats": "5",
+                            "suitcases": {
+                                "big": "0",
+                                "small": "0"
+                            },
+                            "label": "Compact car with:",
+                            "insurance_package": "",
+                            "image_url": "https://cdn.rcstatic.com/images/car_images/web/kia/soul_lrg.png",
+                            "image_thumbnail_url": "https://cdn.rcstatic.com/images/car_images/web/kia/soul_lrg.png",
+                            "group": "Compact",
+                            "group_or_similar": "or similar medium car",
+                            "fuel_type": "N/A",
+                            "fuel_policy_description": "",
+                            "fuel_policy": "Free Tank",
+                            "free_cancellation": 1,
+                            "doors": "4",
+                            "cma_compliant": -1,
+                            "aircon": 1,
+                            "airbags": 1,
+                            "mileage": "Unlimited mileage",
+                            "badges": {},
+                            "deposit": null
+                        },
+                        "supplier_info": {
+                            "name": "Budget",
+                            "logo_url": "https://cdn.rcstatic.com/sp/images/suppliers/62_logo_200.png",
+                            "location_type": "Downtown",
+                            "address": "2121, Lemoine Ave, Fort Lee, USA, 07024",
+                            "latitude": "40.856684",
+                            "longitude": "-73.96662",
+                            "pickup_instructions": "-",
+                            "dropoff_instructions": "",
+                            "may_require_credit_card_guarantee": false
+                        },
+                        "route_info": {
+                            "pickup": {
+                                "name": "Fort Lee - Lemoine Ave",
+                                "longitude": "-73.96662",
+                                "location_type": "DOWNTOWN",
+                                "location_id": "1766438",
+                                "latitude": "40.856684",
+                                "icon": "",
+                                "country_code": "US",
+                                "country": "",
+                                "address": "2121, Lemoine Ave, Fort Lee, USA, 07024",
+                                "city": "",
+                                "location_hash": "Rm9ydCBMZWUgLSBMZW1vaW5lIEF2ZQ=="
+                            },
+                            "dropoff": {
+                                "name": "Logan International Airport",
+                                "longitude": "-71.0173",
+                                "location_type": "CAR_RENTAL_CENTRE",
+                                "location_id": "1767718",
+                                "latitude": "42.3666",
+                                "icon": "",
+                                "country_code": "US",
+                                "country": "",
+                                "address": "15, Transportation Way Logan International Airport East, Boston, MA, USA, 02128",
+                                "city": "",
+                                "location_hash": null
+                            }
+                        },
+                        "rating_info": {
+                            "average": 7.6,
+                            "average_text": "Very good",
+                            "condition": 8.8,
+                            "location": 6.7,
+                            "cleanliness": 8.1,
+                            "efficiency": 7.4,
+                            "value_for_money": 7.7,
+                            "pickup_time": 8.1,
+                            "dropoff_time": 8,
+                            "no_of_ratings": 27
+                        },
+                        "fee_info": {
+                            "type": "",
+                            "tax": 0,
+                            "currency": "",
+                            "fee": 0
+                        },
+                        "freebies": [
+                            "Amendments"
+                        ],
+                        "pricing_info": {
+                            "base_price": 52849.21,
+                            "drive_away_price": 52849.21,
+                            "drive_away_price_before": null,
+                            "drive_away_price_is_approx": false,
+                            "deposit": 52849.21,
+                            "discount": 0,
+                            "base_deposit": 52849.21,
+                            "base_currency": "INR",
+                            "price": 52849.21,
+                            "quote_allowed": 1,
+                            "currency": "INR",
+                            "fee_breakdown": {
+                                "fuel_policy": {
+                                    "type": "FREE_TANK",
+                                    "amount": 0,
+                                    "currency": ""
+                                },
+                                "known_fees": [
+                                    {
+                                        "type": "THEFT_EXCESS",
+                                        "distance_allowed": null,
+                                        "is_always_payable": 0,
+                                        "is_tax_included": 1,
+                                        "max_amount": 0,
+                                        "min_amount": 0,
+                                        "amount": 0,
+                                        "currency": "USD"
+                                    },
+                                    {
+                                        "type": "DEPOSIT",
+                                        "distance_allowed": null,
+                                        "is_always_payable": 0,
+                                        "is_tax_included": 1,
+                                        "max_amount": 300,
+                                        "min_amount": 300,
+                                        "amount": 300,
+                                        "currency": "USD"
+                                    },
+                                    {
+                                        "type": "DAMAGE_EXCESS",
+                                        "distance_allowed": null,
+                                        "is_always_payable": 0,
+                                        "is_tax_included": 1,
+                                        "max_amount": 0,
+                                        "min_amount": 0,
+                                        "amount": 0,
+                                        "currency": "USD"
+                                    }
+                                ]
+                            },
+                            "pay_when": "PAY_NOW"
+                        },
+                        "accessibility": {
+                            "transmission": "Automatic gearbox",
+                            "fuel_policy": "Fuel policy is: Free Tank",
+                            "supplier_rating": "At this location, our customers have rated Budget as 7.6 out of 10, Good.",
+                            "pick_up_location": "Pick-up information: Downtown"
+                        },
+                        "applied_discount_types": []
+                    }
+                ],
+                "discount_banner": null,
+                "content": {
+                    "discountBanner": null,
+                    "dsaBanner": null,
+                    "items": [
+                        {
+                            "type": "RESULTS_COUNT",
+                            "positionInList": 0,
+                            "content": {
+                                "label": "75 results"
+                            }
+                        },
+                        {
+                            "type": "SHELL_REGION_VIEW",
+                            "positionInList": 4,
+                            "content": {
+                                "contentType": "carsSearchResultsSecondaryPromotional"
+                            }
+                        }
+                    ],
+                    "filters": {
+                        "countLabel": "75 results"
+                    },
+                    "map": {
+                        "supplierLocations": [
+                            {
+                                "carouselContent": {
+                                    "title": "Manhattan - West 31st Street",
+                                    "body": "220, West 31st Street, Manhattan, USA, 10001",
+                                    "label": "13 cars \u00b7 1 suppliers",
+                                    "footer": {
+                                        "label": "Price for 6 days: from \u20b9\u00a054,122",
+                                        "price": "\u20b9\u00a054,122"
+                                    }
+                                },
+                                "supplierPinContent": {
+                                    "label": "\u20b9\u00a054,122",
+                                    "latLong": {
+                                        "latitude": 40.749401,
+                                        "longitude": -73.993224
+                                    },
+                                    "accessibility": {
+                                        "label": "\u20b9\u00a054,122"
+                                    }
+                                },
+                                "metaData": {
+                                    "locationName": "Manhattan - West 31st Street",
+                                    "locationHash": "TWFuaGF0dGFuIC0gV2VzdCAzMXN0IFN0cmVldA=="
+                                }
+                            },
+                            {
+                                "carouselContent": {
+                                    "title": "Manhattan - West 43rd Street",
+                                    "body": "515, West 43rd Street, Manhattan, USA, 10036",
+                                    "label": "13 cars \u00b7 1 suppliers",
+                                    "footer": {
+                                        "label": "Price for 6 days: from \u20b9\u00a054,122",
+                                        "price": "\u20b9\u00a054,122"
+                                    }
+                                },
+                                "supplierPinContent": {
+                                    "label": "\u20b9\u00a054,122",
+                                    "latLong": {
+                                        "latitude": 40.760923,
+                                        "longitude": -73.995831
+                                    },
+                                    "accessibility": {
+                                        "label": "\u20b9\u00a054,122"
+                                    }
+                                },
+                                "metaData": {
+                                    "locationName": "Manhattan - West 43rd Street",
+                                    "locationHash": "TWFuaGF0dGFuIC0gV2VzdCA0M3JkIFN0cmVldA=="
+                                }
+                            },
+                            {
+                                "carouselContent": {
+                                    "title": "Manhattan - East 64th Street",
+                                    "body": "310, East 64th Street, Manhattan, USA, 10021",
+                                    "label": "13 cars \u00b7 1 suppliers",
+                                    "footer": {
+                                        "label": "Price for 6 days: from \u20b9\u00a054,122",
+                                        "price": "\u20b9\u00a054,122"
+                                    }
+                                },
+                                "supplierPinContent": {
+                                    "label": "\u20b9\u00a054,122",
+                                    "latLong": {
+                                        "latitude": 40.763261,
+                                        "longitude": -73.961607
+                                    },
+                                    "accessibility": {
+                                        "label": "\u20b9\u00a054,122"
+                                    }
+                                },
+                                "metaData": {
+                                    "locationName": "Manhattan - East 64th Street",
+                                    "locationHash": "TWFuaGF0dGFuIC0gRWFzdCA2NHRoIFN0cmVldA=="
+                                }
+                            }
+                        ]
+                    }
+                },
+                "filter": [
+                    {
+                        "title": "Car Type",
+                        "id": "carCategory",
+                        "type": "multiple_union",
+                        "layout": {
+                            "is_collapsable": "true",
+                            "is_collapsed": "true",
+                            "collapsed_count": 5,
+                            "layout_type": "list"
+                        },
+                        "categories": [
+                            {
+                                "id": "carCategory::small",
+                                "name": "Small",
+                                "nameWithCount": "Small (6)",
+                                "count": 6
+                            },
+                            {
+                                "id": "carCategory::medium",
+                                "name": "Medium",
+                                "nameWithCount": "Medium (18)",
+                                "count": 18
+                            },
+                            {
+                                "id": "carCategory::large",
+                                "name": "Large",
+                                "nameWithCount": "Large (58)",
+                                "count": 58
+                            }
+                        ]
+                    },
+                    {
+                        "title": "Supplier",
+                        "id": "supplier",
+                        "type": "multiple_union",
+                        "layout": {
+                            "is_collapsable": "false",
+                            "is_collapsed": "false",
+                            "collapsed_count": 5,
+                            "layout_type": "list"
+                        },
+                        "categories": [
+                            {
+                                "id": "supplier::Avis",
+                                "name": "Avis",
+                                "nameWithCount": "Avis (65)",
+                                "count": 65
+                            },
+                            {
+                                "id": "supplier::Budget",
+                                "name": "Budget",
+                                "nameWithCount": "Budget (10)",
+                                "count": 10
+                            }
+                        ]
+                    },
+                    {
+                        "title": "Price per day",
+                        "id": "pricePerDayBuckets",
+                        "type": "multiple_union",
+                        "layout": {
+                            "is_collapsable": "false",
+                            "is_collapsed": "false",
+                            "collapsed_count": 5,
+                            "layout_type": "list"
+                        },
+                        "categories": [
+                            {
+                                "id": "pricePerDayBuckets::BUCKET_1",
+                                "name": "\u20b9\u00a00 - \u20b9\u00a05,000",
+                                "nameWithCount": "\u20b9\u00a00 - \u20b9\u00a05,000 (0)",
+                                "count": 0
+                            },
+                            {
+                                "id": "pricePerDayBuckets::BUCKET_2",
+                                "name": "\u20b9\u00a05,000 - \u20b9\u00a010,000",
+                                "nameWithCount": "\u20b9\u00a05,000 - \u20b9\u00a010,000 (19)",
+                                "count": 19
+                            },
+                            {
+                                "id": "pricePerDayBuckets::BUCKET_3",
+                                "name": "\u20b9\u00a010,000 - \u20b9\u00a015,000",
+                                "nameWithCount": "\u20b9\u00a010,000 - \u20b9\u00a015,000 (51)",
+                                "count": 51
+                            }
+                        ]
+                    }
+                ],
+                "sort": [
+                    {
+                        "name": "Recommended \u2013 best first",
+                        "identifier": "recommended",
+                        "title_tag": "tr.searchresults.sortBy.recommended"
+                    },
+                    {
+                        "name": "Price - lowest first",
+                        "identifier": "price_low_to_high",
+                        "title_tag": "tr.searchresults.sortBy.price.lowHigh"
+                    },
+                    {
+                        "name": "Review score - highest first",
+                        "identifier": "review_score",
+                        "title_tag": "tr.searchresults.sortBy.reviews.highLow"
+                    }
+                ],
+                "search_key": "eyJkcml2ZXJzQWdlIjozMCwiZHJvcE9mZkRhdGVUaW1lIjoiMjAyNS0wNi0xNVQxNzowMDowMCIsImRyb3BPZmZMb2NhdGlvbiI6IjQyLjM2NTU1NiwtNzEuMDA5NzIyIiwiZHJvcE9mZkxvY2F0aW9uVHlwZSI6IkxBVExPTkciLCJwaWNrVXBEYXRlVGltZSI6IjIwMjUtMDYtMTBUMDk6MDA6MDAiLCJwaWNrVXBMb2NhdGlvbiI6IjQwLjYzOTcwMTg0MzI2MTcsLTczLjc3OTE5NzY5Mjg3MTEiLCJwaWNrVXBMb2NhdGlvblR5cGUiOiJMQVRMT05HIiwicmVudGFsRHVyYXRpb25JbkRheXMiOjYsInNlcnZpY2VGZWF0dXJlcyI6WyJOT19PUEFRVUVTIiwiU1VQUkVTU19GSVhFRF9QUklDRV9WRUhJQ0xFUyIsIklOQ0xVREVfUFJPRFVDVF9SRUxBVElPTlNISVBTIiwiSU5DTFVERV9FWFRSQVNfQ09OVEFJTklOR19GRUVTIiwiU1VQUFJFU1NfRElSRUNUX1BBWV9MT0NBTF9WRUhJQ0xFUyJdfQ==",
+                "search_context": {
+                    "searchKey": "eyJkcml2ZXJzQWdlIjozMCwiZHJvcE9mZkRhdGVUaW1lIjoiMjAyNS0wNi0xNVQxNzowMDowMCIsImRyb3BPZmZMb2NhdGlvbiI6IjQyLjM2NTU1NiwtNzEuMDA5NzIyIiwiZHJvcE9mZkxvY2F0aW9uVHlwZSI6IkxBVExPTkciLCJwaWNrVXBEYXRlVGltZSI6IjIwMjUtMDYtMTBUMDk6MDA6MDAiLCJwaWNrVXBMb2NhdGlvbiI6IjQwLjYzOTcwMTg0MzI2MTcsLTczLjc3OTE5NzY5Mjg3MTEiLCJwaWNrVXBMb2NhdGlvblR5cGUiOiJMQVRMT05HIiwicmVudGFsRHVyYXRpb25JbkRheXMiOjYsInNlcnZpY2VGZWF0dXJlcyI6WyJOT19PUEFRVUVTIiwiU1VQUkVTU19GSVhFRF9QUklDRV9WRUhJQ0xFUyIsIklOQ0xVREVfUFJPRFVDVF9SRUxBVElPTlNISVBTIiwiSU5DTFVERV9FWFRSQVNfQ09OVEFJTklOR19GRUVTIiwiU1VQUFJFU1NfRElSRUNUX1BBWV9MT0NBTF9WRUhJQ0xFUyJdfQ==",
+                    "searchId": "56856105-b203-458f-ae1f-b79f4b0857ad",
+                    "recommendationsSearchUniqueId": "d60a3719-fa9b-4319-bc22-87c0c1a71a58"
+                },
+                "count": 75,
+                "is_genius_location": false
+            }
+        }
+    ],
+    "response_summary": "Here\u2019s a summary of the car rental options available for your trip:  \n\nYou have a total of 75 rental cars to choose from, with prices starting at \u20b954,122 for a 6-day rental. Three standout options include:  \n\n1. **Chrysler Pacifica** (Mini category) from **Avis**, priced at \u20b975,074. This 7-seater automatic vehicle comes with unlimited mileage and free cancellation. Avis has a \"Good\" rating of 7.6 based on 33 reviews, with pickup in Manhattan (220 West 31st Street) and drop-off at Logan International Airport. A security deposit of $250 is required.  \n\n2. **Toyota Corolla** (Intermediate category) from **Budget**, priced at \u20b954,613. This 5-seater includes a **Premium Package** with a free additional driver and a full tank of fuel. Budget also has a 7.6 rating (27 reviews) and offers free cancellation. Pickup is in Fort Lee (2121 Lemoine Ave), with a $300 deposit.  \n\n3. **Kia Soul** (Compact category) also from **Budget**, priced at \u20b952,849. Like the Corolla, it includes the Premium Package benefits and unlimited mileage.  \n\nAll vehicles feature automatic transmission, air conditioning, and unlimited mileage. You can filter results by **car type** (Small, Medium, Large), **supplier** (Avis, Budget), or **price range** (\u20b95,000\u2013\u20b915,000 per day). Sorting options include **Best Recommendations**, **Lowest Price First**, or **Highest Review Score**.  \n\nPickup locations are mostly in **Manhattan**, with downtown suppliers like Avis and Budget offering competitive rates. Free cancellation is available for all listed options.",
+    "enhance_func_desc": "This API is ideal for travelers seeking car rental options for their trips. It searches available rental cars based on pickup/drop-off locations, dates, and times, with filtering by supplier, car category, or price. Users receive detailed rental info including pricing, vehicle specs, supplier ratings, and cancellation policies. Sorting options include best recommendations, lowest price, or highest review scores.",
+    "enhance_params_desc": {
+        "enhanced_parameters": {
+            "pick_up_latitude": "Latitude coordinate for car pickup location.",
+            "pick_up_longitude": "Longitude coordinate for car pickup location.",
+            "drop_off_latitude": "Latitude coordinate for car drop-off location.",
+            "drop_off_longitude": "Longitude coordinate for car drop-off location.",
+            "pick_up_date": "Date when the car rental starts (YYYY-MM-DD).",
+            "drop_off_date": "Date when the car rental ends (YYYY-MM-DD).",
+            "pick_up_time": "Time when the car rental starts (24-hour format).",
+            "drop_off_time": "Time when the car rental ends (24-hour format).",
+            "driver_age": "Age of the driver (default: 30, range: 20-65).",
+            "filters": "Filters results by supplier, car category, or other attributes.",
+            "languagecode": "Language preference for the response data.",
+            "currency_code": "Currency for displaying rental prices.",
+            "location": "Country or region code for location-based results."
+        }
+    },
+    "enhance_resfield_desc": {
+        "response_fields": {
+            "search_results": {
+                "type": "Array",
+                "description": "List of car rental options available for the search query.",
+                "ar_items": {
+                    "type": "Object",
+                    "description": "Details of a single car rental option.",
+                    "ob_properties": {
+                        "vehicle_id": {
+                            "type": "String",
+                            "description": "Unique identifier for the vehicle."
+                        },
+                        "content": {
+                            "type": "Object",
+                            "description": "Additional content and metadata about the vehicle.",
+                            "ob_properties": {
+                                "badges": {
+                                    "type": "Array",
+                                    "description": "List of badges or tags associated with the vehicle (e.g., free cancellation).",
+                                    "ar_items": {
+                                        "type": "Object",
+                                        "description": "Details of a badge.",
+                                        "ob_properties": {
+                                            "type": {
+                                                "type": "String",
+                                                "description": "Type of badge (e.g., CONSTRUCTIVE)."
+                                            },
+                                            "text": {
+                                                "type": "String",
+                                                "description": "Text displayed on the badge."
+                                            },
+                                            "variation": {
+                                                "type": "String",
+                                                "description": "Variation of the badge (e.g., DEFAULT)."
+                                            }
+                                        }
+                                    }
+                                },
+                                "supplier": {
+                                    "type": "Object",
+                                    "description": "Information about the rental supplier.",
+                                    "ob_properties": {
+                                        "name": {
+                                            "type": "String",
+                                            "description": "Name of the supplier (e.g., Avis, Budget)."
+                                        },
+                                        "imageUrl": {
+                                            "type": "String",
+                                            "description": "URL of the supplier's logo image."
+                                        },
+                                        "rating": {
+                                            "type": "Object",
+                                            "description": "Supplier's rating details.",
+                                            "ob_properties": {
+                                                "average": {
+                                                    "type": "String",
+                                                    "description": "Average rating score."
+                                                },
+                                                "localisedRating": {
+                                                    "type": "Object",
+                                                    "description": "Localized rating details.",
+                                                    "ob_properties": {
+                                                        "rawValue": {
+                                                            "type": "Number",
+                                                            "description": "Raw numeric value of the rating."
+                                                        },
+                                                        "displayValue": {
+                                                            "type": "String",
+                                                            "description": "Formatted display value of the rating."
+                                                        }
+                                                    }
+                                                },
+                                                "title": {
+                                                    "type": "String",
+                                                    "description": "Title of the rating (e.g., Good)."
+                                                },
+                                                "subtitle": {
+                                                    "type": "String",
+                                                    "description": "Subtitle of the rating (e.g., number of reviews)."
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                "vehicleSpecs": {
+                                    "type": "Array",
+                                    "description": "List of vehicle specifications (e.g., transmission type, mileage).",
+                                    "ar_items": {
+                                        "type": "Object",
+                                        "description": "Details of a vehicle specification.",
+                                        "ob_properties": {
+                                            "text": {
+                                                "type": "String",
+                                                "description": "Text description of the specification."
+                                            },
+                                            "icon": {
+                                                "type": "String",
+                                                "description": "Icon identifier for the specification."
+                                            },
+                                            "accessibility": {
+                                                "type": "String",
+                                                "description": "Accessibility description for the specification (nullable)."
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "vehicle_info": {
+                            "type": "Object",
+                            "description": "Detailed information about the vehicle.",
+                            "ob_properties": {
+                                "v_id": {
+                                    "type": "String",
+                                    "description": "Unique identifier for the vehicle."
+                                },
+                                "v_name": {
+                                    "type": "String",
+                                    "description": "Name of the vehicle (e.g., Chrysler Pacifica)."
+                                },
+                                "unlimited_mileage": {
+                                    "type": "Number",
+                                    "description": "Indicates if the vehicle has unlimited mileage (1 for yes, 0 for no)."
+                                },
+                                "transmission": {
+                                    "type": "String",
+                                    "description": "Type of transmission (e.g., Automatic)."
+                                },
+                                "special_offer_text": {
+                                    "type": "String",
+                                    "description": "Text describing any special offers (nullable)."
+                                },
+                                "seats": {
+                                    "type": "String",
+                                    "description": "Number of seats in the vehicle."
+                                },
+                                "suitcases": {
+                                    "type": "Object",
+                                    "description": "Number of suitcases the vehicle can accommodate.",
+                                    "ob_properties": {
+                                        "big": {
+                                            "type": "String",
+                                            "description": "Number of big suitcases."
+                                        },
+                                        "small": {
+                                            "type": "String",
+                                            "description": "Number of small suitcases."
+                                        }
+                                    }
+                                },
+                                "label": {
+                                    "type": "String",
+                                    "description": "Label describing the vehicle category (e.g., Mini car with:)."
+                                },
+                                "insurance_package": {
+                                    "type": "String",
+                                    "description": "Description of the insurance package (nullable)."
+                                },
+                                "image_url": {
+                                    "type": "String",
+                                    "description": "URL of the vehicle's image."
+                                },
+                                "image_thumbnail_url": {
+                                    "type": "String",
+                                    "description": "URL of the vehicle's thumbnail image."
+                                },
+                                "group": {
+                                    "type": "String",
+                                    "description": "Vehicle group category (e.g., Mini, Intermediate)."
+                                },
+                                "group_or_similar": {
+                                    "type": "String",
+                                    "description": "Description of the vehicle group or similar vehicles."
+                                },
+                                "fuel_type": {
+                                    "type": "String",
+                                    "description": "Type of fuel used by the vehicle (e.g., N/A)."
+                                },
+                                "fuel_policy_description": {
+                                    "type": "String",
+                                    "description": "Description of the fuel policy (nullable)."
+                                },
+                                "fuel_policy": {
+                                    "type": "String",
+                                    "description": "Fuel policy (e.g., Like for like, Free Tank)."
+                                },
+                                "free_cancellation": {
+                                    "type": "Number",
+                                    "description": "Indicates if free cancellation is available (1 for yes, 0 for no)."
+                                },
+                                "doors": {
+                                    "type": "String",
+                                    "description": "Number of doors on the vehicle."
+                                },
+                                "cma_compliant": {
+                                    "type": "Number",
+                                    "description": "Indicates if the vehicle is CMA compliant (-1 for unknown)."
+                                },
+                                "aircon": {
+                                    "type": "Number",
+                                    "description": "Indicates if the vehicle has air conditioning (1 for yes, 0 for no)."
+                                },
+                                "airbags": {
+                                    "type": "Number",
+                                    "description": "Indicates if the vehicle has airbags (1 for yes, 0 for no)."
+                                },
+                                "mileage": {
+                                    "type": "String",
+                                    "description": "Mileage policy (e.g., Unlimited mileage)."
+                                },
+                                "badges": {
+                                    "type": "Object",
+                                    "description": "Additional badges or tags (nullable)."
+                                },
+                                "deposit": {
+                                    "type": "null",
+                                    "description": "Deposit information (nullable)."
+                                }
+                            }
+                        },
+                        "supplier_info": {
+                            "type": "Object",
+                            "description": "Information about the rental supplier.",
+                            "ob_properties": {
+                                "name": {
+                                    "type": "String",
+                                    "description": "Name of the supplier (e.g., Avis, Budget)."
+                                },
+                                "logo_url": {
+                                    "type": "String",
+                                    "description": "URL of the supplier's logo image."
+                                },
+                                "location_type": {
+                                    "type": "String",
+                                    "description": "Type of location (e.g., Downtown)."
+                                },
+                                "address": {
+                                    "type": "String",
+                                    "description": "Full address of the pickup location."
+                                },
+                                "latitude": {
+                                    "type": "String",
+                                    "description": "Latitude coordinate of the pickup location."
+                                },
+                                "longitude": {
+                                    "type": "String",
+                                    "description": "Longitude coordinate of the pickup location."
+                                },
+                                "pickup_instructions": {
+                                    "type": "String",
+                                    "description": "Instructions for pickup (nullable)."
+                                },
+                                "dropoff_instructions": {
+                                    "type": "String",
+                                    "description": "Instructions for dropoff (nullable)."
+                                },
+                                "may_require_credit_card_guarantee": {
+                                    "type": "Boolean",
+                                    "description": "Indicates if a credit card guarantee may be required."
+                                }
+                            }
+                        },
+                        "route_info": {
+                            "type": "Object",
+                            "description": "Information about pickup and dropoff locations.",
+                            "ob_properties": {
+                                "pickup": {
+                                    "type": "Object",
+                                    "description": "Details of the pickup location.",
+                                    "ob_properties": {
+                                        "name": {
+                                            "type": "String",
+                                            "description": "Name of the pickup location."
+                                        },
+                                        "longitude": {
+                                            "type": "String",
+                                            "description": "Longitude coordinate of the pickup location."
+                                        },
+                                        "location_type": {
+                                            "type": "String",
+                                            "description": "Type of pickup location (e.g., DOWNTOWN)."
+                                        },
+                                        "location_id": {
+                                            "type": "String",
+                                            "description": "Unique identifier for the pickup location."
+                                        },
+                                        "latitude": {
+                                            "type": "String",
+                                            "description": "Latitude coordinate of the pickup location."
+                                        },
+                                        "icon": {
+                                            "type": "String",
+                                            "description": "Icon identifier for the pickup location (nullable)."
+                                        },
+                                        "country_code": {
+                                            "type": "String",
+                                            "description": "Country code of the pickup location."
+                                        },
+                                        "country": {
+                                            "type": "String",
+                                            "description": "Country name of the pickup location (nullable)."
+                                        },
+                                        "address": {
+                                            "type": "String",
+                                            "description": "Full address of the pickup location."
+                                        },
+                                        "city": {
+                                            "type": "String",
+                                            "description": "City name of the pickup location (nullable)."
+                                        },
+                                        "location_hash": {
+                                            "type": "String",
+                                            "description": "Hash identifier for the pickup location (nullable)."
+                                        }
+                                    }
+                                },
+                                "dropoff": {
+                                    "type": "Object",
+                                    "description": "Details of the dropoff location.",
+                                    "ob_properties": {
+                                        "name": {
+                                            "type": "String",
+                                            "description": "Name of the dropoff location."
+                                        },
+                                        "longitude": {
+                                            "type": "String",
+                                            "description": "Longitude coordinate of the dropoff location."
+                                        },
+                                        "location_type": {
+                                            "type": "String",
+                                            "description": "Type of dropoff location (e.g., CAR_RENTAL_CENTRE)."
+                                        },
+                                        "location_id": {
+                                            "type": "String",
+                                            "description": "Unique identifier for the dropoff location."
+                                        },
+                                        "latitude": {
+                                            "type": "String",
+                                            "description": "Latitude coordinate of the dropoff location."
+                                        },
+                                        "icon": {
+                                            "type": "String",
+                                            "description": "Icon identifier for the dropoff location (nullable)."
+                                        },
+                                        "country_code": {
+                                            "type": "String",
+                                            "description": "Country code of the dropoff location."
+                                        },
+                                        "country": {
+                                            "type": "String",
+                                            "description": "Country name of the dropoff location (nullable)."
+                                        },
+                                        "address": {
+                                            "type": "String",
+                                            "description": "Full address of the dropoff location."
+                                        },
+                                        "city": {
+                                            "type": "String",
+                                            "description": "City name of the dropoff location (nullable)."
+                                        },
+                                        "location_hash": {
+                                            "type": "null",
+                                            "description": "Hash identifier for the dropoff location (nullable)."
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "rating_info": {
+                            "type": "Object",
+                            "description": "Rating details for the rental option.",
+                            "ob_properties": {
+                                "average": {
+                                    "type": "Number",
+                                    "description": "Average rating score."
+                                },
+                                "average_text": {
+                                    "type": "String",
+                                    "description": "Text description of the average rating (e.g., Very good)."
+                                },
+                                "condition": {
+                                    "type": "Number",
+                                    "description": "Rating for the vehicle's condition."
+                                },
+                                "location": {
+                                    "type": "Number",
+                                    "description": "Rating for the pickup/dropoff location."
+                                },
+                                "cleanliness": {
+                                    "type": "Number",
+                                    "description": "Rating for the vehicle's cleanliness."
+                                },
+                                "efficiency": {
+                                    "type": "Number",
+                                    "description": "Rating for the rental process efficiency."
+                                },
+                                "value_for_money": {
+                                    "type": "Number",
+                                    "description": "Rating for the value for money."
+                                },
+                                "pickup_time": {
+                                    "type": "Number",
+                                    "description": "Rating for the pickup time."
+                                },
+                                "dropoff_time": {
+                                    "type": "Number",
+                                    "description": "Rating for the dropoff time."
+                                },
+                                "no_of_ratings": {
+                                    "type": "Number",
+                                    "description": "Total number of ratings."
+                                }
+                            }
+                        },
+                        "fee_info": {
+                            "type": "Object",
+                            "description": "Information about additional fees.",
+                            "ob_properties": {
+                                "type": {
+                                    "type": "String",
+                                    "description": "Type of fee (nullable)."
+                                },
+                                "tax": {
+                                    "type": "Number",
+                                    "description": "Tax amount."
+                                },
+                                "currency": {
+                                    "type": "String",
+                                    "description": "Currency of the fee (nullable)."
+                                },
+                                "fee": {
+                                    "type": "Number",
+                                    "description": "Fee amount."
+                                }
+                            }
+                        },
+                        "freebies": {
+                            "type": "Array",
+                            "description": "List of freebies or perks included with the rental.",
+                            "ar_items": {
+                                "type": "String",
+                                "description": "Name of the freebie (e.g., Amendments)."
+                            }
+                        },
+                        "pricing_info": {
+                            "type": "Object",
+                            "description": "Detailed pricing information for the rental.",
+                            "ob_properties": {
+                                "base_price": {
+                                    "type": "Number",
+                                    "description": "Base price of the rental."
+                                },
+                                "drive_away_price": {
+                                    "type": "Number",
+                                    "description": "Total drive-away price."
+                                },
+                                "drive_away_price_before": {
+                                    "type": "null",
+                                    "description": "Previous drive-away price (nullable)."
+                                },
+                                "drive_away_price_is_approx": {
+                                    "type": "Boolean",
+                                    "description": "Indicates if the drive-away price is approximate."
+                                },
+                                "deposit": {
+                                    "type": "Number",
+                                    "description": "Deposit amount required."
+                                },
+                                "discount": {
+                                    "type": "Number",
+                                    "description": "Discount amount applied."
+                                },
+                                "base_deposit": {
+                                    "type": "Number",
+                                    "description": "Base deposit amount."
+                                },
+                                "base_currency": {
+                                    "type": "String",
+                                    "description": "Currency used for the base price and deposit."
+                                },
+                                "price": {
+                                    "type": "Number",
+                                    "description": "Final price of the rental."
+                                },
+                                "quote_allowed": {
+                                    "type": "Number",
+                                    "description": "Indicates if a quote is allowed (1 for yes, 0 for no)."
+                                },
+                                "currency": {
+                                    "type": "String",
+                                    "description": "Currency of the final price."
+                                },
+                                "fee_breakdown": {
+                                    "type": "Object",
+                                    "description": "Breakdown of fees and policies.",
+                                    "ob_properties": {
+                                        "fuel_policy": {
+                                            "type": "Object",
+                                            "description": "Details of the fuel policy.",
+                                            "ob_properties": {
+                                                "type": {
+                                                    "type": "String",
+                                                    "description": "Type of fuel policy (e.g., RETURN_SAME, FREE_TANK)."
+                                                },
+                                                "amount": {
+                                                    "type": "Number",
+                                                    "description": "Amount associated with the fuel policy."
+                                                },
+                                                "currency": {
+                                                    "type": "String",
+                                                    "description": "Currency of the fuel policy amount (nullable)."
+                                                }
+                                            }
+                                        },
+                                        "known_fees": {
+                                            "type": "Array",
+                                            "description": "List of known fees associated with the rental.",
+                                            "ar_items": {
+                                                "type": "Object",
+                                                "description": "Details of a known fee.",
+                                                "ob_properties": {
+                                                    "type": {
+                                                        "type": "String",
+                                                        "description": "Type of fee (e.g., THEFT_EXCESS, DEPOSIT)."
+                                                    },
+                                                    "distance_allowed": {
+                                                        "type": "null",
+                                                        "description": "Distance allowed for the fee (nullable)."
+                                                    },
+                                                    "is_always_payable": {
+                                                        "type": "Number",
+                                                        "description": "Indicates if the fee is always payable (1 for yes, 0 for no)."
+                                                    },
+                                                    "is_tax_included": {
+                                                        "type": "Number",
+                                                        "description": "Indicates if tax is included in the fee (1 for yes, 0 for no)."
+                                                    },
+                                                    "max_amount": {
+                                                        "type": "Number",
+                                                        "description": "Maximum amount of the fee."
+                                                    },
+                                                    "min_amount": {
+                                                        "type": "Number",
+                                                        "description": "Minimum amount of the fee."
+                                                    },
+                                                    "amount": {
+                                                        "type": "Number",
+                                                        "description": "Actual amount of the fee."
+                                                    },
+                                                    "currency": {
+                                                        "type": "String",
+                                                        "description": "Currency of the fee."
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                "pay_when": {
+                                    "type": "String",
+                                    "description": "Payment timing (e.g., PAY_NOW)."
+                                }
+                            }
+                        },
+                        "accessibility": {
+                            "type": "Object",
+                            "description": "Accessibility information for the rental.",
+                            "ob_properties": {
+                                "transmission": {
+                                    "type": "String",
+                                    "description": "Accessibility description of the transmission."
+                                },
+                                "fuel_policy": {
+                                    "type": "String",
+                                    "description": "Accessibility description of the fuel policy."
+                                },
+                                "supplier_rating": {
+                                    "type": "String",
+                                    "description": "Accessibility description of the supplier's rating."
+                                },
+                                "pick_up_location": {
+                                    "type": "String",
+                                    "description": "Accessibility description of the pickup location."
+                                }
+                            }
+                        },
+                        "applied_discount_types": {
+                            "type": "Array",
+                            "description": "List of applied discount types (nullable).",
+                            "ar_items": {
+                                "type": "String",
+                                "description": "Type of discount applied."
+                            }
+                        }
+                    }
+                }
+            },
+            "discount_banner": {
+                "type": "null",
+                "description": "Discount banner information (nullable)."
+            },
+            "content": {
+                "type": "Object",
+                "description": "Additional content and metadata for the search results.",
+                "ob_properties": {
+                    "discountBanner": {
+                        "type": "null",
+                        "description": "Discount banner information (nullable)."
+                    },
+                    "dsaBanner": {
+                        "type": "null",
+                        "description": "DSA banner information (nullable)."
+                    },
+                    "items": {
+                        "type": "Array",
+                        "description": "List of content items.",
+                        "ar_items": {
+                            "type": "Object",
+                            "description": "Details of a content item.",
+                            "ob_properties": {
+                                "type": {
+                                    "type": "String",
+                                    "description": "Type of content item (e.g., RESULTS_COUNT)."
+                                },
+                                "positionInList": {
+                                    "type": "Number",
+                                    "description": "Position of the item in the list."
+                                },
+                                "content": {
+                                    "type": "Object",
+                                    "description": "Content details.",
+                                    "ob_properties": {
+                                        "label": {
+                                            "type": "String",
+                                            "description": "Label for the content item (e.g., 75 results)."
+                                        },
+                                        "contentType": {
+                                            "type": "String",
+                                            "description": "Type of content (e.g., carsSearchResultsSecondaryPromotional)."
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "filters": {
+                        "type": "Object",
+                        "description": "Filter information.",
+                        "ob_properties": {
+                            "countLabel": {
+                                "type": "String",
+                                "description": "Label for the count of results (e.g., 75 results)."
+                            }
+                        }
+                    },
+                    "map": {
+                        "type": "Object",
+                        "description": "Map-related information.",
+                        "ob_properties": {
+                            "supplierLocations": {
+                                "type": "Array",
+                                "description": "List of supplier locations on the map.",
+                                "ar_items": {
+                                    "type": "Object",
+                                    "description": "Details of a supplier location.",
+                                    "ob_properties": {
+                                        "carouselContent": {
+                                            "type": "Object",
+                                            "description": "Content for the carousel display.",
+                                            "ob_properties": {
+                                                "title": {
+                                                    "type": "String",
+                                                    "description": "Title of the location (e.g., Manhattan - West 31st Street)."
+                                                },
+                                                "body": {
+                                                    "type": "String",
+                                                    "description": "Body text of the location (e.g., address)."
+                                                },
+                                                "label": {
+                                                    "type": "String",
+                                                    "description": "Label for the location (e.g., 13 cars \u00b7 1 suppliers)."
+                                                },
+                                                "footer": {
+                                                    "type": "Object",
+                                                    "description": "Footer content for the location.",
+                                                    "ob_properties": {
+                                                        "label": {
+                                                            "type": "String",
+                                                            "description": "Footer label (e.g., Price for 6 days: from \u20b9\u00a054,122)."
+                                                        },
+                                                        "price": {
+                                                            "type": "String",
+                                                            "description": "Price displayed in the footer (e.g., \u20b9\u00a054,122)."
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "supplierPinContent": {
+                                            "type": "Object",
+                                            "description": "Content for the supplier pin on the map.",
+                                            "ob_properties": {
+                                                "label": {
+                                                    "type": "String",
+                                                    "description": "Label for the pin (e.g., \u20b9\u00a054,122)."
+                                                },
+                                                "latLong": {
+                                                    "type": "Object",
+                                                    "description": "Latitude and longitude coordinates.",
+                                                    "ob_properties": {
+                                                        "latitude": {
+                                                            "type": "Number",
+                                                            "description": "Latitude coordinate."
+                                                        },
+                                                        "longitude": {
+                                                            "type": "Number",
+                                                            "description": "Longitude coordinate."
+                                                        }
+                                                    }
+                                                },
+                                                "accessibility": {
+                                                    "type": "Object",
+                                                    "description": "Accessibility information for the pin.",
+                                                    "ob_properties": {
+                                                        "label": {
+                                                            "type": "String",
+                                                            "description": "Accessibility label (e.g., \u20b9\u00a054,122)."
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "metaData": {
+                                            "type": "Object",
+                                            "description": "Metadata for the location.",
+                                            "ob_properties": {
+                                                "locationName": {
+                                                    "type": "String",
+                                                    "description": "Name of the location."
+                                                },
+                                                "locationHash": {
+                                                    "type": "String",
+                                                    "description": "Hash identifier for the location."
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "filter": {
+                "type": "Array",
+                "description": "List of filters available for the search results.",
+                "ar_items": {
+                    "type": "Object",
+                    "description": "Details of a filter.",
+                    "ob_properties": {
+                        "title": {
+                            "type": "String",
+                            "description": "Title of the filter (e.g., Car Type, Supplier)."
+                        },
+                        "id": {
+                            "type": "String",
+                            "description": "Unique identifier for the filter."
+                        },
+                        "type": {
+                            "type": "String",
+                            "description": "Type of filter (e.g., multiple_union)."
+                        },
+                        "layout": {
+                            "type": "Object",
+                            "description": "Layout details for the filter.",
+                            "ob_properties": {
+                                "is_collapsable": {
+                                    "type": "String",
+                                    "description": "Indicates if the filter is collapsable (true/false as string)."
+                                },
+                                "is_collapsed": {
+                                    "type": "String",
+                                    "description": "Indicates if the filter is collapsed (true/false as string)."
+                                },
+                                "collapsed_count": {
+                                    "type": "String",
+                                    "description": "Number of items shown when collapsed."
+                                },
+                                "layout_type": {
+                                    "type": "String",
+                                    "description": "Type of layout (e.g., list)."
+                                }
+                            }
+                        },
+                        "categories": {
+                            "type": "Array",
+                            "description": "List of categories within the filter.",
+                            "ar_items": {
+                                "type": "Object",
+                                "description": "Details of a filter category.",
+                                "ob_properties": {
+                                    "id": {
+                                        "type": "String",
+                                        "description": "Unique identifier for the category."
+                                    },
+                                    "name": {
+                                        "type": "String",
+                                        "description": "Name of the category (e.g., Small, Medium)."
+                                    },
+                                    "nameWithCount": {
+                                        "type": "String",
+                                        "description": "Name of the category with count (e.g., Small (6))."
+                                    },
+                                    "count": {
+                                        "type": "Number",
+                                        "description": "Number of items in the category."
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "sort": {
+                "type": "Array",
+                "description": "List of sorting options for the search results.",
+                "ar_items": {
+                    "type": "Object",
+                    "description": "Details of a sorting option.",
+                    "ob_properties": {
+                        "name": {
+                            "type": "String",
+                            "description": "Name of the sorting option (e.g., Recommended \u2013 best first)."
+                        },
+                        "identifier": {
+                            "type": "String",
+                            "description": "Unique identifier for the sorting option."
+                        },
+                        "title_tag": {
+                            "type": "String",
+                            "description": "Title tag for the sorting option."
+                        }
+                    }
+                }
+            },
+            "search_key": {
+                "type": "String",
+                "description": "Encoded search key for the query."
+            },
+            "search_context": {
+                "type": "Object",
+                "description": "Contextual information for the search.",
+                "ob_properties": {
+                    "searchKey": {
+                        "type": "String",
+                        "description": "Encoded search key for the query."
+                    },
+                    "searchId": {
+                        "type": "String",
+                        "description": "Unique identifier for the search."
+                    },
+                    "recommendationsSearchUniqueId": {
+                        "type": "String",
+                        "description": "Unique identifier for recommendations."
+                    }
+                }
+            },
+            "count": {
+                "type": "Number",
+                "description": "Total number of search results."
+            },
+            "is_genius_location": {
+                "type": "Boolean",
+                "description": "Indicates if the location is a Genius location."
+            }
+        }
+    },
+    "params_desc_list": null,
+    "response_desc_list": [
+        {
+            "path_name": "search_results",
+            "name": "search_results",
+            "description": "List of car rental options available for the search query."
+        },
+        {
+            "path_name": "search_results[]",
+            "name": "search_results[]",
+            "description": "Details of a single car rental option."
+        },
+        {
+            "path_name": "search_results[].vehicle_id",
+            "name": "vehicle_id",
+            "description": "Unique identifier for the vehicle."
+        },
+        {
+            "path_name": "search_results[].content",
+            "name": "content",
+            "description": "Additional content and metadata about the vehicle."
+        },
+        {
+            "path_name": "search_results[].content.badges",
+            "name": "badges",
+            "description": "List of badges or tags associated with the vehicle (e.g., free cancellation)."
+        },
+        {
+            "path_name": "search_results[].content.badges[]",
+            "name": "badges[]",
+            "description": "Details of a badge."
+        },
+        {
+            "path_name": "search_results[].content.badges[].type",
+            "name": "type",
+            "description": "Type of badge (e.g., CONSTRUCTIVE)."
+        },
+        {
+            "path_name": "search_results[].content.badges[].text",
+            "name": "text",
+            "description": "Text displayed on the badge."
+        },
+        {
+            "path_name": "search_results[].content.badges[].variation",
+            "name": "variation",
+            "description": "Variation of the badge (e.g., DEFAULT)."
+        },
+        {
+            "path_name": "search_results[].content.supplier",
+            "name": "supplier",
+            "description": "Information about the rental supplier."
+        },
+        {
+            "path_name": "search_results[].content.supplier.name",
+            "name": "name",
+            "description": "Name of the supplier (e.g., Avis, Budget)."
+        },
+        {
+            "path_name": "search_results[].content.supplier.imageUrl",
+            "name": "imageUrl",
+            "description": "URL of the supplier's logo image."
+        },
+        {
+            "path_name": "search_results[].content.supplier.rating",
+            "name": "rating",
+            "description": "Supplier's rating details."
+        },
+        {
+            "path_name": "search_results[].content.supplier.rating.average",
+            "name": "average",
+            "description": "Average rating score."
+        },
+        {
+            "path_name": "search_results[].content.supplier.rating.localisedRating",
+            "name": "localisedRating",
+            "description": "Localized rating details."
+        },
+        {
+            "path_name": "search_results[].content.supplier.rating.localisedRating.rawValue",
+            "name": "rawValue",
+            "description": "Raw numeric value of the rating."
+        },
+        {
+            "path_name": "search_results[].content.supplier.rating.localisedRating.displayValue",
+            "name": "displayValue",
+            "description": "Formatted display value of the rating."
+        },
+        {
+            "path_name": "search_results[].content.supplier.rating.title",
+            "name": "title",
+            "description": "Title of the rating (e.g., Good)."
+        },
+        {
+            "path_name": "search_results[].content.supplier.rating.subtitle",
+            "name": "subtitle",
+            "description": "Subtitle of the rating (e.g., number of reviews)."
+        },
+        {
+            "path_name": "search_results[].content.vehicleSpecs",
+            "name": "vehicleSpecs",
+            "description": "List of vehicle specifications (e.g., transmission type, mileage)."
+        },
+        {
+            "path_name": "search_results[].content.vehicleSpecs[]",
+            "name": "vehicleSpecs[]",
+            "description": "Details of a vehicle specification."
+        },
+        {
+            "path_name": "search_results[].content.vehicleSpecs[].text",
+            "name": "text",
+            "description": "Text description of the specification."
+        },
+        {
+            "path_name": "search_results[].content.vehicleSpecs[].icon",
+            "name": "icon",
+            "description": "Icon identifier for the specification."
+        },
+        {
+            "path_name": "search_results[].content.vehicleSpecs[].accessibility",
+            "name": "accessibility",
+            "description": "Accessibility description for the specification (nullable)."
+        },
+        {
+            "path_name": "search_results[].vehicle_info",
+            "name": "vehicle_info",
+            "description": "Detailed information about the vehicle."
+        },
+        {
+            "path_name": "search_results[].vehicle_info.v_id",
+            "name": "v_id",
+            "description": "Unique identifier for the vehicle."
+        },
+        {
+            "path_name": "search_results[].vehicle_info.v_name",
+            "name": "v_name",
+            "description": "Name of the vehicle (e.g., Chrysler Pacifica)."
+        },
+        {
+            "path_name": "search_results[].vehicle_info.unlimited_mileage",
+            "name": "unlimited_mileage",
+            "description": "Indicates if the vehicle has unlimited mileage (1 for yes, 0 for no)."
+        },
+        {
+            "path_name": "search_results[].vehicle_info.transmission",
+            "name": "transmission",
+            "description": "Type of transmission (e.g., Automatic)."
+        },
+        {
+            "path_name": "search_results[].vehicle_info.special_offer_text",
+            "name": "special_offer_text",
+            "description": "Text describing any special offers (nullable)."
+        },
+        {
+            "path_name": "search_results[].vehicle_info.seats",
+            "name": "seats",
+            "description": "Number of seats in the vehicle."
+        },
+        {
+            "path_name": "search_results[].vehicle_info.suitcases",
+            "name": "suitcases",
+            "description": "Number of suitcases the vehicle can accommodate."
+        },
+        {
+            "path_name": "search_results[].vehicle_info.suitcases.big",
+            "name": "big",
+            "description": "Number of big suitcases."
+        },
+        {
+            "path_name": "search_results[].vehicle_info.suitcases.small",
+            "name": "small",
+            "description": "Number of small suitcases."
+        },
+        {
+            "path_name": "search_results[].vehicle_info.label",
+            "name": "label",
+            "description": "Label describing the vehicle category (e.g., Mini car with:)."
+        },
+        {
+            "path_name": "search_results[].vehicle_info.insurance_package",
+            "name": "insurance_package",
+            "description": "Description of the insurance package (nullable)."
+        },
+        {
+            "path_name": "search_results[].vehicle_info.image_url",
+            "name": "image_url",
+            "description": "URL of the vehicle's image."
+        },
+        {
+            "path_name": "search_results[].vehicle_info.image_thumbnail_url",
+            "name": "image_thumbnail_url",
+            "description": "URL of the vehicle's thumbnail image."
+        },
+        {
+            "path_name": "search_results[].vehicle_info.group",
+            "name": "group",
+            "description": "Vehicle group category (e.g., Mini, Intermediate)."
+        },
+        {
+            "path_name": "search_results[].vehicle_info.group_or_similar",
+            "name": "group_or_similar",
+            "description": "Description of the vehicle group or similar vehicles."
+        },
+        {
+            "path_name": "search_results[].vehicle_info.fuel_type",
+            "name": "fuel_type",
+            "description": "Type of fuel used by the vehicle (e.g., N/A)."
+        },
+        {
+            "path_name": "search_results[].vehicle_info.fuel_policy_description",
+            "name": "fuel_policy_description",
+            "description": "Description of the fuel policy (nullable)."
+        },
+        {
+            "path_name": "search_results[].vehicle_info.fuel_policy",
+            "name": "fuel_policy",
+            "description": "Fuel policy (e.g., Like for like, Free Tank)."
+        },
+        {
+            "path_name": "search_results[].vehicle_info.free_cancellation",
+            "name": "free_cancellation",
+            "description": "Indicates if free cancellation is available (1 for yes, 0 for no)."
+        },
+        {
+            "path_name": "search_results[].vehicle_info.doors",
+            "name": "doors",
+            "description": "Number of doors on the vehicle."
+        },
+        {
+            "path_name": "search_results[].vehicle_info.cma_compliant",
+            "name": "cma_compliant",
+            "description": "Indicates if the vehicle is CMA compliant (-1 for unknown)."
+        },
+        {
+            "path_name": "search_results[].vehicle_info.aircon",
+            "name": "aircon",
+            "description": "Indicates if the vehicle has air conditioning (1 for yes, 0 for no)."
+        },
+        {
+            "path_name": "search_results[].vehicle_info.airbags",
+            "name": "airbags",
+            "description": "Indicates if the vehicle has airbags (1 for yes, 0 for no)."
+        },
+        {
+            "path_name": "search_results[].vehicle_info.mileage",
+            "name": "mileage",
+            "description": "Mileage policy (e.g., Unlimited mileage)."
+        },
+        {
+            "path_name": "search_results[].vehicle_info.badges",
+            "name": "badges",
+            "description": "Additional badges or tags (nullable)."
+        },
+        {
+            "path_name": "search_results[].vehicle_info.deposit",
+            "name": "deposit",
+            "description": "Deposit information (nullable)."
+        },
+        {
+            "path_name": "search_results[].supplier_info",
+            "name": "supplier_info",
+            "description": "Information about the rental supplier."
+        },
+        {
+            "path_name": "search_results[].supplier_info.name",
+            "name": "name",
+            "description": "Name of the supplier (e.g., Avis, Budget)."
+        },
+        {
+            "path_name": "search_results[].supplier_info.logo_url",
+            "name": "logo_url",
+            "description": "URL of the supplier's logo image."
+        },
+        {
+            "path_name": "search_results[].supplier_info.location_type",
+            "name": "location_type",
+            "description": "Type of location (e.g., Downtown)."
+        },
+        {
+            "path_name": "search_results[].supplier_info.address",
+            "name": "address",
+            "description": "Full address of the pickup location."
+        },
+        {
+            "path_name": "search_results[].supplier_info.latitude",
+            "name": "latitude",
+            "description": "Latitude coordinate of the pickup location."
+        },
+        {
+            "path_name": "search_results[].supplier_info.longitude",
+            "name": "longitude",
+            "description": "Longitude coordinate of the pickup location."
+        },
+        {
+            "path_name": "search_results[].supplier_info.pickup_instructions",
+            "name": "pickup_instructions",
+            "description": "Instructions for pickup (nullable)."
+        },
+        {
+            "path_name": "search_results[].supplier_info.dropoff_instructions",
+            "name": "dropoff_instructions",
+            "description": "Instructions for dropoff (nullable)."
+        },
+        {
+            "path_name": "search_results[].supplier_info.may_require_credit_card_guarantee",
+            "name": "may_require_credit_card_guarantee",
+            "description": "Indicates if a credit card guarantee may be required."
+        },
+        {
+            "path_name": "search_results[].route_info",
+            "name": "route_info",
+            "description": "Information about pickup and dropoff locations."
+        },
+        {
+            "path_name": "search_results[].route_info.pickup",
+            "name": "pickup",
+            "description": "Details of the pickup location."
+        },
+        {
+            "path_name": "search_results[].route_info.pickup.name",
+            "name": "name",
+            "description": "Name of the pickup location."
+        },
+        {
+            "path_name": "search_results[].route_info.pickup.longitude",
+            "name": "longitude",
+            "description": "Longitude coordinate of the pickup location."
+        },
+        {
+            "path_name": "search_results[].route_info.pickup.location_type",
+            "name": "location_type",
+            "description": "Type of pickup location (e.g., DOWNTOWN)."
+        },
+        {
+            "path_name": "search_results[].route_info.pickup.location_id",
+            "name": "location_id",
+            "description": "Unique identifier for the pickup location."
+        },
+        {
+            "path_name": "search_results[].route_info.pickup.latitude",
+            "name": "latitude",
+            "description": "Latitude coordinate of the pickup location."
+        },
+        {
+            "path_name": "search_results[].route_info.pickup.icon",
+            "name": "icon",
+            "description": "Icon identifier for the pickup location (nullable)."
+        },
+        {
+            "path_name": "search_results[].route_info.pickup.country_code",
+            "name": "country_code",
+            "description": "Country code of the pickup location."
+        },
+        {
+            "path_name": "search_results[].route_info.pickup.country",
+            "name": "country",
+            "description": "Country name of the pickup location (nullable)."
+        },
+        {
+            "path_name": "search_results[].route_info.pickup.address",
+            "name": "address",
+            "description": "Full address of the pickup location."
+        },
+        {
+            "path_name": "search_results[].route_info.pickup.city",
+            "name": "city",
+            "description": "City name of the pickup location (nullable)."
+        },
+        {
+            "path_name": "search_results[].route_info.pickup.location_hash",
+            "name": "location_hash",
+            "description": "Hash identifier for the pickup location (nullable)."
+        },
+        {
+            "path_name": "search_results[].route_info.dropoff",
+            "name": "dropoff",
+            "description": "Details of the dropoff location."
+        },
+        {
+            "path_name": "search_results[].route_info.dropoff.name",
+            "name": "name",
+            "description": "Name of the dropoff location."
+        },
+        {
+            "path_name": "search_results[].route_info.dropoff.longitude",
+            "name": "longitude",
+            "description": "Longitude coordinate of the dropoff location."
+        },
+        {
+            "path_name": "search_results[].route_info.dropoff.location_type",
+            "name": "location_type",
+            "description": "Type of dropoff location (e.g., CAR_RENTAL_CENTRE)."
+        },
+        {
+            "path_name": "search_results[].route_info.dropoff.location_id",
+            "name": "location_id",
+            "description": "Unique identifier for the dropoff location."
+        },
+        {
+            "path_name": "search_results[].route_info.dropoff.latitude",
+            "name": "latitude",
+            "description": "Latitude coordinate of the dropoff location."
+        },
+        {
+            "path_name": "search_results[].route_info.dropoff.icon",
+            "name": "icon",
+            "description": "Icon identifier for the dropoff location (nullable)."
+        },
+        {
+            "path_name": "search_results[].route_info.dropoff.country_code",
+            "name": "country_code",
+            "description": "Country code of the dropoff location."
+        },
+        {
+            "path_name": "search_results[].route_info.dropoff.country",
+            "name": "country",
+            "description": "Country name of the dropoff location (nullable)."
+        },
+        {
+            "path_name": "search_results[].route_info.dropoff.address",
+            "name": "address",
+            "description": "Full address of the dropoff location."
+        },
+        {
+            "path_name": "search_results[].route_info.dropoff.city",
+            "name": "city",
+            "description": "City name of the dropoff location (nullable)."
+        },
+        {
+            "path_name": "search_results[].route_info.dropoff.location_hash",
+            "name": "location_hash",
+            "description": "Hash identifier for the dropoff location (nullable)."
+        },
+        {
+            "path_name": "search_results[].rating_info",
+            "name": "rating_info",
+            "description": "Rating details for the rental option."
+        },
+        {
+            "path_name": "search_results[].rating_info.average",
+            "name": "average",
+            "description": "Average rating score."
+        },
+        {
+            "path_name": "search_results[].rating_info.average_text",
+            "name": "average_text",
+            "description": "Text description of the average rating (e.g., Very good)."
+        },
+        {
+            "path_name": "search_results[].rating_info.condition",
+            "name": "condition",
+            "description": "Rating for the vehicle's condition."
+        },
+        {
+            "path_name": "search_results[].rating_info.location",
+            "name": "location",
+            "description": "Rating for the pickup/dropoff location."
+        },
+        {
+            "path_name": "search_results[].rating_info.cleanliness",
+            "name": "cleanliness",
+            "description": "Rating for the vehicle's cleanliness."
+        },
+        {
+            "path_name": "search_results[].rating_info.efficiency",
+            "name": "efficiency",
+            "description": "Rating for the rental process efficiency."
+        },
+        {
+            "path_name": "search_results[].rating_info.value_for_money",
+            "name": "value_for_money",
+            "description": "Rating for the value for money."
+        },
+        {
+            "path_name": "search_results[].rating_info.pickup_time",
+            "name": "pickup_time",
+            "description": "Rating for the pickup time."
+        },
+        {
+            "path_name": "search_results[].rating_info.dropoff_time",
+            "name": "dropoff_time",
+            "description": "Rating for the dropoff time."
+        },
+        {
+            "path_name": "search_results[].rating_info.no_of_ratings",
+            "name": "no_of_ratings",
+            "description": "Total number of ratings."
+        },
+        {
+            "path_name": "search_results[].fee_info",
+            "name": "fee_info",
+            "description": "Information about additional fees."
+        },
+        {
+            "path_name": "search_results[].fee_info.type",
+            "name": "type",
+            "description": "Type of fee (nullable)."
+        },
+        {
+            "path_name": "search_results[].fee_info.tax",
+            "name": "tax",
+            "description": "Tax amount."
+        },
+        {
+            "path_name": "search_results[].fee_info.currency",
+            "name": "currency",
+            "description": "Currency of the fee (nullable)."
+        },
+        {
+            "path_name": "search_results[].fee_info.fee",
+            "name": "fee",
+            "description": "Fee amount."
+        },
+        {
+            "path_name": "search_results[].freebies",
+            "name": "freebies",
+            "description": "List of freebies or perks included with the rental."
+        },
+        {
+            "path_name": "search_results[].freebies[]",
+            "name": "freebies[]",
+            "description": "Name of the freebie (e.g., Amendments)."
+        },
+        {
+            "path_name": "search_results[].pricing_info",
+            "name": "pricing_info",
+            "description": "Detailed pricing information for the rental."
+        },
+        {
+            "path_name": "search_results[].pricing_info.base_price",
+            "name": "base_price",
+            "description": "Base price of the rental."
+        },
+        {
+            "path_name": "search_results[].pricing_info.drive_away_price",
+            "name": "drive_away_price",
+            "description": "Total drive-away price."
+        },
+        {
+            "path_name": "search_results[].pricing_info.drive_away_price_before",
+            "name": "drive_away_price_before",
+            "description": "Previous drive-away price (nullable)."
+        },
+        {
+            "path_name": "search_results[].pricing_info.drive_away_price_is_approx",
+            "name": "drive_away_price_is_approx",
+            "description": "Indicates if the drive-away price is approximate."
+        },
+        {
+            "path_name": "search_results[].pricing_info.deposit",
+            "name": "deposit",
+            "description": "Deposit amount required."
+        },
+        {
+            "path_name": "search_results[].pricing_info.discount",
+            "name": "discount",
+            "description": "Discount amount applied."
+        },
+        {
+            "path_name": "search_results[].pricing_info.base_deposit",
+            "name": "base_deposit",
+            "description": "Base deposit amount."
+        },
+        {
+            "path_name": "search_results[].pricing_info.base_currency",
+            "name": "base_currency",
+            "description": "Currency used for the base price and deposit."
+        },
+        {
+            "path_name": "search_results[].pricing_info.price",
+            "name": "price",
+            "description": "Final price of the rental."
+        },
+        {
+            "path_name": "search_results[].pricing_info.quote_allowed",
+            "name": "quote_allowed",
+            "description": "Indicates if a quote is allowed (1 for yes, 0 for no)."
+        },
+        {
+            "path_name": "search_results[].pricing_info.currency",
+            "name": "currency",
+            "description": "Currency of the final price."
+        },
+        {
+            "path_name": "search_results[].pricing_info.fee_breakdown",
+            "name": "fee_breakdown",
+            "description": "Breakdown of fees and policies."
+        },
+        {
+            "path_name": "search_results[].pricing_info.fee_breakdown.fuel_policy",
+            "name": "fuel_policy",
+            "description": "Details of the fuel policy."
+        },
+        {
+            "path_name": "search_results[].pricing_info.fee_breakdown.fuel_policy.type",
+            "name": "type",
+            "description": "Type of fuel policy (e.g., RETURN_SAME, FREE_TANK)."
+        },
+        {
+            "path_name": "search_results[].pricing_info.fee_breakdown.fuel_policy.amount",
+            "name": "amount",
+            "description": "Amount associated with the fuel policy."
+        },
+        {
+            "path_name": "search_results[].pricing_info.fee_breakdown.fuel_policy.currency",
+            "name": "currency",
+            "description": "Currency of the fuel policy amount (nullable)."
+        },
+        {
+            "path_name": "search_results[].pricing_info.fee_breakdown.known_fees",
+            "name": "known_fees",
+            "description": "List of known fees associated with the rental."
+        },
+        {
+            "path_name": "search_results[].pricing_info.fee_breakdown.known_fees[]",
+            "name": "known_fees[]",
+            "description": "Details of a known fee."
+        },
+        {
+            "path_name": "search_results[].pricing_info.fee_breakdown.known_fees[].type",
+            "name": "type",
+            "description": "Type of fee (e.g., THEFT_EXCESS, DEPOSIT)."
+        },
+        {
+            "path_name": "search_results[].pricing_info.fee_breakdown.known_fees[].distance_allowed",
+            "name": "distance_allowed",
+            "description": "Distance allowed for the fee (nullable)."
+        },
+        {
+            "path_name": "search_results[].pricing_info.fee_breakdown.known_fees[].is_always_payable",
+            "name": "is_always_payable",
+            "description": "Indicates if the fee is always payable (1 for yes, 0 for no)."
+        },
+        {
+            "path_name": "search_results[].pricing_info.fee_breakdown.known_fees[].is_tax_included",
+            "name": "is_tax_included",
+            "description": "Indicates if tax is included in the fee (1 for yes, 0 for no)."
+        },
+        {
+            "path_name": "search_results[].pricing_info.fee_breakdown.known_fees[].max_amount",
+            "name": "max_amount",
+            "description": "Maximum amount of the fee."
+        },
+        {
+            "path_name": "search_results[].pricing_info.fee_breakdown.known_fees[].min_amount",
+            "name": "min_amount",
+            "description": "Minimum amount of the fee."
+        },
+        {
+            "path_name": "search_results[].pricing_info.fee_breakdown.known_fees[].amount",
+            "name": "amount",
+            "description": "Actual amount of the fee."
+        },
+        {
+            "path_name": "search_results[].pricing_info.fee_breakdown.known_fees[].currency",
+            "name": "currency",
+            "description": "Currency of the fee."
+        },
+        {
+            "path_name": "search_results[].pricing_info.pay_when",
+            "name": "pay_when",
+            "description": "Payment timing (e.g., PAY_NOW)."
+        },
+        {
+            "path_name": "search_results[].accessibility",
+            "name": "accessibility",
+            "description": "Accessibility information for the rental."
+        },
+        {
+            "path_name": "search_results[].accessibility.transmission",
+            "name": "transmission",
+            "description": "Accessibility description of the transmission."
+        },
+        {
+            "path_name": "search_results[].accessibility.fuel_policy",
+            "name": "fuel_policy",
+            "description": "Accessibility description of the fuel policy."
+        },
+        {
+            "path_name": "search_results[].accessibility.supplier_rating",
+            "name": "supplier_rating",
+            "description": "Accessibility description of the supplier's rating."
+        },
+        {
+            "path_name": "search_results[].accessibility.pick_up_location",
+            "name": "pick_up_location",
+            "description": "Accessibility description of the pickup location."
+        },
+        {
+            "path_name": "search_results[].applied_discount_types",
+            "name": "applied_discount_types",
+            "description": "List of applied discount types (nullable)."
+        },
+        {
+            "path_name": "search_results[].applied_discount_types[]",
+            "name": "applied_discount_types[]",
+            "description": "Type of discount applied."
+        },
+        {
+            "path_name": "discount_banner",
+            "name": "discount_banner",
+            "description": "Discount banner information (nullable)."
+        },
+        {
+            "path_name": "content",
+            "name": "content",
+            "description": "Additional content and metadata for the search results."
+        },
+        {
+            "path_name": "content.discountBanner",
+            "name": "discountBanner",
+            "description": "Discount banner information (nullable)."
+        },
+        {
+            "path_name": "content.dsaBanner",
+            "name": "dsaBanner",
+            "description": "DSA banner information (nullable)."
+        },
+        {
+            "path_name": "content.items",
+            "name": "items",
+            "description": "List of content items."
+        },
+        {
+            "path_name": "content.items[]",
+            "name": "items[]",
+            "description": "Details of a content item."
+        },
+        {
+            "path_name": "content.items[].type",
+            "name": "type",
+            "description": "Type of content item (e.g., RESULTS_COUNT)."
+        },
+        {
+            "path_name": "content.items[].positionInList",
+            "name": "positionInList",
+            "description": "Position of the item in the list."
+        },
+        {
+            "path_name": "content.items[].content",
+            "name": "content",
+            "description": "Content details."
+        },
+        {
+            "path_name": "content.items[].content.label",
+            "name": "label",
+            "description": "Label for the content item (e.g., 75 results)."
+        },
+        {
+            "path_name": "content.items[].content.contentType",
+            "name": "contentType",
+            "description": "Type of content (e.g., carsSearchResultsSecondaryPromotional)."
+        },
+        {
+            "path_name": "content.filters",
+            "name": "filters",
+            "description": "Filter information."
+        },
+        {
+            "path_name": "content.filters.countLabel",
+            "name": "countLabel",
+            "description": "Label for the count of results (e.g., 75 results)."
+        },
+        {
+            "path_name": "content.map",
+            "name": "map",
+            "description": "Map-related information."
+        },
+        {
+            "path_name": "content.map.supplierLocations",
+            "name": "supplierLocations",
+            "description": "List of supplier locations on the map."
+        },
+        {
+            "path_name": "content.map.supplierLocations[]",
+            "name": "supplierLocations[]",
+            "description": "Details of a supplier location."
+        },
+        {
+            "path_name": "content.map.supplierLocations[].carouselContent",
+            "name": "carouselContent",
+            "description": "Content for the carousel display."
+        },
+        {
+            "path_name": "content.map.supplierLocations[].carouselContent.title",
+            "name": "title",
+            "description": "Title of the location (e.g., Manhattan - West 31st Street)."
+        },
+        {
+            "path_name": "content.map.supplierLocations[].carouselContent.body",
+            "name": "body",
+            "description": "Body text of the location (e.g., address)."
+        },
+        {
+            "path_name": "content.map.supplierLocations[].carouselContent.label",
+            "name": "label",
+            "description": "Label for the location (e.g., 13 cars \u00b7 1 suppliers)."
+        },
+        {
+            "path_name": "content.map.supplierLocations[].carouselContent.footer",
+            "name": "footer",
+            "description": "Footer content for the location."
+        },
+        {
+            "path_name": "content.map.supplierLocations[].carouselContent.footer.label",
+            "name": "label",
+            "description": "Footer label (e.g., Price for 6 days: from \u20b9\u00a054,122)."
+        },
+        {
+            "path_name": "content.map.supplierLocations[].carouselContent.footer.price",
+            "name": "price",
+            "description": "Price displayed in the footer (e.g., \u20b9\u00a054,122)."
+        },
+        {
+            "path_name": "content.map.supplierLocations[].supplierPinContent",
+            "name": "supplierPinContent",
+            "description": "Content for the supplier pin on the map."
+        },
+        {
+            "path_name": "content.map.supplierLocations[].supplierPinContent.label",
+            "name": "label",
+            "description": "Label for the pin (e.g., \u20b9\u00a054,122)."
+        },
+        {
+            "path_name": "content.map.supplierLocations[].supplierPinContent.latLong",
+            "name": "latLong",
+            "description": "Latitude and longitude coordinates."
+        },
+        {
+            "path_name": "content.map.supplierLocations[].supplierPinContent.latLong.latitude",
+            "name": "latitude",
+            "description": "Latitude coordinate."
+        },
+        {
+            "path_name": "content.map.supplierLocations[].supplierPinContent.latLong.longitude",
+            "name": "longitude",
+            "description": "Longitude coordinate."
+        },
+        {
+            "path_name": "content.map.supplierLocations[].supplierPinContent.accessibility",
+            "name": "accessibility",
+            "description": "Accessibility information for the pin."
+        },
+        {
+            "path_name": "content.map.supplierLocations[].supplierPinContent.accessibility.label",
+            "name": "label",
+            "description": "Accessibility label (e.g., \u20b9\u00a054,122)."
+        },
+        {
+            "path_name": "content.map.supplierLocations[].metaData",
+            "name": "metaData",
+            "description": "Metadata for the location."
+        },
+        {
+            "path_name": "content.map.supplierLocations[].metaData.locationName",
+            "name": "locationName",
+            "description": "Name of the location."
+        },
+        {
+            "path_name": "content.map.supplierLocations[].metaData.locationHash",
+            "name": "locationHash",
+            "description": "Hash identifier for the location."
+        },
+        {
+            "path_name": "filter",
+            "name": "filter",
+            "description": "List of filters available for the search results."
+        },
+        {
+            "path_name": "filter[]",
+            "name": "filter[]",
+            "description": "Details of a filter."
+        },
+        {
+            "path_name": "filter[].title",
+            "name": "title",
+            "description": "Title of the filter (e.g., Car Type, Supplier)."
+        },
+        {
+            "path_name": "filter[].id",
+            "name": "id",
+            "description": "Unique identifier for the filter."
+        },
+        {
+            "path_name": "filter[].type",
+            "name": "type",
+            "description": "Type of filter (e.g., multiple_union)."
+        },
+        {
+            "path_name": "filter[].layout",
+            "name": "layout",
+            "description": "Layout details for the filter."
+        },
+        {
+            "path_name": "filter[].layout.is_collapsable",
+            "name": "is_collapsable",
+            "description": "Indicates if the filter is collapsable (true/false as string)."
+        },
+        {
+            "path_name": "filter[].layout.is_collapsed",
+            "name": "is_collapsed",
+            "description": "Indicates if the filter is collapsed (true/false as string)."
+        },
+        {
+            "path_name": "filter[].layout.collapsed_count",
+            "name": "collapsed_count",
+            "description": "Number of items shown when collapsed."
+        },
+        {
+            "path_name": "filter[].layout.layout_type",
+            "name": "layout_type",
+            "description": "Type of layout (e.g., list)."
+        },
+        {
+            "path_name": "filter[].categories",
+            "name": "categories",
+            "description": "List of categories within the filter."
+        },
+        {
+            "path_name": "filter[].categories[]",
+            "name": "categories[]",
+            "description": "Details of a filter category."
+        },
+        {
+            "path_name": "filter[].categories[].id",
+            "name": "id",
+            "description": "Unique identifier for the category."
+        },
+        {
+            "path_name": "filter[].categories[].name",
+            "name": "name",
+            "description": "Name of the category (e.g., Small, Medium)."
+        },
+        {
+            "path_name": "filter[].categories[].nameWithCount",
+            "name": "nameWithCount",
+            "description": "Name of the category with count (e.g., Small (6))."
+        },
+        {
+            "path_name": "filter[].categories[].count",
+            "name": "count",
+            "description": "Number of items in the category."
+        },
+        {
+            "path_name": "sort",
+            "name": "sort",
+            "description": "List of sorting options for the search results."
+        },
+        {
+            "path_name": "sort[]",
+            "name": "sort[]",
+            "description": "Details of a sorting option."
+        },
+        {
+            "path_name": "sort[].name",
+            "name": "name",
+            "description": "Name of the sorting option (e.g., Recommended \u2013 best first)."
+        },
+        {
+            "path_name": "sort[].identifier",
+            "name": "identifier",
+            "description": "Unique identifier for the sorting option."
+        },
+        {
+            "path_name": "sort[].title_tag",
+            "name": "title_tag",
+            "description": "Title tag for the sorting option."
+        },
+        {
+            "path_name": "search_key",
+            "name": "search_key",
+            "description": "Encoded search key for the query."
+        },
+        {
+            "path_name": "search_context",
+            "name": "search_context",
+            "description": "Contextual information for the search."
+        },
+        {
+            "path_name": "search_context.searchKey",
+            "name": "searchKey",
+            "description": "Encoded search key for the query."
+        },
+        {
+            "path_name": "search_context.searchId",
+            "name": "searchId",
+            "description": "Unique identifier for the search."
+        },
+        {
+            "path_name": "search_context.recommendationsSearchUniqueId",
+            "name": "recommendationsSearchUniqueId",
+            "description": "Unique identifier for recommendations."
+        },
+        {
+            "path_name": "count",
+            "name": "count",
+            "description": "Total number of search results."
+        },
+        {
+            "path_name": "is_genius_location",
+            "name": "is_genius_location",
+            "description": "Indicates if the location is a Genius location."
+        }
+    ],
+    "depends_on": null,
+    "verified": true
+}

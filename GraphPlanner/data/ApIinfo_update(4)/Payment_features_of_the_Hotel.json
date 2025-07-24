@@ -1,0 +1,29 @@
+{
+    "name": "Payment_features_of_the_Hotel",
+    "docs_row": {
+        "name": "Payment_features_of_the_Hotel",
+        "description": "Retrieve information about the payment features and options available at a specific hotel. EndPoint: /api/v1/hotels/getPaymentFeatures",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "hotel_id": {
+                    "type": "string",
+                    "description": " `hotel_id` can be retrieved from `api/v1/hotels/searchHotels`**(Search Hotels)** or `api/v1/hotels/searchHotelsByCoordinates`**(Search Hotels By Coordinates\n)** endpoint in **Hotels** collection."
+                }
+            },
+            "required": [
+                "hotel_id"
+            ]
+        }
+    },
+    "api_response_schema": [
+        {
+            "is_direct_payment": 0,
+            "hotel_id": "12664593",
+            "payable": 1,
+            "creditcard_id": 7,
+            "bookable": 1,
+            "cvc_required": 3
+        }
+    ]
+}

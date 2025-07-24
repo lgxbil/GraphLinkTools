@@ -1,0 +1,101 @@
+{
+    "name": "Get_Languages",
+    "docs_row": {
+        "name": "Get_Languages",
+        "endpoint": "/api/v1/meta/getLanguages",
+        "func_description": "",
+        "parameters": {
+            "type": "object",
+            "properties": {},
+            "required": []
+        }
+    },
+    "instance": [],
+    "category": null,
+    "tool": null,
+    "api_idx": 18,
+    "params": {
+        "type": "object",
+        "properties": {},
+        "required": []
+    },
+    "responses": [
+        {
+            "function_name": "Get_Languages",
+            "arguments": {},
+            "observation": [
+                {
+                    "name": "English (UK)",
+                    "code": "en-gb",
+                    "countryFlag": "gb"
+                },
+                {
+                    "name": "English (US)",
+                    "code": "en-us",
+                    "countryFlag": "us"
+                },
+                {
+                    "name": "Deutsch",
+                    "code": "de",
+                    "countryFlag": "de"
+                }
+            ]
+        },
+        {
+            "function_name": "Get_Languages",
+            "arguments": {},
+            "observation": [
+                {
+                    "name": "English (UK)",
+                    "code": "en-gb",
+                    "countryFlag": "gb"
+                },
+                {
+                    "name": "English (US)",
+                    "code": "en-us",
+                    "countryFlag": "us"
+                },
+                {
+                    "name": "Deutsch",
+                    "code": "de",
+                    "countryFlag": "de"
+                }
+            ]
+        }
+    ],
+    "response_summary": "The API response lists three available language options for users. The first option is English (UK), represented by the country code \"en-gb\" and the flag of the United Kingdom. The second option is English (US), indicated by the code \"en-us\" and the flag of the United States. Lastly, there is Deutsch (German), which uses the code \"de\" and is associated with the flag of Germany. These choices allow users to select their preferred language and regional variant.",
+    "enhance_func_desc": "This API is essential for multilingual user interfaces and localization. It retrieves available language options, including regional variants, with their respective country codes and flags. Users can select their preferred language for content display. The response includes detailed language information such as language codes and associated flags, facilitating seamless language switching in applications. No input parameters are required.",
+    "enhance_params_desc": {
+        "enhanced_parameters": {}
+    },
+    "enhance_resfield_desc": {
+        "response_fields": {
+            "root": {
+                "type": "Array",
+                "description": "List of available language options for users",
+                "ar_items": {
+                    "type": "Object",
+                    "description": "Language option with details",
+                    "ob_properties": {
+                        "name": {
+                            "type": "String",
+                            "description": "Display name of the language, including regional variant if applicable (e.g., 'English (UK)', 'English (US)', 'Deutsch')"
+                        },
+                        "code": {
+                            "type": "String",
+                            "description": "Language code representing the language and regional variant (e.g., 'en-gb' for English UK, 'en-us' for English US, 'de' for German)"
+                        },
+                        "countryFlag": {
+                            "type": "String",
+                            "description": "Country code representing the flag associated with the language (e.g., 'gb' for United Kingdom, 'us' for United States, 'de' for Germany)"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "params_desc_list": null,
+    "response_desc_list": null,
+    "depends_on": null,
+    "verified": true
+}

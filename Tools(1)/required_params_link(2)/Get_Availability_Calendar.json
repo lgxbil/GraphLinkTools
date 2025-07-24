@@ -1,0 +1,172 @@
+{
+    "name": "Get_Availability_Calendar",
+    "docs_row": {
+        "name": "Get_Availability_Calendar",
+        "endpoint": "/api/v1/attraction/getAvailabilityCalendar",
+        "func_description": "Search the availability calendar for a specific attraction. ",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "String",
+                    "description": "id can be retrieved from api/v1/attraction/searchLocation(Search Attraction Location) endpoint in Attraction collection as id inside products or destinations.",
+                    "example_value": "PRugRDm0UamX",
+                    "required": true
+                },
+                "languagecode": {
+                    "type": "String",
+                    "description": "To obtain the response data in a specific language, enter the languagecode. languagecode can be retrieved from api/v1/meta/getLanguages(Get Languages\n) endpoint in Meta collection.",
+                    "example_value": "fr",
+                    "required": false
+                }
+            },
+            "required": [
+                "id"
+            ]
+        }
+    },
+    "instance": [],
+    "category": null,
+    "tool": null,
+    "api_idx": 29,
+    "params": {
+        "type": "object",
+        "properties": {
+            "id": {
+                "type": "String",
+                "description": "id can be retrieved from api/v1/attraction/searchLocation(Search Attraction Location) endpoint in Attraction collection as id inside products or destinations.",
+                "example_value": "PRugRDm0UamX",
+                "required": true
+            },
+            "languagecode": {
+                "type": "String",
+                "description": "To obtain the response data in a specific language, enter the languagecode. languagecode can be retrieved from api/v1/meta/getLanguages(Get Languages\n) endpoint in Meta collection.",
+                "example_value": "fr",
+                "required": false
+            }
+        },
+        "required": [
+            "id"
+        ]
+    },
+    "responses": [
+        {
+            "function_name": "Get_Availability_Calendar",
+            "arguments": {
+                "id": "PRugRDm0UamX"
+            },
+            "observation": [
+                {
+                    "__typename": "AttractionsCalendarItem",
+                    "available": false,
+                    "date": "2025-05-19"
+                },
+                {
+                    "__typename": "AttractionsCalendarItem",
+                    "available": false,
+                    "date": "2025-05-20"
+                },
+                {
+                    "__typename": "AttractionsCalendarItem",
+                    "available": false,
+                    "date": "2025-05-21"
+                }
+            ]
+        },
+        {
+            "function_name": "Get_Availability_Calendar",
+            "arguments": {
+                "id": "PRugRDm0UamX",
+                "languagecode": "fr"
+            },
+            "observation": [
+                {
+                    "__typename": "AttractionsCalendarItem",
+                    "available": false,
+                    "date": "2025-05-19"
+                },
+                {
+                    "__typename": "AttractionsCalendarItem",
+                    "available": false,
+                    "date": "2025-05-20"
+                },
+                {
+                    "__typename": "AttractionsCalendarItem",
+                    "available": false,
+                    "date": "2025-05-21"
+                }
+            ]
+        }
+    ],
+    "response_summary": "The API response indicates that for the dates May 19, May 20, and May 21 in 2025, the attractions or activities in question are currently unavailable. There are no open slots or bookings possible for these specific days.",
+    "enhance_func_desc": "This API is ideal for checking attraction availability before trip planning. It verifies open booking slots for specific dates using a location ID, helping users avoid unavailable attractions. The response confirms whether the attraction is bookable on requested dates, with optional language customization. Users must provide the ID obtained from the SearchLocation API.",
+    "enhance_params_desc": {
+        "enhanced_parameters": {
+            "id": "Unique identifier for the attraction, sourced from searchLocation endpoint.",
+            "languagecode": "Language preference for the response data (e.g., 'fr' for French)."
+        }
+    },
+    "enhance_resfield_desc": {
+        "response_fields": [
+            {
+                "__typename": {
+                    "type": "String",
+                    "description": "The type name of the object, indicating it is an 'AttractionsCalendarItem'."
+                },
+                "available": {
+                    "type": "Boolean",
+                    "description": "Indicates whether the attraction or activity is available for booking on the specified date. 'false' means it is unavailable."
+                },
+                "date": {
+                    "type": "Date",
+                    "description": "The specific date for which the availability status is provided, formatted as YYYY-MM-DD."
+                }
+            }
+        ]
+    },
+    "params_desc_list": null,
+    "response_desc_list": [
+        {
+            "path_name": "$[].__typename",
+            "name": "__typename",
+            "description": "The type name of the object, indicating it is an 'AttractionsCalendarItem'."
+        },
+        {
+            "path_name": "$[].available",
+            "name": "available",
+            "description": "Indicates whether the attraction or activity is available for booking on the specified date. 'false' means it is unavailable."
+        },
+        {
+            "path_name": "$[].date",
+            "name": "date",
+            "description": "The specific date for which the availability status is provided, formatted as YYYY-MM-DD."
+        }
+    ],
+    "depends_on": [
+        {
+            "target_api_params": "id",
+            "reason": "The 'id' parameter in the target API is used to identify a specific attraction for checking availability. The source API's response includes 'id' fields for each attraction product (e.g., 'PR6K7ZswbGBs', 'PRBQwxzOgXpj'), which exactly match the requirement of the target API. This is a direct prerequisite for calling the target API, as the target API explicitly states that the id must be obtained from the SearchLocation API, which is what the source API provides.",
+            "source_jsonpath": "$.products[].id",
+            "confidence": 100,
+            "dependency_relationship": "Hard Dependency(Prerequisite API)",
+            "source_api": "Search_Attractions"
+        },
+        {
+            "target_api_params": "id",
+            "reason": "The 'id' parameter in the target API requires an attraction ID that can be retrieved from the source API's response. The source API's response includes 'id' fields within both 'products' and 'destinations' arrays, which match the description in the target API documentation. This is a direct prerequisite for calling the target API.",
+            "source_jsonpath": "$.products[*].id",
+            "confidence": 100,
+            "dependency_relationship": "Hard Dependency(Prerequisite API)",
+            "source_api": "Search_Attraction_Location"
+        },
+        {
+            "target_api_params": "id",
+            "reason": "The 'id' parameter in the target API can also be retrieved from the 'destinations' array in the source API's response. This matches the description in the target API documentation and is another direct prerequisite for calling the target API.",
+            "source_jsonpath": "$.destinations[*].id",
+            "confidence": 100,
+            "dependency_relationship": "Hard Dependency(Prerequisite API)",
+            "source_api": "Search_Attraction_Location"
+        }
+    ],
+    "verified": true
+}

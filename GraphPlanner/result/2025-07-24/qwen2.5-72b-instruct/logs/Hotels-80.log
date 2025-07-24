@@ -1,0 +1,38 @@
+2025-07-24 08:30:47,916 - evaluation_logger_Hotels-80 - INFO - Test Example Hotels-80
+2025-07-24 08:30:47,916 - evaluation_logger_Hotels-80 - INFO - Query: Our company is planning to hold a conference in New York from November 10th to November 20th, 2024. Find three pet-friendly hotels close to Times Square and check the detailed information and payment methods for these hotels.
+2025-07-24 08:32:57,327 - evaluation_logger_Hotels-80 - INFO - Start compare_single_call: 
+{'name': 'Search_Hotel_Destination', 'arguments': {'query': 'Times Square, New York'}}
+{'name': 'Search_Hotel_Destination', 'arguments': {'query': 'Times Square'}}
+2025-07-24 08:33:02,800 - evaluation_logger_Hotels-80 - DEBUG - LLM-based comparison output: {'is_equal': False, 'reason': "The query parameter in Function call 1 includes 'Times Square, New York' while Function call 2 only includes 'Times Square', which may refer to different locations without the city specification."}
+2025-07-24 08:33:02,800 - evaluation_logger_Hotels-80 - INFO - All compare method failed.
+2025-07-24 08:33:02,800 - evaluation_logger_Hotels-80 - INFO - Success matched: []
+2025-07-24 08:34:36,532 - evaluation_logger_Hotels-80 - INFO - Start compare_single_call: 
+{'name': 'Search_Hotel_Destination', 'arguments': {'query': 'Times Square, New York City'}}
+{'name': 'Search_Hotel_Destination', 'arguments': {'query': 'Times Square'}}
+2025-07-24 08:34:41,549 - evaluation_logger_Hotels-80 - DEBUG - LLM-based comparison output: {'is_equal': False, 'reason': "The query parameter in call 1 includes 'Times Square, New York City' which specifies a more precise location than call 2's 'Times Square'."}
+2025-07-24 08:34:41,549 - evaluation_logger_Hotels-80 - INFO - All compare method failed.
+2025-07-24 08:34:41,549 - evaluation_logger_Hotels-80 - INFO - Success matched: []
+2025-07-24 08:35:34,805 - evaluation_logger_Hotels-80 - INFO - Start compare_single_call: 
+{'name': 'Search_Hotel_Destination', 'arguments': {'query': 'Times Square, New York City'}}
+{'name': 'Search_Hotel_Destination', 'arguments': {'query': 'Times Square'}}
+2025-07-24 08:35:39,740 - evaluation_logger_Hotels-80 - DEBUG - LLM-based comparison output: {'is_equal': False, 'reason': "The query parameter in call 1 includes 'Times Square, New York City' which specifies a more precise location than call 2's 'Times Square'."}
+2025-07-24 08:35:39,741 - evaluation_logger_Hotels-80 - INFO - All compare method failed.
+2025-07-24 08:35:39,749 - evaluation_logger_Hotels-80 - INFO - Success matched: []
+2025-07-24 08:36:58,817 - evaluation_logger_Hotels-80 - INFO - Start compare_single_call: 
+{'name': 'Search_Hotel_Destination', 'arguments': {'query': 'Times Square, New York'}}
+{'name': 'Search_Hotel_Destination', 'arguments': {'query': 'Times Square'}}
+2025-07-24 08:37:04,233 - evaluation_logger_Hotels-80 - DEBUG - LLM-based comparison output: {'is_equal': False, 'reason': "The query parameter in Function call 1 includes 'Times Square, New York' while in Function call 2 it is only 'Times Square'. The additional location detail in Function call 1 changes the scope of the search."}
+2025-07-24 08:37:04,233 - evaluation_logger_Hotels-80 - INFO - All compare method failed.
+2025-07-24 08:37:04,233 - evaluation_logger_Hotels-80 - INFO - Success matched: []
+2025-07-24 08:38:36,981 - evaluation_logger_Hotels-80 - INFO - Start compare_single_call: 
+{'name': 'Search_Hotel_Destination', 'arguments': {'query': 'Times Square, New York'}}
+{'name': 'Search_Hotel_Destination', 'arguments': {'query': 'Times Square'}}
+2025-07-24 08:38:42,033 - evaluation_logger_Hotels-80 - DEBUG - LLM-based comparison output: {'is_equal': False, 'reason': "The query parameter in call 1 specifies 'Times Square, New York' while call 2 specifies 'Times Square', which may refer to different locations without the city specification."}
+2025-07-24 08:38:42,033 - evaluation_logger_Hotels-80 - INFO - All compare method failed.
+2025-07-24 08:38:42,042 - evaluation_logger_Hotels-80 - INFO - Success matched: []
+2025-07-24 08:40:06,598 - evaluation_logger_Hotels-80 - INFO - Start compare_single_call: 
+{'name': 'Search_Hotel_Destination', 'arguments': {'query': 'New York, NY'}}
+{'name': 'Search_Hotel_Destination', 'arguments': {'query': 'Times Square'}}
+2025-07-24 08:40:11,134 - evaluation_logger_Hotels-80 - DEBUG - LLM-based comparison output: {'is_equal': False, 'reason': "The query parameters 'New York, NY' and 'Times Square' refer to different locations."}
+2025-07-24 08:40:11,135 - evaluation_logger_Hotels-80 - INFO - All compare method failed.
+2025-07-24 08:40:11,135 - evaluation_logger_Hotels-80 - INFO - Success matched: []

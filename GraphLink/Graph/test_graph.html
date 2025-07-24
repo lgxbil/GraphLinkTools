@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>AnyChart Graph</title>
+  <script src="https://cdn.anychart.com/releases/8.11.0/js/anychart-base.min.js"></script>
+  <script src="https://cdn.anychart.com/releases/8.11.0/js/anychart-graph.min.js"></script>
+  <style>
+    html, body, #container {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+  <div id="container"></div>
+  <script>
+    fetch("anychart_data.json")
+      .then(res => res.json())
+      .then(data => {
+        anychart.onDocumentReady(function () {
+          // 创建图对象
+          var graph = anychart.graph(data);
+
+          // 可选设置
+          graph.nodes().labels().format("{%label}");
+          graph.layout("force"); // 可选：layered, force, fixed
+          graph.container("container");
+          graph.draw();
+        });
+      });
+  </script>
+</body>
+</html>

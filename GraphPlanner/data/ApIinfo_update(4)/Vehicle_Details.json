@@ -1,0 +1,281 @@
+{
+    "name": "Vehicle_Details",
+    "docs_row": {
+        "name": "Vehicle_Details",
+        "description": "Search the detail information of a car using `vehicle id`. EndPoint: /api/v1/cars/vehicleDetails",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "vehicle_id": {
+                    "type": "string",
+                    "description": "Vehicle ID. `vehicle_id` can be retrieved from `api/v1/cars/searchCarRentals`**(Search Car Rentals)** endpoint in **Car Rental** collection as `vehicle_id` inside `search_results` object."
+                },
+                "search_key": {
+                    "type": "string",
+                    "description": "`search_key` can be retrieved from `api/v1/cars/searchCarRentals`**(Search Car Rentals)** endpoint in **Car Rental** collection as `search_key`."
+                }
+            },
+            "required": [
+                "vehicle_id",
+                "search_key"
+            ]
+        }
+    },
+    "api_response_schema": {
+        "importantInfo": {
+            "items": [
+                {
+                    "text": "<b>Payment card at pick-up:</b> Credit card<br/>The main driver <b>must</b> have a credit card in th",
+                    "icon": "CREDIT_CARD"
+                }
+            ],
+            "cta": {
+                "title": "Rental terms",
+                "text": "More details"
+            },
+            "subtitle": "Security deposit, damage excess, what you'll need at pick-up, and more",
+            "title": "Important information"
+        },
+        "depots": {
+            "dropoff": {
+                "longitude": "-117.193288",
+                "latitude": "32.733964",
+                "location_id": "819878",
+                "location_type": "CAR_RENTAL_CENTRE",
+                "iataCode": "SAN",
+                "address": "3355, Admiral Boland Way, San Diego, USA, 92101",
+                "country_code": "US",
+                "name": "San Diego International Airport",
+                "id": "819878"
+            },
+            "pickup": {
+                "location_id": "819868",
+                "country": "USA - California",
+                "latitude": "37.6189",
+                "location_type": "CAR_RENTAL_CENTRE",
+                "longitude": "-122.375",
+                "country_code": "US",
+                "city": "San Francisco",
+                "iataCode": "SFO",
+                "address": "780, McDonnell Road, San Francisco, USA, 94128",
+                "name": "San Francisco International Airport",
+                "id": "819868"
+            }
+        },
+        "vehicle": {
+            "badges": {
+                "greenVehicle": "Fully electric"
+            },
+            "id": "744397816",
+            "label": "Compact car with:",
+            "freeCancellation": true,
+            "fees": {
+                "payableFees": [
+                    {
+                        "distanceUnit": "M",
+                        "alwaysPayable": true,
+                        "type": "STATE SALES TAX",
+                        "unlimited": false,
+                        "price": {
+                            "minimumAmount": 12.08,
+                            "taxIncluded": true,
+                            "maximumAmount": 12.08,
+                            "currency": "USD",
+                            "amount": 12.08
+                        },
+                        "name": "STATE SALES TAX",
+                        "displayPrice": {
+                            "taxIncluded": true,
+                            "minimumAmount": 12.08,
+                            "currency": "USD",
+                            "amount": 12.08,
+                            "maximumAmount": 12.08
+                        },
+                        "includedInPrice": true
+                    }
+                ],
+                "otherFees": [
+                    {
+                        "unlimited": false,
+                        "price": {
+                            "minimumAmount": 0,
+                            "taxIncluded": true,
+                            "maximumAmount": 0,
+                            "amount": 0,
+                            "currency": "USD"
+                        },
+                        "name": "THEFT_EXCESS",
+                        "displayPrice": {
+                            "taxIncluded": true,
+                            "minimumAmount": 0,
+                            "currency": "USD",
+                            "amount": 0,
+                            "maximumAmount": 0
+                        },
+                        "includedInPrice": false,
+                        "alwaysPayable": true,
+                        "distanceUnit": "M"
+                    }
+                ]
+            },
+            "specification": {
+                "numberOfDoors": "5",
+                "numberOfSeats": "5",
+                "mileage": "Unlimited",
+                "bigSuitcases": 1,
+                "airConditioning": true,
+                "transmission": "Automatic",
+                "smallSuitcases": 1
+            },
+            "price": {
+                "payWhen": "PAY_NOW",
+                "driveAway": {
+                    "value": 425.49,
+                    "currency": "USD"
+                },
+                "display": {
+                    "value": 239.04,
+                    "currency": "USD"
+                },
+                "base": {
+                    "currency": "INR",
+                    "value": 20103.99
+                },
+                "driveAwayPriceIsApprox": true
+            },
+            "rentalDurationInDays": 7,
+            "makeAndModel": "Kia e-Niro",
+            "carClass": "Compact"
+        },
+        "extras": [
+            {
+                "maxQuantityAvailable": 2,
+                "detail": "For small children: 9-18 kg / 20-40 lbs (about 1-3 years old)",
+                "type": "CHILD_SEAT",
+                "name": "Child seat",
+                "id": "14362889721010",
+                "price": {
+                    "perRental": {
+                        "display": {
+                            "value": 97.93,
+                            "currency": "USD"
+                        },
+                        "base": {
+                            "currency": "USD",
+                            "value": 97.93
+                        }
+                    },
+                    "prePayable": false
+                }
+            }
+        ],
+        "supplier": {
+            "rating": 7.9,
+            "locationType": "Car Rental Centre"
+        },
+        "packages": [
+            {
+                "id": "RC_EC_USA",
+                "content": {
+                    "included": "Extra Cover included",
+                    "cta": {
+                        "attach": "Read more",
+                        "remove": "Remove Extra Cover"
+                    },
+                    "description": "Your car's zero-excess policy doesn't cover every kind of damage, or the other costs you might incur",
+                    "price": {
+                        "label": "Total protection price",
+                        "priceAnnotation": {
+                            "text": "Free cancellation"
+                        },
+                        "displayPrice": "US$57.73"
+                    },
+                    "subtitle": "for peace of mind",
+                    "title": "Add insurance..."
+                }
+            }
+        ],
+        "content": {
+            "carCard": {
+                "accessibility": {
+                    "pick_up_location": "Pick-up information: Car Rental Centre",
+                    "transmission": "Automatic gearbox",
+                    "fuel_policy": "Fuel policy is: {fuel_policy}",
+                    "supplier_rating": "At this location, our customers have rated Dollar as 7.9 out of 10, Good."
+                },
+                "supplier": {
+                    "rating": {
+                        "title": "Good",
+                        "subtitle": "4,421 reviews",
+                        "localisedRating": {
+                            "rawValue": 7.9,
+                            "displayValue": "7.9"
+                        },
+                        "average": "7.9"
+                    },
+                    "name": "Dollar"
+                },
+                "badges": [
+                    {
+                        "variation": "DEFAULT",
+                        "type": "ACCENT",
+                        "text": "Fully electric"
+                    }
+                ]
+            },
+            "reviews": {
+                "title": "Reviews",
+                "supplier": {
+                    "rating": {
+                        "title": "Good",
+                        "subtitle": "4,421 reviews",
+                        "average": "7.9",
+                        "localisedRating": {
+                            "displayValue": "7.9",
+                            "rawValue": 7.9
+                        }
+                    },
+                    "name": "Dollar"
+                }
+            },
+            "carSpecification": {
+                "green": {
+                    "items": [
+                        {
+                            "text": "Charging policy: Like for like",
+                            "icon": "CAR_PLUG_IN",
+                            "details": {
+                                "title": "Charging policy:",
+                                "items": [
+                                    "The battery will be about 80% charged at pick-up. Just charge it back to the same level before drop-"
+                                ]
+                            }
+                        }
+                    ]
+                }
+            }
+        },
+        "meta": {
+            "response_code": 200
+        },
+        "metadata": {
+            "navigation": {
+                "showExtrasStep": true
+            }
+        },
+        "whatsIncluded": {
+            "title": "What's included",
+            "items": [
+                {
+                    "icon": "TICK",
+                    "text": "Third-Party Liability (TPL)"
+                }
+            ]
+        },
+        "links": {
+            "fullRentalTerms": {
+                "label": "Rental terms"
+            }
+        }
+    }
+}

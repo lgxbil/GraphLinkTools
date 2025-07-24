@@ -1,0 +1,129 @@
+{
+    "name": "Get_Description_And_Info",
+    "docs_row": {
+        "name": "Get_Description_And_Info",
+        "endpoint": "/api/v1/hotels/getDescriptionAndInfo",
+        "func_description": "Retrieve the detailed description and information for a specific hotel. ",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "hotel_id": {
+                    "type": "String",
+                    "description": "hotel_id can be retrieved from api/v1/hotels/searchHotels(Search Hotels) or api/v1/hotels/searchHotelsByCoordinates(Search Hotels By Coordinates\n) endpoint in Hotels collection.",
+                    "example_value": "5955189",
+                    "required": true
+                },
+                "languagecode": {
+                    "type": "String",
+                    "description": "To obtain the response data in a specific language, enter the languagecode. languagecode can be retrieved from api/v1/meta/getLanguages(Get Languages\n) endpoint in Meta collection.",
+                    "example_value": "en-us",
+                    "required": false
+                }
+            },
+            "required": [
+                "hotel_id"
+            ]
+        }
+    },
+    "instance": [],
+    "category": null,
+    "tool": null,
+    "api_idx": 23,
+    "params": {
+        "type": "object",
+        "properties": {
+            "hotel_id": {
+                "type": "String",
+                "description": "hotel_id can be retrieved from api/v1/hotels/searchHotels(Search Hotels) or api/v1/hotels/searchHotelsByCoordinates(Search Hotels By Coordinates\n) endpoint in Hotels collection.",
+                "example_value": "5955189",
+                "required": true
+            },
+            "languagecode": {
+                "type": "String",
+                "description": "To obtain the response data in a specific language, enter the languagecode. languagecode can be retrieved from api/v1/meta/getLanguages(Get Languages\n) endpoint in Meta collection.",
+                "example_value": "en-us",
+                "required": false
+            }
+        },
+        "required": [
+            "hotel_id"
+        ]
+    },
+    "responses": [
+        {
+            "function_name": "Get_Description_And_Info",
+            "arguments": {
+                "hotel_id": "5955189"
+            },
+            "observation": [
+                {
+                    "hotel_id": "5955189",
+                    "descriptiontype_id": 6,
+                    "description": "Situated within 3.7 km of Powai Lake and 4.3 km of Indian Institute of Technology, Bombay, FabHotel Elvis Inn - Nr Mumbai International Airport features rooms with air conditioning and a private bathroom in Mumbai. This 3-star hotel offers room service, a 24-hour front desk and free WiFi. The property is non-smoking and is located 4.4 km from Phoenix Market City Mall.\n\nAll rooms at the hotel are fitted with a seating area, a flat-screen TV with cable channels and a private bathroom with free toiletries and a shower. Guest rooms have a wardrobe.\n\nGuests at FabHotel Elvis Inn - Nr Mumbai International Airport can enjoy a continental breakfast.\n\nBombay Exhibition Centre is 8.1 km from the accommodation, while ISKCON is 8.6 km from the property. Chhatrapati Shivaji International Mumbai Airport is 3 km away.",
+                    "languagecode": "en"
+                },
+                {
+                    "descriptiontype_id": 7,
+                    "hotel_id": "5955189",
+                    "description": "Couples are welcome here. Guests on Local ID are welcome here. Foreign guests not allowed in this property.\nPlease note due to local licensing guidelines, the property is able to accept Indian nationals only. The property apologises for any inconvenience caused.",
+                    "languagecode": "en"
+                }
+            ]
+        },
+        {
+            "function_name": "Get_Description_And_Info",
+            "arguments": {
+                "hotel_id": "5955189",
+                "languagecode": "en-us"
+            },
+            "observation": [
+                {
+                    "descriptiontype_id": 6,
+                    "languagecode": "xu",
+                    "description": "Ideally set in the Powai district of Mumbai, FabHotel Elvis Inn - Nr Mumbai International Airport is located 2.3 miles from Powai Lake, 2.7 miles from Indian Institute of Technology, Bombay and 2.8 miles from Phoenix Market City Mall. This 3-star hotel offers room service, a 24-hour front desk and free WiFi. The hotel has family rooms.\n\nAt the hotel, the rooms include a closet. Complete with a private bathroom equipped with a shower and free toiletries, all rooms at FabHotel Elvis Inn - Nr Mumbai International Airport have a flat-screen TV and air conditioning, and selected rooms also feature a seating area.\n\nGuests at the accommodation can enjoy a continental breakfast.\n\nBombay Exhibition Centre is 5 miles from FabHotel Elvis Inn - Nr Mumbai International Airport, while ISKCON is 5.3 miles from the property. Chhatrapati Shivaji International Mumbai Airport is 1.9 miles away.",
+                    "hotel_id": "5955189"
+                },
+                {
+                    "languagecode": "xu",
+                    "description": "Couples are welcome here. Guests on Local ID are welcome here. Foreign guests not allowed in this property.\nPlease note due to local licensing guidelines, the property is able to accept Indian nationals only. The property apologizes for any inconvenience caused.",
+                    "hotel_id": "5955189",
+                    "descriptiontype_id": 7
+                }
+            ]
+        }
+    ],
+    "response_summary": "The FabHotel Elvis Inn, located near Mumbai International Airport, is a 3-star hotel offering comfortable accommodations with air-conditioned rooms, private bathrooms, free WiFi, and a 24-hour front desk. It is conveniently situated close to Powai Lake (3.7 km), the Indian Institute of Technology (4.3 km), and Phoenix Market City Mall (4.4 km). Guests can enjoy a continental breakfast, and each room is equipped with a seating area, flat-screen TV, and wardrobe.  \n\nHowever, the hotel has specific guest restrictions\u2014it only accepts Indian nationals and does not accommodate foreign guests due to local licensing regulations. Couples and local ID holders are welcome, but international travelers will need to seek alternative accommodations. The nearest airport, Chhatrapati Shivaji International, is just 3 km away, making it a convenient option for domestic travelers.",
+    "enhance_func_desc": "This API is ideal for travelers seeking detailed hotel information before booking. It retrieves comprehensive descriptions and amenities of a specific hotel, including room features, nearby attractions, and guest policies. Users can check restrictions (e.g., nationality requirements) and convenience factors like proximity to airports or landmarks. The hotel ID must be obtained from the SearchHotels or SearchHotelsByCoordinates API.",
+    "enhance_params_desc": {
+        "enhanced_parameters": {
+            "hotel_id": "Unique identifier for the hotel, sourced from searchHotels or searchHotelsByCoordinates endpoints.",
+            "languagecode": "Language preference for the response data (e.g., 'en-us' for English)."
+        }
+    },
+    "enhance_resfield_desc": {
+        "response_fields": [
+            {
+                "hotel_id": {
+                    "type": "String",
+                    "description": "The unique identifier for the hotel (e.g., '5955189')."
+                },
+                "descriptiontype_id": {
+                    "type": "Number",
+                    "description": "An identifier representing the type of description provided (e.g., 6 for general hotel details, 7 for guest restrictions)."
+                },
+                "description": {
+                    "type": "String",
+                    "description": "A detailed description of the hotel, including amenities, location, and guest policies. The content varies based on the descriptiontype_id."
+                },
+                "languagecode": {
+                    "type": "String",
+                    "description": "The language code (ISO 639-1) in which the description is provided (e.g., 'en' for English)."
+                }
+            }
+        ]
+    },
+    "params_desc_list": null,
+    "response_desc_list": null,
+    "depends_on": null,
+    "verified": true
+}

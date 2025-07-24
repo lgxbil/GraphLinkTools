@@ -1,0 +1,609 @@
+{
+    "name": "Booking_Summary",
+    "docs_row": {
+        "name": "Booking_Summary",
+        "endpoint": "/api/v1/cars/bookingSummary",
+        "func_description": "Retrieve a summary of the booking details for a specific vehicle. ",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "vehicle_id": {
+                    "type": "String",
+                    "description": "Vehicle ID. vehicle_id can be retrieved from api/v1/cars/searchCarRentals(Search Car Rentals) endpoint in Car Rental collection as vehicle_id inside search_results object.",
+                    "example_value": "373025711",
+                    "required": true
+                },
+                "search_key": {
+                    "type": "String",
+                    "description": "search_key can be retrieved from api/v1/cars/searchCarRentals(Search Car Rentals) endpoint in Car Rental collection as search_key.",
+                    "example_value": "eyJkcml2ZXJzQWdlIjozMCwiZHJvcE9mZkRhdGVUaW1lIjoiMjAyMy0xMS0xN1QxMDowMDowMCIsImRyb3BPZmZMb2NhdGlvbiI6IjQwLjYzOTcwMTg0MzI2MTcsLTczLjc3OTE5NzY5Mjg3MTEiLCJkcm9wT2ZmTG9jYXRpb25UeXBlIjoiTEFUTE9ORyIsInBpY2tVcERhdGVUaW1lIjoiMjAyMy0xMS0xNVQxMDowMDowMCIsInBpY2tVcExvY2F0aW9uIjoiNDAuNjM5NzAxODQzMjYxNywtNzMuNzc5MTk3NjkyODcxMSIsInBpY2tVcExvY2F0aW9uVHlwZSI6IkxBVExPTkciLCJyZW50YWxEdXJhdGlvbkluRGF5cyI6Miwic2VydmljZUZlYXR1cmVzIjpbIk5PX09QQVFVRVMiLCJTVVBSRVNTX0ZJWEVEX1BSSUNFX1ZFSElDTEVTIl19",
+                    "required": true
+                },
+                "languagecode": {
+                    "type": "String",
+                    "description": "To obtain the response data in a specific language, enter the languagecode. languagecode can be retrieved from api/v1/meta/getLanguages(Get Languages\n) endpoint in Meta collection.",
+                    "example_value": "",
+                    "required": false
+                },
+                "currency_code": {
+                    "type": "String",
+                    "description": "The currency code. currency_code can be retrieved from api/v1/meta/getCurrency(Get Currency) endpoint in Hotels collection.",
+                    "example_value": "EUR",
+                    "required": false
+                }
+            },
+            "required": [
+                "vehicle_id",
+                "search_key"
+            ]
+        }
+    },
+    "instance": [],
+    "category": null,
+    "tool": null,
+    "api_idx": 1,
+    "params": {
+        "type": "object",
+        "properties": {
+            "vehicle_id": {
+                "type": "String",
+                "description": "Vehicle ID. vehicle_id can be retrieved from api/v1/cars/searchCarRentals(Search Car Rentals) endpoint in Car Rental collection as vehicle_id inside search_results object.",
+                "example_value": "373025711",
+                "required": true
+            },
+            "search_key": {
+                "type": "String",
+                "description": "search_key can be retrieved from api/v1/cars/searchCarRentals(Search Car Rentals) endpoint in Car Rental collection as search_key.",
+                "example_value": "eyJkcml2ZXJzQWdlIjozMCwiZHJvcE9mZkRhdGVUaW1lIjoiMjAyMy0xMS0xN1QxMDowMDowMCIsImRyb3BPZmZMb2NhdGlvbiI6IjQwLjYzOTcwMTg0MzI2MTcsLTczLjc3OTE5NzY5Mjg3MTEiLCJkcm9wT2ZmTG9jYXRpb25UeXBlIjoiTEFUTE9ORyIsInBpY2tVcERhdGVUaW1lIjoiMjAyMy0xMS0xNVQxMDowMDowMCIsInBpY2tVcExvY2F0aW9uIjoiNDAuNjM5NzAxODQzMjYxNywtNzMuNzc5MTk3NjkyODcxMSIsInBpY2tVcExvY2F0aW9uVHlwZSI6IkxBVExPTkciLCJyZW50YWxEdXJhdGlvbkluRGF5cyI6Miwic2VydmljZUZlYXR1cmVzIjpbIk5PX09QQVFVRVMiLCJTVVBSRVNTX0ZJWEVEX1BSSUNFX1ZFSElDTEVTIl19",
+                "required": true
+            },
+            "languagecode": {
+                "type": "String",
+                "description": "To obtain the response data in a specific language, enter the languagecode. languagecode can be retrieved from api/v1/meta/getLanguages(Get Languages\n) endpoint in Meta collection.",
+                "example_value": "",
+                "required": false
+            },
+            "currency_code": {
+                "type": "String",
+                "description": "The currency code. currency_code can be retrieved from api/v1/meta/getCurrency(Get Currency) endpoint in Hotels collection.",
+                "example_value": "EUR",
+                "required": false
+            }
+        },
+        "required": [
+            "vehicle_id",
+            "search_key"
+        ]
+    },
+    "responses": [
+        {
+            "function_name": "Booking_Summary",
+            "arguments": {
+                "vehicle_id": "370879361",
+                "search_key": "eyJkcml2ZXJzQWdlIjozMCwiZHJvcE9mZkRhdGVUaW1lIjoiMjAyNC0xMi0wMVQxODowMDowMCIsImRyb3BPZmZMb2NhdGlvbiI6IjMyLjg5NjcwMTgxMjc0NDEsLTk3LjA0MjE5ODE4MTE1MjMiLCJkcm9wT2ZmTG9jYXRpb25UeXBlIjoiTEFUTE9ORyIsInBpY2tVcERhdGVUaW1lIjoiMjAyNC0xMS0yNVQxMjowMDowMCIsInBpY2tVcExvY2F0aW9uIjoiMzIuODk2NzAxODEyNzQ0MSwtOTcuMDQyMTk4MTgxMTUyMyIsInBpY2tVcExvY2F0aW9uVHlwZSI6IkxBVExPTkciLCJyZW50YWxEdXJhdGlvbkluRGF5cyI6Nywic2VydmljZUZlYXR1cmVzIjpbIk5PX09QQVFVRVMiLCJTVVBSRVNTX0ZJWEVEX1BSSUNFX1ZFSElDTEVTIiwiSU5DTFVERV9QUk9EVUNUX1JFTEFUSU9OU0hJUFMiLCJJTkNMVURFX0VYVFJBU19DT05UQUlOSU5HX0ZFRVMiXX0="
+            },
+            "observation": {
+                "priceInformation": {
+                    "title": "About the price",
+                    "items": [
+                        {
+                            "text": "The price in \u20b9 (INR) has been converted to show you the approximate price in US$ (USD).",
+                            "icon": "EXCHANGE"
+                        }
+                    ]
+                },
+                "footer": {
+                    "subtitle": "Total rental price",
+                    "title": "US$281.24",
+                    "cta": {
+                        "title": "Next step"
+                    }
+                },
+                "title": "Booking summary",
+                "product": {
+                    "dropOff": {
+                        "dateTime": "Sun, 01 Dec \u00b7 18:00",
+                        "name": "Dallas-Fort Worth International Airport"
+                    },
+                    "supplier": {
+                        "name": "Dollar"
+                    },
+                    "duration": "7 days",
+                    "vehicle": {
+                        "title": "Chevrolet Spark  ",
+                        "subtitle": "or similar"
+                    },
+                    "pickUp": {
+                        "dateTime": "Mon, 25 Nov \u00b7 12:00",
+                        "name": "Dallas-Fort Worth International Airport"
+                    }
+                },
+                "priceBreakdown": {
+                    "sections": [
+                        {
+                            "items": [
+                                {
+                                    "title": "Car rental price",
+                                    "price": "US$281.24"
+                                }
+                            ],
+                            "subtotal": {
+                                "primaryPrice": {
+                                    "title": "Subtotal",
+                                    "prefix": "approx.",
+                                    "price": "US$281.24"
+                                },
+                                "title": "Payable today",
+                                "secondaryPrice": "(\u20b9\u00a023,653.38)"
+                            }
+                        }
+                    ],
+                    "total": {
+                        "primaryPrice": {
+                            "price": "US$281.24",
+                            "prefix": "approx."
+                        },
+                        "subtitle": "(including any taxes, fees & extras)",
+                        "title": "Total rental price"
+                    }
+                }
+            }
+        }
+    ],
+    "response_summary": "Here\u2019s a summary of your car rental booking details: You\u2019re booking a Chevrolet Spark (or a similar vehicle) from Dollar for a duration of 7 days. The pickup is scheduled for Monday, 25th November at 12:00 from Dallas-Fort Worth International Airport, with the drop-off on Sunday, 1st December at 18:00 at the same location. \n\nThe total rental price is approximately **US$281.24** (around \u20b923,653.38), which includes all taxes, fees, and extras. The price displayed in USD is a conversion from the original INR amount for your convenience. \n\nThe breakdown shows the car rental price as **US$281.24**, which is also the subtotal and the full amount payable today. The booking summary is now ready for you to proceed to the next step.",
+    "enhance_func_desc": "This API is ideal for users finalizing their car rental bookings. It retrieves a detailed summary of the selected vehicle, including rental duration, pickup/drop-off details, and total price with taxes. The response provides a breakdown of costs, currency conversion, and essential booking information. Users must provide the vehicle ID and search key obtained from the SearchCarRentals API.",
+    "enhance_params_desc": {
+        "enhanced_parameters": {
+            "vehicle_id": "Unique identifier for the selected rental vehicle.",
+            "search_key": "Encoded search parameters including pickup/drop-off details.",
+            "languagecode": "Preferred language for the booking summary response.",
+            "currency_code": "Currency for displaying rental costs and conversions."
+        }
+    },
+    "enhance_resfield_desc": {
+        "response_fields": {
+            "priceInformation": {
+                "type": "Object",
+                "description": "Information about the price conversion and display",
+                "ob_properties": {
+                    "title": {
+                        "type": "String",
+                        "description": "Title indicating the section is about the price"
+                    },
+                    "items": {
+                        "type": "Array",
+                        "description": "List of items providing details about the price conversion",
+                        "ar_items": {
+                            "type": "Object",
+                            "description": "Details about the price conversion",
+                            "ob_properties": {
+                                "text": {
+                                    "type": "String",
+                                    "description": "Text explaining the price conversion from INR to USD"
+                                },
+                                "icon": {
+                                    "type": "String",
+                                    "description": "Icon representing the exchange or conversion"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "footer": {
+                "type": "Object",
+                "description": "Footer section containing the total rental price and call-to-action",
+                "ob_properties": {
+                    "subtitle": {
+                        "type": "String",
+                        "description": "Subtitle indicating the total rental price"
+                    },
+                    "title": {
+                        "type": "String",
+                        "description": "Total rental price in USD"
+                    },
+                    "cta": {
+                        "type": "Object",
+                        "description": "Call-to-action section",
+                        "ob_properties": {
+                            "title": {
+                                "type": "String",
+                                "description": "Text for the call-to-action button"
+                            }
+                        }
+                    }
+                }
+            },
+            "title": {
+                "type": "String",
+                "description": "Title of the booking summary section"
+            },
+            "product": {
+                "type": "Object",
+                "description": "Details about the car rental product",
+                "ob_properties": {
+                    "dropOff": {
+                        "type": "Object",
+                        "description": "Information about the drop-off location and time",
+                        "ob_properties": {
+                            "dateTime": {
+                                "type": "String",
+                                "description": "Date and time of the drop-off"
+                            },
+                            "name": {
+                                "type": "String",
+                                "description": "Name of the drop-off location"
+                            }
+                        }
+                    },
+                    "supplier": {
+                        "type": "Object",
+                        "description": "Information about the car rental supplier",
+                        "ob_properties": {
+                            "name": {
+                                "type": "String",
+                                "description": "Name of the car rental supplier"
+                            }
+                        }
+                    },
+                    "duration": {
+                        "type": "String",
+                        "description": "Duration of the car rental"
+                    },
+                    "vehicle": {
+                        "type": "Object",
+                        "description": "Information about the rented vehicle",
+                        "ob_properties": {
+                            "title": {
+                                "type": "String",
+                                "description": "Name of the rented vehicle"
+                            },
+                            "subtitle": {
+                                "type": "String",
+                                "description": "Additional information about the vehicle (e.g., 'or similar')"
+                            }
+                        }
+                    },
+                    "pickUp": {
+                        "type": "Object",
+                        "description": "Information about the pick-up location and time",
+                        "ob_properties": {
+                            "dateTime": {
+                                "type": "String",
+                                "description": "Date and time of the pick-up"
+                            },
+                            "name": {
+                                "type": "String",
+                                "description": "Name of the pick-up location"
+                            }
+                        }
+                    }
+                }
+            },
+            "priceBreakdown": {
+                "type": "Object",
+                "description": "Detailed breakdown of the rental price",
+                "ob_properties": {
+                    "sections": {
+                        "type": "Array",
+                        "description": "List of sections in the price breakdown",
+                        "ar_items": {
+                            "type": "Object",
+                            "description": "Section of the price breakdown",
+                            "ob_properties": {
+                                "items": {
+                                    "type": "Array",
+                                    "description": "List of items in the price breakdown section",
+                                    "ar_items": {
+                                        "type": "Object",
+                                        "description": "Item in the price breakdown section",
+                                        "ob_properties": {
+                                            "title": {
+                                                "type": "String",
+                                                "description": "Title of the price item (e.g., 'Car rental price')"
+                                            },
+                                            "price": {
+                                                "type": "String",
+                                                "description": "Price of the item in USD"
+                                            }
+                                        }
+                                    }
+                                },
+                                "subtotal": {
+                                    "type": "Object",
+                                    "description": "Subtotal information for the price breakdown section",
+                                    "ob_properties": {
+                                        "primaryPrice": {
+                                            "type": "Object",
+                                            "description": "Primary price information for the subtotal",
+                                            "ob_properties": {
+                                                "title": {
+                                                    "type": "String",
+                                                    "description": "Title of the primary price (e.g., 'Subtotal')"
+                                                },
+                                                "prefix": {
+                                                    "type": "String",
+                                                    "description": "Prefix for the price (e.g., 'approx.')"
+                                                },
+                                                "price": {
+                                                    "type": "String",
+                                                    "description": "Subtotal price in USD"
+                                                }
+                                            }
+                                        },
+                                        "title": {
+                                            "type": "String",
+                                            "description": "Title indicating what is payable today"
+                                        },
+                                        "secondaryPrice": {
+                                            "type": "String",
+                                            "description": "Secondary price information (e.g., price in INR)"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "total": {
+                        "type": "Object",
+                        "description": "Total rental price information",
+                        "ob_properties": {
+                            "primaryPrice": {
+                                "type": "Object",
+                                "description": "Primary price information for the total",
+                                "ob_properties": {
+                                    "price": {
+                                        "type": "String",
+                                        "description": "Total rental price in USD"
+                                    },
+                                    "prefix": {
+                                        "type": "String",
+                                        "description": "Prefix for the price (e.g., 'approx.')"
+                                    }
+                                }
+                            },
+                            "subtitle": {
+                                "type": "String",
+                                "description": "Subtitle providing additional information about the total price (e.g., 'including any taxes, fees & extras')"
+                            },
+                            "title": {
+                                "type": "String",
+                                "description": "Title indicating the total rental price"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "params_desc_list": null,
+    "response_desc_list": [
+        {
+            "path_name": "priceInformation",
+            "name": "priceInformation",
+            "description": "Information about the price conversion and display"
+        },
+        {
+            "path_name": "priceInformation.title",
+            "name": "title",
+            "description": "Title indicating the section is about the price"
+        },
+        {
+            "path_name": "priceInformation.items",
+            "name": "items",
+            "description": "List of items providing details about the price conversion"
+        },
+        {
+            "path_name": "priceInformation.items[]",
+            "name": "items[]",
+            "description": "Details about the price conversion"
+        },
+        {
+            "path_name": "priceInformation.items[].text",
+            "name": "text",
+            "description": "Text explaining the price conversion from INR to USD"
+        },
+        {
+            "path_name": "priceInformation.items[].icon",
+            "name": "icon",
+            "description": "Icon representing the exchange or conversion"
+        },
+        {
+            "path_name": "footer",
+            "name": "footer",
+            "description": "Footer section containing the total rental price and call-to-action"
+        },
+        {
+            "path_name": "footer.subtitle",
+            "name": "subtitle",
+            "description": "Subtitle indicating the total rental price"
+        },
+        {
+            "path_name": "footer.title",
+            "name": "title",
+            "description": "Total rental price in USD"
+        },
+        {
+            "path_name": "footer.cta",
+            "name": "cta",
+            "description": "Call-to-action section"
+        },
+        {
+            "path_name": "footer.cta.title",
+            "name": "title",
+            "description": "Text for the call-to-action button"
+        },
+        {
+            "path_name": "title",
+            "name": "title",
+            "description": "Title of the booking summary section"
+        },
+        {
+            "path_name": "product",
+            "name": "product",
+            "description": "Details about the car rental product"
+        },
+        {
+            "path_name": "product.dropOff",
+            "name": "dropOff",
+            "description": "Information about the drop-off location and time"
+        },
+        {
+            "path_name": "product.dropOff.dateTime",
+            "name": "dateTime",
+            "description": "Date and time of the drop-off"
+        },
+        {
+            "path_name": "product.dropOff.name",
+            "name": "name",
+            "description": "Name of the drop-off location"
+        },
+        {
+            "path_name": "product.supplier",
+            "name": "supplier",
+            "description": "Information about the car rental supplier"
+        },
+        {
+            "path_name": "product.supplier.name",
+            "name": "name",
+            "description": "Name of the car rental supplier"
+        },
+        {
+            "path_name": "product.duration",
+            "name": "duration",
+            "description": "Duration of the car rental"
+        },
+        {
+            "path_name": "product.vehicle",
+            "name": "vehicle",
+            "description": "Information about the rented vehicle"
+        },
+        {
+            "path_name": "product.vehicle.title",
+            "name": "title",
+            "description": "Name of the rented vehicle"
+        },
+        {
+            "path_name": "product.vehicle.subtitle",
+            "name": "subtitle",
+            "description": "Additional information about the vehicle (e.g., 'or similar')"
+        },
+        {
+            "path_name": "product.pickUp",
+            "name": "pickUp",
+            "description": "Information about the pick-up location and time"
+        },
+        {
+            "path_name": "product.pickUp.dateTime",
+            "name": "dateTime",
+            "description": "Date and time of the pick-up"
+        },
+        {
+            "path_name": "product.pickUp.name",
+            "name": "name",
+            "description": "Name of the pick-up location"
+        },
+        {
+            "path_name": "priceBreakdown",
+            "name": "priceBreakdown",
+            "description": "Detailed breakdown of the rental price"
+        },
+        {
+            "path_name": "priceBreakdown.sections",
+            "name": "sections",
+            "description": "List of sections in the price breakdown"
+        },
+        {
+            "path_name": "priceBreakdown.sections[]",
+            "name": "sections[]",
+            "description": "Section of the price breakdown"
+        },
+        {
+            "path_name": "priceBreakdown.sections[].items",
+            "name": "items",
+            "description": "List of items in the price breakdown section"
+        },
+        {
+            "path_name": "priceBreakdown.sections[].items[]",
+            "name": "items[]",
+            "description": "Item in the price breakdown section"
+        },
+        {
+            "path_name": "priceBreakdown.sections[].items[].title",
+            "name": "title",
+            "description": "Title of the price item (e.g., 'Car rental price')"
+        },
+        {
+            "path_name": "priceBreakdown.sections[].items[].price",
+            "name": "price",
+            "description": "Price of the item in USD"
+        },
+        {
+            "path_name": "priceBreakdown.sections[].subtotal",
+            "name": "subtotal",
+            "description": "Subtotal information for the price breakdown section"
+        },
+        {
+            "path_name": "priceBreakdown.sections[].subtotal.primaryPrice",
+            "name": "primaryPrice",
+            "description": "Primary price information for the subtotal"
+        },
+        {
+            "path_name": "priceBreakdown.sections[].subtotal.primaryPrice.title",
+            "name": "title",
+            "description": "Title of the primary price (e.g., 'Subtotal')"
+        },
+        {
+            "path_name": "priceBreakdown.sections[].subtotal.primaryPrice.prefix",
+            "name": "prefix",
+            "description": "Prefix for the price (e.g., 'approx.')"
+        },
+        {
+            "path_name": "priceBreakdown.sections[].subtotal.primaryPrice.price",
+            "name": "price",
+            "description": "Subtotal price in USD"
+        },
+        {
+            "path_name": "priceBreakdown.sections[].subtotal.title",
+            "name": "title",
+            "description": "Title indicating what is payable today"
+        },
+        {
+            "path_name": "priceBreakdown.sections[].subtotal.secondaryPrice",
+            "name": "secondaryPrice",
+            "description": "Secondary price information (e.g., price in INR)"
+        },
+        {
+            "path_name": "priceBreakdown.total",
+            "name": "total",
+            "description": "Total rental price information"
+        },
+        {
+            "path_name": "priceBreakdown.total.primaryPrice",
+            "name": "primaryPrice",
+            "description": "Primary price information for the total"
+        },
+        {
+            "path_name": "priceBreakdown.total.primaryPrice.price",
+            "name": "price",
+            "description": "Total rental price in USD"
+        },
+        {
+            "path_name": "priceBreakdown.total.primaryPrice.prefix",
+            "name": "prefix",
+            "description": "Prefix for the price (e.g., 'approx.')"
+        },
+        {
+            "path_name": "priceBreakdown.total.subtitle",
+            "name": "subtitle",
+            "description": "Subtitle providing additional information about the total price (e.g., 'including any taxes, fees & extras')"
+        },
+        {
+            "path_name": "priceBreakdown.total.title",
+            "name": "title",
+            "description": "Title indicating the total rental price"
+        }
+    ],
+    "depends_on": null,
+    "verified": true
+}

@@ -1,0 +1,525 @@
+{
+    "name": "Property_Children_Policies",
+    "docs_row": {
+        "name": "Property_Children_Policies",
+        "endpoint": "/api/v1/hotels/propertyChildrenPolicies",
+        "func_description": "Retrieve the policies related to children for a specific hotel. ",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "hotel_id": {
+                    "type": "String",
+                    "description": "hotel_id can be retrieved from api/v1/hotels/searchHotels(Search Hotels) or api/v1/hotels/searchHotelsByCoordinates(Search Hotels By Coordinates\n) endpoint in Hotels collection.",
+                    "example_value": "1377073",
+                    "required": true
+                },
+                "languagecode": {
+                    "type": "String",
+                    "description": "To obtain the response data in a specific language, enter the languagecode. languagecode can be retrieved from api/v1/meta/getLanguages(Get Languages\n) endpoint in Meta collection.",
+                    "example_value": "en-us",
+                    "required": false
+                }
+            },
+            "required": [
+                "hotel_id"
+            ]
+        }
+    },
+    "instance": [],
+    "category": null,
+    "tool": null,
+    "api_idx": 26,
+    "params": {
+        "type": "object",
+        "properties": {
+            "hotel_id": {
+                "type": "String",
+                "description": "hotel_id can be retrieved from api/v1/hotels/searchHotels(Search Hotels) or api/v1/hotels/searchHotelsByCoordinates(Search Hotels By Coordinates\n) endpoint in Hotels collection.",
+                "example_value": "1377073",
+                "required": true
+            },
+            "languagecode": {
+                "type": "String",
+                "description": "To obtain the response data in a specific language, enter the languagecode. languagecode can be retrieved from api/v1/meta/getLanguages(Get Languages\n) endpoint in Meta collection.",
+                "example_value": "en-us",
+                "required": false
+            }
+        },
+        "required": [
+            "hotel_id"
+        ]
+    },
+    "responses": [
+        {
+            "function_name": "Property_Children_Policies",
+            "arguments": {
+                "hotel_id": "1377073"
+            },
+            "observation": {
+                "clientVersion": 68,
+                "mfeId": "b-saba-child-policies-mfe/saba",
+                "trackedExperiments": [
+                    {
+                        "shouldTrack": false,
+                        "uviType": "device_id",
+                        "variant": 1,
+                        "name": "ios_sega_guaranteed_cots",
+                        "uvi": "57d11ec8bad14e119e4c15a86202c23f",
+                        "id": "2269860"
+                    }
+                ],
+                "root": {
+                    "type": "core.layout.Column",
+                    "props": {
+                        "items": [
+                            {
+                                "props": {
+                                    "margin": {
+                                        "bottom": "spacing_1x"
+                                    },
+                                    "component": {
+                                        "props": {
+                                            "text": "Child policies",
+                                            "font": "strong_2"
+                                        },
+                                        "type": "bui.Label"
+                                    }
+                                },
+                                "type": "core.Margin"
+                            },
+                            {
+                                "props": {
+                                    "items": [
+                                        {
+                                            "props": {
+                                                "margin": {
+                                                    "top": "spacing_1x"
+                                                },
+                                                "component": {
+                                                    "type": "bui.Label",
+                                                    "props": {
+                                                        "text": "Children of any age are welcome."
+                                                    }
+                                                }
+                                            },
+                                            "type": "core.Margin"
+                                        },
+                                        {
+                                            "props": {
+                                                "margin": {
+                                                    "top": "spacing_1x"
+                                                },
+                                                "component": {
+                                                    "props": {
+                                                        "font": "emphasized_2",
+                                                        "text": "To see correct prices and occupancy information, please add the number of children in your group and their ages to your search."
+                                                    },
+                                                    "type": "bui.Label"
+                                                }
+                                            },
+                                            "type": "core.Margin"
+                                        }
+                                    ]
+                                },
+                                "type": "core.layout.Column"
+                            },
+                            {
+                                "props": {
+                                    "component": {
+                                        "type": "bui.Label",
+                                        "props": {
+                                            "font": "strong_2",
+                                            "text": "Cot and extra bed policies"
+                                        }
+                                    },
+                                    "margin": {
+                                        "top": "spacing_4x",
+                                        "bottom": "spacing_2x"
+                                    }
+                                },
+                                "type": "core.Margin"
+                            }
+                        ]
+                    }
+                },
+                "serverVersion": 131
+            }
+        }
+    ],
+    "response_summary": "The API response outlines the child policies and cot/extra bed policies for a booking service. It states that children of any age are welcome, but to get accurate pricing and occupancy details, users need to specify the number of children in their group along with their ages during the search process. Additionally, the response mentions that there will be further information about cot and extra bed policies, though the specifics aren't detailed in this snippet. The layout is structured with clear headings and spacing for readability, and the response is part of a larger system tracking experiments and versions (client version 68, server version 131). A related experiment called \"ios_sega_guaranteed_cots\" is noted but marked as non-trackable in this context.",
+    "enhance_func_desc": "This API is useful for families planning hotel stays. It retrieves child policies and cot/extra bed details for a specific hotel, ensuring accurate pricing and occupancy information. Users must provide the number and ages of children during booking. The response includes policy specifics to help families make informed decisions. The hotel ID must be obtained from the SearchHotels or SearchHotelsByCoordinates API.",
+    "enhance_params_desc": {
+        "enhanced_parameters": {
+            "hotel_id": "Unique identifier for the hotel, sourced from searchHotels or searchHotelsByCoordinates.",
+            "languagecode": "Language preference for the response data (e.g., 'en-us')."
+        }
+    },
+    "enhance_resfield_desc": {
+        "response_fields": {
+            "clientVersion": {
+                "type": "Number",
+                "description": "The version number of the client making the API request."
+            },
+            "mfeId": {
+                "type": "String",
+                "description": "Identifier for the Micro Frontend (MFE) related to child policies."
+            },
+            "trackedExperiments": {
+                "type": "Array",
+                "description": "List of experiments being tracked or monitored.",
+                "ar_items": {
+                    "type": "Object",
+                    "description": "Details of an individual experiment.",
+                    "ob_properties": {
+                        "shouldTrack": {
+                            "type": "Boolean",
+                            "description": "Indicates whether the experiment should be tracked."
+                        },
+                        "uviType": {
+                            "type": "String",
+                            "description": "Type of unique visitor identifier (e.g., device_id)."
+                        },
+                        "variant": {
+                            "type": "Number",
+                            "description": "The variant number of the experiment."
+                        },
+                        "name": {
+                            "type": "String",
+                            "description": "The name of the experiment."
+                        },
+                        "uvi": {
+                            "type": "String",
+                            "description": "Unique visitor identifier for the experiment."
+                        },
+                        "id": {
+                            "type": "String",
+                            "description": "Unique identifier for the experiment."
+                        }
+                    }
+                }
+            },
+            "root": {
+                "type": "Object",
+                "description": "The root container for the layout and content of the child policies section.",
+                "ob_properties": {
+                    "type": {
+                        "type": "String",
+                        "description": "The type of the root layout component (e.g., core.layout.Column)."
+                    },
+                    "props": {
+                        "type": "Object",
+                        "description": "Properties of the root layout component.",
+                        "ob_properties": {
+                            "items": {
+                                "type": "Array",
+                                "description": "List of items/components within the root layout.",
+                                "ar_items": {
+                                    "type": "Object",
+                                    "description": "An individual item/component within the root layout.",
+                                    "ob_properties": {
+                                        "props": {
+                                            "type": "Object",
+                                            "description": "Properties of the individual item/component.",
+                                            "ob_properties": {
+                                                "margin": {
+                                                    "type": "Object",
+                                                    "description": "Margin settings for the component.",
+                                                    "ob_properties": {
+                                                        "bottom": {
+                                                            "type": "String",
+                                                            "description": "Bottom margin value (e.g., spacing_1x)."
+                                                        },
+                                                        "top": {
+                                                            "type": "String",
+                                                            "description": "Top margin value (e.g., spacing_1x, spacing_4x)."
+                                                        }
+                                                    }
+                                                },
+                                                "component": {
+                                                    "type": "Object",
+                                                    "description": "The actual component being rendered.",
+                                                    "ob_properties": {
+                                                        "type": {
+                                                            "type": "String",
+                                                            "description": "Type of the component (e.g., bui.Label)."
+                                                        },
+                                                        "props": {
+                                                            "type": "Object",
+                                                            "description": "Properties of the component.",
+                                                            "ob_properties": {
+                                                                "text": {
+                                                                    "type": "String",
+                                                                    "description": "Text content of the label component."
+                                                                },
+                                                                "font": {
+                                                                    "type": "String",
+                                                                    "description": "Font style of the label (e.g., strong_2, emphasized_2)."
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                },
+                                                "items": {
+                                                    "type": "Array",
+                                                    "description": "List of nested items/components within a column layout.",
+                                                    "ar_items": {
+                                                        "type": "Object",
+                                                        "description": "An individual nested item/component within a column layout.",
+                                                        "ob_properties": {
+                                                            "props": {
+                                                                "type": "Object",
+                                                                "description": "Properties of the nested item/component.",
+                                                                "ob_properties": {
+                                                                    "margin": {
+                                                                        "type": "Object",
+                                                                        "description": "Margin settings for the nested component.",
+                                                                        "ob_properties": {
+                                                                            "top": {
+                                                                                "type": "String",
+                                                                                "description": "Top margin value (e.g., spacing_1x)."
+                                                                            }
+                                                                        }
+                                                                    },
+                                                                    "component": {
+                                                                        "type": "Object",
+                                                                        "description": "The actual nested component being rendered.",
+                                                                        "ob_properties": {
+                                                                            "type": {
+                                                                                "type": "String",
+                                                                                "description": "Type of the nested component (e.g., bui.Label)."
+                                                                            },
+                                                                            "props": {
+                                                                                "type": "Object",
+                                                                                "description": "Properties of the nested component.",
+                                                                                "ob_properties": {
+                                                                                    "text": {
+                                                                                        "type": "String",
+                                                                                        "description": "Text content of the nested label component."
+                                                                                    },
+                                                                                    "font": {
+                                                                                        "type": "String",
+                                                                                        "description": "Font style of the nested label (e.g., emphasized_2)."
+                                                                                    }
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+                                                            },
+                                                            "type": {
+                                                                "type": "String",
+                                                                "description": "Type of the nested item/component (e.g., core.Margin)."
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "type": {
+                                            "type": "String",
+                                            "description": "Type of the item/component (e.g., core.Margin, core.layout.Column)."
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "serverVersion": {
+                "type": "Number",
+                "description": "The version number of the server responding to the API request."
+            }
+        }
+    },
+    "params_desc_list": null,
+    "response_desc_list": [
+        {
+            "path_name": "clientVersion",
+            "name": "clientVersion",
+            "description": "The version number of the client making the API request."
+        },
+        {
+            "path_name": "mfeId",
+            "name": "mfeId",
+            "description": "Identifier for the Micro Frontend (MFE) related to child policies."
+        },
+        {
+            "path_name": "trackedExperiments",
+            "name": "trackedExperiments",
+            "description": "List of experiments being tracked or monitored."
+        },
+        {
+            "path_name": "trackedExperiments[]",
+            "name": "trackedExperiments[]",
+            "description": "Details of an individual experiment."
+        },
+        {
+            "path_name": "trackedExperiments[].shouldTrack",
+            "name": "shouldTrack",
+            "description": "Indicates whether the experiment should be tracked."
+        },
+        {
+            "path_name": "trackedExperiments[].uviType",
+            "name": "uviType",
+            "description": "Type of unique visitor identifier (e.g., device_id)."
+        },
+        {
+            "path_name": "trackedExperiments[].variant",
+            "name": "variant",
+            "description": "The variant number of the experiment."
+        },
+        {
+            "path_name": "trackedExperiments[].name",
+            "name": "name",
+            "description": "The name of the experiment."
+        },
+        {
+            "path_name": "trackedExperiments[].uvi",
+            "name": "uvi",
+            "description": "Unique visitor identifier for the experiment."
+        },
+        {
+            "path_name": "trackedExperiments[].id",
+            "name": "id",
+            "description": "Unique identifier for the experiment."
+        },
+        {
+            "path_name": "root",
+            "name": "root",
+            "description": "The root container for the layout and content of the child policies section."
+        },
+        {
+            "path_name": "root.type",
+            "name": "type",
+            "description": "The type of the root layout component (e.g., core.layout.Column)."
+        },
+        {
+            "path_name": "root.props",
+            "name": "props",
+            "description": "Properties of the root layout component."
+        },
+        {
+            "path_name": "root.props.items",
+            "name": "items",
+            "description": "List of items/components within the root layout."
+        },
+        {
+            "path_name": "root.props.items[]",
+            "name": "items[]",
+            "description": "An individual item/component within the root layout."
+        },
+        {
+            "path_name": "root.props.items[].props",
+            "name": "props",
+            "description": "Properties of the individual item/component."
+        },
+        {
+            "path_name": "root.props.items[].props.margin",
+            "name": "margin",
+            "description": "Margin settings for the component."
+        },
+        {
+            "path_name": "root.props.items[].props.margin.bottom",
+            "name": "bottom",
+            "description": "Bottom margin value (e.g., spacing_1x)."
+        },
+        {
+            "path_name": "root.props.items[].props.margin.top",
+            "name": "top",
+            "description": "Top margin value (e.g., spacing_1x, spacing_4x)."
+        },
+        {
+            "path_name": "root.props.items[].props.component",
+            "name": "component",
+            "description": "The actual component being rendered."
+        },
+        {
+            "path_name": "root.props.items[].props.component.type",
+            "name": "type",
+            "description": "Type of the component (e.g., bui.Label)."
+        },
+        {
+            "path_name": "root.props.items[].props.component.props",
+            "name": "props",
+            "description": "Properties of the component."
+        },
+        {
+            "path_name": "root.props.items[].props.component.props.text",
+            "name": "text",
+            "description": "Text content of the label component."
+        },
+        {
+            "path_name": "root.props.items[].props.component.props.font",
+            "name": "font",
+            "description": "Font style of the label (e.g., strong_2, emphasized_2)."
+        },
+        {
+            "path_name": "root.props.items[].props.items",
+            "name": "items",
+            "description": "List of nested items/components within a column layout."
+        },
+        {
+            "path_name": "root.props.items[].props.items[]",
+            "name": "items[]",
+            "description": "An individual nested item/component within a column layout."
+        },
+        {
+            "path_name": "root.props.items[].props.items[].props",
+            "name": "props",
+            "description": "Properties of the nested item/component."
+        },
+        {
+            "path_name": "root.props.items[].props.items[].props.margin",
+            "name": "margin",
+            "description": "Margin settings for the nested component."
+        },
+        {
+            "path_name": "root.props.items[].props.items[].props.margin.top",
+            "name": "top",
+            "description": "Top margin value (e.g., spacing_1x)."
+        },
+        {
+            "path_name": "root.props.items[].props.items[].props.component",
+            "name": "component",
+            "description": "The actual nested component being rendered."
+        },
+        {
+            "path_name": "root.props.items[].props.items[].props.component.type",
+            "name": "type",
+            "description": "Type of the nested component (e.g., bui.Label)."
+        },
+        {
+            "path_name": "root.props.items[].props.items[].props.component.props",
+            "name": "props",
+            "description": "Properties of the nested component."
+        },
+        {
+            "path_name": "root.props.items[].props.items[].props.component.props.text",
+            "name": "text",
+            "description": "Text content of the nested label component."
+        },
+        {
+            "path_name": "root.props.items[].props.items[].props.component.props.font",
+            "name": "font",
+            "description": "Font style of the nested label (e.g., emphasized_2)."
+        },
+        {
+            "path_name": "root.props.items[].props.items[].type",
+            "name": "type",
+            "description": "Type of the nested item/component (e.g., core.Margin)."
+        },
+        {
+            "path_name": "root.props.items[].type",
+            "name": "type",
+            "description": "Type of the item/component (e.g., core.Margin, core.layout.Column)."
+        },
+        {
+            "path_name": "serverVersion",
+            "name": "serverVersion",
+            "description": "The version number of the server responding to the API request."
+        }
+    ],
+    "depends_on": null,
+    "verified": true
+}

@@ -1,0 +1,503 @@
+{
+    "name": "Location_to_Lat_Long",
+    "docs_row": {
+        "name": "Location_to_Lat_Long",
+        "endpoint": "/api/v1/meta/locationToLatLong",
+        "func_description": "Get location/address latitude and longitude. ",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "query": {
+                    "type": "String",
+                    "description": "Names of locations, apartment, address, cities, districts, places, countries, counties etc.",
+                    "example_value": "man",
+                    "required": true
+                }
+            },
+            "required": [
+                "query"
+            ]
+        }
+    },
+    "instance": [],
+    "category": null,
+    "tool": null,
+    "api_idx": 42,
+    "params": {
+        "type": "object",
+        "properties": {
+            "query": {
+                "type": "String",
+                "description": "Names of locations, apartment, address, cities, districts, places, countries, counties etc.",
+                "example_value": "man",
+                "required": true
+            }
+        },
+        "required": [
+            "query"
+        ]
+    },
+    "responses": [
+        {
+            "function_name": "Location_to_Lat_Long",
+            "arguments": {
+                "query": "Empire State Building, New York"
+            },
+            "observation": [
+                {
+                    "business_status": "OPERATIONAL",
+                    "formatted_address": "20 W 34th St., New York, NY 10001, United States",
+                    "geometry": {
+                        "location": {
+                            "lat": 40.7484405,
+                            "lng": -73.98566439999999
+                        },
+                        "viewport": {
+                            "northeast": {
+                                "lat": 40.74988942989271,
+                                "lng": -73.98404672010727
+                            },
+                            "southwest": {
+                                "lat": 40.74718977010727,
+                                "lng": -73.98674637989271
+                            }
+                        }
+                    },
+                    "name": "Empire State Building",
+                    "opening_hours": {
+                        "open_now": false
+                    },
+                    "photos": [
+                        {
+                            "height": 712,
+                            "html_attributions": [
+                                "<a href=\"https://maps.google.com/maps/contrib/108269597694188548544\">_Elisa</a>"
+                            ],
+                            "photo_reference": "AXQCQNQAU76Lwu-WqpEGwT2a-g9DfA0DONEhv54kglGd_2OsKzWdBS2zNwzmsbiDPgF_nvujO1QfLATCOHYN3eDyjUdVzZNhGv6sTQ9DOrOXbfWvY87n_BVTzorJLHfABlDYE0yTXn6yYSKTPUZUdU6u-KXB060utlMPakMVSSbaa2L16VHhfwEkig6ZJYRsaimdntXJTHNaCqftubxA-XVgTiiddtjEUTqy-PXgoYiYX252JPgGNkym0lCdQ7sh0hasZeJeJRBXbdda7q-5Wqd829gCRtoJw-ewJcJGfzyROEqAqRC9ZiH5pf23B_yfb8u0Irt13SYa29zmCYHp_UtmYymnxZTPQvzrRutaAEvEBvLVwncNJ1BorBI-nCqMrAdvsBR_IVPk_5y6_TPpVWJ78Y4Nt9Eg0tvByMetts60UDSdZbUCFONutiyZJ6gIB-38MlgScdmVO-U18noTcvxuAr-fNc6SF8MrwJXGv0Wt5O45ap6oO2ZOl_2_6fzsM75IMP6hVJXY9AQP9K7XOsXWMlxlcbsg9RLWUaXJBD96pRERvtrfRHU-NC2ZJ1sKibEJkxbfOj8k",
+                            "width": 1080
+                        }
+                    ],
+                    "place_id": "ChIJaXQRs6lZwokRY6EFpJnhNNE",
+                    "plus_code": {
+                        "compound_code": "P2X7+9P New York, USA",
+                        "global_code": "87G8P2X7+9P"
+                    },
+                    "rating": 4.7,
+                    "reference": "ChIJaXQRs6lZwokRY6EFpJnhNNE",
+                    "types": [
+                        "tourist_attraction",
+                        "museum",
+                        "point_of_interest"
+                    ],
+                    "user_ratings_total": 115461
+                }
+            ]
+        },
+        {
+            "function_name": "Location_to_Lat_Long",
+            "arguments": {
+                "query": "Empire State Building, New York"
+            },
+            "observation": [
+                {
+                    "business_status": "OPERATIONAL",
+                    "formatted_address": "20 W 34th St., New York, NY 10001, United States",
+                    "geometry": {
+                        "location": {
+                            "lat": 40.7484405,
+                            "lng": -73.98566439999999
+                        },
+                        "viewport": {
+                            "northeast": {
+                                "lat": 40.74988942989271,
+                                "lng": -73.98404672010727
+                            },
+                            "southwest": {
+                                "lat": 40.74718977010727,
+                                "lng": -73.98674637989271
+                            }
+                        }
+                    },
+                    "name": "Empire State Building",
+                    "opening_hours": {
+                        "open_now": false
+                    },
+                    "photos": [
+                        {
+                            "height": 712,
+                            "html_attributions": [
+                                "<a href=\"https://maps.google.com/maps/contrib/108269597694188548544\">_Elisa</a>"
+                            ],
+                            "photo_reference": "AXQCQNQSY6ct5i8vBJiGQh4vrLtwAPoaTTo_VtCuiK9HoXUBV7n2WnBtOoqEzbQakE0uUtxePQUIzTmqjJvhwsK0dUCGDMVLXXu2j2plR3FqV6Wa8CNYRotdA_dlyjEZeEGWEbCQ-fNhQr-tHd39qYZ7fzgbCo_rA1ZEIHgdKRxGVSyOFyYRRWlMVQLL6X43Dj5TXlkyDU0AJohLiCjuxJ_NVt3qKGrQdIF0AFi6KcfdMjOpjjcFCKYd4yhamTGgGDc4e1BJNnDo7beUWcUGrMmksMtdSfwZAi0tih2XojcX_UOohqLt2k2wf10ppWT-atsnCTO-5PHXwvaTapZjS7KDHeXZWzpMGq-o7dX8GXX36ZFRBnF-sMV1TqQRxgGXrIk198mV8hP6LoqM-NL9adHR8CIS3VS2eFJehWUJ5MyQYolLeE4AurKgp5aLVhYcTf2eNG5SQ9PqqpeWwbunR5EtARHITY_OGStvy_Y9u3n8k3tYk6JzRM2Qv4sB3TixkEpIJr5Rf92A5Q_BY68sLQkrKDc_4GrH6-W1FlKxPhy1b_r9K3A9nQCLJCAbtEAO55jNAmCrWU-w",
+                            "width": 1080
+                        }
+                    ],
+                    "place_id": "ChIJaXQRs6lZwokRY6EFpJnhNNE",
+                    "plus_code": {
+                        "compound_code": "P2X7+9P New York",
+                        "global_code": "87G8P2X7+9P"
+                    },
+                    "rating": 4.7,
+                    "reference": "ChIJaXQRs6lZwokRY6EFpJnhNNE",
+                    "types": [
+                        "tourist_attraction",
+                        "museum",
+                        "point_of_interest"
+                    ],
+                    "user_ratings_total": 115461
+                }
+            ]
+        }
+    ],
+    "response_summary": "The Empire State Building, located at 20 W 34th St. in New York, NY, is currently operational and stands as a prominent tourist attraction, museum, and point of interest. It boasts a high rating of 4.7 stars from over 115,000 reviews, reflecting its popularity among visitors. The building's coordinates are 40.7484405 latitude and -73.9856644 longitude, with a broad viewport that spans the surrounding area. Although it is not open at the moment, the location is easily identifiable with its plus code \"P2X7+9P New York, USA.\" A photo taken by a contributor named Elisa showcases the building's grandeur, adding to its visual appeal. The Empire State Building remains an iconic landmark in the heart of New York City.",
+    "enhance_func_desc": "This API is ideal for mapping and navigation applications. It converts location names, addresses, or places into precise latitude and longitude coordinates. Users can input various location types (cities, landmarks, etc.) and receive detailed geographic data including viewport boundaries and plus codes. The response also includes operational status, ratings, and photos if available, enhancing location-based services. The query parameter is mandatory for accurate results.",
+    "enhance_params_desc": {
+        "enhanced_parameters": {
+            "query": "Input location name, address, or place to retrieve precise geographic coordinates and details."
+        }
+    },
+    "enhance_resfield_desc": {
+        "response_fields": [
+            {
+                "business_status": {
+                    "type": "String",
+                    "description": "Indicates the operational status of the business (e.g., 'OPERATIONAL')."
+                },
+                "formatted_address": {
+                    "type": "String",
+                    "description": "The full address of the location, formatted for display (e.g., '20 W 34th St., New York, NY 10001, United States')."
+                },
+                "geometry": {
+                    "type": "Object",
+                    "description": "Contains geographical information about the location.",
+                    "ob_properties": {
+                        "location": {
+                            "type": "Object",
+                            "description": "The latitude and longitude coordinates of the location.",
+                            "ob_properties": {
+                                "lat": {
+                                    "type": "Number",
+                                    "description": "The latitude coordinate of the location (e.g., 40.7484405)."
+                                },
+                                "lng": {
+                                    "type": "Number",
+                                    "description": "The longitude coordinate of the location (e.g., -73.98566439999999)."
+                                }
+                            }
+                        },
+                        "viewport": {
+                            "type": "Object",
+                            "description": "The viewport defining the visible area around the location.",
+                            "ob_properties": {
+                                "northeast": {
+                                    "type": "Object",
+                                    "description": "The northeast corner of the viewport.",
+                                    "ob_properties": {
+                                        "lat": {
+                                            "type": "Number",
+                                            "description": "The latitude of the northeast corner (e.g., 40.74988942989271)."
+                                        },
+                                        "lng": {
+                                            "type": "Number",
+                                            "description": "The longitude of the northeast corner (e.g., -73.98404672010727)."
+                                        }
+                                    }
+                                },
+                                "southwest": {
+                                    "type": "Object",
+                                    "description": "The southwest corner of the viewport.",
+                                    "ob_properties": {
+                                        "lat": {
+                                            "type": "Number",
+                                            "description": "The latitude of the southwest corner (e.g., 40.74718977010727)."
+                                        },
+                                        "lng": {
+                                            "type": "Number",
+                                            "description": "The longitude of the southwest corner (e.g., -73.98674637989271)."
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "name": {
+                    "type": "String",
+                    "description": "The name of the location (e.g., 'Empire State Building')."
+                },
+                "opening_hours": {
+                    "type": "Object",
+                    "description": "Information about the opening hours of the location.",
+                    "ob_properties": {
+                        "open_now": {
+                            "type": "Boolean",
+                            "description": "Indicates whether the location is currently open (e.g., false)."
+                        }
+                    }
+                },
+                "photos": {
+                    "type": "Array",
+                    "description": "A list of photos associated with the location.",
+                    "ar_items": {
+                        "type": "Object",
+                        "description": "An object representing a photo of the location.",
+                        "ob_properties": {
+                            "height": {
+                                "type": "Number",
+                                "description": "The height of the photo in pixels (e.g., 712)."
+                            },
+                            "html_attributions": {
+                                "type": "Array",
+                                "description": "A list of HTML attributions for the photo.",
+                                "ar_items": {
+                                    "type": "String",
+                                    "description": "An HTML string attributing the photo to a contributor (e.g., '<a href=\"https://maps.google.com/maps/contrib/108269597694188548544\">_Elisa</a>')."
+                                }
+                            },
+                            "photo_reference": {
+                                "type": "String",
+                                "description": "A unique identifier for the photo (e.g., 'AXQCQNQAU76Lwu-WqpEGwT2a-g9DfA0DONEhv54kglGd_2OsKzWdBS2zNwzmsbiDPgF_nvujO1QfLATCOHYN3eDyjUdVzZNhGv6sTQ9DOrOXbfWvY87n_BVTzorJLHfABlDYE0yTXn6yYSKTPUZUdU6u-KXB060utlMPakMVSSbaa2L16VHhfwEkig6ZJYRsaimdntXJTHNaCqftubxA-XVgTiiddtjEUTqy-PXgoYiYX252JPgGNkym0lCdQ7sh0hasZeJeJRBXbdda7q-5Wqd829gCRtoJw-ewJcJGfzyROEqAqRC9ZiH5pf23B_yfb8u0Irt13SYa29zmCYHp_UtmYymnxZTPQvzrRutaAEvEBvLVwncNJ1BorBI-nCqMrAdvsBR_IVPk_5y6_TPpVWJ78Y4Nt9Eg0tvByMetts60UDSdZbUCFONutiyZJ6gIB-38MlgScdmVO-U18noTcvxuAr-fNc6SF8MrwJXGv0Wt5O45ap6oO2ZOl_2_6fzsM75IMP6hVJXY9AQP9K7XOsXWMlxlcbsg9RLWUaXJBD96pRERvtrfRHU-NC2ZJ1sKibEJkxbfOj8k')."
+                            },
+                            "width": {
+                                "type": "Number",
+                                "description": "The width of the photo in pixels (e.g., 1080)."
+                            }
+                        }
+                    }
+                },
+                "place_id": {
+                    "type": "String",
+                    "description": "A unique identifier for the place (e.g., 'ChIJaXQRs6lZwokRY6EFpJnhNNE')."
+                },
+                "plus_code": {
+                    "type": "Object",
+                    "description": "The Plus Code representation of the location's address.",
+                    "ob_properties": {
+                        "compound_code": {
+                            "type": "String",
+                            "description": "The local compound code (e.g., 'P2X7+9P New York, USA')."
+                        },
+                        "global_code": {
+                            "type": "String",
+                            "description": "The global code (e.g., '87G8P2X7+9P')."
+                        }
+                    }
+                },
+                "rating": {
+                    "type": "Number",
+                    "description": "The average rating of the location (e.g., 4.7)."
+                },
+                "reference": {
+                    "type": "String",
+                    "description": "A reference string for the place (e.g., 'ChIJaXQRs6lZwokRY6EFpJnhNNE')."
+                },
+                "types": {
+                    "type": "Array",
+                    "description": "A list of categories that describe the location.",
+                    "ar_items": {
+                        "type": "String",
+                        "description": "A category describing the location (e.g., 'tourist_attraction', 'museum', 'point_of_interest')."
+                    }
+                },
+                "user_ratings_total": {
+                    "type": "Number",
+                    "description": "The total number of user ratings for the location (e.g., 115461)."
+                }
+            }
+        ]
+    },
+    "params_desc_list": null,
+    "response_desc_list": [
+        {
+            "path_name": "$[].business_status",
+            "name": "business_status",
+            "description": "Indicates the operational status of the business (e.g., 'OPERATIONAL')."
+        },
+        {
+            "path_name": "$[].formatted_address",
+            "name": "formatted_address",
+            "description": "The full address of the location, formatted for display (e.g., '20 W 34th St., New York, NY 10001, United States')."
+        },
+        {
+            "path_name": "$[].geometry",
+            "name": "geometry",
+            "description": "Contains geographical information about the location."
+        },
+        {
+            "path_name": "$[].geometry.location",
+            "name": "location",
+            "description": "The latitude and longitude coordinates of the location."
+        },
+        {
+            "path_name": "$[].geometry.location.lat",
+            "name": "lat",
+            "description": "The latitude coordinate of the location (e.g., 40.7484405)."
+        },
+        {
+            "path_name": "$[].geometry.location.lng",
+            "name": "lng",
+            "description": "The longitude coordinate of the location (e.g., -73.98566439999999)."
+        },
+        {
+            "path_name": "$[].geometry.viewport",
+            "name": "viewport",
+            "description": "The viewport defining the visible area around the location."
+        },
+        {
+            "path_name": "$[].geometry.viewport.northeast",
+            "name": "northeast",
+            "description": "The northeast corner of the viewport."
+        },
+        {
+            "path_name": "$[].geometry.viewport.northeast.lat",
+            "name": "lat",
+            "description": "The latitude of the northeast corner (e.g., 40.74988942989271)."
+        },
+        {
+            "path_name": "$[].geometry.viewport.northeast.lng",
+            "name": "lng",
+            "description": "The longitude of the northeast corner (e.g., -73.98404672010727)."
+        },
+        {
+            "path_name": "$[].geometry.viewport.southwest",
+            "name": "southwest",
+            "description": "The southwest corner of the viewport."
+        },
+        {
+            "path_name": "$[].geometry.viewport.southwest.lat",
+            "name": "lat",
+            "description": "The latitude of the southwest corner (e.g., 40.74718977010727)."
+        },
+        {
+            "path_name": "$[].geometry.viewport.southwest.lng",
+            "name": "lng",
+            "description": "The longitude of the southwest corner (e.g., -73.98674637989271)."
+        },
+        {
+            "path_name": "$[].name",
+            "name": "name",
+            "description": "The name of the location (e.g., 'Empire State Building')."
+        },
+        {
+            "path_name": "$[].opening_hours",
+            "name": "opening_hours",
+            "description": "Information about the opening hours of the location."
+        },
+        {
+            "path_name": "$[].opening_hours.open_now",
+            "name": "open_now",
+            "description": "Indicates whether the location is currently open (e.g., false)."
+        },
+        {
+            "path_name": "$[].photos",
+            "name": "photos",
+            "description": "A list of photos associated with the location."
+        },
+        {
+            "path_name": "$[].photos[]",
+            "name": "photos[]",
+            "description": "An object representing a photo of the location."
+        },
+        {
+            "path_name": "$[].photos[].height",
+            "name": "height",
+            "description": "The height of the photo in pixels (e.g., 712)."
+        },
+        {
+            "path_name": "$[].photos[].html_attributions",
+            "name": "html_attributions",
+            "description": "A list of HTML attributions for the photo."
+        },
+        {
+            "path_name": "$[].photos[].html_attributions[]",
+            "name": "html_attributions[]",
+            "description": "An HTML string attributing the photo to a contributor (e.g., '<a href=\"https://maps.google.com/maps/contrib/108269597694188548544\">_Elisa</a>')."
+        },
+        {
+            "path_name": "$[].photos[].photo_reference",
+            "name": "photo_reference",
+            "description": "A unique identifier for the photo (e.g., 'AXQCQNQAU76Lwu-WqpEGwT2a-g9DfA0DONEhv54kglGd_2OsKzWdBS2zNwzmsbiDPgF_nvujO1QfLATCOHYN3eDyjUdVzZNhGv6sTQ9DOrOXbfWvY87n_BVTzorJLHfABlDYE0yTXn6yYSKTPUZUdU6u-KXB060utlMPakMVSSbaa2L16VHhfwEkig6ZJYRsaimdntXJTHNaCqftubxA-XVgTiiddtjEUTqy-PXgoYiYX252JPgGNkym0lCdQ7sh0hasZeJeJRBXbdda7q-5Wqd829gCRtoJw-ewJcJGfzyROEqAqRC9ZiH5pf23B_yfb8u0Irt13SYa29zmCYHp_UtmYymnxZTPQvzrRutaAEvEBvLVwncNJ1BorBI-nCqMrAdvsBR_IVPk_5y6_TPpVWJ78Y4Nt9Eg0tvByMetts60UDSdZbUCFONutiyZJ6gIB-38MlgScdmVO-U18noTcvxuAr-fNc6SF8MrwJXGv0Wt5O45ap6oO2ZOl_2_6fzsM75IMP6hVJXY9AQP9K7XOsXWMlxlcbsg9RLWUaXJBD96pRERvtrfRHU-NC2ZJ1sKibEJkxbfOj8k')."
+        },
+        {
+            "path_name": "$[].photos[].width",
+            "name": "width",
+            "description": "The width of the photo in pixels (e.g., 1080)."
+        },
+        {
+            "path_name": "$[].place_id",
+            "name": "place_id",
+            "description": "A unique identifier for the place (e.g., 'ChIJaXQRs6lZwokRY6EFpJnhNNE')."
+        },
+        {
+            "path_name": "$[].plus_code",
+            "name": "plus_code",
+            "description": "The Plus Code representation of the location's address."
+        },
+        {
+            "path_name": "$[].plus_code.compound_code",
+            "name": "compound_code",
+            "description": "The local compound code (e.g., 'P2X7+9P New York, USA')."
+        },
+        {
+            "path_name": "$[].plus_code.global_code",
+            "name": "global_code",
+            "description": "The global code (e.g., '87G8P2X7+9P')."
+        },
+        {
+            "path_name": "$[].rating",
+            "name": "rating",
+            "description": "The average rating of the location (e.g., 4.7)."
+        },
+        {
+            "path_name": "$[].reference",
+            "name": "reference",
+            "description": "A reference string for the place (e.g., 'ChIJaXQRs6lZwokRY6EFpJnhNNE')."
+        },
+        {
+            "path_name": "$[].types",
+            "name": "types",
+            "description": "A list of categories that describe the location."
+        },
+        {
+            "path_name": "$[].types[]",
+            "name": "types[]",
+            "description": "A category describing the location (e.g., 'tourist_attraction', 'museum', 'point_of_interest')."
+        },
+        {
+            "path_name": "$[].user_ratings_total",
+            "name": "user_ratings_total",
+            "description": "The total number of user ratings for the location (e.g., 115461)."
+        }
+    ],
+    "depends_on": [
+        {
+            "source_api_name": "Search_Attractions",
+            "dependence_type": "Soft Dependency",
+            "depencend_field": "$.filterOptions.ufiFilters[*].name",
+            "param_name": "query",
+            "reason": "There is a clear business association between the 'Search_Attractions' API and the 'Location_to_Lat_Long' API, as both deal with location-based information. The 'filterOptions.ufiFilters[].name' field from 'Search_Attractions' provides location names (like 'Mumbai' and 'Andheri') that can serve as valid input for the 'query' parameter in 'Location_to_Lat_Long', which expects location names, addresses, or places. The data types match (both are Strings), and the example values demonstrate that the field contains appropriate location information for the target API."
+        },
+        {
+            "source_api_name": "Search_Flight_Location",
+            "dependence_type": "Soft Dependency",
+            "depencend_field": "$[*].name",
+            "param_name": "query",
+            "reason": "There is a clear business association between the 'Search_Flight_Location' API and the 'Location_to_Lat_Long' API, as both deal with location information. The 'name' field from the 'Search_Flight_Location' API response can serve as a valid input for the 'query' parameter of the 'Location_to_Lat_Long' API. The data type matches (both are strings), and the example values ('New York', 'John F. Kennedy International Airport') are exactly the type of location names expected by the 'query' parameter. This represents a soft dependency as the flight location API isn't strictly required for the geocoding API but provides useful input for a common workflow."
+        },
+        {
+            "source_api_name": "Car_Search",
+            "dependence_type": "Soft Dependency",
+            "depencend_field": "$.search_results[*].route_info.dropoff.address",
+            "param_name": "query",
+            "reason": "There is a business association between the 'Car_Search' API and the 'Location_to_Lat_Long' API, as the drop-off address from car rental searches can be used to obtain precise geographic coordinates for mapping and navigation purposes. The 'route_info.dropoff.address' field from 'Car_Search' contains location information that matches the 'query' parameter requirement of the 'Location_to_Lat_Long' API. The data type is also compatible as both expect string values representing location names or addresses."
+        },
+        {
+            "source_api_name": "Car_Search",
+            "dependence_type": "Soft Dependency",
+            "depencend_field": "$.search_results[*].route_info.pickup.address",
+            "param_name": "query",
+            "reason": "There is a business association between the Car_Search API and the Location_to_Lat_Long API, as the pickup address from car rental searches can be used as input to obtain precise geographic coordinates. The 'pickup.address' field from the Car_Search API contains the location information needed for the 'query' parameter of the Location_to_Lat_Long API. Both fields are of type String, and the example value shows a complete address that matches the expected input format for the query parameter."
+        }
+    ],
+    "verified": true
+}

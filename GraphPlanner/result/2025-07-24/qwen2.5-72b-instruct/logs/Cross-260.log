@@ -1,0 +1,32 @@
+2025-07-24 06:23:14,982 - evaluation_logger_Cross-260 - INFO - Test Example Cross-260
+2025-07-24 06:23:14,982 - evaluation_logger_Cross-260 - INFO - Query: I'm traveling to Amsterdam on November 22, 2024. Find the cheapest flight from Taipei. Besides that, arrange a taxi to pick me up from the airport two hours after my flight lands and take me to the Van Gogh Museum for a visit.
+2025-07-24 06:24:41,599 - evaluation_logger_Cross-260 - INFO - Start compare_single_call: 
+{'name': 'Search_Flight_Location', 'arguments': {'query': 'Taipei'}}
+{'name': 'Search_Flight_Location', 'arguments': {'query': 'Taipei'}}
+2025-07-24 06:24:41,600 - evaluation_logger_Cross-260 - INFO - Rule-based compare success.
+2025-07-24 06:24:41,600 - evaluation_logger_Cross-260 - INFO - Success matched: [{'name': 'Search_Flight_Location', 'arguments': {'query': 'Taipei'}}]
+2025-07-24 06:24:41,601 - evaluation_logger_Cross-260 - INFO - Start compare_single_call: 
+{'name': 'Search_Flight_Location', 'arguments': {'query': 'Amsterdam'}}
+{'name': 'Search_Flight_Location', 'arguments': {'query': 'Amsterdam'}}
+2025-07-24 06:24:41,601 - evaluation_logger_Cross-260 - INFO - Rule-based compare success.
+2025-07-24 06:24:41,601 - evaluation_logger_Cross-260 - INFO - Success matched: [{'name': 'Search_Flight_Location', 'arguments': {'query': 'Amsterdam'}}]
+2025-07-24 06:24:41,602 - evaluation_logger_Cross-260 - INFO - Start compare_single_call: 
+{'name': 'Search_Flights', 'arguments': {'departDate': '2024-11-22', 'fromId': 'TPE.CITY', 'sort': 'CHEAPEST', 'toId': 'AMS.AIRPORT'}}
+{'name': 'Search_Flights', 'arguments': {'departDate': '2024-11-22', 'fromId': 'TPE.CITY', 'sort': 'CHEAPEST', 'toId': 'AMS.AIRPORT'}}
+2025-07-24 06:24:41,602 - evaluation_logger_Cross-260 - INFO - Rule-based compare success.
+2025-07-24 06:24:41,602 - evaluation_logger_Cross-260 - INFO - Success matched: [{'name': 'Search_Flights', 'arguments': {'departDate': '2024-11-22', 'fromId': 'TPE.CITY', 'sort': 'CHEAPEST', 'toId': 'AMS.AIRPORT'}}]
+2025-07-24 06:24:41,603 - evaluation_logger_Cross-260 - INFO - Start compare_single_call: 
+{'name': 'Taxi_Search_Location', 'arguments': {'query': 'Schiphol Airport'}}
+{'name': 'Taxi_Search_Location', 'arguments': {'query': 'Schiphol Airport'}}
+2025-07-24 06:24:41,603 - evaluation_logger_Cross-260 - INFO - Rule-based compare success.
+2025-07-24 06:24:41,603 - evaluation_logger_Cross-260 - INFO - Success matched: [{'name': 'Taxi_Search_Location', 'arguments': {'query': 'Schiphol Airport'}}]
+2025-07-24 06:24:41,604 - evaluation_logger_Cross-260 - INFO - Start compare_single_call: 
+{'name': 'Taxi_Search_Location', 'arguments': {'query': 'Van Gogh Museum'}}
+{'name': 'Taxi_Search_Location', 'arguments': {'query': 'Van Gogh Museum'}}
+2025-07-24 06:24:41,604 - evaluation_logger_Cross-260 - INFO - Rule-based compare success.
+2025-07-24 06:24:41,604 - evaluation_logger_Cross-260 - INFO - Success matched: [{'name': 'Taxi_Search_Location', 'arguments': {'query': 'Van Gogh Museum'}}]
+2025-07-24 06:24:41,605 - evaluation_logger_Cross-260 - INFO - Start compare_single_call: 
+{'name': 'Search_Taxi', 'arguments': {'drop_off_place_id': 'ChIJX1rTlu8JxkcRGsV8-a4oKMI', 'pick_up_date': '2024-11-23', 'pick_up_place_id': 'ChIJLRb94DThxUcRiPHO8YMV1cc', 'pick_up_time': '19:30'}}
+{'name': 'Search_Taxi', 'arguments': {'drop_off_place_id': 'ChIJX1rTlu8JxkcRGsV8-a4oKMI', 'pick_up_date': '2024-11-23', 'pick_up_place_id': 'ChIJLRb94DThxUcRiPHO8YMV1cc', 'pick_up_time': '19:30'}}
+2025-07-24 06:24:41,605 - evaluation_logger_Cross-260 - INFO - Rule-based compare success.
+2025-07-24 06:24:41,605 - evaluation_logger_Cross-260 - INFO - Success matched: [{'name': 'Search_Taxi', 'arguments': {'drop_off_place_id': 'ChIJX1rTlu8JxkcRGsV8-a4oKMI', 'pick_up_date': '2024-11-23', 'pick_up_place_id': 'ChIJLRb94DThxUcRiPHO8YMV1cc', 'pick_up_time': '19:30'}}]

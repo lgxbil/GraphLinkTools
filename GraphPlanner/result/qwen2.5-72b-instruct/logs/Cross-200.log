@@ -1,0 +1,32 @@
+2025-07-22 04:45:17,265 - evaluation_logger_Cross-200 - INFO - Test Example Cross-200
+2025-07-22 04:45:17,265 - evaluation_logger_Cross-200 - INFO - Query: I'm flying to London for a three-day business trip on November 18, 2024. After my work is done, I'll travel to a nearby city for two days of fun. When the vacation is over, I'll fly back to Berlin directly from there. Could you look up multi-stop flights that fit my needs?
+2025-07-22 04:46:44,074 - evaluation_logger_Cross-200 - INFO - Start compare_single_call: 
+{'name': 'Search_Flight_Location', 'arguments': {'query': 'Berlin'}}
+{'name': 'Search_Flight_Location', 'arguments': {'query': 'Berlin'}}
+2025-07-22 04:46:44,075 - evaluation_logger_Cross-200 - INFO - Rule-based compare success.
+2025-07-22 04:46:44,075 - evaluation_logger_Cross-200 - INFO - Success matched: [{'name': 'Search_Flight_Location', 'arguments': {'query': 'Berlin'}}]
+2025-07-22 04:46:44,076 - evaluation_logger_Cross-200 - INFO - Start compare_single_call: 
+{'name': 'Search_Flight_Location', 'arguments': {'query': 'London'}}
+{'name': 'Search_Flight_Location', 'arguments': {'query': 'London'}}
+2025-07-22 04:46:44,076 - evaluation_logger_Cross-200 - INFO - Rule-based compare success.
+2025-07-22 04:46:44,076 - evaluation_logger_Cross-200 - INFO - Success matched: [{'name': 'Search_Flight_Location', 'arguments': {'query': 'London'}}]
+2025-07-22 04:46:44,079 - evaluation_logger_Cross-200 - INFO - Start compare_single_call: 
+{'name': 'Location_to_Lat_Long', 'arguments': {'query': 'London'}}
+{'name': 'Location_to_Lat_Long', 'arguments': {'query': 'London'}}
+2025-07-22 04:46:44,079 - evaluation_logger_Cross-200 - INFO - Rule-based compare success.
+2025-07-22 04:46:44,079 - evaluation_logger_Cross-200 - INFO - Success matched: [{'name': 'Location_to_Lat_Long', 'arguments': {'query': 'London'}}]
+2025-07-22 04:46:44,080 - evaluation_logger_Cross-200 - INFO - Start compare_single_call: 
+{'name': 'Get_Nearby_Cities', 'arguments': {'latitude': '51.5072178', 'longitude': '-0.1275862'}}
+{'name': 'Get_Nearby_Cities', 'arguments': {'latitude': '51.5072178', 'longitude': '-0.1275862'}}
+2025-07-22 04:46:44,080 - evaluation_logger_Cross-200 - INFO - Rule-based compare success.
+2025-07-22 04:46:44,080 - evaluation_logger_Cross-200 - INFO - Success matched: [{'name': 'Get_Nearby_Cities', 'arguments': {'latitude': '51.5072178', 'longitude': '-0.1275862'}}]
+2025-07-22 04:46:44,081 - evaluation_logger_Cross-200 - INFO - Start compare_single_call: 
+{'name': 'Search_Flight_Location', 'arguments': {'query': 'Birmingham'}}
+{'name': 'Search_Flight_Location', 'arguments': {'query': 'Birmingham'}}
+2025-07-22 04:46:44,081 - evaluation_logger_Cross-200 - INFO - Rule-based compare success.
+2025-07-22 04:46:44,081 - evaluation_logger_Cross-200 - INFO - Success matched: [{'name': 'Search_Flight_Location', 'arguments': {'query': 'Birmingham'}}]
+2025-07-22 04:46:44,081 - evaluation_logger_Cross-200 - INFO - Start compare_single_call: 
+{'name': 'Search_Flights_Multi_Stops', 'arguments': {'legs': [{'fromId': 'BER.AIRPORT', 'toId': 'LON.CITY', 'date': '2024-11-18'}, {'fromId': 'BHX.AIRPORT', 'toId': 'BER.AIRPORT', 'date': '2024-11-23'}]}}
+{'name': 'Search_Flights_Multi_Stops', 'arguments': {'legs': [{'fromId': 'BER.AIRPORT', 'toId': 'LON.CITY', 'date': '2024-11-18'}, {'fromId': 'BHX.AIRPORT', 'toId': 'BER.AIRPORT', 'date': '2024-11-23'}]}}
+2025-07-22 04:46:44,081 - evaluation_logger_Cross-200 - INFO - Rule-based compare success.
+2025-07-22 04:46:44,081 - evaluation_logger_Cross-200 - INFO - Success matched: [{'name': 'Search_Flights_Multi_Stops', 'arguments': {'legs': [{'fromId': 'BER.AIRPORT', 'toId': 'LON.CITY', 'date': '2024-11-18'}, {'fromId': 'BHX.AIRPORT', 'toId': 'BER.AIRPORT', 'date': '2024-11-23'}]}}]

@@ -1,0 +1,91 @@
+{
+    "name": "Get_Seat_Map",
+    "docs_row": {
+        "name": "Get_Seat_Map",
+        "endpoint": "/api/v1/flights/getSeatMap",
+        "func_description": "Get the seat map for a specific flight. ",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "offerToken": {
+                    "type": "String",
+                    "description": "offerToken can be retrieved from api/v1/flights/searchFlights(Search Flights) or api/v1/flights/searchFlightsMultiStops(Search Flights Multi Stops) endpoints in Flights collection as offerToken.",
+                    "example_value": "",
+                    "required": true
+                },
+                "currency_code": {
+                    "type": "String",
+                    "description": "The currency code. currency_code can be retrieved from api/v1/meta/getCurrency(Get Currency) endpoint in Hotels collection.",
+                    "example_value": "AED",
+                    "required": false
+                }
+            },
+            "required": [
+                "offerToken"
+            ]
+        }
+    },
+    "instance": [],
+    "category": null,
+    "tool": null,
+    "api_idx": 44,
+    "params": {
+        "type": "object",
+        "properties": {
+            "offerToken": {
+                "type": "String",
+                "description": "offerToken can be retrieved from api/v1/flights/searchFlights(Search Flights) or api/v1/flights/searchFlightsMultiStops(Search Flights Multi Stops) endpoints in Flights collection as offerToken.",
+                "example_value": "",
+                "required": true
+            },
+            "currency_code": {
+                "type": "String",
+                "description": "The currency code. currency_code can be retrieved from api/v1/meta/getCurrency(Get Currency) endpoint in Hotels collection.",
+                "example_value": "AED",
+                "required": false
+            }
+        },
+        "required": [
+            "offerToken"
+        ]
+    },
+    "responses": [],
+    "response_summary": null,
+    "enhance_func_desc": null,
+    "enhance_params_desc": {
+        "enhanced_parameters": {
+            "offerToken": "Unique token identifying a flight offer, obtained from flight search endpoints.",
+            "currency_code": "Currency for displaying seat prices and fees."
+        }
+    },
+    "enhance_resfield_desc": null,
+    "params_desc_list": null,
+    "response_desc_list": null,
+    "depends_on": [
+        {
+            "target_api_params": "offerToken",
+            "reason": "The 'offerToken' parameter in the target API is a unique identifier for a flight offer, which is explicitly mentioned to be obtainable from the 'searchFlights' or 'searchFlightsMultiStops' endpoints. The source API response includes a 'token' field within the 'flightOffers' array, which matches the description and purpose of the 'offerToken' parameter. This is a direct and necessary prerequisite for calling the target API.",
+            "source_jsonpath": "$.flightOffers[*].token",
+            "confidence": 100,
+            "dependency_relationship": "Hard Dependency(Prerequisite API)",
+            "source_api": "Search_Flights_Multi_Stops"
+        },
+        {
+            "target_api_params": "offerToken",
+            "reason": "The 'offerToken' parameter in the target API requires a unique token identifying a flight offer, which is exactly what the 'token' field in the source API's flightOffers response provides. This is a direct match in terms of both data type and purpose, as the target API explicitly states that the offerToken can be retrieved from the searchFlights endpoint.",
+            "source_jsonpath": "$.flightOffers[*].token",
+            "confidence": 100,
+            "dependency_relationship": "Hard Dependency(Prerequisite API)",
+            "source_api": "Search_Flights"
+        },
+        {
+            "target_api_params": "offerToken",
+            "reason": "The 'offerToken' field in the flightDeals response is a valid token for flight offers, similar to the token in flightOffers. However, it is part of a separate section in the response that aggregates deals, and while it could technically be used, the direct flightOffers token is more appropriate.",
+            "source_jsonpath": "$.flightDeals[*].offerToken",
+            "confidence": 80,
+            "dependency_relationship": "Hard Dependency(Prerequisite API)",
+            "source_api": "Search_Flights"
+        }
+    ],
+    "verified": false
+}

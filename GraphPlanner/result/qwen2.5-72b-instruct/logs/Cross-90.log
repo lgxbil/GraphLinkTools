@@ -1,0 +1,25 @@
+2025-07-22 04:00:57,603 - evaluation_logger_Cross-90 - INFO - Test Example Cross-90
+2025-07-22 04:00:57,603 - evaluation_logger_Cross-90 - INFO - Query: I want to leave Munich for Frankfurt to visit my friends on November 18, 2024. Help me look up the best air tickets. Also, arrange a taxi for me to get to and from the airport. I'm planning to leave Munich Marriott Hotel for the airport at 10 AM. The taxi should wait at the Frankfurt airport when the plane lands and take me to InterContinental Hotel Frankfurt.
+2025-07-22 04:04:14,267 - evaluation_logger_Cross-90 - INFO - Start compare_single_call: 
+{'name': 'Search_Flight_Location', 'arguments': {'query': 'Munich'}}
+{'name': 'Search_Flight_Location', 'arguments': {'query': 'Munich'}}
+2025-07-22 04:04:14,267 - evaluation_logger_Cross-90 - INFO - Rule-based compare success.
+2025-07-22 04:04:14,267 - evaluation_logger_Cross-90 - INFO - Success matched: [{'name': 'Search_Flight_Location', 'arguments': {'query': 'Munich'}}]
+2025-07-22 04:04:14,268 - evaluation_logger_Cross-90 - INFO - Start compare_single_call: 
+{'name': 'Search_Flight_Location', 'arguments': {'query': 'Frankfurt'}}
+{'name': 'Search_Flight_Location', 'arguments': {'query': 'Frankfurt'}}
+2025-07-22 04:04:14,268 - evaluation_logger_Cross-90 - INFO - Rule-based compare success.
+2025-07-22 04:04:14,269 - evaluation_logger_Cross-90 - INFO - Success matched: [{'name': 'Search_Flight_Location', 'arguments': {'query': 'Frankfurt'}}]
+2025-07-22 04:04:14,856 - evaluation_logger_Cross-90 - INFO - Success matched: []
+2025-07-22 04:05:19,251 - evaluation_logger_Cross-90 - INFO - Start compare_single_call: 
+{'name': 'Search_Flights', 'arguments': {'adults': 1, 'departDate': '2024-11-18', 'fromId': 'MUC.AIRPORT', 'toId': 'FRA.AIRPORT'}}
+{'name': 'Search_Flights', 'arguments': {'departDate': '2024-11-18', 'fromId': 'MUC.AIRPORT', 'sort': 'BEST', 'toId': 'FRA.AIRPORT'}}
+2025-07-22 04:05:19,251 - evaluation_logger_Cross-90 - INFO - {'error_type': 'param_missing', 'content': 'Missing parameter sort in prediction.'}
+2025-07-22 04:05:19,251 - evaluation_logger_Cross-90 - INFO - Success matched: []
+2025-07-22 04:06:53,913 - evaluation_logger_Cross-90 - INFO - Start compare_single_call: 
+{'name': 'Search_Flights', 'arguments': {'adults': 1, 'departDate': '2024-11-18', 'fromId': 'MUC.AIRPORT', 'sort': 'BEST', 'toId': 'FRA.AIRPORT'}}
+{'name': 'Search_Flights', 'arguments': {'departDate': '2024-11-18', 'fromId': 'MUC.AIRPORT', 'sort': 'BEST', 'toId': 'FRA.AIRPORT'}}
+2025-07-22 04:07:00,576 - evaluation_logger_Cross-90 - DEBUG - LLM-based comparison output: {'is_equal': True, 'reason': "The parameter 'adults' in call 1 has the default value of 1, which is the same as the default value in the function description, and thus can be omitted in call 2."}
+2025-07-22 04:07:00,576 - evaluation_logger_Cross-90 - INFO - LLM-based compare success.
+2025-07-22 04:07:00,576 - evaluation_logger_Cross-90 - INFO - Success matched: [{'name': 'Search_Flights', 'arguments': {'departDate': '2024-11-18', 'fromId': 'MUC.AIRPORT', 'sort': 'BEST', 'toId': 'FRA.AIRPORT'}}]
+2025-07-22 04:07:13,984 - evaluation_logger_Cross-90 - ERROR - 'questions'

@@ -1,0 +1,123 @@
+{
+    "shorten": {
+        "api": {
+            "name": "Car_Packages",
+            "endpoint": "https://booking-com18.p.rapidapi.com/car/packages",
+            "func_description": "",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "vehicleId": {
+                        "type": "String",
+                        "description": "Vehicle Id\nRequired: true\nvehicleId can be retrieved from /car/search endpoint(data->search_results->vehicle_info->v_id)\nEx: 678151356",
+                        "example_value": "678151356",
+                        "required": true
+                    },
+                    "searchKey": {
+                        "type": "String",
+                        "description": "Search key\nRequired: true\nsearchKey can be retrieved from /car/search endpoint(data->search_key)\nEx:\neyJkcml2ZXJzQWdlIjozNSwiZHJvcE9mZkRhdGVUaW1lIjoiMjAyNC0wMS0yOFQxMDowMDowMCIsImRyb3BPZmZMb2NhdGlvbiI6IjQwLjc1OTU5LC03My45ODQ5MSIsImRyb3BPZmZMb2NhdGlvblR5cGUiOiJMQVRMT05HIiwicGlja1VwRGF0ZVRpbWUiOiIyMDI0LTAxLTI3VDEwOjAwOjAwIiwicGlja1VwTG9jYXRpb24iOiI0MC43NTk1OSwtNzMuOTg0OTEiLCJwaWNrVXBMb2NhdGlvblR5cGUiOiJMQVRMT05HIiwicmVudGFsRHVyYXRpb25JbkRheXMiOjEsInNlcnZpY2VGZWF0dXJlcyI6WyJOT19PUEFRVUVTIiwiU1VQUkVTU19GSVhFRF9QUklDRV9WRUhJQ0xFUyIsIklOQ0xVREVfUFJPRFVDVF9SRUxBVElPTlNISVBTIl19",
+                        "example_value": "eyJkcml2ZXJzQWdlIjozNSwiZHJvcE9mZkRhdGVUaW1lIjoiMjAyNC0wMS0yOFQxMDowMDowMCIsImRyb3BPZmZMb2NhdGlvbiI6IjQwLjc1OTU5LC03My45ODQ5MSIsImRyb3BPZmZMb2NhdGlvblR5cGUiOiJMQVRMT05HIiwicGlja1VwRGF0ZVRpbWUiOiIyMDI0LTAxLTI3VDEwOjAwOjAwIiwicGlja1VwTG9jYXRpb24iOiI0MC43NTk1OSwtNzMuOTg0OTEiLCJwaWNrVXBMb2NhdGlvblR5cGUiOiJMQVRMT05HIiwicmVudGFsRHVyYXRpb25JbkRheXMiOjEsInNlcnZpY2VGZWF0dXJlcyI6WyJOT19PUEFRVUVTIiwiU1VQUkVTU19GSVhFRF9QUklDRV9WRUhJQ0xFUyIsIklOQ0xVREVfUFJPRFVDVF9SRUxBVElPTlNISVBTIl19",
+                        "required": true
+                    },
+                    "units": {
+                        "type": "Enum",
+                        "description": "Units\nEx: metric\nDefault value: metric\n\nmetric: Metric (km, m2)\nimperial: Imperial (miles, ft2)",
+                        "example_value": "",
+                        "required": false
+                    },
+                    "languageCode": {
+                        "type": "String",
+                        "description": "Language\nlanguageCode can be retrieved from /languages endpoint(data->code)\nEx: en-us\nDefault value: en-us",
+                        "example_value": "",
+                        "required": false
+                    },
+                    "currencyCode": {
+                        "type": "String",
+                        "description": "Currency\ncurrencyCode can be retrieved from /currencies endpoint(data->code)\nEx: USD\nDefault value: HOTEL(Property's Currency)",
+                        "example_value": "",
+                        "required": false
+                    },
+                    "countryFlag": {
+                        "type": "String",
+                        "description": "Country\ncountryFlag can be retrieved from /languages endpoint(data->countryFlag)\nEx: us\nDefault value: us",
+                        "example_value": "",
+                        "required": false
+                    }
+                },
+                "required": [
+                    "vehicleId",
+                    "searchKey"
+                ]
+            }
+        },
+        "static_response": null,
+        "required": {
+            "query": "I found a car rental with vehicle ID 678151356 and I have the search key from a previous search. Can you show me the available packages for this vehicle?",
+            "params": {
+                "vehicleId": "678151356",
+                "searchKey": "eyJkcml2ZXJzQWdlIjozNSwiZHJvcE9mZkRhdGVUaW1lIjoiMjAyNC0wMS0yOFQxMDowMDowMCIsImRyb3BPZmZMb2NhdGlvbiI6IjQwLjc1OTU5LC03My45ODQ5MSIsImRyb3BPZmZMb2NhdGlvblR5cGUiOiJMQVRMT05HIiwicGlja1VwRGF0ZVRpbWUiOiIyMDI0LTAxLTI3VDEwOjAwOjAwIiwicGlja1VwTG9jYXRpb24iOiI0MC43NTk1OSwtNzMuOTg0OTEiLCJwaWNrVXBMb2NhdGlvblR5cGUiOiJMQVRMT05HIiwicmVudGFsRHVyYXRpb25JbkRheXMiOjEsInNlcnZpY2VGZWF0dXJlcyI6WyJOT19PUEFRVUVTIiwiU1VQUkVTU19GSVhFRF9QUklDRV9WRUhJQ0xFUyIsIklOQ0xVREVfUFJPRFVDVF9SRUxBVElPTlNISVBTIl19"
+            },
+            "response": {
+                "data": {
+                    "meta": {
+                        "response_code": 404
+                    },
+                    "bgo_error": {
+                        "message": "Package content resource unavailable"
+                    }
+                },
+                "status": true,
+                "message": "Successful"
+            }
+        },
+        "optional": {
+            "query": "I found a car rental with vehicle ID 678151356 and I have the search key 'eyJkcml2ZXJzQWdlIjozNSwiZHJvcE9mZkRhdGVUaW1lIjoiMjAyNC0wMS0yOFQxMDowMDowMCIsImRyb3BPZmZMb2NhdGlvbiI6IjQwLjc1OTU5LC03My45ODQ5MSIsImRyb3BPZmZMb2NhdGlvblR5cGUiOiJMQVRMT05HIiwicGlja1VwRGF0ZVRpbWUiOiIyMDI0LTAxLTI3VDEwOjAwOjAwIiwicGlja1VwTG9jYXRpb24iOiI0MC43NTk1OSwtNzMuOTg0OTEiLCJwaWNrVXBMb2NhdGlvblR5cGUiOiJMQVRMT05HIiwicmVudGFsRHVyYXRpb25JbkRheXMiOjEsInNlcnZpY2VGZWF0dXJlcyI6WyJOT19PUEFRVUVTIiwiU1VQUkVTU19GSVhFRF9QUklDRV9WRUhJQ0xFUyIsIklOQ0xVREVfUFJPRFVDVF9SRUxBVElPTlNISVBTIl19'. Can you show me the available packages for this vehicle? I'd like the information displayed in kilometers (metric units), in English (language code en-us), with prices in USD, and the country flag set to the US.",
+            "params": {
+                "vehicleId": "678151356",
+                "searchKey": "eyJkcml2ZXJzQWdlIjozNSwiZHJvcE9mZkRhdGVUaW1lIjoiMjAyNC0wMS0yOFQxMDowMDowMCIsImRyb3BPZmZMb2NhdGlvbiI6IjQwLjc1OTU5LC03My45ODQ5MSIsImRyb3BPZmZMb2NhdGlvblR5cGUiOiJMQVRMT05HIiwicGlja1VwRGF0ZVRpbWUiOiIyMDI0LTAxLTI3VDEwOjAwOjAwIiwicGlja1VwTG9jYXRpb24iOiI0MC43NTk1OSwtNzMuOTg0OTEiLCJwaWNrVXBMb2NhdGlvblR5cGUiOiJMQVRMT05HIiwicmVudGFsRHVyYXRpb25JbkRheXMiOjEsInNlcnZpY2VGZWF0dXJlcyI6WyJOT19PUEFRVUVTIiwiU1VQUkVTU19GSVhFRF9QUklDRV9WRUhJQ0xFUyIsIklOQ0xVREVfUFJPRFVDVF9SRUxBVElPTlNISVBTIl19",
+                "units": "metric",
+                "languageCode": "en-us",
+                "currencyCode": "USD",
+                "countryFlag": "us"
+            },
+            "response": {
+                "data": {
+                    "bgo_error": {
+                        "message": "Package content resource unavailable"
+                    },
+                    "meta": {
+                        "response_code": 404
+                    }
+                },
+                "status": true,
+                "message": "Successful"
+            }
+        }
+    },
+    "row": {
+        "required": {
+            "data": {
+                "meta": {
+                    "response_code": 404
+                },
+                "bgo_error": {
+                    "message": "Package content resource unavailable"
+                }
+            },
+            "status": true,
+            "message": "Successful"
+        },
+        "optional": {
+            "data": {
+                "bgo_error": {
+                    "message": "Package content resource unavailable"
+                },
+                "meta": {
+                    "response_code": 404
+                }
+            },
+            "status": true,
+            "message": "Successful"
+        }
+    }
+}

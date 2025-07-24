@@ -1,0 +1,217 @@
+{
+    "name": "Get_Hotel_Reviews(Tips)_Sort_Option",
+    "docs_row": {
+        "name": "Get_Hotel_Reviews(Tips)_Sort_Option",
+        "endpoint": "/api/v1/hotels/getHotelReviewsSortOption",
+        "func_description": "Obtain all the available sort parameters for hotel reviews. The sort parameters can be used as `sort_option_id` parameter in  '/api/v1/hotels/getHotelReviews' EndPoint. ",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "hotel_id": {
+                    "type": "String",
+                    "description": "hotel_id can be retrieved from api/v1/hotels/searchHotels(Search Hotels) or api/v1/hotels/searchHotelsByCoordinates(Search Hotels By Coordinates\n) endpoint in Hotels collection.",
+                    "example_value": "5955189",
+                    "required": true
+                },
+                "languagecode": {
+                    "type": "String",
+                    "description": "To obtain the response data in a specific language, enter the languagecode. languagecode can be retrieved from api/v1/meta/getLanguages(Get Languages\n) endpoint in Meta collection.",
+                    "example_value": "en-us",
+                    "required": false
+                }
+            },
+            "required": [
+                "hotel_id"
+            ]
+        }
+    },
+    "instance": [],
+    "category": null,
+    "tool": null,
+    "api_idx": 50,
+    "params": {
+        "type": "object",
+        "properties": {
+            "hotel_id": {
+                "type": "String",
+                "description": "hotel_id can be retrieved from api/v1/hotels/searchHotels(Search Hotels) or api/v1/hotels/searchHotelsByCoordinates(Search Hotels By Coordinates\n) endpoint in Hotels collection.",
+                "example_value": "5955189",
+                "required": true
+            },
+            "languagecode": {
+                "type": "String",
+                "description": "To obtain the response data in a specific language, enter the languagecode. languagecode can be retrieved from api/v1/meta/getLanguages(Get Languages\n) endpoint in Meta collection.",
+                "example_value": "en-us",
+                "required": false
+            }
+        },
+        "required": [
+            "hotel_id"
+        ]
+    },
+    "responses": [
+        {
+            "function_name": "Get_Hotel_Reviews(Tips)_Sort_Option",
+            "arguments": {
+                "hotel_id": "5955189"
+            },
+            "observation": [
+                {
+                    "sort_option_id": "sort_most_relevant",
+                    "title": "Most relevant",
+                    "sort_option_default": 1
+                },
+                {
+                    "sort_option_id": "sort_recent_desc",
+                    "title": "Date (newer to older)",
+                    "sort_option_default": 0
+                },
+                {
+                    "sort_option_id": "proximity_to_hotel_average",
+                    "sort_option_default": 0,
+                    "title": "Close to property score"
+                }
+            ]
+        },
+        {
+            "function_name": "Get_Hotel_Reviews(Tips)_Sort_Option",
+            "arguments": {
+                "hotel_id": "5955189"
+            },
+            "observation": [
+                {
+                    "sort_option_id": "sort_most_relevant",
+                    "title": "Most relevant",
+                    "sort_option_default": 1
+                },
+                {
+                    "title": "Date (newer to older)",
+                    "sort_option_id": "sort_recent_desc",
+                    "sort_option_default": 0
+                },
+                {
+                    "sort_option_id": "proximity_to_hotel_average",
+                    "title": "Close to property score",
+                    "sort_option_default": 0
+                }
+            ]
+        }
+    ],
+    "response_summary": "The API provides three sorting options for organizing search results. The default and most relevant option is \"Most relevant,\" which prioritizes items based on their relevance to the search query. Alternatively, users can choose to sort by \"Date (newer to older)\" to see the most recent items first. There's also an option to sort by \"Close to property score,\" which ranks items based on their proximity to a specified location. These options help users tailor their search results to their preferences.",
+    "enhance_func_desc": "This API is ideal for travelers looking to filter hotel reviews effectively. It retrieves available sorting options for hotel reviews, including relevance, date (newest first), and proximity to property. Users can select their preferred sorting method to view reviews that best match their criteria. The response includes detailed sorting choices to enhance review browsing experience. The hotel ID must be obtained from the SearchHotels API.",
+    "enhance_params_desc": {
+        "enhanced_parameters": {
+            "hotel_id": "Unique identifier for the hotel, sourced from searchHotels or searchHotelsByCoordinates.",
+            "languagecode": "Language preference for the response data (e.g., 'en-us' for English)."
+        }
+    },
+    "enhance_resfield_desc": {
+        "response_fields": [
+            {
+                "sort_option_id": {
+                    "type": "String",
+                    "description": "The unique identifier for the sorting option (e.g., 'sort_most_relevant', 'sort_recent_desc')."
+                },
+                "title": {
+                    "type": "String",
+                    "description": "The display name of the sorting option (e.g., 'Most relevant', 'Date (newer to older)')."
+                },
+                "sort_option_default": {
+                    "type": "Number",
+                    "description": "Indicates whether this sorting option is the default (1) or not (0)."
+                }
+            }
+        ]
+    },
+    "params_desc_list": null,
+    "response_desc_list": [
+        {
+            "path_name": "$[].sort_option_id",
+            "name": "sort_option_id",
+            "description": "The unique identifier for the sorting option (e.g., 'sort_most_relevant', 'sort_recent_desc')."
+        },
+        {
+            "path_name": "$[].title",
+            "name": "title",
+            "description": "The display name of the sorting option (e.g., 'Most relevant', 'Date (newer to older)')."
+        },
+        {
+            "path_name": "$[].sort_option_default",
+            "name": "sort_option_default",
+            "description": "Indicates whether this sorting option is the default (1) or not (0)."
+        }
+    ],
+    "depends_on": [
+        {
+            "source_api_name": "Search_Hotels",
+            "dependence_type": "Hard Dependency",
+            "depencend_field": "$.hotels[*].hotel_id",
+            "param_name": "hotel_id",
+            "reason": "The 'Search_Hotels' API is a necessary prerequisite for calling the 'Get_Hotel_Reviews(Tips)_Sort_Option' API, as it provides the 'hotel_id' required by the target API. The 'hotels[].hotel_id' field from 'Search_Hotels' matches the data type and description of the 'hotel_id' parameter in the target API, forming a hard dependency relationship."
+        },
+        {
+            "source_api_name": "Get_Question_And_Answer",
+            "dependence_type": "Hard Dependency",
+            "depencend_field": "$.hotel_id",
+            "param_name": "hotel_id",
+            "reason": "The 'Get_Question_And_Answer' API provides the 'hotel_id' field which is directly required by the 'Get_Hotel_Reviews(Tips)_Sort_Option' API. This establishes a hard dependency as the hotel_id from the source API is a necessary input parameter for the target API. The data types match (both are Strings), and the field serves the exact purpose required by the target parameter."
+        },
+        {
+            "source_api_name": "Get_Question_And_Answer",
+            "dependence_type": "Hard Dependency",
+            "depencend_field": "$.q_and_a_pairs[*].hotel_id",
+            "param_name": "hotel_id",
+            "reason": "The 'Get_Question_And_Answer' API provides hotel_id values that can be used as input for the 'hotel_id' parameter in the 'Get_Hotel_Reviews(Tips)_Sort_Option' API. This forms a business association as both APIs operate on the same hotel entities. The data type of the response field (integer) matches the expected string type of the target parameter, and the example values demonstrate that the field contains valid hotel identifiers. This represents a hard dependency as the hotel_id is a required parameter for both APIs."
+        },
+        {
+            "source_api_name": "Get_Hotel_Reviews(Tips)",
+            "dependence_type": "Hard Dependency",
+            "depencend_field": "$.result[*].hotel_id",
+            "param_name": "hotel_id",
+            "reason": "The 'Get_Hotel_Reviews(Tips)' API provides hotel reviews which inherently require the same hotel_id that is needed by the 'Get_Hotel_Reviews(Tips)_Sort_Option' API. This establishes a hard dependency as the hotel_id from the reviews API can directly serve as input for the target API. The data types match (both expect a String/Number identifier for the hotel), and the example values confirm the same hotel_id format is used in both APIs."
+        },
+        {
+            "source_api_name": "Get_Hotel_Policies",
+            "dependence_type": "Hard Dependency",
+            "depencend_field": "$.hotel_id",
+            "param_name": "hotel_id",
+            "reason": "The 'Get_Hotel_Policies' API and the 'Get_Hotel_Reviews(Tips)_Sort_Option' API share a hard dependency relationship as they both require the same 'hotel_id' parameter to function. The 'hotel_id' field from the 'Get_Hotel_Policies' API response matches exactly with the 'hotel_id' parameter required by the target API. This represents a hard dependency because the hotel_id is a necessary prerequisite for calling the target API, and it must be obtained from either the SearchHotels or SearchHotelsByCoordinates APIs, which is consistent with the source API's requirement."
+        },
+        {
+            "source_api_name": "Get_Room_List",
+            "dependence_type": "Hard Dependency",
+            "depencend_field": "$.hotel_id",
+            "param_name": "hotel_id",
+            "reason": "The 'Get_Room_List' API provides the 'hotel_id' field which is exactly what the 'Get_Hotel_Reviews(Tips)_Sort_Option' API requires as input. This forms a hard dependency because the 'Get_Room_List' API must be called first to obtain the 'hotel_id' before the reviews can be sorted. The data types match (String vs. Number, but the example shows the number can be used as a string), and the business relationship is clear as both APIs operate on the same hotel entity."
+        },
+        {
+            "source_api_name": "Get_Hotel_Review_Scores",
+            "dependence_type": "Hard Dependency",
+            "depencend_field": "$[*].hotel_id",
+            "param_name": "hotel_id",
+            "reason": "The 'Get_Hotel_Review_Scores' API provides review scores for specific hotels, and the 'hotel_id' field in its response matches exactly with the 'hotel_id' parameter required by the 'Get_Hotel_Reviews(Tips)_Sort_Option' API. This establishes a hard dependency as the hotel_id from the source API is essential for calling the target API. The data types match (String vs Number, but the example shows numeric values can be used as String parameters), and the field serves as a direct input for the target parameter."
+        },
+        {
+            "source_api_name": "Search_Hotels_By_Coordinates",
+            "dependence_type": "Hard Dependency",
+            "depencend_field": "$.result[*].hotel_id",
+            "param_name": "hotel_id",
+            "reason": "There is a clear business association between the 'Search_Hotels_By_Coordinates' API and the 'Get_Hotel_Reviews(Tips)_Sort_Option' API, as the hotel_id from the search results is a necessary prerequisite for accessing hotel reviews. The 'hotel_id' field from the source API matches exactly with the target parameter's requirement, both in terms of data type (String vs. Number can be easily converted) and business logic. This represents a hard dependency as the search API must be called first to obtain valid hotel IDs for review sorting."
+        },
+        {
+            "source_api_name": "Get_Hotel_Reviews_Filter_Metadata",
+            "dependence_type": "Hard Dependency",
+            "depencend_field": "$.hotel_id",
+            "param_name": "hotel_id",
+            "reason": "The 'Get_Hotel_Reviews_Filter_Metadata' API provides the 'hotel_id' field which is explicitly required by the 'Get_Hotel_Reviews(Tips)_Sort_Option' API. This establishes a hard dependency as the source API's response field directly serves as the necessary input parameter for the target API. The data types match (both are Strings), and the example value from the source API ('1377073') demonstrates it can be used as input for the target API's 'hotel_id' parameter."
+        },
+        {
+            "source_api_name": "Get_Description_And_Info",
+            "dependence_type": "Hard Dependency",
+            "depencend_field": "$[*].hotel_id",
+            "param_name": "hotel_id",
+            "reason": "The 'Get_Description_And_Info' API provides hotel details including the hotel_id, which is a necessary parameter for the 'Get_Hotel_Reviews(Tips)_Sort_Option' API. This establishes a hard dependency as the hotel_id from the source API is directly required by the target API. The data type (String) matches perfectly, and the example values confirm the compatibility."
+        }
+    ],
+    "verified": true
+}

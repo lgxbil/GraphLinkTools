@@ -1,0 +1,79 @@
+{
+    "name": "Car_Auto-Complete",
+    "docs_row": {
+        "name": "Car_Auto-Complete",
+        "endpoint": "https://booking-com18.p.rapidapi.com/car/auto-complete",
+        "func_description": "",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "query": {
+                    "type": "String",
+                    "description": "Enter at least 2 characters to search\nRequired: true\nEx: New York",
+                    "example_value": "New York",
+                    "required": true
+                },
+                "languageCode": {
+                    "type": "String",
+                    "description": "Language\nlanguageCode can be retrieved from /languages endpoint(data->code)\nEx:  en-us\nDefault value: en-us",
+                    "example_value": "",
+                    "required": false
+                },
+                "countryFlag": {
+                    "type": "String",
+                    "description": "Country\ncountryFlag can be retrieved from /languages endpoint(data->countryFlag)\nEx: us\nDefault value: us",
+                    "example_value": "",
+                    "required": false
+                }
+            },
+            "required": [
+                "query"
+            ]
+        }
+    },
+    "instance": [],
+    "category": null,
+    "tool": null,
+    "api_idx": 27,
+    "params": {
+        "type": "object",
+        "properties": {
+            "query": {
+                "type": "String",
+                "description": "Enter at least 2 characters to search\nRequired: true\nEx: New York",
+                "example_value": "New York",
+                "required": true
+            },
+            "languageCode": {
+                "type": "String",
+                "description": "Language\nlanguageCode can be retrieved from /languages endpoint(data->code)\nEx:  en-us\nDefault value: en-us",
+                "example_value": "",
+                "required": false
+            },
+            "countryFlag": {
+                "type": "String",
+                "description": "Country\ncountryFlag can be retrieved from /languages endpoint(data->countryFlag)\nEx: us\nDefault value: us",
+                "example_value": "",
+                "required": false
+            }
+        },
+        "required": [
+            "query"
+        ]
+    },
+    "responses": [],
+    "response_summary": null,
+    "enhance_func_desc": null,
+    "enhance_params_desc": {
+        "enhanced_parameters": {
+            "query": "Search term for car rental locations (min 2 characters).",
+            "languageCode": "Language preference for the response (e.g., 'en-us').",
+            "countryFlag": "Country code for localized results (e.g., 'us')."
+        }
+    },
+    "enhance_resfield_desc": null,
+    "params_desc_list": null,
+    "response_desc_list": null,
+    "depends_on": null,
+    "verified": false
+}

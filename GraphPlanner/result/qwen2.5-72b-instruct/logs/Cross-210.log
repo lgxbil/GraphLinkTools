@@ -1,0 +1,69 @@
+2025-07-22 04:46:44,090 - evaluation_logger_Cross-210 - INFO - Test Example Cross-210
+2025-07-22 04:46:44,090 - evaluation_logger_Cross-210 - INFO - Query: I want to find out about the cheapest connecting flight leaving from New York on November 15, 2024, going to Los Angeles and San Francisco, then returning to New York. I'm expecting to stay in each city for five days. My address is 300 Fifth Ave in New York. Can you book a taxi to take me to the airport three hours before the flight takes off and bring me home one hour after the returning flight lands?
+2025-07-22 04:49:20,647 - evaluation_logger_Cross-210 - INFO - Start compare_single_call: 
+{'name': 'Search_Flight_Location', 'arguments': {'query': 'New York'}}
+{'name': 'Search_Flight_Location', 'arguments': {'query': 'New York'}}
+2025-07-22 04:49:20,647 - evaluation_logger_Cross-210 - INFO - Rule-based compare success.
+2025-07-22 04:49:20,647 - evaluation_logger_Cross-210 - INFO - Success matched: [{'name': 'Search_Flight_Location', 'arguments': {'query': 'New York'}}]
+2025-07-22 04:49:20,648 - evaluation_logger_Cross-210 - INFO - Start compare_single_call: 
+{'name': 'Search_Flight_Location', 'arguments': {'query': 'Los Angeles'}}
+{'name': 'Search_Flight_Location', 'arguments': {'query': 'Los Angeles'}}
+2025-07-22 04:49:20,648 - evaluation_logger_Cross-210 - INFO - Rule-based compare success.
+2025-07-22 04:49:20,648 - evaluation_logger_Cross-210 - INFO - Success matched: [{'name': 'Search_Flight_Location', 'arguments': {'query': 'Los Angeles'}}]
+2025-07-22 04:49:20,649 - evaluation_logger_Cross-210 - INFO - Start compare_single_call: 
+{'name': 'Search_Flight_Location', 'arguments': {'query': 'San Francisco'}}
+{'name': 'Search_Flight_Location', 'arguments': {'query': 'San Francisco'}}
+2025-07-22 04:49:20,650 - evaluation_logger_Cross-210 - INFO - Rule-based compare success.
+2025-07-22 04:49:20,650 - evaluation_logger_Cross-210 - INFO - Success matched: [{'name': 'Search_Flight_Location', 'arguments': {'query': 'San Francisco'}}]
+2025-07-22 04:49:20,650 - evaluation_logger_Cross-210 - INFO - Start compare_single_call: 
+{'name': 'Search_Flights_Multi_Stops', 'arguments': {'legs': [{'fromId': 'NYC.CITY', 'toId': 'LAX.AIRPORT', 'date': '2024-11-15'}, {'fromId': 'LAX.AIRPORT', 'toId': 'SFO.AIRPORT', 'date': '2024-11-20'}, {'fromId': 'SFO.AIRPORT', 'toId': 'NYC.CITY', 'date': '2024-11-25'}], 'sort': 'CHEAPEST'}}
+{'name': 'Search_Flights_Multi_Stops', 'arguments': {'legs': [{'fromId': 'NYC.CITY', 'toId': 'LAX.AIRPORT', 'date': '2024-11-15'}, {'fromId': 'LAX.AIRPORT', 'toId': 'SFO.AIRPORT', 'date': '2024-11-20'}, {'fromId': 'SFO.AIRPORT', 'toId': 'NYC.CITY', 'date': '2024-11-25'}], 'sort': 'CHEAPEST'}}
+2025-07-22 04:49:20,650 - evaluation_logger_Cross-210 - INFO - Rule-based compare success.
+2025-07-22 04:49:20,650 - evaluation_logger_Cross-210 - INFO - Success matched: [{'name': 'Search_Flights_Multi_Stops', 'arguments': {'legs': [{'fromId': 'NYC.CITY', 'toId': 'LAX.AIRPORT', 'date': '2024-11-15'}, {'fromId': 'LAX.AIRPORT', 'toId': 'SFO.AIRPORT', 'date': '2024-11-20'}, {'fromId': 'SFO.AIRPORT', 'toId': 'NYC.CITY', 'date': '2024-11-25'}], 'sort': 'CHEAPEST'}}]
+2025-07-22 04:49:21,226 - evaluation_logger_Cross-210 - INFO - Start compare_single_call: 
+{'name': 'Taxi_Search_Location', 'arguments': {'query': '300 Fifth Ave, New York'}}
+{'name': 'Taxi_Search_Location', 'arguments': {'query': '300 Fifth Ave'}}
+2025-07-22 04:49:26,525 - evaluation_logger_Cross-210 - DEBUG - LLM-based comparison output: {'is_equal': False, 'reason': "The query parameter in call 1 includes 'New York' which is not present in call 2, making the locations specified not equivalent."}
+2025-07-22 04:49:26,525 - evaluation_logger_Cross-210 - INFO - All compare method failed.
+2025-07-22 04:49:26,525 - evaluation_logger_Cross-210 - INFO - Success matched: []
+2025-07-22 04:50:53,905 - evaluation_logger_Cross-210 - INFO - Start compare_single_call: 
+{'name': 'Search_Flight_Location', 'arguments': {'query': 'New York'}}
+{'name': 'Search_Flight_Location', 'arguments': {'query': 'New York'}}
+2025-07-22 04:50:53,905 - evaluation_logger_Cross-210 - INFO - Rule-based compare success.
+2025-07-22 04:50:53,905 - evaluation_logger_Cross-210 - INFO - Success matched: [{'name': 'Search_Flight_Location', 'arguments': {'query': 'New York'}}]
+2025-07-22 04:50:53,906 - evaluation_logger_Cross-210 - INFO - Start compare_single_call: 
+{'name': 'Search_Flight_Location', 'arguments': {'query': 'Los Angeles'}}
+{'name': 'Search_Flight_Location', 'arguments': {'query': 'Los Angeles'}}
+2025-07-22 04:50:53,906 - evaluation_logger_Cross-210 - INFO - Rule-based compare success.
+2025-07-22 04:50:53,906 - evaluation_logger_Cross-210 - INFO - Success matched: [{'name': 'Search_Flight_Location', 'arguments': {'query': 'Los Angeles'}}]
+2025-07-22 04:50:53,906 - evaluation_logger_Cross-210 - INFO - Start compare_single_call: 
+{'name': 'Search_Flight_Location', 'arguments': {'query': 'San Francisco'}}
+{'name': 'Search_Flight_Location', 'arguments': {'query': 'San Francisco'}}
+2025-07-22 04:50:53,907 - evaluation_logger_Cross-210 - INFO - Rule-based compare success.
+2025-07-22 04:50:53,907 - evaluation_logger_Cross-210 - INFO - Success matched: [{'name': 'Search_Flight_Location', 'arguments': {'query': 'San Francisco'}}]
+2025-07-22 04:50:53,907 - evaluation_logger_Cross-210 - INFO - Start compare_single_call: 
+{'name': 'Search_Flights_Multi_Stops', 'arguments': {'legs': [{'fromId': 'NYC.CITY', 'toId': 'LAX.AIRPORT', 'date': '2024-11-15'}, {'fromId': 'LAX.AIRPORT', 'toId': 'SFO.AIRPORT', 'date': '2024-11-20'}, {'fromId': 'SFO.AIRPORT', 'toId': 'NYC.CITY', 'date': '2024-11-25'}], 'sort': 'CHEAPEST'}}
+{'name': 'Search_Flights_Multi_Stops', 'arguments': {'legs': [{'fromId': 'NYC.CITY', 'toId': 'LAX.AIRPORT', 'date': '2024-11-15'}, {'fromId': 'LAX.AIRPORT', 'toId': 'SFO.AIRPORT', 'date': '2024-11-20'}, {'fromId': 'SFO.AIRPORT', 'toId': 'NYC.CITY', 'date': '2024-11-25'}], 'sort': 'CHEAPEST'}}
+2025-07-22 04:50:53,907 - evaluation_logger_Cross-210 - INFO - Rule-based compare success.
+2025-07-22 04:50:53,907 - evaluation_logger_Cross-210 - INFO - Success matched: [{'name': 'Search_Flights_Multi_Stops', 'arguments': {'legs': [{'fromId': 'NYC.CITY', 'toId': 'LAX.AIRPORT', 'date': '2024-11-15'}, {'fromId': 'LAX.AIRPORT', 'toId': 'SFO.AIRPORT', 'date': '2024-11-20'}, {'fromId': 'SFO.AIRPORT', 'toId': 'NYC.CITY', 'date': '2024-11-25'}], 'sort': 'CHEAPEST'}}]
+2025-07-22 04:50:54,267 - evaluation_logger_Cross-210 - INFO - Start compare_single_call: 
+{'name': 'Taxi_Search_Location', 'arguments': {'query': '300 Fifth Avenue, New York, NY'}}
+{'name': 'Taxi_Search_Location', 'arguments': {'query': '300 Fifth Ave'}}
+2025-07-22 04:50:59,447 - evaluation_logger_Cross-210 - DEBUG - LLM-based comparison output: {'is_equal': True, 'reason': '300 Fifth Avenue, New York, NY and 300 Fifth Ave refer to the same location.'}
+2025-07-22 04:50:59,447 - evaluation_logger_Cross-210 - INFO - LLM-based compare success.
+2025-07-22 04:50:59,447 - evaluation_logger_Cross-210 - INFO - Success matched: [{'name': 'Taxi_Search_Location', 'arguments': {'query': '300 Fifth Ave'}}]
+2025-07-22 04:50:59,448 - evaluation_logger_Cross-210 - INFO - Start compare_single_call: 
+{'name': 'Taxi_Search_Location', 'arguments': {'query': 'John F. Kennedy International Airport'}}
+{'name': 'Taxi_Search_Location', 'arguments': {'query': 'John F. Kennedy International Airport'}}
+2025-07-22 04:50:59,448 - evaluation_logger_Cross-210 - INFO - Rule-based compare success.
+2025-07-22 04:50:59,448 - evaluation_logger_Cross-210 - INFO - Success matched: [{'name': 'Taxi_Search_Location', 'arguments': {'query': 'John F. Kennedy International Airport'}}]
+2025-07-22 04:50:59,450 - evaluation_logger_Cross-210 - INFO - Start compare_single_call: 
+{'name': 'Search_Taxi', 'arguments': {'drop_off_place_id': 'ChIJR0lA1VBmwokR8BGfSBOyT-w', 'pick_up_date': '2024-11-15', 'pick_up_place_id': 'ChIJueo8IFfxNIgRdd7G38Ehuf8', 'pick_up_time': '16:59'}}
+{'name': 'Search_Taxi', 'arguments': {'drop_off_place_id': 'ChIJR0lA1VBmwokR8BGfSBOyT-w', 'pick_up_date': '2024-11-15', 'pick_up_place_id': 'ChIJueo8IFfxNIgRdd7G38Ehuf8', 'pick_up_time': '16:59'}}
+2025-07-22 04:50:59,450 - evaluation_logger_Cross-210 - INFO - Rule-based compare success.
+2025-07-22 04:50:59,450 - evaluation_logger_Cross-210 - INFO - Success matched: [{'name': 'Search_Taxi', 'arguments': {'drop_off_place_id': 'ChIJR0lA1VBmwokR8BGfSBOyT-w', 'pick_up_date': '2024-11-15', 'pick_up_place_id': 'ChIJueo8IFfxNIgRdd7G38Ehuf8', 'pick_up_time': '16:59'}}]
+2025-07-22 04:50:59,450 - evaluation_logger_Cross-210 - INFO - Start compare_single_call: 
+{'name': 'Search_Taxi', 'arguments': {'drop_off_place_id': 'ChIJueo8IFfxNIgRdd7G38Ehuf8', 'pick_up_date': '2024-11-25', 'pick_up_place_id': 'ChIJR0lA1VBmwokR8BGfSBOyT-w', 'pick_up_time': '23:00'}}
+{'name': 'Search_Taxi', 'arguments': {'drop_off_place_id': 'ChIJueo8IFfxNIgRdd7G38Ehuf8', 'pick_up_date': '2024-11-25', 'pick_up_place_id': 'ChIJR0lA1VBmwokR8BGfSBOyT-w', 'pick_up_time': '23:00'}}
+2025-07-22 04:50:59,451 - evaluation_logger_Cross-210 - INFO - Rule-based compare success.
+2025-07-22 04:50:59,451 - evaluation_logger_Cross-210 - INFO - Success matched: [{'name': 'Search_Taxi', 'arguments': {'drop_off_place_id': 'ChIJueo8IFfxNIgRdd7G38Ehuf8', 'pick_up_date': '2024-11-25', 'pick_up_place_id': 'ChIJR0lA1VBmwokR8BGfSBOyT-w', 'pick_up_time': '23:00'}}]

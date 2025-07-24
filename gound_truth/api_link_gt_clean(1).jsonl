@@ -1,0 +1,1656 @@
+{
+    "Search_Car_Location": {
+        "query": [
+            {
+                "target_api_params": "query",
+                "source_api": "query",
+                "source_api_respath": null,
+                "reason": "The query parameter is directly provided by the user, which is a valid input for searching car rental locations.",
+                "is_valid": true
+            },
+            {
+                "target_api_params": "query",
+                "source_api": "Search_Flight_Location",
+                "source_api_respath": "$[0].name",
+                "reason": "The name of an airport (e.g., 'Barcelona El Prat Airport') can be a valid query for searching car rental locations, as users often rent cars at airports. This is a geographical and user behavior association.",
+                "is_valid": true
+            },
+            {
+                "target_api_params": "query",
+                "source_api": "Search_Flights_Multi_Stops",
+                "source_api_respath": "$.flightOffers[0].segments[0].arrivalAirport.name",
+                "reason": "The arrival airport name (e.g., 'Chicago O'Hare International Airport') can be a valid query for searching car rental locations, as users often rent cars upon arrival at airports. This is a geographical and user behavior association.",
+                "is_valid": true
+            }
+        ]
+    },
+    "Search_Car_Rentals": {
+        "pick_up_latitude": [
+            {
+                "target_api_params": "pick_up_latitude",
+                "source_api": "Search_Car_Location",
+                "source_api_respath": "$[0].coordinates.latitude",
+                "reason": "The latitude from a car rental location search directly matches the pick-up latitude for car rentals, indicating a strong semantic and business association.",
+                "is_valid": true
+            },
+            {
+                "target_api_params": "pick_up_latitude",
+                "source_api": "query",
+                "source_api_respath": null,
+                "reason": "The latitude for car rental pick-up can be directly provided in the user's query, which is a common and valid input method.",
+                "is_valid": true
+            },
+            {
+                "target_api_params": "pick_up_latitude",
+                "source_api": "Search_Hotel_Destination",
+                "source_api_respath": "$[0].latitude",
+                "reason": "The latitude from a hotel search is not semantically equivalent to a car rental pick-up location. However, users might rent a car near their hotel, making this a plausible behavior-driven soft mapping.",
+                "is_valid": "candidate"
+            },
+            {
+                "target_api_params": "pick_up_latitude",
+                "source_api": "Search_Hotels",
+                "source_api_respath": "$.hotels[0].property.latitude",
+                "reason": "The latitude from a hotel search is not semantically equivalent to a car rental pick-up location. However, users might rent a car near their hotel, making this a plausible behavior-driven soft mapping.",
+                "is_valid": "candidate"
+            },
+            {
+                "target_api_params": "pick_up_latitude",
+                "source_api": "Search_Hotels_By_Coordinates",
+                "source_api_respath": "$.result[0].latitude",
+                "reason": "The latitude from a hotel search by coordinates is not semantically equivalent to a car rental pick-up location. However, users might rent a car near their hotel, making this a plausible behavior-driven soft mapping.",
+                "is_valid": "candidate"
+            },
+            {
+                "target_api_params": "pick_up_latitude",
+                "source_api": "Location_to_Lat_Long",
+                "source_api_respath": "$[0].geometry.location.lat",
+                "reason": "The latitude from a location-to-coordinates conversion is semantically equivalent to a car rental pick-up location, indicating a strong semantic and business association.",
+                "is_valid": true
+            }
+        ],
+        "pick_up_longitude": [
+            {
+                "target_api_params": "pick_up_longitude",
+                "source_api": "Search_Car_Location",
+                "source_api_respath": "$[0].coordinates.longitude",
+                "reason": "The longitude from a car rental location search directly matches the pick-up longitude for car rentals, indicating a strong semantic and business association.",
+                "is_valid": true
+            },
+            {
+                "target_api_params": "pick_up_longitude",
+                "source_api": "query",
+                "source_api_respath": null,
+                "reason": "The pick-up longitude for car rentals can be directly provided in the user's query.",
+                "is_valid": true
+            },
+            {
+                "target_api_params": "pick_up_longitude",
+                "source_api": "Search_Hotel_Destination",
+                "source_api_respath": "$[0].longitude",
+                "reason": "The longitude from a hotel destination search is not semantically equivalent to the pick-up longitude for car rentals. However, users might pick up a car near their hotel, making this a plausible behavior-driven mapping.",
+                "is_valid": "candidate"
+            },
+            {
+                "target_api_params": "pick_up_longitude",
+                "source_api": "Search_Hotels",
+                "source_api_respath": "$.hotels[0].property.longitude",
+                "reason": "The longitude from a hotel search is not semantically equivalent to the pick-up longitude for car rentals. However, users might pick up a car near their hotel, making this a plausible behavior-driven mapping.",
+                "is_valid": "candidate"
+            },
+            {
+                "target_api_params": "pick_up_longitude",
+                "source_api": "Search_Hotels_By_Coordinates",
+                "source_api_respath": "$.result[0].longitude",
+                "reason": "The longitude from a hotel search by coordinates is not semantically equivalent to the pick-up longitude for car rentals. However, users might pick up a car near their hotel, making this a plausible behavior-driven mapping.",
+                "is_valid": "candidate"
+            },
+            {
+                "target_api_params": "pick_up_longitude",
+                "source_api": "Location_to_Lat_Long",
+                "source_api_respath": "$[0].geometry.location.lng",
+                "reason": "The longitude from a location-to-coordinates conversion directly matches the pick-up longitude for car rentals, indicating a strong semantic and business association.",
+                "is_valid": true
+            }
+        ],
+        "drop_off_latitude": [
+            {
+                "target_api_params": "drop_off_latitude",
+                "source_api": "Search_Car_Location",
+                "source_api_respath": "$[0].coordinates.latitude",
+                "reason": "The latitude from a car rental location search directly matches the drop-off latitude for car rentals, indicating a strong semantic and business association.",
+                "is_valid": true
+            },
+            {
+                "target_api_params": "drop_off_latitude",
+                "source_api": "query",
+                "source_api_respath": null,
+                "reason": "The user's query may directly specify the drop-off location's latitude, which is a common and valid input.",
+                "is_valid": true
+            },
+            {
+                "target_api_params": "drop_off_latitude",
+                "source_api": "Search_Hotel_Destination",
+                "source_api_respath": "$[0].latitude",
+                "reason": "The latitude from a hotel search could be used as a drop-off location for car rentals if the user plans to drop off the car near the hotel, showing a plausible behavior-driven mapping.",
+                "is_valid": "candidate"
+            },
+            {
+                "target_api_params": "drop_off_latitude",
+                "source_api": "Search_Hotels",
+                "source_api_respath": "$.hotels[0].property.latitude",
+                "reason": "The latitude from a hotel search could be used as a drop-off location for car rentals if the user plans to drop off the car near the hotel, showing a plausible behavior-driven mapping.",
+                "is_valid": "candidate"
+            },
+            {
+                "target_api_params": "drop_off_latitude",
+                "source_api": "Location_to_Lat_Long",
+                "source_api_respath": "$[0].geometry.location.lat",
+                "reason": "The latitude from a location-to-coordinates conversion directly matches the drop-off latitude for car rentals, indicating a strong semantic and business association.",
+                "is_valid": true
+            },
+            {
+                "target_api_params": "drop_off_latitude",
+                "source_api": "Search_Hotels_By_Coordinates",
+                "source_api_respath": "$.result[0].latitude",
+                "reason": "The latitude from a hotel search by coordinates could be used as a drop-off location for car rentals if the user plans to drop off the car near the hotel, showing a plausible behavior-driven mapping.",
+                "is_valid": "candidate"
+            }
+        ],
+        "drop_off_longitude": [
+            {
+                "target_api_params": "drop_off_longitude",
+                "source_api": "Search_Car_Location",
+                "source_api_respath": "$[0].coordinates.longitude",
+                "reason": "The longitude of a car rental location is semantically equivalent to the drop-off longitude for car rentals.",
+                "is_valid": true
+            },
+            {
+                "target_api_params": "drop_off_longitude",
+                "source_api": "query",
+                "source_api_respath": null,
+                "reason": "The drop-off longitude for car rentals can be directly provided in the user's query.",
+                "is_valid": true
+            },
+            {
+                "target_api_params": "drop_off_longitude",
+                "source_api": "Search_Hotel_Destination",
+                "source_api_respath": "$[0].longitude",
+                "reason": "The longitude of a hotel destination is not semantically equivalent to the drop-off longitude for car rentals, but users might drop off rental cars near hotels, making this a plausible behavior-driven mapping.",
+                "is_valid": "candidate"
+            },
+            {
+                "target_api_params": "drop_off_longitude",
+                "source_api": "Search_Hotels",
+                "source_api_respath": "$.hotels[0].property.longitude",
+                "reason": "The longitude of a hotel property is not semantically equivalent to the drop-off longitude for car rentals, but users might drop off rental cars near hotels, making this a plausible behavior-driven mapping.",
+                "is_valid": "candidate"
+            },
+            {
+                "target_api_params": "drop_off_longitude",
+                "source_api": "Location_to_Lat_Long",
+                "source_api_respath": "$[0].geometry.location.lng",
+                "reason": "The longitude of a general location is semantically equivalent to the drop-off longitude for car rentals.",
+                "is_valid": true
+            },
+            {
+                "target_api_params": "drop_off_longitude",
+                "source_api": "Search_Hotels_By_Coordinates",
+                "source_api_respath": "$.result[0].longitude",
+                "reason": "The longitude of a hotel searched by coordinates is not semantically equivalent to the drop-off longitude for car rentals, but users might drop off rental cars near hotels, making this a plausible behavior-driven mapping.",
+                "is_valid": "candidate"
+            }
+        ],
+        "pick_up_date": [
+            {
+                "target_api_params": "pick_up_date",
+                "source_api": "query",
+                "source_api_respath": null,
+                "reason": "The pick-up date for car rentals is often directly provided in the user's query, making it a reliable source of information.",
+                "is_valid": true
+            }
+        ],
+        "drop_off_date": [
+            {
+                "target_api_params": "drop_off_date",
+                "source_api": "query",
+                "source_api_respath": null,
+                "reason": "The drop-off date for car rentals is often directly specified in the user's query, making this a valid and common user input scenario.",
+                "is_valid": true
+            }
+        ],
+        "pick_up_time": [
+            {
+                "target_api_params": "pick_up_time",
+                "source_api": "query",
+                "source_api_respath": null,
+                "reason": "The pick-up time for car rentals is often directly specified in the user's query.",
+                "is_valid": true
+            },
+            {
+                "target_api_params": "pick_up_time",
+                "source_api": "Search_Hotels_By_Coordinates",
+                "source_api_respath": "$.result[0].checkout.until",
+                "reason": "The hotel checkout time (e.g., 10:00) is not semantically equivalent to the car rental pick-up time. However, users often pick up rental cars right after checking out from a hotel, so this is a plausible behavior-driven mapping.",
+                "is_valid": "candidate"
+            }
+        ],
+        "drop_off_time": [
+            {
+                "target_api_params": "drop_off_time",
+                "source_api": "query",
+                "source_api_respath": null,
+                "reason": "The drop-off time for car rentals can be directly specified by the user in the query.",
+                "is_valid": true
+            },
+            {
+                "target_api_params": "drop_off_time",
+                "source_api": "Search_Hotels",
+                "source_api_respath": "$.hotels[0].property.checkin.fromTime",
+                "reason": "The hotel check-in time (e.g., 16:00) is not semantically equivalent to the car rental drop-off time. However, users often return rental cars right before checking in at a hotel, so this is a plausible behavior-driven mapping.",
+                "is_valid": "candidate"
+            },
+            {
+                "target_api_params": "drop_off_time",
+                "source_api": "Search_Hotels_By_Coordinates",
+                "source_api_respath": "$.result[0].checkin.from",
+                "reason": "The hotel check-in time (e.g., 15:00) is not semantically equivalent to the car rental drop-off time. However, users often return rental cars right before checking in at a hotel, so this is a plausible behavior-driven mapping.",
+                "is_valid": "candidate"
+            }
+        ]
+    },
+    "Vehicle_Supplier_Ratings": {
+        "vehicle_id": [
+            {
+                "target_api_params": "vehicle_id",
+                "source_api": "Search_Car_Rentals",
+                "source_api_respath": "$.search_results[0].vehicle_id",
+                "reason": "The vehicle_id from the car rental search results is semantically consistent with the vehicle_id required for retrieving supplier ratings, as it refers to the same vehicle.",
+                "is_valid": true
+            }
+        ],
+        "search_key": [
+            {
+                "target_api_params": "search_key",
+                "source_api": "Search_Car_Rentals",
+                "source_api_respath": "$.search_context.searchKey",
+                "reason": "The search_key from the car rental search context is directly reused for retrieving vehicle supplier ratings, indicating a strong semantic and business association between searching for car rentals and checking supplier ratings.",
+                "is_valid": true
+            }
+        ]
+    },
+    "Vehicle_Details": {
+        "vehicle_id": [
+            {
+                "target_api_params": "vehicle_id",
+                "source_api": "Search_Car_Rentals",
+                "source_api_respath": "$.search_results[0].vehicle_id",
+                "reason": "The vehicle_id from the car rental search results is directly used to fetch detailed information about the same vehicle, ensuring semantic consistency and logical business association.",
+                "is_valid": true
+            }
+        ],
+        "search_key": [
+            {
+                "target_api_params": "search_key",
+                "source_api": "Search_Car_Rentals",
+                "source_api_respath": "$.search_key",
+                "reason": "The search_key from the car rentals search is directly used to fetch vehicle details, indicating a strong semantic and business association between searching for car rentals and viewing their details.",
+                "is_valid": true
+            }
+        ]
+    },
+    "Booking_Summary": {
+        "vehicle_id": [
+            {
+                "target_api_params": "vehicle_id",
+                "source_api": "Search_Car_Rentals",
+                "source_api_respath": "$.search_results[0].vehicle_id",
+                "reason": "The vehicle_id from the search results is directly used to retrieve booking details for the same vehicle, ensuring semantic consistency and logical business flow.",
+                "is_valid": true
+            }
+        ],
+        "search_key": [
+            {
+                "target_api_params": "search_key",
+                "source_api": "Search_Car_Rentals",
+                "source_api_respath": "$.search_context.searchKey",
+                "reason": "The search_key from the car rental search context is directly used to retrieve the booking summary for the same vehicle, ensuring semantic consistency and logical business flow.",
+                "is_valid": true
+            }
+        ]
+    },
+    "Get_Packages": {
+        "vehicle_id": [
+            {
+                "target_api_params": "vehicle_id",
+                "source_api": "Search_Car_Rentals",
+                "source_api_respath": "$.search_results[0].vehicle_id",
+                "reason": "The vehicle_id from the car rental search results is directly used to get package details for the same vehicle, ensuring semantic consistency and logical business association.",
+                "is_valid": true
+            }
+        ],
+        "search_key": [
+            {
+                "target_api_params": "search_key",
+                "source_api": "Search_Car_Rentals",
+                "source_api_respath": "$.search_context.searchKey",
+                "reason": "The search_key from the car rental search is directly reused in the package search, indicating a strong semantic and business association for retrieving related package deals.",
+                "is_valid": true
+            }
+        ]
+    },
+    "Vehicle_Supplier_Details": {
+        "vehicle_id": [
+            {
+                "target_api_params": "vehicle_id",
+                "source_api": "Search_Car_Rentals",
+                "source_api_respath": "$.search_results[0].vehicle_id",
+                "reason": "The vehicle_id from the car rental search results is directly used to fetch detailed information about the vehicle supplier, which is a strong semantic and business association.",
+                "is_valid": true
+            }
+        ],
+        "search_key": [
+            {
+                "target_api_params": "search_key",
+                "source_api": "Search_Car_Rentals",
+                "source_api_respath": "$.search_key",
+                "reason": "The search_key from the car rentals search is directly used to fetch vehicle supplier details, indicating a strong semantic and business association between searching for car rentals and retrieving details about the suppliers of those rentals.",
+                "is_valid": true
+            }
+        ]
+    },
+    "Vehicle_Supplier_Review": {
+        "vehicle_id": [
+            {
+                "target_api_params": "vehicle_id",
+                "source_api": "Search_Car_Rentals",
+                "source_api_respath": "$.search_results[0].vehicle_id",
+                "reason": "The vehicle_id from the car rental search results is semantically consistent with the vehicle_id required for retrieving supplier reviews, as it refers to the same vehicle entity.",
+                "is_valid": true
+            }
+        ],
+        "search_key": [
+            {
+                "target_api_params": "search_key",
+                "source_api": "Search_Car_Rentals",
+                "source_api_respath": "$.search_key",
+                "reason": "The search_key from the car rental search is directly reused to fetch supplier reviews for the same vehicle, indicating a strong semantic and business association between searching for a car rental and reviewing its supplier.",
+                "is_valid": true
+            }
+        ]
+    },
+    "Search_Attraction_Location": {
+        "query": [
+            {
+                "target_api_params": "query",
+                "source_api": "query",
+                "source_api_respath": null,
+                "reason": "The query parameter is directly provided by the user, which is a valid and common way to search for attractions by location.",
+                "is_valid": true
+            },
+            {
+                "target_api_params": "query",
+                "source_api": "Get_Popular_Attraction_Near_By",
+                "source_api_respath": "$.closest_landmarks[0].tag",
+                "reason": "The tag of a popular attraction nearby a hotel can logically be used to search for that attraction's location, as it represents a user's interest in visiting the attraction.",
+                "is_valid": true
+            },
+            {
+                "target_api_params": "query",
+                "source_api": "Get_Nearby_Cities",
+                "source_api_respath": "$[0].name",
+                "reason": "The name of a nearby city can be used to search for attractions in that city, as it represents a geographical association.",
+                "is_valid": true
+            },
+            {
+                "target_api_params": "query",
+                "source_api": "Search_Attractions",
+                "source_api_respath": "$.products[3].ufiDetails.bCityName",
+                "reason": "The city name from an attraction's details can be used to search for attractions in that city, as it represents a geographical association.",
+                "is_valid": true
+            }
+        ]
+    },
+    "Search_Hotel_Destination": {
+        "query": [
+            {
+                "target_api_params": "query",
+                "source_api": "query",
+                "source_api_respath": null,
+                "reason": "The user's query directly provides the destination for hotel search.",
+                "is_valid": true
+            },
+            {
+                "target_api_params": "query",
+                "source_api": "Search_Attractions",
+                "source_api_respath": "$.products[0].name",
+                "reason": "The name of an attraction (e.g., 'Budapest Sz\u00e9chenyi Thermal Bath') can be used to search for nearby hotels, as there is a geographical association between attractions and accommodations.",
+                "is_valid": true
+            },
+            {
+                "target_api_params": "query",
+                "source_api": "Search_Flights",
+                "source_api_respath": "$.flightOffers[0].segments[0].arrivalAirport.name",
+                "reason": "The arrival airport name (e.g., 'San Diego International Airport') can be used to search for nearby hotels, as travelers often need accommodations near airports.",
+                "is_valid": true
+            }
+        ]
+    },
+    "Search_Attractions": {
+        "id": [
+            {
+                "target_api_params": "id",
+                "source_api": "Search_Attraction_Location",
+                "source_api_respath": "$.destinations[0].id",
+                "reason": "The 'id' field from the source API (Search_Attraction_Location) directly matches the 'id' parameter required by the target API (Search_Attractions), indicating strong semantic consistency.",
+                "is_valid": true
+            }
+        ],
+        "sortBy": [
+            {
+                "target_api_params": "sortBy",
+                "source_api": "query",
+                "source_api_respath": null,
+                "reason": "The sorting preference (e.g., 'attr_book_score') is often directly specified in the user's query, making this a valid mapping.",
+                "is_valid": true
+            }
+        ]
+    },
+    "Search_Hotels": {
+        "dest_id": [
+            {
+                "target_api_params": "dest_id",
+                "source_api": "Search_Hotel_Destination",
+                "source_api_respath": "$[0].dest_id",
+                "reason": "The destination ID from a hotel search API is semantically consistent with the destination ID required for searching hotels.",
+                "is_valid": true
+            },
+            {
+                "target_api_params": "dest_id",
+                "source_api": "Search_Attraction_Location",
+                "source_api_respath": "$.destinations[0].ufi",
+                "reason": "The attraction location's UFI (Unique Feature Identifier) is not semantically equivalent to a hotel destination ID. However, users often search for hotels near attractions, making this a plausible behavior-driven mapping.",
+                "is_valid": "candidate"
+            },
+            {
+                "target_api_params": "dest_id",
+                "source_api": "Get_Nearby_Cities",
+                "source_api_respath": "$[0].dest_id",
+                "reason": "The destination ID from nearby cities search is semantically consistent with the destination ID required for searching hotels, as users might look for hotels in nearby cities.",
+                "is_valid": true
+            },
+            {
+                "target_api_params": "dest_id",
+                "source_api": "Search_Hotels_By_Coordinates",
+                "source_api_respath": "$.result[0].ufi",
+                "reason": "The UFI (Unique Feature Identifier) from a hotel search by coordinates is not semantically equivalent to a destination ID, but it is closely related in the context of hotel searches.",
+                "is_valid": "candidate"
+            }
+        ],
+        "search_type": [
+            {
+                "target_api_params": "search_type",
+                "source_api": "Search_Hotel_Destination",
+                "source_api_respath": "$[0].search_type",
+                "reason": "The search_type parameter from the hotel destination search is semantically consistent with the search_type parameter in the hotel search API, as both relate to the type of location being searched for hotels.",
+                "is_valid": true
+            },
+            {
+                "target_api_params": "search_type",
+                "source_api": "Get_Nearby_Cities",
+                "source_api_respath": "$[0].dest_type",
+                "reason": "The dest_type parameter from the nearby cities search (e.g., 'city') can be reasonably mapped to the search_type parameter in the hotel search API, as searching for hotels in a city is a common user scenario.",
+                "is_valid": "candidate"
+            }
+        ],
+        "arrival_date": [
+            {
+                "target_api_params": "arrival_date",
+                "source_api": "query",
+                "source_api_respath": null,
+                "reason": "The arrival date for the hotel is often provided in the user's query.",
+                "is_valid": true
+            },
+            {
+                "target_api_params": "arrival_date",
+                "source_api": "Get_Min_Price",
+                "source_api_respath": "$[7].departureDate",
+                "reason": "The flight departure date can influence the hotel arrival date as users often book hotels around their flight dates, showing temporal continuity.",
+                "is_valid": true
+            },
+            {
+                "target_api_params": "arrival_date",
+                "source_api": "Get_Min_Price_Multi_Stops",
+                "source_api_respath": "$[3].departureDate",
+                "reason": "Similar to single-stop flights, multi-stop flight departure dates can also influence hotel arrival dates due to temporal continuity in travel planning.",
+                "is_valid": true
+            },
+            {
+                "target_api_params": "arrival_date",
+                "source_api": "Get_Availability_Calendar",
+                "source_api_respath": "$[2].date",
+                "reason": "The attraction availability date has no direct semantic or business association with hotel arrival dates unless explicitly linked in the user's itinerary.",
+                "is_valid": true
+            }
+        ],
+        "departure_date": [
+            {
+                "target_api_params": "departure_date",
+                "source_api": "query",
+                "source_api_respath": null,
+                "reason": "The departure date for hotels can be directly provided by the user in the query.",
+                "is_valid": true
+            },
+            {
+                "target_api_params": "departure_date",
+                "source_api": "Get_Min_Price",
+                "source_api_respath": "$[8].departureDate",
+                "reason": "The departure date from flight search results can influence the hotel departure date as users often plan hotel stays around flight dates, showing temporal continuity.",
+                "is_valid": true
+            },
+            {
+                "target_api_params": "departure_date",
+                "source_api": "Get_Min_Price_Multi_Stops",
+                "source_api_respath": "$[3].searchDates[1]",
+                "reason": "The departure date from multi-stop flight search results can influence the hotel departure date as users often plan hotel stays around flight dates, showing temporal continuity.",
+                "is_valid": true
+            },
+            {
+                "target_api_params": "departure_date",
+                "source_api": "Get_Availability_Calendar",
+                "source_api_respath": "$[3].date",
+                "reason": "The date from an attraction's availability calendar has no direct semantic or business association with a hotel's departure date.",
+                "is_valid": true
+            }
+        ],
+        "adults": [
+            {
+                "target_api_params": "adults",
+                "source_api": "Search_Attractions",
+                "source_api_respath": "$.products[2].reviewsStats.combinedNumericStats.total",
+                "reason": "The total number of reviews in the review statistics of a travel attraction item has **no relation** to the 'number of people' parameter required for hotel searches.",
+                "is_valid": false
+            },
+            {
+                "target_api_params": "adults",
+                "source_api": "query",
+                "source_api_respath": null,
+                "reason": "The number of people for the hotel is often provided in the user's query",
+                "is_valid": true
+            },
+            {
+                "target_api_params": "adults",
+                "source_api": "Search_Car_Rentals",
+                "source_api_respath": "$.search_results[0].vehicle_info.doors",
+                "reason": "The number of doors on a rental car has **no relation** to the 'number of people' parameter required for hotel searches.",
+                "is_valid": false
+            }
+        ],
+        "room_qty": [
+            {
+                "target_api_params": "room_qty",
+                "source_api": "Search_Attractions",
+                "source_api_respath": "$.filterOptions.priceFilters[4].productCount",
+                "reason": "The product count in price filters for attractions has no semantic or business relationship with the number of hotel rooms required.",
+                "is_valid": false
+            },
+            {
+                "target_api_params": "room_qty",
+                "source_api": "Search_Car_Rentals",
+                "source_api_respath": "$.filter[1].categories[1].count",
+                "reason": "The count of car rental categories does not logically determine or influence the number of hotel rooms needed.",
+                "is_valid": false
+            },
+            {
+                "target_api_params": "room_qty",
+                "source_api": "query",
+                "source_api_respath": null,
+                "reason": "The number of rooms is typically specified directly by the user in their query.",
+                "is_valid": true
+            }
+        ],
+        "sort_by": [
+            {
+                "target_api_params": "sort_by",
+                "source_api": "query",
+                "source_api_respath": null,
+                "reason": "The sorting preference for hotels can be directly specified by the user in the query.",
+                "is_valid": true
+            },
+            {
+                "target_api_params": "sort_by",
+                "source_api": "Get_Filter",
+                "source_api_respath": "$.filters[1].field",
+                "reason": "The filter field 'price' does not semantically match the sorting parameter 'sort_by'. While price can be a sorting criterion, the filter field itself does not imply sorting behavior.",
+                "is_valid": false
+            }
+        ],
+        "children_age": [
+            {
+                "target_api_params": "children_age",
+                "source_api": "query",
+                "source_api_respath": null,
+                "reason": "The ages of children for the hotel stay are often provided directly in the user's query.",
+                "is_valid": true
+            }
+        ],
+        "categories_filter": [
+            {
+                "target_api_params": "categories_filter",
+                "source_api": "query",
+                "source_api_respath": null,
+                "reason": "The user may specify desired hotel facilities directly in their query, making this a valid semantic match.",
+                "is_valid": true
+            },
+            {
+                "target_api_params": "categories_filter",
+                "source_api": "Get_Filter",
+                "source_api_respath": "$.filters[0].options[3].genericId",
+                "reason": "The source API is specifically designed to provide filter values for hotel searches, ensuring semantic consistency.",
+                "is_valid": true
+            }
+        ],
+        "price_max": [
+            {
+                "target_api_params": "price_max",
+                "source_api": "query",
+                "source_api_respath": null,
+                "reason": "The maximum price for hotel search is often directly specified by the user in their query, making this a direct and valid mapping.",
+                "is_valid": true
+            }
+        ]
+    },
+    "Taxi_Search_Location": {
+        "query": [
+            {
+                "target_api_params": "query",
+                "source_api": "query",
+                "source_api_respath": null,
+                "reason": "The user's query directly provides the location for taxi search, which is semantically consistent.",
+                "is_valid": true
+            },
+            {
+                "target_api_params": "query",
+                "source_api": "Search_Flight_Location",
+                "source_api_respath": "$[0].name",
+                "reason": "The airport name from flight location search can be a valid pick-up/drop-off location for a taxi, showing geographical association.",
+                "is_valid": true
+            },
+            {
+                "target_api_params": "query",
+                "source_api": "Get_Popular_Attraction_Near_By",
+                "source_api_respath": "$.closest_landmarks[0].tag",
+                "reason": "Popular attractions near a hotel are common taxi destinations, indicating a user behavior association.",
+                "is_valid": true
+            },
+            {
+                "target_api_params": "query",
+                "source_api": "Search_Flights_Multi_Stops",
+                "source_api_respath": "$.flightOffers[0].segments[2].arrivalAirport.name",
+                "reason": "The arrival airport from a multi-stop flight can logically be a taxi pick-up/drop-off location, showing geographical association.",
+                "is_valid": true
+            },
+            {
+                "target_api_params": "query",
+                "source_api": "Search_Hotels",
+                "source_api_respath": "$.hotels[0].property.name",
+                "reason": "A hotel name can be a valid taxi destination, especially if the user is traveling to/from the hotel.",
+                "is_valid": true
+            },
+            {
+                "target_api_params": "query",
+                "source_api": "Search_Hotel_Destination",
+                "source_api_respath": "$[0].name",
+                "reason": "A hotel destination is a common taxi pick-up/drop-off point, showing user behavior association.",
+                "is_valid": true
+            },
+            {
+                "target_api_params": "query",
+                "source_api": "Search_Flights",
+                "source_api_respath": "$.flightOffers[0].segments[0].arrivalAirport.name",
+                "reason": "The arrival airport from a flight search is a logical taxi pick-up/drop-off location, indicating geographical association.",
+                "is_valid": true
+            },
+            {
+                "target_api_params": "query",
+                "source_api": "Search_Hotels_By_Coordinates",
+                "source_api_respath": "$.result[0].hotel_name_trans",
+                "reason": "A hotel name from a coordinates-based search can be a valid taxi destination, showing user behavior association.",
+                "is_valid": true
+            }
+        ]
+    },
+    "Search_Taxi": {
+        "pick_up_place_id": [
+            {
+                "target_api_params": "pick_up_place_id",
+                "source_api": "Taxi_Search_Location",
+                "source_api_respath": "$[0].googlePlaceId",
+                "reason": "The `googlePlaceId` from the taxi search location API directly provides the place ID needed for the taxi pick-up location, ensuring semantic and functional consistency.",
+                "is_valid": true
+            },
+            {
+                "target_api_params": "pick_up_place_id",
+                "source_api": "Location_to_Lat_Long",
+                "source_api_respath": "$[0].place_id",
+                "reason": "The `place_id` from the location to latitude/longitude API can be used to identify the pick-up location for the taxi, maintaining semantic consistency as both refer to the same geographical location.",
+                "is_valid": true
+            }
+        ],
+        "drop_off_place_id": [
+            {
+                "target_api_params": "drop_off_place_id",
+                "source_api": "Taxi_Search_Location",
+                "source_api_respath": "$[0].googlePlaceId",
+                "reason": "The `googlePlaceId` from the source API directly provides the `drop_off_place_id` for the taxi search, ensuring semantic and functional consistency.",
+                "is_valid": true
+            }
+        ],
+        "pick_up_date": [
+            {
+                "target_api_params": "pick_up_date",
+                "source_api": "query",
+                "source_api_respath": null,
+                "reason": "The pick-up date for a taxi is often directly provided in the user's query, making this a valid and common scenario.",
+                "is_valid": true
+            }
+        ],
+        "pick_up_time": [
+            {
+                "target_api_params": "pick_up_time",
+                "source_api": "query",
+                "source_api_respath": null,
+                "reason": "The pick-up time for a taxi is often provided directly in the user's query.",
+                "is_valid": true
+            },
+            {
+                "target_api_params": "pick_up_time",
+                "source_api": "Search_Hotels description: Search Hotels.",
+                "source_api_respath": "$.hotels[0].property.checkout.untilTime",
+                "reason": "The hotel checkout time (e.g., 11:00) is not semantically equivalent to the taxi pick-up time. However, users often request a taxi right after checking out from a hotel, so this is a plausible behavior-driven mapping.",
+                "is_valid": "candidate"
+            }
+        ]
+    },
+    "Search_Hotels_By_Coordinates": {
+        "latitude": [
+            {
+                "target_api_params": "latitude",
+                "source_api": "Search_Car_Location",
+                "source_api_respath": "$[0].coordinates.latitude",
+                "reason": "The latitude of a car rental location is semantically equivalent to the latitude needed for hotel searches, and there is a geographical association between car rental locations and hotels.",
+                "is_valid": true
+            },
+            {
+                "target_api_params": "latitude",
+                "source_api": "Location_to_Lat_Long",
+                "source_api_respath": "$[0].geometry.location.lat",
+                "reason": "The latitude obtained from a location-to-coordinates conversion is semantically equivalent to the latitude needed for hotel searches.",
+                "is_valid": true
+            },
+            {
+                "target_api_params": "latitude",
+                "source_api": "Search_Hotel_Destination",
+                "source_api_respath": "$[0].latitude",
+                "reason": "The latitude from a hotel destination search is semantically equivalent to the latitude needed for another hotel search.",
+                "is_valid": true
+            },
+            {
+                "target_api_params": "latitude",
+                "source_api": "query",
+                "source_api_respath": null,
+                "reason": "The latitude for hotel searches can be directly provided by the user's query.",
+                "is_valid": true
+            }
+        ],
+        "longitude": [
+            {
+                "target_api_params": "longitude",
+                "source_api": "Search_Car_Location",
+                "source_api_respath": "$[0].coordinates.longitude",
+                "reason": "The longitude of a car rental location is semantically equivalent to the longitude needed for hotel searches, and there is a geographical association between car rental locations and hotels.",
+                "is_valid": true
+            },
+            {
+                "target_api_params": "longitude",
+                "source_api": "Location_to_Lat_Long",
+                "source_api_respath": "$[0].geometry.location.lng",
+                "reason": "The longitude from a location-to-coordinates conversion is semantically equivalent to the longitude needed for hotel searches, and there is a geographical association between the location and hotels.",
+                "is_valid": true
+            },
+            {
+                "target_api_params": "longitude",
+                "source_api": "Search_Hotel_Destination",
+                "source_api_respath": "$[0].longitude",
+                "reason": "The longitude from a hotel destination search is semantically equivalent to the longitude needed for another hotel search, ensuring consistency in geographical data.",
+                "is_valid": true
+            },
+            {
+                "target_api_params": "longitude",
+                "source_api": "query",
+                "source_api_respath": null,
+                "reason": "The longitude for hotel searches can be directly provided in the user's query, which is a common and valid input method.",
+                "is_valid": true
+            }
+        ],
+        "arrival_date": [
+            {
+                "target_api_params": "arrival_date",
+                "source_api": "query",
+                "source_api_respath": null,
+                "reason": "The arrival date for a hotel search is commonly provided directly by the user in their query.",
+                "is_valid": true
+            }
+        ],
+        "departure_date": [
+            {
+                "target_api_params": "departure_date",
+                "source_api": "query",
+                "source_api_respath": null,
+                "reason": "The departure date for hotel search is often provided directly in the user's query, making this a valid and common user input scenario.",
+                "is_valid": true
+            }
+        ],
+        "radius": [
+            {
+                "target_api_params": "radius",
+                "source_api": "query",
+                "source_api_respath": null,
+                "reason": "The search radius for hotels can be directly specified by the user in the query.",
+                "is_valid": true
+            },
+            {
+                "target_api_params": "radius",
+                "source_api": "Search_Flights",
+                "source_api_respath": "$.flightDeals[0].price.units",
+                "reason": "The price units of a flight deal have no semantic or business association with the search radius for hotels.",
+                "is_valid": false
+            }
+        ],
+        "price_min": [
+            {
+                "target_api_params": "price_min",
+                "source_api": "query",
+                "source_api_respath": null,
+                "reason": "The minimum price for hotel search is often directly specified in the user's query, making this a valid and common user input scenario.",
+                "is_valid": true
+            }
+        ],
+        "price_max": [
+            {
+                "target_api_params": "price_max",
+                "source_api": "query",
+                "source_api_respath": null,
+                "reason": "The maximum price for hotel search is often directly specified in the user's query, making it a valid and direct input.",
+                "is_valid": true
+            }
+        ],
+        "adults": [
+            {
+                "target_api_params": "adults",
+                "source_api": "query",
+                "source_api_respath": null,
+                "reason": "The number of adults for the hotel search is often directly provided in the user's query, making this a valid and common input method.",
+                "is_valid": true
+            }
+        ],
+        "room_qty": [
+            {
+                "target_api_params": "room_qty",
+                "source_api": "query",
+                "source_api_respath": null,
+                "reason": "The number of rooms for the hotel is often provided in the user's query, which is a direct and common way to specify this parameter.",
+                "is_valid": true
+            }
+        ]
+    },
+    "Get_Room_List_With_Availability": {
+        "hotel_id": [
+            {
+                "target_api_params": "hotel_id",
+                "source_api": "Search_Hotels_By_Coordinates",
+                "source_api_respath": "$.result[0].hotel_id",
+                "reason": "The hotel_id from the search results around geographical coordinates is semantically consistent with the hotel_id needed to check room availability.",
+                "is_valid": true
+            },
+            {
+                "target_api_params": "hotel_id",
+                "source_api": "Search_Hotel_Destination",
+                "source_api_respath": "$[0].dest_id",
+                "reason": "The dest_id from the hotel search by location is semantically consistent with the hotel_id needed to check room availability, as it identifies the same hotel.",
+                "is_valid": true
+            }
+        ],
+        "arrival_date": [
+            {
+                "target_api_params": "arrival_date",
+                "source_api": "query",
+                "source_api_respath": null,
+                "reason": "The arrival date for hotel room availability is commonly provided directly in the user's query.",
+                "is_valid": true
+            }
+        ],
+        "departure_date": [
+            {
+                "target_api_params": "departure_date",
+                "source_api": "query",
+                "source_api_respath": null,
+                "reason": "The departure date for hotel room availability is often provided directly in the user's query.",
+                "is_valid": true
+            }
+        ]
+    },
+    "Search_Flight_Location": {
+        "query": [
+            {
+                "target_api_params": "query",
+                "source_api": "query",
+                "source_api_respath": null,
+                "reason": "The user's query directly provides the location for searching flight locations.",
+                "is_valid": true
+            },
+            {
+                "target_api_params": "query",
+                "source_api": "Search_Attraction_Location",
+                "source_api_respath": "$.products[0].cityName",
+                "reason": "The city name from an attraction search can be used to search for flight locations, as there is a geographical association between attractions and airports.",
+                "is_valid": true
+            },
+            {
+                "target_api_params": "query",
+                "source_api": "Get_Nearby_Cities",
+                "source_api_respath": "$[0].name",
+                "reason": "The name of a nearby city can be used to search for flight locations, as there is a geographical association between cities and airports.",
+                "is_valid": true
+            },
+            {
+                "target_api_params": "query",
+                "source_api": "Search_Hotel_Destination",
+                "source_api_respath": "$[0].city_name",
+                "reason": "The city name from a hotel search can be used to search for flight locations, as there is a geographical association between hotels and airports.",
+                "is_valid": true
+            }
+        ]
+    },
+    "Get_Min_Price": {
+        "toId": [
+            {
+                "target_api_params": "toId",
+                "source_api": "Search_Flight_Location",
+                "source_api_respath": "$[0].id",
+                "reason": "The airport ID (e.g., 'ATH.AIRPORT') from the flight location search is semantically consistent with the destination airport ID required for getting minimum flight prices.",
+                "is_valid": true
+            }
+        ],
+        "fromId": [
+            {
+                "target_api_params": "fromId",
+                "source_api": "Search_Flight_Location",
+                "source_api_respath": "$[0].id",
+                "reason": "The airport ID from the flight location search is semantically consistent with the departure airport ID required for getting minimum flight prices.",
+                "is_valid": true
+            }
+        ],
+        "departDate": [
+            {
+                "target_api_params": "departDate",
+                "source_api": "query",
+                "source_api_respath": null,
+                "reason": "The departure date for flights is typically provided directly by the user in the query.",
+                "is_valid": true
+            }
+        ],
+        "cabinClass": [
+            {
+                "target_api_params": "cabinClass",
+                "source_api": "query",
+                "source_api_respath": null,
+                "reason": "The cabin class for flights is often explicitly specified in the user's query, making this a direct and valid mapping.",
+                "is_valid": true
+            }
+        ],
+        "returnDate": [
+            {
+                "target_api_params": "returnDate",
+                "source_api": "query",
+                "source_api_respath": null,
+                "reason": "The return date for flights is often directly provided in the user's query, making it a semantically consistent and reliable source.",
+                "is_valid": true
+            }
+        ]
+    },
+    "Search_Flights": {
+        "fromId": [
+            {
+                "target_api_params": "fromId",
+                "source_api": "Search_Flight_Location",
+                "source_api_respath": "$[0].id",
+                "reason": "The airport ID from the flight location search is semantically equivalent to the departure airport ID required for flight searches.",
+                "is_valid": true
+            },
+            {
+                "target_api_params": "fromId",
+                "source_api": "query",
+                "source_api_respath": null,
+                "reason": "The departure airport ID can be directly provided by the user in the query.",
+                "is_valid": true
+            }
+        ],
+        "toId": [
+            {
+                "target_api_params": "toId",
+                "source_api": "Search_Flight_Location",
+                "source_api_respath": "$[0].id",
+                "reason": "The airport ID from the flight location search is semantically consistent with the destination airport ID required for flight search.",
+                "is_valid": true
+            },
+            {
+                "target_api_params": "toId",
+                "source_api": "query",
+                "source_api_respath": null,
+                "reason": "The destination city or airport is often provided in the user's query.",
+                "is_valid": true
+            }
+        ],
+        "departDate": [
+            {
+                "target_api_params": "departDate",
+                "source_api": "query",
+                "source_api_respath": null,
+                "reason": "The departure date for flights is often directly provided in the user's query.",
+                "is_valid": true
+            },
+            {
+                "target_api_params": "departDate",
+                "source_api": "Get_Availability_Calendar description: Search the availability calendar for a specific attraction.",
+                "source_api_respath": "$[5].date",
+                "reason": "The date from an attraction's availability calendar has no direct semantic or business association with flight departure dates.",
+                "is_valid": true
+            },
+            {
+                "target_api_params": "departDate",
+                "source_api": "Get_Room_Availability description: Search the room price and availability for future dates.",
+                "source_api_respath": "$.avDates[3].date",
+                "reason": "The date from hotel room availability has no direct semantic or business association with flight departure dates.",
+                "is_valid": true
+            },
+            {
+                "target_api_params": "departDate",
+                "source_api": "Get_Min_Price description: Get the minimum price for flights. This API will return the lowest priced flights within 5 days before and after the query date.",
+                "source_api_respath": "$[0].departureDate",
+                "reason": "The departure date from flight pricing data is semantically equivalent to the flight departure date being searched.",
+                "is_valid": true
+            }
+        ],
+        "returnDate": [
+            {
+                "target_api_params": "returnDate",
+                "source_api": "query",
+                "source_api_respath": null,
+                "reason": "The return date for flights is often provided in the user's query.",
+                "is_valid": true
+            },
+            {
+                "target_api_params": "returnDate",
+                "source_api": "Get_Min_Price",
+                "source_api_respath": "$[0].returnDate",
+                "reason": "The return date from the minimum price flight search is semantically equivalent to the return date for flight searches, as both pertain to the same flight booking context.",
+                "is_valid": true
+            }
+        ],
+        "cabinClass": [
+            {
+                "target_api_params": "cabinClass",
+                "source_api": "query",
+                "source_api_respath": null,
+                "reason": "The cabin class for flights is often directly specified in the user's query.",
+                "is_valid": true
+            },
+            {
+                "target_api_params": "cabinClass",
+                "source_api": "Search_Flights_Multi_Stops",
+                "source_api_respath": "$.flightOffers[0].segments[0].legs[0].cabinClass",
+                "reason": "The cabin class from a multi-stop flight search can be directly reused for another flight search, as the semantic meaning is identical and the context is directly related.",
+                "is_valid": true
+            }
+        ],
+        "sort": [
+            {
+                "target_api_params": "sort",
+                "source_api": "query",
+                "source_api_respath": null,
+                "reason": "The sorting preference for flights can be directly specified by the user in their query, making this a valid and direct mapping.",
+                "is_valid": true
+            }
+        ],
+        "adults": [
+            {
+                "target_api_params": "adults",
+                "source_api": "query",
+                "source_api_respath": null,
+                "reason": "The number of adults for the flight is often provided in the user's query, which is a direct and common input for flight searches.",
+                "is_valid": true
+            }
+        ],
+        "children": [
+            {
+                "target_api_params": "children",
+                "source_api": "query",
+                "source_api_respath": null,
+                "reason": "The number of children for the flight is often provided in the user's query.",
+                "is_valid": true
+            }
+        ]
+    },
+    "Get_Availability": {
+        "slug": [
+            {
+                "target_api_params": "slug",
+                "source_api": "Search_Attraction_Location",
+                "source_api_respath": "$.products[0].productSlug",
+                "reason": "The slug from the attraction location search is directly used to check ticket availability, which is semantically consistent and logically linked in the user workflow of finding and booking attractions.",
+                "is_valid": true
+            },
+            {
+                "target_api_params": "slug",
+                "source_api": "Search_Attractions",
+                "source_api_respath": "$.products[0].slug",
+                "reason": "The slug from the general attraction search is directly used to check ticket availability, maintaining semantic consistency and logical association in the user's booking process.",
+                "is_valid": true
+            }
+        ],
+        "date": [
+            {
+                "target_api_params": "date",
+                "source_api": "query",
+                "source_api_respath": null,
+                "reason": "The date for checking ticket availability is often directly provided in the user's query.",
+                "is_valid": true
+            }
+        ]
+    },
+    "Get_Flight_Details": {
+        "token": [
+            {
+                "target_api_params": "token",
+                "source_api": "Search_Flights description: Search Flights.",
+                "source_api_respath": "$.flightOffers[0].token",
+                "reason": "The token from the flight search results is directly used to fetch detailed flight information, which is semantically consistent and logically linked in the flight booking workflow.",
+                "is_valid": true
+            },
+            {
+                "target_api_params": "token",
+                "source_api": "Search_Flights_Multi_Stops description: Search multi-stop Flights.",
+                "source_api_respath": "$.flightOffers[0].token",
+                "reason": "The token from the multi-stop flight search results is directly used to fetch detailed flight information, which is semantically consistent and logically linked in the flight booking workflow.",
+                "is_valid": true
+            }
+        ]
+    },
+    "Location_to_Lat_Long": {
+        "query": [
+            {
+                "target_api_params": "query",
+                "source_api": "query",
+                "source_api_respath": null,
+                "reason": "The query parameter directly provides the location/address to be converted to latitude and longitude, which is semantically consistent.",
+                "is_valid": true
+            },
+            {
+                "target_api_params": "query",
+                "source_api": "Search_Flight_Location",
+                "source_api_respath": "$[0].name",
+                "reason": "The airport name from flight location search is semantically consistent with the query parameter for converting location to latitude and longitude, as both involve identifying a specific location.",
+                "is_valid": true
+            }
+        ]
+    },
+    "Get_Min_Price_Multi_Stops": {
+        "legs[0].fromId": [
+            {
+                "target_api_params": "legs[0].fromId",
+                "source_api": "Search_Flight_Location",
+                "source_api_respath": "$[0].id",
+                "reason": "The airport ID from the flight location search is semantically consistent with the departure airport ID required for multi-stop flight pricing.",
+                "is_valid": true
+            }
+        ],
+        "legs[0].toId": [
+            {
+                "target_api_params": "legs[0].toId",
+                "source_api": "Search_Flight_Location",
+                "source_api_respath": "$[0].id",
+                "reason": "The airport ID from the flight location search (BNA.AIRPORT) is semantically consistent with the destination airport ID required for the multi-stop flight search.",
+                "is_valid": true
+            }
+        ],
+        "legs[0].date": [
+            {
+                "target_api_params": "legs[0].date",
+                "source_api": "query",
+                "source_api_respath": null,
+                "reason": "The date for the first leg of a multi-stop flight is typically provided directly by the user in the query.",
+                "is_valid": true
+            }
+        ],
+        "cabinClass": [
+            {
+                "target_api_params": "cabinClass",
+                "source_api": "query",
+                "source_api_respath": null,
+                "reason": "The cabin class for flights is often directly specified in the user's query, making it a reliable source for this parameter.",
+                "is_valid": true
+            }
+        ]
+    },
+    "Get_Availability_Calendar": {
+        "id": [
+            {
+                "target_api_params": "id",
+                "source_api": "Search_Attraction_Location",
+                "source_api_respath": "$.products[0].productId",
+                "reason": "The `productId` from the attraction search result is semantically equivalent to the `id` required for checking the availability calendar of the same attraction.",
+                "is_valid": true
+            },
+            {
+                "target_api_params": "id",
+                "source_api": "Search_Attractions",
+                "source_api_respath": "$.products[0].id",
+                "reason": "The `id` from the attraction search result is semantically equivalent to the `id` required for checking the availability calendar of the same attraction.",
+                "is_valid": true
+            }
+        ]
+    },
+    "Get_Popular_Attraction_Near_By": {
+        "hotel_id": [
+            {
+                "target_api_params": "hotel_id",
+                "source_api": "query",
+                "source_api_respath": null,
+                "reason": "The hotel_id is often provided directly in the user's query when searching for attractions nearby.",
+                "is_valid": true
+            },
+            {
+                "target_api_params": "hotel_id",
+                "source_api": "Search_Hotels_By_Coordinates",
+                "source_api_respath": "$.result[0].hotel_id",
+                "reason": "The hotel_id from a hotel search by coordinates can be used to find attractions nearby, as there is a geographical association between the hotel and nearby attractions.",
+                "is_valid": true
+            },
+            {
+                "target_api_params": "hotel_id",
+                "source_api": "Search_Hotel_Destination",
+                "source_api_respath": "$[0].dest_id",
+                "reason": "The destination ID from a hotel search by location can be used to find attractions nearby, as there is a geographical association between the hotel location and nearby attractions.",
+                "is_valid": true
+            }
+        ]
+    },
+    "Get_Attraction_Details": {
+        "slug": [
+            {
+                "target_api_params": "slug",
+                "source_api": "Search_Attraction_Location",
+                "source_api_respath": "$.products[0].productSlug",
+                "reason": "The `productSlug` from the attraction search by location API directly matches the `slug` parameter needed for getting attraction details, indicating strong semantic consistency.",
+                "is_valid": true
+            },
+            {
+                "target_api_params": "slug",
+                "source_api": "Search_Attractions",
+                "source_api_respath": "$.products[0].slug",
+                "reason": "The `slug` from the general attraction search API directly matches the `slug` parameter needed for getting attraction details, indicating strong semantic consistency.",
+                "is_valid": true
+            }
+        ]
+    },
+    "Get_Nearby_Cities": {
+        "latitude": [
+            {
+                "target_api_params": "latitude",
+                "source_api": "Location_to_Lat_Long description: Get location/address latitude and longitude.",
+                "source_api_respath": "$[0].geometry.location.lat",
+                "reason": "The latitude from a location-to-coordinates conversion is semantically identical to the latitude needed for searching nearby cities.",
+                "is_valid": true
+            },
+            {
+                "target_api_params": "latitude",
+                "source_api": "Taxi_Search_Location description: Find the `googlePlaceId` of Pick-up/Drop-off Location for taxi.",
+                "source_api_respath": "$[0].latitude",
+                "reason": "The latitude of a taxi pick-up/drop-off location is semantically identical to the latitude needed for searching nearby cities.",
+                "is_valid": true
+            },
+            {
+                "target_api_params": "latitude",
+                "source_api": "Search_Hotels description: Search Hotels.",
+                "source_api_respath": "$.hotels[0].property.latitude",
+                "reason": "The latitude of a hotel is semantically identical to the latitude needed for searching nearby cities.",
+                "is_valid": true
+            },
+            {
+                "target_api_params": "latitude",
+                "source_api": "Search_Hotels_By_Coordinates description: Search for hotels around a given geographical coordinates.",
+                "source_api_respath": "$.result[0].latitude",
+                "reason": "The latitude used to search for hotels is semantically identical to the latitude needed for searching nearby cities.",
+                "is_valid": true
+            }
+        ],
+        "longitude": [
+            {
+                "target_api_params": "longitude",
+                "source_api": "Location_to_Lat_Long description: Get location/address latitude and longitude.",
+                "source_api_respath": "$[0].geometry.location.lng",
+                "reason": "The longitude from a location-to-coordinates conversion is semantically identical to the longitude needed for searching nearby cities.",
+                "is_valid": true
+            },
+            {
+                "target_api_params": "longitude",
+                "source_api": "Taxi_Search_Location description: Find the `googlePlaceId` of Pick-up/Drop-off Location for taxi.",
+                "source_api_respath": "$[0].longitude",
+                "reason": "The longitude of a taxi pick-up/drop-off location is semantically identical to the longitude needed for searching nearby cities.",
+                "is_valid": true
+            },
+            {
+                "target_api_params": "longitude",
+                "source_api": "Search_Hotels description: Search Hotels.",
+                "source_api_respath": "$.hotels[0].property.longitude",
+                "reason": "The longitude of a hotel is semantically identical to the longitude needed for searching nearby cities.",
+                "is_valid": true
+            },
+            {
+                "target_api_params": "longitude",
+                "source_api": "Search_Hotels_By_Coordinates description: Search for hotels around a given geographical coordinates.",
+                "source_api_respath": "$.result[0].longitude",
+                "reason": "The longitude used for searching hotels by coordinates is semantically identical to the longitude needed for searching nearby cities.",
+                "is_valid": true
+            }
+        ]
+    },
+    "Search_Flights_Multi_Stops": {
+        "legs[0].fromId": [
+            {
+                "target_api_params": "legs[0].fromId",
+                "source_api": "Search_Flight_Location",
+                "source_api_respath": "$[0].id",
+                "reason": "The airport ID from the flight location search is semantically consistent with the departure airport ID required for multi-stop flight searches.",
+                "is_valid": true
+            }
+        ],
+        "legs[0].toId": [
+            {
+                "target_api_params": "legs[0].toId",
+                "source_api": "Search_Flight_Location",
+                "source_api_respath": "$[0].id",
+                "reason": "The 'id' field from the flight location search (e.g., 'LON.CITY') directly matches the semantic meaning of 'toId' in the multi-stop flights search, as both refer to a destination location identifier.",
+                "is_valid": true
+            }
+        ],
+        "legs[0].date": [
+            {
+                "target_api_params": "legs[0].date",
+                "source_api": "query",
+                "source_api_respath": null,
+                "reason": "The flight date is often provided in the user's query.",
+                "is_valid": true
+            },
+            {
+                "target_api_params": "legs[0].date",
+                "source_api": "Get_Min_Price_Multi_Stops",
+                "source_api_respath": "$[3].departureDate",
+                "reason": "The departure date from the minimum price search for multi-stop flights is semantically consistent with the flight date for the multi-stop flight search.",
+                "is_valid": true
+            }
+        ],
+        "sort": [
+            {
+                "target_api_params": "sort",
+                "source_api": "query",
+                "source_api_respath": null,
+                "reason": "The sorting preference (e.g., 'CHEAPEST') is often directly specified by the user in the query.",
+                "is_valid": true
+            }
+        ],
+        "cabinClass": [
+            {
+                "target_api_params": "cabinClass",
+                "source_api": "query",
+                "source_api_respath": null,
+                "reason": "The cabin class for flights is often explicitly specified in the user's query, making it a reliable source for this parameter.",
+                "is_valid": true
+            }
+        ],
+        "adults": [
+            {
+                "target_api_params": "adults",
+                "source_api": "query",
+                "source_api_respath": null,
+                "reason": "The number of adults for the flight search is often provided in the user's query.",
+                "is_valid": true
+            }
+        ]
+    },
+    "Get_Room_Availability": {
+        "hotel_id": [
+            {
+                "target_api_params": "hotel_id",
+                "source_api": "Search_Hotel_Destination",
+                "source_api_respath": "$[0].dest_id",
+                "reason": "The destination ID from the hotel search API directly corresponds to the hotel ID needed for checking room availability, indicating strong semantic consistency.",
+                "is_valid": true
+            }
+        ],
+        "min_date": [
+            {
+                "target_api_params": "min_date",
+                "source_api": "query",
+                "source_api_respath": null,
+                "reason": "The minimum date for room availability is often directly provided in the user's query.",
+                "is_valid": true
+            }
+        ],
+        "max_date": [
+            {
+                "target_api_params": "max_date",
+                "source_api": "query",
+                "source_api_respath": null,
+                "reason": "The maximum date for room availability is often directly specified by the user in their query.",
+                "is_valid": true
+            }
+        ]
+    },
+    "Get_Hotel_Reviews(Tips)": {
+        "hotel_id": [
+            {
+                "target_api_params": "hotel_id",
+                "source_api": "Search_Hotel_Destination",
+                "source_api_respath": "$[0].dest_id",
+                "reason": "The destination ID from the hotel search by location directly corresponds to the hotel ID needed to retrieve reviews, indicating a strong semantic and business association.",
+                "is_valid": true
+            },
+            {
+                "target_api_params": "hotel_id",
+                "source_api": "Search_Hotels_By_Coordinates",
+                "source_api_respath": "$.result[0].hotel_id",
+                "reason": "The hotel ID from the search by coordinates directly matches the hotel ID required for fetching reviews, showing a clear semantic and business link.",
+                "is_valid": true
+            },
+            {
+                "target_api_params": "hotel_id",
+                "source_api": "Search_Hotels",
+                "source_api_respath": "$.hotels[0].hotel_id",
+                "reason": "The hotel ID from the general hotel search is semantically identical to the hotel ID needed for reviews, ensuring a valid and direct association.",
+                "is_valid": true
+            }
+        ],
+        "sort_option_id": [
+            {
+                "target_api_params": "sort_option_id",
+                "source_api": "Get_Hotel_Reviews(Tips)_Sort_Option",
+                "source_api_respath": "$[1].sort_option_id",
+                "reason": "The source API provides available sort parameters specifically for hotel reviews, which directly match the `sort_option_id` parameter needed in the target API. This is a strong semantic and functional match.",
+                "is_valid": true
+            }
+        ]
+    },
+    "Get_Description_And_Info": {
+        "hotel_id": [
+            {
+                "target_api_params": "hotel_id",
+                "source_api": "Search_Hotels_By_Coordinates",
+                "source_api_respath": "$.result[0].hotel_id",
+                "reason": "The hotel_id from the search results is directly used to retrieve detailed information about the same hotel, ensuring semantic consistency and logical business association.",
+                "is_valid": true
+            }
+        ]
+    },
+    "Get_Hotel_Details": {
+        "hotel_id": [
+            {
+                "target_api_params": "hotel_id",
+                "source_api": "Search_Hotels_By_Coordinates",
+                "source_api_respath": "$.result[0].hotel_id",
+                "reason": "The hotel_id from the search results is directly used to retrieve detailed information about the same hotel, which is a strong semantic and business association.",
+                "is_valid": true
+            },
+            {
+                "target_api_params": "hotel_id",
+                "source_api": "Search_Hotels",
+                "source_api_respath": "$.hotels[0].hotel_id",
+                "reason": "The hotel_id from the search results is directly used to retrieve detailed information about the same hotel, which is a strong semantic and business association.",
+                "is_valid": true
+            }
+        ]
+    },
+    "Payment_features_of_the_Hotel": {
+        "hotel_id": [
+            {
+                "target_api_params": "hotel_id",
+                "source_api": "Search_Hotels_By_Coordinates description: Search for hotels around a given geographical coordinates.",
+                "source_api_respath": "$.result[0].hotel_id",
+                "reason": "The hotel_id from the search results is directly used to retrieve payment features for the same hotel, ensuring semantic and business consistency.",
+                "is_valid": true
+            },
+            {
+                "target_api_params": "hotel_id",
+                "source_api": "Search_Hotels description: Search Hotels.",
+                "source_api_respath": "$.hotels[0].hotel_id",
+                "reason": "The hotel_id from the search results is directly used to retrieve payment features for the same hotel, ensuring semantic and business consistency.",
+                "is_valid": true
+            }
+        ]
+    },
+    "Get_Filter": {
+        "search_type": [
+            {
+                "target_api_params": "search_type",
+                "source_api": "Search_Hotel_Destination",
+                "source_api_respath": "$[0].search_type",
+                "reason": "The search_type parameter from the source API (Search_Hotel_Destination) directly matches the search_type parameter in the target API (Get_Filter), both indicating the type of search being performed (e.g., 'city').",
+                "is_valid": true
+            }
+        ],
+        "dest_id": [
+            {
+                "target_api_params": "dest_id",
+                "source_api": "Search_Hotel_Destination",
+                "source_api_respath": "$[0].dest_id",
+                "reason": "The destination ID from the hotel search API directly corresponds to the destination ID needed for filtering hotels, indicating strong semantic and business association.",
+                "is_valid": true
+            }
+        ],
+        "arrival_date": [
+            {
+                "target_api_params": "arrival_date",
+                "source_api": "query",
+                "source_api_respath": null,
+                "reason": "The arrival date for hotel search is commonly provided directly in the user's query.",
+                "is_valid": true
+            }
+        ],
+        "departure_date": [
+            {
+                "target_api_params": "departure_date",
+                "source_api": "query",
+                "source_api_respath": null,
+                "reason": "The departure date for hotel filtering is commonly provided directly in the user's query, making this a direct semantic match.",
+                "is_valid": true
+            }
+        ],
+        "adults": [
+            {
+                "target_api_params": "adults",
+                "source_api": "query",
+                "source_api_respath": null,
+                "reason": "The number of adults for the hotel search is often directly provided in the user's query.",
+                "is_valid": true
+            }
+        ],
+        "children_age": [
+            {
+                "target_api_params": "children_age",
+                "source_api": "query",
+                "source_api_respath": null,
+                "reason": "The ages of children for the hotel stay are often provided in the user's query, which is a direct and common way to specify such requirements.",
+                "is_valid": true
+            }
+        ]
+    },
+    "Get_Hotel_Policies": {
+        "hotel_id": [
+            {
+                "target_api_params": "hotel_id",
+                "source_api": "Search_Hotels",
+                "source_api_respath": "$.hotels[0].hotel_id",
+                "reason": "The hotel_id from the search results is directly used to retrieve policies for the same hotel, ensuring semantic consistency and logical business flow.",
+                "is_valid": true
+            }
+        ]
+    },
+    "Get_Hotel_Reviews(Tips)_Sort_Option": {
+        "hotel_id": [
+            {
+                "target_api_params": "hotel_id",
+                "source_api": "Search_Hotels_By_Coordinates",
+                "source_api_respath": "$.result[0].hotel_id",
+                "reason": "The hotel_id from the search results is directly used to fetch reviews for the same hotel, maintaining semantic consistency and logical business association.",
+                "is_valid": true
+            },
+            {
+                "target_api_params": "hotel_id",
+                "source_api": "Search_Hotels",
+                "source_api_respath": "$.hotels[0].hotel_id",
+                "reason": "The hotel_id from the search results is directly used to fetch reviews for the same hotel, maintaining semantic consistency and logical business association.",
+                "is_valid": true
+            }
+        ]
+    },
+    "Property_Children_Policies": {
+        "hotel_id": [
+            {
+                "target_api_params": "hotel_id",
+                "source_api": "Search_Hotels",
+                "source_api_respath": "$.hotels[0].hotel_id",
+                "reason": "The hotel_id from the search results is directly used to retrieve children policies for the same hotel, ensuring semantic consistency and logical business association.",
+                "is_valid": true
+            }
+        ]
+    },
+    "Get_Seat_Map": {
+        "offerToken": [
+            {
+                "target_api_params": "offerToken",
+                "source_api": "Search_Flights description: Search Flights.",
+                "source_api_respath": "$.flightOffers[0].token",
+                "reason": "The offerToken from the flight search results is directly used to fetch the seat map for the same flight, ensuring semantic consistency and logical continuity in the flight booking process.",
+                "is_valid": true
+            },
+            {
+                "target_api_params": "offerToken",
+                "source_api": "Search_Flights_Multi_Stops description: Search multi-stop Flights.",
+                "source_api_respath": "$.flightOffers[0].token",
+                "reason": "The offerToken from the multi-stop flight search results is directly used to fetch the seat map for the same flight, ensuring semantic consistency and logical continuity in the flight booking process.",
+                "is_valid": true
+            }
+        ]
+    }
+}

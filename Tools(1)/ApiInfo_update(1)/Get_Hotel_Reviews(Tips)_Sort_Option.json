@@ -1,0 +1,147 @@
+{
+    "name": "Get_Hotel_Reviews(Tips)_Sort_Option",
+    "docs_row": {
+        "name": "Get_Hotel_Reviews(Tips)_Sort_Option",
+        "endpoint": "/api/v1/hotels/getHotelReviewsSortOption",
+        "func_description": "Obtain all the available sort parameters for hotel reviews. The sort parameters can be used as `sort_option_id` parameter in  '/api/v1/hotels/getHotelReviews' EndPoint. ",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "hotel_id": {
+                    "type": "String",
+                    "description": "hotel_id can be retrieved from api/v1/hotels/searchHotels(Search Hotels) or api/v1/hotels/searchHotelsByCoordinates(Search Hotels By Coordinates\n) endpoint in Hotels collection.",
+                    "example_value": "5955189",
+                    "required": true
+                },
+                "languagecode": {
+                    "type": "String",
+                    "description": "To obtain the response data in a specific language, enter the languagecode. languagecode can be retrieved from api/v1/meta/getLanguages(Get Languages\n) endpoint in Meta collection.",
+                    "example_value": "en-us",
+                    "required": false
+                }
+            },
+            "required": [
+                "hotel_id"
+            ]
+        }
+    },
+    "instance": [],
+    "category": null,
+    "tool": null,
+    "api_idx": 50,
+    "params": {
+        "type": "object",
+        "properties": {
+            "hotel_id": {
+                "type": "String",
+                "description": "hotel_id can be retrieved from api/v1/hotels/searchHotels(Search Hotels) or api/v1/hotels/searchHotelsByCoordinates(Search Hotels By Coordinates\n) endpoint in Hotels collection.",
+                "example_value": "5955189",
+                "required": true
+            },
+            "languagecode": {
+                "type": "String",
+                "description": "To obtain the response data in a specific language, enter the languagecode. languagecode can be retrieved from api/v1/meta/getLanguages(Get Languages\n) endpoint in Meta collection.",
+                "example_value": "en-us",
+                "required": false
+            }
+        },
+        "required": [
+            "hotel_id"
+        ]
+    },
+    "api_response_schema": null,
+    "responses": [
+        {
+            "function_name": "Get_Hotel_Reviews(Tips)_Sort_Option",
+            "arguments": {
+                "hotel_id": "5955189"
+            },
+            "observation": [
+                {
+                    "sort_option_id": "sort_most_relevant",
+                    "title": "Most relevant",
+                    "sort_option_default": 1
+                },
+                {
+                    "sort_option_id": "sort_recent_desc",
+                    "title": "Date (newer to older)",
+                    "sort_option_default": 0
+                },
+                {
+                    "sort_option_id": "proximity_to_hotel_average",
+                    "sort_option_default": 0,
+                    "title": "Close to property score"
+                }
+            ]
+        },
+        {
+            "function_name": "Get_Hotel_Reviews(Tips)_Sort_Option",
+            "arguments": {
+                "hotel_id": "5955189"
+            },
+            "observation": [
+                {
+                    "sort_option_id": "sort_most_relevant",
+                    "title": "Most relevant",
+                    "sort_option_default": 1
+                },
+                {
+                    "title": "Date (newer to older)",
+                    "sort_option_id": "sort_recent_desc",
+                    "sort_option_default": 0
+                },
+                {
+                    "sort_option_id": "proximity_to_hotel_average",
+                    "title": "Close to property score",
+                    "sort_option_default": 0
+                }
+            ]
+        }
+    ],
+    "response_summary": "The API provides three sorting options for organizing search results. The default and most relevant option is \"Most relevant,\" which prioritizes items based on their relevance to the search query. Alternatively, users can choose to sort by \"Date (newer to older)\" to see the most recent items first. There's also an option to sort by \"Close to property score,\" which ranks items based on their proximity to a specified location. These options help users tailor their search results to their preferences.",
+    "enhance_func_desc": "This API is ideal for travelers looking to filter hotel reviews effectively. It retrieves available sorting options for hotel reviews, including relevance, date (newest first), and proximity to property. Users can select their preferred sorting method to view reviews that best match their criteria. The response includes detailed sorting choices to enhance review browsing experience. The hotel ID must be obtained from the SearchHotels API.",
+    "enhance_params_desc": {
+        "enhanced_parameters": {
+            "hotel_id": "Unique identifier for the hotel, sourced from searchHotels or searchHotelsByCoordinates.",
+            "languagecode": "Language preference for the response data (e.g., 'en-us' for English)."
+        }
+    },
+    "enhance_resfield_desc": {
+        "response_fields": [
+            {
+                "sort_option_id": {
+                    "type": "String",
+                    "description": "The unique identifier for the sorting option (e.g., 'sort_most_relevant', 'sort_recent_desc')."
+                },
+                "title": {
+                    "type": "String",
+                    "description": "The display name of the sorting option (e.g., 'Most relevant', 'Date (newer to older)')."
+                },
+                "sort_option_default": {
+                    "type": "Number",
+                    "description": "Indicates whether this sorting option is the default (1) or not (0)."
+                }
+            }
+        ]
+    },
+    "params_desc_list": null,
+    "response_desc_list": [
+        {
+            "path_name": "$[].sort_option_id",
+            "name": "sort_option_id",
+            "description": "The unique identifier for the sorting option (e.g., 'sort_most_relevant', 'sort_recent_desc')."
+        },
+        {
+            "path_name": "$[].title",
+            "name": "title",
+            "description": "The display name of the sorting option (e.g., 'Most relevant', 'Date (newer to older)')."
+        },
+        {
+            "path_name": "$[].sort_option_default",
+            "name": "sort_option_default",
+            "description": "Indicates whether this sorting option is the default (1) or not (0)."
+        }
+    ],
+    "depends_on": null,
+    "verified": true
+}

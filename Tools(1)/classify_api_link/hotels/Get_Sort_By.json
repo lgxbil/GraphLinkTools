@@ -1,0 +1,446 @@
+{
+    "name": "Get_Sort_By",
+    "docs_row": {
+        "name": "Get_Sort_By",
+        "endpoint": "/api/v1/hotels/getSortBy",
+        "func_description": "Get sorted hotel listings based on filters and destination. ",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "dest_id": {
+                    "type": "String",
+                    "description": "dest_id can be retrieved from api/v1/hotels/searchDestination(Search Hotel Destination) endpoint in Hotels collection.",
+                    "example_value": "-2092174",
+                    "required": true
+                },
+                "search_type": {
+                    "type": "String",
+                    "description": "search_type can be retrieved from api/v1/hotels/searchDestination(Search Hotel Destination) endpoint in Hotels collection.",
+                    "example_value": "CITY",
+                    "required": true
+                },
+                "arrival_date": {
+                    "type": "Date (yyyy-mm-dd)",
+                    "description": "The date on which you will arrive or check-in",
+                    "example_value": "",
+                    "required": true
+                },
+                "departure_date": {
+                    "type": "Date (yyyy-mm-dd)",
+                    "description": "The date of departure or check-out.",
+                    "example_value": "",
+                    "required": true
+                },
+                "adults": {
+                    "type": "Number",
+                    "description": "The number of guests who are 18 years of age or older. The default value is set to 1.",
+                    "example_value": "1",
+                    "required": false
+                },
+                "children_age": {
+                    "type": "String",
+                    "description": "The number of children, including infants, who are under 18.\nExample:\nChild 1 Age = 8 months\nChild 2 Age = 1 year\nChild 3 Age = 17 years\nHere is what the request parameter would look like:\nchildren_age: 0,1,17",
+                    "example_value": "1,17",
+                    "required": false
+                },
+                "room_qty": {
+                    "type": "Number",
+                    "description": "The number of rooms that are required. The default value is set to 1.",
+                    "example_value": "1",
+                    "required": false
+                },
+                "categories_filter": {
+                    "type": "String",
+                    "description": "categories_filter can be retrieved from api/v1/hotels/getFilter(Get Filter) endpoint in Hotels collection.",
+                    "example_value": "",
+                    "required": false
+                },
+                "languagecode": {
+                    "type": "String",
+                    "description": "To obtain the response data in a specific language, enter the languagecode. languagecode can be retrieved from api/v1/meta/getLanguages(Get Languages\n) endpoint in Meta collection.",
+                    "example_value": "",
+                    "required": false
+                }
+            },
+            "required": [
+                "dest_id",
+                "search_type",
+                "arrival_date",
+                "departure_date"
+            ]
+        }
+    },
+    "instance": [],
+    "category": null,
+    "tool": null,
+    "api_idx": 31,
+    "params": {
+        "type": "object",
+        "properties": {
+            "dest_id": {
+                "type": "String",
+                "description": "dest_id can be retrieved from api/v1/hotels/searchDestination(Search Hotel Destination) endpoint in Hotels collection.",
+                "example_value": "-2092174",
+                "required": true
+            },
+            "search_type": {
+                "type": "String",
+                "description": "search_type can be retrieved from api/v1/hotels/searchDestination(Search Hotel Destination) endpoint in Hotels collection.",
+                "example_value": "CITY",
+                "required": true
+            },
+            "arrival_date": {
+                "type": "Date (yyyy-mm-dd)",
+                "description": "The date on which you will arrive or check-in",
+                "example_value": "",
+                "required": true
+            },
+            "departure_date": {
+                "type": "Date (yyyy-mm-dd)",
+                "description": "The date of departure or check-out.",
+                "example_value": "",
+                "required": true
+            },
+            "adults": {
+                "type": "Number",
+                "description": "The number of guests who are 18 years of age or older. The default value is set to 1.",
+                "example_value": "1",
+                "required": false
+            },
+            "children_age": {
+                "type": "String",
+                "description": "The number of children, including infants, who are under 18.\nExample:\nChild 1 Age = 8 months\nChild 2 Age = 1 year\nChild 3 Age = 17 years\nHere is what the request parameter would look like:\nchildren_age: 0,1,17",
+                "example_value": "1,17",
+                "required": false
+            },
+            "room_qty": {
+                "type": "Number",
+                "description": "The number of rooms that are required. The default value is set to 1.",
+                "example_value": "1",
+                "required": false
+            },
+            "categories_filter": {
+                "type": "String",
+                "description": "categories_filter can be retrieved from api/v1/hotels/getFilter(Get Filter) endpoint in Hotels collection.",
+                "example_value": "",
+                "required": false
+            },
+            "languagecode": {
+                "type": "String",
+                "description": "To obtain the response data in a specific language, enter the languagecode. languagecode can be retrieved from api/v1/meta/getLanguages(Get Languages\n) endpoint in Meta collection.",
+                "example_value": "",
+                "required": false
+            }
+        },
+        "required": [
+            "dest_id",
+            "search_type",
+            "arrival_date",
+            "departure_date"
+        ]
+    },
+    "responses": [
+        {
+            "function_name": "Get_Sort_By",
+            "arguments": {
+                "dest_id": "-2092174",
+                "search_type": "CITY",
+                "arrival_date": "2025-06-10",
+                "departure_date": "2025-06-15"
+            },
+            "observation": [
+                {
+                    "id": "upsort_bh",
+                    "title": "Entire homes & apartments first"
+                },
+                {
+                    "id": "popularity",
+                    "title": "Top picks for solo travellers"
+                },
+                {
+                    "id": "distance",
+                    "title": "Distance from city centre"
+                }
+            ]
+        },
+        {
+            "function_name": "Get_Sort_By",
+            "arguments": {
+                "dest_id": "-2092174",
+                "search_type": "CITY",
+                "arrival_date": "2025-06-10",
+                "departure_date": "2025-06-15",
+                "adults": 2,
+                "children_age": "5",
+                "room_qty": 1
+            },
+            "observation": [
+                {
+                    "id": "upsort_bh",
+                    "title": "Entire homes & apartments first"
+                },
+                {
+                    "id": "popularity",
+                    "title": "Our top picks"
+                },
+                {
+                    "id": "distance",
+                    "title": "Distance from city centre"
+                }
+            ]
+        }
+    ],
+    "response_summary": "The API response provides three sorting options for accommodations. The first option prioritizes entire homes and apartments, ensuring they appear at the top of search results. The second option highlights top recommendations specifically tailored for solo travelers, helping them find the most suitable stays. The third option sorts listings based on their proximity to the city center, allowing users to easily find accommodations closest to key locations. These sorting choices help users refine their search based on their preferences, whether they prioritize space, solo-friendly options, or convenience of location.",
+    "enhance_func_desc": "This API is ideal for travelers seeking personalized accommodation options. It provides sorting choices for hotel searches, prioritizing entire homes/apartments, solo traveler recommendations, or proximity to city center. Users input destination, dates, and guest details to receive tailored results. The response helps refine searches based on space, traveler type, or location convenience, enhancing the booking experience. Required parameters include destination ID, search type, and stay dates.",
+    "enhance_params_desc": {
+        "enhanced_parameters": {
+            "dest_id": "Unique destination identifier from searchDestination endpoint.",
+            "search_type": "Type of search (e.g., CITY, REGION).",
+            "arrival_date": "Check-in date for accommodation search.",
+            "departure_date": "Check-out date for accommodation search.",
+            "adults": "Number of adult guests (18+ years).",
+            "children_age": "Ages of children (comma-separated, under 18).",
+            "room_qty": "Number of rooms needed for booking.",
+            "categories_filter": "Filters accommodations by category (e.g., entire homes).",
+            "languagecode": "Language preference for response data."
+        }
+    },
+    "enhance_resfield_desc": {
+        "response_fields": [
+            {
+                "id": {
+                    "type": "String",
+                    "description": "The unique identifier for the sorting option (e.g., 'upsort_bh', 'popularity', 'distance')."
+                },
+                "title": {
+                    "type": "String",
+                    "description": "The display name of the sorting option (e.g., 'Entire homes & apartments first', 'Top picks for solo travellers', 'Distance from city centre')."
+                }
+            }
+        ]
+    },
+    "params_desc_list": null,
+    "response_desc_list": [
+        {
+            "path_name": "$[].id",
+            "name": "id",
+            "description": "The unique identifier for the sorting option (e.g., 'upsort_bh', 'popularity', 'distance')."
+        },
+        {
+            "path_name": "$[].title",
+            "name": "title",
+            "description": "The display name of the sorting option (e.g., 'Entire homes & apartments first', 'Top picks for solo travellers', 'Distance from city centre')."
+        }
+    ],
+    "depends_on": [
+        {
+            "target_api_params": "dest_id",
+            "reason": "The 'dest_id' parameter in the target API requires a destination ID for hotel searches. The source API's response includes 'dest_id' fields for nearby cities (e.g., '20085207', '20081434'), which exactly match the required parameter type and purpose. This establishes a direct prerequisite relationship where the nearby cities' destination IDs can be used to initiate hotel searches.",
+            "source_jsonpath": "$[*].dest_id",
+            "confidence": 100,
+            "dependency_relationship": "Hard Dependency(Prerequisite API)",
+            "source_api": "Get_Nearby_Cities"
+        },
+        {
+            "target_api_params": "dest_id",
+            "reason": "The 'dest_id' parameter in the target API is explicitly stated to be retrievable from the 'api/v1/hotels/searchDestination' endpoint, which is the source API. The source API's response includes 'dest_id' fields in its examples (e.g., '2281' and '735'), matching the required string type and purpose for identifying hotel destinations. This establishes a direct prerequisite relationship where the source API must be called first to obtain the destination ID for use in the target API.",
+            "source_jsonpath": "$[*].dest_id",
+            "confidence": 100,
+            "dependency_relationship": "Hard Dependency(Prerequisite API)",
+            "source_api": "Search_Hotel_Destination"
+        },
+        {
+            "target_api_params": "dest_id",
+            "reason": "The 'dest_id' parameter in the target API is used to identify the destination for hotel searches. The source API's 'ufiDetails.ufi' field provides a unique location identifier (e.g., -2092174) which matches the format and purpose of the 'dest_id' parameter. This creates a potential business association where a traveler might first search for attractions in a location and then look for hotels in the same area.",
+            "source_jsonpath": "$.products[*].ufiDetails.ufi",
+            "confidence": 95,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Search_Attractions"
+        },
+        {
+            "target_api_params": "dest_id",
+            "reason": "The 'dest_id' parameter in the target API requires a destination ID for hotel searches. The source API's response includes 'ufi' (Universal Feature Identifier) which serves as a unique identifier for locations, matching the requirement for 'dest_id'. This is a direct prerequisite for calling the target API.",
+            "source_jsonpath": "$.result[*].ufi",
+            "confidence": 100,
+            "dependency_relationship": "Hard Dependency(Prerequisite API)",
+            "source_api": "Search_Hotels_By_Coordinates"
+        },
+        {
+            "target_api_params": "dest_id",
+            "reason": "The 'dest_id' parameter in the target API is explicitly stated to be retrievable from the 'api/v1/hotels/searchDestination' endpoint, which is also the source API's endpoint. The source API's response includes a 'ufi' field that matches the 'dest_id' example value (-2092174) and is used to identify the destination. This is a direct prerequisite for calling the target API.",
+            "source_jsonpath": "$.hotels[*].property.ufi",
+            "confidence": 100,
+            "dependency_relationship": "Hard Dependency(Prerequisite API)",
+            "source_api": "Search_Hotels"
+        },
+        {
+            "target_api_params": "search_type",
+            "reason": "The 'search_type' parameter in the target API is described as being retrievable from the 'api/v1/hotels/searchDestination' endpoint, which is the source API. The source API's response includes a 'search_type' field (e.g., 'district' or 'landmark') that matches exactly with the target API's requirement. This is a clear case where the source API provides a necessary prerequisite for calling the target API.",
+            "source_jsonpath": "$[*].search_type",
+            "confidence": 100,
+            "dependency_relationship": "Hard Dependency(Prerequisite API)",
+            "source_api": "Search_Hotel_Destination"
+        },
+        {
+            "target_api_params": "search_type",
+            "reason": "The 'search_type' parameter in the target API requires a value that indicates the type of destination being searched (e.g., 'CITY'). The source API's response includes a 'dest_type' field which specifies the type of destination (e.g., 'city'). This field directly matches the requirement of the target API parameter, making it a suitable input. The data types also match (both are strings).",
+            "source_jsonpath": "$[*].dest_type",
+            "confidence": 95,
+            "dependency_relationship": "Hard Dependency(Prerequisite API)",
+            "source_api": "Get_Nearby_Cities"
+        },
+        {
+            "target_api_params": "search_type",
+            "reason": "The 'search_type' parameter in the target API is described as being retrievable from the 'api/v1/hotels/searchDestination' endpoint, which is the same source as mentioned in the source API documentation. This indicates a direct dependency where the source API's response would provide the necessary 'search_type' value for the target API. The data types match (both are Strings), and the example values ('CITY') align perfectly.",
+            "source_jsonpath": "$.search_type",
+            "confidence": 100,
+            "dependency_relationship": "Hard Dependency(Prerequisite API)",
+            "source_api": "Search_Hotels"
+        },
+        {
+            "target_api_params": "arrival_date",
+            "reason": "The 'arrival_date' parameter in the target API requires a check-in date in the format 'yyyy-mm-dd'. The source API's 'arrival_date' field provides exactly this format (e.g., '2025-06-10'). This is a direct match in both data type and format, making it a suitable input for the target API parameter.",
+            "source_jsonpath": "$.arrival_date",
+            "confidence": 100,
+            "dependency_relationship": "Hard Dependency(Prerequisite API)",
+            "source_api": "Get_Room_List"
+        },
+        {
+            "target_api_params": "arrival_date",
+            "reason": "The 'arrival_date' parameter in the target API requires a check-in date in 'yyyy-mm-dd' format. The source API's 'date' field in the response provides specific dates (e.g., '2025-05-20') which match the required format. This creates a potential business association where a traveler might want to check hotel availability based on attraction availability dates.",
+            "source_jsonpath": "$[*].date",
+            "confidence": 85,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Get_Availability_Calendar"
+        },
+        {
+            "target_api_params": "arrival_date",
+            "reason": "The 'arrival_date' parameter in the target API requires the check-in date for hotel sorting. The source API's 'checkinDate' field in the hotel property response provides the exact check-in date (e.g., '2025-06-10') in the same format (yyyy-mm-dd). This creates a direct match where the check-in date from a hotel search can be used to sort hotel options.",
+            "source_jsonpath": "$.hotels[*].property.checkinDate",
+            "confidence": 100,
+            "dependency_relationship": "Hard Dependency(Prerequisite API)",
+            "source_api": "Search_Hotels"
+        },
+        {
+            "target_api_params": "arrival_date",
+            "reason": "The 'arrival_date' parameter in the target API requires a check-in date in 'yyyy-mm-dd' format. The source API's 'departureDate' field provides exact departure dates (e.g., '2025-05-21') which could be used as the arrival date for hotel booking if the user plans to book a hotel upon arrival at the destination. This creates a potential business association where a traveler books a hotel starting from the day they arrive at their flight destination.",
+            "source_jsonpath": "$[*].departureDate",
+            "confidence": 85,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Get_Min_Price_Multi_Stops"
+        },
+        {
+            "target_api_params": "arrival_date",
+            "reason": "The 'arrival_date' parameter in the target API requires the check-in date for a hotel stay. The source API's 'stayed_room_info.checkin' field provides the exact check-in date (e.g., '2025-05-08') from previous guest stays. The data types match (yyyy-mm-dd), and this creates a potential business association where a traveler might want to check in on the same date as previous guests.",
+            "source_jsonpath": "$.result[*].stayed_room_info.checkin",
+            "confidence": 85,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Get_Hotel_Reviews(Tips)"
+        },
+        {
+            "target_api_params": "arrival_date",
+            "reason": "The 'arrival_date' parameter in the target API requires a check-in date in 'yyyy-mm-dd' format. The source API also has an 'arrival_date' parameter with the same format and description. This creates a potential hard dependency where the arrival date from the source API can be directly used as input for the target API.",
+            "source_jsonpath": "$.arrival_date",
+            "confidence": 100,
+            "dependency_relationship": "Hard Dependency(Prerequisite API)",
+            "source_api": "Get_Hotel_Facilities"
+        },
+        {
+            "target_api_params": "arrival_date",
+            "reason": "The 'arrival_date' parameter in the target API requires the check-in date for hotel searches. The source API's 'arrival_date' parameter serves the same purpose, indicating the date of arrival for hotel filtering. This is a direct match in both purpose and data type (yyyy-mm-dd), making it a prerequisite for calling the target API.",
+            "source_jsonpath": "$.arrival_date",
+            "confidence": 100,
+            "dependency_relationship": "Hard Dependency(Prerequisite API)",
+            "source_api": "Get_Filter"
+        },
+        {
+            "target_api_params": "departure_date",
+            "reason": "The 'departure_date' parameter in the target API requires the check-out date in 'yyyy-mm-dd' format. The source API's 'departure_date' field provides exactly this information with matching data type and format (e.g., '2025-06-15'). This is a direct match where the same parameter from one hotel API can be reused in another hotel API context.",
+            "source_jsonpath": "$.departure_date",
+            "confidence": 100,
+            "dependency_relationship": "Hard Dependency(Prerequisite API)",
+            "source_api": "Get_Room_List"
+        },
+        {
+            "target_api_params": "departure_date",
+            "reason": "The 'departure_date' parameter in the target API requires the check-out date for a hotel stay. The source API's 'returnDate' field in flight searches provides the return date for a flight, which could logically align with the hotel check-out date if the traveler is planning to leave the destination on the same day as their flight return. The data types match (both are 'Date (yyyy-mm-dd)'), and the scenario where a traveler checks out of a hotel on the same day as their return flight is reasonable.",
+            "source_jsonpath": "$.returnDate",
+            "confidence": 85,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Search_Flights"
+        },
+        {
+            "target_api_params": "departure_date",
+            "reason": "The 'departure_date' parameter in the target API requires a check-out date in 'yyyy-mm-dd' format. The source API's 'date' field in the response provides specific dates (e.g., '2025-05-20') which match the required format. This creates a potential business association where a traveler might want to check out of their hotel on the same day they visit an attraction.",
+            "source_jsonpath": "$[*].date",
+            "confidence": 85,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Get_Availability_Calendar"
+        },
+        {
+            "target_api_params": "departure_date",
+            "reason": "The 'departure_date' parameter in the target API requires the check-out date of a hotel stay. The source API's response includes 'checkoutDate' fields for each hotel, which directly provide the check-out dates in the same format (yyyy-mm-dd). This creates a hard dependency as the target API requires this exact information to function properly.",
+            "source_jsonpath": "$.hotels[].property.checkoutDate",
+            "confidence": 100,
+            "dependency_relationship": "Hard Dependency(Prerequisite API)",
+            "source_api": "Search_Hotels"
+        },
+        {
+            "target_api_params": "departure_date",
+            "reason": "The 'departure_date' parameter in the target API requires the date of departure or check-out from a hotel. The source API's 'departureDate' field provides the departure date of a flight (e.g., '2025-06-11'). While the context differs (flight vs hotel), the date format matches exactly (yyyy-mm-dd). There could be a business association where a traveler books a hotel stay ending on the same day as their flight departure.",
+            "source_jsonpath": "$[*].departureDate",
+            "confidence": 85,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Get_Min_Price"
+        },
+        {
+            "target_api_params": "departure_date",
+            "reason": "The 'departure_date' parameter in the target API requires the check-out date for a hotel stay. The source API's 'departureTime' field in flight segments provides exact departure timestamps (e.g., '2025-05-28T10:55:00'). While the data types differ (timestamp vs date), the date portion can be extracted. This creates a potential business association where a traveler wants to book a hotel until the day of their flight departure.",
+            "source_jsonpath": "$.flightOffers[*].segments[*].departureTime",
+            "confidence": 90,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Search_Flights_Multi_Stops"
+        },
+        {
+            "target_api_params": "departure_date",
+            "reason": "The 'departure_date' parameter in the target API requires the date of departure or check-out. The source API also has a 'departure_date' parameter, which serves the same purpose. This creates a potential business association where the departure date from the hotel facilities API can be used as input for the sorting API.",
+            "source_jsonpath": "$.departure_date",
+            "confidence": 95,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Get_Hotel_Facilities"
+        },
+        {
+            "target_api_params": "departure_date",
+            "reason": "The 'departure_date' parameter in the target API requires the check-out date from a hotel stay. The source API's 'returnDate' field provides the return date of a flight, which could logically correspond to the hotel check-out date if the traveler is planning to stay in a hotel until their flight back. The data types match (both are in 'yyyy-mm-dd' format), and there is a reasonable business association where a traveler would check out of their hotel on the same day as their return flight.",
+            "source_jsonpath": "$[*].returnDate",
+            "confidence": 85,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Get_Min_Price_Multi_Stops"
+        },
+        {
+            "target_api_params": "departure_date",
+            "reason": "The 'departure_date' parameter in the target API requires the check-out date of a hotel stay. The source API's 'stayed_room_info.checkout' field provides exact check-out dates (e.g., '2025-05-09') from hotel reviews. This creates a potential business association where a traveler might want to sort hotels based on check-out dates from previous stays.",
+            "source_jsonpath": "$.result[].stayed_room_info.checkout",
+            "confidence": 85,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Get_Hotel_Reviews(Tips)"
+        },
+        {
+            "target_api_params": "departure_date",
+            "reason": "The 'departure_date' parameter in the target API requires the date of departure or check-out. The source API's 'departure_date' parameter is identical in purpose and format, making it a perfect match for the target API's requirement. This is a clear case where the source API's parameter can directly serve as input for the target API.",
+            "source_jsonpath": "$.departure_date",
+            "confidence": 100,
+            "dependency_relationship": "Hard Dependency(Prerequisite API)",
+            "source_api": "Get_Filter"
+        },
+        {
+            "target_api_params": "departure_date",
+            "reason": "The 'departure_date' parameter in the target API requires the check-out date for a hotel stay. The source API's 'requestedPickupDateTime' field in taxi journeys provides the exact pickup timestamp (e.g., '2025-06-15T14:30:00'). While the data types differ (timestamp vs date), the date portion can be extracted. This creates a potential business association where a traveler might want to check out from the hotel on the same day they take a taxi to the airport.",
+            "source_jsonpath": "$.journeys[].requestedPickupDateTime",
+            "confidence": 85,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Search_Taxi"
+        }
+    ],
+    "verified": true
+}

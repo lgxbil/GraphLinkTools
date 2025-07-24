@@ -1,0 +1,341 @@
+{
+    "name": "Get_Filter",
+    "docs_row": {
+        "name": "Get_Filter",
+        "endpoint": "/api/v1/hotels/getFilter",
+        "func_description": "Get the `categories_filter` parameter value for `Search_Hotels` function. ",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "dest_id": {
+                    "type": "String",
+                    "description": "dest_id can be retrieved from api/v1/hotels/searchDestination(Search Hotel Destination) endpoint in Hotels collection.",
+                    "example_value": "-2092174",
+                    "required": true
+                },
+                "search_type": {
+                    "type": "String",
+                    "description": "search_type can be retrieved from api/v1/hotels/searchDestination(Search Hotel Destination) endpoint in hotel collection.",
+                    "example_value": "CITY",
+                    "required": true
+                },
+                "arrival_date": {
+                    "type": "Date (yyyy-mm-dd)",
+                    "description": "The date on which you will arrive or check-in",
+                    "example_value": "",
+                    "required": true
+                },
+                "departure_date": {
+                    "type": "Date (yyyy-mm-dd)",
+                    "description": "The date of departure or check-out.",
+                    "example_value": "",
+                    "required": true
+                },
+                "adults": {
+                    "type": "Number",
+                    "description": "The number of guests who are 18 years of age or older. The default value is set to 1.",
+                    "example_value": "1",
+                    "required": false
+                },
+                "children_age": {
+                    "type": "String",
+                    "description": "The number of children, including infants, who are under 18.\nExample:\nChild 1 Age = 8 months\nChild 2 Age = 1 year\nChild 3 Age = 17 years\nHere is what the request parameter would look like:\nchildren_age: 0,1,17",
+                    "example_value": "1,17",
+                    "required": false
+                },
+                "room_qty": {
+                    "type": "Number",
+                    "description": "The number of rooms that are required. The default value is set to 1.",
+                    "example_value": "1",
+                    "required": false
+                },
+                "categories_filter": {
+                    "type": "String",
+                    "description": "categories_filter can be retrieved from api/v1/hotels/getFilter(Get Filter) endpoint in Hotels collection.\nNote: For the initial request, leave it blank.",
+                    "example_value": "",
+                    "required": false
+                },
+                "languagecode": {
+                    "type": "String",
+                    "description": "To obtain the response data in a specific language, enter the languagecode. languagecode can be retrieved from api/v1/meta/getLanguages(Get Languages\n) endpoint in Meta collection.",
+                    "example_value": "",
+                    "required": false
+                }
+            },
+            "required": [
+                "dest_id",
+                "search_type",
+                "arrival_date",
+                "departure_date"
+            ]
+        }
+    },
+    "instance": [],
+    "category": null,
+    "tool": null,
+    "api_idx": 5,
+    "params": {
+        "type": "object",
+        "properties": {
+            "dest_id": {
+                "type": "String",
+                "description": "dest_id can be retrieved from api/v1/hotels/searchDestination(Search Hotel Destination) endpoint in Hotels collection.",
+                "example_value": "-2092174",
+                "required": true
+            },
+            "search_type": {
+                "type": "String",
+                "description": "search_type can be retrieved from api/v1/hotels/searchDestination(Search Hotel Destination) endpoint in hotel collection.",
+                "example_value": "CITY",
+                "required": true
+            },
+            "arrival_date": {
+                "type": "Date (yyyy-mm-dd)",
+                "description": "The date on which you will arrive or check-in",
+                "example_value": "",
+                "required": true
+            },
+            "departure_date": {
+                "type": "Date (yyyy-mm-dd)",
+                "description": "The date of departure or check-out.",
+                "example_value": "",
+                "required": true
+            },
+            "adults": {
+                "type": "Number",
+                "description": "The number of guests who are 18 years of age or older. The default value is set to 1.",
+                "example_value": "1",
+                "required": false
+            },
+            "children_age": {
+                "type": "String",
+                "description": "The number of children, including infants, who are under 18.\nExample:\nChild 1 Age = 8 months\nChild 2 Age = 1 year\nChild 3 Age = 17 years\nHere is what the request parameter would look like:\nchildren_age: 0,1,17",
+                "example_value": "1,17",
+                "required": false
+            },
+            "room_qty": {
+                "type": "Number",
+                "description": "The number of rooms that are required. The default value is set to 1.",
+                "example_value": "1",
+                "required": false
+            },
+            "categories_filter": {
+                "type": "String",
+                "description": "categories_filter can be retrieved from api/v1/hotels/getFilter(Get Filter) endpoint in Hotels collection.\nNote: For the initial request, leave it blank.",
+                "example_value": "",
+                "required": false
+            },
+            "languagecode": {
+                "type": "String",
+                "description": "To obtain the response data in a specific language, enter the languagecode. languagecode can be retrieved from api/v1/meta/getLanguages(Get Languages\n) endpoint in Meta collection.",
+                "example_value": "",
+                "required": false
+            }
+        },
+        "required": [
+            "dest_id",
+            "search_type",
+            "arrival_date",
+            "departure_date"
+        ]
+    },
+    "responses": [
+        {
+            "function_name": "Get_Filter",
+            "arguments": {
+                "dest_id": "-2092174",
+                "search_type": "CITY",
+                "arrival_date": "2025-06-10",
+                "departure_date": "2025-06-15",
+                "adults": 2,
+                "children_age": "5,10",
+                "room_qty": 1
+            },
+            "observation": {
+                "pagination": {
+                    "nbResultsTotal": 1466
+                },
+                "availabilityInfo": {
+                    "totalAvailableNotAutoextended": 1211
+                },
+                "filters": [
+                    {
+                        "title": "Your budget (for 5 nights)",
+                        "field": "price",
+                        "filterStyle": "SLIDER",
+                        "options": [],
+                        "min": "1000",
+                        "max": "60000",
+                        "minPriceStep": "1000",
+                        "minSelected": "0",
+                        "histogram": [
+                            7,
+                            19,
+                            10
+                        ],
+                        "currency": "INR"
+                    },
+                    {
+                        "title": "Popular filters",
+                        "field": "popular",
+                        "filterStyle": "CHECKBOX",
+                        "options": [
+                            {
+                                "title": "Breakfast included",
+                                "genericId": "mealplan::breakfast_included",
+                                "countNotAutoextended": 523
+                            },
+                            {
+                                "title": "South Mumbai",
+                                "genericId": "district::2379",
+                                "countNotAutoextended": 158
+                            },
+                            {
+                                "title": "Very good: 8+",
+                                "genericId": "reviewscorebuckets::80",
+                                "countNotAutoextended": 266
+                            }
+                        ]
+                    },
+                    {
+                        "title": "Review score",
+                        "field": "review_score",
+                        "filterStyle": "CHECKBOX",
+                        "options": [
+                            {
+                                "title": "Passable: 5+",
+                                "genericId": "reviewscorebuckets::50",
+                                "countNotAutoextended": 892
+                            },
+                            {
+                                "title": "Pleasant: 6+",
+                                "genericId": "reviewscorebuckets::60",
+                                "countNotAutoextended": 724
+                            },
+                            {
+                                "title": "Good: 7+",
+                                "genericId": "reviewscorebuckets::70",
+                                "countNotAutoextended": 495
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+    ],
+    "response_summary": "The API response provides information about accommodation options in Mumbai, with a total of 1,466 properties available. Out of these, 1,211 are currently bookable without auto-extension. \n\nThe filters section helps narrow down the search based on different preferences. For budget, prices range from \u20b91,000 to \u20b960,000 for a 5-night stay, with increments of \u20b91,000. The histogram suggests that most options fall within the lower to mid-range price brackets.\n\nPopular filters include \"Breakfast included,\" which is available in 523 properties, \"South Mumbai\" with 158 options, and \"Very good: 8+\" rated accommodations, which include 266 properties. \n\nFor review scores, there are 892 properties rated \"Passable: 5+,\" 724 rated \"Pleasant: 6+,\" and 495 rated \"Good: 7+.\" These filters allow travelers to refine their search based on budget, location, amenities, and guest ratings.",
+    "enhance_func_desc": "This API is ideal for travelers looking to refine their hotel search in a specific destination. It retrieves available filter options based on location, dates, and guest details, allowing users to narrow down results by price range, amenities, review scores, and more. The response includes comprehensive filter data to help users find accommodations matching their preferences. Required parameters include destination ID, search type, and stay dates.",
+    "enhance_params_desc": {
+        "enhanced_parameters": {
+            "dest_id": "Unique destination identifier from searchDestination endpoint.",
+            "search_type": "Specifies search scope (e.g., CITY for city-wide results).",
+            "arrival_date": "Check-in date for hotel availability filtering.",
+            "departure_date": "Check-out date for hotel availability filtering.",
+            "adults": "Number of adult guests (18+ years) for room configuration.",
+            "children_age": "Comma-separated ages of child guests (under 18 years).",
+            "room_qty": "Number of rooms needed for the booking.",
+            "categories_filter": "Filters properties by category (e.g., amenities).",
+            "languagecode": "Language preference for response content."
+        }
+    },
+    "enhance_resfield_desc": {
+        "response_fields": {
+            "pagination": {
+                "type": "Object",
+                "description": "Pagination information for the search results",
+                "ob_properties": {
+                    "nbResultsTotal": {
+                        "type": "Number",
+                        "description": "Total number of accommodation options available in the search results"
+                    }
+                }
+            },
+            "availabilityInfo": {
+                "type": "Object",
+                "description": "Information about the availability of accommodations",
+                "ob_properties": {
+                    "totalAvailableNotAutoextended": {
+                        "type": "Number",
+                        "description": "Number of properties currently available for booking without auto-extension"
+                    }
+                }
+            },
+            "filters": {
+                "type": "Array",
+                "description": "List of filters available to refine the search results",
+                "ar_items": {
+                    "type": "Object",
+                    "description": "A filter category with its options and settings",
+                    "ob_properties": {
+                        "title": {
+                            "type": "String",
+                            "description": "Display name of the filter category"
+                        },
+                        "field": {
+                            "type": "String",
+                            "description": "Identifier for the filter category"
+                        },
+                        "filterStyle": {
+                            "type": "String",
+                            "description": "Type of UI control used for the filter (e.g., SLIDER, CHECKBOX)"
+                        },
+                        "options": {
+                            "type": "Array",
+                            "description": "List of filter options available within the category",
+                            "ar_items": {
+                                "type": "Object",
+                                "description": "An individual filter option",
+                                "ob_properties": {
+                                    "title": {
+                                        "type": "String",
+                                        "description": "Display name of the filter option"
+                                    },
+                                    "genericId": {
+                                        "type": "String",
+                                        "description": "Unique identifier for the filter option"
+                                    },
+                                    "countNotAutoextended": {
+                                        "type": "Number",
+                                        "description": "Number of properties matching this filter option that are available without auto-extension"
+                                    }
+                                }
+                            }
+                        },
+                        "min": {
+                            "type": "String",
+                            "description": "Minimum value for the filter (applicable for SLIDER type filters)"
+                        },
+                        "max": {
+                            "type": "String",
+                            "description": "Maximum value for the filter (applicable for SLIDER type filters)"
+                        },
+                        "minPriceStep": {
+                            "type": "String",
+                            "description": "Minimum increment step for the filter values (applicable for SLIDER type filters)"
+                        },
+                        "minSelected": {
+                            "type": "String",
+                            "description": "Currently selected minimum value for the filter (applicable for SLIDER type filters)"
+                        },
+                        "histogram": {
+                            "type": "Array",
+                            "description": "Distribution of properties across different price ranges (applicable for SLIDER type filters)",
+                            "ar_items": {
+                                "type": "Number",
+                                "description": "Count of properties in a specific price range"
+                            }
+                        },
+                        "currency": {
+                            "type": "String",
+                            "description": "Currency used for the price values (applicable for SLIDER type filters)"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "params_desc_list": null,
+    "response_desc_list": null,
+    "depends_on": null,
+    "verified": true
+}

@@ -1,0 +1,1316 @@
+{
+    "name": "Search_Attractions",
+    "docs_row": {
+        "name": "Search_Attractions",
+        "endpoint": "/api/v1/attraction/searchAttractions",
+        "func_description": "Search Attraction by trending/attr_book_score/lowest_price. ",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "String",
+                    "description": "id can be retrieved from api/v1/attraction/searchLocation(Search Attraction Location) endpoint in Attraction collection as id inside products or destinations.",
+                    "example_value": "eyJ1ZmkiOi0yMDkyMTc0fQ==",
+                    "required": true
+                },
+                "startDate": {
+                    "type": "Date (yyyy-mm-dd)",
+                    "description": "Sort the data by the start date.",
+                    "example_value": "",
+                    "required": false
+                },
+                "endDate": {
+                    "type": "Date (yyyy-mm-dd)",
+                    "description": "Sort the data by the end date.",
+                    "example_value": "",
+                    "required": false
+                },
+                "sortBy": {
+                    "type": "Enum",
+                    "description": "This parameter orders result by trending, attr_book_score or lowest_price.",
+                    "example_value": "",
+                    "required": false
+                },
+                "page": {
+                    "type": "Number",
+                    "description": "The page number.",
+                    "example_value": "1",
+                    "required": false
+                },
+                "currency_code": {
+                    "type": "String",
+                    "description": "The currency code. currency_code can be retrieved from api/v1/meta/getCurrency(Get Currency) endpoint in Hotels collection.",
+                    "example_value": "INR",
+                    "required": false
+                },
+                "languagecode": {
+                    "type": "String",
+                    "description": "To obtain the response data in a specific language, enter the languagecode. languagecode can be retrieved from api/v1/meta/getLanguages(Get Languages\n) endpoint in Meta collection.",
+                    "example_value": "en-us",
+                    "required": false
+                },
+                "typeFilters": {
+                    "type": "String",
+                    "description": "typeFilters can be retrieved from /api/v1/attraction/searchAttractions(Search Attractions) endpoint in Hotels collection. data->filterOptions-> typeFilters[]-> tagname.\nNote:- typeFilters should be separated by commas if passing multiple values.\nExample: tag1,tag2,tag",
+                    "example_value": "",
+                    "required": false
+                },
+                "priceFilters": {
+                    "type": "String",
+                    "description": "priceFilters can be retrieved from /api/v1/attraction/searchAttractions(Search Attractions) endpoint in Hotels collection. data->filterOptions-> priceFilters[]-> tagname.\nNote:- priceFilters should be separated by commas if passing multiple values.\nExample: tag1,tag2,tag",
+                    "example_value": "",
+                    "required": false
+                },
+                "ufiFilters": {
+                    "type": "String",
+                    "description": "ufiFilters can be retrieved from /api/v1/attraction/searchAttractions(Search Attractions) endpoint in Hotels collection. data->filterOptions-> ufiFilters[]-> tagname.\nNote:- ufiFilters should be separated by commas if passing multiple values.\nExample: tag1,tag2,tag",
+                    "example_value": "",
+                    "required": false
+                },
+                "labelFilters": {
+                    "type": "String",
+                    "description": "labelFilters can be retrieved from /api/v1/attraction/searchAttractions(Search Attractions) endpoint in Hotels collection. data->filterOptions-> labelFilters[]-> tagname.\nNote:- labelFilters should be separated by commas if passing multiple values.\nExample: tag1,tag2,tag",
+                    "example_value": "",
+                    "required": false
+                }
+            },
+            "required": [
+                "id"
+            ]
+        }
+    },
+    "instance": [],
+    "category": null,
+    "tool": null,
+    "api_idx": 37,
+    "params": {
+        "type": "object",
+        "properties": {
+            "id": {
+                "type": "String",
+                "description": "id can be retrieved from api/v1/attraction/searchLocation(Search Attraction Location) endpoint in Attraction collection as id inside products or destinations.",
+                "example_value": "eyJ1ZmkiOi0yMDkyMTc0fQ==",
+                "required": true
+            },
+            "startDate": {
+                "type": "Date (yyyy-mm-dd)",
+                "description": "Sort the data by the start date.",
+                "example_value": "",
+                "required": false
+            },
+            "endDate": {
+                "type": "Date (yyyy-mm-dd)",
+                "description": "Sort the data by the end date.",
+                "example_value": "",
+                "required": false
+            },
+            "sortBy": {
+                "type": "Enum",
+                "description": "This parameter orders result by trending, attr_book_score or lowest_price.",
+                "example_value": "",
+                "required": false
+            },
+            "page": {
+                "type": "Number",
+                "description": "The page number.",
+                "example_value": "1",
+                "required": false
+            },
+            "currency_code": {
+                "type": "String",
+                "description": "The currency code. currency_code can be retrieved from api/v1/meta/getCurrency(Get Currency) endpoint in Hotels collection.",
+                "example_value": "INR",
+                "required": false
+            },
+            "languagecode": {
+                "type": "String",
+                "description": "To obtain the response data in a specific language, enter the languagecode. languagecode can be retrieved from api/v1/meta/getLanguages(Get Languages\n) endpoint in Meta collection.",
+                "example_value": "en-us",
+                "required": false
+            },
+            "typeFilters": {
+                "type": "String",
+                "description": "typeFilters can be retrieved from /api/v1/attraction/searchAttractions(Search Attractions) endpoint in Hotels collection. data->filterOptions-> typeFilters[]-> tagname.\nNote:- typeFilters should be separated by commas if passing multiple values.\nExample: tag1,tag2,tag",
+                "example_value": "",
+                "required": false
+            },
+            "priceFilters": {
+                "type": "String",
+                "description": "priceFilters can be retrieved from /api/v1/attraction/searchAttractions(Search Attractions) endpoint in Hotels collection. data->filterOptions-> priceFilters[]-> tagname.\nNote:- priceFilters should be separated by commas if passing multiple values.\nExample: tag1,tag2,tag",
+                "example_value": "",
+                "required": false
+            },
+            "ufiFilters": {
+                "type": "String",
+                "description": "ufiFilters can be retrieved from /api/v1/attraction/searchAttractions(Search Attractions) endpoint in Hotels collection. data->filterOptions-> ufiFilters[]-> tagname.\nNote:- ufiFilters should be separated by commas if passing multiple values.\nExample: tag1,tag2,tag",
+                "example_value": "",
+                "required": false
+            },
+            "labelFilters": {
+                "type": "String",
+                "description": "labelFilters can be retrieved from /api/v1/attraction/searchAttractions(Search Attractions) endpoint in Hotels collection. data->filterOptions-> labelFilters[]-> tagname.\nNote:- labelFilters should be separated by commas if passing multiple values.\nExample: tag1,tag2,tag",
+                "example_value": "",
+                "required": false
+            }
+        },
+        "required": [
+            "id"
+        ]
+    },
+    "responses": [
+        {
+            "function_name": "Search_Attractions",
+            "arguments": {
+                "id": "eyJ1ZmkiOi0yMDkyMTc0fQ==",
+                "sortBy": "attr_book_score"
+            },
+            "observation": {
+                "__typename": "AttractionsProductSearchResponse",
+                "products": [
+                    {
+                        "__typename": "AttractionsProduct",
+                        "cancellationPolicy": {
+                            "__typename": "AttractionsCancellationPolicy",
+                            "hasFreeCancellation": true
+                        },
+                        "id": "PR6K7ZswbGBs",
+                        "name": "Dharavi, Dhobighat, and Mumbai Dabbawallas",
+                        "slug": "pr6k7zswbgbs-mumbai-half-day-tour",
+                        "shortDescription": "A must do tour of Mumbai. This is an off-beat 3.5hours tour where you will see Mumbai from a wide...",
+                        "representativePrice": {
+                            "__typename": "AttractionsPrice",
+                            "chargeAmount": 18,
+                            "currency": "USD",
+                            "publicAmount": 20
+                        },
+                        "primaryPhoto": {
+                            "__typename": "AttractionsPhoto",
+                            "small": "https://q-xx.bstatic.com/xdata/images/xphoto/300x320/142005970.jpg?k=37a8dd22f2f1edb579fabb00c4d740c88e6103f7d47ba7e491e4cc3afa1bb862&o="
+                        },
+                        "reviewsStats": {
+                            "__typename": "AttractionsProductReviewStats",
+                            "allReviewsCount": 3,
+                            "percentage": "67%",
+                            "combinedNumericStats": {
+                                "__typename": "AttractionsProductCombinedReviewStats",
+                                "average": 4.8,
+                                "total": 83
+                            }
+                        },
+                        "ufiDetails": {
+                            "__typename": "AttractionLocationResponse",
+                            "bCityName": "Mumbai",
+                            "ufi": -2092174,
+                            "url": {
+                                "__typename": "AttractionLocationUrl",
+                                "country": "in"
+                            }
+                        },
+                        "offers": [
+                            {
+                                "__typename": "Offer",
+                                "items": [
+                                    {
+                                        "__typename": "OfferItem",
+                                        "id": "OIEnoHP8TJsB"
+                                    }
+                                ]
+                            },
+                            {
+                                "__typename": "Offer",
+                                "items": [
+                                    {
+                                        "__typename": "OfferItem",
+                                        "id": "OIMyfydyr7zh"
+                                    }
+                                ]
+                            }
+                        ],
+                        "supportedFeatures": {
+                            "__typename": "AttractionsProductSupportedFeatures",
+                            "nativeApp": true
+                        },
+                        "flags": [
+                            {
+                                "__typename": "AttractionsProductFlags",
+                                "flag": "bestseller",
+                                "value": true,
+                                "rank": 1
+                            }
+                        ]
+                    },
+                    {
+                        "__typename": "AttractionsProduct",
+                        "cancellationPolicy": {
+                            "__typename": "AttractionsCancellationPolicy",
+                            "hasFreeCancellation": true
+                        },
+                        "id": "PRBQwxzOgXpj",
+                        "name": "Private Mumbai City Sightseeing Tour with Guide",
+                        "slug": "prbqwxzogxpj-private-mumbai-city-sightseeing-tour-with-guide",
+                        "shortDescription": "Uncover hidden gems with our local experts, offering a truly authentic Mumbai experience\nEnjoy pe...",
+                        "representativePrice": {
+                            "__typename": "AttractionsPrice",
+                            "chargeAmount": 66.48,
+                            "currency": "USD",
+                            "publicAmount": 66.48
+                        },
+                        "primaryPhoto": {
+                            "__typename": "AttractionsPhoto",
+                            "small": "https://r-xx.bstatic.com/xdata/images/xphoto/300x320/457652738.jpg?k=6cd35a3890da9b6fb2cba37aa41284e3d1e0d8d5cf12b29639c3a9f16c3ff41e&o="
+                        },
+                        "reviewsStats": {
+                            "__typename": "AttractionsProductReviewStats",
+                            "allReviewsCount": 0,
+                            "percentage": "0",
+                            "combinedNumericStats": {
+                                "__typename": "AttractionsProductCombinedReviewStats",
+                                "average": 5,
+                                "total": 3
+                            }
+                        },
+                        "ufiDetails": {
+                            "__typename": "AttractionLocationResponse",
+                            "bCityName": "Mumbai",
+                            "ufi": -2092174,
+                            "url": {
+                                "__typename": "AttractionLocationUrl",
+                                "country": "in"
+                            }
+                        },
+                        "offers": [
+                            {
+                                "__typename": "Offer",
+                                "items": [
+                                    {
+                                        "__typename": "OfferItem",
+                                        "id": "OIgp8x8LtoSZ"
+                                    },
+                                    {
+                                        "__typename": "OfferItem",
+                                        "id": "OIa9JX52Lohp"
+                                    },
+                                    {
+                                        "__typename": "OfferItem",
+                                        "id": "OIrxdEGEqfOu"
+                                    }
+                                ]
+                            },
+                            {
+                                "__typename": "Offer",
+                                "items": [
+                                    {
+                                        "__typename": "OfferItem",
+                                        "id": "OIYlfvZ2kjTn"
+                                    },
+                                    {
+                                        "__typename": "OfferItem",
+                                        "id": "OINiYOtvrh79"
+                                    },
+                                    {
+                                        "__typename": "OfferItem",
+                                        "id": "OIantT0SdsTr"
+                                    }
+                                ]
+                            },
+                            {
+                                "__typename": "Offer",
+                                "items": [
+                                    {
+                                        "__typename": "OfferItem",
+                                        "id": "OIhCDQUYQQAe"
+                                    },
+                                    {
+                                        "__typename": "OfferItem",
+                                        "id": "OIIQLCSxgud0"
+                                    },
+                                    {
+                                        "__typename": "OfferItem",
+                                        "id": "OIFVqL30zBMM"
+                                    }
+                                ]
+                            }
+                        ],
+                        "supportedFeatures": {
+                            "__typename": "AttractionsProductSupportedFeatures",
+                            "nativeApp": true
+                        },
+                        "flags": [
+                            {
+                                "__typename": "AttractionsProductFlags",
+                                "flag": "bestseller",
+                                "value": true,
+                                "rank": 5
+                            }
+                        ]
+                    },
+                    {
+                        "__typename": "AttractionsProduct",
+                        "cancellationPolicy": {
+                            "__typename": "AttractionsCancellationPolicy",
+                            "hasFreeCancellation": true
+                        },
+                        "id": "PRlR4RP176tm",
+                        "name": "All inclusive Elephanta Caves Guided Tour",
+                        "slug": "prlr4rp176tm-all-inclusive-elephanta-caves-guided-tour",
+                        "shortDescription": "UNESCO\u00a0World Heritage Site Elephanta Caves is a must-see destination for history buffs or archaeo...",
+                        "representativePrice": {
+                            "__typename": "AttractionsPrice",
+                            "chargeAmount": 40,
+                            "currency": "USD",
+                            "publicAmount": 50
+                        },
+                        "primaryPhoto": {
+                            "__typename": "AttractionsPhoto",
+                            "small": "https://r-xx.bstatic.com/xdata/images/xphoto/300x320/149853907.jpg?k=f7559c18c9072468449c60339f62a98501d76f13d189bd2f91a7d3724d501bdb&o="
+                        },
+                        "reviewsStats": {
+                            "__typename": "AttractionsProductReviewStats",
+                            "allReviewsCount": 0,
+                            "percentage": "0",
+                            "combinedNumericStats": {
+                                "__typename": "AttractionsProductCombinedReviewStats",
+                                "average": 5,
+                                "total": 37
+                            }
+                        },
+                        "ufiDetails": {
+                            "__typename": "AttractionLocationResponse",
+                            "bCityName": "Mumbai",
+                            "ufi": -2092174,
+                            "url": {
+                                "__typename": "AttractionLocationUrl",
+                                "country": "in"
+                            }
+                        },
+                        "offers": [
+                            {
+                                "__typename": "Offer",
+                                "items": [
+                                    {
+                                        "__typename": "OfferItem",
+                                        "id": "OICcQV8G1ljD"
+                                    }
+                                ]
+                            },
+                            {
+                                "__typename": "Offer",
+                                "items": [
+                                    {
+                                        "__typename": "OfferItem",
+                                        "id": "OI516SQLUe5O"
+                                    }
+                                ]
+                            }
+                        ],
+                        "supportedFeatures": {
+                            "__typename": "AttractionsProductSupportedFeatures",
+                            "nativeApp": true
+                        },
+                        "flags": [
+                            {
+                                "__typename": "AttractionsProductFlags",
+                                "flag": "bestseller",
+                                "value": true,
+                                "rank": 2
+                            }
+                        ]
+                    }
+                ],
+                "filterStats": {
+                    "__typename": "FilterStats",
+                    "unfilteredProductCount": 684,
+                    "filteredProductCount": 684
+                },
+                "sorters": [
+                    {
+                        "__typename": "AttractionsSorterOption",
+                        "name": "Our top picks",
+                        "value": "trending"
+                    },
+                    {
+                        "__typename": "AttractionsSorterOption",
+                        "name": "Lowest price",
+                        "value": "lowest_price"
+                    },
+                    {
+                        "__typename": "AttractionsSorterOption",
+                        "name": "Best reviewed",
+                        "value": "highest_weighted_rating"
+                    }
+                ],
+                "defaultSorter": {
+                    "__typename": "AttractionsSorterOption",
+                    "name": "Our top picks",
+                    "value": "trending"
+                },
+                "filterOptions": {
+                    "__typename": "FilterOptions",
+                    "typeFilters": [
+                        {
+                            "__typename": "FilterOption",
+                            "name": "Tours ",
+                            "tagname": "PTCMCuXtHgrC",
+                            "productCount": 529
+                        },
+                        {
+                            "__typename": "FilterOption",
+                            "name": "Museums, arts & culture",
+                            "tagname": "PTCMCcodv3rh",
+                            "productCount": 419
+                        },
+                        {
+                            "__typename": "FilterOption",
+                            "name": "Food & drinks",
+                            "tagname": "PTCMCi9PTIPL",
+                            "productCount": 50
+                        }
+                    ],
+                    "labelFilters": [
+                        {
+                            "__typename": "FilterOption",
+                            "name": "Free cancellation",
+                            "tagname": "free_cancellation",
+                            "productCount": 647
+                        }
+                    ],
+                    "ufiFilters": [
+                        {
+                            "__typename": "FilterOption",
+                            "name": "Mumbai",
+                            "tagname": "-2092174",
+                            "productCount": 683
+                        },
+                        {
+                            "__typename": "FilterOption",
+                            "name": "Andheri",
+                            "tagname": "-2088871",
+                            "productCount": 1
+                        }
+                    ],
+                    "priceFilters": null
+                }
+            }
+        }
+    ],
+    "response_summary": "The API response lists three popular travel activities in Mumbai, all of which offer free cancellation and can be booked through the native app. The first is the **Dharavi, Dhobighat, and Mumbai Dabbawallas Tour**, a 3.5-hour offbeat experience priced at $18 (originally $20). It has received 83 reviews with an impressive 4.8-star average rating and is ranked as the top bestseller. The second option is the **Private Mumbai City Sightseeing Tour with Guide**, costing $66.48 and led by local experts to uncover hidden gems. Though it has only three reviews, all are perfect 5-star ratings, and it ranks fifth among bestsellers. The third activity is the **All-Inclusive Elephanta Caves Guided Tour**, a UNESCO World Heritage Site visit priced at $40 (originally $50). With 37 reviews averaging 5 stars, it\u2019s ideal for history lovers and ranks second in popularity.  \n\nOverall, there are 684 activities available in Mumbai, with 647 offering free cancellation. The most common categories include 529 tours, 419 museum and cultural experiences, and 50 food and drink options. Users can sort results by \"Our Top Picks,\" \"Lowest Price,\" or \"Best Reviewed,\" with the default being smart recommendations. Most activities are concentrated in Mumbai, with only one listed for Andheri.",
+    "enhance_func_desc": "This API is ideal for travelers seeking curated activities in specific destinations. It retrieves bookable attractions based on location ID, with options to sort by popularity, rating, or price. Users can filter by date, activity type, price range, and labels, receiving detailed listings including pricing, ratings, reviews, and cancellation policies. The location ID must be obtained from the SearchLocation API.",
+    "enhance_params_desc": {
+        "enhanced_parameters": {
+            "id": "Unique identifier for the destination, sourced from the SearchLocation API.",
+            "startDate": "Filters attractions available from this specific date onward.",
+            "endDate": "Filters attractions available up to this specific date.",
+            "sortBy": "Sorts results by trending popularity, booking score, or lowest price.",
+            "page": "Specifies the pagination number for browsing results.",
+            "currency_code": "Currency for displaying attraction prices (e.g., INR, USD).",
+            "languagecode": "Language preference for the response content (e.g., en-us).",
+            "typeFilters": "Filters attractions by category (e.g., tours, museums, food).",
+            "priceFilters": "Filters attractions by predefined price ranges.",
+            "ufiFilters": "Filters attractions by unique feature identifiers.",
+            "labelFilters": "Filters attractions by specific labels or tags."
+        }
+    },
+    "enhance_resfield_desc": {
+        "response_fields": {
+            "__typename": {
+                "type": "String",
+                "description": "The type name of the API response, indicating the structure of the data."
+            },
+            "products": {
+                "type": "Array",
+                "description": "A list of travel activity products available in Mumbai.",
+                "ar_items": {
+                    "type": "Object",
+                    "description": "Details of a single travel activity product.",
+                    "ob_properties": {
+                        "__typename": {
+                            "type": "String",
+                            "description": "The type name of the product, indicating its structure."
+                        },
+                        "cancellationPolicy": {
+                            "type": "Object",
+                            "description": "Information about the cancellation policy for the product.",
+                            "ob_properties": {
+                                "__typename": {
+                                    "type": "String",
+                                    "description": "The type name of the cancellation policy."
+                                },
+                                "hasFreeCancellation": {
+                                    "type": "Boolean",
+                                    "description": "Indicates whether the product offers free cancellation."
+                                }
+                            }
+                        },
+                        "id": {
+                            "type": "String",
+                            "description": "A unique identifier for the product."
+                        },
+                        "name": {
+                            "type": "String",
+                            "description": "The name of the travel activity."
+                        },
+                        "slug": {
+                            "type": "String",
+                            "description": "A URL-friendly version of the product name, used for routing."
+                        },
+                        "shortDescription": {
+                            "type": "String",
+                            "description": "A brief description of the travel activity."
+                        },
+                        "representativePrice": {
+                            "type": "Object",
+                            "description": "Pricing information for the product.",
+                            "ob_properties": {
+                                "__typename": {
+                                    "type": "String",
+                                    "description": "The type name of the price object."
+                                },
+                                "chargeAmount": {
+                                    "type": "Number",
+                                    "description": "The actual price charged for the product."
+                                },
+                                "currency": {
+                                    "type": "String",
+                                    "description": "The currency in which the price is displayed."
+                                },
+                                "publicAmount": {
+                                    "type": "Number",
+                                    "description": "The original or public price of the product before any discounts."
+                                }
+                            }
+                        },
+                        "primaryPhoto": {
+                            "type": "Object",
+                            "description": "The primary photo associated with the product.",
+                            "ob_properties": {
+                                "__typename": {
+                                    "type": "String",
+                                    "description": "The type name of the photo object."
+                                },
+                                "small": {
+                                    "type": "String",
+                                    "description": "A URL to a small-sized version of the photo."
+                                }
+                            }
+                        },
+                        "reviewsStats": {
+                            "type": "Object",
+                            "description": "Statistics about the reviews for the product.",
+                            "ob_properties": {
+                                "__typename": {
+                                    "type": "String",
+                                    "description": "The type name of the reviews stats object."
+                                },
+                                "allReviewsCount": {
+                                    "type": "Number",
+                                    "description": "The total number of reviews for the product."
+                                },
+                                "percentage": {
+                                    "type": "String",
+                                    "description": "The percentage of positive reviews."
+                                },
+                                "combinedNumericStats": {
+                                    "type": "Object",
+                                    "description": "Combined numeric statistics of the reviews.",
+                                    "ob_properties": {
+                                        "__typename": {
+                                            "type": "String",
+                                            "description": "The type name of the combined review stats object."
+                                        },
+                                        "average": {
+                                            "type": "Number",
+                                            "description": "The average rating of the product."
+                                        },
+                                        "total": {
+                                            "type": "Number",
+                                            "description": "The total number of ratings."
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "ufiDetails": {
+                            "type": "Object",
+                            "description": "Details about the location of the product.",
+                            "ob_properties": {
+                                "__typename": {
+                                    "type": "String",
+                                    "description": "The type name of the location response object."
+                                },
+                                "bCityName": {
+                                    "type": "String",
+                                    "description": "The name of the city where the product is located."
+                                },
+                                "ufi": {
+                                    "type": "Number",
+                                    "description": "A unique identifier for the location."
+                                },
+                                "url": {
+                                    "type": "Object",
+                                    "description": "URL-related information for the location.",
+                                    "ob_properties": {
+                                        "__typename": {
+                                            "type": "String",
+                                            "description": "The type name of the URL object."
+                                        },
+                                        "country": {
+                                            "type": "String",
+                                            "description": "The country code for the location."
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "offers": {
+                            "type": "Array",
+                            "description": "A list of offers available for the product.",
+                            "ar_items": {
+                                "type": "Object",
+                                "description": "Details of a single offer.",
+                                "ob_properties": {
+                                    "__typename": {
+                                        "type": "String",
+                                        "description": "The type name of the offer object."
+                                    },
+                                    "items": {
+                                        "type": "Array",
+                                        "description": "A list of items included in the offer.",
+                                        "ar_items": {
+                                            "type": "Object",
+                                            "description": "Details of a single offer item.",
+                                            "ob_properties": {
+                                                "__typename": {
+                                                    "type": "String",
+                                                    "description": "The type name of the offer item object."
+                                                },
+                                                "id": {
+                                                    "type": "String",
+                                                    "description": "A unique identifier for the offer item."
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "supportedFeatures": {
+                            "type": "Object",
+                            "description": "Features supported by the product.",
+                            "ob_properties": {
+                                "__typename": {
+                                    "type": "String",
+                                    "description": "The type name of the supported features object."
+                                },
+                                "nativeApp": {
+                                    "type": "Boolean",
+                                    "description": "Indicates whether the product can be booked through the native app."
+                                }
+                            }
+                        },
+                        "flags": {
+                            "type": "Array",
+                            "description": "A list of flags associated with the product.",
+                            "ar_items": {
+                                "type": "Object",
+                                "description": "Details of a single flag.",
+                                "ob_properties": {
+                                    "__typename": {
+                                        "type": "String",
+                                        "description": "The type name of the flag object."
+                                    },
+                                    "flag": {
+                                        "type": "String",
+                                        "description": "The type of flag (e.g., 'bestseller')."
+                                    },
+                                    "value": {
+                                        "type": "Boolean",
+                                        "description": "Indicates whether the flag is active for the product."
+                                    },
+                                    "rank": {
+                                        "type": "Number",
+                                        "description": "The ranking of the product based on the flag."
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "filterStats": {
+                "type": "Object",
+                "description": "Statistics about the filtered and unfiltered product counts.",
+                "ob_properties": {
+                    "__typename": {
+                        "type": "String",
+                        "description": "The type name of the filter stats object."
+                    },
+                    "unfilteredProductCount": {
+                        "type": "Number",
+                        "description": "The total number of products available before any filters are applied."
+                    },
+                    "filteredProductCount": {
+                        "type": "Number",
+                        "description": "The number of products available after applying filters."
+                    }
+                }
+            },
+            "sorters": {
+                "type": "Array",
+                "description": "A list of sorting options available for the products.",
+                "ar_items": {
+                    "type": "Object",
+                    "description": "Details of a single sorting option.",
+                    "ob_properties": {
+                        "__typename": {
+                            "type": "String",
+                            "description": "The type name of the sorter option object."
+                        },
+                        "name": {
+                            "type": "String",
+                            "description": "The display name of the sorting option."
+                        },
+                        "value": {
+                            "type": "String",
+                            "description": "The internal value used for sorting."
+                        }
+                    }
+                }
+            },
+            "defaultSorter": {
+                "type": "Object",
+                "description": "The default sorting option applied to the products.",
+                "ob_properties": {
+                    "__typename": {
+                        "type": "String",
+                        "description": "The type name of the sorter option object."
+                    },
+                    "name": {
+                        "type": "String",
+                        "description": "The display name of the default sorting option."
+                    },
+                    "value": {
+                        "type": "String",
+                        "description": "The internal value used for the default sorting."
+                    }
+                }
+            },
+            "filterOptions": {
+                "type": "Object",
+                "description": "A collection of filter options available for the products.",
+                "ob_properties": {
+                    "__typename": {
+                        "type": "String",
+                        "description": "The type name of the filter options object."
+                    },
+                    "typeFilters": {
+                        "type": "Array",
+                        "description": "A list of filters based on product types.",
+                        "ar_items": {
+                            "type": "Object",
+                            "description": "Details of a single type filter.",
+                            "ob_properties": {
+                                "__typename": {
+                                    "type": "String",
+                                    "description": "The type name of the filter option object."
+                                },
+                                "name": {
+                                    "type": "String",
+                                    "description": "The display name of the filter."
+                                },
+                                "tagname": {
+                                    "type": "String",
+                                    "description": "A unique identifier for the filter."
+                                },
+                                "productCount": {
+                                    "type": "Number",
+                                    "description": "The number of products matching this filter."
+                                }
+                            }
+                        }
+                    },
+                    "labelFilters": {
+                        "type": "Array",
+                        "description": "A list of filters based on product labels.",
+                        "ar_items": {
+                            "type": "Object",
+                            "description": "Details of a single label filter.",
+                            "ob_properties": {
+                                "__typename": {
+                                    "type": "String",
+                                    "description": "The type name of the filter option object."
+                                },
+                                "name": {
+                                    "type": "String",
+                                    "description": "The display name of the filter."
+                                },
+                                "tagname": {
+                                    "type": "String",
+                                    "description": "A unique identifier for the filter."
+                                },
+                                "productCount": {
+                                    "type": "Number",
+                                    "description": "The number of products matching this filter."
+                                }
+                            }
+                        }
+                    },
+                    "ufiFilters": {
+                        "type": "Array",
+                        "description": "A list of filters based on location.",
+                        "ar_items": {
+                            "type": "Object",
+                            "description": "Details of a single location filter.",
+                            "ob_properties": {
+                                "__typename": {
+                                    "type": "String",
+                                    "description": "The type name of the filter option object."
+                                },
+                                "name": {
+                                    "type": "String",
+                                    "description": "The display name of the location."
+                                },
+                                "tagname": {
+                                    "type": "String",
+                                    "description": "A unique identifier for the location."
+                                },
+                                "productCount": {
+                                    "type": "Number",
+                                    "description": "The number of products available in this location."
+                                }
+                            }
+                        }
+                    },
+                    "priceFilters": {
+                        "type": "null",
+                        "description": "Indicates that no price filters are currently available."
+                    }
+                }
+            }
+        }
+    },
+    "params_desc_list": null,
+    "response_desc_list": [
+        {
+            "path_name": "__typename",
+            "name": "__typename",
+            "description": "The type name of the API response, indicating the structure of the data."
+        },
+        {
+            "path_name": "products",
+            "name": "products",
+            "description": "A list of travel activity products available in Mumbai."
+        },
+        {
+            "path_name": "products[]",
+            "name": "products[]",
+            "description": "Details of a single travel activity product."
+        },
+        {
+            "path_name": "products[].__typename",
+            "name": "__typename",
+            "description": "The type name of the product, indicating its structure."
+        },
+        {
+            "path_name": "products[].cancellationPolicy",
+            "name": "cancellationPolicy",
+            "description": "Information about the cancellation policy for the product."
+        },
+        {
+            "path_name": "products[].cancellationPolicy.__typename",
+            "name": "__typename",
+            "description": "The type name of the cancellation policy."
+        },
+        {
+            "path_name": "products[].cancellationPolicy.hasFreeCancellation",
+            "name": "hasFreeCancellation",
+            "description": "Indicates whether the product offers free cancellation."
+        },
+        {
+            "path_name": "products[].id",
+            "name": "id",
+            "description": "A unique identifier for the product."
+        },
+        {
+            "path_name": "products[].name",
+            "name": "name",
+            "description": "The name of the travel activity."
+        },
+        {
+            "path_name": "products[].slug",
+            "name": "slug",
+            "description": "A URL-friendly version of the product name, used for routing."
+        },
+        {
+            "path_name": "products[].shortDescription",
+            "name": "shortDescription",
+            "description": "A brief description of the travel activity."
+        },
+        {
+            "path_name": "products[].representativePrice",
+            "name": "representativePrice",
+            "description": "Pricing information for the product."
+        },
+        {
+            "path_name": "products[].representativePrice.__typename",
+            "name": "__typename",
+            "description": "The type name of the price object."
+        },
+        {
+            "path_name": "products[].representativePrice.chargeAmount",
+            "name": "chargeAmount",
+            "description": "The actual price charged for the product."
+        },
+        {
+            "path_name": "products[].representativePrice.currency",
+            "name": "currency",
+            "description": "The currency in which the price is displayed."
+        },
+        {
+            "path_name": "products[].representativePrice.publicAmount",
+            "name": "publicAmount",
+            "description": "The original or public price of the product before any discounts."
+        },
+        {
+            "path_name": "products[].primaryPhoto",
+            "name": "primaryPhoto",
+            "description": "The primary photo associated with the product."
+        },
+        {
+            "path_name": "products[].primaryPhoto.__typename",
+            "name": "__typename",
+            "description": "The type name of the photo object."
+        },
+        {
+            "path_name": "products[].primaryPhoto.small",
+            "name": "small",
+            "description": "A URL to a small-sized version of the photo."
+        },
+        {
+            "path_name": "products[].reviewsStats",
+            "name": "reviewsStats",
+            "description": "Statistics about the reviews for the product."
+        },
+        {
+            "path_name": "products[].reviewsStats.__typename",
+            "name": "__typename",
+            "description": "The type name of the reviews stats object."
+        },
+        {
+            "path_name": "products[].reviewsStats.allReviewsCount",
+            "name": "allReviewsCount",
+            "description": "The total number of reviews for the product."
+        },
+        {
+            "path_name": "products[].reviewsStats.percentage",
+            "name": "percentage",
+            "description": "The percentage of positive reviews."
+        },
+        {
+            "path_name": "products[].reviewsStats.combinedNumericStats",
+            "name": "combinedNumericStats",
+            "description": "Combined numeric statistics of the reviews."
+        },
+        {
+            "path_name": "products[].reviewsStats.combinedNumericStats.__typename",
+            "name": "__typename",
+            "description": "The type name of the combined review stats object."
+        },
+        {
+            "path_name": "products[].reviewsStats.combinedNumericStats.average",
+            "name": "average",
+            "description": "The average rating of the product."
+        },
+        {
+            "path_name": "products[].reviewsStats.combinedNumericStats.total",
+            "name": "total",
+            "description": "The total number of ratings."
+        },
+        {
+            "path_name": "products[].ufiDetails",
+            "name": "ufiDetails",
+            "description": "Details about the location of the product."
+        },
+        {
+            "path_name": "products[].ufiDetails.__typename",
+            "name": "__typename",
+            "description": "The type name of the location response object."
+        },
+        {
+            "path_name": "products[].ufiDetails.bCityName",
+            "name": "bCityName",
+            "description": "The name of the city where the product is located."
+        },
+        {
+            "path_name": "products[].ufiDetails.ufi",
+            "name": "ufi",
+            "description": "A unique identifier for the location."
+        },
+        {
+            "path_name": "products[].ufiDetails.url",
+            "name": "url",
+            "description": "URL-related information for the location."
+        },
+        {
+            "path_name": "products[].ufiDetails.url.__typename",
+            "name": "__typename",
+            "description": "The type name of the URL object."
+        },
+        {
+            "path_name": "products[].ufiDetails.url.country",
+            "name": "country",
+            "description": "The country code for the location."
+        },
+        {
+            "path_name": "products[].offers",
+            "name": "offers",
+            "description": "A list of offers available for the product."
+        },
+        {
+            "path_name": "products[].offers[]",
+            "name": "offers[]",
+            "description": "Details of a single offer."
+        },
+        {
+            "path_name": "products[].offers[].__typename",
+            "name": "__typename",
+            "description": "The type name of the offer object."
+        },
+        {
+            "path_name": "products[].offers[].items",
+            "name": "items",
+            "description": "A list of items included in the offer."
+        },
+        {
+            "path_name": "products[].offers[].items[]",
+            "name": "items[]",
+            "description": "Details of a single offer item."
+        },
+        {
+            "path_name": "products[].offers[].items[].__typename",
+            "name": "__typename",
+            "description": "The type name of the offer item object."
+        },
+        {
+            "path_name": "products[].offers[].items[].id",
+            "name": "id",
+            "description": "A unique identifier for the offer item."
+        },
+        {
+            "path_name": "products[].supportedFeatures",
+            "name": "supportedFeatures",
+            "description": "Features supported by the product."
+        },
+        {
+            "path_name": "products[].supportedFeatures.__typename",
+            "name": "__typename",
+            "description": "The type name of the supported features object."
+        },
+        {
+            "path_name": "products[].supportedFeatures.nativeApp",
+            "name": "nativeApp",
+            "description": "Indicates whether the product can be booked through the native app."
+        },
+        {
+            "path_name": "products[].flags",
+            "name": "flags",
+            "description": "A list of flags associated with the product."
+        },
+        {
+            "path_name": "products[].flags[]",
+            "name": "flags[]",
+            "description": "Details of a single flag."
+        },
+        {
+            "path_name": "products[].flags[].__typename",
+            "name": "__typename",
+            "description": "The type name of the flag object."
+        },
+        {
+            "path_name": "products[].flags[].flag",
+            "name": "flag",
+            "description": "The type of flag (e.g., 'bestseller')."
+        },
+        {
+            "path_name": "products[].flags[].value",
+            "name": "value",
+            "description": "Indicates whether the flag is active for the product."
+        },
+        {
+            "path_name": "products[].flags[].rank",
+            "name": "rank",
+            "description": "The ranking of the product based on the flag."
+        },
+        {
+            "path_name": "filterStats",
+            "name": "filterStats",
+            "description": "Statistics about the filtered and unfiltered product counts."
+        },
+        {
+            "path_name": "filterStats.__typename",
+            "name": "__typename",
+            "description": "The type name of the filter stats object."
+        },
+        {
+            "path_name": "filterStats.unfilteredProductCount",
+            "name": "unfilteredProductCount",
+            "description": "The total number of products available before any filters are applied."
+        },
+        {
+            "path_name": "filterStats.filteredProductCount",
+            "name": "filteredProductCount",
+            "description": "The number of products available after applying filters."
+        },
+        {
+            "path_name": "sorters",
+            "name": "sorters",
+            "description": "A list of sorting options available for the products."
+        },
+        {
+            "path_name": "sorters[]",
+            "name": "sorters[]",
+            "description": "Details of a single sorting option."
+        },
+        {
+            "path_name": "sorters[].__typename",
+            "name": "__typename",
+            "description": "The type name of the sorter option object."
+        },
+        {
+            "path_name": "sorters[].name",
+            "name": "name",
+            "description": "The display name of the sorting option."
+        },
+        {
+            "path_name": "sorters[].value",
+            "name": "value",
+            "description": "The internal value used for sorting."
+        },
+        {
+            "path_name": "defaultSorter",
+            "name": "defaultSorter",
+            "description": "The default sorting option applied to the products."
+        },
+        {
+            "path_name": "defaultSorter.__typename",
+            "name": "__typename",
+            "description": "The type name of the sorter option object."
+        },
+        {
+            "path_name": "defaultSorter.name",
+            "name": "name",
+            "description": "The display name of the default sorting option."
+        },
+        {
+            "path_name": "defaultSorter.value",
+            "name": "value",
+            "description": "The internal value used for the default sorting."
+        },
+        {
+            "path_name": "filterOptions",
+            "name": "filterOptions",
+            "description": "A collection of filter options available for the products."
+        },
+        {
+            "path_name": "filterOptions.__typename",
+            "name": "__typename",
+            "description": "The type name of the filter options object."
+        },
+        {
+            "path_name": "filterOptions.typeFilters",
+            "name": "typeFilters",
+            "description": "A list of filters based on product types."
+        },
+        {
+            "path_name": "filterOptions.typeFilters[]",
+            "name": "typeFilters[]",
+            "description": "Details of a single type filter."
+        },
+        {
+            "path_name": "filterOptions.typeFilters[].__typename",
+            "name": "__typename",
+            "description": "The type name of the filter option object."
+        },
+        {
+            "path_name": "filterOptions.typeFilters[].name",
+            "name": "name",
+            "description": "The display name of the filter."
+        },
+        {
+            "path_name": "filterOptions.typeFilters[].tagname",
+            "name": "tagname",
+            "description": "A unique identifier for the filter."
+        },
+        {
+            "path_name": "filterOptions.typeFilters[].productCount",
+            "name": "productCount",
+            "description": "The number of products matching this filter."
+        },
+        {
+            "path_name": "filterOptions.labelFilters",
+            "name": "labelFilters",
+            "description": "A list of filters based on product labels."
+        },
+        {
+            "path_name": "filterOptions.labelFilters[]",
+            "name": "labelFilters[]",
+            "description": "Details of a single label filter."
+        },
+        {
+            "path_name": "filterOptions.labelFilters[].__typename",
+            "name": "__typename",
+            "description": "The type name of the filter option object."
+        },
+        {
+            "path_name": "filterOptions.labelFilters[].name",
+            "name": "name",
+            "description": "The display name of the filter."
+        },
+        {
+            "path_name": "filterOptions.labelFilters[].tagname",
+            "name": "tagname",
+            "description": "A unique identifier for the filter."
+        },
+        {
+            "path_name": "filterOptions.labelFilters[].productCount",
+            "name": "productCount",
+            "description": "The number of products matching this filter."
+        },
+        {
+            "path_name": "filterOptions.ufiFilters",
+            "name": "ufiFilters",
+            "description": "A list of filters based on location."
+        },
+        {
+            "path_name": "filterOptions.ufiFilters[]",
+            "name": "ufiFilters[]",
+            "description": "Details of a single location filter."
+        },
+        {
+            "path_name": "filterOptions.ufiFilters[].__typename",
+            "name": "__typename",
+            "description": "The type name of the filter option object."
+        },
+        {
+            "path_name": "filterOptions.ufiFilters[].name",
+            "name": "name",
+            "description": "The display name of the location."
+        },
+        {
+            "path_name": "filterOptions.ufiFilters[].tagname",
+            "name": "tagname",
+            "description": "A unique identifier for the location."
+        },
+        {
+            "path_name": "filterOptions.ufiFilters[].productCount",
+            "name": "productCount",
+            "description": "The number of products available in this location."
+        },
+        {
+            "path_name": "filterOptions.priceFilters",
+            "name": "priceFilters",
+            "description": "Indicates that no price filters are currently available."
+        }
+    ],
+    "depends_on": null,
+    "verified": true
+}

@@ -1,0 +1,183 @@
+{
+    "shorten": {
+        "api": {
+            "name": "Payment_features_of_the_Hotel",
+            "endpoint": "/api/v1/hotels/getPaymentFeatures",
+            "func_description": "Retrieve information about the payment features and options available at a specific hotel. ",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "hotel_id": {
+                        "type": "String",
+                        "description": "hotel_id can be retrieved from api/v1/hotels/searchHotels(Search Hotels) or api/v1/hotels/searchHotelsByCoordinates(Search Hotels By Coordinates\n) endpoint in Hotels collection.",
+                        "example_value": "5955189",
+                        "required": true
+                    },
+                    "languagecode": {
+                        "type": "String",
+                        "description": "To obtain the response data in a specific language, enter the languagecode. languagecode can be retrieved from api/v1/meta/getLanguages(Get Languages\n) endpoint in Meta collection.",
+                        "example_value": "en-us",
+                        "required": false
+                    }
+                },
+                "required": [
+                    "hotel_id"
+                ]
+            }
+        },
+        "static_response": {
+            "function_name": "Payment_features_of_the_Hotel",
+            "arguments": {
+                "hotel_id": "535544"
+            },
+            "observation": {
+                "status": true,
+                "message": "Success",
+                "data": [
+                    {
+                        "creditcard_id": 2,
+                        "hotel_id": "535544",
+                        "is_direct_payment": 0,
+                        "payable": 1,
+                        "bookable": 1,
+                        "cvc_required": 0
+                    },
+                    {
+                        "cvc_required": 0,
+                        "payable": 1,
+                        "bookable": 1,
+                        "creditcard_id": 3,
+                        "hotel_id": "535544",
+                        "is_direct_payment": 0
+                    },
+                    {
+                        "is_direct_payment": 0,
+                        "hotel_id": "535544",
+                        "creditcard_id": 1,
+                        "bookable": 1,
+                        "payable": 1,
+                        "cvc_required": 0
+                    }
+                ]
+            }
+        },
+        "required": {
+            "query": "I'm considering booking a stay at hotel ID 5955189. Can you tell me what payment options they accept, like credit cards or digital wallets?",
+            "params": {
+                "hotel_id": "5955189"
+            },
+            "response": {
+                "status": true,
+                "message": "Success",
+                "timestamp": 1747651198486,
+                "data": [
+                    {
+                        "creditcard_id": 2,
+                        "is_direct_payment": 0,
+                        "bookable": 1,
+                        "hotel_id": "5955189",
+                        "cvc_required": 0,
+                        "payable": 1
+                    },
+                    {
+                        "cvc_required": 0,
+                        "payable": 1,
+                        "is_direct_payment": 0,
+                        "bookable": 1,
+                        "creditcard_id": 11,
+                        "hotel_id": "5955189"
+                    },
+                    {
+                        "bookable": 1,
+                        "is_direct_payment": 0,
+                        "creditcard_id": 1,
+                        "hotel_id": "5955189",
+                        "cvc_required": 0,
+                        "payable": 1
+                    }
+                ]
+            }
+        },
+        "optional": {
+            "query": "I'm planning to book a stay at hotel ID 5955189. Could you provide details on the payment options available at this hotel, such as whether they accept credit cards, digital wallets, or other payment methods? Also, if possible, I'd like the information in English.",
+            "params": {
+                "hotel_id": "5955189"
+            },
+            "response": {
+                "status": false,
+                "timestamp": 1747651210996,
+                "message": "Something went wrong. We have logged the error and will get the resolution."
+            }
+        }
+    },
+    "row": {
+        "required": {
+            "status": true,
+            "message": "Success",
+            "timestamp": 1747651198486,
+            "data": [
+                {
+                    "creditcard_id": 2,
+                    "is_direct_payment": 0,
+                    "bookable": 1,
+                    "hotel_id": "5955189",
+                    "cvc_required": 0,
+                    "payable": 1
+                },
+                {
+                    "cvc_required": 0,
+                    "payable": 1,
+                    "is_direct_payment": 0,
+                    "bookable": 1,
+                    "creditcard_id": 11,
+                    "hotel_id": "5955189"
+                },
+                {
+                    "bookable": 1,
+                    "is_direct_payment": 0,
+                    "creditcard_id": 1,
+                    "hotel_id": "5955189",
+                    "cvc_required": 0,
+                    "payable": 1
+                },
+                {
+                    "creditcard_id": 3,
+                    "is_direct_payment": 0,
+                    "bookable": 1,
+                    "hotel_id": "5955189",
+                    "cvc_required": 0,
+                    "payable": 1
+                },
+                {
+                    "payable": 1,
+                    "cvc_required": 0,
+                    "hotel_id": "5955189",
+                    "is_direct_payment": 0,
+                    "creditcard_id": 5,
+                    "bookable": 1
+                },
+                {
+                    "payable": 1,
+                    "cvc_required": 0,
+                    "hotel_id": "5955189",
+                    "bookable": 0,
+                    "is_direct_payment": 0,
+                    "creditcard_id": 10
+                },
+                {
+                    "cvc_required": 0,
+                    "payable": 1,
+                    "bookable": 0,
+                    "is_direct_payment": 0,
+                    "creditcard_id": 18,
+                    "hotel_id": "5955189"
+                }
+            ]
+        },
+        "optional": {
+            "status": false,
+            "timestamp": 1747651210996,
+            "message": "Something went wrong. We have logged the error and will get the resolution."
+        }
+    }
+}

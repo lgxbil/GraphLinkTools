@@ -1,0 +1,754 @@
+{
+    "name": "Location_to_Lat_Long",
+    "docs_row": {
+        "name": "Location_to_Lat_Long",
+        "endpoint": "/api/v1/meta/locationToLatLong",
+        "func_description": "Get location/address latitude and longitude. ",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "query": {
+                    "type": "String",
+                    "description": "Names of locations, apartment, address, cities, districts, places, countries, counties etc.",
+                    "example_value": "man",
+                    "required": true
+                }
+            },
+            "required": [
+                "query"
+            ]
+        }
+    },
+    "instance": [],
+    "category": null,
+    "tool": null,
+    "api_idx": 42,
+    "params": {
+        "type": "object",
+        "properties": {
+            "query": {
+                "type": "String",
+                "description": "Names of locations, apartment, address, cities, districts, places, countries, counties etc.",
+                "example_value": "man",
+                "required": true
+            }
+        },
+        "required": [
+            "query"
+        ]
+    },
+    "responses": [
+        {
+            "function_name": "Location_to_Lat_Long",
+            "arguments": {
+                "query": "Empire State Building, New York"
+            },
+            "observation": [
+                {
+                    "business_status": "OPERATIONAL",
+                    "formatted_address": "20 W 34th St., New York, NY 10001, United States",
+                    "geometry": {
+                        "location": {
+                            "lat": 40.7484405,
+                            "lng": -73.98566439999999
+                        },
+                        "viewport": {
+                            "northeast": {
+                                "lat": 40.74988942989271,
+                                "lng": -73.98404672010727
+                            },
+                            "southwest": {
+                                "lat": 40.74718977010727,
+                                "lng": -73.98674637989271
+                            }
+                        }
+                    },
+                    "name": "Empire State Building",
+                    "opening_hours": {
+                        "open_now": false
+                    },
+                    "photos": [
+                        {
+                            "height": 712,
+                            "html_attributions": [
+                                "<a href=\"https://maps.google.com/maps/contrib/108269597694188548544\">_Elisa</a>"
+                            ],
+                            "photo_reference": "AXQCQNQAU76Lwu-WqpEGwT2a-g9DfA0DONEhv54kglGd_2OsKzWdBS2zNwzmsbiDPgF_nvujO1QfLATCOHYN3eDyjUdVzZNhGv6sTQ9DOrOXbfWvY87n_BVTzorJLHfABlDYE0yTXn6yYSKTPUZUdU6u-KXB060utlMPakMVSSbaa2L16VHhfwEkig6ZJYRsaimdntXJTHNaCqftubxA-XVgTiiddtjEUTqy-PXgoYiYX252JPgGNkym0lCdQ7sh0hasZeJeJRBXbdda7q-5Wqd829gCRtoJw-ewJcJGfzyROEqAqRC9ZiH5pf23B_yfb8u0Irt13SYa29zmCYHp_UtmYymnxZTPQvzrRutaAEvEBvLVwncNJ1BorBI-nCqMrAdvsBR_IVPk_5y6_TPpVWJ78Y4Nt9Eg0tvByMetts60UDSdZbUCFONutiyZJ6gIB-38MlgScdmVO-U18noTcvxuAr-fNc6SF8MrwJXGv0Wt5O45ap6oO2ZOl_2_6fzsM75IMP6hVJXY9AQP9K7XOsXWMlxlcbsg9RLWUaXJBD96pRERvtrfRHU-NC2ZJ1sKibEJkxbfOj8k",
+                            "width": 1080
+                        }
+                    ],
+                    "place_id": "ChIJaXQRs6lZwokRY6EFpJnhNNE",
+                    "plus_code": {
+                        "compound_code": "P2X7+9P New York, USA",
+                        "global_code": "87G8P2X7+9P"
+                    },
+                    "rating": 4.7,
+                    "reference": "ChIJaXQRs6lZwokRY6EFpJnhNNE",
+                    "types": [
+                        "tourist_attraction",
+                        "museum"
+                    ],
+                    "user_ratings_total": 115461
+                }
+            ]
+        },
+        {
+            "function_name": "Location_to_Lat_Long",
+            "arguments": {
+                "query": "Empire State Building, New York"
+            },
+            "observation": [
+                {
+                    "business_status": "OPERATIONAL",
+                    "formatted_address": "20 W 34th St., New York, NY 10001, United States",
+                    "geometry": {
+                        "location": {
+                            "lat": 40.7484405,
+                            "lng": -73.98566439999999
+                        },
+                        "viewport": {
+                            "northeast": {
+                                "lat": 40.74988942989271,
+                                "lng": -73.98404672010727
+                            },
+                            "southwest": {
+                                "lat": 40.74718977010727,
+                                "lng": -73.98674637989271
+                            }
+                        }
+                    },
+                    "name": "Empire State Building",
+                    "opening_hours": {
+                        "open_now": false
+                    },
+                    "photos": [
+                        {
+                            "height": 712,
+                            "html_attributions": [
+                                "<a href=\"https://maps.google.com/maps/contrib/108269597694188548544\">_Elisa</a>"
+                            ],
+                            "photo_reference": "AXQCQNQSY6ct5i8vBJiGQh4vrLtwAPoaTTo_VtCuiK9HoXUBV7n2WnBtOoqEzbQakE0uUtxePQUIzTmqjJvhwsK0dUCGDMVLXXu2j2plR3FqV6Wa8CNYRotdA_dlyjEZeEGWEbCQ-fNhQr-tHd39qYZ7fzgbCo_rA1ZEIHgdKRxGVSyOFyYRRWlMVQLL6X43Dj5TXlkyDU0AJohLiCjuxJ_NVt3qKGrQdIF0AFi6KcfdMjOpjjcFCKYd4yhamTGgGDc4e1BJNnDo7beUWcUGrMmksMtdSfwZAi0tih2XojcX_UOohqLt2k2wf10ppWT-atsnCTO-5PHXwvaTapZjS7KDHeXZWzpMGq-o7dX8GXX36ZFRBnF-sMV1TqQRxgGXrIk198mV8hP6LoqM-NL9adHR8CIS3VS2eFJehWUJ5MyQYolLeE4AurKgp5aLVhYcTf2eNG5SQ9PqqpeWwbunR5EtARHITY_OGStvy_Y9u3n8k3tYk6JzRM2Qv4sB3TixkEpIJr5Rf92A5Q_BY68sLQkrKDc_4GrH6-W1FlKxPhy1b_r9K3A9nQCLJCAbtEAO55jNAmCrWU-w",
+                            "width": 1080
+                        }
+                    ],
+                    "place_id": "ChIJaXQRs6lZwokRY6EFpJnhNNE",
+                    "plus_code": {
+                        "compound_code": "P2X7+9P New York",
+                        "global_code": "87G8P2X7+9P"
+                    },
+                    "rating": 4.7,
+                    "reference": "ChIJaXQRs6lZwokRY6EFpJnhNNE",
+                    "types": [
+                        "tourist_attraction",
+                        "museum",
+                        "point_of_interest"
+                    ],
+                    "user_ratings_total": 115461
+                }
+            ]
+        }
+    ],
+    "response_summary": "The Empire State Building, located at 20 W 34th St. in New York, NY, is currently operational and stands as a prominent tourist attraction, museum, and point of interest. It boasts a high rating of 4.7 stars from over 115,000 reviews, reflecting its popularity among visitors. The building's coordinates are 40.7484405 latitude and -73.9856644 longitude, with a broad viewport that spans the surrounding area. Although it is not open at the moment, the location is easily identifiable with its plus code \"P2X7+9P New York, USA.\" A photo taken by a contributor named Elisa showcases the building's grandeur, adding to its visual appeal. The Empire State Building remains an iconic landmark in the heart of New York City.",
+    "enhance_func_desc": "This API is ideal for mapping and navigation applications. It converts location names, addresses, or places into precise latitude and longitude coordinates. Users can input various location types (cities, landmarks, etc.) and receive detailed geographic data including viewport boundaries and plus codes. The response also includes operational status, ratings, and photos if available, enhancing location-based services. The query parameter is mandatory for accurate results.",
+    "enhance_params_desc": {
+        "enhanced_parameters": {
+            "query": "Input location name, address, or place to retrieve precise geographic coordinates and details."
+        }
+    },
+    "enhance_resfield_desc": {
+        "response_fields": [
+            {
+                "business_status": {
+                    "type": "String",
+                    "description": "Indicates the operational status of the business (e.g., 'OPERATIONAL')."
+                },
+                "formatted_address": {
+                    "type": "String",
+                    "description": "The full address of the location, formatted for display (e.g., '20 W 34th St., New York, NY 10001, United States')."
+                },
+                "geometry": {
+                    "type": "Object",
+                    "description": "Contains geographical information about the location.",
+                    "ob_properties": {
+                        "location": {
+                            "type": "Object",
+                            "description": "The latitude and longitude coordinates of the location.",
+                            "ob_properties": {
+                                "lat": {
+                                    "type": "Number",
+                                    "description": "The latitude coordinate of the location (e.g., 40.7484405)."
+                                },
+                                "lng": {
+                                    "type": "Number",
+                                    "description": "The longitude coordinate of the location (e.g., -73.98566439999999)."
+                                }
+                            }
+                        },
+                        "viewport": {
+                            "type": "Object",
+                            "description": "The viewport defining the visible area around the location.",
+                            "ob_properties": {
+                                "northeast": {
+                                    "type": "Object",
+                                    "description": "The northeast corner of the viewport.",
+                                    "ob_properties": {
+                                        "lat": {
+                                            "type": "Number",
+                                            "description": "The latitude of the northeast corner (e.g., 40.74988942989271)."
+                                        },
+                                        "lng": {
+                                            "type": "Number",
+                                            "description": "The longitude of the northeast corner (e.g., -73.98404672010727)."
+                                        }
+                                    }
+                                },
+                                "southwest": {
+                                    "type": "Object",
+                                    "description": "The southwest corner of the viewport.",
+                                    "ob_properties": {
+                                        "lat": {
+                                            "type": "Number",
+                                            "description": "The latitude of the southwest corner (e.g., 40.74718977010727)."
+                                        },
+                                        "lng": {
+                                            "type": "Number",
+                                            "description": "The longitude of the southwest corner (e.g., -73.98674637989271)."
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "name": {
+                    "type": "String",
+                    "description": "The name of the location (e.g., 'Empire State Building')."
+                },
+                "opening_hours": {
+                    "type": "Object",
+                    "description": "Information about the opening hours of the location.",
+                    "ob_properties": {
+                        "open_now": {
+                            "type": "Boolean",
+                            "description": "Indicates whether the location is currently open (e.g., false)."
+                        }
+                    }
+                },
+                "photos": {
+                    "type": "Array",
+                    "description": "A list of photos associated with the location.",
+                    "ar_items": {
+                        "type": "Object",
+                        "description": "An object representing a photo of the location.",
+                        "ob_properties": {
+                            "height": {
+                                "type": "Number",
+                                "description": "The height of the photo in pixels (e.g., 712)."
+                            },
+                            "html_attributions": {
+                                "type": "Array",
+                                "description": "A list of HTML attributions for the photo.",
+                                "ar_items": {
+                                    "type": "String",
+                                    "description": "An HTML string attributing the photo to a contributor (e.g., '<a href=\"https://maps.google.com/maps/contrib/108269597694188548544\">_Elisa</a>')."
+                                }
+                            },
+                            "photo_reference": {
+                                "type": "String",
+                                "description": "A unique identifier for the photo (e.g., 'AXQCQNQAU76Lwu-WqpEGwT2a-g9DfA0DONEhv54kglGd_2OsKzWdBS2zNwzmsbiDPgF_nvujO1QfLATCOHYN3eDyjUdVzZNhGv6sTQ9DOrOXbfWvY87n_BVTzorJLHfABlDYE0yTXn6yYSKTPUZUdU6u-KXB060utlMPakMVSSbaa2L16VHhfwEkig6ZJYRsaimdntXJTHNaCqftubxA-XVgTiiddtjEUTqy-PXgoYiYX252JPgGNkym0lCdQ7sh0hasZeJeJRBXbdda7q-5Wqd829gCRtoJw-ewJcJGfzyROEqAqRC9ZiH5pf23B_yfb8u0Irt13SYa29zmCYHp_UtmYymnxZTPQvzrRutaAEvEBvLVwncNJ1BorBI-nCqMrAdvsBR_IVPk_5y6_TPpVWJ78Y4Nt9Eg0tvByMetts60UDSdZbUCFONutiyZJ6gIB-38MlgScdmVO-U18noTcvxuAr-fNc6SF8MrwJXGv0Wt5O45ap6oO2ZOl_2_6fzsM75IMP6hVJXY9AQP9K7XOsXWMlxlcbsg9RLWUaXJBD96pRERvtrfRHU-NC2ZJ1sKibEJkxbfOj8k')."
+                            },
+                            "width": {
+                                "type": "Number",
+                                "description": "The width of the photo in pixels (e.g., 1080)."
+                            }
+                        }
+                    }
+                },
+                "place_id": {
+                    "type": "String",
+                    "description": "A unique identifier for the place (e.g., 'ChIJaXQRs6lZwokRY6EFpJnhNNE')."
+                },
+                "plus_code": {
+                    "type": "Object",
+                    "description": "The Plus Code representation of the location's address.",
+                    "ob_properties": {
+                        "compound_code": {
+                            "type": "String",
+                            "description": "The local compound code (e.g., 'P2X7+9P New York, USA')."
+                        },
+                        "global_code": {
+                            "type": "String",
+                            "description": "The global code (e.g., '87G8P2X7+9P')."
+                        }
+                    }
+                },
+                "rating": {
+                    "type": "Number",
+                    "description": "The average rating of the location (e.g., 4.7)."
+                },
+                "reference": {
+                    "type": "String",
+                    "description": "A reference string for the place (e.g., 'ChIJaXQRs6lZwokRY6EFpJnhNNE')."
+                },
+                "types": {
+                    "type": "Array",
+                    "description": "A list of categories that describe the location.",
+                    "ar_items": {
+                        "type": "String",
+                        "description": "A category describing the location (e.g., 'tourist_attraction', 'museum', 'point_of_interest')."
+                    }
+                },
+                "user_ratings_total": {
+                    "type": "Number",
+                    "description": "The total number of user ratings for the location (e.g., 115461)."
+                }
+            }
+        ]
+    },
+    "params_desc_list": null,
+    "response_desc_list": [
+        {
+            "path_name": "$[].business_status",
+            "name": "business_status",
+            "description": "Indicates the operational status of the business (e.g., 'OPERATIONAL')."
+        },
+        {
+            "path_name": "$[].formatted_address",
+            "name": "formatted_address",
+            "description": "The full address of the location, formatted for display (e.g., '20 W 34th St., New York, NY 10001, United States')."
+        },
+        {
+            "path_name": "$[].geometry",
+            "name": "geometry",
+            "description": "Contains geographical information about the location."
+        },
+        {
+            "path_name": "$[].geometry.location",
+            "name": "location",
+            "description": "The latitude and longitude coordinates of the location."
+        },
+        {
+            "path_name": "$[].geometry.location.lat",
+            "name": "lat",
+            "description": "The latitude coordinate of the location (e.g., 40.7484405)."
+        },
+        {
+            "path_name": "$[].geometry.location.lng",
+            "name": "lng",
+            "description": "The longitude coordinate of the location (e.g., -73.98566439999999)."
+        },
+        {
+            "path_name": "$[].geometry.viewport",
+            "name": "viewport",
+            "description": "The viewport defining the visible area around the location."
+        },
+        {
+            "path_name": "$[].geometry.viewport.northeast",
+            "name": "northeast",
+            "description": "The northeast corner of the viewport."
+        },
+        {
+            "path_name": "$[].geometry.viewport.northeast.lat",
+            "name": "lat",
+            "description": "The latitude of the northeast corner (e.g., 40.74988942989271)."
+        },
+        {
+            "path_name": "$[].geometry.viewport.northeast.lng",
+            "name": "lng",
+            "description": "The longitude of the northeast corner (e.g., -73.98404672010727)."
+        },
+        {
+            "path_name": "$[].geometry.viewport.southwest",
+            "name": "southwest",
+            "description": "The southwest corner of the viewport."
+        },
+        {
+            "path_name": "$[].geometry.viewport.southwest.lat",
+            "name": "lat",
+            "description": "The latitude of the southwest corner (e.g., 40.74718977010727)."
+        },
+        {
+            "path_name": "$[].geometry.viewport.southwest.lng",
+            "name": "lng",
+            "description": "The longitude of the southwest corner (e.g., -73.98674637989271)."
+        },
+        {
+            "path_name": "$[].name",
+            "name": "name",
+            "description": "The name of the location (e.g., 'Empire State Building')."
+        },
+        {
+            "path_name": "$[].opening_hours",
+            "name": "opening_hours",
+            "description": "Information about the opening hours of the location."
+        },
+        {
+            "path_name": "$[].opening_hours.open_now",
+            "name": "open_now",
+            "description": "Indicates whether the location is currently open (e.g., false)."
+        },
+        {
+            "path_name": "$[].photos",
+            "name": "photos",
+            "description": "A list of photos associated with the location."
+        },
+        {
+            "path_name": "$[].photos[]",
+            "name": "photos[]",
+            "description": "An object representing a photo of the location."
+        },
+        {
+            "path_name": "$[].photos[].height",
+            "name": "height",
+            "description": "The height of the photo in pixels (e.g., 712)."
+        },
+        {
+            "path_name": "$[].photos[].html_attributions",
+            "name": "html_attributions",
+            "description": "A list of HTML attributions for the photo."
+        },
+        {
+            "path_name": "$[].photos[].html_attributions[]",
+            "name": "html_attributions[]",
+            "description": "An HTML string attributing the photo to a contributor (e.g., '<a href=\"https://maps.google.com/maps/contrib/108269597694188548544\">_Elisa</a>')."
+        },
+        {
+            "path_name": "$[].photos[].photo_reference",
+            "name": "photo_reference",
+            "description": "A unique identifier for the photo (e.g., 'AXQCQNQAU76Lwu-WqpEGwT2a-g9DfA0DONEhv54kglGd_2OsKzWdBS2zNwzmsbiDPgF_nvujO1QfLATCOHYN3eDyjUdVzZNhGv6sTQ9DOrOXbfWvY87n_BVTzorJLHfABlDYE0yTXn6yYSKTPUZUdU6u-KXB060utlMPakMVSSbaa2L16VHhfwEkig6ZJYRsaimdntXJTHNaCqftubxA-XVgTiiddtjEUTqy-PXgoYiYX252JPgGNkym0lCdQ7sh0hasZeJeJRBXbdda7q-5Wqd829gCRtoJw-ewJcJGfzyROEqAqRC9ZiH5pf23B_yfb8u0Irt13SYa29zmCYHp_UtmYymnxZTPQvzrRutaAEvEBvLVwncNJ1BorBI-nCqMrAdvsBR_IVPk_5y6_TPpVWJ78Y4Nt9Eg0tvByMetts60UDSdZbUCFONutiyZJ6gIB-38MlgScdmVO-U18noTcvxuAr-fNc6SF8MrwJXGv0Wt5O45ap6oO2ZOl_2_6fzsM75IMP6hVJXY9AQP9K7XOsXWMlxlcbsg9RLWUaXJBD96pRERvtrfRHU-NC2ZJ1sKibEJkxbfOj8k')."
+        },
+        {
+            "path_name": "$[].photos[].width",
+            "name": "width",
+            "description": "The width of the photo in pixels (e.g., 1080)."
+        },
+        {
+            "path_name": "$[].place_id",
+            "name": "place_id",
+            "description": "A unique identifier for the place (e.g., 'ChIJaXQRs6lZwokRY6EFpJnhNNE')."
+        },
+        {
+            "path_name": "$[].plus_code",
+            "name": "plus_code",
+            "description": "The Plus Code representation of the location's address."
+        },
+        {
+            "path_name": "$[].plus_code.compound_code",
+            "name": "compound_code",
+            "description": "The local compound code (e.g., 'P2X7+9P New York, USA')."
+        },
+        {
+            "path_name": "$[].plus_code.global_code",
+            "name": "global_code",
+            "description": "The global code (e.g., '87G8P2X7+9P')."
+        },
+        {
+            "path_name": "$[].rating",
+            "name": "rating",
+            "description": "The average rating of the location (e.g., 4.7)."
+        },
+        {
+            "path_name": "$[].reference",
+            "name": "reference",
+            "description": "A reference string for the place (e.g., 'ChIJaXQRs6lZwokRY6EFpJnhNNE')."
+        },
+        {
+            "path_name": "$[].types",
+            "name": "types",
+            "description": "A list of categories that describe the location."
+        },
+        {
+            "path_name": "$[].types[]",
+            "name": "types[]",
+            "description": "A category describing the location (e.g., 'tourist_attraction', 'museum', 'point_of_interest')."
+        },
+        {
+            "path_name": "$[].user_ratings_total",
+            "name": "user_ratings_total",
+            "description": "The total number of user ratings for the location (e.g., 115461)."
+        }
+    ],
+    "depends_on": [
+        {
+            "target_api_params": "query",
+            "reason": "The 'query' parameter in the target API requires a location name, address, or place to retrieve geographic coordinates. The source API's 'name' field in the response provides exact location names (e.g., 'New York', 'John F. Kennedy International Airport'). The data types match (both are strings), and the source API's response fields directly provide the location names that can be used as input for the target API.",
+            "source_jsonpath": "$[*].name",
+            "confidence": 100,
+            "dependency_relationship": "Hard Dependency(Prerequisite API)",
+            "source_api": "Car_Auto-Complete"
+        },
+        {
+            "target_api_params": "query",
+            "reason": "The 'city' field in the source API response also provides location names (e.g., 'New York'), which can be used as input for the target API's 'query' parameter. The data types match, and the city names are valid location inputs for the target API.",
+            "source_jsonpath": "$[*].city",
+            "confidence": 100,
+            "dependency_relationship": "Hard Dependency(Prerequisite API)",
+            "source_api": "Car_Auto-Complete"
+        },
+        {
+            "target_api_params": "query",
+            "reason": "The 'country' field in the source API response provides country names (e.g., 'United States'), which can also be used as input for the target API's 'query' parameter. The data types match, and country names are valid location inputs for the target API.",
+            "source_jsonpath": "$[*].country",
+            "confidence": 100,
+            "dependency_relationship": "Hard Dependency(Prerequisite API)",
+            "source_api": "Car_Auto-Complete"
+        },
+        {
+            "target_api_params": "query",
+            "reason": "The 'query' parameter in the target API requires a location name, address, or place. The source API's 'bCityName' field provides city names (e.g., 'Mumbai'), which can be used as input for the target API's query parameter. The data types match (both are strings), and there is a clear business association where attraction locations can be mapped to geographic coordinates.",
+            "source_jsonpath": "$.products[*].ufiDetails.bCityName",
+            "confidence": 95,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Search_Attractions"
+        },
+        {
+            "target_api_params": "query",
+            "reason": "The 'name' field in the source API's 'ufiFilters' provides location names (e.g., 'Mumbai', 'Andheri'), which can be used as input for the target API's query parameter. The data types match (both are strings), and there is a clear business association where attraction locations can be mapped to geographic coordinates.",
+            "source_jsonpath": "$.filterOptions.ufiFilters[*].name",
+            "confidence": 90,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Search_Attractions"
+        },
+        {
+            "target_api_params": "query",
+            "reason": "The 'query' parameter in the target API requires a location name, address, or place to retrieve geographic coordinates. The source API's 'name' field provides city names (e.g., 'Chinatown', 'Brooklyn'), which can be used as input for the target API's query parameter. This creates a potential business association where a user might want to get precise coordinates for nearby cities identified by the source API.",
+            "source_jsonpath": "$[*].name",
+            "confidence": 95,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Get_Nearby_Cities"
+        },
+        {
+            "target_api_params": "query",
+            "reason": "The 'query' parameter in the target API requires a location name, address, or place to retrieve geographic coordinates. The source API's 'name' field in the 'route_info.dropoff' or 'route_info.pickup' objects provides exact location names (e.g., 'John F Kennedy International Airport'). This creates a potential business association where a user might want to convert a car rental location name into geographic coordinates for mapping purposes.",
+            "source_jsonpath": "$.search_results[*].route_info.dropoff.name",
+            "confidence": 95,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Car_Search"
+        },
+        {
+            "target_api_params": "query",
+            "reason": "The 'address' field in the 'route_info.dropoff' or 'route_info.pickup' objects provides detailed location addresses (e.g., '124-10 South Conduit Avenue, South Ozone Park, Jfk Airport (JFK), USA, 11420'). This matches the 'query' parameter's requirement for location details and can be used to retrieve precise geographic coordinates.",
+            "source_jsonpath": "$.search_results[*].route_info.dropoff.address",
+            "confidence": 95,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Car_Search"
+        },
+        {
+            "target_api_params": "query",
+            "reason": "The 'carouselContent.title' field in the 'supplierLocations' array provides location names (e.g., 'John F Kennedy International Airport'). This matches the 'query' parameter's requirement and can be used to retrieve geographic coordinates.",
+            "source_jsonpath": "$.content.map.supplierLocations[*].carouselContent.title",
+            "confidence": 90,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Car_Search"
+        },
+        {
+            "target_api_params": "query",
+            "reason": "The 'carouselContent.body' field in the 'supplierLocations' array provides detailed location addresses (e.g., '124-10 South Conduit Avenue, South Ozone Park, Jfk Airport (JFK), USA, 11420'). This matches the 'query' parameter's requirement and can be used to retrieve geographic coordinates.",
+            "source_jsonpath": "$.content.map.supplierLocations[*].carouselContent.body",
+            "confidence": 90,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Car_Search"
+        },
+        {
+            "target_api_params": "query",
+            "reason": "The 'supplier_info.address' field provides detailed location addresses (e.g., '124-10 South Conduit Avenue, South Ozone Park, Jfk Airport (JFK), USA, 11420'). This matches the 'query' parameter's requirement and can be used to retrieve geographic coordinates.",
+            "source_jsonpath": "$.search_results[*].supplier_info.address",
+            "confidence": 90,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Car_Search"
+        },
+        {
+            "target_api_params": "query",
+            "reason": "The 'query' parameter in the target API requires a location name, address, or place to retrieve geographic coordinates. The source API's 'tag' field in 'closest_landmarks' and 'popular_landmarks' provides names of nearby attractions (e.g., 'Mumbai Domestic Terminal 1', 'ISKCON', 'Vihar Lake'). These names can be used as input for the target API's query parameter to get their precise geographic coordinates.",
+            "source_jsonpath": "$.closest_landmarks[].tag",
+            "confidence": 95,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Get_Popular_Attraction_Near_By"
+        },
+        {
+            "target_api_params": "query",
+            "reason": "The 'tag' field in 'popular_landmarks' also provides names of nearby attractions, which can be used as input for the target API's query parameter. This creates a potential business association where a traveler wants to get the geographic coordinates of popular attractions near their hotel.",
+            "source_jsonpath": "$.popular_landmarks[].tag",
+            "confidence": 95,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Get_Popular_Attraction_Near_By"
+        },
+        {
+            "target_api_params": "query",
+            "reason": "The 'query' parameter in the target API requires a location name, address, or place to retrieve geographic coordinates. The source API's response fields include 'name' and 'cityName' which provide location names (e.g., 'New York', 'John F. Kennedy International Airport'). These names can be directly used as input for the target API's query parameter to fetch latitude and longitude coordinates.",
+            "source_jsonpath": "$[*].name",
+            "confidence": 95,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Search_Flight_Location"
+        },
+        {
+            "target_api_params": "query",
+            "reason": "The 'cityName' field in the source API response provides the name of the city associated with the airport (e.g., 'New York'). This can be used as input for the target API's query parameter to retrieve geographic coordinates for the city.",
+            "source_jsonpath": "$[*].cityName",
+            "confidence": 90,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Search_Flight_Location"
+        },
+        {
+            "target_api_params": "query",
+            "reason": "The 'query' parameter in the target API requires a location name, address, or place to retrieve geographic coordinates. The source API's 'address' field provides the exact street address of the restaurant (e.g., '75 Thompson St, New York City, NY 10012-4345'), which can be used as input for the target API. This creates a potential business association where a user might want to get the latitude and longitude of a restaurant's address.",
+            "source_jsonpath": "$.address",
+            "confidence": 95,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Get_restaurant_details"
+        },
+        {
+            "target_api_params": "query",
+            "reason": "The 'detailed_address.street' field provides the street address of the restaurant, which can be used as input for the target API's 'query' parameter. This is another valid source for the location name or address.",
+            "source_jsonpath": "$.detailed_address.street",
+            "confidence": 90,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Get_restaurant_details"
+        },
+        {
+            "target_api_params": "query",
+            "reason": "The 'query' parameter in the target API requires a location name, address, or place to retrieve geographic coordinates. The source API's response fields include 'name' fields (e.g., 'New York City', 'New York') which are location names that could be used as input for the target API's query parameter. This creates a potential business association where a user might want to get the precise coordinates of a restaurant location they found in the search results.",
+            "source_jsonpath": "$[*].name",
+            "confidence": 95,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Search_Restaurants"
+        },
+        {
+            "target_api_params": "query",
+            "reason": "The 'query' parameter in the target API requires a location name, address, or place to retrieve geographic coordinates. The source API's 'pickupLocation' field provides a detailed description of the pickup location (e.g., 'Chhatrapati Shivaji International Airport (BOM), Mumbai, Maharashtra 400099, India'), which matches the required input format for the target API. This creates a potential business association where a user might want to convert a taxi pickup location into precise coordinates for mapping purposes.",
+            "source_jsonpath": "$.journeys[*].pickupLocation.description",
+            "confidence": 95,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Search_Taxi"
+        },
+        {
+            "target_api_params": "query",
+            "reason": "The 'dropOffLocation' field in the source API provides a detailed description of the drop-off location (e.g., 'The Taj Mahal Palace, Mumbai, Apollo Bandar, Colaba, Mumbai, Maharashtra 400001, India'), which matches the required input format for the target API's 'query' parameter. This could be useful for converting a taxi drop-off location into precise coordinates for further navigation or mapping purposes.",
+            "source_jsonpath": "$.journeys[*].dropOffLocation.description",
+            "confidence": 95,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Search_Taxi"
+        },
+        {
+            "target_api_params": "query",
+            "reason": "The 'query' parameter in the target API requires a location name, address, or place to retrieve geographic coordinates. The source API's 'arrivalAirport' and 'departureAirport' fields provide detailed airport names (e.g., 'Chhatrapati Shivaji International Airport Mumbai') which can be used as input for the target API. The data type matches (String) and there is a clear business association where flight arrival/departure locations might need to be mapped to coordinates for navigation purposes.",
+            "source_jsonpath": "$.flightOffers[*].segments[*].legs[*].arrivalAirport.name",
+            "confidence": 95,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Search_Flights_Multi_Stops"
+        },
+        {
+            "target_api_params": "query",
+            "reason": "Similarly, the 'departureAirport' field in the source API provides airport names that can be used as input for the target API's 'query' parameter. This is useful for scenarios where users need coordinates for departure locations. The data type matches and the context is appropriate.",
+            "source_jsonpath": "$.flightOffers[*].segments[*].legs[*].departureAirport.name",
+            "confidence": 95,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Search_Flights_Multi_Stops"
+        },
+        {
+            "target_api_params": "query",
+            "reason": "The 'arrivalAirport' field in the segments array also provides airport names that can be used as input for the target API. This is another valid source for location names that might need mapping to coordinates.",
+            "source_jsonpath": "$.flightOffers[*].segments[*].arrivalAirport.name",
+            "confidence": 95,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Search_Flights_Multi_Stops"
+        },
+        {
+            "target_api_params": "query",
+            "reason": "The 'departureAirport' field in the segments array provides airport names that can be used as input for the target API. This is consistent with other airport name fields and serves the same purpose.",
+            "source_jsonpath": "$.flightOffers[*].segments[*].departureAirport.name",
+            "confidence": 95,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Search_Flights_Multi_Stops"
+        },
+        {
+            "target_api_params": "query",
+            "reason": "The 'query' parameter in the target API requires a location name, address, or place to retrieve geographic coordinates. The source API's response fields include 'name' and 'city' which can serve as valid input for the target API's query parameter. The 'name' field provides specific location names (e.g., 'Riu Plaza New York Times Square'), and the 'city' field provides broader location names (e.g., 'New York'). Both can be used as input for the target API's query parameter, creating a business association where the source API's location details can be used to fetch precise coordinates.",
+            "source_jsonpath": "$[*].name",
+            "confidence": 95,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Taxi_Search_Location"
+        },
+        {
+            "target_api_params": "query",
+            "reason": "The 'city' field in the source API response provides the city name (e.g., 'New York'), which can be used as input for the target API's query parameter. This creates a business association where the city name from the source API can be used to fetch precise coordinates.",
+            "source_jsonpath": "$[*].city",
+            "confidence": 90,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Taxi_Search_Location"
+        },
+        {
+            "target_api_params": "query",
+            "reason": "The 'query' parameter in the target API requires a location name, address, or place to retrieve geographic coordinates. The source API's 'arrivalAirport' and 'departureAirport' fields provide detailed airport names (e.g., 'Delhi International Airport', 'Chhatrapati Shivaji International Airport Mumbai'), which can be used as input for the target API's query parameter. The data type matches (String), and the context is relevant for mapping and navigation applications.",
+            "source_jsonpath": "$.flightOffers[*].segments[*].legs[*].arrivalAirport.name",
+            "confidence": 95,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Search_Flights"
+        },
+        {
+            "target_api_params": "query",
+            "reason": "The 'departureAirport' field in the source API also provides detailed airport names, which can be used as input for the target API's query parameter. The data type matches (String), and the context is relevant for mapping and navigation applications.",
+            "source_jsonpath": "$.flightOffers[*].segments[*].legs[*].departureAirport.name",
+            "confidence": 95,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Search_Flights"
+        },
+        {
+            "target_api_params": "query",
+            "reason": "The 'arrivalAirport' field in the source API's segments provides detailed airport names, which can be used as input for the target API's query parameter. The data type matches (String), and the context is relevant for mapping and navigation applications.",
+            "source_jsonpath": "$.flightOffers[*].segments[*].arrivalAirport.name",
+            "confidence": 95,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Search_Flights"
+        },
+        {
+            "target_api_params": "query",
+            "reason": "The 'departureAirport' field in the source API's segments provides detailed airport names, which can be used as input for the target API's query parameter. The data type matches (String), and the context is relevant for mapping and navigation applications.",
+            "source_jsonpath": "$.flightOffers[*].segments[*].departureAirport.name",
+            "confidence": 95,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Search_Flights"
+        },
+        {
+            "target_api_params": "query",
+            "reason": "The 'query' parameter in the target API requires a location name, address, or place to retrieve geographic coordinates. The source API's 'name' field in the hotel property provides the name of the hotel (e.g., 'Asar Elite - Sea View by Orion Hotels'), which can be used as a location query. This creates a potential business association where a user might want to get the latitude and longitude of a hotel they are interested in.",
+            "source_jsonpath": "$.hotels[*].property.name",
+            "confidence": 85,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Search_Hotels"
+        },
+        {
+            "target_api_params": "query",
+            "reason": "The 'wishlistName' field in the source API provides the city name (e.g., 'Mumbai'), which can be used as a location query in the target API. This is useful for scenarios where a user wants to get the latitude and longitude of a city where hotels are located.",
+            "source_jsonpath": "$.hotels[*].property.wishlistName",
+            "confidence": 90,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Search_Hotels"
+        },
+        {
+            "target_api_params": "query",
+            "reason": "The 'query' parameter in the target API requires a location name, address, or place to retrieve geographic coordinates. The source API's 'name' field provides the exact location names (e.g., 'Paris', 'Paris City Centre') which can be directly used as input for the target API's query parameter. This creates a potential business association where a user searches for hotel destinations and then wants to get the precise geographic coordinates of those destinations.",
+            "source_jsonpath": "$[*].name",
+            "confidence": 95,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Search_Hotel_Destination"
+        },
+        {
+            "target_api_params": "query",
+            "reason": "The 'label' field in the source API provides a detailed description of the location (e.g., 'Paris, Ile de France, France'), which can also be used as input for the target API's query parameter. This is another valid option for the query parameter, though it provides more detailed information than just the name.",
+            "source_jsonpath": "$[*].label",
+            "confidence": 90,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Search_Hotel_Destination"
+        },
+        {
+            "target_api_params": "query",
+            "reason": "The 'city_name' field in the source API provides the name of the city (e.g., 'Paris'), which can be used as input for the target API's query parameter. This is another valid option, especially when the user is interested in the city-level geographic coordinates.",
+            "source_jsonpath": "$[*].city_name",
+            "confidence": 90,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Search_Hotel_Destination"
+        }
+    ],
+    "verified": true
+}

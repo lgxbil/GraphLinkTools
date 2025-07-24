@@ -1,0 +1,17 @@
+2025-07-22 06:43:57,237 - evaluation_logger_Hotels-90 - INFO - Test Example Hotels-90
+2025-07-22 06:43:57,237 - evaluation_logger_Hotels-90 - INFO - Query: My friends and I are planning to go on vacation to Paris in November 2024. We hope to find two accessible hotels that are suitable for wheelchair users throughout the month. Could you compare the policies of these two hotels?
+2025-07-22 06:45:24,998 - evaluation_logger_Hotels-90 - INFO - Start compare_single_call: 
+{'name': 'Search_Hotel_Destination', 'arguments': {'query': 'Paris'}}
+{'name': 'Search_Hotel_Destination', 'arguments': {'query': 'Paris'}}
+2025-07-22 06:45:24,998 - evaluation_logger_Hotels-90 - INFO - Rule-based compare success.
+2025-07-22 06:45:24,999 - evaluation_logger_Hotels-90 - INFO - Success matched: [{'name': 'Search_Hotel_Destination', 'arguments': {'query': 'Paris'}}]
+2025-07-22 06:45:25,598 - evaluation_logger_Hotels-90 - INFO - Success matched: []
+2025-07-22 06:46:22,813 - evaluation_logger_Hotels-90 - INFO - Start compare_single_call: 
+{'name': 'Get_Filter', 'arguments': {'adults': 1, 'arrival_date': '2024-11-01', 'departure_date': '2024-11-30', 'dest_id': '-1456928', 'search_type': 'city'}}
+{'name': 'Get_Filter', 'arguments': {'arrival_date': '2024-11-01', 'departure_date': '2024-11-30', 'dest_id': '-1456928', 'search_type': 'city'}}
+2025-07-22 06:46:27,068 - evaluation_logger_Hotels-90 - DEBUG - LLM-based comparison output: {'is_equal': True, 'reason': "The parameter 'adults' in call 1 has a default value of 1, which is the same as the default value in the function description, so it can be omitted in call 2."}
+2025-07-22 06:46:27,068 - evaluation_logger_Hotels-90 - INFO - LLM-based compare success.
+2025-07-22 06:46:27,068 - evaluation_logger_Hotels-90 - INFO - Success matched: [{'name': 'Get_Filter', 'arguments': {'arrival_date': '2024-11-01', 'departure_date': '2024-11-30', 'dest_id': '-1456928', 'search_type': 'city'}}]
+2025-07-22 06:46:27,432 - evaluation_logger_Hotels-90 - INFO - Success matched: []
+2025-07-22 06:46:57,932 - evaluation_logger_Hotels-90 - INFO - Success matched: []
+2025-07-22 06:47:22,851 - evaluation_logger_Hotels-90 - ERROR - 'questions'

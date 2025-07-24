@@ -1,0 +1,13 @@
+2025-07-24 05:20:32,951 - evaluation_logger_Cross-190 - INFO - Test Example Cross-190
+2025-07-24 05:20:32,951 - evaluation_logger_Cross-190 - INFO - Query: My colleagues and I from the testing team plan to spend the last day of 2024 at the Hotel Vista Atsugi in Atsugi (Hotel ID: 325161) for a team event to welcome the New Year together. Book a taxi to take us to a nearby attraction at 11 AM on New Year's Day.
+2025-07-24 05:21:26,103 - evaluation_logger_Cross-190 - INFO - Start compare_single_call: 
+{'name': 'Get_Popular_Attraction_Near_By', 'arguments': {'hotel_id': '325161'}}
+{'name': 'Get_Popular_Attraction_Near_By', 'arguments': {'hotel_id': '325161'}}
+2025-07-24 05:21:26,104 - evaluation_logger_Cross-190 - INFO - Rule-based compare success.
+2025-07-24 05:21:26,104 - evaluation_logger_Cross-190 - INFO - Success matched: [{'name': 'Get_Popular_Attraction_Near_By', 'arguments': {'hotel_id': '325161'}}]
+2025-07-24 05:23:25,588 - evaluation_logger_Cross-190 - INFO - Start compare_single_call: 
+{'name': 'Taxi_Search_Location', 'arguments': {'query': 'Hotel Vista Atsugi, Atsugi'}}
+{'name': 'Taxi_Search_Location', 'arguments': {'query': 'Hotel Vista Atsugi'}}
+2025-07-24 05:23:31,268 - evaluation_logger_Cross-190 - DEBUG - LLM-based comparison output: {'is_equal': True, 'reason': "The parameter 'query' in both function calls refers to the same location, 'Hotel Vista Atsugi', with or without the city name 'Atsugi' being specified."}
+2025-07-24 05:23:31,268 - evaluation_logger_Cross-190 - INFO - LLM-based compare success.
+2025-07-24 05:23:31,269 - evaluation_logger_Cross-190 - INFO - Success matched: [{'name': 'Taxi_Search_Location', 'arguments': {'query': 'Hotel Vista Atsugi'}}]

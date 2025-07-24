@@ -1,0 +1,249 @@
+{
+    "name": "Get_Room_Availability",
+    "docs_row": {
+        "name": "Get_Room_Availability",
+        "endpoint": "/api/v1/hotels/getAvailability",
+        "func_description": "Search the room price and availability for future dates. ",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "hotel_id": {
+                    "type": "String",
+                    "description": "hotel_id can be retrieved from api/v1/hotels/searchHotels(Search Hotels) or api/v1/hotels/searchHotelsByCoordinates(Search Hotels By Coordinates\n) endpoint in Hotels collection.",
+                    "example_value": "5218600",
+                    "required": true
+                },
+                "min_date": {
+                    "type": "Date (yyyy-mm-dd)",
+                    "description": "The starting date range.",
+                    "example_value": "",
+                    "required": true
+                },
+                "max_date": {
+                    "type": "Date (yyyy-mm-dd)",
+                    "description": "The ending date range",
+                    "example_value": "",
+                    "required": true
+                },
+                "room_qty": {
+                    "type": "Number",
+                    "description": "The number of rooms that are required. The default value is set to 1.",
+                    "example_value": "",
+                    "required": false
+                },
+                "adults": {
+                    "type": "Number",
+                    "description": "The number of guests who are 18 years of age or older. The default value is set to 1.",
+                    "example_value": "",
+                    "required": false
+                },
+                "currency_code": {
+                    "type": "String",
+                    "description": "The currency code. currency_code can be retrieved from api/v1/meta/getCurrency(Get Currency) endpoint in Hotels collection.",
+                    "example_value": "USD",
+                    "required": false
+                },
+                "location": {
+                    "type": "String",
+                    "description": "location can be retrieved from api/v1/meta/getLocations(Get Location) endpoint in Meta collection.",
+                    "example_value": "US",
+                    "required": false
+                }
+            },
+            "required": [
+                "hotel_id",
+                "min_date",
+                "max_date"
+            ]
+        }
+    },
+    "instance": [],
+    "category": null,
+    "tool": null,
+    "api_idx": 44,
+    "params": {
+        "type": "object",
+        "properties": {
+            "hotel_id": {
+                "type": "String",
+                "description": "hotel_id can be retrieved from api/v1/hotels/searchHotels(Search Hotels) or api/v1/hotels/searchHotelsByCoordinates(Search Hotels By Coordinates\n) endpoint in Hotels collection.",
+                "example_value": "5218600",
+                "required": true
+            },
+            "min_date": {
+                "type": "Date (yyyy-mm-dd)",
+                "description": "The starting date range.",
+                "example_value": "",
+                "required": true
+            },
+            "max_date": {
+                "type": "Date (yyyy-mm-dd)",
+                "description": "The ending date range",
+                "example_value": "",
+                "required": true
+            },
+            "room_qty": {
+                "type": "Number",
+                "description": "The number of rooms that are required. The default value is set to 1.",
+                "example_value": "",
+                "required": false
+            },
+            "adults": {
+                "type": "Number",
+                "description": "The number of guests who are 18 years of age or older. The default value is set to 1.",
+                "example_value": "",
+                "required": false
+            },
+            "currency_code": {
+                "type": "String",
+                "description": "The currency code. currency_code can be retrieved from api/v1/meta/getCurrency(Get Currency) endpoint in Hotels collection.",
+                "example_value": "USD",
+                "required": false
+            },
+            "location": {
+                "type": "String",
+                "description": "location can be retrieved from api/v1/meta/getLocations(Get Location) endpoint in Meta collection.",
+                "example_value": "US",
+                "required": false
+            }
+        },
+        "required": [
+            "hotel_id",
+            "min_date",
+            "max_date"
+        ]
+    },
+    "responses": [
+        {
+            "function_name": "Get_Room_Availability",
+            "arguments": {
+                "hotel_id": "5218600",
+                "min_date": "2025-06-10",
+                "max_date": "2025-06-15"
+            },
+            "observation": {
+                "currency": "USD",
+                "avDates": [
+                    {
+                        "2025-06-10": 389
+                    },
+                    {
+                        "2025-06-11": 389
+                    },
+                    {
+                        "2025-06-12": 269
+                    }
+                ],
+                "lengthsOfStay": [
+                    {
+                        "2025-06-10": 1
+                    },
+                    {
+                        "2025-06-11": 1
+                    },
+                    {
+                        "2025-06-12": 1
+                    }
+                ]
+            }
+        },
+        {
+            "function_name": "Get_Room_Availability",
+            "arguments": {
+                "hotel_id": "5218600",
+                "min_date": "2025-06-10",
+                "max_date": "2025-06-15",
+                "room_qty": 1,
+                "adults": 2,
+                "currency_code": "USD",
+                "location": "US"
+            },
+            "observation": {
+                "lengthsOfStay": [
+                    {
+                        "2025-06-10": 1
+                    },
+                    {
+                        "2025-06-11": 1
+                    },
+                    {
+                        "2025-06-12": 1
+                    }
+                ],
+                "currency": "USD",
+                "avDates": [
+                    {
+                        "2025-06-10": 449.8775
+                    },
+                    {
+                        "2025-06-11": 449.8775
+                    },
+                    {
+                        "2025-06-12": 312.1775
+                    }
+                ]
+            }
+        }
+    ],
+    "response_summary": "The API response provides pricing and availability details for a hotel or similar accommodation. The prices are listed in USD. On June 10, 2025, the rate is $389, and the same price applies for June 11. However, on June 12, 2025, the price drops to $269. The minimum length of stay required for all these dates is just one night. This suggests that travelers have flexibility in booking short stays during this period, with a slight discount available if they choose to stay on June 12.",
+    "enhance_func_desc": "This API is ideal for travelers and booking platforms checking hotel availability and pricing. It retrieves real-time room rates and stay requirements for specified dates, allowing users to compare costs and plan stays. The response includes daily pricing, minimum stay duration, and supports filtering by room quantity and guest count. The hotel ID must be obtained from the SearchHotels API.",
+    "enhance_params_desc": {
+        "enhanced_parameters": {
+            "hotel_id": "Unique identifier for the hotel, sourced from searchHotels or searchHotelsByCoordinates.",
+            "min_date": "Start date for checking room availability and pricing.",
+            "max_date": "End date for checking room availability and pricing.",
+            "room_qty": "Number of rooms needed for booking (default: 1).",
+            "adults": "Number of adult guests (18+ years) for booking (default: 1).",
+            "currency_code": "Preferred currency for displaying room rates.",
+            "location": "Geographic location filter for the hotel search."
+        }
+    },
+    "enhance_resfield_desc": {
+        "response_fields": {
+            "currency": {
+                "type": "String",
+                "description": "The currency in which the prices are listed, e.g., USD for US Dollars."
+            },
+            "avDates": {
+                "type": "Array",
+                "description": "An array of objects containing available dates and their corresponding prices.",
+                "ar_items": {
+                    "type": "Object",
+                    "description": "An object representing a specific date and its associated price.",
+                    "ob_properties": {
+                        "date": {
+                            "type": "String",
+                            "description": "The date in YYYY-MM-DD format for which the price is applicable."
+                        },
+                        "price": {
+                            "type": "Number",
+                            "description": "The price for the specified date in the given currency."
+                        }
+                    }
+                }
+            },
+            "lengthsOfStay": {
+                "type": "Array",
+                "description": "An array of objects specifying the minimum length of stay required for each date.",
+                "ar_items": {
+                    "type": "Object",
+                    "description": "An object representing a specific date and the minimum number of nights required for booking.",
+                    "ob_properties": {
+                        "date": {
+                            "type": "String",
+                            "description": "The date in YYYY-MM-DD format for which the minimum stay requirement applies."
+                        },
+                        "min_nights": {
+                            "type": "Number",
+                            "description": "The minimum number of nights required for a booking on the specified date."
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "params_desc_list": null,
+    "response_desc_list": null,
+    "depends_on": null,
+    "verified": true
+}

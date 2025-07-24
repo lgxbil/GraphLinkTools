@@ -1,0 +1,437 @@
+{
+    "name": "Get_Popular_Attraction_Near_By",
+    "docs_row": {
+        "name": "Get_Popular_Attraction_Near_By",
+        "endpoint": "/api/v1/hotels/getPopularAttractionNearBy",
+        "func_description": "Search for popular attractions around a given hotel. ",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "hotel_id": {
+                    "type": "String",
+                    "description": "hotel_id can be retrieved from api/v1/hotels/searchHotels(Search Hotels) or api/v1/hotels/searchHotelsByCoordinates(Search Hotels By Coordinates\n) endpoint in Hotels collection.",
+                    "example_value": "5955189",
+                    "required": true
+                },
+                "languagecode": {
+                    "type": "String",
+                    "description": "To obtain the response data in a specific language, enter the languagecode. languagecode can be retrieved from api/v1/meta/getLanguages(Get Languages\n) endpoint in Meta collection.",
+                    "example_value": "en-us",
+                    "required": false
+                }
+            },
+            "required": [
+                "hotel_id"
+            ]
+        }
+    },
+    "instance": [],
+    "category": null,
+    "tool": null,
+    "api_idx": 7,
+    "params": {
+        "type": "object",
+        "properties": {
+            "hotel_id": {
+                "type": "String",
+                "description": "hotel_id can be retrieved from api/v1/hotels/searchHotels(Search Hotels) or api/v1/hotels/searchHotelsByCoordinates(Search Hotels By Coordinates\n) endpoint in Hotels collection.",
+                "example_value": "5955189",
+                "required": true
+            },
+            "languagecode": {
+                "type": "String",
+                "description": "To obtain the response data in a specific language, enter the languagecode. languagecode can be retrieved from api/v1/meta/getLanguages(Get Languages\n) endpoint in Meta collection.",
+                "example_value": "en-us",
+                "required": false
+            }
+        },
+        "required": [
+            "hotel_id"
+        ]
+    },
+    "responses": [
+        {
+            "function_name": "Get_Popular_Attraction_Near_By",
+            "arguments": {
+                "hotel_id": "5955189"
+            },
+            "observation": {
+                "closest_landmarks": [
+                    {
+                        "longitude": 72.8525733947754,
+                        "tag": "Mumbai Domestic Terminal 1",
+                        "latitude": 19.0915227852161,
+                        "distance": 2.98855388737106,
+                        "average_out_of_10": 8.4,
+                        "total_votes": 43
+                    },
+                    {
+                        "tag": "ISKCON",
+                        "latitude": 19.113262,
+                        "longitude": 72.826211,
+                        "average_out_of_10": 9.2,
+                        "distance": 4.28912195423714,
+                        "total_votes": 16
+                    },
+                    {
+                        "latitude": 19.1018369233517,
+                        "longitude": 72.8246784210205,
+                        "tag": "Juhu Beach",
+                        "distance": 4.46375117197715,
+                        "average_out_of_10": 8.6,
+                        "total_votes": 44
+                    }
+                ],
+                "popular_landmarks": [
+                    {
+                        "average_out_of_10": 8.4,
+                        "distance": 2.98855388737106,
+                        "longitude": 72.8525733947754,
+                        "tag": "Mumbai Domestic Terminal 1",
+                        "latitude": 19.0915227852161,
+                        "total_votes": 43
+                    },
+                    {
+                        "tag": "Vihar Lake",
+                        "longitude": 72.910269,
+                        "latitude": 19.154184,
+                        "total_votes": 10,
+                        "distance": 3.05151419162776,
+                        "average_out_of_10": 8.6
+                    },
+                    {
+                        "tag": "ISKCON",
+                        "latitude": 19.113262,
+                        "longitude": 72.826211,
+                        "total_votes": 16,
+                        "distance": 4.28912195423714,
+                        "average_out_of_10": 9.2
+                    }
+                ]
+            }
+        },
+        {
+            "function_name": "Get_Popular_Attraction_Near_By",
+            "arguments": {
+                "hotel_id": "5955189",
+                "languagecode": "en-us"
+            },
+            "observation": {
+                "popular_landmarks": [
+                    {
+                        "tag": "Mumbai Domestic Terminal 1",
+                        "distance": 4.80961126915433,
+                        "total_votes": 43,
+                        "longitude": 72.8525733947754,
+                        "average_out_of_10": 8.4,
+                        "latitude": 19.0915227852161
+                    },
+                    {
+                        "latitude": 19.154184,
+                        "average_out_of_10": 8.6,
+                        "longitude": 72.910269,
+                        "total_votes": 10,
+                        "distance": 4.91093605708673,
+                        "tag": "Vihar Lake"
+                    },
+                    {
+                        "latitude": 19.113262,
+                        "longitude": 72.826211,
+                        "average_out_of_10": 9.2,
+                        "tag": "ISKCON",
+                        "total_votes": 16,
+                        "distance": 6.90267268495631
+                    }
+                ],
+                "closest_landmarks": [
+                    {
+                        "latitude": 19.0915227852161,
+                        "average_out_of_10": 8.4,
+                        "longitude": 72.8525733947754,
+                        "distance": 4.80961126915433,
+                        "total_votes": 43,
+                        "tag": "Mumbai Domestic Terminal 1"
+                    },
+                    {
+                        "latitude": 19.113262,
+                        "average_out_of_10": 9.2,
+                        "longitude": 72.826211,
+                        "distance": 6.90267268495631,
+                        "total_votes": 16,
+                        "tag": "ISKCON"
+                    },
+                    {
+                        "latitude": 19.1018369233517,
+                        "average_out_of_10": 8.6,
+                        "longitude": 72.8246784210205,
+                        "total_votes": 44,
+                        "distance": 7.18371116885822,
+                        "tag": "Juhu Beach"
+                    }
+                ]
+            }
+        }
+    ],
+    "response_summary": "The closest landmarks to your location include Mumbai Domestic Terminal 1, which is about 2.99 kilometers away and has an average rating of 8.4 out of 10 based on 43 votes. ISKCON, located approximately 4.29 kilometers away, is highly rated at 9.2 out of 10 from 16 votes. Juhu Beach is also nearby at 4.46 kilometers and holds an 8.6 rating from 44 votes.  \n\nAmong the popular landmarks, Mumbai Domestic Terminal 1 remains a top choice with the same rating and distance. Vihar Lake is another favored spot, situated around 3.05 kilometers away, rated 8.6 by 10 voters. ISKCON, with its high rating of 9.2, is also a popular destination. These landmarks offer a mix of convenience, scenic beauty, and cultural significance for visitors.",
+    "enhance_func_desc": "This API is ideal for travelers looking to explore nearby attractions while staying at a hotel. It retrieves popular landmarks and points of interest near a specified hotel, providing details like distance, average ratings, and number of votes. Users can filter results by language preference. The response helps in planning visits to cultural, scenic, or convenient spots around the hotel location. The hotel ID must be obtained from the SearchHotels API.",
+    "enhance_params_desc": {
+        "enhanced_parameters": {
+            "hotel_id": "Unique identifier for the hotel, sourced from searchHotels or searchHotelsByCoordinates endpoints.",
+            "languagecode": "Language preference for the response data (e.g., 'en-us' for English)."
+        }
+    },
+    "enhance_resfield_desc": {
+        "response_fields": {
+            "closest_landmarks": {
+                "type": "Array",
+                "description": "A list of landmarks closest to the user's location, including details like distance, ratings, and coordinates.",
+                "ar_items": {
+                    "type": "Object",
+                    "description": "An object representing a landmark with its details.",
+                    "ob_properties": {
+                        "longitude": {
+                            "type": "Number",
+                            "description": "The longitude coordinate of the landmark's location."
+                        },
+                        "tag": {
+                            "type": "String",
+                            "description": "The name or tag of the landmark (e.g., 'Mumbai Domestic Terminal 1')."
+                        },
+                        "latitude": {
+                            "type": "Number",
+                            "description": "The latitude coordinate of the landmark's location."
+                        },
+                        "distance": {
+                            "type": "Number",
+                            "description": "The distance in kilometers from the user's location to the landmark."
+                        },
+                        "average_out_of_10": {
+                            "type": "Number",
+                            "description": "The average rating of the landmark, scored out of 10."
+                        },
+                        "total_votes": {
+                            "type": "Number",
+                            "description": "The total number of votes or reviews contributing to the landmark's average rating."
+                        }
+                    }
+                }
+            },
+            "popular_landmarks": {
+                "type": "Array",
+                "description": "A list of popular landmarks, including details like distance, ratings, and coordinates.",
+                "ar_items": {
+                    "type": "Object",
+                    "description": "An object representing a popular landmark with its details.",
+                    "ob_properties": {
+                        "average_out_of_10": {
+                            "type": "Number",
+                            "description": "The average rating of the landmark, scored out of 10."
+                        },
+                        "distance": {
+                            "type": "Number",
+                            "description": "The distance in kilometers from the user's location to the landmark."
+                        },
+                        "longitude": {
+                            "type": "Number",
+                            "description": "The longitude coordinate of the landmark's location."
+                        },
+                        "tag": {
+                            "type": "String",
+                            "description": "The name or tag of the landmark (e.g., 'Vihar Lake')."
+                        },
+                        "latitude": {
+                            "type": "Number",
+                            "description": "The latitude coordinate of the landmark's location."
+                        },
+                        "total_votes": {
+                            "type": "Number",
+                            "description": "The total number of votes or reviews contributing to the landmark's average rating."
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "params_desc_list": null,
+    "response_desc_list": [
+        {
+            "path_name": "$.closest_landmarks",
+            "name": "closest_landmarks",
+            "description": "A list of landmarks closest to the user's location, including details like distance, ratings, and coordinates."
+        },
+        {
+            "path_name": "$.closest_landmarks[]",
+            "name": "closest_landmarks[]",
+            "description": "An object representing a landmark with its details."
+        },
+        {
+            "path_name": "$.closest_landmarks[].longitude",
+            "name": "longitude",
+            "description": "The longitude coordinate of the landmark's location."
+        },
+        {
+            "path_name": "$.closest_landmarks[].tag",
+            "name": "tag",
+            "description": "The name or tag of the landmark (e.g., 'Mumbai Domestic Terminal 1')."
+        },
+        {
+            "path_name": "$.closest_landmarks[].latitude",
+            "name": "latitude",
+            "description": "The latitude coordinate of the landmark's location."
+        },
+        {
+            "path_name": "$.closest_landmarks[].distance",
+            "name": "distance",
+            "description": "The distance in kilometers from the user's location to the landmark."
+        },
+        {
+            "path_name": "$.closest_landmarks[].average_out_of_10",
+            "name": "average_out_of_10",
+            "description": "The average rating of the landmark, scored out of 10."
+        },
+        {
+            "path_name": "$.closest_landmarks[].total_votes",
+            "name": "total_votes",
+            "description": "The total number of votes or reviews contributing to the landmark's average rating."
+        },
+        {
+            "path_name": "$.popular_landmarks",
+            "name": "popular_landmarks",
+            "description": "A list of popular landmarks, including details like distance, ratings, and coordinates."
+        },
+        {
+            "path_name": "$.popular_landmarks[]",
+            "name": "popular_landmarks[]",
+            "description": "An object representing a popular landmark with its details."
+        },
+        {
+            "path_name": "$.popular_landmarks[].average_out_of_10",
+            "name": "average_out_of_10",
+            "description": "The average rating of the landmark, scored out of 10."
+        },
+        {
+            "path_name": "$.popular_landmarks[].distance",
+            "name": "distance",
+            "description": "The distance in kilometers from the user's location to the landmark."
+        },
+        {
+            "path_name": "$.popular_landmarks[].longitude",
+            "name": "longitude",
+            "description": "The longitude coordinate of the landmark's location."
+        },
+        {
+            "path_name": "$.popular_landmarks[].tag",
+            "name": "tag",
+            "description": "The name or tag of the landmark (e.g., 'Vihar Lake')."
+        },
+        {
+            "path_name": "$.popular_landmarks[].latitude",
+            "name": "latitude",
+            "description": "The latitude coordinate of the landmark's location."
+        },
+        {
+            "path_name": "$.popular_landmarks[].total_votes",
+            "name": "total_votes",
+            "description": "The total number of votes or reviews contributing to the landmark's average rating."
+        }
+    ],
+    "depends_on": [
+        {
+            "target_api_params": "hotel_id",
+            "reason": "The 'hotel_id' parameter in the target API is explicitly mentioned to be retrievable from the 'Search_Hotels' API, which is the source API in this case. The source API's response includes 'hotel_id' fields for each hotel, matching exactly what the target API requires. This is a direct prerequisite for calling the target API.",
+            "source_jsonpath": "$.hotels[].hotel_id",
+            "confidence": 100,
+            "dependency_relationship": "Hard Dependency(Prerequisite API)",
+            "source_api": "Search_Hotels"
+        },
+        {
+            "target_api_params": "hotel_id",
+            "reason": "The 'hotel_id' parameter in the target API is required to identify the hotel for which nearby attractions are to be retrieved. The source API's response includes a 'hotel_id' field that matches exactly in type and purpose, as it also identifies a hotel. This creates a hard dependency where the source API's hotel_id can be directly used as input for the target API.",
+            "source_jsonpath": "$.q_and_a_pairs[].hotel_id",
+            "confidence": 100,
+            "dependency_relationship": "Hard Dependency(Prerequisite API)",
+            "source_api": "Get_Question_And_Answer"
+        },
+        {
+            "target_api_params": "hotel_id",
+            "reason": "The 'hotel_id' parameter in the target API is required to fetch popular attractions near a specific hotel. The source API's response includes the 'hotel_id' field, which matches exactly in data type and purpose. This is a clear case where the source API's response field can directly serve as input for the target API parameter.",
+            "source_jsonpath": "$.result[*].hotel_id",
+            "confidence": 100,
+            "dependency_relationship": "Hard Dependency(Prerequisite API)",
+            "source_api": "Get_Hotel_Reviews(Tips)"
+        },
+        {
+            "target_api_params": "hotel_id",
+            "reason": "The 'hotel_id' parameter in the target API requires a specific hotel identifier, which is also present in the source API's response. The data types match (both are Strings), and the source API's response directly provides the hotel_id that can be used as input for the target API. This creates a hard dependency where the source API must be called first to obtain the hotel_id before calling the target API.",
+            "source_jsonpath": "$.hotel_id",
+            "confidence": 100,
+            "dependency_relationship": "Hard Dependency(Prerequisite API)",
+            "source_api": "Get_Hotel_Policies"
+        },
+        {
+            "target_api_params": "hotel_id",
+            "reason": "The 'hotel_id' parameter in the target API requires a specific hotel identifier, which can be obtained from the source API's response field '$.hotel_id'. The data types match (both are strings), and the source API's response field directly provides the hotel ID needed for the target API.",
+            "source_jsonpath": "$.hotel_id",
+            "confidence": 100,
+            "dependency_relationship": "Hard Dependency(Prerequisite API)",
+            "source_api": "Get_Room_List"
+        },
+        {
+            "target_api_params": "hotel_id",
+            "reason": "The 'hotel_id' parameter in the target API is a prerequisite for calling the API, as it specifies which hotel's nearby attractions to retrieve. The source API's response includes the exact same 'hotel_id' field (e.g., 5955189), which matches the required data type and format. This indicates a direct dependency where the source API's hotel_id must be obtained first before calling the target API.",
+            "source_jsonpath": "$[*].hotel_id",
+            "confidence": 100,
+            "dependency_relationship": "Hard Dependency(Prerequisite API)",
+            "source_api": "Get_Hotel_Review_Scores"
+        },
+        {
+            "target_api_params": "hotel_id",
+            "reason": "The 'hotel_id' parameter in the target API is explicitly mentioned to be retrievable from the 'Search_Hotels_By_Coordinates' source API. The source API's response includes 'hotel_id' fields (e.g., 11361227, 12192643) which exactly match the required parameter type (String) and purpose (identifying hotels). This is a direct prerequisite relationship as specified in the target API's documentation.",
+            "source_jsonpath": "$.result[].hotel_id",
+            "confidence": 100,
+            "dependency_relationship": "Hard Dependency(Prerequisite API)",
+            "source_api": "Search_Hotels_By_Coordinates"
+        },
+        {
+            "target_api_params": "hotel_id",
+            "reason": "The 'hotel_id' parameter in the target API requires a specific hotel identifier, which is also required by the source API. The source API's response includes the 'hotel_id' field, which matches exactly in data type and purpose. This creates a hard dependency where the source API must be called first to obtain the hotel_id before calling the target API.",
+            "source_jsonpath": "$.hotel_id",
+            "confidence": 100,
+            "dependency_relationship": "Hard Dependency(Prerequisite API)",
+            "source_api": "Get_Hotel_Reviews_Filter_Metadata"
+        },
+        {
+            "target_api_params": "hotel_id",
+            "reason": "The 'hotel_id' parameter in the target API requires a specific hotel identifier, which is also required by the source API. The source API's response fields do not contain the hotel_id directly, but the source API itself requires the hotel_id as an input parameter. This indicates that the source API is a prerequisite for obtaining the hotel_id needed by the target API.",
+            "source_jsonpath": null,
+            "confidence": 100,
+            "dependency_relationship": "Hard Dependency(Prerequisite API)",
+            "source_api": "Get_Hotel_Photos"
+        },
+        {
+            "target_api_params": "hotel_id",
+            "reason": "The 'hotel_id' parameter in the target API is a prerequisite for calling the API, as it specifies which hotel's nearby attractions to retrieve. The source API's response includes the same 'hotel_id' field, which matches exactly in data type and purpose. This creates a hard dependency where the source API must be called first to obtain the hotel_id before calling the target API.",
+            "source_jsonpath": "$[*].hotel_id",
+            "confidence": 100,
+            "dependency_relationship": "Hard Dependency(Prerequisite API)",
+            "source_api": "Get_Description_And_Info"
+        },
+        {
+            "target_api_params": "hotel_id",
+            "reason": "The 'hotel_id' parameter in the target API requires a specific hotel ID to retrieve nearby attractions. The source API's response includes the 'hotel_id' field, which matches exactly in data type and purpose. This creates a hard dependency as the source API must be called first to obtain the hotel_id before the target API can be used.",
+            "source_jsonpath": "$[*].hotel_id",
+            "confidence": 100,
+            "dependency_relationship": "Hard Dependency(Prerequisite API)",
+            "source_api": "Payment_features_of_the_Hotel"
+        },
+        {
+            "target_api_params": "hotel_id",
+            "reason": "The 'hotel_id' parameter in the target API is a prerequisite for calling the API, as it specifies the hotel for which nearby attractions are to be retrieved. The source API's 'hotel_id' parameter is identical in description and example value, indicating it serves the same purpose of identifying a specific hotel. This creates a hard dependency where the source API must be called first to obtain the hotel_id before the target API can be used.",
+            "source_jsonpath": "$.hotel_id",
+            "confidence": 100,
+            "dependency_relationship": "Hard Dependency(Prerequisite API)",
+            "source_api": "Get_Hotel_Facilities"
+        }
+    ],
+    "verified": true
+}

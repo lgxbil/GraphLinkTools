@@ -1,0 +1,66 @@
+{
+    "name": "Get_Seat_Map",
+    "docs_row": {
+        "name": "Get_Seat_Map",
+        "endpoint": "/api/v1/flights/getSeatMap",
+        "func_description": "Get the seat map for a specific flight. ",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "offerToken": {
+                    "type": "String",
+                    "description": "offerToken can be retrieved from api/v1/flights/searchFlights(Search Flights) or api/v1/flights/searchFlightsMultiStops(Search Flights Multi Stops) endpoints in Flights collection as offerToken.",
+                    "example_value": "",
+                    "required": true
+                },
+                "currency_code": {
+                    "type": "String",
+                    "description": "The currency code. currency_code can be retrieved from api/v1/meta/getCurrency(Get Currency) endpoint in Hotels collection.",
+                    "example_value": "AED",
+                    "required": false
+                }
+            },
+            "required": [
+                "offerToken"
+            ]
+        }
+    },
+    "instance": [],
+    "category": null,
+    "tool": null,
+    "api_idx": 44,
+    "params": {
+        "type": "object",
+        "properties": {
+            "offerToken": {
+                "type": "String",
+                "description": "offerToken can be retrieved from api/v1/flights/searchFlights(Search Flights) or api/v1/flights/searchFlightsMultiStops(Search Flights Multi Stops) endpoints in Flights collection as offerToken.",
+                "example_value": "",
+                "required": true
+            },
+            "currency_code": {
+                "type": "String",
+                "description": "The currency code. currency_code can be retrieved from api/v1/meta/getCurrency(Get Currency) endpoint in Hotels collection.",
+                "example_value": "AED",
+                "required": false
+            }
+        },
+        "required": [
+            "offerToken"
+        ]
+    },
+    "responses": [],
+    "response_summary": null,
+    "enhance_func_desc": null,
+    "enhance_params_desc": {
+        "enhanced_parameters": {
+            "offerToken": "Unique token identifying the flight offer, obtained from flight search endpoints.",
+            "currency_code": "Currency for displaying seat prices and fees."
+        }
+    },
+    "enhance_resfield_desc": null,
+    "params_desc_list": null,
+    "response_desc_list": null,
+    "depends_on": null,
+    "verified": false
+}

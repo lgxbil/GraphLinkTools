@@ -1,0 +1,96 @@
+{
+    "name": "Get_Attraction_Details",
+    "docs_row": {
+        "name": "Get_Attraction_Details",
+        "endpoint": "/api/v1/attraction/getAttractionDetails",
+        "func_description": "Search the attraction detail information. ",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "slug": {
+                    "type": "String",
+                    "description": "slug can be retrieved from api/v1/attraction/searchLocation(Search Attraction Location) endpoint in Attraction collection as productSlug  inside products or destinations.",
+                    "example_value": "prugrdm0uamx-small-group-dharavi-slum-tour",
+                    "required": true
+                },
+                "languagecode": {
+                    "type": "String",
+                    "description": "To obtain the response data in a specific language, enter the languagecode. languagecode can be retrieved from api/v1/meta/getLanguages(Get Languages\n) endpoint in Meta collection.",
+                    "example_value": "",
+                    "required": false
+                },
+                "currency_code": {
+                    "type": "String",
+                    "description": "The currency code. currency_code can be retrieved from api/v1/meta/getCurrency(Get Currency) endpoint in Hotels collection.",
+                    "example_value": "USD",
+                    "required": false
+                }
+            },
+            "required": [
+                "slug"
+            ]
+        }
+    },
+    "instance": [],
+    "category": null,
+    "tool": null,
+    "api_idx": 12,
+    "params": {
+        "type": "object",
+        "properties": {
+            "slug": {
+                "type": "String",
+                "description": "slug can be retrieved from api/v1/attraction/searchLocation(Search Attraction Location) endpoint in Attraction collection as productSlug  inside products or destinations.",
+                "example_value": "prugrdm0uamx-small-group-dharavi-slum-tour",
+                "required": true
+            },
+            "languagecode": {
+                "type": "String",
+                "description": "To obtain the response data in a specific language, enter the languagecode. languagecode can be retrieved from api/v1/meta/getLanguages(Get Languages\n) endpoint in Meta collection.",
+                "example_value": "",
+                "required": false
+            },
+            "currency_code": {
+                "type": "String",
+                "description": "The currency code. currency_code can be retrieved from api/v1/meta/getCurrency(Get Currency) endpoint in Hotels collection.",
+                "example_value": "USD",
+                "required": false
+            }
+        },
+        "required": [
+            "slug"
+        ]
+    },
+    "responses": [],
+    "response_summary": null,
+    "enhance_func_desc": null,
+    "enhance_params_desc": {
+        "enhanced_parameters": {
+            "slug": "Unique URL-friendly identifier for the attraction, sourced from searchLocation endpoint.",
+            "languagecode": "Language preference for the attraction details response.",
+            "currency_code": "Currency for displaying attraction pricing information."
+        }
+    },
+    "enhance_resfield_desc": null,
+    "params_desc_list": null,
+    "response_desc_list": null,
+    "depends_on": [
+        {
+            "target_api_params": "slug",
+            "reason": "The 'slug' parameter in the target API is a unique URL-friendly identifier for attractions, which can be directly obtained from the 'slug' field in the products array of the source API's response. This is a direct match in terms of both data type (String) and purpose (identifying attractions).",
+            "source_jsonpath": "$.products[].slug",
+            "confidence": 100,
+            "dependency_relationship": "Hard Dependency(Prerequisite API)",
+            "source_api": "Search_Attractions"
+        },
+        {
+            "target_api_params": "slug",
+            "reason": "The 'slug' parameter in the target API requires a unique URL-friendly identifier for the attraction, which can be sourced from the searchLocation endpoint. The source API's 'productSlug' field in the products array provides exactly this identifier (e.g., 'pr4upiz364vu-new-york-citypass'). This is a direct match in terms of data type and purpose, making it a necessary prerequisite for calling the target API.",
+            "source_jsonpath": "$.products[*].productSlug",
+            "confidence": 100,
+            "dependency_relationship": "Hard Dependency(Prerequisite API)",
+            "source_api": "Search_Attraction_Location"
+        }
+    ],
+    "verified": false
+}

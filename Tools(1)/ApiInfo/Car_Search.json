@@ -1,0 +1,256 @@
+{
+    "name": "Car_Search",
+    "docs_row": {
+        "name": "Car_Search",
+        "endpoint": "https://booking-com18.p.rapidapi.com/car/search",
+        "func_description": "",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "pickUpId": {
+                    "type": "String",
+                    "description": "Pick-up location\nRequired: true\npickUpId can be retrieved from /car/auto-complete endpoint(data->id)\nEx: eyJsYXRpdHVkZSI6IjQwLjc1OTU5IiwibG9uZ2l0dWRlIjoiLTczLjk4NDkxIn0=",
+                    "example_value": "eyJsYXRpdHVkZSI6IjQwLjc1OTU5IiwibG9uZ2l0dWRlIjoiLTczLjk4NDkxIn0=",
+                    "required": true
+                },
+                "pickUpDate": {
+                    "type": "Date (yyyy-mm-dd)",
+                    "description": "Pick-up date\nRequired: true\nFormat: YYYY-MM-DD\nEx: 2024-01-25",
+                    "example_value": "",
+                    "required": true
+                },
+                "pickUpTime": {
+                    "type": "Time (24-Hour Hh:Mm)",
+                    "description": "Pick-up time\nRequired: true\nFormat: HH:MM\nEx: 10:00",
+                    "example_value": "",
+                    "required": true
+                },
+                "dropOffDate": {
+                    "type": "Date (yyyy-mm-dd)",
+                    "description": "Drop-off date\nRequired: true\nFormat: YYYY-MM-DD\nEx: 2024-01-26",
+                    "example_value": "",
+                    "required": true
+                },
+                "dropOffTime": {
+                    "type": "Time (24-Hour Hh:Mm)",
+                    "description": "Drop-off time\nRequired: true\nFormat: HH:MM\nEx: 10:00",
+                    "example_value": "",
+                    "required": true
+                },
+                "dropOffId": {
+                    "type": "String",
+                    "description": "Drop-off location\ndroOffId can be retrieved from /car/auto-complete endpoint(data->id)\nEx: eyJsYXRpdHVkZSI6IjQwLjc1OTU5IiwibG9uZ2l0dWRlIjoiLTczLjk4NDkxIn0=",
+                    "example_value": "",
+                    "required": false
+                },
+                "sortBy": {
+                    "type": "String",
+                    "description": "Sort by\nsortBy can be retrieved from this endpoint(data->sort->identifier)\nEx: recommended\nDefault value: recommended\n\nrecommended: Recommended \u2013 best first\nprice_low_to_high: Price - lowest first",
+                    "example_value": "",
+                    "required": false
+                },
+                "driverAge": {
+                    "type": "Number",
+                    "description": "Driver's age: 30-65\nEx: 40",
+                    "example_value": "",
+                    "required": false
+                },
+                "carType": {
+                    "type": "String",
+                    "description": "Car Type\ncarType can be retrieved from this endpoint(data->filter(id=carCategory)->categories->id)\nIt can input multiple values, and the values should be separated by commas\nEx: carCategory::carriers,carCategory::suvs\nDefault value: recommended\n\ncarCategory::small: Small\ncarCategory::medium: Medium\ncarCategory::large: Large\ncarCategory::premium: Premium\ncarCategory::carriers: People carriers\ncarCategory::suvs: SUVs",
+                    "example_value": "",
+                    "required": false
+                },
+                "supplier": {
+                    "type": "String",
+                    "description": "Supplier\ncarType can be retrieved from this endpoint(data->filter(id=supplier)->categories->id)\nIt can input multiple values, and the values should be separated by commas\nEx: supplier::Alamo,supplier::Enterprise",
+                    "example_value": "",
+                    "required": false
+                },
+                "transmission": {
+                    "type": "String",
+                    "description": "Transmission\ntransmission can be retrieved from this endpoint(data->filter(id=transmission)->categories->id)\nIt can input multiple values, and the values should be separated by commas\nEx: transmission::AUTOMATIC",
+                    "example_value": "",
+                    "required": false
+                },
+                "hasAirConditioning (optional)": {
+                    "type": "Boolean",
+                    "description": "Air Conditioning\nDefault value: false",
+                    "example_value": "",
+                    "required": false
+                },
+                "units": {
+                    "type": "String",
+                    "description": "Units\nEx: metric\nDefault value: metric\nChoose one of the values below\nmetric: Metric (km, m2)\nimperial: Imperial (miles, ft2)",
+                    "example_value": "",
+                    "required": false
+                },
+                "languageCode": {
+                    "type": "String",
+                    "description": "Language\nlanguageCode can be retrieved from /languages endpoint(data->code)\nEx: en-us\nDefault value: en-us",
+                    "example_value": "",
+                    "required": false
+                },
+                "currencyCode": {
+                    "type": "String",
+                    "description": "Currency\ncurrencyCode can be retrieved from /currencies endpoint(data->code)\nEx: USD\nDefault value: HOTEL(Property's Currency)",
+                    "example_value": "",
+                    "required": false
+                },
+                "countryFlag": {
+                    "type": "String",
+                    "description": "Country\ncountryFlag can be retrieved from /languages endpoint(data->countryFlag)\nEx: us\nDefault value: us",
+                    "example_value": "",
+                    "required": false
+                }
+            },
+            "required": [
+                "pickUpId",
+                "pickUpDate",
+                "pickUpTime",
+                "dropOffDate",
+                "dropOffTime"
+            ]
+        }
+    },
+    "instance": [],
+    "category": null,
+    "tool": null,
+    "api_idx": 34,
+    "params": {
+        "type": "object",
+        "properties": {
+            "pickUpId": {
+                "type": "String",
+                "description": "Pick-up location\nRequired: true\npickUpId can be retrieved from /car/auto-complete endpoint(data->id)\nEx: eyJsYXRpdHVkZSI6IjQwLjc1OTU5IiwibG9uZ2l0dWRlIjoiLTczLjk4NDkxIn0=",
+                "example_value": "eyJsYXRpdHVkZSI6IjQwLjc1OTU5IiwibG9uZ2l0dWRlIjoiLTczLjk4NDkxIn0=",
+                "required": true
+            },
+            "pickUpDate": {
+                "type": "Date (yyyy-mm-dd)",
+                "description": "Pick-up date\nRequired: true\nFormat: YYYY-MM-DD\nEx: 2024-01-25",
+                "example_value": "",
+                "required": true
+            },
+            "pickUpTime": {
+                "type": "Time (24-Hour Hh:Mm)",
+                "description": "Pick-up time\nRequired: true\nFormat: HH:MM\nEx: 10:00",
+                "example_value": "",
+                "required": true
+            },
+            "dropOffDate": {
+                "type": "Date (yyyy-mm-dd)",
+                "description": "Drop-off date\nRequired: true\nFormat: YYYY-MM-DD\nEx: 2024-01-26",
+                "example_value": "",
+                "required": true
+            },
+            "dropOffTime": {
+                "type": "Time (24-Hour Hh:Mm)",
+                "description": "Drop-off time\nRequired: true\nFormat: HH:MM\nEx: 10:00",
+                "example_value": "",
+                "required": true
+            },
+            "dropOffId": {
+                "type": "String",
+                "description": "Drop-off location\ndroOffId can be retrieved from /car/auto-complete endpoint(data->id)\nEx: eyJsYXRpdHVkZSI6IjQwLjc1OTU5IiwibG9uZ2l0dWRlIjoiLTczLjk4NDkxIn0=",
+                "example_value": "",
+                "required": false
+            },
+            "sortBy": {
+                "type": "String",
+                "description": "Sort by\nsortBy can be retrieved from this endpoint(data->sort->identifier)\nEx: recommended\nDefault value: recommended\n\nrecommended: Recommended \u2013 best first\nprice_low_to_high: Price - lowest first",
+                "example_value": "",
+                "required": false
+            },
+            "driverAge": {
+                "type": "Number",
+                "description": "Driver's age: 30-65\nEx: 40",
+                "example_value": "",
+                "required": false
+            },
+            "carType": {
+                "type": "String",
+                "description": "Car Type\ncarType can be retrieved from this endpoint(data->filter(id=carCategory)->categories->id)\nIt can input multiple values, and the values should be separated by commas\nEx: carCategory::carriers,carCategory::suvs\nDefault value: recommended\n\ncarCategory::small: Small\ncarCategory::medium: Medium\ncarCategory::large: Large\ncarCategory::premium: Premium\ncarCategory::carriers: People carriers\ncarCategory::suvs: SUVs",
+                "example_value": "",
+                "required": false
+            },
+            "supplier": {
+                "type": "String",
+                "description": "Supplier\ncarType can be retrieved from this endpoint(data->filter(id=supplier)->categories->id)\nIt can input multiple values, and the values should be separated by commas\nEx: supplier::Alamo,supplier::Enterprise",
+                "example_value": "",
+                "required": false
+            },
+            "transmission": {
+                "type": "String",
+                "description": "Transmission\ntransmission can be retrieved from this endpoint(data->filter(id=transmission)->categories->id)\nIt can input multiple values, and the values should be separated by commas\nEx: transmission::AUTOMATIC",
+                "example_value": "",
+                "required": false
+            },
+            "hasAirConditioning (optional)": {
+                "type": "Boolean",
+                "description": "Air Conditioning\nDefault value: false",
+                "example_value": "",
+                "required": false
+            },
+            "units": {
+                "type": "String",
+                "description": "Units\nEx: metric\nDefault value: metric\nChoose one of the values below\nmetric: Metric (km, m2)\nimperial: Imperial (miles, ft2)",
+                "example_value": "",
+                "required": false
+            },
+            "languageCode": {
+                "type": "String",
+                "description": "Language\nlanguageCode can be retrieved from /languages endpoint(data->code)\nEx: en-us\nDefault value: en-us",
+                "example_value": "",
+                "required": false
+            },
+            "currencyCode": {
+                "type": "String",
+                "description": "Currency\ncurrencyCode can be retrieved from /currencies endpoint(data->code)\nEx: USD\nDefault value: HOTEL(Property's Currency)",
+                "example_value": "",
+                "required": false
+            },
+            "countryFlag": {
+                "type": "String",
+                "description": "Country\ncountryFlag can be retrieved from /languages endpoint(data->countryFlag)\nEx: us\nDefault value: us",
+                "example_value": "",
+                "required": false
+            }
+        },
+        "required": [
+            "pickUpId",
+            "pickUpDate",
+            "pickUpTime",
+            "dropOffDate",
+            "dropOffTime"
+        ]
+    },
+    "responses": [],
+    "response_summary": null,
+    "enhance_func_desc": null,
+    "enhance_params_desc": {
+        "enhanced_parameters": {
+            "pickUpId": "Unique identifier for the pick-up location, obtained from car/auto-complete endpoint.",
+            "pickUpDate": "Date when the car rental starts (YYYY-MM-DD format).",
+            "pickUpTime": "Time when the car rental starts (24-hour HH:MM format).",
+            "dropOffDate": "Date when the car rental ends (YYYY-MM-DD format).",
+            "dropOffTime": "Time when the car rental ends (24-hour HH:MM format).",
+            "dropOffId": "Unique identifier for the drop-off location, optional if same as pick-up.",
+            "sortBy": "Sorts results by recommendation or price (low to high).",
+            "driverAge": "Age of the driver (must be between 30-65 years).",
+            "carType": "Filters cars by category (e.g., small, SUV, premium).",
+            "supplier": "Filters cars by rental company (e.g., Alamo, Enterprise).",
+            "transmission": "Filters cars by transmission type (e.g., automatic).",
+            "hasAirConditioning": "Filters cars with air conditioning (true/false).",
+            "units": "Measurement units for distance (metric or imperial).",
+            "languageCode": "Language preference for the response data.",
+            "currencyCode": "Currency for displaying rental prices.",
+            "countryFlag": "Country code for regional settings (e.g., 'us')."
+        }
+    },
+    "enhance_resfield_desc": null,
+    "params_desc_list": null,
+    "response_desc_list": null,
+    "depends_on": null,
+    "verified": false
+}

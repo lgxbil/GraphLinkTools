@@ -1,0 +1,69 @@
+{
+    "name": "Get_Hotel_Reviews(Tips)",
+    "docs_row": {
+        "name": "Get_Hotel_Reviews(Tips)",
+        "description": "Retrieve reviews and tips for a specified hotel. EndPoint: /api/v1/hotels/getHotelReviews",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "hotel_id": {
+                    "type": "string",
+                    "description": " `hotel_id` can be retrieved from `api/v1/hotels/searchHotels`**(Search Hotels)** or `api/v1/hotels/searchHotelsByCoordinates`**(Search Hotels By Coordinates\n)** endpoint in **Hotels** collection."
+                },
+                "sort_option_id": {
+                    "type": "string",
+                    "description": "`sort_option_id` can be retrieved from `api/v1/hotels/getHotelReviewsSortOption`**(Get Hotel Reviews(Tips) Sort Option)** endpoint in **Hotels** collection."
+                }
+            },
+            "required": [
+                "hotel_id"
+            ]
+        }
+    },
+    "api_response_schema": {
+        "count": 25,
+        "result": [
+            {
+                "hotel_id": 179804,
+                "countrycode": "au",
+                "pros": "The detail in the room\nSpacious\nClean\nKid friendly\nComfortable beds\nBreakfast\nFree shuttle",
+                "average_score": 4,
+                "helpful_vote_count": 0,
+                "review_hash": "937a6fcb0359ac84",
+                "stayed_room_info": {
+                    "checkout": "2024-10-09",
+                    "checkin": "2024-10-08",
+                    "num_nights": 1,
+                    "room_id": 17980417,
+                    "room_name": "Happy Magic Room Ocean"
+                },
+                "author": {
+                    "type": "family_with_children",
+                    "type_string": "Family",
+                    "nr_reviews": 0,
+                    "countrycode": "au",
+                    "name": "Melanie",
+                    "user_id": 89226821,
+                    "helpful_vote_count": 0
+                },
+                "travel_purpose": "leisure",
+                "date": "2024-10-09 21:46:13",
+                "languagecode": "en-gb",
+                "is_incentivised": 0,
+                "title": "Fabulous hotel, great location and would stay again",
+                "reviewng": 1,
+                "no_user_title": 0,
+                "is_moderated": 0,
+                "review_id": 5092219448,
+                "cons": "Unfortunately during the night we could hear a lot of other guests banging etc."
+            }
+        ],
+        "sort_options": [
+            {
+                "title": "From your country",
+                "sort_option_id": "user_country",
+                "sort_option_default": 0
+            }
+        ]
+    }
+}

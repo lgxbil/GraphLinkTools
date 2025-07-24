@@ -1,0 +1,419 @@
+{
+    "shorten": {
+        "api": {
+            "name": "Search_Hotel_Destination",
+            "endpoint": "/api/v1/hotels/searchDestination",
+            "func_description": "Find Hotels by their location, address, state, country, etc. This api's response contains the latitude and longitude for the search query. ",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "query": {
+                        "type": "String",
+                        "description": "Names of locations, cities, districts, places, countries, counties etc.",
+                        "example_value": "man",
+                        "required": true
+                    }
+                },
+                "required": [
+                    "query"
+                ]
+            }
+        },
+        "static_response": {
+            "function_name": "Search_Hotel_Destination",
+            "arguments": {
+                "query": "Sydney"
+            },
+            "observation": {
+                "status": true,
+                "message": "Success",
+                "data": [
+                    {
+                        "dest_id": "-1603135",
+                        "search_type": "city",
+                        "longitude": 151.20901,
+                        "dest_type": "city",
+                        "nr_hotels": 3621,
+                        "city_name": "Sydney",
+                        "name": "Sydney",
+                        "lc": "en",
+                        "roundtrip": "GgEwIAAoATICZW46BlN5ZG5leUAASgBQAA==",
+                        "cc1": "au",
+                        "region": "New South Wales",
+                        "country": "Australia",
+                        "label": "Sydney, New South Wales, Australia",
+                        "latitude": -33.870457,
+                        "type": "ci",
+                        "hotels": 3621
+                    }
+                ]
+            }
+        },
+        "required": {
+            "query": "I'm looking for hotels in Paris. Can you help me find some options?",
+            "params": {
+                "query": "Paris"
+            },
+            "response": {
+                "status": true,
+                "message": "Success",
+                "timestamp": 1747650959912,
+                "data": [
+                    {
+                        "dest_id": "-1456928",
+                        "search_type": "city",
+                        "cc1": "fr",
+                        "city_ufi": null,
+                        "nr_hotels": 22137,
+                        "dest_type": "city",
+                        "city_name": "Paris",
+                        "label": "Paris, Ile de France, France",
+                        "lc": "en",
+                        "image_url": "https://cf.bstatic.com/xdata/images/city/150x150/977239.jpg?k=c2409c69613bc168e54e0c4930e1436a0f378d7fe40d9c94f4a03595e0f423a8&o=",
+                        "roundtrip": "GhAxNmJiNGE4N2ExYzkwMTdhIAAoATICZW46BVBhcmlzQABKAFAA",
+                        "type": "ci",
+                        "country": "France",
+                        "name": "Paris",
+                        "latitude": 48.85668,
+                        "region": "Ile de France",
+                        "hotels": 22137,
+                        "longitude": 2.3514764
+                    },
+                    {
+                        "dest_id": "2281",
+                        "search_type": "district",
+                        "name": "Paris City Centre",
+                        "country": "France",
+                        "type": "di",
+                        "roundtrip": "GhAxNmJiNGE4N2ExYzkwMTdhIAEoATICZW46BVBhcmlzQABKAFAA",
+                        "image_url": "https://cf.bstatic.com/xdata/images/district/150x150/56855.jpg?k=3fde2490119c56a4ea9c4e3b6c64eb0bc0c47936f2378a82bb1cdbc3a88b9326&o=",
+                        "latitude": 48.85807,
+                        "hotels": 5373,
+                        "longitude": 2.330132,
+                        "region": "Ile de France",
+                        "cc1": "fr",
+                        "dest_type": "district",
+                        "nr_hotels": 5373,
+                        "city_ufi": -1456928,
+                        "city_name": "Paris",
+                        "label": "Paris City Centre, Paris, Ile de France, France",
+                        "lc": "en"
+                    },
+                    {
+                        "dest_id": "735",
+                        "search_type": "landmark",
+                        "label": "Eiffel Tower, Paris, Ile de France, France",
+                        "city_name": "Paris",
+                        "lc": "en",
+                        "cc1": "fr",
+                        "dest_type": "landmark",
+                        "nr_hotels": 53,
+                        "city_ufi": -1456928,
+                        "latitude": 48.8586,
+                        "region": "Ile de France",
+                        "landmark_type": 4,
+                        "hotels": 53,
+                        "longitude": 2.29398,
+                        "image_url": "https://cf.bstatic.com/xdata/images/landmark/150x150/275259.jpg?k=99cd8db0df97c73360a62cbe70272fe0fa2c6c2d6f6040176a0488ad02ba165e&o=",
+                        "roundtrip": "GhAxNmJiNGE4N2ExYzkwMTdhIAIoATICZW46BVBhcmlzQABKAFAA",
+                        "type": "la",
+                        "country": "France",
+                        "name": "Eiffel Tower"
+                    }
+                ]
+            }
+        },
+        "optional": {
+            "query": "I'm planning a trip to Paris and would like to find hotels in the city. Can you help me search for hotels in Paris?",
+            "params": {
+                "query": "Paris"
+            },
+            "response": {
+                "status": true,
+                "message": "Success",
+                "timestamp": 1747650968266,
+                "data": [
+                    {
+                        "dest_id": "-1456928",
+                        "search_type": "city",
+                        "label": "Paris, Ile de France, France",
+                        "roundtrip": "GhAwMDAzNGE4Y2U2MmEwMjIxIAAoATICZW46BVBhcmlzQABKAFAA",
+                        "image_url": "https://cf.bstatic.com/xdata/images/city/150x150/977239.jpg?k=c2409c69613bc168e54e0c4930e1436a0f378d7fe40d9c94f4a03595e0f423a8&o=",
+                        "type": "ci",
+                        "latitude": 48.85668,
+                        "country": "France",
+                        "lc": "en",
+                        "region": "Ile de France",
+                        "hotels": 22137,
+                        "cc1": "fr",
+                        "city_ufi": null,
+                        "longitude": 2.3514764,
+                        "name": "Paris",
+                        "dest_type": "city",
+                        "city_name": "Paris",
+                        "nr_hotels": 22137
+                    },
+                    {
+                        "dest_id": "2281",
+                        "search_type": "district",
+                        "lc": "en",
+                        "region": "Ile de France",
+                        "hotels": 5373,
+                        "latitude": 48.85807,
+                        "country": "France",
+                        "roundtrip": "GhAwMDAzNGE4Y2U2MmEwMjIxIAEoATICZW46BVBhcmlzQABKAFAA",
+                        "image_url": "https://cf.bstatic.com/xdata/images/district/150x150/56855.jpg?k=3fde2490119c56a4ea9c4e3b6c64eb0bc0c47936f2378a82bb1cdbc3a88b9326&o=",
+                        "type": "di",
+                        "label": "Paris City Centre, Paris, Ile de France, France",
+                        "nr_hotels": 5373,
+                        "dest_type": "district",
+                        "city_name": "Paris",
+                        "name": "Paris City Centre",
+                        "cc1": "fr",
+                        "city_ufi": -1456928,
+                        "longitude": 2.330132
+                    },
+                    {
+                        "dest_id": "735",
+                        "search_type": "landmark",
+                        "cc1": "fr",
+                        "city_ufi": -1456928,
+                        "longitude": 2.29398,
+                        "name": "Eiffel Tower",
+                        "dest_type": "landmark",
+                        "city_name": "Paris",
+                        "nr_hotels": 53,
+                        "label": "Eiffel Tower, Paris, Ile de France, France",
+                        "roundtrip": "GhAwMDAzNGE4Y2U2MmEwMjIxIAIoATICZW46BVBhcmlzQABKAFAA",
+                        "image_url": "https://cf.bstatic.com/xdata/images/landmark/150x150/275259.jpg?k=99cd8db0df97c73360a62cbe70272fe0fa2c6c2d6f6040176a0488ad02ba165e&o=",
+                        "type": "la",
+                        "latitude": 48.8586,
+                        "landmark_type": 4,
+                        "country": "France",
+                        "region": "Ile de France",
+                        "lc": "en",
+                        "hotels": 53
+                    }
+                ]
+            }
+        }
+    },
+    "row": {
+        "required": {
+            "status": true,
+            "message": "Success",
+            "timestamp": 1747650959912,
+            "data": [
+                {
+                    "dest_id": "-1456928",
+                    "search_type": "city",
+                    "cc1": "fr",
+                    "city_ufi": null,
+                    "nr_hotels": 22137,
+                    "dest_type": "city",
+                    "city_name": "Paris",
+                    "label": "Paris, Ile de France, France",
+                    "lc": "en",
+                    "image_url": "https://cf.bstatic.com/xdata/images/city/150x150/977239.jpg?k=c2409c69613bc168e54e0c4930e1436a0f378d7fe40d9c94f4a03595e0f423a8&o=",
+                    "roundtrip": "GhAxNmJiNGE4N2ExYzkwMTdhIAAoATICZW46BVBhcmlzQABKAFAA",
+                    "type": "ci",
+                    "country": "France",
+                    "name": "Paris",
+                    "latitude": 48.85668,
+                    "region": "Ile de France",
+                    "hotels": 22137,
+                    "longitude": 2.3514764
+                },
+                {
+                    "dest_id": "2281",
+                    "search_type": "district",
+                    "name": "Paris City Centre",
+                    "country": "France",
+                    "type": "di",
+                    "roundtrip": "GhAxNmJiNGE4N2ExYzkwMTdhIAEoATICZW46BVBhcmlzQABKAFAA",
+                    "image_url": "https://cf.bstatic.com/xdata/images/district/150x150/56855.jpg?k=3fde2490119c56a4ea9c4e3b6c64eb0bc0c47936f2378a82bb1cdbc3a88b9326&o=",
+                    "latitude": 48.85807,
+                    "hotels": 5373,
+                    "longitude": 2.330132,
+                    "region": "Ile de France",
+                    "cc1": "fr",
+                    "dest_type": "district",
+                    "nr_hotels": 5373,
+                    "city_ufi": -1456928,
+                    "city_name": "Paris",
+                    "label": "Paris City Centre, Paris, Ile de France, France",
+                    "lc": "en"
+                },
+                {
+                    "dest_id": "735",
+                    "search_type": "landmark",
+                    "label": "Eiffel Tower, Paris, Ile de France, France",
+                    "city_name": "Paris",
+                    "lc": "en",
+                    "cc1": "fr",
+                    "dest_type": "landmark",
+                    "nr_hotels": 53,
+                    "city_ufi": -1456928,
+                    "latitude": 48.8586,
+                    "region": "Ile de France",
+                    "landmark_type": 4,
+                    "hotels": 53,
+                    "longitude": 2.29398,
+                    "image_url": "https://cf.bstatic.com/xdata/images/landmark/150x150/275259.jpg?k=99cd8db0df97c73360a62cbe70272fe0fa2c6c2d6f6040176a0488ad02ba165e&o=",
+                    "roundtrip": "GhAxNmJiNGE4N2ExYzkwMTdhIAIoATICZW46BVBhcmlzQABKAFAA",
+                    "type": "la",
+                    "country": "France",
+                    "name": "Eiffel Tower"
+                },
+                {
+                    "dest_id": "8",
+                    "search_type": "airport",
+                    "lc": "en",
+                    "city_name": "Paris",
+                    "label": "Paris - Charles de Gaulle Airport, Paris, Ile de France, France",
+                    "city_ufi": -1456928,
+                    "nr_hotels": 42,
+                    "dest_type": "airport",
+                    "cc1": "fr",
+                    "region": "Ile de France",
+                    "longitude": 2.56844,
+                    "hotels": 42,
+                    "latitude": 49.0071,
+                    "image_url": "https://cf.bstatic.com/static/img/plane-100.jpg",
+                    "roundtrip": "GhAxNmJiNGE4N2ExYzkwMTdhIAMoATICZW46BVBhcmlzQABKAFAA",
+                    "name": "Paris - Charles de Gaulle Airport",
+                    "country": "France",
+                    "type": "ai"
+                },
+                {
+                    "dest_id": "1569",
+                    "search_type": "region",
+                    "cc1": "fr",
+                    "city_ufi": null,
+                    "nr_hotels": 3182,
+                    "dest_type": "region",
+                    "city_name": "",
+                    "label": "Disneyland Paris, France",
+                    "lc": "en",
+                    "roundtrip": "GhAxNmJiNGE4N2ExYzkwMTdhIAQoATICZW46BVBhcmlzQABKAFAA",
+                    "image_url": "https://cf.bstatic.com/xdata/images/region/150x150/66318.jpg?k=138e5713fa41057ef7c2281eb9b5fc9180e49cd48163fdf49c9f125b44e6e2e1&o=",
+                    "name": "Disneyland Paris",
+                    "type": "re",
+                    "country": "France",
+                    "latitude": 48.86327,
+                    "region": "Disneyland Paris",
+                    "hotels": 3182,
+                    "longitude": 2.7537296
+                }
+            ]
+        },
+        "optional": {
+            "status": true,
+            "message": "Success",
+            "timestamp": 1747650968266,
+            "data": [
+                {
+                    "dest_id": "-1456928",
+                    "search_type": "city",
+                    "label": "Paris, Ile de France, France",
+                    "roundtrip": "GhAwMDAzNGE4Y2U2MmEwMjIxIAAoATICZW46BVBhcmlzQABKAFAA",
+                    "image_url": "https://cf.bstatic.com/xdata/images/city/150x150/977239.jpg?k=c2409c69613bc168e54e0c4930e1436a0f378d7fe40d9c94f4a03595e0f423a8&o=",
+                    "type": "ci",
+                    "latitude": 48.85668,
+                    "country": "France",
+                    "lc": "en",
+                    "region": "Ile de France",
+                    "hotels": 22137,
+                    "cc1": "fr",
+                    "city_ufi": null,
+                    "longitude": 2.3514764,
+                    "name": "Paris",
+                    "dest_type": "city",
+                    "city_name": "Paris",
+                    "nr_hotels": 22137
+                },
+                {
+                    "dest_id": "2281",
+                    "search_type": "district",
+                    "lc": "en",
+                    "region": "Ile de France",
+                    "hotels": 5373,
+                    "latitude": 48.85807,
+                    "country": "France",
+                    "roundtrip": "GhAwMDAzNGE4Y2U2MmEwMjIxIAEoATICZW46BVBhcmlzQABKAFAA",
+                    "image_url": "https://cf.bstatic.com/xdata/images/district/150x150/56855.jpg?k=3fde2490119c56a4ea9c4e3b6c64eb0bc0c47936f2378a82bb1cdbc3a88b9326&o=",
+                    "type": "di",
+                    "label": "Paris City Centre, Paris, Ile de France, France",
+                    "nr_hotels": 5373,
+                    "dest_type": "district",
+                    "city_name": "Paris",
+                    "name": "Paris City Centre",
+                    "cc1": "fr",
+                    "city_ufi": -1456928,
+                    "longitude": 2.330132
+                },
+                {
+                    "dest_id": "735",
+                    "search_type": "landmark",
+                    "cc1": "fr",
+                    "city_ufi": -1456928,
+                    "longitude": 2.29398,
+                    "name": "Eiffel Tower",
+                    "dest_type": "landmark",
+                    "city_name": "Paris",
+                    "nr_hotels": 53,
+                    "label": "Eiffel Tower, Paris, Ile de France, France",
+                    "roundtrip": "GhAwMDAzNGE4Y2U2MmEwMjIxIAIoATICZW46BVBhcmlzQABKAFAA",
+                    "image_url": "https://cf.bstatic.com/xdata/images/landmark/150x150/275259.jpg?k=99cd8db0df97c73360a62cbe70272fe0fa2c6c2d6f6040176a0488ad02ba165e&o=",
+                    "type": "la",
+                    "latitude": 48.8586,
+                    "landmark_type": 4,
+                    "country": "France",
+                    "region": "Ile de France",
+                    "lc": "en",
+                    "hotels": 53
+                },
+                {
+                    "dest_id": "8",
+                    "search_type": "airport",
+                    "name": "Paris - Charles de Gaulle Airport",
+                    "cc1": "fr",
+                    "city_ufi": -1456928,
+                    "longitude": 2.56844,
+                    "nr_hotels": 42,
+                    "dest_type": "airport",
+                    "city_name": "Paris",
+                    "roundtrip": "GhAwMDAzNGE4Y2U2MmEwMjIxIAMoATICZW46BVBhcmlzQABKAFAA",
+                    "image_url": "https://cf.bstatic.com/static/img/plane-100.jpg",
+                    "type": "ai",
+                    "label": "Paris - Charles de Gaulle Airport, Paris, Ile de France, France",
+                    "region": "Ile de France",
+                    "lc": "en",
+                    "hotels": 42,
+                    "latitude": 49.0071,
+                    "country": "France"
+                },
+                {
+                    "dest_id": "1569",
+                    "search_type": "region",
+                    "hotels": 3182,
+                    "region": "Disneyland Paris",
+                    "lc": "en",
+                    "latitude": 48.86327,
+                    "country": "France",
+                    "roundtrip": "GhAwMDAzNGE4Y2U2MmEwMjIxIAQoATICZW46BVBhcmlzQABKAFAA",
+                    "type": "re",
+                    "image_url": "https://cf.bstatic.com/xdata/images/region/150x150/66318.jpg?k=138e5713fa41057ef7c2281eb9b5fc9180e49cd48163fdf49c9f125b44e6e2e1&o=",
+                    "label": "Disneyland Paris, France",
+                    "nr_hotels": 3182,
+                    "dest_type": "region",
+                    "city_name": "",
+                    "name": "Disneyland Paris",
+                    "cc1": "fr",
+                    "longitude": 2.7537296,
+                    "city_ufi": null
+                }
+            ]
+        }
+    }
+}

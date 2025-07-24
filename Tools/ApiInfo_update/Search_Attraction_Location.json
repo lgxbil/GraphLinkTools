@@ -1,0 +1,400 @@
+{
+    "name": "Search_Attraction_Location",
+    "docs_row": {
+        "name": "Search_Attraction_Location",
+        "endpoint": "/api/v1/attraction/searchLocation",
+        "func_description": "Find attractions by their location, address, state, country, etc. This API will return specific information like: `slug`, `productId`, `id`, etc.  ",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "query": {
+                    "type": "String",
+                    "description": "Names of locations, cities, districts, places, countries, counties etc.",
+                    "example_value": "new",
+                    "required": true
+                },
+                "languagecode": {
+                    "type": "String",
+                    "description": "To obtain the response data in a specific language, enter the languagecode. languagecode can be retrieved from api/v1/meta/getLanguages(Get Languages\n) endpoint in Meta collection.",
+                    "example_value": "en-us",
+                    "required": false
+                }
+            },
+            "required": [
+                "query"
+            ]
+        }
+    },
+    "instance": [],
+    "category": null,
+    "tool": null,
+    "api_idx": 16,
+    "params": {
+        "type": "object",
+        "properties": {
+            "query": {
+                "type": "String",
+                "description": "Names of locations, cities, districts, places, countries, counties etc.",
+                "example_value": "new",
+                "required": true
+            },
+            "languagecode": {
+                "type": "String",
+                "description": "To obtain the response data in a specific language, enter the languagecode. languagecode can be retrieved from api/v1/meta/getLanguages(Get Languages\n) endpoint in Meta collection.",
+                "example_value": "en-us",
+                "required": false
+            }
+        },
+        "required": [
+            "query"
+        ]
+    },
+    "responses": [
+        {
+            "function_name": "Search_Attraction_Location",
+            "arguments": {
+                "query": "New York"
+            },
+            "observation": {
+                "products": [
+                    {
+                        "id": "eyJwaW5uZWRQcm9kdWN0IjoiUFI0dVBJejM2NFZ1IiwidWZpIjoyMDA4ODMyNX0=",
+                        "__typename": "AttractionsSearchProductSuggestion",
+                        "title": "New York CityPASS",
+                        "productId": "PR4uPIz364Vu",
+                        "productSlug": "pr4upiz364vu-new-york-citypass",
+                        "taxonomySlug": "transfers-services",
+                        "cityUfi": 20088325,
+                        "cityName": "New York",
+                        "countryCode": "us"
+                    },
+                    {
+                        "id": "eyJwaW5uZWRQcm9kdWN0IjoiUFJWbHEwOWMwdHhDIiwidWZpIjoyMDA4ODMyNX0=",
+                        "__typename": "AttractionsSearchProductSuggestion",
+                        "title": "New York Tours and New York City Sightseeing Tours.Flexible Tours",
+                        "productId": "PRVlq09c0txC",
+                        "productSlug": "prvlq09c0txc-2-hours-nyc-personalized-tour-new-york-toursnew-york-sightseeing",
+                        "taxonomySlug": "tours",
+                        "cityUfi": 20088325,
+                        "cityName": "New York",
+                        "countryCode": "us"
+                    },
+                    {
+                        "id": "eyJwaW5uZWRQcm9kdWN0IjoiUFJncTVVM0xUU2phIiwidWZpIjoyMDA3OTExMH0=",
+                        "__typename": "AttractionsSearchProductSuggestion",
+                        "title": "The Big Apple Coaster at New York New York Hotel and Casino",
+                        "productId": "PRgq5U3LTSja",
+                        "productSlug": "prgq5u3ltsja-roller-coaster-ride-at-new-york-new-york-hotel",
+                        "taxonomySlug": "attractions",
+                        "cityUfi": 20079110,
+                        "cityName": "Las Vegas",
+                        "countryCode": "us"
+                    }
+                ],
+                "destinations": [
+                    {
+                        "id": "eyJ1ZmkiOjIwMDg4MzI1fQ==",
+                        "__typename": "AttractionsSearchDestinationSuggestion",
+                        "ufi": 20088325,
+                        "country": "United States",
+                        "cityName": "New York",
+                        "productCount": 1993,
+                        "cc1": "us"
+                    },
+                    {
+                        "id": "eyJ1ZmkiOjkwMDA0OTYxM30=",
+                        "__typename": "AttractionsSearchDestinationSuggestion",
+                        "ufi": 900049613,
+                        "country": "United States",
+                        "cityName": "York",
+                        "productCount": 11,
+                        "cc1": "us"
+                    },
+                    {
+                        "id": "eyJ1ZmkiOjIwMDUzNDk5fQ==",
+                        "__typename": "AttractionsSearchDestinationSuggestion",
+                        "ufi": 20053499,
+                        "country": "United States",
+                        "cityName": "York Beach",
+                        "productCount": 11,
+                        "cc1": "us"
+                    }
+                ]
+            }
+        },
+        {
+            "function_name": "Search_Attraction_Location",
+            "arguments": {
+                "query": "New York",
+                "languagecode": "en-us"
+            },
+            "observation": {
+                "products": [
+                    {
+                        "id": "eyJwaW5uZWRQcm9kdWN0IjoiUFI0dVBJejM2NFZ1IiwidWZpIjoyMDA4ODMyNX0=",
+                        "__typename": "AttractionsSearchProductSuggestion",
+                        "title": "New York CityPASS",
+                        "productId": "PR4uPIz364Vu",
+                        "productSlug": "pr4upiz364vu-new-york-citypass",
+                        "taxonomySlug": "transfers-services",
+                        "cityUfi": 20088325,
+                        "cityName": "New York",
+                        "countryCode": "us"
+                    },
+                    {
+                        "id": "eyJwaW5uZWRQcm9kdWN0IjoiUFJWbHEwOWMwdHhDIiwidWZpIjoyMDA4ODMyNX0=",
+                        "__typename": "AttractionsSearchProductSuggestion",
+                        "title": "New York Tours and New York City Sightseeing Tours.Flexible Tours",
+                        "productId": "PRVlq09c0txC",
+                        "productSlug": "prvlq09c0txc-2-hours-nyc-personalized-tour-new-york-toursnew-york-sightseeing",
+                        "taxonomySlug": "tours",
+                        "cityUfi": 20088325,
+                        "cityName": "New York",
+                        "countryCode": "us"
+                    },
+                    {
+                        "id": "eyJwaW5uZWRQcm9kdWN0IjoiUFJncTVVM0xUU2phIiwidWZpIjoyMDA3OTExMH0=",
+                        "__typename": "AttractionsSearchProductSuggestion",
+                        "title": "The Big Apple Coaster at New York New York Hotel and Casino",
+                        "productId": "PRgq5U3LTSja",
+                        "productSlug": "prgq5u3ltsja-roller-coaster-ride-at-new-york-new-york-hotel",
+                        "taxonomySlug": "attractions",
+                        "cityUfi": 20079110,
+                        "cityName": "Las Vegas",
+                        "countryCode": "us"
+                    }
+                ],
+                "destinations": [
+                    {
+                        "id": "eyJ1ZmkiOjIwMDg4MzI1fQ==",
+                        "__typename": "AttractionsSearchDestinationSuggestion",
+                        "ufi": 20088325,
+                        "country": "United States",
+                        "cityName": "New York",
+                        "productCount": 1993,
+                        "cc1": "us"
+                    },
+                    {
+                        "id": "eyJ1ZmkiOjIwMDg1MjA3fQ==",
+                        "__typename": "AttractionsSearchDestinationSuggestion",
+                        "ufi": 20085207,
+                        "country": "United States",
+                        "cityName": "Brooklyn",
+                        "productCount": 1986,
+                        "cc1": "us"
+                    },
+                    {
+                        "id": "eyJ1ZmkiOjkwMDA0OTYxM30=",
+                        "__typename": "AttractionsSearchDestinationSuggestion",
+                        "ufi": 900049613,
+                        "country": "United States",
+                        "cityName": "York",
+                        "productCount": 11,
+                        "cc1": "us"
+                    }
+                ]
+            }
+        }
+    ],
+    "response_summary": "The API response provides a mix of popular travel products and destination suggestions in the United States. For products, the first recommendation is the \"New York CityPASS,\" which offers access to multiple attractions in New York City. The second is a flexible sightseeing tour of New York, allowing visitors to explore the city at their own pace. The third is a thrilling roller coaster ride at the New York-New York Hotel and Casino in Las Vegas.  \n\nAs for destinations, New York City stands out with 1,993 available activities, making it a major hub for travelers. Other suggestions include the smaller towns of York and York Beach, each offering 11 activities for those looking for quieter experiences. All these destinations are located in the United States, catering to a variety of travel preferences.",
+    "enhance_func_desc": "This API is ideal for travelers seeking destination and activity recommendations. It searches locations and attractions based on a query, providing popular travel products and destination options. The response includes details like available activities, attractions, and flexible tours, helping users plan their trips. Users can filter by language for localized results, making it useful for international travel planning. The query parameter is essential for initiating the search.",
+    "enhance_params_desc": {
+        "enhanced_parameters": {
+            "query": "Search term for locations, cities, attractions, or countries.",
+            "languagecode": "Language preference for the response data."
+        }
+    },
+    "enhance_resfield_desc": {
+        "response_fields": {
+            "products": {
+                "type": "Array",
+                "description": "List of recommended travel products or attractions",
+                "ar_items": {
+                    "type": "Object",
+                    "description": "Details of a travel product or attraction",
+                    "ob_properties": {
+                        "id": {
+                            "type": "String",
+                            "description": "Unique identifier for the product, encoded in Base64"
+                        },
+                        "__typename": {
+                            "type": "String",
+                            "description": "Type of the product suggestion, indicating it's an attraction search product"
+                        },
+                        "title": {
+                            "type": "String",
+                            "description": "Name or title of the travel product or attraction"
+                        },
+                        "productId": {
+                            "type": "String",
+                            "description": "Unique identifier for the product"
+                        },
+                        "productSlug": {
+                            "type": "String",
+                            "description": "URL-friendly identifier for the product, often used in web links"
+                        },
+                        "taxonomySlug": {
+                            "type": "String",
+                            "description": "Category or type of the product (e.g., transfers-services, tours, attractions)"
+                        },
+                        "cityUfi": {
+                            "type": "Number",
+                            "description": "Unique identifier for the city where the product is located"
+                        },
+                        "cityName": {
+                            "type": "String",
+                            "description": "Name of the city where the product is located"
+                        },
+                        "countryCode": {
+                            "type": "String",
+                            "description": "ISO country code where the product is located (e.g., 'us' for United States)"
+                        }
+                    }
+                }
+            },
+            "destinations": {
+                "type": "Array",
+                "description": "List of suggested travel destinations",
+                "ar_items": {
+                    "type": "Object",
+                    "description": "Details of a travel destination",
+                    "ob_properties": {
+                        "id": {
+                            "type": "String",
+                            "description": "Unique identifier for the destination, encoded in Base64"
+                        },
+                        "__typename": {
+                            "type": "String",
+                            "description": "Type of the destination suggestion, indicating it's an attraction search destination"
+                        },
+                        "ufi": {
+                            "type": "Number",
+                            "description": "Unique identifier for the destination"
+                        },
+                        "country": {
+                            "type": "String",
+                            "description": "Name of the country where the destination is located"
+                        },
+                        "cityName": {
+                            "type": "String",
+                            "description": "Name of the city or town"
+                        },
+                        "productCount": {
+                            "type": "Number",
+                            "description": "Number of available activities or products in the destination"
+                        },
+                        "cc1": {
+                            "type": "String",
+                            "description": "Country code where the destination is located (e.g., 'us' for United States)"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "params_desc_list": null,
+    "response_desc_list": [
+        {
+            "path_name": "products",
+            "name": "products",
+            "description": "List of recommended travel products or attractions"
+        },
+        {
+            "path_name": "products[]",
+            "name": "products[]",
+            "description": "Details of a travel product or attraction"
+        },
+        {
+            "path_name": "products[].id",
+            "name": "id",
+            "description": "Unique identifier for the product, encoded in Base64"
+        },
+        {
+            "path_name": "products[].__typename",
+            "name": "__typename",
+            "description": "Type of the product suggestion, indicating it's an attraction search product"
+        },
+        {
+            "path_name": "products[].title",
+            "name": "title",
+            "description": "Name or title of the travel product or attraction"
+        },
+        {
+            "path_name": "products[].productId",
+            "name": "productId",
+            "description": "Unique identifier for the product"
+        },
+        {
+            "path_name": "products[].productSlug",
+            "name": "productSlug",
+            "description": "URL-friendly identifier for the product, often used in web links"
+        },
+        {
+            "path_name": "products[].taxonomySlug",
+            "name": "taxonomySlug",
+            "description": "Category or type of the product (e.g., transfers-services, tours, attractions)"
+        },
+        {
+            "path_name": "products[].cityUfi",
+            "name": "cityUfi",
+            "description": "Unique identifier for the city where the product is located"
+        },
+        {
+            "path_name": "products[].cityName",
+            "name": "cityName",
+            "description": "Name of the city where the product is located"
+        },
+        {
+            "path_name": "products[].countryCode",
+            "name": "countryCode",
+            "description": "ISO country code where the product is located (e.g., 'us' for United States)"
+        },
+        {
+            "path_name": "destinations",
+            "name": "destinations",
+            "description": "List of suggested travel destinations"
+        },
+        {
+            "path_name": "destinations[]",
+            "name": "destinations[]",
+            "description": "Details of a travel destination"
+        },
+        {
+            "path_name": "destinations[].id",
+            "name": "id",
+            "description": "Unique identifier for the destination, encoded in Base64"
+        },
+        {
+            "path_name": "destinations[].__typename",
+            "name": "__typename",
+            "description": "Type of the destination suggestion, indicating it's an attraction search destination"
+        },
+        {
+            "path_name": "destinations[].ufi",
+            "name": "ufi",
+            "description": "Unique identifier for the destination"
+        },
+        {
+            "path_name": "destinations[].country",
+            "name": "country",
+            "description": "Name of the country where the destination is located"
+        },
+        {
+            "path_name": "destinations[].cityName",
+            "name": "cityName",
+            "description": "Name of the city or town"
+        },
+        {
+            "path_name": "destinations[].productCount",
+            "name": "productCount",
+            "description": "Number of available activities or products in the destination"
+        },
+        {
+            "path_name": "destinations[].cc1",
+            "name": "cc1",
+            "description": "Country code where the destination is located (e.g., 'us' for United States)"
+        }
+    ],
+    "depends_on": null,
+    "verified": true
+}

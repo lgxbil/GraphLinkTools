@@ -1,0 +1,50 @@
+2025-07-22 03:47:49,590 - evaluation_logger_Cross-50 - INFO - Test Example Cross-50
+2025-07-22 03:47:49,590 - evaluation_logger_Cross-50 - INFO - Query: I'm planning to go on vacation to Barcelona during my annual leave from October 5th to 12th, 2024. Could you help me find the best round-trip business class air tickets from Berlin to Barcelona? I'd like to book an SUV for local transportation. I'll pick up the car at the airport one hour after arriving in Barcelona and return it at the airport three hours before my return flight takes off.
+2025-07-22 03:50:18,810 - evaluation_logger_Cross-50 - INFO - Start compare_single_call: 
+{'name': 'Search_Flight_Location', 'arguments': {'query': 'Berlin'}}
+{'name': 'Search_Flight_Location', 'arguments': {'query': 'Berlin'}}
+2025-07-22 03:50:18,810 - evaluation_logger_Cross-50 - INFO - Rule-based compare success.
+2025-07-22 03:50:18,811 - evaluation_logger_Cross-50 - INFO - Success matched: [{'name': 'Search_Flight_Location', 'arguments': {'query': 'Berlin'}}]
+2025-07-22 03:50:18,813 - evaluation_logger_Cross-50 - INFO - Start compare_single_call: 
+{'name': 'Search_Flight_Location', 'arguments': {'query': 'Barcelona'}}
+{'name': 'Search_Flight_Location', 'arguments': {'query': 'Barcelona'}}
+2025-07-22 03:50:18,813 - evaluation_logger_Cross-50 - INFO - Rule-based compare success.
+2025-07-22 03:50:18,813 - evaluation_logger_Cross-50 - INFO - Success matched: [{'name': 'Search_Flight_Location', 'arguments': {'query': 'Barcelona'}}]
+2025-07-22 03:50:18,814 - evaluation_logger_Cross-50 - INFO - Start compare_single_call: 
+{'name': 'Search_Flights', 'arguments': {'cabinClass': 'BUSINESS', 'departDate': '2024-10-05', 'fromId': 'BER.AIRPORT', 'returnDate': '2024-10-12', 'sort': 'BEST', 'toId': 'BCN.AIRPORT'}}
+{'name': 'Search_Flights', 'arguments': {'cabinClass': 'BUSINESS', 'departDate': '2024-10-05', 'fromId': 'BER.AIRPORT', 'returnDate': '2024-10-12', 'sort': 'BEST', 'toId': 'BCN.AIRPORT'}}
+2025-07-22 03:50:18,814 - evaluation_logger_Cross-50 - INFO - Rule-based compare success.
+2025-07-22 03:50:18,814 - evaluation_logger_Cross-50 - INFO - Success matched: [{'name': 'Search_Flights', 'arguments': {'cabinClass': 'BUSINESS', 'departDate': '2024-10-05', 'fromId': 'BER.AIRPORT', 'returnDate': '2024-10-12', 'sort': 'BEST', 'toId': 'BCN.AIRPORT'}}]
+2025-07-22 03:50:19,414 - evaluation_logger_Cross-50 - INFO - Start compare_single_call: 
+{'name': 'Search_Car_Location', 'arguments': {'query': 'Barcelona Airport'}}
+{'name': 'Search_Car_Location', 'arguments': {'query': 'Barcelona El Prat Airport'}}
+2025-07-22 03:50:25,357 - evaluation_logger_Cross-50 - DEBUG - LLM-based comparison output: {'is_equal': True, 'reason': 'Barcelona Airport and Barcelona El Prat Airport refer to the same location.'}
+2025-07-22 03:50:25,357 - evaluation_logger_Cross-50 - INFO - LLM-based compare success.
+2025-07-22 03:50:25,357 - evaluation_logger_Cross-50 - INFO - Success matched: [{'name': 'Search_Car_Location', 'arguments': {'query': 'Barcelona El Prat Airport'}}]
+2025-07-22 03:50:25,702 - evaluation_logger_Cross-50 - INFO - Success matched: []
+2025-07-22 03:51:40,840 - evaluation_logger_Cross-50 - INFO - Start compare_single_call: 
+{'name': 'Search_Flight_Location', 'arguments': {'query': 'Berlin'}}
+{'name': 'Search_Flight_Location', 'arguments': {'query': 'Berlin'}}
+2025-07-22 03:51:40,840 - evaluation_logger_Cross-50 - INFO - Rule-based compare success.
+2025-07-22 03:51:40,840 - evaluation_logger_Cross-50 - INFO - Success matched: [{'name': 'Search_Flight_Location', 'arguments': {'query': 'Berlin'}}]
+2025-07-22 03:51:40,841 - evaluation_logger_Cross-50 - INFO - Start compare_single_call: 
+{'name': 'Search_Flight_Location', 'arguments': {'query': 'Barcelona'}}
+{'name': 'Search_Flight_Location', 'arguments': {'query': 'Barcelona'}}
+2025-07-22 03:51:40,841 - evaluation_logger_Cross-50 - INFO - Rule-based compare success.
+2025-07-22 03:51:40,841 - evaluation_logger_Cross-50 - INFO - Success matched: [{'name': 'Search_Flight_Location', 'arguments': {'query': 'Barcelona'}}]
+2025-07-22 03:51:40,842 - evaluation_logger_Cross-50 - INFO - Start compare_single_call: 
+{'name': 'Search_Flights', 'arguments': {'cabinClass': 'BUSINESS', 'departDate': '2024-10-05', 'fromId': 'BER.AIRPORT', 'returnDate': '2024-10-12', 'sort': 'BEST', 'toId': 'BCN.AIRPORT'}}
+{'name': 'Search_Flights', 'arguments': {'cabinClass': 'BUSINESS', 'departDate': '2024-10-05', 'fromId': 'BER.AIRPORT', 'returnDate': '2024-10-12', 'sort': 'BEST', 'toId': 'BCN.AIRPORT'}}
+2025-07-22 03:51:40,842 - evaluation_logger_Cross-50 - INFO - Rule-based compare success.
+2025-07-22 03:51:40,842 - evaluation_logger_Cross-50 - INFO - Success matched: [{'name': 'Search_Flights', 'arguments': {'cabinClass': 'BUSINESS', 'departDate': '2024-10-05', 'fromId': 'BER.AIRPORT', 'returnDate': '2024-10-12', 'sort': 'BEST', 'toId': 'BCN.AIRPORT'}}]
+2025-07-22 03:51:41,202 - evaluation_logger_Cross-50 - INFO - Start compare_single_call: 
+{'name': 'Search_Car_Location', 'arguments': {'query': 'Barcelona Airport'}}
+{'name': 'Search_Car_Location', 'arguments': {'query': 'Barcelona El Prat Airport'}}
+2025-07-22 03:51:47,626 - evaluation_logger_Cross-50 - DEBUG - LLM-based comparison output: {'is_equal': True, 'reason': 'Barcelona Airport and Barcelona El Prat Airport refer to the same location.'}
+2025-07-22 03:51:47,626 - evaluation_logger_Cross-50 - INFO - LLM-based compare success.
+2025-07-22 03:51:47,626 - evaluation_logger_Cross-50 - INFO - Success matched: [{'name': 'Search_Car_Location', 'arguments': {'query': 'Barcelona El Prat Airport'}}]
+2025-07-22 03:51:47,628 - evaluation_logger_Cross-50 - INFO - Start compare_single_call: 
+{'name': 'Search_Car_Rentals', 'arguments': {'drop_off_date': '2024-10-12', 'drop_off_latitude': 41.2969, 'drop_off_longitude': 2.07833, 'drop_off_time': '04:50', 'pick_up_date': '2024-10-05', 'pick_up_latitude': 41.2969, 'pick_up_longitude': 2.07833, 'pick_up_time': '15:50'}}
+{'name': 'Search_Car_Rentals', 'arguments': {'drop_off_date': '2024-10-12', 'drop_off_latitude': 41.2969, 'drop_off_longitude': 2.07833, 'drop_off_time': '04:50', 'pick_up_date': '2024-10-05', 'pick_up_latitude': 41.2969, 'pick_up_longitude': 2.07833, 'pick_up_time': '15:50'}}
+2025-07-22 03:51:47,628 - evaluation_logger_Cross-50 - INFO - Rule-based compare success.
+2025-07-22 03:51:47,628 - evaluation_logger_Cross-50 - INFO - Success matched: [{'name': 'Search_Car_Rentals', 'arguments': {'drop_off_date': '2024-10-12', 'drop_off_latitude': 41.2969, 'drop_off_longitude': 2.07833, 'drop_off_time': '04:50', 'pick_up_date': '2024-10-05', 'pick_up_latitude': 41.2969, 'pick_up_longitude': 2.07833, 'pick_up_time': '15:50'}}]

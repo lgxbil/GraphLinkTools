@@ -1,0 +1,140 @@
+{
+    "name": "Search_Attractions",
+    "docs_row": {
+        "name": "Search_Attractions",
+        "description": "Search Attraction by trending/attr_book_score/lowest_price. EndPoint: /api/v1/attraction/searchAttractions",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": " `id` can be retrieved from `api/v1/attraction/searchLocation`**(Search Attraction Location)** endpoint in **Attraction** collection as `id` inside `products` or `destinations`."
+                },
+                "sortBy": {
+                    "type": "string",
+                    "description": "This parameter orders result by trending, attr_book_score or lowest_price.\n\n",
+                    "enum": [
+                        "trending",
+                        "attr_book_score",
+                        "lowest_price"
+                    ]
+                }
+            },
+            "required": [
+                "id"
+            ]
+        }
+    },
+    "api_response_schema": {
+        "__typename": "AttractionsProductSearchResponse",
+        "products": [
+            {
+                "__typename": "AttractionsProduct",
+                "cancellationPolicy": {
+                    "__typename": "AttractionsCancellationPolicy",
+                    "hasFreeCancellation": true
+                },
+                "id": "PRTfIug9ZgJt",
+                "name": "Mount Titlis Tour with Glacier Attractions",
+                "slug": "prtfiug9zgjt-mount-titlis-tour-with-glacier-attractions",
+                "shortDescription": "A tour of Mount Titlis and a chance to try thrilling activities on a glacier",
+                "representativePrice": {
+                    "__typename": "AttractionsPrice",
+                    "chargeAmount": 198.37,
+                    "currency": "USD",
+                    "publicAmount": 198.37
+                },
+                "reviewsStats": {
+                    "__typename": "AttractionsProductReviewStats",
+                    "allReviewsCount": 66,
+                    "percentage": "97%",
+                    "combinedNumericStats": {
+                        "__typename": "AttractionsProductCombinedReviewStats",
+                        "average": 4.7,
+                        "total": 99
+                    }
+                },
+                "ufiDetails": {
+                    "__typename": "AttractionLocationResponse",
+                    "bCityName": "Zürich",
+                    "ufi": -2554935
+                },
+                "offers": [
+                    {
+                        "__typename": "Offer",
+                        "items": [
+                            {
+                                "__typename": "OfferItem",
+                                "id": "OIuDK2GQg9KW"
+                            }
+                        ]
+                    }
+                ],
+                "supportedFeatures": {
+                    "__typename": "AttractionsProductSupportedFeatures",
+                    "nativeApp": true
+                },
+                "flags": [
+                    {
+                        "__typename": "AttractionsProductFlags",
+                        "flag": "bestsellerForActivities",
+                        "value": true,
+                        "rank": 1
+                    }
+                ]
+            }
+        ],
+        "filterStats": {
+            "__typename": "FilterStats",
+            "unfilteredProductCount": 482,
+            "filteredProductCount": 482
+        },
+        "sorters": [
+            {
+                "__typename": "AttractionsSorterOption",
+                "name": "Lowest price",
+                "value": "lowest_price"
+            }
+        ],
+        "defaultSorter": {
+            "__typename": "AttractionsSorterOption",
+            "name": "Our top picks",
+            "value": "trending"
+        },
+        "filterOptions": {
+            "__typename": "FilterOptions",
+            "typeFilters": [
+                {
+                    "__typename": "FilterOption",
+                    "name": "Food & drinks",
+                    "tagname": "food-drinks",
+                    "productCount": 1
+                }
+            ],
+            "labelFilters": [
+                {
+                    "__typename": "FilterOption",
+                    "name": "Free cancellation",
+                    "tagname": "free_cancellation",
+                    "productCount": 418
+                }
+            ],
+            "ufiFilters": [
+                {
+                    "__typename": "FilterOption",
+                    "name": "Zürich",
+                    "tagname": "-2554935",
+                    "productCount": 482
+                }
+            ],
+            "priceFilters": [
+                {
+                    "__typename": "FilterOption",
+                    "name": "US$138+",
+                    "tagname": "b4",
+                    "productCount": 382
+                }
+            ]
+        }
+    }
+}

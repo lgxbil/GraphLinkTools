@@ -1,0 +1,144 @@
+{
+    "shorten": {
+        "api": {
+            "name": "Get_Description_And_Info",
+            "endpoint": "/api/v1/hotels/getDescriptionAndInfo",
+            "func_description": "Retrieve the detailed description and information for a specific hotel. ",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "hotel_id": {
+                        "type": "String",
+                        "description": "hotel_id can be retrieved from api/v1/hotels/searchHotels(Search Hotels) or api/v1/hotels/searchHotelsByCoordinates(Search Hotels By Coordinates\n) endpoint in Hotels collection.",
+                        "example_value": "5955189",
+                        "required": true
+                    },
+                    "languagecode": {
+                        "type": "String",
+                        "description": "To obtain the response data in a specific language, enter the languagecode. languagecode can be retrieved from api/v1/meta/getLanguages(Get Languages\n) endpoint in Meta collection.",
+                        "example_value": "en-us",
+                        "required": false
+                    }
+                },
+                "required": [
+                    "hotel_id"
+                ]
+            }
+        },
+        "static_response": {
+            "function_name": "Get_Description_And_Info",
+            "arguments": {
+                "hotel_id": "41606"
+            },
+            "observation": {
+                "status": true,
+                "message": "Success",
+                "data": [
+                    {
+                        "languagecode": "en",
+                        "descriptiontype_id": 6,
+                        "description": "Our hotel is in the Plymouth Meeting Executive Campus, just off the Pennsylvania Turnpike.\n\nWe're less than half a mile from Plymouth Meeting Mall and LEGOLAND Discovery Center.\n\nSuites feature separate living and sleeping areas, and we have a fitness center and indoor pool.\n\nEnjoy our signature warm chocolate chip cookie when you arrive.",
+                        "hotel_id": "41606"
+                    },
+                    {
+                        "hotel_id": "41606",
+                        "description": "Guests are required to show a photo identification and credit card upon check-in. Please note that all Special Requests are subject to availability and additional charges may apply.\nPlease inform DoubleTree Suites by Hilton Hotel Philadelphia West in advance of your expected arrival time. You can use the Special Requests box when booking, or contact the property directly with the contact details provided in your confirmation.\nA damage deposit of USD 50 is required on arrival. This will be collected by credit card. You should be reimbursed within 7 days of check-out. Your deposit will be refunded in full via credit card, subject to an inspection of the property.",
+                        "descriptiontype_id": 7,
+                        "languagecode": "en"
+                    }
+                ]
+            }
+        },
+        "required": {
+            "query": "I'm interested in learning more about the hotel with ID 5955189. Can you provide me with its detailed description and general information?",
+            "params": {
+                "hotel_id": "5955189"
+            },
+            "response": {
+                "status": true,
+                "message": "Success",
+                "timestamp": 1747651148436,
+                "data": [
+                    {
+                        "hotel_id": "5955189",
+                        "descriptiontype_id": 6,
+                        "description": "Situated within 3.7 km of Powai Lake and 4.3 km of Indian Institute of Technology, Bombay, FabHotel Elvis Inn - Nr Mumbai International Airport features rooms with air conditioning and a private bathroom in Mumbai. This 3-star hotel offers room service, a 24-hour front desk and free WiFi. The property is non-smoking and is located 4.4 km from Phoenix Market City Mall.\n\nAll rooms at the hotel are fitted with a seating area, a flat-screen TV with cable channels and a private bathroom with free toiletries and a shower. Guest rooms have a wardrobe.\n\nGuests at FabHotel Elvis Inn - Nr Mumbai International Airport can enjoy a continental breakfast.\n\nBombay Exhibition Centre is 8.1 km from the accommodation, while ISKCON is 8.6 km from the property. Chhatrapati Shivaji International Mumbai Airport is 3 km away.",
+                        "languagecode": "en"
+                    },
+                    {
+                        "descriptiontype_id": 7,
+                        "hotel_id": "5955189",
+                        "description": "Couples are welcome here. Guests on Local ID are welcome here. Foreign guests not allowed in this property.\nPlease note due to local licensing guidelines, the property is able to accept Indian nationals only. The property apologises for any inconvenience caused.",
+                        "languagecode": "en"
+                    }
+                ]
+            }
+        },
+        "optional": {
+            "query": "I'd like to know more about the hotel with ID 5955189. Could you provide me with its detailed description and general information in English?",
+            "params": {
+                "hotel_id": "5955189",
+                "languagecode": "en-us"
+            },
+            "response": {
+                "status": true,
+                "message": "Success",
+                "timestamp": 1747651162791,
+                "data": [
+                    {
+                        "descriptiontype_id": 6,
+                        "languagecode": "xu",
+                        "description": "Ideally set in the Powai district of Mumbai, FabHotel Elvis Inn - Nr Mumbai International Airport is located 2.3 miles from Powai Lake, 2.7 miles from Indian Institute of Technology, Bombay and 2.8 miles from Phoenix Market City Mall. This 3-star hotel offers room service, a 24-hour front desk and free WiFi. The hotel has family rooms.\n\nAt the hotel, the rooms include a closet. Complete with a private bathroom equipped with a shower and free toiletries, all rooms at FabHotel Elvis Inn - Nr Mumbai International Airport have a flat-screen TV and air conditioning, and selected rooms also feature a seating area.\n\nGuests at the accommodation can enjoy a continental breakfast.\n\nBombay Exhibition Centre is 5 miles from FabHotel Elvis Inn - Nr Mumbai International Airport, while ISKCON is 5.3 miles from the property. Chhatrapati Shivaji International Mumbai Airport is 1.9 miles away.",
+                        "hotel_id": "5955189"
+                    },
+                    {
+                        "languagecode": "xu",
+                        "description": "Couples are welcome here. Guests on Local ID are welcome here. Foreign guests not allowed in this property.\nPlease note due to local licensing guidelines, the property is able to accept Indian nationals only. The property apologizes for any inconvenience caused.",
+                        "hotel_id": "5955189",
+                        "descriptiontype_id": 7
+                    }
+                ]
+            }
+        }
+    },
+    "row": {
+        "required": {
+            "status": true,
+            "message": "Success",
+            "timestamp": 1747651148436,
+            "data": [
+                {
+                    "hotel_id": "5955189",
+                    "descriptiontype_id": 6,
+                    "description": "Situated within 3.7 km of Powai Lake and 4.3 km of Indian Institute of Technology, Bombay, FabHotel Elvis Inn - Nr Mumbai International Airport features rooms with air conditioning and a private bathroom in Mumbai. This 3-star hotel offers room service, a 24-hour front desk and free WiFi. The property is non-smoking and is located 4.4 km from Phoenix Market City Mall.\n\nAll rooms at the hotel are fitted with a seating area, a flat-screen TV with cable channels and a private bathroom with free toiletries and a shower. Guest rooms have a wardrobe.\n\nGuests at FabHotel Elvis Inn - Nr Mumbai International Airport can enjoy a continental breakfast.\n\nBombay Exhibition Centre is 8.1 km from the accommodation, while ISKCON is 8.6 km from the property. Chhatrapati Shivaji International Mumbai Airport is 3 km away.",
+                    "languagecode": "en"
+                },
+                {
+                    "descriptiontype_id": 7,
+                    "hotel_id": "5955189",
+                    "description": "Couples are welcome here. Guests on Local ID are welcome here. Foreign guests not allowed in this property.\nPlease note due to local licensing guidelines, the property is able to accept Indian nationals only. The property apologises for any inconvenience caused.",
+                    "languagecode": "en"
+                }
+            ]
+        },
+        "optional": {
+            "status": true,
+            "message": "Success",
+            "timestamp": 1747651162791,
+            "data": [
+                {
+                    "descriptiontype_id": 6,
+                    "languagecode": "xu",
+                    "description": "Ideally set in the Powai district of Mumbai, FabHotel Elvis Inn - Nr Mumbai International Airport is located 2.3 miles from Powai Lake, 2.7 miles from Indian Institute of Technology, Bombay and 2.8 miles from Phoenix Market City Mall. This 3-star hotel offers room service, a 24-hour front desk and free WiFi. The hotel has family rooms.\n\nAt the hotel, the rooms include a closet. Complete with a private bathroom equipped with a shower and free toiletries, all rooms at FabHotel Elvis Inn - Nr Mumbai International Airport have a flat-screen TV and air conditioning, and selected rooms also feature a seating area.\n\nGuests at the accommodation can enjoy a continental breakfast.\n\nBombay Exhibition Centre is 5 miles from FabHotel Elvis Inn - Nr Mumbai International Airport, while ISKCON is 5.3 miles from the property. Chhatrapati Shivaji International Mumbai Airport is 1.9 miles away.",
+                    "hotel_id": "5955189"
+                },
+                {
+                    "languagecode": "xu",
+                    "description": "Couples are welcome here. Guests on Local ID are welcome here. Foreign guests not allowed in this property.\nPlease note due to local licensing guidelines, the property is able to accept Indian nationals only. The property apologizes for any inconvenience caused.",
+                    "hotel_id": "5955189",
+                    "descriptiontype_id": 7
+                }
+            ]
+        }
+    }
+}

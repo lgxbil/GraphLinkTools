@@ -1,0 +1,107 @@
+{
+    "name": "Get_Exchange_Rates",
+    "docs_row": {
+        "name": "Get_Exchange_Rates",
+        "endpoint": "/api/v1/meta/getExchangeRates",
+        "func_description": "",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "base_currency": {
+                    "type": "String",
+                    "description": "Base currency.",
+                    "example_value": "USD",
+                    "required": true
+                }
+            },
+            "required": [
+                "base_currency"
+            ]
+        }
+    },
+    "instance": [],
+    "category": null,
+    "tool": null,
+    "api_idx": 49,
+    "params": {
+        "type": "object",
+        "properties": {
+            "base_currency": {
+                "type": "String",
+                "description": "Base currency.",
+                "example_value": "USD",
+                "required": true
+            }
+        },
+        "required": [
+            "base_currency"
+        ]
+    },
+    "responses": [
+        {
+            "function_name": "Get_Exchange_Rates",
+            "arguments": {
+                "base_currency": "USD"
+            },
+            "observation": {
+                "base_currency": "USD",
+                "base_currency_date": "2025-05-18",
+                "exchange_rates": [
+                    {
+                        "currency": "ATS",
+                        "exchange_rate_buy": "12.33502980"
+                    },
+                    {
+                        "currency": "ROL",
+                        "exchange_rate_buy": "44333.27448071"
+                    },
+                    {
+                        "currency": "MVR",
+                        "exchange_rate_buy": "15.41000003"
+                    }
+                ]
+            }
+        }
+    ],
+    "response_summary": "The exchange rates provided are based on the US dollar (USD) as of May 18, 2025. According to the data, one US dollar can be exchanged for approximately 12.34 Austrian schillings (ATS), 44,333.27 Romanian lei (ROL), or 15.41 Maldivian rufiyaa (MVR). These rates represent the buying prices for the respective currencies against the USD on the specified date.",
+    "enhance_func_desc": "This API is essential for financial transactions and travel planning involving currency conversion. It retrieves real-time exchange rates for various currencies against a specified base currency (default USD). The response provides buying rates, enabling users to compare currency values for budgeting, trading, or travel expenses. The base currency parameter allows flexibility for different market needs.",
+    "enhance_params_desc": {
+        "enhanced_parameters": {
+            "base_currency": "The reference currency against which exchange rates are calculated (default: USD)."
+        }
+    },
+    "enhance_resfield_desc": {
+        "response_fields": {
+            "base_currency": {
+                "type": "String",
+                "description": "The base currency code (ISO 4217) against which exchange rates are provided. In this case, it is USD (US Dollar)."
+            },
+            "base_currency_date": {
+                "type": "Date",
+                "description": "The date for which the exchange rates are provided, formatted as YYYY-MM-DD."
+            },
+            "exchange_rates": {
+                "type": "Array",
+                "description": "A list of exchange rates for various currencies against the base currency (USD).",
+                "ar_items": {
+                    "type": "Object",
+                    "description": "An object representing the exchange rate details for a specific currency.",
+                    "ob_properties": {
+                        "currency": {
+                            "type": "String",
+                            "description": "The target currency code (ISO 4217) for which the exchange rate is provided (e.g., ATS, ROL, MVR)."
+                        },
+                        "exchange_rate_buy": {
+                            "type": "String",
+                            "description": "The buying exchange rate from the base currency (USD) to the target currency. Represented as a string to preserve precision."
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "params_desc_list": null,
+    "response_desc_list": null,
+    "depends_on": null,
+    "verified": true
+}

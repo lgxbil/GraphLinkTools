@@ -1,0 +1,79 @@
+{
+    "name": "Vehicle_Supplier_Review",
+    "docs_row": {
+        "name": "Vehicle_Supplier_Review",
+        "description": "Get the reviews for the supplier of a specific vehicle. EndPoint: /api/v1/cars/vehicleSupplierReview",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "vehicle_id": {
+                    "type": "string",
+                    "description": "Vehicle ID. `vehicle_id` can be retrieved from `api/v1/cars/searchCarRentals`**(Search Car Rentals)** endpoint in **Car Rental** collection as `vehicle_id` inside `search_results` object."
+                },
+                "search_key": {
+                    "type": "string",
+                    "description": "`search_key` can be retrieved from `api/v1/cars/searchCarRentals`**(Search Car Rentals)** endpoint in **Car Rental** collection as `search_key`."
+                }
+            },
+            "required": [
+                "vehicle_id",
+                "search_key"
+            ]
+        }
+    },
+    "api_response_schema": {
+        "supplier": {
+            "name": "Sixt",
+            "rating": {
+                "subtitle": "996 reviews",
+                "average": "8.6",
+                "localisedRating": {
+                    "rawValue": 8.6,
+                    "displayValue": "8.6"
+                },
+                "breakdown": [
+                    {
+                        "localisedRating": {
+                            "displayValue": "9.4",
+                            "rawValue": 9.4
+                        },
+                        "title": "Car cleanliness",
+                        "score": "9.4"
+                    }
+                ],
+                "title": "Fabulous"
+            },
+            "title": "Rental company"
+        },
+        "customerReviews": {
+            "reviews": [
+                {
+                    "date": "Wed, Sept 25 2024",
+                    "type": "Couple",
+                    "localisedRating": {
+                        "rawValue": 9.1,
+                        "displayValue": "9.1"
+                    },
+                    "epochDay": 19991,
+                    "negative": "The cost of additional full protection of insurance is quite high",
+                    "rating": "9.1",
+                    "positive": "Sixt is my rental car choice "
+                }
+            ],
+            "title": "Customer reviews",
+            "sort": {
+                "ctaTitle": "Sort by",
+                "options": {
+                    "default": "score.descending",
+                    "items": [
+                        {
+                            "id": "date.ascending",
+                            "label": "Oldest first"
+                        }
+                    ]
+                },
+                "pageTitle": "Sort by"
+            }
+        }
+    }
+}

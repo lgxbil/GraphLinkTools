@@ -16,8 +16,8 @@ class ToolExplore:
         with open(apis_info_path, 'r') as f:
             tool_info = json.load(f)
         self.tool_info = tool_info['functions']
-        self.host = tool_info['host']
-        #获取静态response
+        self.host = None
+        #获取静态response 
         self.static_response = self.get_static_response(static_response_path)
         
         
@@ -45,8 +45,10 @@ class ToolExplore:
 
         # 探索API的各种响应并将响应简洁化
         for i , tool in enumerate(self.tool_info):
-            # if i >= 1 : break
+            if i < 1 : continue
             name = tool['name']
+            if name == "Get_Languages":
+                break
             # if name != "Get_Seat_Map": continue
             print(name)
             params = tool['parameters']
@@ -113,7 +115,7 @@ class ToolExplore:
     def expore_params(self, name, ):
         pass
     def save_to_file(self, api_name, record):
-        output_dir = "/home/snrobot/lin/GraphLinkTools/Tools/func2"
+        output_dir = "/home/snrobot/lin/GraphLinkTools/Tools(1)/func_response"
         os.makedirs(output_dir, exist_ok=True)
         file_path = os.path.join(output_dir, f"{api_name}.json")
         with open(file_path, 'w', encoding='utf-8') as f:
@@ -160,7 +162,7 @@ class ToolExplore:
     
 
 if __name__ == '__main__':
-    api_info_path = "/home/snrobot/lin/GraphLinkTools/Tools/Apis(1).json"
+    api_info_path = "/home/snrobot/lin/GraphLinkTools/Tools(1)/all_apis.json"
     example_path = "/home/snrobot/lin/GraphLinkTools/template/Example.json"
     static_response_path = "/home/snrobot/lin/GraphLinkTools/Tools/Static_Response.json"
     api_response_path = "/home/snrobot/lin/GraphLinkTools/Tools/API_Response.json"

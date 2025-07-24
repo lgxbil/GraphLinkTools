@@ -1,0 +1,194 @@
+{
+    "name": "Search_Attractions",
+    "docs_row": {
+        "name": "Search_Attractions",
+        "endpoint": "/api/v1/attraction/searchAttractions",
+        "func_description": "Search Attraction by trending/attr_book_score/lowest_price. ",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "String",
+                    "description": "id can be retrieved from api/v1/attraction/searchLocation(Search Attraction Location) endpoint in Attraction collection as id inside products or destinations.",
+                    "example_value": "eyJ1ZmkiOi0yMDkyMTc0fQ==",
+                    "required": true
+                },
+                "startDate": {
+                    "type": "Date (yyyy-mm-dd)",
+                    "description": "Sort the data by the start date.",
+                    "example_value": "",
+                    "required": false
+                },
+                "endDate": {
+                    "type": "Date (yyyy-mm-dd)",
+                    "description": "Sort the data by the end date.",
+                    "example_value": "",
+                    "required": false
+                },
+                "sortBy": {
+                    "type": "Enum",
+                    "description": "This parameter orders result by trending, attr_book_score or lowest_price.",
+                    "example_value": "",
+                    "required": false
+                },
+                "page": {
+                    "type": "Number",
+                    "description": "The page number.",
+                    "example_value": "1",
+                    "required": false
+                },
+                "currency_code": {
+                    "type": "String",
+                    "description": "The currency code. currency_code can be retrieved from api/v1/meta/getCurrency(Get Currency) endpoint in Hotels collection.",
+                    "example_value": "INR",
+                    "required": false
+                },
+                "languagecode": {
+                    "type": "String",
+                    "description": "To obtain the response data in a specific language, enter the languagecode. languagecode can be retrieved from api/v1/meta/getLanguages(Get Languages\n) endpoint in Meta collection.",
+                    "example_value": "en-us",
+                    "required": false
+                },
+                "typeFilters": {
+                    "type": "String",
+                    "description": "typeFilters can be retrieved from /api/v1/attraction/searchAttractions(Search Attractions) endpoint in Hotels collection. data->filterOptions-> typeFilters[]-> tagname.\nNote:- typeFilters should be separated by commas if passing multiple values.\nExample: tag1,tag2,tag",
+                    "example_value": "",
+                    "required": false
+                },
+                "priceFilters": {
+                    "type": "String",
+                    "description": "priceFilters can be retrieved from /api/v1/attraction/searchAttractions(Search Attractions) endpoint in Hotels collection. data->filterOptions-> priceFilters[]-> tagname.\nNote:- priceFilters should be separated by commas if passing multiple values.\nExample: tag1,tag2,tag",
+                    "example_value": "",
+                    "required": false
+                },
+                "ufiFilters": {
+                    "type": "String",
+                    "description": "ufiFilters can be retrieved from /api/v1/attraction/searchAttractions(Search Attractions) endpoint in Hotels collection. data->filterOptions-> ufiFilters[]-> tagname.\nNote:- ufiFilters should be separated by commas if passing multiple values.\nExample: tag1,tag2,tag",
+                    "example_value": "",
+                    "required": false
+                },
+                "labelFilters": {
+                    "type": "String",
+                    "description": "labelFilters can be retrieved from /api/v1/attraction/searchAttractions(Search Attractions) endpoint in Hotels collection. data->filterOptions-> labelFilters[]-> tagname.\nNote:- labelFilters should be separated by commas if passing multiple values.\nExample: tag1,tag2,tag",
+                    "example_value": "",
+                    "required": false
+                }
+            },
+            "required": [
+                "id"
+            ]
+        }
+    },
+    "api_response_schema": {
+        "__typename": "AttractionsProductSearchResponse",
+        "products": [
+            {
+                "__typename": "AttractionsProduct",
+                "cancellationPolicy": {
+                    "__typename": "AttractionsCancellationPolicy",
+                    "hasFreeCancellation": true
+                },
+                "id": "PRTfIug9ZgJt",
+                "name": "Mount Titlis Tour with Glacier Attractions",
+                "slug": "prtfiug9zgjt-mount-titlis-tour-with-glacier-attractions",
+                "shortDescription": "A tour of Mount Titlis and a chance to try thrilling activities on a glacier",
+                "representativePrice": {
+                    "__typename": "AttractionsPrice",
+                    "chargeAmount": 198.37,
+                    "currency": "USD",
+                    "publicAmount": 198.37
+                },
+                "reviewsStats": {
+                    "__typename": "AttractionsProductReviewStats",
+                    "allReviewsCount": 66,
+                    "percentage": "97%",
+                    "combinedNumericStats": {
+                        "__typename": "AttractionsProductCombinedReviewStats",
+                        "average": 4.7,
+                        "total": 99
+                    }
+                },
+                "ufiDetails": {
+                    "__typename": "AttractionLocationResponse",
+                    "bCityName": "Z\u00fcrich",
+                    "ufi": -2554935
+                },
+                "offers": [
+                    {
+                        "__typename": "Offer",
+                        "items": [
+                            {
+                                "__typename": "OfferItem",
+                                "id": "OIuDK2GQg9KW"
+                            }
+                        ]
+                    }
+                ],
+                "supportedFeatures": {
+                    "__typename": "AttractionsProductSupportedFeatures",
+                    "nativeApp": true
+                },
+                "flags": [
+                    {
+                        "__typename": "AttractionsProductFlags",
+                        "flag": "bestsellerForActivities",
+                        "value": true,
+                        "rank": 1
+                    }
+                ]
+            }
+        ],
+        "filterStats": {
+            "__typename": "FilterStats",
+            "unfilteredProductCount": 482,
+            "filteredProductCount": 482
+        },
+        "sorters": [
+            {
+                "__typename": "AttractionsSorterOption",
+                "name": "Lowest price",
+                "value": "lowest_price"
+            }
+        ],
+        "defaultSorter": {
+            "__typename": "AttractionsSorterOption",
+            "name": "Our top picks",
+            "value": "trending"
+        },
+        "filterOptions": {
+            "__typename": "FilterOptions",
+            "typeFilters": [
+                {
+                    "__typename": "FilterOption",
+                    "name": "Food & drinks",
+                    "tagname": "food-drinks",
+                    "productCount": 1
+                }
+            ],
+            "labelFilters": [
+                {
+                    "__typename": "FilterOption",
+                    "name": "Free cancellation",
+                    "tagname": "free_cancellation",
+                    "productCount": 418
+                }
+            ],
+            "ufiFilters": [
+                {
+                    "__typename": "FilterOption",
+                    "name": "Z\u00fcrich",
+                    "tagname": "-2554935",
+                    "productCount": 482
+                }
+            ],
+            "priceFilters": [
+                {
+                    "__typename": "FilterOption",
+                    "name": "US$138+",
+                    "tagname": "b4",
+                    "productCount": 382
+                }
+            ]
+        }
+    }
+}

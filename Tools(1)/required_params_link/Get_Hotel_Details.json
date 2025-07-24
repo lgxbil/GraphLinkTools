@@ -1,0 +1,308 @@
+{
+    "name": "Get_Hotel_Details",
+    "docs_row": {
+        "name": "Get_Hotel_Details",
+        "endpoint": "/api/v1/hotels/getHotelDetails",
+        "func_description": "Retrieve detail information for a specific hotel. ",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "hotel_id": {
+                    "type": "String",
+                    "description": "hotel_id can be retrieved from api/v1/hotels/searchHotels(Search Hotels) or api/v1/hotels/searchHotelsByCoordinates(Search Hotels By Coordinates\n) endpoint in Hotels collection.",
+                    "example_value": "191605",
+                    "required": true
+                },
+                "arrival_date": {
+                    "type": "Date (yyyy-mm-dd)",
+                    "description": "The date on which you will arrive or check-in",
+                    "example_value": "",
+                    "required": true
+                },
+                "departure_date": {
+                    "type": "Date (yyyy-mm-dd)",
+                    "description": "The date of departure or check-out.",
+                    "example_value": "",
+                    "required": true
+                },
+                "adults": {
+                    "type": "Number",
+                    "description": "The number of guests who are 18 years of age or older. The default value is set to 1.",
+                    "example_value": "1",
+                    "required": false
+                },
+                "children_age": {
+                    "type": "String",
+                    "description": "The number of children, including infants, who are under 18.\nExample:\nChild 1 Age = 8 months\nChild 2 Age = 1 year\nChild 3 Age = 17 years\nHere is what the request parameter would look like:\nchildren_age: 0,1,17",
+                    "example_value": "1,17",
+                    "required": false
+                },
+                "room_qty": {
+                    "type": "Number",
+                    "description": "The number of rooms that are required. The default value is set to 1.",
+                    "example_value": "1",
+                    "required": false
+                },
+                "units": {
+                    "type": "Enum",
+                    "description": "The measurement of distance in metric or imperial.",
+                    "example_value": "",
+                    "required": false
+                },
+                "temperature_unit": {
+                    "type": "Enum",
+                    "description": "The temperature unit in Fahrenheit or Celsius.\nc = Celsius\nf = Fahrenheit",
+                    "example_value": "",
+                    "required": false
+                },
+                "languagecode": {
+                    "type": "String",
+                    "description": "To obtain the response data in a specific language, enter the languagecode. languagecode can be retrieved from api/v1/meta/getLanguages(Get Languages\n) endpoint in Meta collection.",
+                    "example_value": "en-us",
+                    "required": false
+                },
+                "currency_code": {
+                    "type": "String",
+                    "description": "The currency code. currency_code can be retrieved from api/v1/meta/getCurrency(Get Currency) endpoint in Hotels collection.",
+                    "example_value": "EUR",
+                    "required": false
+                }
+            },
+            "required": [
+                "hotel_id",
+                "arrival_date",
+                "departure_date"
+            ]
+        }
+    },
+    "instance": [],
+    "category": null,
+    "tool": null,
+    "api_idx": 39,
+    "params": {
+        "type": "object",
+        "properties": {
+            "hotel_id": {
+                "type": "String",
+                "description": "hotel_id can be retrieved from api/v1/hotels/searchHotels(Search Hotels) or api/v1/hotels/searchHotelsByCoordinates(Search Hotels By Coordinates\n) endpoint in Hotels collection.",
+                "example_value": "191605",
+                "required": true
+            },
+            "arrival_date": {
+                "type": "Date (yyyy-mm-dd)",
+                "description": "The date on which you will arrive or check-in",
+                "example_value": "",
+                "required": true
+            },
+            "departure_date": {
+                "type": "Date (yyyy-mm-dd)",
+                "description": "The date of departure or check-out.",
+                "example_value": "",
+                "required": true
+            },
+            "adults": {
+                "type": "Number",
+                "description": "The number of guests who are 18 years of age or older. The default value is set to 1.",
+                "example_value": "1",
+                "required": false
+            },
+            "children_age": {
+                "type": "String",
+                "description": "The number of children, including infants, who are under 18.\nExample:\nChild 1 Age = 8 months\nChild 2 Age = 1 year\nChild 3 Age = 17 years\nHere is what the request parameter would look like:\nchildren_age: 0,1,17",
+                "example_value": "1,17",
+                "required": false
+            },
+            "room_qty": {
+                "type": "Number",
+                "description": "The number of rooms that are required. The default value is set to 1.",
+                "example_value": "1",
+                "required": false
+            },
+            "units": {
+                "type": "Enum",
+                "description": "The measurement of distance in metric or imperial.",
+                "example_value": "",
+                "required": false
+            },
+            "temperature_unit": {
+                "type": "Enum",
+                "description": "The temperature unit in Fahrenheit or Celsius.\nc = Celsius\nf = Fahrenheit",
+                "example_value": "",
+                "required": false
+            },
+            "languagecode": {
+                "type": "String",
+                "description": "To obtain the response data in a specific language, enter the languagecode. languagecode can be retrieved from api/v1/meta/getLanguages(Get Languages\n) endpoint in Meta collection.",
+                "example_value": "en-us",
+                "required": false
+            },
+            "currency_code": {
+                "type": "String",
+                "description": "The currency code. currency_code can be retrieved from api/v1/meta/getCurrency(Get Currency) endpoint in Hotels collection.",
+                "example_value": "EUR",
+                "required": false
+            }
+        },
+        "required": [
+            "hotel_id",
+            "arrival_date",
+            "departure_date"
+        ]
+    },
+    "responses": [],
+    "response_summary": null,
+    "enhance_func_desc": null,
+    "enhance_params_desc": {
+        "enhanced_parameters": {
+            "hotel_id": "Unique identifier for the hotel, sourced from search endpoints.",
+            "arrival_date": "Check-in date for the hotel stay.",
+            "departure_date": "Check-out date for the hotel stay.",
+            "adults": "Number of adult guests (18+ years). Default is 1.",
+            "children_age": "Ages of children (under 18) in comma-separated values.",
+            "room_qty": "Number of rooms required. Default is 1.",
+            "units": "Distance measurement system (metric/imperial).",
+            "temperature_unit": "Temperature scale (Celsius/Fahrenheit).",
+            "languagecode": "Language preference for response data.",
+            "currency_code": "Currency for displaying hotel prices."
+        }
+    },
+    "enhance_resfield_desc": null,
+    "params_desc_list": null,
+    "response_desc_list": null,
+    "depends_on": [
+        {
+            "source_api_name": "Search_Hotels",
+            "dependence_type": "Hard Dependency",
+            "depencend_field": "$.hotels[*].hotel_id",
+            "param_name": "hotel_id",
+            "reason": "The 'Search_Hotels' API is a necessary prerequisite for calling the 'Get_Hotel_Details' API as it provides the 'hotel_id' parameter required by the target API. The 'hotels[].hotel_id' field from 'Search_Hotels' matches the 'String' type expected by 'hotel_id' in 'Get_Hotel_Details', despite the example showing numeric values (which can be converted to strings). This represents a hard dependency as the target API cannot be called without first obtaining a valid hotel_id from the search API."
+        },
+        {
+            "source_api_name": "Get_Question_And_Answer",
+            "dependence_type": "Hard Dependency",
+            "depencend_field": "$.hotel_id",
+            "param_name": "hotel_id",
+            "reason": "The 'Get_Question_And_Answer' API provides the 'hotel_id' field in its response, which is explicitly mentioned as a required parameter for the 'Get_Hotel_Details' API. This establishes a hard dependency, as the target API cannot be called without this identifier. The data types match (both are Strings), and the example value demonstrates the field contains valid hotel IDs that would work as input for the target API."
+        },
+        {
+            "source_api_name": "Get_Question_And_Answer",
+            "dependence_type": "Hard Dependency",
+            "depencend_field": "$.q_and_a_pairs[*].hotel_id",
+            "param_name": "hotel_id",
+            "reason": "The 'Get_Question_And_Answer' API provides hotel_id values in its response, which are exactly what the 'Get_Hotel_Details' API requires as input for its 'hotel_id' parameter. This establishes a hard dependency because the target API explicitly states that the hotel_id must be obtained from search endpoints or similar sources, and the source API's response contains this necessary identifier. The data types match (String vs. Number in examples, but numeric IDs are commonly treated as strings in APIs), and the business relationship is clear as both APIs operate within the same hotel information domain."
+        },
+        {
+            "source_api_name": "Get_Hotel_Reviews(Tips)",
+            "dependence_type": "Hard Dependency",
+            "depencend_field": "$.result[*].hotel_id",
+            "param_name": "hotel_id",
+            "reason": "The 'Get_Hotel_Reviews(Tips)' API provides hotel_id values in its response, which exactly matches the parameter requirement for the 'Get_Hotel_Details' API. This establishes a hard dependency relationship since the hotel_id from reviews can directly serve as input for retrieving hotel details. The data types match (String vs. Number in examples, but both represent identifiers), and the field clearly contains the necessary information for the target parameter."
+        },
+        {
+            "source_api_name": "Get_Hotel_Policies",
+            "dependence_type": "Hard Dependency",
+            "depencend_field": "$.hotel_id",
+            "param_name": "hotel_id",
+            "reason": "The 'Get_Hotel_Policies' API provides the 'hotel_id' field which is a direct match for the 'hotel_id' parameter required by the 'Get_Hotel_Details' API. This represents a hard dependency as the hotel ID from the policies API is essential for retrieving detailed hotel information. The data types match (String vs. Number in example, but typically interchangeable for IDs), and the field directly corresponds to the required parameter."
+        },
+        {
+            "source_api_name": "Get_Room_List",
+            "dependence_type": "Hard Dependency",
+            "depencend_field": "$.hotel_id",
+            "param_name": "hotel_id",
+            "reason": "The 'Get_Room_List' API provides a 'hotel_id' field which is exactly what the 'Get_Hotel_Details' API requires as input. This represents a hard dependency as the 'Get_Room_List' API must be called first to obtain the hotel_id before calling 'Get_Hotel_Details'. The data types match (String vs Number but can be converted), and the field directly corresponds to the required parameter."
+        },
+        {
+            "source_api_name": "Get_Hotel_Review_Scores",
+            "dependence_type": "Hard Dependency",
+            "depencend_field": "$[*].hotel_id",
+            "param_name": "hotel_id",
+            "reason": "The 'Get_Hotel_Review_Scores' API provides review scores for hotels, and the 'hotel_id' in its response can be directly used as input for the 'hotel_id' parameter in the 'Get_Hotel_Details' API. This establishes a hard dependency because the target API explicitly requires a hotel_id that must be obtained from search endpoints, and the source API provides this exact identifier. The data types match (String in target, Number in source but can be easily converted), and the business relationship is clear as both APIs operate on the same hotel entities."
+        },
+        {
+            "source_api_name": "Get_Hotel_Reviews_Filter_Metadata",
+            "dependence_type": "Hard Dependency",
+            "depencend_field": "$.hotel_id",
+            "param_name": "hotel_id",
+            "reason": "The 'Get_Hotel_Reviews_Filter_Metadata' API provides a 'hotel_id' field in its response, which matches the 'hotel_id' parameter required by the 'Get_Hotel_Details' API. This establishes a hard dependency as the hotel_id from the reviews filter metadata is directly usable for fetching hotel details. The data types match (both are Strings), and the example value demonstrates the correct format for the target API parameter."
+        },
+        {
+            "source_api_name": "Search_Hotels_By_Coordinates",
+            "dependence_type": "Hard Dependency",
+            "depencend_field": "$.result[*].hotel_id",
+            "param_name": "hotel_id",
+            "reason": "There is a clear business association between the 'Search_Hotels_By_Coordinates' API and the 'Get_Hotel_Details' API, as the former provides the hotel_id which is a required parameter for the latter. The 'hotel_id' field from the source API matches exactly with the target parameter's requirement in terms of data type and purpose. This represents a hard dependency as the search API must be called first to obtain the hotel_id before the details API can be used."
+        },
+        {
+            "source_api_name": "Get_Description_And_Info",
+            "dependence_type": "Hard Dependency",
+            "depencend_field": "$[*].hotel_id",
+            "param_name": "hotel_id",
+            "reason": "The 'Get_Description_And_Info' API provides detailed information about hotels, including the 'hotel_id' field which matches exactly with the 'hotel_id' parameter required by the 'Get_Hotel_Details' API. This establishes a hard dependency as the 'hotel_id' from the source API is a necessary prerequisite for calling the target API. The data types match (both are Strings), and the example values confirm that the field can be directly used as input for the target parameter."
+        },
+        {
+            "source_api_name": "Get_Room_List",
+            "dependence_type": "Hard Dependency",
+            "depencend_field": "$.arrival_date",
+            "param_name": "arrival_date",
+            "reason": "There is a direct business association between the 'Get_Room_List' API and the 'Get_Hotel_Details' API, as both are related to hotel booking processes. The 'arrival_date' field from 'Get_Room_List' matches exactly with the 'arrival_date' parameter required by 'Get_Hotel_Details' in both data type (Date (yyyy-mm-dd)) and purpose (check-in date for hotel stay). This represents a hard dependency as the room list API provides essential information needed for the hotel details API."
+        },
+        {
+            "source_api_name": "Search_Hotels",
+            "dependence_type": "Hard Dependency",
+            "depencend_field": "$.hotels[*].property.checkinDate",
+            "param_name": "arrival_date",
+            "reason": "There is a clear business association between the 'Search_Hotels' API and the 'Get_Hotel_Details' API, as they are part of the same hotel booking workflow. The 'checkinDate' field from the 'Search_Hotels' response matches the 'arrival_date' parameter in both data type (Date (yyyy-mm-dd)) and purpose (check-in date for hotel stay). This represents a hard dependency as the 'Search_Hotels' API is typically called before 'Get_Hotel_Details' to obtain hotel information including check-in dates."
+        },
+        {
+            "source_api_name": "Get_Room_Availability",
+            "dependence_type": "Hard Dependency",
+            "depencend_field": "$.lengthsOfStay[*].date",
+            "param_name": "arrival_date",
+            "reason": "There is a strong business association between checking room availability and getting hotel details, as both operations are typically performed in sequence when planning a hotel stay. The 'lengthsOfStay[].date' field from 'Get_Room_Availability' matches the 'Date (yyyy-mm-dd)' format required by 'arrival_date' in 'Get_Hotel_Details'. This represents a hard dependency as the room availability API provides the necessary date information that would logically be used when requesting detailed hotel information for those specific dates."
+        },
+        {
+            "source_api_name": "Get_Room_List",
+            "dependence_type": "Soft Dependency",
+            "depencend_field": "$.block[*].transactional_policy_data.booking_conditions[*].parameters[?(@.type=='datetime')].value",
+            "param_name": "arrival_date",
+            "reason": "The 'Get_Room_List' API provides detailed information about hotel rooms, including cancellation policies that reference specific dates. The 'parameters.date' field within the cancellation policy contains a datetime value that includes the date in 'yyyy-mm-dd' format, which matches the required format for the 'arrival_date' parameter in the 'Get_Hotel_Details' API. This represents a soft dependency as the room list API isn't strictly required for getting hotel details but provides useful input for a common user workflow where they might want to check details for specific dates mentioned in room policies."
+        },
+        {
+            "source_api_name": "Get_Room_List",
+            "dependence_type": "Soft Dependency",
+            "depencend_field": "$.block[*].transactional_policy_data.booking_conditions[*].parameters[?(@.type=='datetime')].value",
+            "param_name": "arrival_date",
+            "reason": "The 'Get_Room_List' API provides cancellation policy details that include a datetime parameter which contains the date information in 'yyyy-mm-dd' format. This date represents the cancellation deadline, which is typically close to the arrival date. While not a direct match, this date could be used to infer or suggest a potential arrival date for the 'Get_Hotel_Details' API. The data type matches (yyyy-mm-dd), and the business context suggests a relationship where cancellation dates are related to stay dates."
+        },
+        {
+            "source_api_name": "Get_Room_List",
+            "dependence_type": "Hard Dependency",
+            "depencend_field": "$.departure_date",
+            "param_name": "departure_date",
+            "reason": "There is a clear business association between the 'Get_Room_List' API and the 'Get_Hotel_Details' API, as both are related to hotel stay information. The 'departure_date' field from 'Get_Room_List' matches exactly with the 'departure_date' parameter required by 'Get_Hotel_Details' in terms of data type (Date yyyy-mm-dd) and purpose (check-out date for hotel stay). This represents a hard dependency as the room list API provides essential information needed for hotel details retrieval."
+        },
+        {
+            "source_api_name": "Search_Hotels",
+            "dependence_type": "Hard Dependency",
+            "depencend_field": "$.hotels[*].property.checkoutDate",
+            "param_name": "departure_date",
+            "reason": "There is a clear business association between the 'Search_Hotels' API and the 'Get_Hotel_Details' API, as they both pertain to hotel bookings. The 'checkoutDate' field from the 'Search_Hotels' API response can directly serve as the 'departure_date' parameter for the 'Get_Hotel_Details' API. Both fields share the same data type (Date in yyyy-mm-dd format) and represent the same business concept of a hotel check-out date. This represents a hard dependency as the 'Search_Hotels' API is typically called before 'Get_Hotel_Details' in a standard hotel booking workflow."
+        },
+        {
+            "source_api_name": "Get_Min_Price",
+            "dependence_type": "Soft Dependency",
+            "depencend_field": "$[*].departureDate",
+            "param_name": "departure_date",
+            "reason": "While the APIs serve different functions (flight pricing vs. hotel details), there's a potential business relationship where travelers might use flight departure dates to determine their hotel check-out dates. The 'departureDate' field from 'Get_Min_Price' matches the 'Date (yyyy-mm-dd)' format required by 'departure_date' in 'Get_Hotel_Details'. However, this represents a soft dependency as the flight API isn't strictly required for hotel details but could provide useful input for travel planning."
+        },
+        {
+            "source_api_name": "Get_Room_Availability",
+            "dependence_type": "Hard Dependency",
+            "depencend_field": "$.lengthsOfStay[*].date",
+            "param_name": "departure_date",
+            "reason": "The 'Get_Room_Availability' API provides dates for which rooms are available, which directly relates to the 'departure_date' parameter needed for 'Get_Hotel_Details'. The field 'lengthsOfStay[*].date' from the source API matches the 'Date (yyyy-mm-dd)' format required by the target API's 'departure_date' parameter. This represents a hard dependency as the room availability API provides essential date information that would logically be used to determine check-out dates when booking a hotel."
+        }
+    ],
+    "verified": false
+}

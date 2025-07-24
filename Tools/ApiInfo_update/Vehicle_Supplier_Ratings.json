@@ -1,0 +1,297 @@
+{
+    "name": "Vehicle_Supplier_Ratings",
+    "docs_row": {
+        "name": "Vehicle_Supplier_Ratings",
+        "endpoint": "/api/v1/cars/vehicleSupplierRatings",
+        "func_description": "Retrieve ratings for the supplier of a specific vehicle. ",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "vehicle_id": {
+                    "type": "String",
+                    "description": "Vehicle ID. vehicle_id can be retrieved from api/v1/cars/searchCarRentals(Search Car Rentals) endpoint in Car Rental collection as vehicle_id inside search_results object.",
+                    "example_value": "373025711",
+                    "required": true
+                },
+                "search_key": {
+                    "type": "String",
+                    "description": "search_key can be retrieved from api/v1/cars/searchCarRentals(Search Car Rentals) endpoint in Car Rental collection as search_key.",
+                    "example_value": "eyJkcml2ZXJzQWdlIjozMCwiZHJvcE9mZkRhdGVUaW1lIjoiMjAyMy0xMS0xN1QxMDowMDowMCIsImRyb3BPZmZMb2NhdGlvbiI6IjQwLjYzOTcwMTg0MzI2MTcsLTczLjc3OTE5NzY5Mjg3MTEiLCJkcm9wT2ZmTG9jYXRpb25UeXBlIjoiTEFUTE9ORyIsInBpY2tVcERhdGVUaW1lIjoiMjAyMy0xMS0xNVQxMDowMDowMCIsInBpY2tVcExvY2F0aW9uIjoiNDAuNjM5NzAxODQzMjYxNywtNzMuNzc5MTk3NjkyODcxMSIsInBpY2tVcExvY2F0aW9uVHlwZSI6IkxBVExPTkciLCJyZW50YWxEdXJhdGlvbkluRGF5cyI6Miwic2VydmljZUZlYXR1cmVzIjpbIk5PX09QQVFVRVMiLCJTVVBSRVNTX0ZJWEVEX1BSSUNFX1ZFSElDTEVTIl19",
+                    "required": true
+                },
+                "languagecode": {
+                    "type": "String",
+                    "description": "To obtain the response data in a specific language, enter the languagecode. languagecode can be retrieved from api/v1/meta/getLanguages(Get Languages\n) endpoint in Meta collection.",
+                    "example_value": "",
+                    "required": false
+                },
+                "currency_code": {
+                    "type": "String",
+                    "description": "The currency code. currency_code can be retrieved from api/v1/meta/getCurrency(Get Currency) endpoint in Hotels collection.",
+                    "example_value": "USD",
+                    "required": false
+                }
+            },
+            "required": [
+                "vehicle_id",
+                "search_key"
+            ]
+        }
+    },
+    "instance": [],
+    "category": null,
+    "tool": null,
+    "api_idx": 45,
+    "params": {
+        "type": "object",
+        "properties": {
+            "vehicle_id": {
+                "type": "String",
+                "description": "Vehicle ID. vehicle_id can be retrieved from api/v1/cars/searchCarRentals(Search Car Rentals) endpoint in Car Rental collection as vehicle_id inside search_results object.",
+                "example_value": "373025711",
+                "required": true
+            },
+            "search_key": {
+                "type": "String",
+                "description": "search_key can be retrieved from api/v1/cars/searchCarRentals(Search Car Rentals) endpoint in Car Rental collection as search_key.",
+                "example_value": "eyJkcml2ZXJzQWdlIjozMCwiZHJvcE9mZkRhdGVUaW1lIjoiMjAyMy0xMS0xN1QxMDowMDowMCIsImRyb3BPZmZMb2NhdGlvbiI6IjQwLjYzOTcwMTg0MzI2MTcsLTczLjc3OTE5NzY5Mjg3MTEiLCJkcm9wT2ZmTG9jYXRpb25UeXBlIjoiTEFUTE9ORyIsInBpY2tVcERhdGVUaW1lIjoiMjAyMy0xMS0xNVQxMDowMDowMCIsInBpY2tVcExvY2F0aW9uIjoiNDAuNjM5NzAxODQzMjYxNywtNzMuNzc5MTk3NjkyODcxMSIsInBpY2tVcExvY2F0aW9uVHlwZSI6IkxBVExPTkciLCJyZW50YWxEdXJhdGlvbkluRGF5cyI6Miwic2VydmljZUZlYXR1cmVzIjpbIk5PX09QQVFVRVMiLCJTVVBSRVNTX0ZJWEVEX1BSSUNFX1ZFSElDTEVTIl19",
+                "required": true
+            },
+            "languagecode": {
+                "type": "String",
+                "description": "To obtain the response data in a specific language, enter the languagecode. languagecode can be retrieved from api/v1/meta/getLanguages(Get Languages\n) endpoint in Meta collection.",
+                "example_value": "",
+                "required": false
+            },
+            "currency_code": {
+                "type": "String",
+                "description": "The currency code. currency_code can be retrieved from api/v1/meta/getCurrency(Get Currency) endpoint in Hotels collection.",
+                "example_value": "USD",
+                "required": false
+            }
+        },
+        "required": [
+            "vehicle_id",
+            "search_key"
+        ]
+    },
+    "responses": [
+        {
+            "function_name": "Vehicle_Supplier_Ratings",
+            "arguments": {
+                "vehicle_id": "755355561",
+                "search_key": "eyJkcml2ZXJzQWdlIjozMCwiZHJvcE9mZkRhdGVUaW1lIjoiMjAyNC0xMi0wN1QxMzowMDowMCIsImRyb3BPZmZMb2NhdGlvbiI6IjQ2LjIzMTA5ODE3NTA0ODgsNi4xMDc4MTAwMjA0NDY3OCIsImRyb3BPZmZMb2NhdGlvblR5cGUiOiJMQVRMT05HIiwicGlja1VwRGF0ZVRpbWUiOiIyMDI0LTEyLTAxVDE1OjAwOjAwIiwicGlja1VwTG9jYXRpb24iOiI0Ny40NTE5MDA0ODIxNzc3LDguNTYyODA5OTQ0MTUyODMiLCJwaWNrVXBMb2NhdGlvblR5cGUiOiJMQVRMT05HIiwicmVudGFsRHVyYXRpb25JbkRheXMiOjYsInNlcnZpY2VGZWF0dXJlcyI6WyJOT19PUEFRVUVTIiwiU1VQUkVTU19GSVhFRF9QUklDRV9WRUhJQ0xFUyIsIklOQ0xVREVfUFJPRFVDVF9SRUxBVElPTlNISVBTIiwiSU5DTFVERV9FWFRSQVNfQ09OVEFJTklOR19GRUVTIl19"
+            },
+            "observation": {
+                "name": "Europcar",
+                "rating": {
+                    "average": "8.9",
+                    "title": "Fabulous",
+                    "localisedRating": {
+                        "displayValue": "8.9",
+                        "rawValue": 8.9
+                    },
+                    "subtitle": "3,652 reviews",
+                    "breakdown": [
+                        {
+                            "localisedRating": {
+                                "displayValue": "8.4",
+                                "rawValue": 8.4
+                            },
+                            "score": "8.4",
+                            "title": "Overall value for money of your vehicle hire"
+                        },
+                        {
+                            "title": "Helpfulness",
+                            "score": "9.1",
+                            "localisedRating": {
+                                "rawValue": 9.1,
+                                "displayValue": "9.1"
+                            }
+                        },
+                        {
+                            "score": "8.3",
+                            "title": "Pick-up speed",
+                            "localisedRating": {
+                                "rawValue": 8.3,
+                                "displayValue": "8.3"
+                            }
+                        }
+                    ]
+                },
+                "title": "Rental company"
+            }
+        }
+    ],
+    "response_summary": "Europcar is a well-regarded rental company with an overall fabulous rating of 8.9 based on 3,652 reviews. Customers have particularly praised the company for its helpfulness, which received a high score of 9.1. The overall value for money of the vehicle hire was rated 8.4, while the pick-up speed was also positively reviewed with a score of 8.3. These ratings reflect a strong performance across key aspects of the rental experience.",
+    "enhance_func_desc": "This API is ideal for evaluating car rental suppliers before booking. It retrieves detailed ratings and reviews for a specific vehicle supplier, including overall score, helpfulness, value for money, and pick-up speed. The response provides insights into customer satisfaction, helping users make informed rental decisions. Vehicle ID and search key must be obtained from the SearchCarRentals API.",
+    "enhance_params_desc": {
+        "enhanced_parameters": {
+            "vehicle_id": "Unique identifier for the rental vehicle, sourced from searchCarRentals endpoint.",
+            "search_key": "Encoded search parameters including rental dates and locations.",
+            "languagecode": "Language preference for the response data.",
+            "currency_code": "Currency for displaying rental prices and fees."
+        }
+    },
+    "enhance_resfield_desc": {
+        "response_fields": {
+            "name": {
+                "type": "String",
+                "description": "The name of the rental company."
+            },
+            "rating": {
+                "type": "Object",
+                "description": "Contains detailed information about the company's ratings.",
+                "ob_properties": {
+                    "average": {
+                        "type": "String",
+                        "description": "The average rating of the company as a string."
+                    },
+                    "title": {
+                        "type": "String",
+                        "description": "A title describing the overall rating (e.g., 'Fabulous')."
+                    },
+                    "localisedRating": {
+                        "type": "Object",
+                        "description": "Contains both the display and raw values of the average rating.",
+                        "ob_properties": {
+                            "displayValue": {
+                                "type": "String",
+                                "description": "The average rating formatted for display."
+                            },
+                            "rawValue": {
+                                "type": "Number",
+                                "description": "The numerical value of the average rating."
+                            }
+                        }
+                    },
+                    "subtitle": {
+                        "type": "String",
+                        "description": "A subtitle indicating the number of reviews."
+                    },
+                    "breakdown": {
+                        "type": "Array",
+                        "description": "A list of individual rating categories with their respective scores.",
+                        "ar_items": {
+                            "type": "Object",
+                            "description": "A category of rating with its score and title.",
+                            "ob_properties": {
+                                "localisedRating": {
+                                    "type": "Object",
+                                    "description": "Contains both the display and raw values of the category rating.",
+                                    "ob_properties": {
+                                        "displayValue": {
+                                            "type": "String",
+                                            "description": "The category rating formatted for display."
+                                        },
+                                        "rawValue": {
+                                            "type": "Number",
+                                            "description": "The numerical value of the category rating."
+                                        }
+                                    }
+                                },
+                                "score": {
+                                    "type": "String",
+                                    "description": "The score of the category as a string."
+                                },
+                                "title": {
+                                    "type": "String",
+                                    "description": "The title of the rating category (e.g., 'Overall value for money of your vehicle hire')."
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "title": {
+                "type": "String",
+                "description": "A general title describing the type of company (e.g., 'Rental company')."
+            }
+        }
+    },
+    "params_desc_list": null,
+    "response_desc_list": [
+        {
+            "path_name": "name",
+            "name": "name",
+            "description": "The name of the rental company."
+        },
+        {
+            "path_name": "rating",
+            "name": "rating",
+            "description": "Contains detailed information about the company's ratings."
+        },
+        {
+            "path_name": "rating.average",
+            "name": "average",
+            "description": "The average rating of the company as a string."
+        },
+        {
+            "path_name": "rating.title",
+            "name": "title",
+            "description": "A title describing the overall rating (e.g., 'Fabulous')."
+        },
+        {
+            "path_name": "rating.localisedRating",
+            "name": "localisedRating",
+            "description": "Contains both the display and raw values of the average rating."
+        },
+        {
+            "path_name": "rating.localisedRating.displayValue",
+            "name": "displayValue",
+            "description": "The average rating formatted for display."
+        },
+        {
+            "path_name": "rating.localisedRating.rawValue",
+            "name": "rawValue",
+            "description": "The numerical value of the average rating."
+        },
+        {
+            "path_name": "rating.subtitle",
+            "name": "subtitle",
+            "description": "A subtitle indicating the number of reviews."
+        },
+        {
+            "path_name": "rating.breakdown",
+            "name": "breakdown",
+            "description": "A list of individual rating categories with their respective scores."
+        },
+        {
+            "path_name": "rating.breakdown[]",
+            "name": "breakdown[]",
+            "description": "A category of rating with its score and title."
+        },
+        {
+            "path_name": "rating.breakdown[].localisedRating",
+            "name": "localisedRating",
+            "description": "Contains both the display and raw values of the category rating."
+        },
+        {
+            "path_name": "rating.breakdown[].localisedRating.displayValue",
+            "name": "displayValue",
+            "description": "The category rating formatted for display."
+        },
+        {
+            "path_name": "rating.breakdown[].localisedRating.rawValue",
+            "name": "rawValue",
+            "description": "The numerical value of the category rating."
+        },
+        {
+            "path_name": "rating.breakdown[].score",
+            "name": "score",
+            "description": "The score of the category as a string."
+        },
+        {
+            "path_name": "rating.breakdown[].title",
+            "name": "title",
+            "description": "The title of the rating category (e.g., 'Overall value for money of your vehicle hire')."
+        },
+        {
+            "path_name": "title",
+            "name": "title",
+            "description": "A general title describing the type of company (e.g., 'Rental company')."
+        }
+    ],
+    "depends_on": null,
+    "verified": true
+}

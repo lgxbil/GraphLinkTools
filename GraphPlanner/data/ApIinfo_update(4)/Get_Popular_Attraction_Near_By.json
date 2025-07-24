@@ -1,0 +1,41 @@
+{
+    "name": "Get_Popular_Attraction_Near_By",
+    "docs_row": {
+        "name": "Get_Popular_Attraction_Near_By",
+        "description": "Search for popular attractions around a given hotel. EndPoint: /api/v1/hotels/getPopularAttractionNearBy",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "hotel_id": {
+                    "type": "string",
+                    "description": " `hotel_id` can be retrieved from `api/v1/hotels/searchHotels`**(Search Hotels)** or `api/v1/hotels/searchHotelsByCoordinates`**(Search Hotels By Coordinates\n)** endpoint in **Hotels** collection."
+                }
+            },
+            "required": [
+                "hotel_id"
+            ]
+        }
+    },
+    "api_response_schema": {
+        "popular_landmarks": [
+            {
+                "longitude": -117.197339,
+                "tag": "Old Town San Diego State Historic Park",
+                "average_out_of_10": 9.1,
+                "total_votes": 497,
+                "latitude": 32.754658,
+                "distance": 3.14549485272024
+            }
+        ],
+        "closest_landmarks": [
+            {
+                "longitude": -117.25308,
+                "average_out_of_10": "9.0",
+                "tag": "Torrey Pines State Reserve",
+                "total_votes": 8,
+                "distance": 12.0808978098334,
+                "latitude": 32.920895
+            }
+        ]
+    }
+}

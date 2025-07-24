@@ -1,0 +1,157 @@
+{
+    "name": "Search_Restaurants",
+    "docs_row": {
+        "name": "Search_Restaurants",
+        "endpoint": "https://tripadvisor-scraper.p.rapidapi.com/restaurants/search",
+        "func_description": "",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "query": {
+                    "type": "String",
+                    "description": "",
+                    "example_value": "new york",
+                    "required": true
+                }
+            },
+            "required": [
+                "query"
+            ]
+        }
+    },
+    "instance": [],
+    "category": null,
+    "tool": null,
+    "api_idx": 9,
+    "params": {
+        "type": "object",
+        "properties": {
+            "query": {
+                "type": "String",
+                "description": "",
+                "example_value": "new york",
+                "required": true
+            }
+        },
+        "required": [
+            "query"
+        ]
+    },
+    "responses": [
+        {
+            "function_name": "Search_Restaurants",
+            "arguments": {
+                "query": "New York"
+            },
+            "observation": [
+                {
+                    "id": 60763,
+                    "name": "New York City",
+                    "link": "https://www.tripadvisor.com/Restaurants-g60763-New_York_City_New_York.html",
+                    "type": "city",
+                    "thumbnail_url": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1c/c5/7c/68/caption.jpg",
+                    "latitude": 40.713238,
+                    "longitude": -74.00584
+                },
+                {
+                    "id": 28953,
+                    "name": "New York",
+                    "link": "https://www.tripadvisor.com/Restaurants-g28953-New_York.html",
+                    "type": "state",
+                    "thumbnail_url": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/10/eb/87/e9/dsc-0254-largejpg.jpg",
+                    "latitude": 42.423985,
+                    "longitude": -74.88397
+                },
+                {
+                    "id": 970327,
+                    "name": "New York Caf\u00e9",
+                    "link": "https://www.tripadvisor.com/Restaurant_Review-g274887-d970327-Reviews-New_York_Cafe-Budapest_Central_Hungary.html",
+                    "type": "eatery",
+                    "thumbnail_url": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/15/01/6c/fd/20181011-131836-largejpg.jpg",
+                    "latitude": 47.498726,
+                    "longitude": 19.070456
+                }
+            ]
+        },
+        {
+            "function_name": "Search_Restaurants",
+            "arguments": {
+                "query": "New York"
+            },
+            "observation": [
+                {
+                    "id": 60763,
+                    "name": "New York City",
+                    "link": "https://www.tripadvisor.com/Restaurants-g60763-New_York_City_New_York.html",
+                    "type": "city",
+                    "thumbnail_url": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1c/c5/7c/68/caption.jpg",
+                    "latitude": 40.713238,
+                    "longitude": -74.00584
+                },
+                {
+                    "id": 28953,
+                    "name": "New York",
+                    "link": "https://www.tripadvisor.com/Restaurants-g28953-New_York.html",
+                    "type": "state",
+                    "thumbnail_url": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/10/eb/87/e9/dsc-0254-largejpg.jpg",
+                    "latitude": 42.423985,
+                    "longitude": -74.88397
+                },
+                {
+                    "id": 970327,
+                    "name": "New York Caf\u00e9",
+                    "link": "https://www.tripadvisor.com/Restaurant_Review-g274887-d970327-Reviews-New_York_Cafe-Budapest_Central_Hungary.html",
+                    "type": "eatery",
+                    "thumbnail_url": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/15/01/6c/fd/20181011-131836-largejpg.jpg",
+                    "latitude": 47.498726,
+                    "longitude": 19.070456
+                }
+            ]
+        }
+    ],
+    "response_summary": "The API response lists three distinct locations related to the name \"New York.\" First, there's New York City, a major urban destination with its own dedicated page for restaurants, located at coordinates 40.713238 latitude and -74.00584 longitude. Next is the state of New York, which also has a separate dining guide, situated at 42.423985 latitude and -74.88397 longitude. Interestingly, the third entry is not a place but a restaurant called \"New York Caf\u00e9,\" located in Budapest, Hungary, at 47.498726 latitude and 19.070456 longitude. Each entry includes a thumbnail image and a direct link to its respective TripAdvisor page for further details.",
+    "enhance_func_desc": "This API is ideal for travelers and food enthusiasts looking for dining options. It searches for restaurants and locations related to the query, providing details such as name, coordinates, and links to TripAdvisor pages. The response includes both actual locations (like cities or states) and specific restaurants, helping users find dining spots or explore food guides in various regions. The query parameter is mandatory for initiating the search.",
+    "enhance_params_desc": {
+        "enhanced_parameters": {
+            "query": "Search term for restaurants or locations, e.g., city, state, or restaurant name."
+        }
+    },
+    "enhance_resfield_desc": {
+        "response_fields": [
+            {
+                "id": {
+                    "type": "Number",
+                    "description": "A unique identifier for the location or establishment (e.g., 60763 for New York City)."
+                },
+                "name": {
+                    "type": "String",
+                    "description": "The name of the location or establishment (e.g., 'New York City', 'New York Caf\u00e9')."
+                },
+                "link": {
+                    "type": "String",
+                    "description": "The URL to the TripAdvisor page for the location or establishment, providing further details."
+                },
+                "type": {
+                    "type": "String",
+                    "description": "The category of the entry, such as 'city', 'state', or 'eatery'."
+                },
+                "thumbnail_url": {
+                    "type": "String",
+                    "description": "The URL of a thumbnail image representing the location or establishment."
+                },
+                "latitude": {
+                    "type": "Number",
+                    "description": "The geographic latitude coordinate of the location or establishment."
+                },
+                "longitude": {
+                    "type": "Number",
+                    "description": "The geographic longitude coordinate of the location or establishment."
+                }
+            }
+        ]
+    },
+    "params_desc_list": null,
+    "response_desc_list": null,
+    "depends_on": null,
+    "verified": true
+}

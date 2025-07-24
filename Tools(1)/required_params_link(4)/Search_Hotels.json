@@ -1,0 +1,1242 @@
+{
+    "name": "Search_Hotels",
+    "docs_row": {
+        "name": "Search_Hotels",
+        "endpoint": "/api/v1/hotels/searchHotels",
+        "func_description": "Search Hotels. ",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "dest_id": {
+                    "type": "Number",
+                    "description": "dest_id can be retrieved from api/v1/hotels/searchDestination(Search Hotel Destination) endpoint in Hotels collection.",
+                    "example_value": "-2092174",
+                    "required": true
+                },
+                "search_type": {
+                    "type": "String",
+                    "description": "search_type can be retrieved from api/v1/hotels/searchDestination(Search Hotel Destination) endpoint in Hotels collection.",
+                    "example_value": "CITY",
+                    "required": true
+                },
+                "arrival_date": {
+                    "type": "Date (yyyy-mm-dd)",
+                    "description": "The date on which you will arrive or check-in",
+                    "example_value": "",
+                    "required": true
+                },
+                "departure_date": {
+                    "type": "Date (yyyy-mm-dd)",
+                    "description": "The date of departure or check-out.",
+                    "example_value": "",
+                    "required": true
+                },
+                "adults": {
+                    "type": "Number",
+                    "description": "The number of guests who are 18 years of age or older. The default value is set to 1.",
+                    "example_value": "1",
+                    "required": false
+                },
+                "children_age": {
+                    "type": "String",
+                    "description": "The number of children, including infants, who are under 18.\nExample:\nChild 1 Age = 8 months\nChild 2 Age = 1 year\nChild 3 Age = 17 years\nHere is what the request parameter would look like:\nchildren_age: 0,1,17",
+                    "example_value": "0,17",
+                    "required": false
+                },
+                "room_qty": {
+                    "type": "Number",
+                    "description": "The number of rooms that are required. The default value is set to 1.",
+                    "example_value": "1",
+                    "required": false
+                },
+                "page_number": {
+                    "type": "Number",
+                    "description": "The page number.",
+                    "example_value": "1",
+                    "required": false
+                },
+                "price_min": {
+                    "type": "Number",
+                    "description": "Minimum Price filter for search.",
+                    "example_value": "",
+                    "required": false
+                },
+                "price_max": {
+                    "type": "Number",
+                    "description": "Maximum Price filter for search.",
+                    "example_value": "",
+                    "required": false
+                },
+                "sort_by": {
+                    "type": "String",
+                    "description": "sort_by can be retrieved from api/v1/hotels/getSortBy(Get Sort By) endpoint in Hotels collection.",
+                    "example_value": "",
+                    "required": false
+                },
+                "categories_filter": {
+                    "type": "String",
+                    "description": "categories_filter can be retrieved from api/v1/hotels/getFilter(Get Filter) endpoint in Hotels collection.",
+                    "example_value": "",
+                    "required": false
+                },
+                "units": {
+                    "type": "Enum",
+                    "description": "The measurement of distance in metric or imperial.",
+                    "example_value": "",
+                    "required": false
+                },
+                "temperature_unit": {
+                    "type": "Enum",
+                    "description": "The temperature unit in Fahrenheit or Celsius.\nc = Celsius\nf = Fahrenheit",
+                    "example_value": "",
+                    "required": false
+                },
+                "languagecode": {
+                    "type": "String",
+                    "description": "To obtain the response data in a specific language, enter the languagecode. languagecode can be retrieved from api/v1/meta/getLanguages(Get Languages\n) endpoint in Meta collection.",
+                    "example_value": "en-us",
+                    "required": false
+                },
+                "currency_code": {
+                    "type": "String",
+                    "description": "The currency code. currency_code can be retrieved from api/v1/meta/getCurrency(Get Currency) endpoint in Hotels collection.",
+                    "example_value": "AED",
+                    "required": false
+                },
+                "location": {
+                    "type": "String",
+                    "description": "location can be retrieved from api/v1/meta/getLocations(Get Location) endpoint in Meta collection.",
+                    "example_value": "US",
+                    "required": false
+                }
+            },
+            "required": [
+                "dest_id",
+                "search_type",
+                "arrival_date",
+                "departure_date"
+            ]
+        }
+    },
+    "instance": [],
+    "category": null,
+    "tool": null,
+    "api_idx": 43,
+    "params": {
+        "type": "object",
+        "properties": {
+            "dest_id": {
+                "type": "Number",
+                "description": "dest_id can be retrieved from api/v1/hotels/searchDestination(Search Hotel Destination) endpoint in Hotels collection.",
+                "example_value": "-2092174",
+                "required": true
+            },
+            "search_type": {
+                "type": "String",
+                "description": "search_type can be retrieved from api/v1/hotels/searchDestination(Search Hotel Destination) endpoint in Hotels collection.",
+                "example_value": "CITY",
+                "required": true
+            },
+            "arrival_date": {
+                "type": "Date (yyyy-mm-dd)",
+                "description": "The date on which you will arrive or check-in",
+                "example_value": "",
+                "required": true
+            },
+            "departure_date": {
+                "type": "Date (yyyy-mm-dd)",
+                "description": "The date of departure or check-out.",
+                "example_value": "",
+                "required": true
+            },
+            "adults": {
+                "type": "Number",
+                "description": "The number of guests who are 18 years of age or older. The default value is set to 1.",
+                "example_value": "1",
+                "required": false
+            },
+            "children_age": {
+                "type": "String",
+                "description": "The number of children, including infants, who are under 18.\nExample:\nChild 1 Age = 8 months\nChild 2 Age = 1 year\nChild 3 Age = 17 years\nHere is what the request parameter would look like:\nchildren_age: 0,1,17",
+                "example_value": "0,17",
+                "required": false
+            },
+            "room_qty": {
+                "type": "Number",
+                "description": "The number of rooms that are required. The default value is set to 1.",
+                "example_value": "1",
+                "required": false
+            },
+            "page_number": {
+                "type": "Number",
+                "description": "The page number.",
+                "example_value": "1",
+                "required": false
+            },
+            "price_min": {
+                "type": "Number",
+                "description": "Minimum Price filter for search.",
+                "example_value": "",
+                "required": false
+            },
+            "price_max": {
+                "type": "Number",
+                "description": "Maximum Price filter for search.",
+                "example_value": "",
+                "required": false
+            },
+            "sort_by": {
+                "type": "String",
+                "description": "sort_by can be retrieved from api/v1/hotels/getSortBy(Get Sort By) endpoint in Hotels collection.",
+                "example_value": "",
+                "required": false
+            },
+            "categories_filter": {
+                "type": "String",
+                "description": "categories_filter can be retrieved from api/v1/hotels/getFilter(Get Filter) endpoint in Hotels collection.",
+                "example_value": "",
+                "required": false
+            },
+            "units": {
+                "type": "Enum",
+                "description": "The measurement of distance in metric or imperial.",
+                "example_value": "",
+                "required": false
+            },
+            "temperature_unit": {
+                "type": "Enum",
+                "description": "The temperature unit in Fahrenheit or Celsius.\nc = Celsius\nf = Fahrenheit",
+                "example_value": "",
+                "required": false
+            },
+            "languagecode": {
+                "type": "String",
+                "description": "To obtain the response data in a specific language, enter the languagecode. languagecode can be retrieved from api/v1/meta/getLanguages(Get Languages\n) endpoint in Meta collection.",
+                "example_value": "en-us",
+                "required": false
+            },
+            "currency_code": {
+                "type": "String",
+                "description": "The currency code. currency_code can be retrieved from api/v1/meta/getCurrency(Get Currency) endpoint in Hotels collection.",
+                "example_value": "AED",
+                "required": false
+            },
+            "location": {
+                "type": "String",
+                "description": "location can be retrieved from api/v1/meta/getLocations(Get Location) endpoint in Meta collection.",
+                "example_value": "US",
+                "required": false
+            }
+        },
+        "required": [
+            "dest_id",
+            "search_type",
+            "arrival_date",
+            "departure_date"
+        ]
+    },
+    "responses": [
+        {
+            "function_name": "Search_Hotels",
+            "arguments": {
+                "dest_id": "-2092174",
+                "search_type": "CITY",
+                "arrival_date": "2025-06-10",
+                "departure_date": "2025-06-15",
+                "adults": 2,
+                "children_age": "5",
+                "room_qty": 1,
+                "price_min": 100,
+                "price_max": 300,
+                "units": "imperial",
+                "languagecode": "en-us",
+                "currency_code": "USD"
+            },
+            "observation": {
+                "hotels": [
+                    {
+                        "hotel_id": 9806569,
+                        "accessibilityLabel": "FabExpress Occazia Paradise.\n3 out of 5 stars.\n\u200eWestern Suburbs\u202c \u2022 \u200e6 miles from downtown\u202c\n\u200e4,750 feet from beach\u202c.\nGetaway Deal.\n Hotel room : 1\u00a0bed.\nOriginal price 214 USD. Current price 105 USD..\n+13 USD taxes and charges.\nFree cancellation.\nNo prepayment needed.",
+                        "property": {
+                            "checkout": {
+                                "fromTime": "00:00",
+                                "untilTime": "11:00"
+                            },
+                            "checkinDate": "2025-06-10",
+                            "checkoutDate": "2025-06-15",
+                            "position": 1,
+                            "photoUrls": [
+                                "https://cf.bstatic.com/xdata/images/hotel/square1024/678818543.jpg?k=530809def98adff9d0d3546d4b1b7742175b658acbc3bc323dfe27ed594dff00&o="
+                            ],
+                            "name": "FabExpress Occazia Paradise",
+                            "reviewScore": 0,
+                            "wishlistName": "Mumbai",
+                            "longitude": 72.821564,
+                            "blockIds": [
+                                "980656902_412315045_2_2_0"
+                            ],
+                            "isFirstPage": true,
+                            "propertyClass": 3,
+                            "reviewScoreWord": "",
+                            "countryCode": "in",
+                            "checkin": {
+                                "fromTime": "12:00",
+                                "untilTime": "00:00"
+                            },
+                            "id": 9806569,
+                            "optOutFromGalleryChanges": 1,
+                            "mainPhotoId": 678818543,
+                            "currency": "INR",
+                            "reviewCount": 0,
+                            "qualityClass": 0,
+                            "priceBreakdown": {
+                                "benefitBadges": [
+                                    {
+                                        "variant": "constructive",
+                                        "identifier": "Getaway 2021 Deals",
+                                        "explanation": "Getaway Deal",
+                                        "text": "Getaway Deal"
+                                    }
+                                ],
+                                "strikethroughPrice": {
+                                    "currency": "USD",
+                                    "value": 214.415459861334
+                                },
+                                "taxExceptions": [],
+                                "grossPrice": {
+                                    "currency": "USD",
+                                    "value": 105.063557792813
+                                },
+                                "excludedPrice": {
+                                    "currency": "USD",
+                                    "value": 12.6076269351377
+                                }
+                            },
+                            "accuratePropertyClass": 3,
+                            "ufi": -2092174,
+                            "latitude": 19.139041,
+                            "rankingPosition": 1
+                        }
+                    }
+                ],
+                "meta": [
+                    {
+                        "title": "603 properties"
+                    }
+                ],
+                "appear": [
+                    {
+                        "contentUrl": "https://mobile-apps.booking.com/json/mobile.saba?route_path=saba-chat-entrypoint&add_bh_info=1&add_genius_percentage_value=1&add_ribbon_text=1&affiliate_id=332731&arrival_date=2025-06-10&autoextend=1&booked_x_times_for_dates=1&booked_x_times_threshold=1&categories_filter_additional_data=&change_popularity_sort_option_copy_tag=1&change_sort_options_copy_tags=1&check_excluded_charge_or_tax=1&check_flexible_dates=1&check_is_candidate_wholesaler=1&currency_code=USD&dark_mode=1&deeplink_sec_since_click=168567.9046729803&departure_date=2025-06-15&dest_ids=-2092174&device_id=57d11ec8bad14e119e4c15a86202c23f&distance_unit=metric&dl_sr_adoption=1&dotd=2&exposure_api_version=2.17&fix_dotd=1&flex_window=0&generate_map_bounding_box=1&get_cny_campaign_banner=1&get_skiing_info=1&guest_qty=2&include_amazon_banner=1&include_apartment_config=1&include_badges_in_price_breakdown=1&include_beach_information=1&include_bh_quality_classification=1&include_block_ids=1&include_bsb_info=1&include_bwallet_hotel_eligibility=1&include_composite_breakdown=1&include_cpc_non_trader_copy=1&include_excluded_charges_detail=1&include_free_cancellation=1&include_genius_badge=1&include_last_reservation=1&include_nr_bookings_best_range_message=1&include_nr_bookings_today=1&include_offered_bed_types=1&include_preview_cards=1&include_rack_rate_savings=1&include_rtb=1&include_ski_information=1&languagecode=en-us&location_source=recents&mark_first_highlighted_hotel=1&min_saba_version=31&network_type=wifi&new_segments_carousel=1&offset=0&optimized_call=1&outcome=search_results&page_define_enabled=1&pref_match=0&reason=change_sort_options&remove_wishlist_padding=1&room_qty=1&rows=auto&saba=1&saba_payload_root=1&saba_version=50&sb_calendar_open=1&search_type=city&send_ranking_version=1&send_search_id=1&show_beach_filter_badge=1&show_city_distance=1&show_distance_to_beach=1&show_distance_to_nearest_public_transport=1&show_genius_free_breakfast=0&show_if_mobile_deal=1&show_negotiated_rates=1&show_no_prepayment=1&show_policy=1&show_review_score_breakdowns=1&show_selected_filter_values=1&show_soldout=1&sort_by=auto&sort_by_source=sort_options&sort_genius_new_copy=1&source=search_results&temperature_unit=c&travel_purpose=&unfiltered_count_enabled=1&units=imperial&use_dest_based_list_creation=1&use_direct_payment=1&user_os=15.5&user_version=36.8-iphone&categories_filter=price%3A%3AUSD-100-300&children_qty=1&children_age=5&page=search-results"
+                    }
+                ]
+            }
+        }
+    ],
+    "response_summary": "The API response lists three hotels in Mumbai, along with general information about the search results. There are a total of 603 properties available for booking in the area.  \n\nThe first hotel is **Asar Elite - Sea View by Orion Hotels**, a 4-star Preferred Plus property rated 8.1 (\"Very Good\") based on 34 reviews. Located in Juhu, just 150 feet from the beach, it offers a room with three beds. The original price was $421, but it's now discounted to $274, plus $33 in taxes and charges. Free cancellation is available.  \n\nNext is **FabExpress Occazia Paradise**, a 3-star hotel in the Western Suburbs, about 4,750 feet from the beach. It features a \"Getaway Deal,\" reducing the price from $214 to $105, with an additional $13 in taxes. Free cancellation is included, and no prepayment is required. However, it has no reviews yet.  \n\nThe third option is **Hotel Amber Paramount**, another 3-star Preferred Plus property with an 8.3 rating (\"Very Good\") from 305 reviews. Also in the Western Suburbs, it's 3,650 feet from the beach. The original price was $268, but it's now $215, plus $26 in taxes. It also has a \"Getaway Deal\" promotion.  \n\nAdditionally, the response includes a note about how payments may influence property rankings and encourages users to sign in for access to discounts through the Genius loyalty program.",
+    "enhance_func_desc": "This API is ideal for travelers looking to book hotels in a specific destination. It searches and filters hotels based on location, dates, guest details, and price range. Users can sort results by popularity, price, or other criteria and receive detailed hotel information including ratings, reviews, pricing, and cancellation policies. The destination ID must be obtained from the SearchDestination API.",
+    "enhance_params_desc": {
+        "enhanced_parameters": {
+            "dest_id": "Unique destination identifier, sourced from searchDestination endpoint.",
+            "search_type": "Specifies the type of search (e.g., CITY, REGION).",
+            "arrival_date": "Check-in date for hotel booking.",
+            "departure_date": "Check-out date for hotel booking.",
+            "adults": "Number of adult guests (18+ years). Default is 1.",
+            "children_age": "Ages of children (under 18) in comma-separated format.",
+            "room_qty": "Number of rooms required. Default is 1.",
+            "page_number": "Pagination number for search results.",
+            "price_min": "Minimum price filter for hotel search.",
+            "price_max": "Maximum price filter for hotel search.",
+            "sort_by": "Sorts results by criteria like popularity or price.",
+            "categories_filter": "Filters hotels by categories (e.g., luxury, budget).",
+            "units": "Distance measurement unit (metric or imperial).",
+            "temperature_unit": "Temperature unit (Celsius or Fahrenheit).",
+            "languagecode": "Language preference for response data.",
+            "currency_code": "Currency for displaying hotel prices.",
+            "location": "Geographic location filter for search results."
+        }
+    },
+    "enhance_resfield_desc": {
+        "response_fields": {
+            "hotels": {
+                "type": "Array",
+                "description": "A list of hotel objects containing detailed information about each hotel.",
+                "ar_items": {
+                    "type": "Object",
+                    "description": "An object representing a hotel and its details.",
+                    "ob_properties": {
+                        "hotel_id": {
+                            "type": "Number",
+                            "description": "The unique identifier for the hotel."
+                        },
+                        "accessibilityLabel": {
+                            "type": "String",
+                            "description": "A descriptive label summarizing the hotel's key features, including star rating, reviews, location, pricing, and cancellation policy."
+                        },
+                        "property": {
+                            "type": "Object",
+                            "description": "Detailed information about the hotel property.",
+                            "ob_properties": {
+                                "photoUrls": {
+                                    "type": "Array",
+                                    "description": "A list of URLs for hotel photos in different resolutions.",
+                                    "ar_items": {
+                                        "type": "String",
+                                        "description": "URL of a hotel photo."
+                                    }
+                                },
+                                "position": {
+                                    "type": "Number",
+                                    "description": "The position of the hotel in the search results."
+                                },
+                                "name": {
+                                    "type": "String",
+                                    "description": "The name of the hotel."
+                                },
+                                "longitude": {
+                                    "type": "Number",
+                                    "description": "The longitude coordinate of the hotel's location."
+                                },
+                                "wishlistName": {
+                                    "type": "String",
+                                    "description": "The name of the wishlist or location associated with the hotel."
+                                },
+                                "reviewScore": {
+                                    "type": "Number",
+                                    "description": "The average review score of the hotel."
+                                },
+                                "blockIds": {
+                                    "type": "Array",
+                                    "description": "A list of block identifiers for the hotel.",
+                                    "ar_items": {
+                                        "type": "String",
+                                        "description": "A block identifier."
+                                    }
+                                },
+                                "isFirstPage": {
+                                    "type": "Boolean",
+                                    "description": "Indicates whether the hotel appears on the first page of search results."
+                                },
+                                "propertyClass": {
+                                    "type": "Number",
+                                    "description": "The star rating of the hotel (e.g., 3 for 3-star)."
+                                },
+                                "reviewScoreWord": {
+                                    "type": "String",
+                                    "description": "A textual representation of the review score (e.g., 'Very Good')."
+                                },
+                                "isPreferredPlus": {
+                                    "type": "Boolean",
+                                    "description": "Indicates whether the hotel is a 'Preferred Plus' property."
+                                },
+                                "checkout": {
+                                    "type": "Object",
+                                    "description": "Checkout time details.",
+                                    "ob_properties": {
+                                        "untilTime": {
+                                            "type": "String",
+                                            "description": "The latest checkout time."
+                                        },
+                                        "fromTime": {
+                                            "type": "String",
+                                            "description": "The earliest checkout time."
+                                        }
+                                    }
+                                },
+                                "checkinDate": {
+                                    "type": "Date",
+                                    "description": "The check-in date in YYYY-MM-DD format."
+                                },
+                                "isPreferred": {
+                                    "type": "Boolean",
+                                    "description": "Indicates whether the hotel is a 'Preferred' property."
+                                },
+                                "checkoutDate": {
+                                    "type": "Date",
+                                    "description": "The check-out date in YYYY-MM-DD format."
+                                },
+                                "currency": {
+                                    "type": "String",
+                                    "description": "The currency code used for pricing (e.g., 'INR')."
+                                },
+                                "mainPhotoId": {
+                                    "type": "Number",
+                                    "description": "The identifier for the main photo of the hotel."
+                                },
+                                "priceBreakdown": {
+                                    "type": "Object",
+                                    "description": "Detailed breakdown of the hotel's pricing.",
+                                    "ob_properties": {
+                                        "taxExceptions": {
+                                            "type": "Array",
+                                            "description": "List of tax exceptions, if any.",
+                                            "ar_items": {
+                                                "type": "String",
+                                                "description": "A tax exception."
+                                            }
+                                        },
+                                        "grossPrice": {
+                                            "type": "Object",
+                                            "description": "The gross price of the stay.",
+                                            "ob_properties": {
+                                                "value": {
+                                                    "type": "Number",
+                                                    "description": "The numerical value of the price."
+                                                },
+                                                "currency": {
+                                                    "type": "String",
+                                                    "description": "The currency of the price."
+                                                }
+                                            }
+                                        },
+                                        "excludedPrice": {
+                                            "type": "Object",
+                                            "description": "The excluded price (e.g., taxes and charges).",
+                                            "ob_properties": {
+                                                "currency": {
+                                                    "type": "String",
+                                                    "description": "The currency of the excluded price."
+                                                },
+                                                "value": {
+                                                    "type": "Number",
+                                                    "description": "The numerical value of the excluded price."
+                                                }
+                                            }
+                                        },
+                                        "strikethroughPrice": {
+                                            "type": "Object",
+                                            "description": "The original price before discounts.",
+                                            "ob_properties": {
+                                                "value": {
+                                                    "type": "Number",
+                                                    "description": "The numerical value of the original price."
+                                                },
+                                                "currency": {
+                                                    "type": "String",
+                                                    "description": "The currency of the original price."
+                                                }
+                                            }
+                                        },
+                                        "benefitBadges": {
+                                            "type": "Array",
+                                            "description": "List of promotional badges (e.g., 'Getaway Deal').",
+                                            "ar_items": {
+                                                "type": "Object",
+                                                "description": "A promotional badge.",
+                                                "ob_properties": {
+                                                    "variant": {
+                                                        "type": "String",
+                                                        "description": "The variant of the badge."
+                                                    },
+                                                    "identifier": {
+                                                        "type": "String",
+                                                        "description": "The identifier for the badge."
+                                                    },
+                                                    "explanation": {
+                                                        "type": "String",
+                                                        "description": "A brief explanation of the badge."
+                                                    },
+                                                    "text": {
+                                                        "type": "String",
+                                                        "description": "The display text of the badge."
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                "qualityClass": {
+                                    "type": "Number",
+                                    "description": "The quality class of the hotel."
+                                },
+                                "reviewCount": {
+                                    "type": "Number",
+                                    "description": "The number of reviews for the hotel."
+                                },
+                                "latitude": {
+                                    "type": "Number",
+                                    "description": "The latitude coordinate of the hotel's location."
+                                },
+                                "accuratePropertyClass": {
+                                    "type": "Number",
+                                    "description": "The accurate star rating of the hotel."
+                                },
+                                "ufi": {
+                                    "type": "Number",
+                                    "description": "A unique identifier for the location."
+                                },
+                                "rankingPosition": {
+                                    "type": "Number",
+                                    "description": "The ranking position of the hotel in search results."
+                                },
+                                "countryCode": {
+                                    "type": "String",
+                                    "description": "The country code where the hotel is located (e.g., 'in' for India)."
+                                },
+                                "checkin": {
+                                    "type": "Object",
+                                    "description": "Check-in time details.",
+                                    "ob_properties": {
+                                        "untilTime": {
+                                            "type": "String",
+                                            "description": "The latest check-in time."
+                                        },
+                                        "fromTime": {
+                                            "type": "String",
+                                            "description": "The earliest check-in time."
+                                        }
+                                    }
+                                },
+                                "id": {
+                                    "type": "Number",
+                                    "description": "The unique identifier for the hotel property."
+                                },
+                                "optOutFromGalleryChanges": {
+                                    "type": "Number",
+                                    "description": "Indicates whether the hotel has opted out from gallery changes."
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "meta": {
+                "type": "Array",
+                "description": "Metadata about the search results.",
+                "ar_items": {
+                    "type": "Object",
+                    "description": "A metadata object.",
+                    "ob_properties": {
+                        "title": {
+                            "type": "String",
+                            "description": "A title summarizing the search results (e.g., '603 properties')."
+                        }
+                    }
+                }
+            },
+            "appear": {
+                "type": "Array",
+                "description": "Additional components or messages appearing in the response.",
+                "ar_items": {
+                    "type": "Object",
+                    "description": "An object representing an additional component or message.",
+                    "ob_properties": {
+                        "id": {
+                            "type": "String",
+                            "description": "The identifier for the component (e.g., 'cma', 'signin_now')."
+                        },
+                        "component": {
+                            "type": "Object",
+                            "description": "The component details.",
+                            "ob_properties": {
+                                "props": {
+                                    "type": "Object",
+                                    "description": "Properties of the component.",
+                                    "ob_properties": {
+                                        "fill": {
+                                            "type": "Boolean",
+                                            "description": "Indicates whether the component should fill available space."
+                                        },
+                                        "content": {
+                                            "type": "Object",
+                                            "description": "The content of the component.",
+                                            "ob_properties": {
+                                                "props": {
+                                                    "type": "Object",
+                                                    "description": "Properties of the content.",
+                                                    "ob_properties": {
+                                                        "fitContentWidth": {
+                                                            "type": "Boolean",
+                                                            "description": "Indicates whether the content should fit the width."
+                                                        },
+                                                        "items": {
+                                                            "type": "Array",
+                                                            "description": "List of items in the content.",
+                                                            "ar_items": {
+                                                                "type": "Object",
+                                                                "description": "An item in the content.",
+                                                                "ob_properties": {
+                                                                    "props": {
+                                                                        "type": "Object",
+                                                                        "description": "Properties of the item."
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "text": {
+                                            "type": "String",
+                                            "description": "The text content of the component."
+                                        },
+                                        "title": {
+                                            "type": "String",
+                                            "description": "The title of the component."
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "contentUrl": {
+                            "type": "String",
+                            "description": "A URL for additional content or data."
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "params_desc_list": null,
+    "response_desc_list": [
+        {
+            "path_name": "$.hotels",
+            "name": "hotels",
+            "description": "A list of hotel objects containing detailed information about each hotel."
+        },
+        {
+            "path_name": "$.hotels[]",
+            "name": "hotels[]",
+            "description": "An object representing a hotel and its details."
+        },
+        {
+            "path_name": "$.hotels[].hotel_id",
+            "name": "hotel_id",
+            "description": "The unique identifier for the hotel."
+        },
+        {
+            "path_name": "$.hotels[].accessibilityLabel",
+            "name": "accessibilityLabel",
+            "description": "A descriptive label summarizing the hotel's key features, including star rating, reviews, location, pricing, and cancellation policy."
+        },
+        {
+            "path_name": "$.hotels[].property",
+            "name": "property",
+            "description": "Detailed information about the hotel property."
+        },
+        {
+            "path_name": "$.hotels[].property.photoUrls",
+            "name": "photoUrls",
+            "description": "A list of URLs for hotel photos in different resolutions."
+        },
+        {
+            "path_name": "$.hotels[].property.photoUrls[]",
+            "name": "photoUrls[]",
+            "description": "URL of a hotel photo."
+        },
+        {
+            "path_name": "$.hotels[].property.position",
+            "name": "position",
+            "description": "The position of the hotel in the search results."
+        },
+        {
+            "path_name": "$.hotels[].property.name",
+            "name": "name",
+            "description": "The name of the hotel."
+        },
+        {
+            "path_name": "$.hotels[].property.longitude",
+            "name": "longitude",
+            "description": "The longitude coordinate of the hotel's location."
+        },
+        {
+            "path_name": "$.hotels[].property.wishlistName",
+            "name": "wishlistName",
+            "description": "The name of the wishlist or location associated with the hotel."
+        },
+        {
+            "path_name": "$.hotels[].property.reviewScore",
+            "name": "reviewScore",
+            "description": "The average review score of the hotel."
+        },
+        {
+            "path_name": "$.hotels[].property.blockIds",
+            "name": "blockIds",
+            "description": "A list of block identifiers for the hotel."
+        },
+        {
+            "path_name": "$.hotels[].property.blockIds[]",
+            "name": "blockIds[]",
+            "description": "A block identifier."
+        },
+        {
+            "path_name": "$.hotels[].property.isFirstPage",
+            "name": "isFirstPage",
+            "description": "Indicates whether the hotel appears on the first page of search results."
+        },
+        {
+            "path_name": "$.hotels[].property.propertyClass",
+            "name": "propertyClass",
+            "description": "The star rating of the hotel (e.g., 3 for 3-star)."
+        },
+        {
+            "path_name": "$.hotels[].property.reviewScoreWord",
+            "name": "reviewScoreWord",
+            "description": "A textual representation of the review score (e.g., 'Very Good')."
+        },
+        {
+            "path_name": "$.hotels[].property.isPreferredPlus",
+            "name": "isPreferredPlus",
+            "description": "Indicates whether the hotel is a 'Preferred Plus' property."
+        },
+        {
+            "path_name": "$.hotels[].property.checkout",
+            "name": "checkout",
+            "description": "Checkout time details."
+        },
+        {
+            "path_name": "$.hotels[].property.checkout.untilTime",
+            "name": "untilTime",
+            "description": "The latest checkout time."
+        },
+        {
+            "path_name": "$.hotels[].property.checkout.fromTime",
+            "name": "fromTime",
+            "description": "The earliest checkout time."
+        },
+        {
+            "path_name": "$.hotels[].property.checkinDate",
+            "name": "checkinDate",
+            "description": "The check-in date in YYYY-MM-DD format."
+        },
+        {
+            "path_name": "$.hotels[].property.isPreferred",
+            "name": "isPreferred",
+            "description": "Indicates whether the hotel is a 'Preferred' property."
+        },
+        {
+            "path_name": "$.hotels[].property.checkoutDate",
+            "name": "checkoutDate",
+            "description": "The check-out date in YYYY-MM-DD format."
+        },
+        {
+            "path_name": "$.hotels[].property.currency",
+            "name": "currency",
+            "description": "The currency code used for pricing (e.g., 'INR')."
+        },
+        {
+            "path_name": "$.hotels[].property.mainPhotoId",
+            "name": "mainPhotoId",
+            "description": "The identifier for the main photo of the hotel."
+        },
+        {
+            "path_name": "$.hotels[].property.priceBreakdown",
+            "name": "priceBreakdown",
+            "description": "Detailed breakdown of the hotel's pricing."
+        },
+        {
+            "path_name": "$.hotels[].property.priceBreakdown.taxExceptions",
+            "name": "taxExceptions",
+            "description": "List of tax exceptions, if any."
+        },
+        {
+            "path_name": "$.hotels[].property.priceBreakdown.taxExceptions[]",
+            "name": "taxExceptions[]",
+            "description": "A tax exception."
+        },
+        {
+            "path_name": "$.hotels[].property.priceBreakdown.grossPrice",
+            "name": "grossPrice",
+            "description": "The gross price of the stay."
+        },
+        {
+            "path_name": "$.hotels[].property.priceBreakdown.grossPrice.value",
+            "name": "value",
+            "description": "The numerical value of the price."
+        },
+        {
+            "path_name": "$.hotels[].property.priceBreakdown.grossPrice.currency",
+            "name": "currency",
+            "description": "The currency of the price."
+        },
+        {
+            "path_name": "$.hotels[].property.priceBreakdown.excludedPrice",
+            "name": "excludedPrice",
+            "description": "The excluded price (e.g., taxes and charges)."
+        },
+        {
+            "path_name": "$.hotels[].property.priceBreakdown.excludedPrice.currency",
+            "name": "currency",
+            "description": "The currency of the excluded price."
+        },
+        {
+            "path_name": "$.hotels[].property.priceBreakdown.excludedPrice.value",
+            "name": "value",
+            "description": "The numerical value of the excluded price."
+        },
+        {
+            "path_name": "$.hotels[].property.priceBreakdown.strikethroughPrice",
+            "name": "strikethroughPrice",
+            "description": "The original price before discounts."
+        },
+        {
+            "path_name": "$.hotels[].property.priceBreakdown.strikethroughPrice.value",
+            "name": "value",
+            "description": "The numerical value of the original price."
+        },
+        {
+            "path_name": "$.hotels[].property.priceBreakdown.strikethroughPrice.currency",
+            "name": "currency",
+            "description": "The currency of the original price."
+        },
+        {
+            "path_name": "$.hotels[].property.priceBreakdown.benefitBadges",
+            "name": "benefitBadges",
+            "description": "List of promotional badges (e.g., 'Getaway Deal')."
+        },
+        {
+            "path_name": "$.hotels[].property.priceBreakdown.benefitBadges[]",
+            "name": "benefitBadges[]",
+            "description": "A promotional badge."
+        },
+        {
+            "path_name": "$.hotels[].property.priceBreakdown.benefitBadges[].variant",
+            "name": "variant",
+            "description": "The variant of the badge."
+        },
+        {
+            "path_name": "$.hotels[].property.priceBreakdown.benefitBadges[].identifier",
+            "name": "identifier",
+            "description": "The identifier for the badge."
+        },
+        {
+            "path_name": "$.hotels[].property.priceBreakdown.benefitBadges[].explanation",
+            "name": "explanation",
+            "description": "A brief explanation of the badge."
+        },
+        {
+            "path_name": "$.hotels[].property.priceBreakdown.benefitBadges[].text",
+            "name": "text",
+            "description": "The display text of the badge."
+        },
+        {
+            "path_name": "$.hotels[].property.qualityClass",
+            "name": "qualityClass",
+            "description": "The quality class of the hotel."
+        },
+        {
+            "path_name": "$.hotels[].property.reviewCount",
+            "name": "reviewCount",
+            "description": "The number of reviews for the hotel."
+        },
+        {
+            "path_name": "$.hotels[].property.latitude",
+            "name": "latitude",
+            "description": "The latitude coordinate of the hotel's location."
+        },
+        {
+            "path_name": "$.hotels[].property.accuratePropertyClass",
+            "name": "accuratePropertyClass",
+            "description": "The accurate star rating of the hotel."
+        },
+        {
+            "path_name": "$.hotels[].property.ufi",
+            "name": "ufi",
+            "description": "A unique identifier for the location."
+        },
+        {
+            "path_name": "$.hotels[].property.rankingPosition",
+            "name": "rankingPosition",
+            "description": "The ranking position of the hotel in search results."
+        },
+        {
+            "path_name": "$.hotels[].property.countryCode",
+            "name": "countryCode",
+            "description": "The country code where the hotel is located (e.g., 'in' for India)."
+        },
+        {
+            "path_name": "$.hotels[].property.checkin",
+            "name": "checkin",
+            "description": "Check-in time details."
+        },
+        {
+            "path_name": "$.hotels[].property.checkin.untilTime",
+            "name": "untilTime",
+            "description": "The latest check-in time."
+        },
+        {
+            "path_name": "$.hotels[].property.checkin.fromTime",
+            "name": "fromTime",
+            "description": "The earliest check-in time."
+        },
+        {
+            "path_name": "$.hotels[].property.id",
+            "name": "id",
+            "description": "The unique identifier for the hotel property."
+        },
+        {
+            "path_name": "$.hotels[].property.optOutFromGalleryChanges",
+            "name": "optOutFromGalleryChanges",
+            "description": "Indicates whether the hotel has opted out from gallery changes."
+        },
+        {
+            "path_name": "$.meta",
+            "name": "meta",
+            "description": "Metadata about the search results."
+        },
+        {
+            "path_name": "$.meta[]",
+            "name": "meta[]",
+            "description": "A metadata object."
+        },
+        {
+            "path_name": "$.meta[].title",
+            "name": "title",
+            "description": "A title summarizing the search results (e.g., '603 properties')."
+        },
+        {
+            "path_name": "$.appear",
+            "name": "appear",
+            "description": "Additional components or messages appearing in the response."
+        },
+        {
+            "path_name": "$.appear[]",
+            "name": "appear[]",
+            "description": "An object representing an additional component or message."
+        },
+        {
+            "path_name": "$.appear[].id",
+            "name": "id",
+            "description": "The identifier for the component (e.g., 'cma', 'signin_now')."
+        },
+        {
+            "path_name": "$.appear[].component",
+            "name": "component",
+            "description": "The component details."
+        },
+        {
+            "path_name": "$.appear[].component.props",
+            "name": "props",
+            "description": "Properties of the component."
+        },
+        {
+            "path_name": "$.appear[].component.props.fill",
+            "name": "fill",
+            "description": "Indicates whether the component should fill available space."
+        },
+        {
+            "path_name": "$.appear[].component.props.content",
+            "name": "content",
+            "description": "The content of the component."
+        },
+        {
+            "path_name": "$.appear[].component.props.content.props",
+            "name": "props",
+            "description": "Properties of the content."
+        },
+        {
+            "path_name": "$.appear[].component.props.content.props.fitContentWidth",
+            "name": "fitContentWidth",
+            "description": "Indicates whether the content should fit the width."
+        },
+        {
+            "path_name": "$.appear[].component.props.content.props.items",
+            "name": "items",
+            "description": "List of items in the content."
+        },
+        {
+            "path_name": "$.appear[].component.props.content.props.items[]",
+            "name": "items[]",
+            "description": "An item in the content."
+        },
+        {
+            "path_name": "$.appear[].component.props.content.props.items[].props",
+            "name": "props",
+            "description": "Properties of the item."
+        },
+        {
+            "path_name": "$.appear[].component.props.text",
+            "name": "text",
+            "description": "The text content of the component."
+        },
+        {
+            "path_name": "$.appear[].component.props.title",
+            "name": "title",
+            "description": "The title of the component."
+        },
+        {
+            "path_name": "$.appear[].contentUrl",
+            "name": "contentUrl",
+            "description": "A URL for additional content or data."
+        }
+    ],
+    "depends_on": [
+        {
+            "target_api_params": "dest_id",
+            "reason": "The 'dest_id' parameter in the target API requires a destination ID for hotel searches, which can be obtained from the source API's response field 'dest_id'. The data types match (both are numbers), and the source API provides exact destination IDs for nearby cities, making it a valid input for the target API.",
+            "source_jsonpath": "$[*].dest_id",
+            "confidence": 100,
+            "dependency_relationship": "Hard Dependency(Prerequisite API)",
+            "source_api": "Get_Nearby_Cities"
+        },
+        {
+            "target_api_params": "dest_id",
+            "reason": "The 'dest_id' parameter in the target API is explicitly stated to be retrieved from the 'Search_Hotel_Destination' endpoint, which is the source API. The source API's response fields include 'dest_id' directly, matching the required data type (Number) and providing the exact value needed for the target API. This is a clear prerequisite for calling the target API.",
+            "source_jsonpath": "$[*].dest_id",
+            "confidence": 100,
+            "dependency_relationship": "Hard Dependency(Prerequisite API)",
+            "source_api": "Search_Hotel_Destination"
+        },
+        {
+            "target_api_params": "dest_id",
+            "reason": "The 'dest_id' parameter in the target API requires a destination ID for hotel searches, which can be obtained from the 'ufi' field in the source API's response. The 'ufi' field in the source API's response (e.g., 'ufi': -2092174) matches the data type (Number) and the example value (-2092174) provided in the target API documentation. This indicates a direct mapping where the attraction location ID can be used to search for hotels in the same location.",
+            "source_jsonpath": "$.products[*].ufiDetails.ufi",
+            "confidence": 95,
+            "dependency_relationship": "Hard Dependency(Prerequisite API)",
+            "source_api": "Search_Attractions"
+        },
+        {
+            "target_api_params": "dest_id",
+            "reason": "The 'tagname' field in the 'ufiFilters' of the source API's response also contains the same value as the 'ufi' field (e.g., 'tagname': '-2092174'), which matches the 'dest_id' parameter's requirements. However, this is less direct than the 'ufi' field in the 'ufiDetails' and might be used in filtering rather than as a primary identifier.",
+            "source_jsonpath": "$.filterOptions.ufiFilters[*].tagname",
+            "confidence": 85,
+            "dependency_relationship": "Hard Dependency(Prerequisite API)",
+            "source_api": "Search_Attractions"
+        },
+        {
+            "target_api_params": "search_type",
+            "reason": "The 'search_type' parameter in the target API is explicitly stated to be retrievable from the 'Search_Hotel_Destination' endpoint in the Hotels collection. The source API's response fields include 'search_type' (e.g., 'district' or 'landmark'), which directly matches the required parameter in terms of data type (String) and purpose (classifying the destination type). This is a clear prerequisite for calling the target API.",
+            "source_jsonpath": "$[*].search_type",
+            "confidence": 100,
+            "dependency_relationship": "Hard Dependency(Prerequisite API)",
+            "source_api": "Search_Hotel_Destination"
+        },
+        {
+            "target_api_params": "search_type",
+            "reason": "The 'search_type' parameter in the target API requires a value that indicates the type of destination being searched (e.g., 'CITY'). The source API's 'dest_type' field provides this exact information (e.g., 'city'), matching both the data type and the required value. This creates a hard dependency as the target API explicitly states that 'search_type' must be retrieved from the source API.",
+            "source_jsonpath": "$[*].dest_type",
+            "confidence": 100,
+            "dependency_relationship": "Hard Dependency(Prerequisite API)",
+            "source_api": "Get_Nearby_Cities"
+        },
+        {
+            "target_api_params": "search_type",
+            "reason": "The 'search_type' parameter in the target API is explicitly mentioned to be retrieved from the same source API endpoint '/api/v1/hotels/searchDestination'. The source API documentation also confirms that 'search_type' can be retrieved from this endpoint. This indicates a direct prerequisite relationship where the source API must be called first to obtain the 'search_type' value before calling the target API.",
+            "source_jsonpath": "$.search_type",
+            "confidence": 100,
+            "dependency_relationship": "Hard Dependency(Prerequisite API)",
+            "source_api": "Get_Filter"
+        },
+        {
+            "target_api_params": "arrival_date",
+            "reason": "The 'arrival_date' parameter in the target API requires a specific check-in date (yyyy-mm-dd format). The source API's 'arrival_date' field provides exactly this format (e.g., '2025-06-10'). This creates a potential business association where a traveler wants to search for hotels based on the same arrival date they used to get room listings.",
+            "source_jsonpath": "$.arrival_date",
+            "confidence": 100,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Get_Room_List"
+        },
+        {
+            "target_api_params": "arrival_date",
+            "reason": "The 'arrival_date' parameter in the target API requires a check-in date in 'yyyy-mm-dd' format. The source API's 'stayed_room_info.checkin' field provides exact check-in dates (e.g., '2025-05-08') from hotel reviews. This creates a potential business association where a traveler might want to book a hotel based on previous guests' stay dates. The data types match perfectly.",
+            "source_jsonpath": "$.result[*].stayed_room_info.checkin",
+            "confidence": 85,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Get_Hotel_Reviews(Tips)"
+        },
+        {
+            "target_api_params": "arrival_date",
+            "reason": "The 'arrival_date' parameter in the target API requires a check-in date in 'yyyy-mm-dd' format. The source API's 'date' field in the response provides specific dates (e.g., '2025-05-20') which match the required format. This creates a potential business association where a traveler might want to check hotel availability based on the dates they plan to visit attractions.",
+            "source_jsonpath": "$[*].date",
+            "confidence": 95,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Get_Availability_Calendar"
+        },
+        {
+            "target_api_params": "arrival_date",
+            "reason": "The 'arrival_date' parameter in the target API requires a check-in date for hotel booking. The source API's 'departureDate' field in the response provides the date when the flight departs, which could be used to determine the hotel check-in date if the traveler plans to stay at the destination after arrival. The data types match (yyyy-mm-dd format), and there is a logical business association where travelers might book hotels starting from their flight departure date.",
+            "source_jsonpath": "$[*].departureDate",
+            "confidence": 85,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Get_Min_Price_Multi_Stops"
+        },
+        {
+            "target_api_params": "arrival_date",
+            "reason": "The 'arrival_date' parameter in the target API requires the check-in date for a hotel. The source API's 'arrivalTime' field in flight segments provides exact arrival timestamps (e.g., '2025-06-15T07:55:00'). The date portion can be extracted to determine the hotel check-in date, as travelers typically book hotels starting from their arrival date at the destination. The data types match (both expect dates in 'yyyy-mm-dd' format).",
+            "source_jsonpath": "$.flightOffers[*].segments[*].legs[*].arrivalTime",
+            "confidence": 95,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Search_Flights"
+        },
+        {
+            "target_api_params": "arrival_date",
+            "reason": "The 'arrival_date' parameter in the target API requires a specific check-in date (yyyy-mm-dd format). The source API's 'arrivalTime' field in flight segments provides exact arrival timestamps (e.g., '2025-05-25T02:20:00'). The date portion can be extracted to match the required format. This creates a potential business association where a traveler wants to book a hotel starting from the day their flight arrives.",
+            "source_jsonpath": "$.flightOffers[*].segments[*].legs[*].arrivalTime",
+            "confidence": 95,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Search_Flights_Multi_Stops"
+        },
+        {
+            "target_api_params": "arrival_date",
+            "reason": "The 'arrival_date' parameter in the target API requires a specific check-in date (yyyy-mm-dd format). The source API's 'date' field in 'lengthsOfStay' provides exact dates (e.g., '2025-06-10'). The data types match exactly (both are yyyy-mm-dd dates), and there is a clear business association where a traveler would want to check hotel availability for potential arrival dates.",
+            "source_jsonpath": "$.lengthsOfStay[*].date",
+            "confidence": 95,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Get_Room_Availability"
+        },
+        {
+            "target_api_params": "departure_date",
+            "reason": "The 'departure_date' parameter in the target API requires a specific check-out date (yyyy-mm-dd format). The source API's 'departure_date' field provides exactly this information in the same format (e.g., '2025-06-15'). This creates a potential business association where a traveler wants to search for hotels with the same check-out date as their current room listing.",
+            "source_jsonpath": "$.departure_date",
+            "confidence": 100,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Get_Room_List"
+        },
+        {
+            "target_api_params": "departure_date",
+            "reason": "The 'departure_date' parameter in the target API requires the check-out date for a hotel stay. The source API's 'returnDate' field provides the return date for a flight, which could logically be used as the check-out date for a hotel stay if the traveler is booking a hotel for the duration of their trip. The data types match (both are in 'yyyy-mm-dd' format), and the scenario where a traveler books a hotel until their flight return date is reasonable.",
+            "source_jsonpath": "$[*].returnDate",
+            "confidence": 95,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Get_Min_Price_Multi_Stops"
+        },
+        {
+            "target_api_params": "departure_date",
+            "reason": "The 'departure_date' parameter in the target API requires the check-out date of a hotel stay. The source API's 'stayed_room_info.checkout' field provides exact check-out dates (e.g., '2025-05-09'). The data types match (both are in 'yyyy-mm-dd' format), and there is a clear business association where a traveler might want to search for hotels based on previous stay dates.",
+            "source_jsonpath": "$.result[].stayed_room_info.checkout",
+            "confidence": 95,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Get_Hotel_Reviews(Tips)"
+        },
+        {
+            "target_api_params": "departure_date",
+            "reason": "The 'departure_date' parameter in the target API requires a specific check-out date in 'yyyy-mm-dd' format. The source API's 'date' field in the response provides exact dates (e.g., '2025-05-20') which match the required format. This creates a potential business association where a traveler might want to check out of the hotel on the same day they visit an attraction.",
+            "source_jsonpath": "$[*].date",
+            "confidence": 85,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Get_Availability_Calendar"
+        },
+        {
+            "target_api_params": "departure_date",
+            "reason": "The 'departure_date' parameter in the target API requires the hotel check-out date (yyyy-mm-dd format). The source API's 'returnDate' field provides the return flight date in the same format. This creates a potential business association where a traveler would book a hotel until their return flight date.",
+            "source_jsonpath": "$.returnDate",
+            "confidence": 85,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Search_Flights"
+        },
+        {
+            "target_api_params": "departure_date",
+            "reason": "The 'departure_date' parameter in the target API requires a specific hotel check-out date (yyyy-mm-dd format). The source API's 'departureTime' field in flight legs provides exact departure timestamps (e.g., '2025-05-28T10:55:00'). The date portion can be extracted to match the required format. This creates a potential business association where a traveler books a hotel until the day of their flight departure.",
+            "source_jsonpath": "$.flightOffers[*].segments[*].legs[*].departureTime",
+            "confidence": 95,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Search_Flights_Multi_Stops"
+        },
+        {
+            "target_api_params": "departure_date",
+            "reason": "The 'departure_date' parameter in the target API requires the date of departure or check-out in 'yyyy-mm-dd' format. The source API's 'departure_date' parameter is identical in both name and format, serving the same purpose for hotel bookings. This creates a direct match where the same date can be used for both APIs.",
+            "source_jsonpath": "$.parameters.properties.departure_date",
+            "confidence": 100,
+            "dependency_relationship": "Hard Dependency(Prerequisite API)",
+            "source_api": "Search_Hotels_By_Coordinates"
+        },
+        {
+            "target_api_params": "departure_date",
+            "reason": "The 'departure_date' parameter in the target API requires the check-out date from a hotel. The source API's 'requestedPickupDateTime' field in taxi journeys provides the exact pickup date and time (e.g., '2025-06-15T14:30:00'). While the data types differ (timestamp vs date), the date portion can be extracted. This creates a potential business association where a traveler might book a hotel until the day they need a taxi to the airport.",
+            "source_jsonpath": "$.journeys[*].requestedPickupDateTime",
+            "confidence": 85,
+            "dependency_relationship": "Soft Dependency(Business-association)",
+            "source_api": "Search_Taxi"
+        }
+    ],
+    "verified": true
+}

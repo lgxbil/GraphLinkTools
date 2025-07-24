@@ -1,5 +1,20 @@
 [{
     "func_description":"This API is suitable for travel recommendations and itinerary planning. It searches bookable travel activities based on a location ID, with sorting options by popularity, rating, or lowest price. Users can filter results by date, price, type, etc., and receive detailed activity information including price, rating, reviews, and cancellation policy. The location ID must be obtained from the SearchLocation API.",
+    "api_params":{
+        "enhanced_parameters": {
+            "id": "Unique identifier for the attraction, sourced from searchLocation endpoint.",
+            "startDate": "Filters attractions available from this date onwards.",
+            "endDate": "Filters attractions available until this date.",
+            "sortBy": "Sorts results by popularity, booking score, or price.",
+            "page": "Specifies the pagination number for results.",
+            "currency_code": "Currency for displaying attraction prices.",
+            "languagecode": "Language preference for the response data.",
+            "typeFilters": "Filters attractions by type (e.g., tours, museums).",
+            "priceFilters": "Filters attractions by price range.",
+            "ufiFilters": "Filters attractions by unique feature identifiers.",
+            "labelFilters": "Filters attractions by labels or tags."
+        }
+    },
     "api": {
             "name": "Search_Attractions",
             "endpoint": "/api/v1/attraction/searchAttractions",
@@ -413,19 +428,7 @@
         },
     "response_summary":"In Mumbai, there are 684 bookable travel activities, three of which are highly recommended. First, the \"Dharavi Slum, Dhobi Ghat, and Dabbawala Half-Day Tour\" is priced at $18 (originally $20) for a 3.5-hour journey that offers an in-depth exploration of Mumbai's local life. It has received 83 reviews with an average rating of 4.8 stars (67% positive reviews) and supports free cancellation. It is the top-selling item on the platform. Second, the \"Private Mumbai City Tour\" costs $66.48 and is led by a local guide to uncover the hidden corners of the city. Although it has only three reviews, all of them are perfect 5-star ratings. It also supports free cancellation and ranks fifth on the best-sellers list. Lastly, the \"Elephanta Caves All-Inclusive Guided Tour,\" a UNESCO World Heritage site, is now available for $40 (originally $50). With 37 reviews all giving 5-star ratings, it is ideal for history enthusiasts and ranks second on the best-sellers list. All activities can be booked directly through the app, with 647 of them offering free cancellation. Tourists can sort and filter by \"Smart Recommendations,\" \"Lowest Price First,\" or \"Highest Rating First.\" Popular categories include 529 tours, 419 museum and cultural experiences, and 50 food and wine activities.",
     "response_fields":{
-        "response": {
-          "status": {
-            "type": "Boolean",
-            "description": "Indicates the success status of the API request. 'true' means the request was successful."
-          },
-          "message": {
-            "type": "String",
-            "description": "A human-readable message indicating the result of the API request, e.g., 'Success'."
-          },
-          "timestamp": {
-            "type": "Number",
-            "description": "Unix timestamp in milliseconds indicating when the API response was generated."
-          },
+        
           "data": {
             "type": "Object",
             "description": "Contains the main data payload of the API response.",
@@ -805,7 +808,7 @@
                 }
               }
             }
-          }
+          
         }
       }
     

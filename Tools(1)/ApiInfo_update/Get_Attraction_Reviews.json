@@ -1,0 +1,252 @@
+{
+    "name": "Get_Attraction_Reviews",
+    "docs_row": {
+        "name": "Get_Attraction_Reviews",
+        "endpoint": "/api/v1/attraction/getAttractionReviews",
+        "func_description": "Retrieves user reviews and ratings for a specific attraction, supporting pagination to browse through large review sets.",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "String",
+                    "description": "id can be retrieved from api/v1/attraction/searchAttractions(Search Attractions) endpoint in Attraction collection as id inside products (data->products->id)",
+                    "example_value": "PR6K7ZswbGBs",
+                    "required": true
+                },
+                "page": {
+                    "type": "Number",
+                    "description": "The page number.",
+                    "example_value": "1",
+                    "required": false
+                }
+            },
+            "required": [
+                "id"
+            ]
+        }
+    },
+    "instance": [],
+    "category": null,
+    "tool": null,
+    "api_idx": 20,
+    "params": {
+        "type": "object",
+        "properties": {
+            "id": {
+                "type": "String",
+                "description": "id can be retrieved from api/v1/attraction/searchAttractions(Search Attractions) endpoint in Attraction collection as id inside products (data->products->id)",
+                "example_value": "PR6K7ZswbGBs",
+                "required": true
+            },
+            "page": {
+                "type": "Number",
+                "description": "The page number.",
+                "example_value": "1",
+                "required": false
+            }
+        },
+        "required": [
+            "id"
+        ]
+    },
+    "responses": [
+        {
+            "function_name": "Get_Attraction_Reviews",
+            "arguments": {
+                "id": "PR6K7ZswbGBs",
+                "page": "1"
+            },
+            "observation": [
+                {
+                    "content": "guide Dawood very professionanl including language proficiency",
+                    "epochMs": 1747218592000,
+                    "id": "RSd46bU1rS8I",
+                    "language": "it",
+                    "numericRating": 4,
+                    "providerName": null,
+                    "travelPartnerTypes": [
+                        "alone"
+                    ],
+                    "user": {
+                        "avatar": null,
+                        "cc1": "it",
+                        "name": "Loris"
+                    }
+                },
+                {
+                    "content": "Eye opener in terms of experience. Rameez, the guide, was exceptional",
+                    "epochMs": 1746289180000,
+                    "id": "RSPaJdEnE0Yf",
+                    "language": "en-gb",
+                    "numericRating": 5,
+                    "providerName": null,
+                    "travelPartnerTypes": [
+                        "partner"
+                    ],
+                    "user": {
+                        "avatar": null,
+                        "cc1": "mu",
+                        "name": "Mohamed Sadeck"
+                    }
+                },
+                {
+                    "content": null,
+                    "epochMs": 1745231685000,
+                    "id": "RSyRTLlxh2sg",
+                    "language": null,
+                    "numericRating": 5,
+                    "providerName": null,
+                    "travelPartnerTypes": [],
+                    "user": null
+                }
+            ]
+        }
+    ],
+    "response_summary": "Here\u2019s a summary of the reviews from travelers who shared their experiences:  \n\nLoris, an Italian traveler who explored alone, praised guide Dawood for his professionalism and language skills, giving the experience a 4-star rating. Mohamed Sadeck from Mauritius, who traveled with a partner, described the tour as an \"eye-opener\" and commended guide Rameez for being exceptional, awarding a perfect 5-star rating. There was also an anonymous 5-star review with no additional comments or details provided.  \n\nOverall, the feedback highlights knowledgeable guides and memorable experiences, with ratings ranging from 4 to 5 stars.",
+    "enhance_func_desc": "This API is ideal for travelers seeking insights from past participants of specific attractions. It retrieves detailed reviews and ratings for an attraction using its unique ID, which can be obtained from the SearchAttractions API. The response includes traveler feedback, guide performance, and overall ratings, helping users make informed decisions about their activities. Pagination is supported for browsing through multiple reviews.",
+    "enhance_params_desc": {
+        "enhanced_parameters": {
+            "id": "Unique identifier for the attraction, sourced from SearchAttractions endpoint.",
+            "page": "Specifies the pagination number for browsing reviews."
+        }
+    },
+    "enhance_resfield_desc": {
+        "response_fields": {
+            "root": {
+                "type": "Array",
+                "description": "A list of reviews from travelers sharing their experiences",
+                "ar_items": {
+                    "type": "Object",
+                    "description": "A single review from a traveler",
+                    "ob_properties": {
+                        "content": {
+                            "type": "String",
+                            "description": "The textual content of the review, describing the traveler's experience"
+                        },
+                        "epochMs": {
+                            "type": "Number",
+                            "description": "The timestamp of the review in milliseconds since the Unix epoch"
+                        },
+                        "id": {
+                            "type": "String",
+                            "description": "A unique identifier for the review"
+                        },
+                        "language": {
+                            "type": "String",
+                            "description": "The language code indicating the language of the review content"
+                        },
+                        "numericRating": {
+                            "type": "Number",
+                            "description": "The rating given by the traveler, ranging from 1 to 5 stars"
+                        },
+                        "providerName": {
+                            "type": "String",
+                            "description": "The name of the provider associated with the review, if any"
+                        },
+                        "travelPartnerTypes": {
+                            "type": "Array",
+                            "description": "A list indicating the type of travel companions the traveler had",
+                            "ar_items": {
+                                "type": "String",
+                                "description": "A type of travel companion (e.g., 'alone', 'partner')"
+                            }
+                        },
+                        "user": {
+                            "type": "Object",
+                            "description": "Information about the traveler who wrote the review",
+                            "ob_properties": {
+                                "avatar": {
+                                    "type": "String",
+                                    "description": "URL to the traveler's avatar image, if available"
+                                },
+                                "cc1": {
+                                    "type": "String",
+                                    "description": "Country code indicating the traveler's country of origin"
+                                },
+                                "name": {
+                                    "type": "String",
+                                    "description": "The name of the traveler"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "params_desc_list": null,
+    "response_desc_list": [
+        {
+            "path_name": "root",
+            "name": "root",
+            "description": "A list of reviews from travelers sharing their experiences"
+        },
+        {
+            "path_name": "root[]",
+            "name": "root[]",
+            "description": "A single review from a traveler"
+        },
+        {
+            "path_name": "root[].content",
+            "name": "content",
+            "description": "The textual content of the review, describing the traveler's experience"
+        },
+        {
+            "path_name": "root[].epochMs",
+            "name": "epochMs",
+            "description": "The timestamp of the review in milliseconds since the Unix epoch"
+        },
+        {
+            "path_name": "root[].id",
+            "name": "id",
+            "description": "A unique identifier for the review"
+        },
+        {
+            "path_name": "root[].language",
+            "name": "language",
+            "description": "The language code indicating the language of the review content"
+        },
+        {
+            "path_name": "root[].numericRating",
+            "name": "numericRating",
+            "description": "The rating given by the traveler, ranging from 1 to 5 stars"
+        },
+        {
+            "path_name": "root[].providerName",
+            "name": "providerName",
+            "description": "The name of the provider associated with the review, if any"
+        },
+        {
+            "path_name": "root[].travelPartnerTypes",
+            "name": "travelPartnerTypes",
+            "description": "A list indicating the type of travel companions the traveler had"
+        },
+        {
+            "path_name": "root[].travelPartnerTypes[]",
+            "name": "travelPartnerTypes[]",
+            "description": "A type of travel companion (e.g., 'alone', 'partner')"
+        },
+        {
+            "path_name": "root[].user",
+            "name": "user",
+            "description": "Information about the traveler who wrote the review"
+        },
+        {
+            "path_name": "root[].user.avatar",
+            "name": "avatar",
+            "description": "URL to the traveler's avatar image, if available"
+        },
+        {
+            "path_name": "root[].user.cc1",
+            "name": "cc1",
+            "description": "Country code indicating the traveler's country of origin"
+        },
+        {
+            "path_name": "root[].user.name",
+            "name": "name",
+            "description": "The name of the traveler"
+        }
+    ],
+    "depends_on": null,
+    "verified": true
+}

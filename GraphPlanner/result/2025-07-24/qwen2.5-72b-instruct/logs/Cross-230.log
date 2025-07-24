@@ -1,0 +1,48 @@
+2025-07-24 06:05:21,111 - evaluation_logger_Cross-230 - INFO - Test Example Cross-230
+2025-07-24 06:05:21,111 - evaluation_logger_Cross-230 - INFO - Query: Book the cheapest flight from Vancouver to Los Angeles on November 10, 2024; I don't accept flights with overnight layovers. Also, book a hotel near Griffith Park in Los Angeles for a one-week stay. Additionally, I need a taxi to take me from the airport to the hotel one hour after the flight lands.
+2025-07-24 06:07:31,720 - evaluation_logger_Cross-230 - INFO - Start compare_single_call: 
+{'name': 'Search_Flight_Location', 'arguments': {'query': 'Vancouver'}}
+{'name': 'Search_Flight_Location', 'arguments': {'query': 'Vancouver'}}
+2025-07-24 06:07:31,721 - evaluation_logger_Cross-230 - INFO - Rule-based compare success.
+2025-07-24 06:07:31,721 - evaluation_logger_Cross-230 - INFO - Success matched: [{'name': 'Search_Flight_Location', 'arguments': {'query': 'Vancouver'}}]
+2025-07-24 06:07:31,722 - evaluation_logger_Cross-230 - INFO - Start compare_single_call: 
+{'name': 'Search_Flight_Location', 'arguments': {'query': 'Los Angeles'}}
+{'name': 'Search_Flight_Location', 'arguments': {'query': 'Los Angeles'}}
+2025-07-24 06:07:31,722 - evaluation_logger_Cross-230 - INFO - Rule-based compare success.
+2025-07-24 06:07:31,722 - evaluation_logger_Cross-230 - INFO - Success matched: [{'name': 'Search_Flight_Location', 'arguments': {'query': 'Los Angeles'}}]
+2025-07-24 06:07:32,438 - evaluation_logger_Cross-230 - INFO - Success matched: []
+2025-07-24 06:08:29,174 - evaluation_logger_Cross-230 - INFO - Start compare_single_call: 
+{'name': 'Search_Flights', 'arguments': {'departDate': '2024-11-10', 'fromId': 'YVR.CITY', 'sort': 'CHEAPEST', 'toId': 'LAX.CITY'}}
+{'name': 'Search_Flights', 'arguments': {'departDate': '2024-11-10', 'fromId': 'YVR.CITY', 'sort': 'CHEAPEST', 'toId': 'LAX.CITY'}}
+2025-07-24 06:08:29,174 - evaluation_logger_Cross-230 - INFO - Rule-based compare success.
+2025-07-24 06:08:29,174 - evaluation_logger_Cross-230 - INFO - Success matched: [{'name': 'Search_Flights', 'arguments': {'departDate': '2024-11-10', 'fromId': 'YVR.CITY', 'sort': 'CHEAPEST', 'toId': 'LAX.CITY'}}]
+2025-07-24 06:08:29,687 - evaluation_logger_Cross-230 - INFO - Start compare_single_call: 
+{'name': 'Search_Hotel_Destination', 'arguments': {'query': 'Griffith Park, Los Angeles'}}
+{'name': 'Search_Hotel_Destination', 'arguments': {'query': 'Griffith Park'}}
+2025-07-24 06:08:34,218 - evaluation_logger_Cross-230 - DEBUG - LLM-based comparison output: {'is_equal': False, 'reason': "The query parameter in call 1 includes 'Los Angeles' which specifies the location more precisely than call 2."}
+2025-07-24 06:08:34,218 - evaluation_logger_Cross-230 - INFO - All compare method failed.
+2025-07-24 06:08:34,227 - evaluation_logger_Cross-230 - INFO - Success matched: []
+2025-07-24 06:09:28,803 - evaluation_logger_Cross-230 - INFO - Start compare_single_call: 
+{'name': 'Search_Hotel_Destination', 'arguments': {'query': 'Los Angeles'}}
+{'name': 'Search_Hotel_Destination', 'arguments': {'query': 'Griffith Park'}}
+2025-07-24 06:09:33,850 - evaluation_logger_Cross-230 - DEBUG - LLM-based comparison output: {'is_equal': False, 'reason': "The query parameters 'Los Angeles' and 'Griffith Park' refer to different locations."}
+2025-07-24 06:09:33,850 - evaluation_logger_Cross-230 - INFO - All compare method failed.
+2025-07-24 06:09:33,850 - evaluation_logger_Cross-230 - INFO - Success matched: []
+2025-07-24 06:10:26,443 - evaluation_logger_Cross-230 - INFO - Start compare_single_call: 
+{'name': 'Search_Hotel_Destination', 'arguments': {'query': 'Griffith Park, Los Angeles'}}
+{'name': 'Search_Hotel_Destination', 'arguments': {'query': 'Griffith Park'}}
+2025-07-24 06:10:31,330 - evaluation_logger_Cross-230 - DEBUG - LLM-based comparison output: {'is_equal': False, 'reason': "The query parameter in call 1 includes 'Los Angeles' which specifies a more precise location than call 2, which only mentions 'Griffith Park'."}
+2025-07-24 06:10:31,330 - evaluation_logger_Cross-230 - INFO - All compare method failed.
+2025-07-24 06:10:31,339 - evaluation_logger_Cross-230 - INFO - Success matched: []
+2025-07-24 06:11:16,215 - evaluation_logger_Cross-230 - INFO - Start compare_single_call: 
+{'name': 'Search_Hotel_Destination', 'arguments': {'query': 'Griffith Park, Los Angeles'}}
+{'name': 'Search_Hotel_Destination', 'arguments': {'query': 'Griffith Park'}}
+2025-07-24 06:11:21,188 - evaluation_logger_Cross-230 - DEBUG - LLM-based comparison output: {'is_equal': False, 'reason': "The query parameter in call 1 includes 'Los Angeles' which specifies the location more precisely than call 2."}
+2025-07-24 06:11:21,188 - evaluation_logger_Cross-230 - INFO - All compare method failed.
+2025-07-24 06:11:21,197 - evaluation_logger_Cross-230 - INFO - Success matched: []
+2025-07-24 06:12:40,159 - evaluation_logger_Cross-230 - INFO - Start compare_single_call: 
+{'name': 'Search_Hotel_Destination', 'arguments': {'query': 'Griffith Park, Los Angeles'}}
+{'name': 'Search_Hotel_Destination', 'arguments': {'query': 'Griffith Park'}}
+2025-07-24 06:12:45,788 - evaluation_logger_Cross-230 - DEBUG - LLM-based comparison output: {'is_equal': False, 'reason': "The query parameter in call 1 includes 'Los Angeles' which specifies a more precise location than call 2."}
+2025-07-24 06:12:45,788 - evaluation_logger_Cross-230 - INFO - All compare method failed.
+2025-07-24 06:12:45,789 - evaluation_logger_Cross-230 - INFO - Success matched: []
