@@ -13,5 +13,6 @@
 1. result是评估结果文件
 2. data中APIinfo_update(3)是目前使用的文档说明
 3. 目前使用的工具关系图文档是在GraphLinkTools/gound_truth文件夹里的api_link_gt_clean(3).jsonl
+4. ComplexFuncBench文件夹里的mock_function文件夹是我为了对齐code方式请求api响应，新加模拟的网络请求。其他和原仓库一样
 
    
